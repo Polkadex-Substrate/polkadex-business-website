@@ -5,11 +5,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTPWG3R5M"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-DYTPWG3R5M');
     </script>
+<!--    Google Analytics End-->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +35,11 @@
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<!--    MailChimp -->
+    <script id="mcjs">!function (c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/28427d0f7a87eac1dbcc592ff/1a6f1dcf1e0d500e605cc70b3.js");</script>
+<!-- MailChimp Ends-->
 </head>
 <body>
 <!--Header start-->
@@ -78,11 +88,9 @@
             <div class="row post-section post-latest justify-content-between">
                 <div class="col-lg-7 order-1 align-self-center"><img src="images/img-peer.png" class="img-fluid"/></div>
                 <div class="col-lg-5 order-2">
-                    <h2>A Fully
-                        Decentralized,<br/>
-                        Peer-Peer,</h2>
-                    <p>Order book-based cryptocurrency
-                        exchange built on Substrate.</p>
+                    <h2>Polkadex: <br/>The trading engine for web3 and Defi</h2>
+                    <p>A fully decentralized, peer-peer, orderbook based cryptocurrency exchange for the Defi ecosystem
+                        in Substrate.</p>
                     <button class="btn btn-primary">Light paper</button>
                     <a href="#" class="color-secondary">Latest Medium Articles &gt;</a></div>
 
@@ -120,7 +128,8 @@
                                 exit based on the market situation, incentivized API endpoints for both trading bot
                                 companies and liquidity providers and eliminate front-running of orders by paying high
                                 gas fees, a problem that plagues traditional decentralized exchanges. </p>
-                            <a href="#" class="color-secondary">Learn More &gt;</a></div>
+                            <a href="https://medium.com/@pr_92724/feeless-transactions-in-polkadex-76ab16cbe483"
+                               target="_blank" class="color-secondary">Learn More &gt;</a></div>
 
                     </div>
                     <!--/Post-->
@@ -131,12 +140,13 @@
                         <div class="col-lg-6 order-1">
                             <h2>Trustless Ethereum</h2>
                             <h3>Bridge</h3>
-                            <p>Trustless cross-chain bridges with Polkadot through Parachain and Ethereum through
-                                Snowfork help bring any blockchain token to Polkadex in a non-custodial and trustless
+                            <p>Trustless cross-chain bridges, with Polkadot through Parachain and Ethereum through
+                                Snowfork, help bring any blockchain token to Polkadex in a non-custodial and trustless
                                 manner. Polkadex is built for the future, making it possible to integrate with other
                                 liquidity providers using forkless upgrades. We do not touch customer funds or your
                                 smart contract keys.</p>
-                            <a href="#" class="color-secondary">Learn More &gt;</a></div>
+                            <a href="https://wiki.polkadot.network/docs/en/learn-parachains" target="_blank"
+                               class="color-secondary">Learn More &gt;</a></div>
 
                     </div>
                     <!--/Post-->
@@ -150,7 +160,7 @@
                                 current crypto exchange landscape and will continue to improve this speed to 20,000 TPS
                                 using our R&D on inhouse consensus algorithm code named Pebble. This upgrade will be
                                 part of the Roadmap planned in 2021-22.</p>
-                            <a href="#" class="color-secondary">Learn More &gt;</a>
+                            <!--                            <a href="#" class="color-secondary">Learn More &gt;</a>-->
                         </div>
 
                     </div>
@@ -254,8 +264,10 @@
                 <div class="text-center vision-logo"><img src="images/logo-vision.png" alt="Polkadex"
                                                           class="img-fluid"/></div>
                 <p> “Our mission is to build the perfect decentralized exchange.” <br>
+                    <br>
                     “We envision a world of financial inclusion, creating bridges that transfer value from traditional
-                    money markets to a decentralized store of <i>value and trust</i>, thereby preparing the world for a
+                    money markets to a decentralized store of <i>value and trust</i>, <br> thereby preparing the world
+                    for a
                     tokenized future.” </p>
                 <button class="btn btn-border-primary">More About</button>
             </div>
@@ -364,13 +376,14 @@
                     <h2> Subscribe to Email Updates<span class="primary-fullstop">.</span></h2>
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <form>
+                            <form action="https://formspree.io/f/mrgolonn" method="POST" >
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control subscribe-input"
                                            placeholder="Enter your email" aria-label="Enter your email"
-                                           aria-describedby="button-addon2">
+                                           aria-describedby="button-addon2"
+                                           name="_replyto">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                                             Submit
                                         </button>
                                     </div>
@@ -415,7 +428,9 @@
                                 <li>
                                     <a href="https://github.com/Gauthamastro/Open-Grants-Program/blob/master/applications/polkadex.md">Web3
                                         Grants Application</a></li>
-                                <li><a href="#">Sed do eiusmod tempor</a></li>
+                                <li>
+                                    <a href="https://medium.com/@pr_92724/feeless-transactions-in-polkadex-76ab16cbe483">Feeless
+                                        Polkadex Transactions</a></li>
                             </ul>
                         </div>
                         <!--/col-->
@@ -457,9 +472,11 @@
                     <div class="col-lg-9">
                         <div class="section-copyright"> © 2020 Polkadex</div>
                     </div>
-                    <div class="col-lg-3 text-right social-links"><a href="https://t.me/Polkadex"> <img
-                            src="images/icon-social-1.png" alt=""/> </a> <a href="#"> <img
-                            src="images/icon-social-2.png" alt=""/> </a> <a href="#"> <img
+                    <div class="col-lg-3 text-right social-links"><a href="https://t.me/Polkadex" target="_blank"> <img
+                            src="images/icon-social-1.png" alt=""/> </a> <a href="https://twitter.com/Polkadex1"
+                                                                            target="_blank"> <img
+                            src="images/icon-social-2.png" alt=""/> </a> <a href="https://medium.com/@pr_92724"
+                                                                            target="_blank"> <img
                             src="images/icon-social-3.png" alt=""/> </a></div>
                 </div>
 
