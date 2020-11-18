@@ -259,9 +259,6 @@ header .navbar .navbar-nav .nav-link-contact:hover {
 .section-features .features-nav .active .far {
   display: none;
 }
-.section-features .tab-pane img {
-  height: 400px;
-}
 
 /*Section Vision*/
 .section-vision {
@@ -454,10 +451,10 @@ header .navbar .navbar-nav .nav-link-contact:hover {
   background: #e60079;
   color: white;
   border-radius: 50px;
-  font-size: 1.590625rem;
+  font-size: 1.2rem;
   font-weight: 700;
   border: none;
-  padding: 9px 60px;
+  padding: 9px 1.5rem;
   margin-left: -60px;
   position: relative;
   z-index: 100;
