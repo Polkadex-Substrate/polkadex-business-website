@@ -311,6 +311,50 @@ header {
         padding: 0 0 55px;
     }
 }
+/*Section Team*/
+.section-team {
+    padding: 100px 0 50px;
+    h2 {
+        font-size: 3.25rem;
+        font-weight: $weight900;
+        margin-bottom: 45px;
+    }
+    .team-col {
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        margin-bottom: 60px;
+        text-align: center;
+        box-shadow: 0 0 18px rgba(0,0,0, 0.1);
+        .team-img {
+            margin-bottom: 25px;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+        }
+        h3 {
+            font-size: 1.76rem;
+            font-weight: $weight900;
+            margin-bottom: 10px;
+        }
+        .team-designation {
+            font-size: 1.1  rem;
+            font-weight: $weight400;
+            margin-bottom: 10px;
+        }
+        .fab {
+            font-size: 2rem;
+        }
+        .fa-linkedin {
+            color: #006fb2;
+        }
+        .fa-twitter-square {
+            color: #00ade7;
+        }
+    }
+}
 /*Section RoadMap*/
 .section-roadmap {
     padding-top: 101px;
