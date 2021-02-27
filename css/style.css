@@ -495,14 +495,14 @@ header .navbar .navbar-nav .nav-link-contact:hover {
   background-size: contain;
   max-width: 80rem;
   margin: 0 auto;
-  border-radius: 3rem;
+  border-radius: 4rem;
   
 }
 
 .section-subscribe .section-subscribe-inner {
   background: url(../images/iconLogo.svg) no-repeat;
   padding: 9rem 0;
-  border-radius: 3rem;
+  border-radius: 4rem;
   background-size: contain;
   background-position: 120%;
 }
