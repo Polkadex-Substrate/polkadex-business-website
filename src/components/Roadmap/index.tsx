@@ -7,7 +7,7 @@ const Roadmap = () => (
   <S.Wrapper id="roadmap">
     <S.TitleContainer>
       <Title
-        tag="roadmap"
+        tag="Roadmap"
         description="We start a new journey with no return and now we do not think to stop"
         title="Polkadex"
         highlight="Journey"
