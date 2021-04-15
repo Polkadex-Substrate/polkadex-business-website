@@ -6,6 +6,10 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'styles/global';
 import { theme } from 'styles/theme';
 
+import Maintenance from './maintenance';
+
+const maintenance = true;
+
 function App({ Component, pageProps }: AppProps) {
   const [state, setState] = useState(false);
 
@@ -106,7 +110,8 @@ function App({ Component, pageProps }: AppProps) {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <GlobalStyles />
-        <Component {...pageProps} />
+        {maintenance ? <Maintenance /> : <Component {...pageProps} />}
+
         <PrivacyPopUp
           action={handleAccept}
           visible={state}

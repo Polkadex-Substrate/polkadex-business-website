@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { FormButton } from 'components/Button';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import * as S from './styles';
 
@@ -21,6 +21,7 @@ const Newsletter = () => {
     email: '',
   });
 
+<<<<<<< Updated upstream
   const hcaptchaRef = useRef(null);
 
   const handleServerResponse = (ok, msg) => {
@@ -41,6 +42,8 @@ const Newsletter = () => {
     }
   };
 
+=======
+>>>>>>> Stashed changes
   const handleOnChange = (e) => {
     e.persist();
     setInputs((prev) => ({

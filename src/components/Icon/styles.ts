@@ -3,8 +3,13 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.a`
   padding: 0.6rem;
   border-radius: 0.9rem;
-  width: 3rem;
-  height: 3rem;
+  max-width: 3rem;
+  max-height: 3rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${({ theme }) => css`
     background: ${theme.colors.secondaryBackground};
@@ -16,7 +21,7 @@ export const Wrapper = styled.a`
       transform: translateY(-0.2rem);
     }
     & img {
-      width: 100%;
+      width: fit-content;
     }
   `}
 `;
