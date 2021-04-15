@@ -13,6 +13,7 @@ export const Col = styled.div`
     filter: drop-shadow(0px 37px 72px rgba(0, 0, 0, 0.29));
     & img {
       width: 100%;
+      border-radius: 2rem;
     }
   }
 

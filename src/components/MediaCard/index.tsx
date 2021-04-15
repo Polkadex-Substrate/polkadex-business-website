@@ -12,7 +12,7 @@ const MediaCard = ({
 }: Props) => (
   <S.Wrapper href={link}>
     <S.Col>
-      <img src={`/img/media/avatar/${image}.png `} alt="News Cover" />
+      <img src={`/img/media/${image}.png `} alt="News Cover" />
     </S.Col>
 
     <S.Col>
