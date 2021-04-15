@@ -21,29 +21,6 @@ const Newsletter = () => {
     email: '',
   });
 
-<<<<<<< Updated upstream
-  const hcaptchaRef = useRef(null);
-
-  const handleServerResponse = (ok, msg) => {
-    if (ok) {
-      setStatus({
-        submitted: true,
-        submitting: false,
-        info: { error: false, msg },
-      });
-      setInputs({
-        email: '',
-      });
-    } else {
-      setStatus({
-        ...status,
-        info: { error: true, msg },
-      });
-    }
-  };
-
-=======
->>>>>>> Stashed changes
   const handleOnChange = (e) => {
     e.persist();
     setInputs((prev) => ({
