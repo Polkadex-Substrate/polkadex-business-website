@@ -40,7 +40,7 @@ const Investors = () => (
       </S.Row>
       <S.Row>
         <InvestorCard name="GenblockCapital" link="https://genblock.capital/" />
-        <InvestorCard name="jRR" link="http://www.jrr.group/" />
+        <InvestorCard name="JRR" link="http://www.jrr.group/" />
         <InvestorCard name="Kenetic" link="https://kenetic.capital/" />
         <InvestorCard name="LDCapital" link="https://ldcap.com/" />
         <InvestorCard name="M6" link="http://waterdrip.io/" />

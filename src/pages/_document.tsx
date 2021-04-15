@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
         <Head>
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-DYTPWG3R5M"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
           />
           <script
             // eslint-disable-next-line react/no-danger

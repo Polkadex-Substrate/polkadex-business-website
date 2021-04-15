@@ -1,13 +1,9 @@
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import axios from 'axios';
 import { FormButton } from 'components/Button';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import * as S from './styles';
-
-// type ResponseServer = {
-//   ok: boolean;
-//   msg: string;
-// };
 
 type Status = {
   submitted: boolean;
@@ -21,24 +17,61 @@ const Newsletter = () => {
     submitting: false,
     info: { error: false, msg: null },
   });
+
   const [inputs, setInputs] = useState({
     email: '',
   });
 
-  const handleServerResponse = (ok, msg) => {
-    if (ok) {
+  const hcaptchaRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Execute the hCaptcha when the form is submitted
+    hcaptchaRef.current.execute();
+  };
+
+  const onHCaptchaChange = async (captchaCode: string) => {
+    if (!captchaCode) {
+      setStatus({
+        ...status,
+        info: { error: true, msg: 'Captcha Empty' },
+      });
+      return;
+    }
+    try {
+      await axios({
+        url: '/api/register',
+        method: 'POST',
+        data: {
+          email: inputs.email,
+          captcha: captchaCode,
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+
+      await axios({
+        method: 'POST',
+        url: `https://formspree.io/f/${process.env.FORMSPREE}`,
+        data: inputs,
+      });
+
       setStatus({
         submitted: true,
         submitting: false,
-        info: { error: false, msg },
+        info: {
+          error: false,
+          msg: 'Thank you, now you are on our list.',
+        },
       });
-      setInputs({
-        email: '',
-      });
-    } else {
+      setInputs({ email: '' });
+    } catch (error) {
       setStatus({
         ...status,
-        info: { error: true, msg },
+        info: { error: true, msg: error.message },
       });
     }
   };
@@ -55,30 +88,21 @@ const Newsletter = () => {
       info: { error: false, msg: null },
     });
   };
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-    axios({
-      method: 'POST',
-      url: 'https://formspree.io/f/mrgolonn',
-      data: inputs,
-    })
-      .then((response) => {
-        handleServerResponse(
-          true,
-          'Thank you, your message has been submitted.',
-        );
-      })
-      .catch((error) => {
-        handleServerResponse(false, error.response.data.error);
-      });
-  };
+
   return (
     <S.Wrapper>
       <S.Container>
         <h3>Subscribe to the newsletter</h3>
-        <p>Hear about Polkadex updates and events !</p>
-        <form onSubmit={handleOnSubmit}>
+        <p>Hear about Polkadex updates and events !</p>{' '}
+        <HCaptcha
+          id="test"
+          ref={hcaptchaRef}
+          sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+          onVerify={onHCaptchaChange}
+          size="invisible"
+          theme="dark"
+        />
+        <form onSubmit={handleSubmit}>
           <S.FormWrapper>
             <input
               id="email"
@@ -96,9 +120,15 @@ const Newsletter = () => {
           </S.FormWrapper>
         </form>
         {status.info.error && (
-          <div className="error">Error: {status.info.msg}</div>
+          <S.MessageBox>
+            <p> Error: {status.info.msg} </p>
+          </S.MessageBox>
         )}
-        {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
+        {!status.info.error && status.info.msg && (
+          <S.MessageBox>
+            <p> {status.info.msg} </p>
+          </S.MessageBox>
+        )}
       </S.Container>
     </S.Wrapper>
   );

@@ -82,3 +82,7 @@ export const FormWrapper = styled.div`
     }
   }
 `;
+
+export const MessageBox = styled.div`
+  margin-top: 0.5rem;
+`;
