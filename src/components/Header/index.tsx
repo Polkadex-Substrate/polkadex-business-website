@@ -21,7 +21,9 @@ const Header = () => {
               <li>
                 <Dropdown title="Products">
                   <S.ProductLink>
-                    <a href="https://testnet.polkadex.trade">Exchange</a>
+                    <a href="https://docs.polkadex.trade/introductionOrderbook">
+                      Orderbook
+                    </a>
                   </S.ProductLink>
                 </Dropdown>
               </li>
