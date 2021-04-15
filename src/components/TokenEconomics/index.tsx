@@ -10,7 +10,7 @@ const TokenEconomics = () => (
         tag="Token Economics"
         title="Distribution of"
         highlight="Tokens"
-        description="Libero adipisci error voluptatem sint quia"
+        description=""
       />
     </S.TitleContainer>
     <S.ContentContainer>

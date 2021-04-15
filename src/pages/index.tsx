@@ -20,8 +20,8 @@ export default function Home() {
       <Announcement
         content={
           <ContractAnnouncement
-            contract="0x0cf45f66777124bd03b606c75b8aa73701641002"
-            href="https://etherscan.io/token/0x0cf45f66777124bd03b606c75b8aa73701641002"
+            contract="0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
+            href="https://etherscan.io/token/0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
           />
         }
       />
