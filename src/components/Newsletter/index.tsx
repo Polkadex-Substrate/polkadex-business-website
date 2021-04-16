@@ -1,7 +1,6 @@
-import HCaptcha from '@hcaptcha/react-hcaptcha';
 import axios from 'axios';
 import { FormButton } from 'components/Button';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import * as S from './styles';
 
@@ -22,40 +21,26 @@ const Newsletter = () => {
     email: '',
   });
 
-  const hcaptchaRef = useRef(null);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Execute the hCaptcha when the form is submitted
-    hcaptchaRef.current.execute();
+  const handleOnChange = (e) => {
+    e.persist();
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    });
   };
 
-  const onHCaptchaChange = async (captchaCode: string) => {
-    if (!captchaCode) {
-      setStatus({
-        ...status,
-        info: { error: true, msg: 'Captcha Empty' },
-      });
-      return;
-    }
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
     try {
       await axios({
-        url: '/api/register',
         method: 'POST',
-        data: {
-          email: inputs.email,
-          captcha: captchaCode,
-        },
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-
-      await axios({
-        method: 'POST',
-        url: `https://formspree.io/f/${process.env.FORMSPREE}`,
+        url: 'https://formspree.io/f/xdoyknbg',
         data: inputs,
       });
 
@@ -76,33 +61,12 @@ const Newsletter = () => {
     }
   };
 
-  const handleOnChange = (e) => {
-    e.persist();
-    setInputs((prev) => ({
-      ...prev,
-      [e.target.id]: e.target.value,
-    }));
-    setStatus({
-      submitted: false,
-      submitting: false,
-      info: { error: false, msg: null },
-    });
-  };
-
   return (
-    <S.Wrapper>
+    <S.Wrapper id="newsletter">
       <S.Container>
         <h3>Subscribe to the newsletter</h3>
-        <p>Hear about Polkadex updates and events !</p>{' '}
-        <HCaptcha
-          id="test"
-          ref={hcaptchaRef}
-          sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-          onVerify={onHCaptchaChange}
-          size="invisible"
-          theme="dark"
-        />
-        <form onSubmit={handleSubmit}>
+        <p>Hear about Polkadex updates and events !</p>
+        <form onSubmit={handleOnSubmit}>
           <S.FormWrapper>
             <input
               id="email"
@@ -115,7 +79,6 @@ const Newsletter = () => {
               required
               value={inputs.email}
             />
-
             <FormButton content="Subscribe" icon="send" type="submit" />
           </S.FormWrapper>
         </form>
