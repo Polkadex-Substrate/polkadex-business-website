@@ -9,7 +9,7 @@ const Investors = () => (
       <Title
         title="Strategic"
         highlight="Investors"
-        description="Libero adipisci error voluptatem sint quia libero adipisci error voluptatem sint quia"
+        description="The early birds who supported, funded and helped us reach where we are now "
         tag="Supported & Funded by"
       />
     </S.TitleContainer>

@@ -29,12 +29,12 @@ const Hero = () => {
           cryptocurrency exchange for the DeFi ecosystem built with Substrate.
         </h2>
         <PrimaryButton
-          content="Try Polkadex Testnet"
-          href="http://testnet.polkadex.trade"
+          content="Polkadex Testnet Live on June"
+          href=""
           icon="doubleArrowRight"
         />
         <S.Row>
-          <span>Support Chains</span>
+          <span>Supported Chains</span>
           <S.Col>
             <S.Card>
               <S.PlannedIcon>

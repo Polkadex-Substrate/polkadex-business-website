@@ -21,7 +21,7 @@ const Header = () => {
               <li>
                 <Dropdown title="Products">
                   <S.ProductLink>
-                    <a href="https://testnet.polkadex.trade">Exchange</a>
+                    <a href="">Exchange</a>
                   </S.ProductLink>
                 </Dropdown>
               </li>
@@ -89,9 +89,9 @@ const Header = () => {
         </div>
         <div>
           <SecondaryButton
-            content="Polkadex Testnet"
+            content=""
             icon="doubleArrowRight"
-            href="http://testnet.polkadex.trade"
+            href=""
           />
         </div>
       </S.BottomContainer>

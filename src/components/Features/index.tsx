@@ -7,7 +7,7 @@ const Features = () => (
   <S.Wrapper id="features">
     <S.TitleContainer>
       <Title
-        title="The Futture of"
+        title="The Future of"
         highlight="Decentralized Trading"
         tag="Features"
         description="Polkadex is the first project featuring an orderbook based exchange in the Polkadot ecosystem."
@@ -19,11 +19,11 @@ const Features = () => (
         <S.BridgeWrapper>
           <h4>
             Trustless <br />
-            Ethereum Bridge
+            Cross-Chain Transfers
           </h4>
           <S.FeaturedParagraph>
             Trustless cross-chain bridges help to bring any blockchain token to
-            Polkadex in a non-custodial and trustless manner. Thy function
+            Polkadex in a non-custodial and trustless manner. It function
             through Parachain with Polkadot network and Snowfork with Ethereum
             network. Polkadex is built for the future, making it possible to
             integrate with other liquidity providers using forkless upgrades. We
@@ -98,12 +98,11 @@ const Features = () => (
             State Commits <span> V2 </span>
           </h2>
           <p>
-            An order matching protocol that switches between AMM and orderbook
-            which ensures that liquidity flows seamlessly for traders and market
-            makers, providing guaranteed trades. Uniquely programmed AMM
-            algorithm ensures the orderbook is fully supported, thereby avoiding
-            price slippage and impermanent loss, a common problem found in AMM
-            based DEXes.
+            Polkadex Orderbook implements a layer two Trusted Execution Environment (TEE)
+            on top of Polkadex that allows an operator to maintain orderbook and the results produced by the TEE contains a cryptographic proof.
+            In the event of tampering, the blockchain can invalidate the proof thereby not accepting the tampered state
+            submitted by the Operator. The funds of the user always stays in the native blockchain and is controlled by
+            the user's private key. It ensures that only the trader's private key can initiate a balance transfer.
           </p>
         </div>
         <div>
@@ -119,11 +118,10 @@ const Features = () => (
         <S.MoreFeaturesInfo>
           <h4>Unmatched performance</h4>
           <S.FeaturedParagraph>
-            The current testnet transaction throughput of 300 TPS, more than
-            enough to support the current crypto exchange landscape and will
-            continue to improve this speed to 20,000 TPS using our R&D on
-            inhouse consensus algorithm code named Pebble. This upgrade will be
-            part of the Roadmap planned in 2021-22.
+            Polkadex scales to 500,000 trades per second and sub millisecond latency
+            with the help of the latest leaps in technological development. It enables
+            Polkadex to function exactly the same as a centralized exchange and support
+            High Frequency Trading without sacrificing security of user funds.
           </S.FeaturedParagraph>
           <PrimaryButton
             icon="doubleArrowRight"
@@ -146,72 +144,70 @@ const Features = () => (
             <img src="/img/icons/speed.svg" alt="Block speed icon" />
             <span> High Frequency Trading </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              Polkadex can connect to all the favourite trading bots
+              of traders and work seamless, enabling trades to implement
+              multiple trading strategies.
             </p>
           </div>
           <div>
             <img src="/img/icons/IDO.svg" alt="Block speed icon" />
             <span> Polkadex IDO pallet </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              Polkadex IDO pallet allows token projects to create ERC-20 like
+              token with built in support for parachain transfers and one click listing
+              in Polkadex Orderbook. It also helps teams to raise funds and conducts IDOs
+              in decentralized manner.
             </p>
           </div>
           <div>
             <img src="/img/icons/fiat.svg" alt="Block speed icon" />
             <span> Polkadex Fiat </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              Polkadex supports fiat currencies in Polkadex Orderbook,
+              traders can swipe credit card to buy bitcoin.
             </p>
           </div>
           <div>
             <img src="/img/icons/kyc.svg" alt="Block speed icon" />
             <span> Decentralized KYC Option </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              At Polkadex, we believe in trader's privacy hence we have
+              decentralized KYC for traders where, traders store their data
+              on their wallets instead of us.
             </p>
           </div>
           <div>
             <img src="/img/icons/nft.svg" alt="Block speed icon" />
             <span> Polkadex NFTs </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              Polkadex NFT will be lauched shortly after mainnet that gamify
+              the trading ecosystem in Polkadex.
             </p>
           </div>
           <div>
             <img src="/img/icons/token.svg" alt="Block speed icon" />
             <span> New Token Generation </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              Tokens generated in Polkadex have native support for cross chain transfers
+              to other parachains and other networks connected to Polkadex. It eliminates
+              the need for teams to conduct expensive audits and time delay for releasing
+              tokens.
             </p>
           </div>
           <div>
             <img src="/img/icons/liquidity.svg" alt="Block speed icon" />
             <span> High liquidity </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              With the help of decentralized KYC, Polkadex enables institutional liquidity
+              on Polkadex, just like liquidity sources of any other centralized exchange.
             </p>
           </div>
           <div>
             <img src="/img/icons/upgrade.svg" alt="Block speed icon" />
             <span> Forkless Upgrade </span>
             <p>
-              Libero adipisci error voluptatem sint quia. Doloremque mollitia
-              atque veritatis in. Beatae eos voluptatem illum id. Aperiam
-              officiis non.
+              Polkadex can be upgraded without hardforking to provide support for new features,
+              bridges to new blockchains, fix bugs and improve performance.
             </p>
           </div>
         </S.MoreFeaturesCard>

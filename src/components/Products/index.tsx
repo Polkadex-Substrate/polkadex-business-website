@@ -76,14 +76,13 @@ const Products = () => (
           />
           <S.Card>
             <div>
-              <span>2022 Q1-Q2</span>
+              <span>2021 Q3-Q4</span>
               <h5>Polkadex IDO Platform</h5>
             </div>
 
             <p>
-              Et nostrum distinctio cumque exercitationem iste. In consequuntur
-              totam blanditiis. Neque consequatur praesentium facere ea
-              distinctio.
+              Polkadex IDO Platform allows token projects to create ERC-20 like tokens.
+              Conduct Fund raise and list them on Polkadex exchange with one-click.
             </p>
           </S.Card>
         </S.ColContainer>
@@ -97,14 +96,14 @@ const Products = () => (
           />
           <S.Card>
             <div>
-              <span>2022 Q1-Q2</span>
-              <h5>Polkadex IDO Platform</h5>
+              <span>2021 Q3-Q4</span>
+              <h5>Polkadex Mobile</h5>
             </div>
 
             <p>
-              Et nostrum distinctio cumque exercitationem iste. In consequuntur
-              totam blanditiis. Neque consequatur praesentium facere ea
-              distinctio.
+              Polkadex Mobile allows traders to place, modify and cancel trades from
+              their air-gapped cold wallets and receive funds directly to cold wallet. It shows
+              a new paradigm shift in how traders trade.
             </p>
           </S.Card>
         </S.ColContainer>
