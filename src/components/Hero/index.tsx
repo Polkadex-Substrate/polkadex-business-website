@@ -26,7 +26,7 @@ const Hero = () => {
         <h1>The trading engine for Web3 and DeFi</h1>
         <h2>
           Polkadex is a fully decentralized, peer-to-peer orderbook-based
-          cryptocurrency exchange for the DeFi ecosystem built with Substrate.
+          cryptocurrency exchange for the DeFi ecosystem built on Substrate.
         </h2>
         <PrimaryButton
           content="Testnet Coming Soon"
