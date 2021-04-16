@@ -40,7 +40,7 @@ const Newsletter = () => {
     try {
       await axios({
         method: 'POST',
-        url: 'https://formspree.io/f/xdoyknbg',
+        url: 'https://formspree.io/f/mrgolonn',
         data: inputs,
       });
 
