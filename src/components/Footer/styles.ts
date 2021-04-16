@@ -6,7 +6,7 @@ export const Wrapper = styled.footer`
     max-width: ${theme.grid.container};
   `}
 
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   padding: 3rem 0;
 
   @media screen and (max-width: 1200px) {

@@ -9,9 +9,7 @@ const TokenEconomicsCard = ({
   position,
 }: Props) => (
   <S.Wrapper position={position}>
-    <S.Line>
-      <div />
-    </S.Line>
+    <S.Line />
     <S.ContentContainer>
       <div>
         <span>{percent}%</span>

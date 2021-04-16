@@ -6,12 +6,7 @@ import * as S from './styles';
 const TokenEconomics = () => (
   <S.Wrapper id="tokenEconomics">
     <S.TitleContainer>
-      <Title
-        tag="Token Economics"
-        title="Distribution of"
-        highlight="Tokens"
-        description=""
-      />
+      <Title tag="Token Economics" title="Distribution of" highlight="Tokens" />
     </S.TitleContainer>
     <S.ContentContainer>
       <S.Box>

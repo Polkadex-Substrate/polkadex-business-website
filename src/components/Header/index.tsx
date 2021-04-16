@@ -89,13 +89,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <SecondaryButton
-            content=""
-            icon="doubleArrowRight"
-            href=""
-          />
-        </div>
+        <div />
       </S.BottomContainer>
     </S.Wrapper>
   );

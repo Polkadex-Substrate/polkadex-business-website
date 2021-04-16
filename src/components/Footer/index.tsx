@@ -90,6 +90,9 @@ const Footer = () => (
           <li>
             <a href="/">Terms</a>
           </li>
+          <li>
+            <a href="/">Privacy Policy</a>
+          </li>
         </ul>
       </S.Col>
       <S.Col>

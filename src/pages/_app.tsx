@@ -31,10 +31,7 @@ function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <Head>
           <title>Polkadex</title>
-          <meta
-            name="description"
-            content="A fully decentralized, peer-peer, orderbook based cryptocurrency exchange for the Defi ecosystem in Substrate."
-          />
+
           <link
             rel="apple-touch-icon"
             sizes="57x57"
@@ -108,6 +105,23 @@ function App({ Component, pageProps }: AppProps) {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
+          <meta property="og:title" content="Welcome to Polkadex" />
+          <meta
+            property="og:description"
+            content="A fully decentralized, peer-peer, orderbook based cryptocurrency exchange for the Defi ecosystem in Substrate."
+          />
+          <meta
+            property="og:image"
+            content="https://polkadex.trade/twitterCardSummary.jpg"
+          />
+          <meta property="og:url" content="https://polkadex.trade" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:image"
+            content="https://polkadex.trade/twitterCardSummary.jpg"
+          />
+          <meta name="twitter:site" content="@polkadex" />
+          <meta name="twitter:creator" content="@polkadex" />
         </Head>
         <GlobalStyles />
         {maintenance ? <Maintenance /> : <Component {...pageProps} />}
@@ -115,7 +129,7 @@ function App({ Component, pageProps }: AppProps) {
         <PrivacyPopUp
           action={handleAccept}
           visible={state}
-          link="https://polkadex.trade/privacy"
+          link="/"
           description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
         />
       </ThemeProvider>

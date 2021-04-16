@@ -11,7 +11,6 @@ const Team = () => (
           tag="Team"
           title="Some of our +20"
           highlight="motivated members"
-          description=""
           position="right"
         />
       </S.TitleWrapper>

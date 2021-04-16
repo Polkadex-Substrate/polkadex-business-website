@@ -5,7 +5,7 @@ const Title = ({
   tag = 'Tag Example',
   title = 'Title Example',
   highlight = 'Highlight Example',
-  description = 'Description Example',
+  description,
   position = 'left',
 }: Props) => (
   <S.Wrapper position={position}>
@@ -13,7 +13,7 @@ const Title = ({
     <h2>
       {title} <strong> {highlight} </strong>
     </h2>
-    <p>{description}</p>
+    {!!description && <p>{description}</p>}
   </S.Wrapper>
 );
 

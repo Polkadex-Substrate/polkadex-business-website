@@ -38,7 +38,7 @@ export const Wrapper = styled.div<Partial<Props>>`
 
 export const Line = styled.div`
   margin-right: 1.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -48,29 +48,14 @@ export const Line = styled.div`
   @media screen and (min-width: 1000px) {
     display: block;
   }
-  ::before {
-    position: absolute;
-    margin-top: -0.5rem;
-    content: '';
-    width: 2rem;
-    height: 2rem;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4rem;
-  }
+
   ::after {
     position: absolute;
     margin-top: 0.8rem;
     content: '';
     width: 1px;
     background: white;
-    height: 9em;
-  }
-
-  & div {
-    width: 1rem;
-    height: 1rem;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 2rem;
+    height: 9rem;
   }
 `;
 
