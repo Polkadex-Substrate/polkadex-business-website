@@ -114,7 +114,6 @@ function App({ Component, pageProps }: AppProps) {
             property="og:image"
             content="https://polkadex.trade/twitterCardSummary.jpg"
           />
-          <meta property="og:url" content="https://polkadex.trade" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
