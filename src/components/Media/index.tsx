@@ -10,7 +10,7 @@ const Media = () => (
         tag="Media"
         title="Polkadex"
         highlight="News"
-        description="Libero adipisci error voluptatem sint quia libero"
+        description="The latest and greated news of Polkadex"
       />
     </S.TitleContainer>
     <S.ContentContainer>

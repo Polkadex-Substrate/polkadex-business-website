@@ -8,7 +8,7 @@ import { theme } from 'styles/theme';
 
 import Maintenance from './maintenance';
 
-const maintenance = true;
+const maintenance = false;
 
 function App({ Component, pageProps }: AppProps) {
   const [state, setState] = useState(false);

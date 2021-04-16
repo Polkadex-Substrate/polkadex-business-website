@@ -91,9 +91,9 @@ const Header = () => {
         </div>
         <div>
           <SecondaryButton
-            content="Polkadex Testnet"
+            content=""
             icon="doubleArrowRight"
-            href="http://testnet.polkadex.trade"
+            href=""
           />
         </div>
       </S.BottomContainer>
