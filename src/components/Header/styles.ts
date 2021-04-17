@@ -20,11 +20,11 @@ export const MenuWrapper = styled.div`
 
   position: absolute;
   top: 0;
-  right: 3%;
+  right: 1%;
   cursor: pointer;
   display: none;
-  z-index: 4;
-  padding: 1.5rem;
+  z-index: 10;
+  padding: 1rem;
 
   :hover {
     opacity: 0.6;
@@ -101,7 +101,7 @@ export const Column = styled.div`
   }
 `;
 
-export const TopContainer = styled.div<HeaderProps>`
+export const TopContainer = styled.div`
   position: relative;
 
   @media screen and (min-width: 640px) {
@@ -109,6 +109,26 @@ export const TopContainer = styled.div<HeaderProps>`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+  }
+
+  &.sticky {
+    ${({ theme }) => css`
+      max-width: ${theme.grid.container};
+    `}
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+    background: rgba(0, 0, 0, 0.65);
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 5;
+    border-radius: 0 0 2rem 2rem;
   }
 
   @media screen and (max-width: 1200px) {
@@ -121,8 +141,8 @@ export const TopContainer = styled.div<HeaderProps>`
 
       ${Container} {
         :nth-child(2) {
-          position: absolute;
-          top: 10%;
+          position: fixed;
+          top: 0;
           width: 100%;
           display: block;
           border-radius: 1rem;
@@ -162,9 +182,6 @@ export const TopContainer = styled.div<HeaderProps>`
         }
       }
     }
-  }
-  &.onScroll {
-    background: yellow;
   }
 `;
 

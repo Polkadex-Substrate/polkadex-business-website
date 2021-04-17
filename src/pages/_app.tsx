@@ -110,6 +110,7 @@ function App({ Component, pageProps }: AppProps) {
             property="og:description"
             content="A fully decentralized, peer-peer, orderbook based cryptocurrency exchange for the Defi ecosystem in Substrate."
           />
+          <meta property="og:url" content="https://www.polkadex.trade" />
           <meta
             property="og:image"
             content="https://polkadex.trade/twitterCardSummary.jpg"

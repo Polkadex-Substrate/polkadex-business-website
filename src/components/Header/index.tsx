@@ -2,16 +2,36 @@ import { PrimaryButton, SecondaryButton } from 'components/Button';
 import Dropdown from 'components/Dropdown';
 import Icon from 'components/Icon';
 import Logo from 'components/Logo';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import * as S from './styles';
 
 const Header = () => {
-  const [state, setState] = useState(false);
+  useEffect(() => {
+    const header = document.getElementById('topHeader');
+    const sticky = header.offsetTop;
+
+    const scrollCallback = () => {
+      if (window.pageYOffset > sticky + 190) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    };
+
+    window.addEventListener('scroll', scrollCallback);
+
+    return () => {
+      window.removeEventListener('scroll', scrollCallback);
+    };
+  }, []);
+
+  const toogle = () =>
+    document.querySelector('#topHeader').classList.toggle('show');
 
   return (
     <S.Wrapper>
-      <S.TopContainer active={state} className={`${state ? 'show' : ''}`}>
+      <S.TopContainer id="topHeader">
         <S.Container>
           <Logo size="Medium" />
         </S.Container>
@@ -55,7 +75,7 @@ const Header = () => {
             />
           </S.Column>
         </S.Container>
-        <S.MenuWrapper onClick={() => setState(!state)}>
+        <S.MenuWrapper onClick={toogle}>
           <svg width="26" height="26" viewBox="0 0 100 100">
             <path
               className="line line1"
