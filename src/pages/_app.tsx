@@ -113,12 +113,12 @@ function App({ Component, pageProps }: AppProps) {
           <meta property="og:url" content="https://www.polkadex.trade" />
           <meta
             property="og:image"
-            content="https://polkadex.trade/twitterCardSummary.jpg"
+            content="https://polkadex.trade/twitterCardImage.jpg"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
-            content="https://polkadex.trade/twitterCardSummary.jpg"
+            content="https://polkadex.trade/twitterCardImage.jpg"
           />
           <meta name="twitter:site" content="@polkadex" />
           <meta name="twitter:creator" content="@polkadex" />
