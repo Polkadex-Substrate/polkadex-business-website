@@ -140,6 +140,9 @@ export const TopContainer = styled.div`
       padding: 1rem 0;
 
       ${Container} {
+        :nth-child(1) {
+          padding: 0 2rem;
+        }
         :nth-child(2) {
           position: fixed;
           top: 0;

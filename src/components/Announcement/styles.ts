@@ -7,7 +7,7 @@ export const Wrapper = styled.section<VisibilityProps>`
     max-width: ${theme.grid.container};
     display: ${visible ? 'block' : 'none'};
   `}
-  margin: 1.5rem auto;
+  margin: 1.2rem auto 0 auto;
 
   @media screen and (max-width: 1200px) {
     padding: 1.5rem;
