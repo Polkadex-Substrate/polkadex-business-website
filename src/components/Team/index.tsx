@@ -97,7 +97,7 @@ const Team = () => (
         ]}
       />
       <TeamCard
-        position="Community Manager"
+        position="Lead Community Manager"
         image="francisDufour"
         name="Francis Dufour"
         socialMedia={[
