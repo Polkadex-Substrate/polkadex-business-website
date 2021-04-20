@@ -81,6 +81,17 @@ const Team = () => (
         ]}
       />
       <TeamCard
+        position="Advisor"
+        image="sherwinPhotography"
+        name="Sherwin Lee"
+        socialMedia={[
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/sherwin-lee-89735b153/',
+          },
+        ]}
+      />
+      <TeamCard
         position="Legal Counsel"
         image="zhiPhotography"
         name="Zhi Hao Loy"
