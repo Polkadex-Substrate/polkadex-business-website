@@ -23,10 +23,8 @@ export const Wrapper = styled.div`
     img {
       width: 100%;
       transform-origin: 50% 65%;
-      transition: transform 3s, filter 3s ease-in-out;
-      filter: brightness(150%);
+      transition: transform 3s ease-in-out;
       :hover {
-        filter: brightness(100%);
         transform: scale(1.15);
       }
     }
