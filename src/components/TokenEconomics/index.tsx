@@ -24,7 +24,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="1,800,000"
-          description="20% initial unlocked after 12 months of mainnet launch, and remaining vested quarterly"
+          description="20% initial unlocked 12 months after the Mainnet launch and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Seed round"
@@ -40,7 +40,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="1,400,000"
-          description="20% initial , and remaining vested quarterly"
+          description="20% initial and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Strategic round"
@@ -56,7 +56,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="1,600,000"
-          description="25% initial , and remaining vested quarterly"
+          description="25% initial and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Private round"
@@ -72,7 +72,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="2,038,600"
-          description="30% initial , and remaining vested quarterly"
+          description="30% initial and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Treasury"
@@ -88,7 +88,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="8,200,000"
-          description="Exchange Listing, Governance (locked in Treasury)"
+          description="Exchange Listings and Governance (locked in Treasury)"
         />
         <TokenEconomicsCard
           title="Liquidity Mining"
@@ -120,7 +120,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="1,200,000"
-          description="10% initial release after 6 months of mainet launch , and remaining vested quaterly"
+          description="10% initial release 6 months after the Mainnet launch and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Marketing, Ecosystem and Partnerships"
@@ -136,7 +136,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="1,361,400"
-          description="20% initial , and remaining vested quaterly"
+          description="20% initial and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Community Round"

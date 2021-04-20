@@ -9,8 +9,8 @@ const Team = () => (
       <S.TitleWrapper>
         <Title
           tag="Team"
-          title="Some of our +20"
-          highlight="motivated members"
+          title="Part of our team"
+          highlight="of 20+ motivated members"
           position="right"
         />
       </S.TitleWrapper>

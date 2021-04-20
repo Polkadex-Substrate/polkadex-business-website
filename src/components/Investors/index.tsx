@@ -9,7 +9,7 @@ const Investors = () => (
       <Title
         title="Strategic"
         highlight="Investors"
-        description="The early birds who supported, funded and helped us reach where we are now "
+        description="The early backers who supported and funded Polkadex helping us reach our goals and aim even higher"
         tag="Supported & Funded by"
       />
     </S.TitleContainer>

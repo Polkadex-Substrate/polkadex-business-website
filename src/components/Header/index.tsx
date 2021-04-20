@@ -69,7 +69,7 @@ const Header = () => {
               link="https://polkadex.medium.com/"
             />
             <PrimaryButton
-              content="Join in Telegram"
+              content="Join on Telegram"
               icon="telegram"
               href="https://t.me/Polkadex"
             />

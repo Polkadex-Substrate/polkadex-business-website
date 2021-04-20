@@ -8,7 +8,7 @@ const Roadmap = () => (
     <S.TitleContainer>
       <Title
         tag="Roadmap"
-        description="We start a new journey with no return and now we do not think to stop"
+        description="We started our journey with the idea of bringing the best DeFi experience to users and keep moving closer to our goal with each step"
         title="Polkadex"
         highlight="Journey"
         position="center"

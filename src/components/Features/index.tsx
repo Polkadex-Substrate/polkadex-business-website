@@ -23,9 +23,9 @@ const Features = () => (
           </h4>
           <S.FeaturedParagraph>
             Trustless cross-chain bridges help to bring any blockchain token to
-            Polkadex in a non-custodial and trustless manner. It function
+            Polkadex in a non-custodial and trustless manner. It functions
             through Parachain with Polkadot network and Snowfork with Ethereum
-            network. Polkadex is built for the future, making it possible to
+            network. Polkadex is built for the future making it possible to
             integrate with other liquidity providers using forkless upgrades. We
             do not have access to user funds or smart contract keys.
           </S.FeaturedParagraph>
@@ -73,13 +73,14 @@ const Features = () => (
         <S.BotsWrapper>
           <h4>On-Chain Trading Bots</h4>
           <S.FeaturedParagraph>
-            Polkadex enables HFT through trading bots for both retail and
-            institutional investors. Zero cancellation fees optimized through
-            unique architecture allow dynamic entry and exit based on the market
-            situation, incentivized API endpoints for both trading bot companies
-            and liquidity providers and eliminate front-running of orders by
-            paying high gas fees, a problem that plagues traditional
-            decentralized exchanges.
+            Trading bots on Polkadex bring High-Frequency Trading (HFT) to both
+            retail and institutional investors. Zero cancellation fees allow
+            traders to enter and exit the markets in a dynamic fashion based on
+            the market situation and incentivize API endpoints for both trading
+            bot companies and liquidity providers. Moreover the unique
+            architecture of Polkadex eliminates such bottlenecks of traditional
+            decentralized exchanges as front-running of orders by paying higher
+            gas fees. decentralized exchanges.
           </S.FeaturedParagraph>
           <PrimaryButton
             icon="doubleArrowRight"
@@ -98,11 +99,15 @@ const Features = () => (
             State Commits <span> V2 </span>
           </h2>
           <p>
-            Polkadex Orderbook implements a layer two Trusted Execution Environment (TEE)
-            on top of Polkadex that allows an operator to maintain orderbook and the results produced by the TEE contains a cryptographic proof.
-            In the event of tampering, the blockchain can invalidate the proof thereby not accepting the tampered state
-            submitted by the Operator. The funds of the user always stays in the native blockchain and is controlled by
-            the user's private key. It ensures that only the trader's private key can initiate a balance transfer.
+            Polkadex Orderbook implements a Layer 2 Trusted Execution
+            Environment (TEE) on top of Polkadex that allows an operator to
+            maintain the Orderbook. The results produced by the TEE contain
+            cryptographic proof. In the event of tampering the blockchain can
+            invalidate the proof thereby not accepting the tampered state
+            submitted by the Operator. The users&apos; funds always stay in the
+            native blockchain and are controlled by the user. In this way
+            Polkadex ensures that only the trader&apos;s private key can
+            initiate a balance transfer.
           </p>
         </div>
         <div>
@@ -118,10 +123,11 @@ const Features = () => (
         <S.MoreFeaturesInfo>
           <h4>Unmatched performance</h4>
           <S.FeaturedParagraph>
-            Polkadex scales to 500,000 trades per second and sub millisecond latency
-            with the help of the latest leaps in technological development. It enables
-            Polkadex to function exactly the same as a centralized exchange and support
-            High Frequency Trading without sacrificing security of user funds.
+            Polkadex scales to 500K transactions per second and sub-millisecond
+            latency. The latest leaps in technological development enable
+            Polkadex to keep the advantages of centralized exchanges and at the
+            same time support High-Frequency Trading maintaining the highest
+            level of security of user funds.
           </S.FeaturedParagraph>
           <PrimaryButton
             icon="doubleArrowRight"
@@ -142,11 +148,11 @@ const Features = () => (
         <S.MoreFeaturesCard>
           <div>
             <img src="/img/icons/speed.svg" alt="Block speed icon" />
-            <span> High Frequency Trading </span>
+            <span> High-Frequency Trading </span>
             <p>
-              Polkadex can connect to all the favourite trading bots
-              of traders and work seamless, enabling trades to implement
-              multiple trading strategies.
+              Polkadex can connect to all the favourite trading bots of the
+              community seamlessly enabling users to implement multiple trading
+              strategies.
             </p>
           </div>
           <div>
@@ -154,60 +160,61 @@ const Features = () => (
             <span> Polkadex IDO pallet </span>
             <p>
               Polkadex IDO pallet allows token projects to create ERC-20 like
-              token with built in support for parachain transfers and one click listing
-              in Polkadex Orderbook. It also helps teams to raise funds and conducts IDOs
-              in decentralized manner.
+              tokens with built-in support for parachain transfers and one-click
+              listing in the Polkadex Orderbook. It also helps teams to raise
+              funds through IDOs in a decentralized manner.
             </p>
           </div>
           <div>
             <img src="/img/icons/fiat.svg" alt="Block speed icon" />
             <span> Polkadex Fiat </span>
             <p>
-              Polkadex supports fiat currencies in Polkadex Orderbook,
-              traders can swipe credit card to buy bitcoin.
+              Polkadex supports fiat currencies in the Polkadex Orderbook.
+              Traders can easily use a credit card to buy crypto.
             </p>
           </div>
           <div>
             <img src="/img/icons/kyc.svg" alt="Block speed icon" />
             <span> Decentralized KYC Option </span>
             <p>
-              At Polkadex, we believe in trader's privacy hence we have
-              decentralized KYC for traders where, traders store their data
-              on their wallets instead of us.
+              At Polkadex we believe that traders deserve privacy. Hence we have
+              decentralized the KYC process for our users offering to store
+              their data on wallets instead of our platform.
             </p>
           </div>
           <div>
             <img src="/img/icons/nft.svg" alt="Block speed icon" />
             <span> Polkadex NFTs </span>
             <p>
-              Polkadex NFT will be lauched shortly after mainnet that gamify
-              the trading ecosystem in Polkadex.
+              Polkadex NFTs will gamify our trading ecosystem and make it more
+              fun for users. We aim to provide this functionality shortly after
+              the Mainnet launch.
             </p>
           </div>
           <div>
             <img src="/img/icons/token.svg" alt="Block speed icon" />
             <span> New Token Generation </span>
             <p>
-              Tokens generated in Polkadex have native support for cross chain transfers
-              to other parachains and other networks connected to Polkadex. It eliminates
-              the need for teams to conduct expensive audits and time delay for releasing
-              tokens.
+              Tokens generated in Polkadex have native support for cross-chain
+              transfers to other parachains and networks connected to our
+              ecosystem. Thus we eliminate the need to conduct expensive audits
+              and delays in new token releases for the project teams.
             </p>
           </div>
           <div>
             <img src="/img/icons/liquidity.svg" alt="Block speed icon" />
             <span> High liquidity </span>
             <p>
-              With the help of decentralized KYC, Polkadex enables institutional liquidity
-              on Polkadex, just like liquidity sources of any other centralized exchange.
+              Polkadex enables institutional liquidity on the platform with the
+              help of a decentralized KYC system.
             </p>
           </div>
           <div>
             <img src="/img/icons/upgrade.svg" alt="Block speed icon" />
             <span> Forkless Upgrade </span>
             <p>
-              Polkadex can be upgraded without hardforking to provide support for new features,
-              bridges to new blockchains, fix bugs and improve performance.
+              Polkadex upgrades for new features bridges to new blockchains bug
+              fixes and performance improvements do not require hard forks.
             </p>
           </div>
         </S.MoreFeaturesCard>

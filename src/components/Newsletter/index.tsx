@@ -64,8 +64,8 @@ const Newsletter = () => {
   return (
     <S.Wrapper id="newsletter">
       <S.Container>
-        <h3>Subscribe to the newsletter</h3>
-        <p>Hear about Polkadex updates and events !</p>
+        <h3>Subscribe to our newsletter</h3>
+        <p>Stay up to date with Polkadex news!</p>
         <form onSubmit={handleOnSubmit}>
           <S.FormWrapper>
             <input
