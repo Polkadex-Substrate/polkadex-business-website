@@ -81,7 +81,7 @@ const Team = () => (
         ]}
       />
       <TeamCard
-        position="Advisor"
+        position="Strategic Advisor"
         image="sherwinPhotography"
         name="Sherwin Lee"
         socialMedia={[
