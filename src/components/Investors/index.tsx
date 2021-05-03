@@ -44,7 +44,7 @@ const Investors = () => (
         <InvestorCard name="Kenetic" link="https://kenetic.capital/" />
         <InvestorCard name="LDCapital" link="https://ldcap.com/" />
         <InvestorCard name="M6" link="http://waterdrip.io/" />
-        <InvestorCard name="QCPCapital" link="https://qcp.capital/" />
+        <InvestorCard name="QSN" link="https://qsnholdings.com/?lang=en" />
         <InvestorCard name="YBBFoundation" link="http://www.ybb.io/" />
 
         <InvestorCard name="GBIC" link="http://gbic.io/" />
