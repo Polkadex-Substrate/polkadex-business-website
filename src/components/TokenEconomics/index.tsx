@@ -91,7 +91,7 @@ const TokenEconomics = () => (
           description="Exchange Listings and Governance (locked in Treasury)"
         />
         <TokenEconomicsCard
-          title="Liquidity Mining"
+          title="Parachain auction"
           percent="10"
           position={{
             horizontal: {
@@ -104,7 +104,6 @@ const TokenEconomics = () => (
             },
           }}
           tokens="2,000,000"
-          description="For one year"
         />
         <TokenEconomicsCard
           title="Advisors"

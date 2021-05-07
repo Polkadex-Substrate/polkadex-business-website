@@ -16,7 +16,7 @@ const TokenEconomicsCard = ({
       </div>
       <div>
         <h6>{title}</h6>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
         <span>{tokens} tokens</span>
       </div>
     </S.ContentContainer>

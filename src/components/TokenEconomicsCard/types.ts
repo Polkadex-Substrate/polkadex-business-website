@@ -1,7 +1,7 @@
 type Props = {
   title: string;
   percent: string;
-  description: string;
+  description?: string;
   tokens: string;
   position: {
     horizontal: { side: 'left' | 'right'; distance: number };
