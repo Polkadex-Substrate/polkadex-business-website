@@ -16,8 +16,7 @@ const Roadmap = () => (
     </S.TitleContainer>
     <S.RoadContainer>
       <RoadmapCard
-        title="Initiation"
-        time="Q3 2020"
+        title="Q3 2020"
         alignRight
         position={{
           horizontal: {
@@ -26,7 +25,7 @@ const Roadmap = () => (
           },
           vertical: {
             side: 'top',
-            distance: -10.5,
+            distance: -9.5,
           },
         }}
         content={[
@@ -36,8 +35,7 @@ const Roadmap = () => (
         ]}
       />
       <RoadmapCard
-        title="Testnet"
-        time="Q4 2020"
+        title="Q4 2020"
         position={{
           horizontal: {
             side: 'right',
@@ -45,24 +43,23 @@ const Roadmap = () => (
           },
           vertical: {
             side: 'top',
-            distance: 4,
+            distance: 5,
           },
         }}
         content={[
           { title: 'Website Launch', status: true },
           { title: 'Whitepaper Release', status: true },
-          { title: 'Testnet Launch', status: true },
+          { title: 'Testnet V1.0 Launch', status: true },
           { title: 'SAFT based Token PreSale', status: true },
         ]}
       />
       <RoadmapCard
-        title="Mainnet"
-        time="Q1-Q2 2021"
+        title="Q1-Q2 2021"
         alignRight
         position={{
           horizontal: {
             side: 'left',
-            distance: 13,
+            distance: 3,
           },
           vertical: {
             side: 'top',
@@ -72,16 +69,16 @@ const Roadmap = () => (
         content={[
           { title: 'Security Audit', timeline: 'June 2021' },
           { title: 'Public Sale', timeline: 'April 2021' },
-          { title: 'Mainnet Launch', status: false },
+          { title: 'Testnet V2.0 Launch', timeline: 'February 2021' },
+          { title: 'Testnet V3.0 Launch', timeline: 'May/June 2021' },
         ]}
       />
       <RoadmapCard
-        title="Bridging"
-        time="Q3-Q4 2021"
+        title="Q3-Q4 2021"
         position={{
           horizontal: {
             side: 'right',
-            distance: 12,
+            distance: 3,
           },
           vertical: {
             side: 'bottom',
@@ -92,11 +89,11 @@ const Roadmap = () => (
           { title: 'Parachain Development', status: false },
           { title: 'Polkadot Crowdfunding', status: false },
           { title: 'Parachain Auction', status: false },
+          { title: 'Mainnet Launch', timeline: 'August/September 2021' },
         ]}
       />
       <RoadmapCard
-        title="Scale Up"
-        time="Q1-Q3 2022"
+        title="Q1-Q3 2022"
         invert
         alignRight
         position={{

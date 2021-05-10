@@ -2,7 +2,6 @@ import * as S from './styles';
 import Props from './types';
 
 const RoadmapCard = ({
-  time,
   title = 'Example',
   content,
   position,
@@ -15,7 +14,6 @@ const RoadmapCard = ({
     </S.Line>
     <div>
       <S.Title>
-        <span>{time}</span>
         <p>{title}</p>
       </S.Title>
       <S.Content>

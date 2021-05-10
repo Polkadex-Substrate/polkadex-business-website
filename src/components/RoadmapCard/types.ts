@@ -5,7 +5,6 @@ type Item = {
 };
 
 type Props = {
-  time: string;
   title?: string;
   content: Item[];
   alignRight?: boolean;
