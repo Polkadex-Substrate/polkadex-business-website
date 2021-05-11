@@ -41,7 +41,7 @@ const Header = () => {
               <li>
                 <Dropdown title="Products">
                   <S.ProductLink>
-                    <a href="https://docs.polkadex.trade/introductionOrderbook">
+                    <a href="https://docs.polkadex.trade/orderbookIntroduction">
                       Orderbook
                     </a>
                   </S.ProductLink>
