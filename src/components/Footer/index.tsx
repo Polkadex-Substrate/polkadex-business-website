@@ -63,7 +63,7 @@ const Footer = () => (
           <h5>Products</h5>
           <ul>
             <li>
-              <a href="https://docs.polkadex.trade/introductionOrderbook">
+              <a href="https://docs.polkadex.trade/orderbookIntroduction">
                 Polkadex Orderbook
               </a>
             </li>

@@ -32,7 +32,7 @@ const Features = () => (
           <PrimaryButton
             icon="doubleArrowRight"
             content="Learn More"
-            href="https://docs.polkadex.trade/polkadexIntegrationsandBridges"
+            href="https://docs.polkadex.trade/polkadexNetworkEcosystemParachain"
             background="none"
           />
           <S.BridgePlanned>
@@ -85,7 +85,7 @@ const Features = () => (
           <PrimaryButton
             icon="doubleArrowRight"
             content="Learn More"
-            href="https://docs.polkadex.trade/polkadexNodeOperator"
+            href="https://docs.polkadex.trade/orderbookBenefits"
             background="none"
           />
         </S.BotsWrapper>
@@ -132,7 +132,7 @@ const Features = () => (
           <PrimaryButton
             icon="doubleArrowRight"
             content="Learn More"
-            href="https://docs.polkadex.trade/introductionOrderbook"
+            href="https://docs.polkadex.trade/orderbookIntroduction"
             background="none"
           />
         </S.MoreFeaturesInfo>
