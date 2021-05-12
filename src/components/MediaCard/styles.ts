@@ -4,8 +4,12 @@ export const Wrapper = styled.a`
   ${({ theme }) => css`
     color: ${theme.colors.text};
     background: ${theme.colors.gradientBackground};
+    transition: ${theme.transition.default};
   `}
   border-radius: 2rem;
+  :hover {
+    transform: translateY(-0.5rem);
+  }
 `;
 
 export const Col = styled.div`
@@ -44,6 +48,7 @@ export const Col = styled.div`
 
       & span {
         opacity: 0.5;
+        text-transform: capitalize;
       }
 
       & img {

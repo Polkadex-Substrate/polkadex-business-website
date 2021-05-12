@@ -9,8 +9,23 @@ export const Wrapper = styled.section`
     padding: 2rem;
   }
 `;
+
+export const Col = styled.div``;
+
 export const TitleContainer = styled.div`
-  margin: 0 auto 4rem auto;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    & ${Col} {
+      margin-top: 2rem;
+    }
+  }
 `;
 export const ContentContainer = styled.div`
   display: grid;
