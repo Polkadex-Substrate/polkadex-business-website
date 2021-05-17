@@ -1,25 +1,24 @@
 import { PrimaryButton } from 'components/Button';
-import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import * as S from './styles';
 
-const variants = {
-  hidden: {
-    transform: 'rotateX(50deg) rotateZ(-30deg)',
-    transition: {
-      duration: 1,
-    },
-  },
-  visible: {
-    transform: 'rotateX(0) rotateZ(0)',
-    transition: {
-      duration: 1.5,
-    },
-  },
-};
-
 const Hero = () => {
+  const ImageHeroRef = useRef<HTMLImageElement>();
+
+  const handleScroll = () => {
+    const scrollY = window.innerHeight * 0.05;
+    const scrollTop = ImageHeroRef.current.getBoundingClientRect().top;
+
+    if (scrollTop - scrollY < 0) ImageHeroRef.current.classList.add('active');
+    else ImageHeroRef.current.classList.remove('active');
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <S.Wrapper id="hero">
       <S.Container>
@@ -52,11 +51,8 @@ const Hero = () => {
         </S.Row>
       </S.Container>
       <S.Container>
-        <motion.img
-          initial="hidden"
-          variants={variants}
-          // ref={ref}
-          // animate={controls}
+        <img
+          ref={ImageHeroRef}
           src="/img/polkadexExchange.svg"
           alt="Polkadex Interface"
         />

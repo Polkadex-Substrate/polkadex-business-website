@@ -39,12 +39,18 @@ export const Container = styled.div`
     perspective-origin: 50% 50%;
     overflow: hidden;
     text-align: center;
-
+    transform-style: preserve-3d;
+    transform: rotateX(-50%) rotateZ(-50%);
     & img {
       width: 100%;
       max-width: 130rem;
-      transform-style: preserve-3d;
       margin-left: 8rem;
+      transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: rotateX(50deg) rotateZ(-30deg) translate3d(-0px, 0px, -8rem);
+
+      &.active {
+        transform: rotateX(0) rotateZ(0);
+      }
     }
   }
 `;

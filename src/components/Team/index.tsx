@@ -118,6 +118,17 @@ const Team = () => (
           },
         ]}
       />
+      <TeamCard
+        position="Senior Rust Engineer"
+        image="mambisiPhotography"
+        name="Mambisi Zempare"
+        socialMedia={[
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/mambisi/',
+          },
+        ]}
+      />
     </S.Row>
   </S.Wrapper>
 );
