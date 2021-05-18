@@ -13,13 +13,11 @@ const Investors = () => (
         tag="Supported & Funded by"
       />
     </S.TitleContainer>
-
     <S.Container>
       <S.Row>
         <InvestorCard name="AU21Capital" link="http://au21.capital/" />
         <InvestorCard name="BlockDreamFund" link="https://qcp.capital/" />
         <InvestorCard name="DAG" link="http://www.dagventures.com/" />
-
         <InvestorCard name="BTXCapital" link="https://btx.capital/" />
         <InvestorCard name="Cluster" link="https://www.cluster.vc/" />
         <InvestorCard name="MasterVentures" link="https://master.ventures/" />
@@ -28,7 +26,6 @@ const Investors = () => (
       <S.Row>
         <InvestorCard name="CMSHolding" link="http://cmsholdings.io/" />
         <InvestorCard name="BlockSync" link="https://www.blocksync.com/" />
-
         <InvestorCard name="ExistentialCapital" link="https://exst.vc/" />
         <InvestorCard name="GBV" link="https://gbv.capital/" />
         <InvestorCard
@@ -46,8 +43,10 @@ const Investors = () => (
         <InvestorCard name="M6" link="http://waterdrip.io/" />
         <InvestorCard name="QSN" link="https://qsnholdings.com/?lang=en" />
         <InvestorCard name="YBBFoundation" link="http://www.ybb.io/" />
-
         <InvestorCard name="GBIC" link="http://gbic.io/" />
+      </S.Row>
+      <S.Row>
+        <InvestorCard name="GD10Ventures" link="https://www.gd10.ventures" />
       </S.Row>
     </S.Container>
   </S.Wrapper>
