@@ -109,7 +109,7 @@ const Team = () => (
       />
       <TeamCard
         position="Lead Community Manager"
-        image="francisDufour"
+        image="francisPhotography"
         name="Francis Dufour"
         socialMedia={[
           {
@@ -126,6 +126,17 @@ const Team = () => (
           {
             name: 'linkedin',
             link: 'https://www.linkedin.com/in/mambisi/',
+          },
+        ]}
+      />
+      <TeamCard
+        position="Senior Rust Engineer"
+        image="frankPhotography"
+        name="Frank Li"
+        socialMedia={[
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/frank-li-b6b388203/',
           },
         ]}
       />
