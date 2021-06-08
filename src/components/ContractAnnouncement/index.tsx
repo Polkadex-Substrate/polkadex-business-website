@@ -10,7 +10,6 @@ const ContractAnnouncement = ({ contract, href }: Props) => (
       <strong>{contract}</strong>
     </p>
     <PrimaryButton
-      icon="doubleArrowRight"
       href={href}
       content="See at Etherscan"
       background="secondary"

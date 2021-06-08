@@ -16,7 +16,7 @@ const PrivacyPopUp = ({
         <a href={link}>Privacy Policy</a>
       </p>
     </div>
-    <FormButton icon="doubleArrowRight" content="Close" action={action} />
+    <FormButton content="Close" action={action} />
   </S.Wrapper>
 );
 

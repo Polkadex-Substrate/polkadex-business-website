@@ -1,5 +1,7 @@
 import { PrimaryButton } from 'components/Button';
-import React, { useEffect, useRef, useState } from 'react';
+import { Ethereum, Polkadot } from 'components/Icons';
+import Image from 'next/image';
+import React, { useEffect, useRef } from 'react';
 
 import * as S from './styles';
 
@@ -27,23 +29,19 @@ const Hero = () => {
           Polkadex is a fully decentralized peer-to-peer orderbook-based
           cryptocurrency exchange for the DeFi ecosystem built on Substrate.
         </h2>
-        <PrimaryButton
-          content="Testnet Coming Soon"
-          href="#newsletter"
-          icon="doubleArrowRight"
-        />
+        <PrimaryButton content="Testnet Coming Soon" href="#newsletter" />
         <S.Row>
           <span>Support Chains</span>
           <S.Col>
             <S.Card>
               <S.PlannedIcon>
-                <img src="/img/icons/ethereum.svg" alt="Ethereum Logo" />
+                <Ethereum />
               </S.PlannedIcon>
               Ethereum
             </S.Card>
             <S.Card>
               <S.PlannedIcon>
-                <img src="/img/icons/polkadot.svg" alt="Polkadot Logo" />
+                <Polkadot />
               </S.PlannedIcon>
               Polkadot
             </S.Card>

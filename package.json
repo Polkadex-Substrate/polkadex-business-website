@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate": "yarn plop --plopfile generators/plopfile.js"
+    "generate": "yarn plop --plopfile generators/plopfile.js",
+    "generateIcons": "svgr -d src/components/Icons/ public/img/icons/ --typescript --icon"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/preset-typescript": "^7.13.0",
+    "@svgr/cli": "^5.5.0",
     "@types/react": "^17.0.3",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.21.0",

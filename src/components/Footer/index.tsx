@@ -97,19 +97,34 @@ const Footer = () => (
       </S.Col>
       <S.Col>
         <Icon
-          name="twitter"
+          name="Twitter"
           alt="Twitter Logo"
           link="https://twitter.com/polkadex"
         />
         <Icon
-          name="medium"
+          name="Medium"
           alt="Medium Logo"
           link="https://polkadex.medium.com/"
         />
         <Icon
-          name="telegram"
+          name="Telegram"
           alt="Telegram Logo"
           link="https://t.me/Polkadex"
+        />
+        <Icon
+          name="Youtube"
+          alt="Youtube Logo"
+          link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+        />
+        <Icon
+          name="LinkedIn"
+          alt="Linkedin Logo"
+          link="https://www.linkedin.com/company/69690544"
+        />
+        <Icon
+          name="Reddit"
+          alt="Reddit Logo"
+          link="https://www.reddit.com/r/polkadex"
         />
       </S.Col>
     </S.Row>

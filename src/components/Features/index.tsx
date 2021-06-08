@@ -30,7 +30,6 @@ const Features = () => (
             do not have access to user funds or smart contract keys.
           </S.FeaturedParagraph>
           <PrimaryButton
-            icon="doubleArrowRight"
             content="Learn More"
             href="https://docs.polkadex.trade/polkadexNetworkEcosystemParachain"
             background="none"
@@ -83,7 +82,6 @@ const Features = () => (
             gas fees. decentralized exchanges.
           </S.FeaturedParagraph>
           <PrimaryButton
-            icon="doubleArrowRight"
             content="Learn More"
             href="https://docs.polkadex.trade/orderbookBenefits"
             background="none"
@@ -130,7 +128,6 @@ const Features = () => (
             level of security of user funds.
           </S.FeaturedParagraph>
           <PrimaryButton
-            icon="doubleArrowRight"
             content="Learn More"
             href="https://docs.polkadex.trade/orderbookIntroduction"
             background="none"

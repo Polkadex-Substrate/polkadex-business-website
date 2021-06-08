@@ -68,7 +68,12 @@ export const Content = styled.div`
       ${({ theme }) => css`
         background: ${`${theme.colors.primary}4D`};
         border: ${`1px solid ${theme.colors.primary}`};
+        &.checked {
+          background: ${`${theme.colors.secondaryBackgroundSolid}4D`};
+          border: ${`1px solid ${theme.colors.secondaryBackgroundSolid}`};
+        }
       `}
+
       font-size: 1.1rem;
       text-transform: uppercase;
       font-weight: 600;

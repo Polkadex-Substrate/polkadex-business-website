@@ -1,50 +1,64 @@
+import * as Icons from 'components/Icons';
+
 import * as S from './styles';
 import { ButtonFormProps, ButtonProps } from './types';
 
 export const PrimaryButton = ({
-  icon = 'doubleArrow',
+  icon = 'DoubleArrowRight',
   content = 'Example',
   withOpacity = false,
   href = '#',
   background = 'primary',
-}: ButtonProps) => (
-  <S.PrimaryWrapper
-    href={href}
-    withOpacity={withOpacity}
-    background={background}
-  >
-    <div>
-      <img src={`/img/icons/${icon}.svg`} alt="Icon Description" />
-    </div>
-    {content}
-  </S.PrimaryWrapper>
-);
+}: ButtonProps) => {
+  const IconComponent = Icons[icon];
+
+  return (
+    <S.PrimaryWrapper
+      href={href}
+      withOpacity={withOpacity}
+      background={background}
+    >
+      <div>
+        <IconComponent />
+      </div>
+      {content}
+    </S.PrimaryWrapper>
+  );
+};
 
 export const SecondaryButton = ({
-  icon = 'doubleArrowRight',
+  icon = 'DoubleArrowRight',
   content = 'Example',
   href = '#',
   background = 'none',
-}: ButtonProps) => (
-  <S.SecondaryWrpaper href={href} background={background}>
-    {content}
-    <div>
-      <img src={`/img/icons/${icon}.svg`} alt="Icon Description" />
-    </div>
-  </S.SecondaryWrpaper>
-);
+}: ButtonProps) => {
+  const IconComponent = Icons[icon];
+
+  return (
+    <S.SecondaryWrpaper href={href} background={background}>
+      {content}
+      <div>
+        <IconComponent />
+      </div>
+    </S.SecondaryWrpaper>
+  );
+};
 
 export const FormButton = ({
-  icon = 'doubleArrow',
+  icon = 'DoubleArrowRight',
   content = 'Example',
   action,
   type = 'button',
   disable = false,
-}: ButtonFormProps) => (
-  <S.FormWrapper type={type} onClick={action} disabled={disable}>
-    <div>
-      <img src={`/img/icons/${icon}.svg`} alt="Icon Description" />
-    </div>
-    {content}
-  </S.FormWrapper>
-);
+}: ButtonFormProps) => {
+  const IconComponent = Icons[icon];
+
+  return (
+    <S.FormWrapper type={type} onClick={action} disabled={disable}>
+      <div>
+        <IconComponent />
+      </div>
+      {content}
+    </S.FormWrapper>
+  );
+};

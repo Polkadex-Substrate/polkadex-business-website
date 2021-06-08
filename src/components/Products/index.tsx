@@ -14,7 +14,6 @@ const Products = () => (
       />
       <S.Col>
         <PrimaryButton
-          icon="doubleArrowRight"
           content="Polkadex Orderbook"
           href="https://docs.polkadex.trade/orderbookIntroduction"
           withOpacity

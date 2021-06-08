@@ -79,7 +79,7 @@ const Newsletter = () => {
               required
               value={inputs.email}
             />
-            <FormButton content="Subscribe" icon="send" type="submit" />
+            <FormButton content="Subscribe" icon="Send" type="submit" />
           </S.FormWrapper>
         </form>
         {status.info.error && (

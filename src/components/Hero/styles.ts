@@ -83,11 +83,13 @@ export const Card = styled.div`
 `;
 
 export const PlannedIcon = styled.div`
-  padding: 0.6rem;
   border-radius: 0.9rem;
-  max-width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ${({ theme }) => css`
     background: ${theme.colors.secondaryBackground};
     color: ${theme.colors.text};

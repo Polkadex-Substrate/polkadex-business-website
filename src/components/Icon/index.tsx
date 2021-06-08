@@ -1,14 +1,19 @@
+import * as Icons from 'components/Icons';
+
 import * as S from './styles';
 import Props from './types';
 
 const Icon = ({
-  name = 'twitter',
+  name = 'Twitter',
   alt = 'Icon Description',
   link = '/',
-}: Props) => (
-  <S.Wrapper href={link}>
-    <img src={`/img/icons/${name}.svg`} alt={alt} />
-  </S.Wrapper>
-);
+}: Props) => {
+  const IconComponent = Icons[name];
 
+  return (
+    <S.Wrapper href={link}>
+      <IconComponent />
+    </S.Wrapper>
+  );
+};
 export default Icon;

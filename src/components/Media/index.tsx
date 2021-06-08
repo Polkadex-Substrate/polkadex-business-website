@@ -35,7 +35,6 @@ const Media = () => {
         />
         <S.Col>
           <PrimaryButton
-            icon="doubleArrowRight"
             content="Polkadex News"
             href="https://polkadex.medium.com"
             withOpacity

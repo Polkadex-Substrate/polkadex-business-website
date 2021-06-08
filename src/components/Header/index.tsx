@@ -59,18 +59,33 @@ const Header = () => {
           </S.Column>
           <S.Column>
             <Icon
-              name="twitter"
+              name="Twitter"
               alt="Twitter Logo"
               link="https://twitter.com/polkadex"
             />
             <Icon
-              name="medium"
-              alt="Twitter Logo"
+              name="Medium"
+              alt="Medium Logo"
               link="https://polkadex.medium.com/"
+            />
+            <Icon
+              name="Youtube"
+              alt="Youtube Logo"
+              link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+            />
+            <Icon
+              name="LinkedIn"
+              alt="Linkedin Logo"
+              link="https://www.linkedin.com/company/69690544"
+            />
+            <Icon
+              name="Reddit"
+              alt="Reddit Logo"
+              link="https://www.reddit.com/r/polkadex"
             />
             <PrimaryButton
               content="Join on Telegram"
-              icon="telegram"
+              icon="Telegram"
               href="https://t.me/Polkadex"
             />
           </S.Column>

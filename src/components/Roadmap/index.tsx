@@ -67,10 +67,14 @@ const Roadmap = () => (
           },
         }}
         content={[
-          { title: 'Security Audit', timeline: 'June 2021' },
-          { title: 'Public Sale', timeline: 'April 2021' },
-          { title: 'Testnet V2.0 Launch', timeline: 'February 2021' },
-          { title: 'Testnet V3.0 Launch', timeline: 'May/June 2021' },
+          { title: 'Public Sale', timeline: 'April 2021', status: true },
+          {
+            title: 'Testnet V2.0 Launch',
+            timeline: 'February 2021',
+            status: true,
+          },
+          { title: 'Testnet V3.0 Launch', timeline: 'June/June 2021' },
+          { title: 'Security Audit', timeline: 'July 2021' },
         ]}
       />
       <RoadmapCard
@@ -89,7 +93,7 @@ const Roadmap = () => (
           { title: 'Parachain Development', status: false },
           { title: 'Polkadot Crowdfunding', status: false },
           { title: 'Parachain Auction', status: false },
-          { title: 'Mainnet Launch', timeline: 'August/September 2021' },
+          { title: 'Mainnet Launch', timeline: 'September 2021' },
         ]}
       />
       <RoadmapCard

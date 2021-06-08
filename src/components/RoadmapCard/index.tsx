@@ -20,9 +20,12 @@ const RoadmapCard = ({
         {content &&
           content.map((item) => (
             <div key={item.title}>
-              {item.timeline ? (
-                <span> {item.timeline}</span>
-              ) : (
+              {item.timeline && (
+                <span className={item.status ? 'checked' : ''}>
+                  {item.timeline}
+                </span>
+              )}
+              {item.status && (
                 <img
                   src={`/img/icons/${item.status ? 'selected' : 'waiting'}.svg`}
                   alt="selected icon"
