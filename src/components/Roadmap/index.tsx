@@ -73,7 +73,7 @@ const Roadmap = () => (
             timeline: 'February 2021',
             status: true,
           },
-          { title: 'Testnet V3.0 Launch', timeline: 'June/June 2021' },
+          { title: 'Testnet V3.0 Launch', timeline: 'June 2021' },
           { title: 'Security Audit', timeline: 'July 2021' },
         ]}
       />
