@@ -140,6 +140,29 @@ const Team = () => (
           },
         ]}
       />
+      <TeamCard
+        position="Senior Rust Engineer"
+        image="gabrielPhotography"
+        name="Gabriel Facco de Arruda"
+        socialMedia={[
+          {
+            name: 'linkedin',
+            link:
+              'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
+          },
+        ]}
+      />
+      {/* <TeamCard
+        position="Social Media Manager"
+        image="pabloPhotography"
+        name="Pablo Solanas Martin"
+        socialMedia={[
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/pablosolanasmartin/',
+          },
+        ]}
+      /> */}
     </S.Row>
   </S.Wrapper>
 );
