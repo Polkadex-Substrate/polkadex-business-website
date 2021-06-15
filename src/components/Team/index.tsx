@@ -152,7 +152,7 @@ const Team = () => (
           },
         ]}
       />
-      {/* <TeamCard
+      <TeamCard
         position="Social Media Manager"
         image="pabloPhotography"
         name="Pablo Solanas Martin"
@@ -162,7 +162,7 @@ const Team = () => (
             link: 'https://www.linkedin.com/in/pablosolanasmartin/',
           },
         ]}
-      /> */}
+      />
     </S.Row>
   </S.Wrapper>
 );
