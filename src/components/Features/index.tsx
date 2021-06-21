@@ -79,7 +79,7 @@ const Features = () => (
             bot companies and liquidity providers. Moreover the unique
             architecture of Polkadex eliminates such bottlenecks of traditional
             decentralized exchanges as front-running of orders by paying higher
-            gas fees. decentralized exchanges.
+            gas fees.
           </S.FeaturedParagraph>
           <PrimaryButton
             content="Learn More"
