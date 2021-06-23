@@ -68,18 +68,10 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="/">Polkadex IDO</a>
+              <a href="https://docs.polkadex.trade/IDOPlatform">Polkadex IDO</a>
             </li>
           </ul>
         </div>
-      </S.Col>
-      <S.Col>
-        <h5>Company</h5>
-        <ul>
-          <li>
-            <a href="/">Brand Assets</a>
-          </li>
-        </ul>
       </S.Col>
       <S.Col />
     </S.Row>

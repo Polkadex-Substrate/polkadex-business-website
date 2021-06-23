@@ -31,10 +31,10 @@ export const Row = styled.div`
 
   :first-child {
     padding-bottom: 4rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 
     @media screen and (min-width: 680px) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     & ${Col} {
