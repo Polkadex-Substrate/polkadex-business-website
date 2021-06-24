@@ -15,7 +15,7 @@ const Media = () => {
     try {
       const {
         data: { data },
-      } = await axios.get('https://medium-articles.herokuapp.com/getArticles');
+      } = await axios.get('https://medium-articles.vercel.app/api/getArticles');
       setState(data);
     } catch (e) {
       setError({ status: true, message: e.message });
