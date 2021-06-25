@@ -1,16 +1,20 @@
-import Announcement from 'components/Announcement';
-import ContractAnnouncement from 'components/ContractAnnouncement';
-import Features from 'components/Features';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
-import Hero from 'components/Hero';
-import Investors from 'components/Investors';
-import Media from 'components/Media';
-import Newsletter from 'components/Newsletter';
-import Products from 'components/Products';
-import Roadmap from 'components/Roadmap';
-import Team from 'components/Team';
-import TokenEconomics from 'components/TokenEconomics';
+import {
+  Announcement,
+  ContractAnnouncement,
+  Features,
+  Footer,
+  Header,
+  Hero,
+  Investors,
+  Media,
+  Newsletter,
+  OrderbookProduct,
+  OthersProducts,
+  Partners,
+  Roadmap,
+  Team,
+  TokenEconomics,
+} from 'components';
 
 import * as S from '../styles/home';
 
@@ -26,10 +30,11 @@ export default function Home() {
         }
       />
       <Header />
-
       <main>
         <Hero />
-        <Products />
+        <OrderbookProduct />
+        {/* <Partners /> */}
+        <OthersProducts />
         <Features />
         <Investors />
         <Team />
