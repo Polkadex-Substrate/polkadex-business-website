@@ -33,7 +33,7 @@ export default function Home() {
       <main>
         <Hero />
         <OrderbookProduct />
-        {/* <Partners /> */}
+        <Partners />
         <OthersProducts />
         <Features />
         <Investors />
