@@ -18,7 +18,7 @@ const Partners = () => (
         <S.Card>
           <S.CustomCard>
             <img
-              src="img/partners/polkadotdefialliance.png"
+              src="/img/partners/polkadotdefialliance.png"
               alt="Polkadot DEFI Alliance"
             />
           </S.CustomCard>
