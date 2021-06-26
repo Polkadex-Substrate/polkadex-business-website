@@ -27,7 +27,6 @@ const Partners = () => (
         </S.Card>
         <S.Card>
           <S.Row>
-            <PartnerCard width="auto" opacity={0.3} />
             <PartnerCard name="kilt" />
             <PartnerCard name="fractal" />
             <PartnerCard name="kucoin" />
@@ -36,8 +35,7 @@ const Partners = () => (
             <PartnerCard width="auto" opacity={0.2} />
           </S.Row>
           <S.Row>
-            <PartnerCard width="auto" opacity={0.6} />
-            <PartnerCard width="auto" opacity={0.2} />
+            <PartnerCard name="scs" />
             <PartnerCard name="coinmarketcap" />
             <PartnerCard name="gateio" />
             <PartnerCard name="coingecko" />
