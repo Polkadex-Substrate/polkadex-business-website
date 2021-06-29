@@ -31,7 +31,7 @@ const Partners = () => (
             <PartnerCard name="fractal" />
             <PartnerCard name="kucoin" />
             <PartnerCard name="openware" />
-            <PartnerCard width="auto" opacity={0.5} />
+            <PartnerCard name="marketSquare" />
             <PartnerCard width="auto" opacity={0.2} />
           </S.Row>
           <S.Row>
