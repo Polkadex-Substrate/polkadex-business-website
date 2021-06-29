@@ -29,7 +29,10 @@ const Hero = () => {
           Polkadex is a fully decentralized peer-to-peer orderbook-based
           cryptocurrency exchange for the DeFi ecosystem built on Substrate.
         </h2>
-        <PrimaryButton content="Testnet Coming Soon" href="#newsletter" />
+        <PrimaryButton
+          content="Testnet Coming Soon"
+          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fblockchain.polkadex.trade#/explorer"
+        />
         <S.Row>
           <span>Support Chains</span>
           <S.Col>
