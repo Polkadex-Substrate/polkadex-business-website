@@ -119,7 +119,7 @@ const TokenEconomics = () => (
             },
           }}
           tokens="1,200,000"
-          description="10% initial release 6 months after the Mainnet launch and remaining vested quarterly"
+          description="10% initial release six months after the Token Generation Event and remaining vested quarterly"
         />
         <TokenEconomicsCard
           title="Marketing, Ecosystem and Partnerships"
