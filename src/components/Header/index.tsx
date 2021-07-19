@@ -1,12 +1,22 @@
-import { PrimaryButton, SecondaryButton } from 'components/Button';
-import Dropdown from 'components/Dropdown';
-import Icon from 'components/Icon';
-import Logo from 'components/Logo';
-import { useEffect, useState } from 'react';
+import {
+  Dropdown,
+  Icon,
+  LanguageSelector,
+  Logo,
+  PrimaryButton,
+} from 'components';
+import { useEffect } from 'react';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-const Header = () => {
+type Props = Pick<IHomeTranslations, 'header'>;
+
+export const Header = ({
+  topLinks,
+  bottomLinks,
+  ctaButton,
+}: Props['header']) => {
   useEffect(() => {
     const header = document.getElementById('topHeader');
     const sticky = header.offsetTop;
@@ -28,63 +38,37 @@ const Header = () => {
 
   const toogle = () =>
     document.querySelector('#topHeader').classList.toggle('show');
-
   return (
     <S.Wrapper>
       <S.TopContainer id="topHeader">
         <S.Container>
           <Logo size="Medium" />
+          {/* <LanguageSelector /> */}
         </S.Container>
         <S.Container>
           <S.Column>
             <ul>
-              <li>
-                <Dropdown title="Products">
-                  <S.ProductLink>
-                    <a href="https://docs.polkadex.trade/orderbookIntroduction">
-                      Orderbook
-                    </a>
-                  </S.ProductLink>
-                </Dropdown>
-              </li>
-              <li>
-                <a href="https://docs.polkadex.trade/">Docs</a>
-              </li>
-              <li>
-                <a href="https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md">
-                  Lightpaper
-                </a>
-              </li>
+              {topLinks.map((item) => (
+                <li>
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))}
             </ul>
           </S.Column>
           <S.Column>
-            <Icon
-              name="Twitter"
-              alt="Twitter Logo"
-              link="https://twitter.com/polkadex"
-            />
-            <Icon
-              name="Medium"
-              alt="Medium Logo"
-              link="https://polkadex.medium.com/"
-            />
+            <Icon name="Twitter" link="https://twitter.com/polkadex" />
+            <Icon name="Medium" link="https://polkadex.medium.com/" />
             <Icon
               name="Youtube"
-              alt="Youtube Logo"
               link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
             />
             <Icon
               name="LinkedIn"
-              alt="Linkedin Logo"
               link="https://www.linkedin.com/company/69690544"
             />
-            <Icon
-              name="Reddit"
-              alt="Reddit Logo"
-              link="https://www.reddit.com/r/polkadex"
-            />
+            <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
             <PrimaryButton
-              content="Join on Telegram"
+              content={ctaButton}
               icon="Telegram"
               href="https://t.me/Polkadex"
             />
@@ -107,21 +91,11 @@ const Header = () => {
       <S.BottomContainer>
         <div>
           <ul>
-            <li>
-              <a href="#hero"> Overview</a>
-            </li>
-            <li>
-              <a href="#features">Features</a>
-            </li>
-            <li>
-              <a href="#roadmap">Roadmap</a>
-            </li>
-            <li>
-              <a href="#team">Team</a>
-            </li>
-            <li>
-              <a href="#tokenEconomics"> Token Economics</a>
-            </li>
+            {bottomLinks.map((item) => (
+              <li>
+                <a href={`#${item.href}`}>{item.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div />
@@ -129,5 +103,3 @@ const Header = () => {
     </S.Wrapper>
   );
 };
-
-export default Header;

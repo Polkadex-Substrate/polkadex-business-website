@@ -25,4 +25,34 @@ export type IIcons =
   | 'Twitter'
   | 'Upgrade'
   | 'Waiting'
-  | 'Whatsapp';
+  | 'Whatsapp'
+  | 'Youtube'
+  | 'Sun'
+  | 'Translate'
+  | 'LinkedIn'
+  | 'Moon';
+
+export type IColors =
+  | 'primary'
+  | 'secondary'
+  | 'primaryBackground'
+  | 'primaryBackgroundOpacity'
+  | 'secondaryBackground'
+  | 'secondaryBackgroundOpacity'
+  | 'secondaryBackgroundSolid'
+  | 'popupBackground'
+  | 'gradientBackground'
+  | 'text'
+  | 'gradient'
+  | 'green'
+  | 'orange'
+  | 'transparent'
+  | 'none';
+
+export type ISizes =
+  | 'xsmall'
+  | 'small'
+  | 'normal'
+  | 'medium'
+  | 'large'
+  | 'xlarge';

@@ -7,24 +7,24 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
     color: ${theme.colors.text};
     transition: ${theme.transition.default};
     padding: ${background !== 'none' ? '0.8rem 1rem' : 0};
-  `}
 
-  border-radius: 1.2rem;
-  display: flex;
-  align-items: center;
-  line-height: 0;
-  white-space: pre;
-
-  & div {
+    border-radius: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    & img {
-      max-width: 1.8rem;
+    line-height: 0;
+    white-space: pre;
+
+    & div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      & img {
+        max-width: 1.8rem;
+      }
     }
-  }
+  `}
 `;
 
 export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
@@ -33,7 +33,9 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
       ? `${theme.colors[background]}4D`
       : theme.colors[background]};
     border: ${withOpacity ? `1px solid ${theme.colors[background]}` : 'none'};
-
+    color: ${background === 'primary' || 'secondary'
+      ? theme.colors.white
+      : theme.colors.text} !important;
     :hover {
       background: ${withOpacity
         ? theme.colors[background]
@@ -46,7 +48,7 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
       border-radius: 0.9rem;
       margin-right: 0.5rem;
       background: ${background !== 'none'
-        ? theme.colors.background
+        ? theme.colors.primaryBackground
         : theme.colors.primary};
     }
   `}
@@ -74,7 +76,7 @@ export const FormWrapper = styled.button`
       height: 3rem;
       border-radius: 0.9rem;
       margin-right: 0.5rem;
-      background: ${theme.colors.background};
+      background: ${theme.colors.primaryBackground};
       & img {
         max-width: 1.8rem;
       }

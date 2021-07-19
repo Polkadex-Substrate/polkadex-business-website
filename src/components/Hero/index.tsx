@@ -2,10 +2,18 @@ import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadot } from 'components/Icons';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-const Hero = () => {
+type Props = Pick<IHomeTranslations, 'hero'>;
+
+const Hero = ({
+  title,
+  description,
+  ctaButton,
+  chainsTitle,
+}: Props['hero']) => {
   const ImageHeroRef = useRef<HTMLImageElement>();
 
   const handleScroll = () => {
@@ -24,17 +32,14 @@ const Hero = () => {
   return (
     <S.Wrapper id="hero">
       <S.Container>
-        <h1>The trading engine for Web3 and DeFi</h1>
-        <h2>
-          Polkadex is a fully decentralized peer-to-peer orderbook-based
-          cryptocurrency exchange for the DeFi ecosystem built on Substrate.
-        </h2>
+        <h1>{title}</h1>
+        <h2>{description}.</h2>
         <PrimaryButton
-          content="Testnet Explorer"
+          content={ctaButton}
           href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fblockchain.polkadex.trade#/explorer"
         />
         <S.Row>
-          <span>Support Chains</span>
+          <span>{chainsTitle}</span>
           <S.Col>
             <S.Card>
               <S.PlannedIcon>

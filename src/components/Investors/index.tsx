@@ -1,16 +1,24 @@
 import InvestorCard from 'components/InvestorCard';
 import Title from 'components/Title';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-const Investors = () => (
+type Props = Pick<IHomeTranslations, 'investors'>;
+
+const Investors = ({
+  tag,
+  title,
+  highlight,
+  description,
+}: Props['investors']) => (
   <S.Wrapper>
     <S.TitleContainer>
       <Title
-        title="Strategic"
-        highlight="Investors"
-        description="The early backers who supported and funded Polkadex helping us reach our goals and aim even higher"
-        tag="Supported & Funded by"
+        title={title}
+        highlight={highlight}
+        description={description}
+        tag={tag}
       />
     </S.TitleContainer>
     <S.Container>

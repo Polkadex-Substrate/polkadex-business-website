@@ -1,4 +1,5 @@
-export const dark = {
+export const defaultTheme = {
+  title: 'dark',
   grid: {
     container: '120rem',
     gutter: '3.2rem',
@@ -38,14 +39,14 @@ export const dark = {
   colors: {
     primary: '#E6007A',
     secondary: '#6745D2',
-    gradient: 'linear-gradient(47.94deg, #e6007a 0%, #6745d2 98.88%)',
-    text: '#FFFFFF',
-    background: '#1C1C26',
     secondaryBackground: 'rgba(139,161,190,0.2)',
-    secondaryBackgroundSolid: '#393F4C',
-    gradientBackground:
-      'linear-gradient(62.3deg, #1C1C26 13.21%, #2F313B 98.01%)',
+    secondaryBackgroundOpacity: 'rgba(139,161,190,0.1)',
+    gradient: 'linear-gradient(47.94deg, #e6007a 0%, #6745d2 98.88%)',
+    transparent: 'transparent',
     none: 'none',
+    green: '#0CA564',
+    white: '#ffffff',
+    black: '#000000',
   },
   spacings: {
     xxxsmall: '0.5rem',
@@ -81,13 +82,74 @@ export const dark = {
   },
 };
 
-export const light = {
-  themeColor: {
-    text: '#FFFFFF',
-    background: '#F9FBFC',
+const light = {
+  title: 'light',
+  colors: {
+    primaryBackground: '#F9FBFC',
+    primaryBackgroundOpacity: '#F9FBFC99',
     gradientBackground:
-      'linear-gradient(62.3deg, #F9FBFC 13.21%, #FFFFFF 98.01%)',
+      'linear-gradient(62.3deg, #FFFFFF 13.21%, #F9FBFC99 98.01%)',
+    tertiaryBackground: '#F9FBFC99',
+    secondaryBackgroundSolid: '#E8ECF2',
+    text: '#000000',
+  },
+  shadow: {
+    primary: '0px 10px 40px rgba(171, 192, 227, 0.25)',
+    top: '0px -5px 15px rgba(171, 192, 227, 0.9)',
+  },
+  skeleton: {
+    default: `linear-gradient(
+      -90deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.12) 25%,
+      rgba(0, 0, 0, 0.20) 50%,
+      rgba(0, 0, 0, 0.14) 75%,
+      rgba(0, 0, 0, 0.1) 100%
+    )`,
   },
 };
 
-export const theme = dark;
+const dark = {
+  title: 'dark',
+  colors: {
+    primaryBackground: '#1C1C26',
+    primaryBackgroundOpacity: '#1C1C2699',
+    gradientBackground:
+      'linear-gradient(62.3deg, #1C1C26 13.21%, #2F313B 98.01%)',
+    tertiaryBackground: '#2E303C',
+    secondaryBackgroundSolid: '#2F3340',
+    text: '#f5f5f5',
+  },
+  shadow: {
+    primary: '0px 10px 15px rgba(0, 0, 0, 0.05)',
+    top: '0px -5px 15px rgba(0, 0, 0, 0.7)',
+  },
+  skeleton: {
+    default: `linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.12) 25%,
+      rgba(255, 255, 255, 0.20) 50%,
+      rgba(255, 255, 255, 0.14) 75%,
+      rgba(255, 255, 255, 0.1) 100%
+    )`,
+  },
+};
+
+export const lightTheme = {
+  ...defaultTheme,
+  ...light,
+  colors: {
+    ...light.colors,
+    ...defaultTheme.colors,
+  },
+};
+
+export const darkTheme = {
+  ...defaultTheme,
+  ...dark,
+  colors: {
+    ...dark.colors,
+    ...defaultTheme.colors,
+  },
+};

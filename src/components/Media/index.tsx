@@ -3,12 +3,21 @@ import { PrimaryButton } from 'components/Button';
 import MediaCard from 'components/MediaCard';
 import Title from 'components/Title';
 import { useEffect, useState } from 'react';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
-import Props from './types';
+import { MediaProps } from './types';
 
-const Media = () => {
-  const [state, setState] = useState<Props[]>([]);
+type Props = Pick<IHomeTranslations, 'media'>;
+
+const Media = ({
+  tag,
+  title,
+  highlight,
+  description,
+  ctaButton,
+}: Props['media']) => {
+  const [state, setState] = useState<MediaProps[]>([]);
   const [error, setError] = useState({ status: false, message: '' });
 
   const handleGetArticles = async () => {
@@ -28,14 +37,14 @@ const Media = () => {
     <S.Wrapper>
       <S.TitleContainer>
         <Title
-          tag="Media"
-          title="Polkadex"
-          highlight="News"
-          description="The latest and greatest news from the Polkadex team"
+          tag={tag}
+          title={title}
+          highlight={highlight}
+          description={description}
         />
         <S.Col>
           <PrimaryButton
-            content="Polkadex News"
+            content={ctaButton}
             href="https://polkadex.medium.com"
             withOpacity
           />

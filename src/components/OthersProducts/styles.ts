@@ -33,34 +33,34 @@ export const ProductsContainer = styled.div`
     ${({ theme }) => css`
       background: ${theme.colors.gradientBackground};
       transition: ${theme.transition.default};
-    `}
-    :hover {
-      transform: translateY(-0.5rem);
-    }
-    & ${ColContainer} {
-      position: relative;
-      padding: 3rem 2rem;
-      background: linear-gradient(
-        0.83deg,
-        #1c1c26 18.58%,
-        rgba(28, 28, 38, 0) 99.36%
-      );
-      height: 100%;
-
-      & img {
-        max-height: 20rem;
-        height: 100%;
-        width: 100%;
+      :hover {
+        transform: translateY(-0.5rem);
       }
-    }
+      & ${ColContainer} {
+        position: relative;
+        padding: 3rem 2rem;
+        background: linear-gradient(
+          0.83deg,
+          #1c1c26 18.58%,
+          rgba(28, 28, 38, 0) 99.36%
+        );
+        height: 100%;
 
-    border-radius: 2rem;
+        & img {
+          max-height: 20rem;
+          height: 100%;
+          width: 100%;
+        }
+      }
 
-    & span {
-      border-radius: 0.6rem;
-      padding: 0.5rem 1rem;
-      width: auto;
-    }
+      border-radius: 2rem;
+
+      & span {
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+        width: auto;
+      }
+    `}
   }
 `;
 

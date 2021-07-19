@@ -12,7 +12,7 @@ const TokenEconomicsCard = ({
     <S.Line />
     <S.ContentContainer>
       <div>
-        <span>{percent}%</span>
+        <span>{percent}</span>
       </div>
       <div>
         <h6>{title}</h6>

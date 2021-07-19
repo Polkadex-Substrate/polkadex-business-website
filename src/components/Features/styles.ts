@@ -168,6 +168,13 @@ export const FluidContainer = styled.div`
   background-size: auto 100%;
   max-width: 140rem;
   margin: 0 auto;
+  strong {
+    display: block;
+
+    & span {
+      margin-left: 0.5rem;
+    }
+  }
   @media screen and (min-width: 800px) {
     min-height: 120rem;
   }

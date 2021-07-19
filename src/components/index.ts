@@ -2,7 +2,6 @@ import Announcement from 'components/Announcement';
 import ContractAnnouncement from 'components/ContractAnnouncement';
 import Features from 'components/Features';
 import Footer from 'components/Footer';
-import Header from 'components/Header';
 import Hero from 'components/Hero';
 import Investors from 'components/Investors';
 import Media from 'components/Media';
@@ -15,12 +14,18 @@ import Roadmap from 'components/Roadmap';
 import Team from 'components/Team';
 import TokenEconomics from 'components/TokenEconomics';
 
+export * from './Button';
+export * from './Dropdown';
+export * from './Header';
+export * from './Icon';
+export * from './LanguageSelector';
+export * from './Logo';
+export * from './ThemeSwitcher';
 export {
   Announcement,
   ContractAnnouncement,
   Features,
   Footer,
-  Header,
   Hero,
   Investors,
   Media,

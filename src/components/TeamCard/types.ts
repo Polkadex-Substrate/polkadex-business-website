@@ -1,5 +1,5 @@
 type SocialMedia = {
-  name: 'github' | 'telegram' | 'twitter' | 'linkedin';
+  name: 'github' | 'telegram' | 'twitter' | 'linkedin' | string;
   link: string;
 };
 type Props = {

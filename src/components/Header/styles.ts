@@ -1,9 +1,6 @@
 import { Wrapper as Icon } from 'components/Icon/styles';
+import { Wrapper as LanguageSelector } from 'components/LanguageSelector/styles';
 import styled, { css } from 'styled-components';
-
-type HeaderProps = {
-  active?: boolean;
-};
 
 export const Wrapper = styled.header`
   ${({ theme }) => css`
@@ -16,41 +13,40 @@ export const Wrapper = styled.header`
 export const MenuWrapper = styled.div`
   ${({ theme }) => css`
     transition: ${theme.transition.default};
+    position: absolute;
+    top: 0;
+    right: 1%;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+    padding: 1rem;
+
+    :hover {
+      opacity: 0.6;
+    }
+    .line {
+      fill: none;
+      stroke: ${theme.colors.text};
+      stroke-width: 6;
+      transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .line1 {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+    .line2 {
+      stroke-dasharray: 60 60;
+      stroke-width: 6;
+    }
+    .line3 {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+    @media screen and (max-width: 915px) {
+      display: block;
+    }
   `}
-
-  position: absolute;
-  top: 0;
-  right: 1%;
-  cursor: pointer;
-  display: none;
-  z-index: 10;
-  padding: 1rem;
-
-  :hover {
-    opacity: 0.6;
-  }
-  .line {
-    fill: none;
-    stroke: white;
-    stroke-width: 6;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .line1 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  .line2 {
-    stroke-dasharray: 60 60;
-    stroke-width: 6;
-  }
-  .line3 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  @media screen and (max-width: 640px) {
-    display: block;
-  }
 `;
 
 export const Container = styled.div`
@@ -58,9 +54,14 @@ export const Container = styled.div`
   grid-template-columns: auto auto;
   column-gap: 1rem;
   align-items: center;
-
+  ${LanguageSelector} {
+    margin-left: 1rem;
+  }
+  @media screen and (max-width: 915px) {
+    grid-template-columns: min-content auto;
+  }
   :nth-child(2) {
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 915px) {
       display: none;
     }
   }
@@ -104,7 +105,7 @@ export const Column = styled.div`
 export const TopContainer = styled.div`
   position: relative;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 915px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,7 +136,7 @@ export const TopContainer = styled.div`
     padding: 1rem 2rem;
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 915px) {
     &.show {
       padding: 1rem 0;
 

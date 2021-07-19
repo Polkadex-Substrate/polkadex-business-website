@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { FormButton } from 'components/Button';
 import { useState } from 'react';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
@@ -9,8 +10,14 @@ type Status = {
   submitting: boolean;
   info: { error: boolean; msg: null | string };
 };
+type Props = Pick<IHomeTranslations, 'newsletter'>;
 
-const Newsletter = () => {
+const Newsletter = ({
+  title,
+  description,
+  formPlaceholder,
+  formButton,
+}: Props['newsletter']) => {
   const [status, setStatus] = useState<Status>({
     submitted: false,
     submitting: false,
@@ -64,22 +71,22 @@ const Newsletter = () => {
   return (
     <S.Wrapper id="newsletter">
       <S.Container>
-        <h3>Subscribe to our newsletter</h3>
-        <p>Stay up to date with Polkadex news!</p>
+        <h3>{title}</h3>
+        <p>{description}</p>
         <form onSubmit={handleOnSubmit}>
           <S.FormWrapper>
             <input
               id="email"
               type="email"
-              placeholder="Enter your email"
-              aria-label="Enter your email"
+              placeholder={formPlaceholder}
+              aria-label={formPlaceholder}
               aria-describedby="button-addon2"
               name="_replyto"
               onChange={handleOnChange}
               required
               value={inputs.email}
             />
-            <FormButton content="Subscribe" icon="Send" type="submit" />
+            <FormButton content={formButton} icon="Send" type="submit" />
           </S.FormWrapper>
         </form>
         {status.info.error && (

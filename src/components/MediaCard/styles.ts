@@ -14,10 +14,10 @@ export const Wrapper = styled.a`
 
 export const Col = styled.div`
   :first-child {
-    filter: drop-shadow(0px 37px 72px rgba(0, 0, 0, 0.29));
     & img {
       width: 100%;
       border-radius: 2rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
   }
 

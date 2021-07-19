@@ -3,7 +3,7 @@ import { useState } from 'react';
 import * as S from './styles';
 import Props from './types';
 
-const Dropdown = ({ title, children, direction = 'left' }: Props) => {
+export const Dropdown = ({ title, children, direction = 'left' }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <S.Wrapper isOpen={isOpen}>
@@ -15,5 +15,3 @@ const Dropdown = ({ title, children, direction = 'left' }: Props) => {
     </S.Wrapper>
   );
 };
-
-export default Dropdown;

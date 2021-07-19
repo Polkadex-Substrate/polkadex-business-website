@@ -15,10 +15,29 @@ import {
   Team,
   TokenEconomics,
 } from 'components';
-
-import * as S from '../styles/home';
+import { useRouter } from 'next/router';
+import * as S from 'styles/home';
+import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Home() {
+  const { locale } = useRouter();
+  const {
+    header,
+    announcement,
+    hero,
+    orderbook,
+    partners,
+    otherProducts,
+    features,
+    investors,
+    team,
+    roadmap,
+    tokenEconomics,
+    media,
+    newsletter,
+    footer,
+  }: IHomeTranslations = HomeTranslations[locale];
+
   return (
     <S.Wrapper>
       <Announcement
@@ -26,24 +45,25 @@ export default function Home() {
           <ContractAnnouncement
             contract="0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
             href="https://etherscan.io/token/0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
+            {...announcement}
           />
         }
       />
-      <Header />
+      <Header {...header} />
       <main>
-        <Hero />
-        <OrderbookProduct />
-        <Partners />
-        <OthersProducts />
-        <Features />
-        <Investors />
-        <Team />
-        <Roadmap />
-        <TokenEconomics />
-        <Media />
-        <Newsletter />
+        <Hero {...hero} />
+        <OrderbookProduct {...orderbook} />
+        <Partners {...partners} />
+        <OthersProducts otherProducts={otherProducts} />
+        <Features {...features} />
+        <Investors {...investors} />
+        <Team {...team} />
+        <Roadmap {...roadmap} />
+        <TokenEconomics {...tokenEconomics} />
+        <Media {...media} />
+        <Newsletter {...newsletter} />
       </main>
-      <Footer />
+      <Footer {...footer} />
     </S.Wrapper>
   );
 }

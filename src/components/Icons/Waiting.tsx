@@ -14,13 +14,11 @@ function SvgWaiting(props: React.SVGProps<SVGSVGElement>) {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M18.208 10.396a8.312 8.312 0 11-16.625 0 8.312 8.312 0 0116.625 0zm-1.583 0a6.73 6.73 0 11-13.459 0 6.73 6.73 0 0113.459 0z"
-        fill="#fff"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M10.291 10h3.167a.792.792 0 010 1.584H9.5a.79.79 0 01-.792-.792V6.834a.792.792 0 111.583 0V10z"
-        fill="#fff"
         fillOpacity={0.5}
       />
     </svg>

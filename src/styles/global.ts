@@ -3,10 +3,14 @@ import { createGlobalStyle, css } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
  ${({ theme }) => css`
    body {
-     background: ${theme.colors.background};
+     background: ${theme.colors.primaryBackground};
      color: ${theme.colors.text};
      font-family: ${theme.font.family};
      font-size: ${theme.font.sizes.small};
+   }
+   svg {
+     fill: ${theme.colors.text};
+     /* stroke: ${theme.colors.text}; */
    }
  `}
 

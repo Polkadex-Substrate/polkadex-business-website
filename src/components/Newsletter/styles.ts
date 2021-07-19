@@ -2,9 +2,6 @@ import { FormWrapper as Button } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  ${({ theme }) => css`
-    background: ${theme.colors.gradientBackground};
-  `}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,6 +9,7 @@ export const Wrapper = styled.section`
   max-width: 120rem;
   margin: 0 auto;
   min-height: 45rem;
+  border-radius: 2rem;
 
   @media screen and (min-width: 1060px) and (max-width: 1200px) {
     min-height: 43rem;
@@ -52,7 +50,7 @@ export const Container = styled.div`
 
   & form {
     ${({ theme }) => css`
-      background: ${theme.colors.background};
+      background: ${theme.colors.primaryBackground};
     `}
     margin-top: 3rem;
     padding: 1rem 1rem 1rem 2rem;

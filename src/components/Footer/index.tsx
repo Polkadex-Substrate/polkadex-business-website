@@ -1,75 +1,59 @@
-import Icon from 'components/Icon';
-import Logo from 'components/Logo';
+import { Icon, Logo, ThemeSwitcher } from 'components';
+import { LanguageSelector } from 'components/LanguageSelector';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-const Footer = () => (
+type Props = Pick<IHomeTranslations, 'footer'>;
+
+const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
   <S.Wrapper>
     <S.Row>
       <S.Col>
         <Logo />
+        {/* <LanguageSelector /> */}
       </S.Col>
       <S.Col>
         <div>
-          <h5>Polkadex</h5>
+          <h5>{rowLinks.polkadex.title}</h5>
           <ul>
-            <li>
-              <a href="#hero">Overview</a>
-            </li>
-            <li>
-              <a href="#features">Features</a>
-            </li>
-            <li>
-              <a href="#roadmap">Roadmap</a>
-            </li>
-            <li>
-              <a href="#team">Team</a>
-            </li>
-            <li>
-              <a href="#tokenEconomics">Token Economics</a>
-            </li>
+            {rowLinks.polkadex.links.map((item) => (
+              <li>
+                <a href={`#${item.href}`}>{item.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
-          <h5>Community</h5>
+          <h5>{rowLinks.community.title}</h5>
           <ul>
-            <li>
-              <a href="https://web3.foundation/">Web3 Foundation</a>
-            </li>
-            <li>
-              <a href="https://www.polkadot.network/">Polkadot</a>
-            </li>
+            {rowLinks.community.links.map((item) => (
+              <li>
+                <a href={`#${item.href}`}>{item.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </S.Col>
       <S.Col>
         <div>
-          <h5>Resources</h5>
+          <h5>{rowLinks.resources.title}</h5>
           <ul>
-            <li>
-              <a href="https://docs.polkadex.trade/">Documentation</a>
-            </li>
-            <li>
-              <a href="https://github.com/Polkadex-Substrate">
-                Github Repository
-              </a>
-            </li>
-            <li>
-              <a href="https://www.substrate.io/">Substrate</a>
-            </li>
+            {rowLinks.resources.links.map((item) => (
+              <li>
+                <a href={`#${item.href}`}>{item.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
-          <h5>Products</h5>
+          <h5>{rowLinks.products.title}</h5>
           <ul>
-            <li>
-              <a href="https://docs.polkadex.trade/orderbookIntroduction">
-                Polkadex Orderbook
-              </a>
-            </li>
-            <li>
-              <a href="https://docs.polkadex.trade/IDOPlatform">Polkadex IDO</a>
-            </li>
+            {rowLinks.products.links.map((item) => (
+              <li>
+                <a href={`#${item.href}`}>{item.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </S.Col>
@@ -77,47 +61,31 @@ const Footer = () => (
     </S.Row>
     <S.Row>
       <S.Col>
-        <span>Copyright © 2021 Polkadex, Inc.</span>
+        <span>{copyright}.</span>
         <ul>
-          <li>
-            <a href="/">Terms</a>
-          </li>
-          <li>
-            <a href="/">Privacy Policy</a>
-          </li>
+          {bottomLinks.map((item) => (
+            <li>
+              <a href={item.href}>{item.title}</a>
+            </li>
+          ))}
         </ul>
       </S.Col>
       <S.Col>
-        <Icon
-          name="Twitter"
-          alt="Twitter Logo"
-          link="https://twitter.com/polkadex"
-        />
-        <Icon
-          name="Medium"
-          alt="Medium Logo"
-          link="https://polkadex.medium.com/"
-        />
-        <Icon
-          name="Telegram"
-          alt="Telegram Logo"
-          link="https://t.me/Polkadex"
-        />
-        <Icon
-          name="Youtube"
-          alt="Youtube Logo"
-          link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
-        />
-        <Icon
-          name="LinkedIn"
-          alt="Linkedin Logo"
-          link="https://www.linkedin.com/company/69690544"
-        />
-        <Icon
-          name="Reddit"
-          alt="Reddit Logo"
-          link="https://www.reddit.com/r/polkadex"
-        />
+        <S.SocialWrapper>
+          <Icon name="Twitter" link="https://twitter.com/polkadex" />
+          <Icon name="Medium" link="https://polkadex.medium.com/" />
+          <Icon name="Telegram" link="https://t.me/Polkadex" />
+          <Icon
+            name="Youtube"
+            link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+          />
+          <Icon
+            name="LinkedIn"
+            link="https://www.linkedin.com/company/69690544"
+          />
+          <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
+        </S.SocialWrapper>
+        {/* <ThemeSwitcher /> */}
       </S.Col>
     </S.Row>
   </S.Wrapper>

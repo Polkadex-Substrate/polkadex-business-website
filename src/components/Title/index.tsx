@@ -13,7 +13,7 @@ const Title = ({
     <h2>
       {title} <strong> {highlight} </strong>
     </h2>
-    {!!description && <p>{description}</p>}
+    {!!description && <p>{description}.</p>}
   </S.Wrapper>
 );
 

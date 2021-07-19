@@ -3,17 +3,12 @@ import { PrimaryButton } from 'components/Button';
 import * as S from './styles';
 import Props from './types';
 
-const ContractAnnouncement = ({ contract, href }: Props) => (
+const ContractAnnouncement = ({ contract, href, title, ctaButton }: Props) => (
   <S.Wrapper>
     <p>
-      Polkadex Contract:
-      <strong>{contract}</strong>
+      {title}: <strong>{contract}</strong>
     </p>
-    <PrimaryButton
-      href={href}
-      content="See at Etherscan"
-      background="secondary"
-    />
+    <PrimaryButton href={href} content={ctaButton} background="secondary" />
   </S.Wrapper>
 );
 

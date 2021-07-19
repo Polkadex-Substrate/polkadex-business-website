@@ -1,4 +1,5 @@
 import { Wrapper as Icon } from 'components/Icon/styles';
+import { Wrapper as Language } from 'components/LanguageSelector/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.footer`
@@ -20,6 +21,12 @@ export const Col = styled.div`
   }
 `;
 
+export const SocialWrapper = styled.div`
+  display: flex;
+  ${Icon} {
+    margin-right: 1rem;
+  }
+`;
 export const Row = styled.div`
   display: grid;
   column-gap: 1rem;
@@ -28,7 +35,9 @@ export const Row = styled.div`
     font-size: 1.8rem;
     margin-bottom: 2.2rem;
   }
-
+  ${Language} {
+    margin-top: 1rem;
+  }
   :first-child {
     padding-bottom: 4rem;
     grid-template-columns: 1fr;
@@ -88,10 +97,6 @@ export const Row = styled.div`
             opacity: 0.6;
           }
         }
-      }
-
-      ${Icon} {
-        margin-right: 1rem;
       }
     }
     @media screen and (min-width: 850px) {
