@@ -13,7 +13,7 @@ const Team = ({ tag, title, highlight, cards }: Props['team']) => (
         <Title tag={tag} title={title} highlight={highlight} position="right" />
       </S.TitleWrapper>
     </S.TitleContainer>
-    <S.Row>
+    <S.Row id="team__cards">
       {cards.map((item) => (
         <TeamCard
           position={item.title}
