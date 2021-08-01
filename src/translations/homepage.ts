@@ -1017,17 +1017,6 @@ const ESLanguage = {
       },
       {
         title: 'Strategic Advisor',
-        name: 'Jasper Byun',
-        image: 'jasperPhotography',
-        socialMedia: [
-          {
-            name: 'linkedin',
-            link: 'https://www.linkedin.com/in/jasperb/',
-          },
-        ],
-      },
-      {
-        title: 'Strategic Advisor',
         name: 'Sherwin Lee',
         image: 'sherwinPhotography',
         socialMedia: [
