@@ -8,9 +8,7 @@ export const LanguageSelector = () => {
   return (
     <S.Wrapper>
       <Icon name="Translate" background="transparent" />
-      <select
-        onChange={(e) => router.push('/', '/', { locale: e.target.value })}
-      >
+      <select onChange={() => router.push('/')}>
         <option disabled>Choose your language</option>
         <option value="en-US">English</option>
         <option value="zh-CN">Chinese</option>

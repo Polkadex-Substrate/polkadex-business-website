@@ -15,12 +15,10 @@ import {
   Team,
   TokenEconomics,
 } from 'components';
-import { useRouter } from 'next/router';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Home() {
-  const { locale } = useRouter();
   const {
     header,
     announcement,
@@ -36,7 +34,7 @@ export default function Home() {
     media,
     newsletter,
     footer,
-  }: IHomeTranslations = HomeTranslations[locale];
+  }: IHomeTranslations = HomeTranslations['en-US'];
 
   return (
     <S.Wrapper>
