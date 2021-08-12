@@ -29,7 +29,7 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
           <ul>
             {rowLinks.community.links.map((item) => (
               <li>
-                <a href={`#${item.href}`}>{item.title}</a>
+                <a href={item.href}>{item.title}</a>
               </li>
             ))}
           </ul>
@@ -41,7 +41,7 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
           <ul>
             {rowLinks.resources.links.map((item) => (
               <li>
-                <a href={`#${item.href}`}>{item.title}</a>
+                <a href={item.href}>{item.title}</a>
               </li>
             ))}
           </ul>
@@ -51,7 +51,7 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
           <ul>
             {rowLinks.products.links.map((item) => (
               <li>
-                <a href={`#${item.href}`}>{item.title}</a>
+                <a href={item.href}>{item.title}</a>
               </li>
             ))}
           </ul>
