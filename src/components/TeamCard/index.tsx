@@ -6,7 +6,6 @@ const TeamCard = ({ name, image, position, socialMedia }: Props) => (
     <figure>
       <img src={`/img/team/${image}.jpg`} alt="photography description" />
     </figure>
-
     <span>{position}</span>
     <p>{name}</p>
     <div>
