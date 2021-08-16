@@ -366,6 +366,54 @@ const ENLanguage = {
           },
         ],
       },
+      {
+        title: 'Flutter Engineer',
+        name: 'Adriel Bomfim',
+        image: 'adrielPhotography',
+        socialMedia: [
+          {
+            name: 'github',
+            link: 'https://github.com/AdrielVBomfim',
+          },
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/adrielvb/',
+          },
+        ],
+      },
+      // {
+      //   title: 'Senior Rust Engineer',
+      //   name: 'Cem Eligüzel',
+      //   image: 'cemPhotography',
+      //   socialMedia: [
+      //     {
+      //       name: 'linkedin',
+      //       link: 'https://www.linkedin.com/in/cemeliguzel/',
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: 'Project Manager',
+      //   name: 'Pavan Kanteti',
+      //   image: 'pavanPhotography',
+      //   socialMedia: [
+      //     {
+      //       name: 'linkedin',
+      //       link: 'https://www.linkedin.com/in/pavankanteti/',
+      //     },
+      //   ],
+      // },
+      {
+        title: 'Product Owner',
+        name: 'Fredrik Simonsson',
+        image: 'fredikPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/fredriksimonsson/',
+          },
+        ],
+      },
     ],
   },
   roadmap: {
