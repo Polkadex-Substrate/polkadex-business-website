@@ -398,6 +398,10 @@ const ENLanguage = {
         image: 'fredikPhotography',
         socialMedia: [
           {
+            name: 'github',
+            link: 'https://github.com/simonsso/',
+          },
+          {
             name: 'linkedin',
             link: 'https://www.linkedin.com/in/fredriksimonsson/',
           },

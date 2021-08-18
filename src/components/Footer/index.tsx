@@ -1,5 +1,4 @@
-import { Icon, Logo, ThemeSwitcher } from 'components';
-import { LanguageSelector } from 'components/LanguageSelector';
+import { Icon, Logo } from 'components';
 import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';

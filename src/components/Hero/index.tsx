@@ -1,6 +1,5 @@
 import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadot } from 'components/Icons';
-import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import { IHomeTranslations } from 'translations';
 

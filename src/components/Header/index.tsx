@@ -1,10 +1,4 @@
-import {
-  Dropdown,
-  Icon,
-  LanguageSelector,
-  Logo,
-  PrimaryButton,
-} from 'components';
+import { Icon, Logo, PrimaryButton } from 'components';
 import { useEffect } from 'react';
 import { IHomeTranslations } from 'translations';
 
