@@ -349,6 +349,10 @@ const ENLanguage = {
         image: 'gabrielPhotography',
         socialMedia: [
           {
+            name: 'github',
+            link: 'https://github.com/arrudagates',
+          },
+          {
             name: 'linkedin',
             link:
               'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
