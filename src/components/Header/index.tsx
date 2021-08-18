@@ -42,8 +42,8 @@ export const Header = ({
         <S.Container>
           <S.Column>
             <ul>
-              {topLinks.map((item) => (
-                <li>
+              {topLinks.map((item, index) => (
+                <li key={index}>
                   <a href={item.href}>{item.title}</a>
                 </li>
               ))}
@@ -85,8 +85,8 @@ export const Header = ({
       <S.BottomContainer>
         <div>
           <ul>
-            {bottomLinks.map((item) => (
-              <li>
+            {bottomLinks.map((item, index) => (
+              <li key={index}>
                 <a href={`#${item.href}`}>{item.title}</a>
               </li>
             ))}

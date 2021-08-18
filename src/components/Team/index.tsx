@@ -14,8 +14,9 @@ const Team = ({ tag, title, highlight, cards }: Props['team']) => (
       </S.TitleWrapper>
     </S.TitleContainer>
     <S.Row id="team__cards">
-      {cards.map((item) => (
+      {cards.map((item, index) => (
         <TeamCard
+          key={index}
           position={item.title}
           image={item.image}
           name={item.name}

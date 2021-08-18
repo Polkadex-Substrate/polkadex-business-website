@@ -20,8 +20,9 @@ const TokenEconomics = ({
     </S.TitleContainer>
     <S.ContentContainer>
       <S.Box>
-        {cards.map((item) => (
+        {cards.map((item, index) => (
           <TokenEconomicsCard
+            key={index}
             title={item.title}
             percent={item.percent}
             position={item.position}

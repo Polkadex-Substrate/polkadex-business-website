@@ -39,8 +39,8 @@ const Features = ({
               <div>
                 <img src="/img/icons/polkadot.svg" alt="Polkadot Logo icon" />
               </div>
-              {cards.bridge.plannedBridgesCards.map((item) => (
-                <div>
+              {cards.bridge.plannedBridgesCards.map((item, index) => (
+                <div key={index}>
                   <span>{item.title}</span>
                   <p>{item.description}.</p>
                 </div>
@@ -121,8 +121,8 @@ const Features = ({
       <S.MoreFeaturesWrapper>
         <h6>{cards.benefits.subtitle}</h6>
         <S.MoreFeaturesCard>
-          {cards.benefits.cards.map((item) => (
-            <div>
+          {cards.benefits.cards.map((item, index) => (
+            <div key={index}>
               <img src={`/img/icons/${item.icon}.svg`} alt={item.alt} />
               <span>{item.title}</span>
               <p>{item.description}.</p>

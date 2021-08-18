@@ -24,8 +24,9 @@ const Roadmap = ({
       />
     </S.TitleContainer>
     <S.RoadContainer>
-      {cards.map((item) => (
+      {cards.map((item, index) => (
         <RoadmapCard
+          key={index}
           title={item.title}
           alignRight={item.alignRight}
           invert={item.invert}

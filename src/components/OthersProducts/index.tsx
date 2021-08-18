@@ -7,8 +7,8 @@ type Props = Pick<IHomeTranslations, 'otherProducts'>;
 const OthersProducts = ({ otherProducts }: Props) => (
   <S.Wrapper>
     <S.ProductsContainer>
-      {otherProducts.map((item) => (
-        <S.Col>
+      {otherProducts.map((item, index) => (
+        <S.Col key={index}>
           <S.ColContainer>
             <S.Tag>{item.releaseTag}</S.Tag>
             <img src={`/img/${item.img}.svg`} alt={item.alt} />

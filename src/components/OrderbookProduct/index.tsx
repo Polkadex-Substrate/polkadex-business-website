@@ -32,8 +32,8 @@ const OrderbookProduct = ({
       </S.Col>
     </S.TitleContainer>
     <S.BenefitsContainer>
-      {cards.map((item) => (
-        <S.Col>
+      {cards.map((item, index) => (
+        <S.Col key={index}>
           <img src={`/img/icons/${item.icon}.svg`} alt={item.title} />
           <h3>{item.title}</h3>
           <p>{item.description}.</p>

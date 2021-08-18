@@ -52,9 +52,9 @@ const Media = ({
       </S.TitleContainer>
       {state && !error.status && (
         <S.ContentContainer>
-          {state.map((item) => (
+          {state.map((item, index) => (
             <MediaCard
-              key={item.link}
+              key={index}
               title={item.title}
               description={item.description}
               source="Medium"

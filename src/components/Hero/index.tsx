@@ -1,5 +1,5 @@
 import { PrimaryButton } from 'components/Button';
-import { Ethereum, Polkadot } from 'components/Icons';
+import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
 import React, { useEffect, useRef } from 'react';
 import { IHomeTranslations } from 'translations';
 
@@ -40,6 +40,12 @@ const Hero = ({
         <S.Row>
           <span>{chainsTitle}</span>
           <S.Col>
+            <S.Card>
+              <S.PlannedIcon>
+                <Polkadex />
+              </S.PlannedIcon>
+              Polkadex
+            </S.Card>
             <S.Card>
               <S.PlannedIcon>
                 <Ethereum />

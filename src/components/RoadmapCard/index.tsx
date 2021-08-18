@@ -18,8 +18,8 @@ const RoadmapCard = ({
       </S.Title>
       <S.Content>
         {content &&
-          content.map((item) => (
-            <div key={item.title}>
+          content.map((item, index) => (
+            <div key={index}>
               {item.timeline && (
                 <span className={item.status ? 'checked' : ''}>
                   {item.timeline}

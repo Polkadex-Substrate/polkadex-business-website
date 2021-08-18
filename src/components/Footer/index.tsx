@@ -16,8 +16,8 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
         <div>
           <h5>{rowLinks.polkadex.title}</h5>
           <ul>
-            {rowLinks.polkadex.links.map((item) => (
-              <li>
+            {rowLinks.polkadex.links.map((item, index) => (
+              <li key={index}>
                 <a href={`#${item.href}`}>{item.title}</a>
               </li>
             ))}
@@ -26,8 +26,8 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
         <div>
           <h5>{rowLinks.community.title}</h5>
           <ul>
-            {rowLinks.community.links.map((item) => (
-              <li>
+            {rowLinks.community.links.map((item, index) => (
+              <li key={index}>
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}
@@ -38,8 +38,8 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
         <div>
           <h5>{rowLinks.resources.title}</h5>
           <ul>
-            {rowLinks.resources.links.map((item) => (
-              <li>
+            {rowLinks.resources.links.map((item, index) => (
+              <li key={index}>
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}
@@ -48,8 +48,8 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
         <div>
           <h5>{rowLinks.products.title}</h5>
           <ul>
-            {rowLinks.products.links.map((item) => (
-              <li>
+            {rowLinks.products.links.map((item, index) => (
+              <li key={index}>
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}
@@ -62,8 +62,8 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
       <S.Col>
         <span>{copyright}.</span>
         <ul>
-          {bottomLinks.map((item) => (
-            <li>
+          {bottomLinks.map((item, index) => (
+            <li key={index}>
               <a href={item.href}>{item.title}</a>
             </li>
           ))}

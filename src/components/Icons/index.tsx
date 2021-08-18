@@ -14,6 +14,7 @@ export { default as Medium } from './Medium';
 export { default as Moon } from './Moon';
 export { default as MultipleWallets } from './MultipleWallets';
 export { default as Nft } from './Nft';
+export { default as Polkadex } from './Polkadex';
 export { default as Polkadot } from './Polkadot';
 export { default as Reddit } from './Reddit';
 export { default as SecureAssets } from './SecureAssets';

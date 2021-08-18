@@ -48,7 +48,7 @@ const ENLanguage = {
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
     ctaButton: 'Testnet Explorer',
-    chainsTitle: 'Support Chains',
+    chainsTitle: 'Supported Chains',
   },
   orderbook: {
     tag: 'Products',
@@ -404,6 +404,17 @@ const ENLanguage = {
           {
             name: 'linkedin',
             link: 'https://www.linkedin.com/in/fredriksimonsson/',
+          },
+        ],
+      },
+      {
+        title: 'UX/UI Designer',
+        name: 'Rodolfo Ferreira',
+        image: 'rodolfoPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/rodolfo-ferreira-91824819a/',
           },
         ],
       },

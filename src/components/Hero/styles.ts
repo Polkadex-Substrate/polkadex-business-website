@@ -66,9 +66,11 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 3rem;
+  grid-gap: 2rem;
   align-items: center;
+  @media screen and (min-width: 420px) {
+    grid-template-columns: repeat(3, auto);
+  }
 `;
 
 export const Card = styled.div`
@@ -77,7 +79,7 @@ export const Card = styled.div`
   & ${Icon} {
     margin-right: 1rem;
   }
-  :last-child {
+  :not(:first-child) {
     opacity: 0.4;
   }
 `;
