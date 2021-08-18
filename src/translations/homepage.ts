@@ -393,6 +393,17 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Project Manager',
+        name: 'Pavan Kanteti',
+        image: 'pavanPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/pavankanteti/',
+          },
+        ],
+      },
+      {
         title: 'Product Owner',
         name: 'Fredrik Simonsson',
         image: 'fredikPhotography',
