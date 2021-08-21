@@ -760,7 +760,7 @@ const ENLanguage = {
         ],
       },
       resources: {
-        title: 'Resourcers',
+        title: 'Resources',
         links: [
           {
             title: 'Documentation',
