@@ -267,50 +267,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Cryptoeconomic Advisor',
-        name: 'Matthias Hafner',
-        image: 'matthiasPhotography',
-        socialMedia: [
-          {
-            name: 'linkedin',
-            link: 'https://www.linkedin.com/in/matthias-hafner-26b069b8/',
-          },
-        ],
-      },
-      {
-        title: 'Strategic Advisor',
-        name: 'Sherwin Lee',
-        image: 'sherwinPhotography',
-        socialMedia: [
-          {
-            name: 'linkedin',
-            link: 'https://www.linkedin.com/in/sherwin-lee-89735b153/',
-          },
-        ],
-      },
-      {
-        title: 'Legal Counsel',
-        name: 'Zhi Hao Loy',
-        image: 'zhiPhotography',
-        socialMedia: [
-          {
-            name: 'linkedin',
-            link: 'https://www.linkedin.com/in/loyzhihao/',
-          },
-        ],
-      },
-      {
-        title: 'Marketing Advisor',
-        name: 'Garlam (가람) Won',
-        image: 'garlamPhotography',
-        socialMedia: [
-          {
-            name: 'linkedin',
-            link: 'https://www.linkedin.com/in/garlam/',
-          },
-        ],
-      },
-      {
         title: 'Lead Community Manager',
         name: 'Francis Dufour',
         image: 'francisPhotography',
@@ -430,6 +386,50 @@ const ENLanguage = {
           {
             name: 'linkedin',
             link: 'https://www.linkedin.com/in/rodolfo-ferreira-91824819a/',
+          },
+        ],
+      },
+      {
+        title: 'Cryptoeconomic Advisor',
+        name: 'Matthias Hafner',
+        image: 'matthiasPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/matthias-hafner-26b069b8/',
+          },
+        ],
+      },
+      {
+        title: 'Strategic Advisor',
+        name: 'Sherwin Lee',
+        image: 'sherwinPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/sherwin-lee-89735b153/',
+          },
+        ],
+      },
+      {
+        title: 'Legal Counsel',
+        name: 'Zhi Hao Loy',
+        image: 'zhiPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/loyzhihao/',
+          },
+        ],
+      },
+      {
+        title: 'Marketing Advisor',
+        name: 'Garlam (가람) Won',
+        image: 'garlamPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/garlam/',
           },
         ],
       },
