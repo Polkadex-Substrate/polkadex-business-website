@@ -50,17 +50,27 @@ export const Header = ({
             </ul>
           </S.Column>
           <S.Column>
-            <Icon name="Twitter" link="https://twitter.com/polkadex" />
-            <Icon name="Medium" link="https://polkadex.medium.com/" />
             <Icon
+              hoverable
+              name="Twitter"
+              link="https://twitter.com/polkadex"
+            />
+            <Icon hoverable name="Medium" link="https://polkadex.medium.com/" />
+            <Icon
+              hoverable
               name="Youtube"
               link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
             />
             <Icon
+              hoverable
               name="LinkedIn"
               link="https://www.linkedin.com/company/69690544"
             />
-            <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
+            <Icon
+              hoverable
+              name="Reddit"
+              link="https://www.reddit.com/r/polkadex"
+            />
             <PrimaryButton
               content={ctaButton}
               icon="Telegram"

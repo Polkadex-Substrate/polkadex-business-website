@@ -23,6 +23,8 @@ export type IIcons =
   | 'ThirdParty'
   | 'Token'
   | 'Twitter'
+  | 'ArrowLeft'
+  | 'ArrowBottom'
   | 'Upgrade'
   | 'Waiting'
   | 'Whatsapp'
