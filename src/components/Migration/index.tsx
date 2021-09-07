@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import useSignIn from 'hooks/useSignIn';
-import { ercWallet, getWeb3WalletBalance } from 'utils/ercWallet';
-import ERC20AppContract from 'utils/contracts/ERC20AppContract.json'
+import { initiateContract, getWeb3WalletBalance, tokenAddress, erc20TokenBalance } from 'utils/ercWallet';
+import ERC20AppContract from 'utils/contracts/ERC20AppContract.json';
+import ERC20Contract from 'utils/contracts/ERC20Contract.json'
+
 
 import * as S from './styles';
 import { Props } from './types';
@@ -27,36 +29,40 @@ export const MigrationHero = () => {
 
 export const MigrationConvert = () => {
   const { fetchAccount, loading, error, account } = useSignIn();
-  const [contractAndWalletData, setContractAndWalletData] = useState<Partial<{ web3: any, accounts: Array<string>, instance: any, walletBalance: string }>>({});
+  const [contractAndWalletData, setContractAndWalletData] = useState<Partial<{ web3: any, accounts: Array<string>, instance: any, walletBalance: string, tokenBalance: string }>>({});
 
 
   const handleErcWalletConnect = async () => {
-    const contractDetails = await ercWallet(ERC20AppContract.contractAddress, ERC20AppContract.abi);
+    const contractDetails = await initiateContract(ERC20AppContract.contractAddress, ERC20AppContract.abi);
+    const tokenContractDetails = await initiateContract(tokenAddress, ERC20Contract.abi);
+    const walletAccount = contractDetails.accounts[0];
+
     if (contractDetails) {
-      const walletBalance = await getWeb3WalletBalance(contractDetails.web3, contractDetails.accounts[0]);
+      const walletBalance = await getWeb3WalletBalance(contractDetails.web3, walletAccount);
+      const tokenBalance = await erc20TokenBalance(tokenContractDetails.instance, walletAccount);
+
       setContractAndWalletData({
         ...contractDetails,
-        walletBalance
+        walletBalance,
+        tokenBalance
       });
-
-      // const res = await contractDetails.instance.methods.balances('0x0c7f69f66ab81bb257198baa7f42fd1469e002a6').call();
-      // console.log(res);
     }
   }
 
   const handleMigration = async () => {
     if (contractAndWalletData.instance) {
       const res = await contractAndWalletData.instance.methods.lock(
-        contractAndWalletData.accounts[0],
-        account.address,
+        tokenAddress,
+        account.hexPublicKey,
         10,
         0
       )
-      .send({
-        // not sure what the from address should be here; 
-        from: contractAndWalletData.accounts[0]
-      })
+        .send({
+          from: contractAndWalletData.accounts[0]
+        })
+      console.log(res);
     }
+
     else {
       alert("Please connect wallets")
     }
@@ -118,13 +124,13 @@ export const MigrationConvert = () => {
                 <S.Card>
                   <S.Flex>
                     <span>PDEX ERC-20</span>
-                    <span>Balance: {contractAndWalletData.walletBalance} </span>
+                    <span>Balance: {contractAndWalletData.tokenBalance} </span>
                   </S.Flex>
                   <input
                     disabled
                     name="myEth"
                     type="text"
-                    value={contractAndWalletData.accounts[0]}
+                    value={tokenAddress}
                   />
                 </S.Card>
               </S.InputBox>
