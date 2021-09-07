@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import useSignIn from 'hooks/useSignIn';
+import { ercWallet, getWeb3WalletBalance } from 'utils/ercWallet';
+import ERC20AppContract from 'utils/contracts/ERC20AppContract.json'
 
 import * as S from './styles';
 import { Props } from './types';
@@ -24,6 +27,41 @@ export const MigrationHero = () => {
 
 export const MigrationConvert = () => {
   const { fetchAccount, loading, error, account } = useSignIn();
+  const [contractAndWalletData, setContractAndWalletData] = useState<Partial<{ web3: any, accounts: Array<string>, instance: any, walletBalance: string }>>({});
+
+
+  const handleErcWalletConnect = async () => {
+    const contractDetails = await ercWallet(ERC20AppContract.contractAddress, ERC20AppContract.abi);
+    if (contractDetails) {
+      const walletBalance = await getWeb3WalletBalance(contractDetails.web3, contractDetails.accounts[0]);
+      setContractAndWalletData({
+        ...contractDetails,
+        walletBalance
+      });
+
+      // const res = await contractDetails.instance.methods.balances('0x0c7f69f66ab81bb257198baa7f42fd1469e002a6').call();
+      // console.log(res);
+    }
+  }
+
+  const handleMigration = async () => {
+    if (contractAndWalletData.instance) {
+      const res = await contractAndWalletData.instance.methods.lock(
+        contractAndWalletData.accounts[0],
+        account.address,
+        10,
+        0
+      )
+      .send({
+        // not sure what the from address should be here; 
+        from: contractAndWalletData.accounts[0]
+      })
+    }
+    else {
+      alert("Please connect wallets")
+    }
+  }
+
   return (
     <S.MigrationConvert>
       <S.Title>
@@ -66,34 +104,40 @@ export const MigrationConvert = () => {
       </MigrationCard>
 
       <MigrationCard
-        title="Step 1"
+        title="Step 2"
         description="Connect the ERC20 wallet where you have your PDEX stored."
       >
-        <S.Input>
-          <label htmlFor="myEth">
-            My ERC-20 address
-            <S.InputBox>
-              <S.ImageContainer>
-                <img src="/img/eth.svg" alt="Polkadojs Avatar" />
-              </S.ImageContainer>
-              <S.Card>
-                <S.Flex>
-                  <span>PDEX ERC-20</span>
-                  <span>Balance: 0 </span>
-                </S.Flex>
-                <input
-                  disabled
-                  name="myEth"
-                  type="text"
-                  value="0x00000000000000000000000000000000000000000"
-                />
-              </S.Card>
-            </S.InputBox>
-          </label>
-        </S.Input>
+        {
+          contractAndWalletData.accounts ? <S.Input>
+            <label htmlFor="myEth">
+              My ERC-20 address
+              <S.InputBox>
+                <S.ImageContainer>
+                  <img src="/img/eth.svg" alt="Polkadojs Avatar" />
+                </S.ImageContainer>
+                <S.Card>
+                  <S.Flex>
+                    <span>PDEX ERC-20</span>
+                    <span>Balance: {contractAndWalletData.walletBalance} </span>
+                  </S.Flex>
+                  <input
+                    disabled
+                    name="myEth"
+                    type="text"
+                    value={contractAndWalletData.accounts[0]}
+                  />
+                </S.Card>
+              </S.InputBox>
+            </label>
+          </S.Input> : (
+            <button type="button" disabled={loading} onClick={handleErcWalletConnect}>
+              Connect to a Wallet
+            </button>
+          )
+        }
       </MigrationCard>
       <S.MigrationActions>
-        <button type="button" onClick={() => console.log('Fetch server')}>
+        <button type="button" onClick={handleMigration}>
           Migrate Now
         </button>
         <p>
