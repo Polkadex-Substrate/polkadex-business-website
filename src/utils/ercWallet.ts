@@ -1,12 +1,19 @@
 import getWeb3 from './getWeb3';
 
-export const ercWallet = async (contractAddress: string, abi: Array<any>) => {
+let web3: any;
+
+export const initiateContract = async (contractAddress: string, abi: Array<any>) => {
     try {
-        const web3 = await getWeb3();
+        // instantiate only once
+        if (!web3) {
+            web3 = await getWeb3();
+        }
+
         const accounts = await web3['eth'].getAccounts();
+
         const instance = new web3['eth'].Contract(
-          abi,
-          contractAddress,
+            abi,
+            contractAddress,
         );
 
         return { web3, accounts, instance }
@@ -23,4 +30,12 @@ export const ercWallet = async (contractAddress: string, abi: Array<any>) => {
 export const getWeb3WalletBalance = async (web3, account: string) => {
     const balanceInWei = await web3['eth'].getBalance(account)
     return web3['utils'].fromWei(balanceInWei);
+}
+
+export const tokenAddress = "0x0c7f69f66ab81bb257198baa7f42fd1469e002a6";
+
+
+export const erc20TokenBalance = async (contract, account: string) => {
+    const tokenBalance = await contract.methods.balanceOf(account).call();
+    return web3['utils'].fromWei(tokenBalance);
 }
