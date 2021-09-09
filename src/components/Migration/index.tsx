@@ -3,11 +3,14 @@ import { Icon } from 'components/Icon';
 import useSignIn from 'hooks/useSignIn';
 import { initiateContract, getWeb3WalletBalance, tokenAddress, erc20TokenBalance } from 'utils/ercWallet';
 import ERC20AppContract from 'utils/contracts/ERC20AppContract.json';
-import ERC20Contract from 'utils/contracts/ERC20Contract.json'
+import ERC20Contract from 'utils/contracts/ERC20Contract.json';
+import BasicOutboundChannelContract from 'utils/contracts/BasicOutboundChannelContract.json';
 
+import { Contract, ContractInterface, ethers } from "ethers";
 
 import * as S from './styles';
 import { Props } from './types';
+import { connectWeb3, createContractInstance, tokenContractAllowance } from 'utils/etherjs';
 
 export const MigrationHero = () => {
   return (
@@ -29,44 +32,79 @@ export const MigrationHero = () => {
 
 export const MigrationConvert = () => {
   const { fetchAccount, loading, error, account } = useSignIn();
-  const [contractAndWalletData, setContractAndWalletData] = useState<Partial<{ web3: any, accounts: Array<string>, instance: any, walletBalance: string, tokenBalance: string }>>({});
-
+  const [contractAndWalletData, setContractAndWalletData] = useState<any>({});
 
   const handleErcWalletConnect = async () => {
-    const contractDetails = await initiateContract(ERC20AppContract.contractAddress, ERC20AppContract.abi);
-    const tokenContractDetails = await initiateContract(tokenAddress, ERC20Contract.abi);
-    const walletAccount = contractDetails.accounts[0];
-
-    if (contractDetails) {
-      const walletBalance = await getWeb3WalletBalance(contractDetails.web3, walletAccount);
-      const tokenBalance = await erc20TokenBalance(tokenContractDetails.instance, walletAccount);
+    try {
+      const connect = await connectWeb3();
+      // // erc20App contract
+      // const contract = createContractInstance(ERC20AppContract.contractAddress, ERC20AppContract.abi, connect.provider);
+      // pdex token contract
+      const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, connect.provider);
+      // get account signed 
+      const accounts = await connect.provider.listAccounts();
+      // get balance 
+      const tokenBalanceInWei = await tokenContract.balanceOf(accounts[0]);
+      const tokenBalance = ethers.utils.formatEther(tokenBalanceInWei);
 
       setContractAndWalletData({
-        ...contractDetails,
-        walletBalance,
-        tokenBalance
+        tokenBalance,
+        accounts,
+        provider: connect.provider,
+        signer: connect.signer
       });
+
+    } catch (error) {
+      console.log({ error });
+
     }
   }
 
+  // use this for now will clean the code up when its ready
   const handleMigration = async () => {
-    if (contractAndWalletData.instance) {
-      const res = await contractAndWalletData.instance.methods.lock(
-        tokenAddress,
-        account.hexPublicKey,
-        10,
-        0
-      )
-        .send({
-          from: contractAndWalletData.accounts[0]
-        })
-      console.log(res);
-    }
+    if (contractAndWalletData.signer) {
+      try {
+        // test amount
+        const amount = 10;
+        const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, contractAndWalletData.signer);
+        const contract = createContractInstance(ERC20AppContract.contractAddress, ERC20AppContract.abi, contractAndWalletData.signer);
+        const basicOutboundChannelContract = createContractInstance(BasicOutboundChannelContract.contractAddress, BasicOutboundChannelContract.abi, contractAndWalletData.signer);
 
+        // token approval 
+        const tokenApproval = await tokenContract.approve(ERC20AppContract.contractAddress, 20);
+        await tokenApproval.wait();
+
+        // token authorized
+        const authorizeOperator = await basicOutboundChannelContract.authorizeOperator(ERC20AppContract.contractAddress);
+        await authorizeOperator.wait();
+
+        // const allowance = await tokenContractAllowance(tokenContract, contractAndWalletData.accounts[0], ERC20AppContract.contractAddress);
+        // if (parseInt(allowance) >= amount) {
+        //   // call lock
+        // }
+        // else {
+        //   // approve
+        // }
+        // console.log({ allowance });
+
+        // lock 
+        const tokenLock = await contract.lock(
+          tokenAddress,
+          account.hexPublicKey,
+          amount,
+          0
+        );
+        await tokenLock.wait();
+
+      } catch (error) {
+        console.log({ error })
+      }
+    }
     else {
-      alert("Please connect wallets")
+      alert("pls connect wallets")
     }
   }
+
 
   return (
     <S.MigrationConvert>
@@ -114,7 +152,7 @@ export const MigrationConvert = () => {
         description="Connect the ERC20 wallet where you have your PDEX stored."
       >
         {
-          contractAndWalletData.accounts ? <S.Input>
+          contractAndWalletData.tokenBalance ? <S.Input>
             <label htmlFor="myEth">
               My ERC-20 address
               <S.InputBox>
@@ -136,7 +174,7 @@ export const MigrationConvert = () => {
               </S.InputBox>
             </label>
           </S.Input> : (
-            <button type="button" disabled={loading} onClick={handleErcWalletConnect}>
+            <button type="button" onClick={handleErcWalletConnect}>
               Connect to a Wallet
             </button>
           )
