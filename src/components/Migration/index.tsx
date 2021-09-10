@@ -31,7 +31,7 @@ export const MigrationHero = () => {
 };
 
 export const MigrationConvert = () => {
-  const { fetchAccount, loading, error, account } = useSignIn();
+  const { fetchAccount, loading, error, account: subAddress } = useSignIn();
   const [contractAndWalletData, setContractAndWalletData] = useState<any>({});
 
   const handleErcWalletConnect = async () => {
@@ -43,6 +43,15 @@ export const MigrationConvert = () => {
       const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, connect.provider);
       // get account signed 
       const accounts = await connect.provider.listAccounts();
+      if (!accounts?.length) {
+        setContractAndWalletData({
+          accounts: [],
+          account: null,
+          provider: connect.provider,
+          signer: connect.signer
+        });
+        return;
+      }
       // get balance 
       const tokenBalanceInWei = await tokenContract.balanceOf(accounts[0]);
       const tokenBalance = ethers.utils.formatEther(tokenBalanceInWei);
@@ -50,13 +59,19 @@ export const MigrationConvert = () => {
       setContractAndWalletData({
         tokenBalance,
         accounts,
+        account: accounts[0],
         provider: connect.provider,
         signer: connect.signer
       });
 
     } catch (error) {
       console.log({ error });
-
+      setContractAndWalletData({
+        accounts: [],
+        account: null,
+        provider: null,
+        signer: null
+      });
     }
   }
 
@@ -90,7 +105,7 @@ export const MigrationConvert = () => {
         // lock 
         const tokenLock = await contract.lock(
           tokenAddress,
-          account.hexPublicKey,
+          subAddress.hexPublicKey,
           amount,
           0
         );
@@ -105,6 +120,7 @@ export const MigrationConvert = () => {
     }
   }
 
+  console.log(subAddress)
 
   return (
     <S.MigrationConvert>
@@ -117,7 +133,7 @@ export const MigrationConvert = () => {
         title="Step 1"
         description="Select the wallet in which you want to receive your PDEX. You need to install Polkadot{.js}"
       >
-        {account.address ? (
+        {subAddress.address ? (
           <S.Input>
             <label htmlFor="myPolkadotjs">
               {`My Polkadot{.js} address`}
@@ -127,14 +143,14 @@ export const MigrationConvert = () => {
                 </S.ImageContainer>
                 <S.Card>
                   <S.Flex>
-                    <span>{account.account.meta.name}</span>
-                    <span>Balance: 0</span>
+                    <span>{subAddress.account.meta.name}</span>
+                    <span>Balance: {subAddress.balance?.toHuman()}</span>
                   </S.Flex>
                   <input
                     disabled
                     name="myPolkadotjs"
                     type="text"
-                    value={account.address}
+                    value={subAddress.address}
                   />
                 </S.Card>
               </S.InputBox>
@@ -142,7 +158,7 @@ export const MigrationConvert = () => {
           </S.Input>
         ) : (
           <button type="button" disabled={loading} onClick={fetchAccount}>
-            Connect to a Wallet
+            {loading ? 'Connecting...' : 'Connect to a Wallet'}
           </button>
         )}
       </MigrationCard>
@@ -152,7 +168,7 @@ export const MigrationConvert = () => {
         description="Connect the ERC20 wallet where you have your PDEX stored."
       >
         {
-          contractAndWalletData.tokenBalance ? <S.Input>
+          contractAndWalletData.account ? <S.Input>
             <label htmlFor="myEth">
               My ERC-20 address
               <S.InputBox>
@@ -168,7 +184,7 @@ export const MigrationConvert = () => {
                     disabled
                     name="myEth"
                     type="text"
-                    value={tokenAddress}
+                    value={contractAndWalletData.account}
                   />
                 </S.Card>
               </S.InputBox>

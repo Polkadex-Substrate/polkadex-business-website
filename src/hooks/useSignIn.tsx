@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { decodeAddress } from '@polkadot/util-crypto';
+import { convertPublicKeyToCurve25519, decodeAddress } from '@polkadot/util-crypto';
 import { u8aToHex } from '@polkadot/util';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import pTypes from 'utils/p_types.json';
+import { Balance } from '@polkadot/types/interfaces';
 
 type Props = {
   account?: any;
@@ -10,6 +11,7 @@ type Props = {
   address: string;
   hexPublicKey: string;
   injector?: any;
+  balance: Balance;
 };
 export default function useSignIn() {
   const [account, setAccount] = useState<Props>({
@@ -17,7 +19,8 @@ export default function useSignIn() {
     name: '',
     address: '',
     injector: '',
-    hexPublicKey: ''
+    hexPublicKey: '',
+    balance: null
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
@@ -33,6 +36,7 @@ export default function useSignIn() {
         name: data.currAccount.meta.name,
         address: data.currAccount.address,
         hexPublicKey: data.hexPublicKey,
+        balance: data.balance,
         ...data.injector,
       });
     }
@@ -61,13 +65,13 @@ export default function useSignIn() {
        * 1. Get the balance
        * 2. Listen for events from the relayer
        */
-      const wsProvider = new WsProvider('ws://127.0.0.1:9944');
+      const wsProvider = new WsProvider('wss://blockchain.polkadex.trade');
       // I need know the pallet types for migration the one used is for polkadotIDO 
       const api = await ApiPromise.create({ provider: wsProvider, types: pTypes });
       const { nonce, data: balance } = await api.query.system.account(currAccount.address);
-      console.log({ nonce: nonce.toHuman(), data: balance.toJSON() });
+      console.log({ nonce: nonce.toHuman(), data: balance });
       
-      return { currAccount, injector, hexPublicKey };
+      return { currAccount, injector, hexPublicKey, balance: balance.free };
     } catch (err) {
       setError({ status: true, message: err.message });
     }
