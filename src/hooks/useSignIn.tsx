@@ -65,7 +65,7 @@ export default function useSignIn() {
        * 1. Get the balance
        * 2. Listen for events from the relayer
        */
-      const wsProvider = new WsProvider('wss://blockchain.polkadex.trade');
+      const wsProvider = new WsProvider('ws://127.0.0.1:9944');
       // I need know the pallet types for migration the one used is for polkadotIDO 
       const api = await ApiPromise.create({ provider: wsProvider, types: pTypes });
       const { nonce, data: balance } = await api.query.system.account(currAccount.address);

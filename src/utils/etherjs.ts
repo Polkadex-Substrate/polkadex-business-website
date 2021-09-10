@@ -30,8 +30,9 @@ export const createContractInstance = (contractAddress: string, abi: ContractInt
     return new ethers.Contract(contractAddress, abi, _provider);
 }
 
-export const tokenContractAllowance = async (tokenContrat: Contract, ownerAddress: string, spenderAddress: string): Promise<string> => {
-    return `${await tokenContrat.allowance(ownerAddress, spenderAddress)}`
+export const tokenContractAllowance = async (tokenContract: Contract, ownerAddress: string, spenderAddress: string): Promise<Number> => {
+    const allowance = await tokenContract.allowance(ownerAddress, spenderAddress)
+    return parseFloat(ethers.utils.formatEther(allowance));
 }
 
 export const approveToken = async (tokenContractInstance: Contract, contractAddress: string, amount: number) => {

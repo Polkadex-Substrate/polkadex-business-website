@@ -175,6 +175,19 @@ export const MigrationActions = styled.div`
       margin-bottom: 2rem;
       font-weight: 550;
       cursor: pointer;
+
+      &:disabled {
+        cursor: inherit;
+        background: gray;
+      }
+    }
+    ul {
+      margin-bottom: 20px;
+      li {
+        a:hover {
+          text-decoration: underline;
+        }
+      }
     }
     p {
       max-width: 45rem;
