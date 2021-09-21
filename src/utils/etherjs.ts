@@ -26,7 +26,7 @@ export const connectWeb3 = async () => {
     }
 }
 
-export const createContractInstance = (contractAddress: string, abi: ContractInterface, _provider: ethers.providers.Web3Provider): Contract => {
+export const createContractInstance = (contractAddress: string, abi: ContractInterface, _provider: ethers.providers.Web3Provider | ethers.Signer): Contract => {
     return new ethers.Contract(contractAddress, abi, _provider);
 }
 
