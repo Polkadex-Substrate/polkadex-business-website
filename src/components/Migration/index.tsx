@@ -3,7 +3,8 @@ import { Icon } from 'components/Icon';
 import useSignIn from 'hooks/useSignIn';
 import { tokenAddress } from 'utils/ercWallet';
 import ERC20Contract from 'utils/contracts/ERC20Contract.json';
-import PdexMigrateContract from 'utils/contracts/PdexMigrateContract.json';
+import PdexMigratateTestTokenContract from 'utils/contracts/PdexMigratateTestTokenContract.json';
+// will be used on the main net
 import PdexContract from 'utils/contracts/PdexContract.json';
 
 
@@ -101,29 +102,29 @@ export const MigrationConvert = () => {
     if (contractAndWalletData.signer) {
       try {
         const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, contractAndWalletData.signer);
+         // this will be pdex token contract
+        // const pdexContractInstance = createContractInstance(PdexContract.contractAddress, PdexContract.abi, contractAndWalletData.signer)
+
         // migrate 
-        const pdexMigrateContractInstance = createContractInstance(PdexMigrateContract.contractAddress, PdexMigrateContract.abi, contractAndWalletData.signer);
+        const pdexMigrateTestTokenContractInstance = createContractInstance(PdexMigratateTestTokenContract.contractAddress, PdexMigratateTestTokenContract.abi, contractAndWalletData.signer);
         // listen to PdexMigratedEvent
-        pdexMigrateContractInstance.on("PdexMigratedEvent", async () => {
+        pdexMigrateTestTokenContractInstance.on("PdexMigratedEvent", async () => {
           const tokenBalanceInWei = await tokenContract.balanceOf(contractAndWalletData.account);
           const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
           contractAndWalletData.tokenBalance = formatAmount(tokenBalance);
           console.log({ tokenBalanceInWei, tokenBalance, x: contractAndWalletData.tokenBalance });
-
           setContractAndWalletData({ ...contractAndWalletData });
         });
-        // this will be pdex token contract
-        const pdexContractInstance = createContractInstance(PdexContract.contractAddress, PdexContract.abi, contractAndWalletData.signer);
-
+       
         if (+contractAndWalletData.tokenBalance > 0) {
           setStatus(MIGRATE_STATUS.APPROVING);
-          const apporovePdexMigrateContract = await tokenContract.approve(PdexMigrateContract.contractAddress, EthersConstants.MaxUint256);
+          const apporovePdexMigrateContract = await tokenContract.approve(PdexMigratateTestTokenContract.contractAddress, EthersConstants.MaxUint256);
           setTxs([...txs, apporovePdexMigrateContract.hash]);
           await apporovePdexMigrateContract.wait();
 
           // migrate
           setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
-          const migrate = await pdexMigrateContractInstance.migrate(tokenAddress, contractAndWalletData.account, subAddress.hexPublicKey, contractAndWalletData.totalBalance);
+          const migrate = await pdexMigrateTestTokenContractInstance.migrate(contractAndWalletData.account, subAddress.hexPublicKey, contractAndWalletData.totalBalance);
           setTxs([...txs, migrate.hash]);
           await migrate.wait();
 
