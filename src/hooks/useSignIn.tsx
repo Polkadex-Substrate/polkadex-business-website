@@ -73,7 +73,7 @@ export default function useSignIn() {
       const publicKey = decodeAddress(currAccount.address);
       const hexPublicKey = u8aToHex(publicKey);
 
-      const wsProvider = new WsProvider('ws://blockchain.polkadex.trade');
+      const wsProvider = new WsProvider('wss://blockchain.polkadex.trade');
       // I need know the pallet types for migration the one used is for polkadotIDO 
       const api = await ApiPromise.create({ provider: wsProvider, types: pTypes });
       // set api promise
