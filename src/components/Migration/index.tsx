@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import useSignIn from 'hooks/useSignIn';
-import { initiateContract, getWeb3WalletBalance, tokenAddress, erc20TokenBalance } from 'utils/ercWallet';
-import ERC20AppContract from 'utils/contracts/ERC20AppContract.json';
+import { tokenAddress } from 'utils/ercWallet';
 import ERC20Contract from 'utils/contracts/ERC20Contract.json';
-import BasicOutboundChannelContract from 'utils/contracts/BasicOutboundChannelContract.json';
+import PdexMigrateContract from 'utils/contracts/PdexMigrateContract.json';
+import PdexContract from 'utils/contracts/PdexContract.json';
 
-import { Contract, ContractInterface, ethers, constants as EthersConstants } from "ethers";
+
+import { ethers, constants as EthersConstants, BigNumber } from "ethers";
 
 import * as S from './styles';
 import { Props } from './types';
-import { connectWeb3, createContractInstance, tokenContractAllowance } from 'utils/etherjs';
+import { connectWeb3, createContractInstance } from 'utils/etherjs';
+import { formatAmount } from 'utils/helpers';
 
 export const MigrationHero = () => {
   return (
@@ -36,20 +38,26 @@ const MIGRATE_STATUS = {
   AUTHORIZING: 2,
   PROCESSING_ON_ETHEREUM: 3,
   PROCESSING_ON_RELAYER: 4,
-  FAILED: 5
+  FAILED: 5,
 }
 
+
 export const MigrationConvert = () => {
-  const { fetchAccount, loading, error, account: subAddress } = useSignIn();
-  const [contractAndWalletData, setContractAndWalletData] = useState<any>({});
+  const { fetchAccount, loading, error, account: subAddress, isMigrated } = useSignIn();
+  const [contractAndWalletData, setContractAndWalletData] = useState<Partial<{
+    tokenBalance: string;
+    totalBalance: BigNumber;
+    accounts: Array<string>;
+    account: string;
+    provider: ethers.providers.Provider;
+    signer: ethers.Signer
+  }>>({});
   const [status, setStatus] = useState<number>(MIGRATE_STATUS.INITIAL);
   const [txs, setTxs] = useState<string[]>([]);
 
   const handleErcWalletConnect = async () => {
     try {
       const connect = await connectWeb3();
-      // // erc20App contract
-      // const contract = createContractInstance(ERC20AppContract.contractAddress, ERC20AppContract.abi, connect.provider);
       // pdex token contract
       const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, connect.provider);
       // get account signed 
@@ -65,10 +73,12 @@ export const MigrationConvert = () => {
       }
       // get balance 
       const tokenBalanceInWei = await tokenContract.balanceOf(accounts[0]);
-      const tokenBalance = ethers.utils.formatEther(tokenBalanceInWei);
+      const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
 
       setContractAndWalletData({
-        tokenBalance,
+        tokenBalance: formatAmount(tokenBalance),
+        // one for now to test
+        totalBalance: ethers.utils.parseEther("1"),
         accounts,
         account: accounts[0],
         provider: connect.provider,
@@ -90,45 +100,36 @@ export const MigrationConvert = () => {
   const handleMigration = async () => {
     if (contractAndWalletData.signer) {
       try {
-        // test amount
-        const amount = 1;
         const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, contractAndWalletData.signer);
-        const contract = createContractInstance(ERC20AppContract.contractAddress, ERC20AppContract.abi, contractAndWalletData.signer);
-        const basicOutboundChannelContract = createContractInstance(BasicOutboundChannelContract.contractAddress, BasicOutboundChannelContract.abi, contractAndWalletData.signer);
+        // migrate 
+        const pdexMigrateContractInstance = createContractInstance(PdexMigrateContract.contractAddress, PdexMigrateContract.abi, contractAndWalletData.signer);
+        // listen to PdexMigratedEvent
+        pdexMigrateContractInstance.on("PdexMigratedEvent", async () => {
+          const tokenBalanceInWei = await tokenContract.balanceOf(contractAndWalletData.account);
+          const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
+          contractAndWalletData.tokenBalance = formatAmount(tokenBalance);
+          console.log({ tokenBalanceInWei, tokenBalance, x: contractAndWalletData.tokenBalance });
 
-        const allowance = await tokenContractAllowance(tokenContract, contractAndWalletData.account, ERC20AppContract.contractAddress);
-        if (allowance < amount) {
-          // approve
+          setContractAndWalletData({ ...contractAndWalletData });
+        });
+        // this will be pdex token contract
+        const pdexContractInstance = createContractInstance(PdexContract.contractAddress, PdexContract.abi, contractAndWalletData.signer);
+
+        if (+contractAndWalletData.tokenBalance > 0) {
           setStatus(MIGRATE_STATUS.APPROVING);
-          const tokenApproval = await tokenContract.approve(ERC20AppContract.contractAddress, EthersConstants.MaxUint256);
-          setTxs([...txs, tokenApproval.hash]);
-          await tokenApproval.wait();
+          const apporovePdexMigrateContract = await tokenContract.approve(PdexMigrateContract.contractAddress, EthersConstants.MaxUint256);
+          setTxs([...txs, apporovePdexMigrateContract.hash]);
+          await apporovePdexMigrateContract.wait();
+
+          // migrate
+          setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
+          const migrate = await pdexMigrateContractInstance.migrate(tokenAddress, contractAndWalletData.account, subAddress.hexPublicKey, contractAndWalletData.totalBalance);
+          setTxs([...txs, migrate.hash]);
+          await migrate.wait();
+
+          // approve on relayer
+          setStatus(MIGRATE_STATUS.PROCESSING_ON_RELAYER);
         }
-        console.log('approved');
-
-        const isAuthorized = await basicOutboundChannelContract.isOperatorFor(ERC20AppContract.contractAddress, contractAndWalletData.account)
-        if (!isAuthorized) {
-          setStatus(MIGRATE_STATUS.AUTHORIZING);
-          const authorizeOperator = await basicOutboundChannelContract.authorizeOperator(ERC20AppContract.contractAddress);
-          setTxs([...txs, authorizeOperator.hash]);
-          await authorizeOperator.wait();
-        }
-
-        setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
-
-        console.log('authorized');
-
-        // lock 
-        const tokenLock = await contract.lock(
-          tokenAddress,
-          subAddress.hexPublicKey,
-          ethers.utils.parseEther(amount.toString()),
-          0
-        );
-        setTxs([...txs, tokenLock.hash]);
-        await tokenLock.wait();
-        setStatus(MIGRATE_STATUS.PROCESSING_ON_RELAYER)
-        console.log('locked')
 
       } catch (error) {
         console.log({ error })
@@ -215,12 +216,14 @@ export const MigrationConvert = () => {
         }
       </MigrationCard>
       <S.MigrationActions>
-        <button type="button" disabled={!subAddress.address || !contractAndWalletData.account || status === MIGRATE_STATUS.APPROVING || status === MIGRATE_STATUS.AUTHORIZING || status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM || status === MIGRATE_STATUS.PROCESSING_ON_RELAYER} onClick={handleMigration}>
-          {status === MIGRATE_STATUS.APPROVING ? 'Approving' :
-            status === MIGRATE_STATUS.AUTHORIZING ? 'Authorizing' :
-              status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ? 'Processing on Ethereum' :
-                status === MIGRATE_STATUS.PROCESSING_ON_RELAYER ? 'Processing on Relayer' :
-                  status === MIGRATE_STATUS.FAILED ? 'Failed' : 'Migrate Now'}
+        <button type="button" disabled={isMigrated || !subAddress.address || !contractAndWalletData.account || status === MIGRATE_STATUS.APPROVING || status === MIGRATE_STATUS.AUTHORIZING || status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM || status === MIGRATE_STATUS.PROCESSING_ON_RELAYER} onClick={handleMigration}>
+          {
+            isMigrated ? "Migrated!" : (status === MIGRATE_STATUS.APPROVING ? 'Approving' :
+              status === MIGRATE_STATUS.AUTHORIZING ? 'Authorizing' :
+                status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ? 'Processing on Ethereum' :
+                  status === MIGRATE_STATUS.PROCESSING_ON_RELAYER ? 'Processing on Relayer' :
+                    status === MIGRATE_STATUS.FAILED ? 'Failed' : 'Migrate Now')
+          }
         </button>
         <ul>
           {txs.map(tx => <li key={tx}><a href={`https://ropsten.etherscan.io/tx/${tx}`}>https://ropsten.etherscan.io/tx/{tx}</a></li>)}
