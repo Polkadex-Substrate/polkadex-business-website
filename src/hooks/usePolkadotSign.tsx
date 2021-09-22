@@ -50,7 +50,7 @@ export function usePolkadotSign() {
   }, []);
 
   // useEffect(() => {
-  //   if (polkadotApiPromise && selectedPolkadotAccount) {
+  //   if (polkadotApiPromise) {
   //     fetchUpdatedAccount();
   //   }
   // }, [relayerEvent]);
@@ -75,6 +75,21 @@ export function usePolkadotSign() {
   const handleChangePolkadotAccount = (address: string) => {
     const result = polkadotAccounts.filter((item) => item.address === address);
     setSelectedPolkadotAccount(result[0]);
+
+    polkadotApiPromise.query.system.events((events) => {
+      // Loop through the Vec<EventRecord>
+      events.forEach((record) => {
+        // Extract the phase, event and the event types
+        const { event, phase } = record;
+        if (event.method === 'NativePDEXMintedAndLocked') {
+          const account = event.data[1].toJSON();
+
+          if (account === result[0].address) {
+            setRelayerEvent(!relayerEvent);
+          }
+        }
+      });
+    });
   };
 
   // Check if Polkadot{.js} extenson is installed
@@ -141,15 +156,15 @@ export function usePolkadotSign() {
             };
           }),
         );
-        setSelectedPolkadotAccount(result[0]);
         setPolkadotAccounts(result);
-      } else {
-        setPolkadotError({
-          status: true,
-          code: 4,
-          message: 'Your Polkadot{.js} wallet is empty ',
-        });
+        return result[0];
       }
+      setPolkadotError({
+        status: true,
+        code: 4,
+        message: 'Your Polkadot{.js} wallet is empty ',
+      });
+
       setPolkadotLoading(false);
     } catch (err) {
       setPolkadotLoading(false);
@@ -160,13 +175,34 @@ export function usePolkadotSign() {
       });
     }
   };
+  // Select Polkadot{.js} account and listen events
+  const handlePolkadotAccount = async () => {
+    const result = await handlePolkadotAccounts();
+    setSelectedPolkadotAccount(result);
+    // listen to events
+    polkadotApiPromise.query.system.events((events) => {
+      // Loop through the Vec<EventRecord>
+      events.forEach((record) => {
+        // Extract the phase, event and the event types
+        const { event, phase } = record;
+        console.log('Current Event:', event.method);
+
+        if (event.method === 'NativePDEXMintedAndLocked') {
+          const account = event.data[1].toJSON();
+          if (account === result.address) {
+            setRelayerEvent(!relayerEvent);
+          }
+        }
+      });
+    });
+  };
 
   return {
     polkadotError,
     selectedPolkadotAccount,
     polkadotLoading,
     isMigrated,
-    handlePolkadotAccounts,
+    handlePolkadotAccount,
     handleChangePolkadotAccount,
     polkadotAccounts,
     polkadotApiPromise,

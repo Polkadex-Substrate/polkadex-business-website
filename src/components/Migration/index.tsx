@@ -29,7 +29,7 @@ export const MigrationConvert = () => {
     polkadotError,
     selectedPolkadotAccount,
     polkadotAccounts,
-    handlePolkadotAccounts,
+    handlePolkadotAccount,
     handleChangePolkadotAccount,
     isMigrated,
     polkadotApiPromise,
@@ -105,7 +105,7 @@ export const MigrationConvert = () => {
                 <button
                   type="button"
                   disabled={polkadotLoading}
-                  onClick={() => handlePolkadotAccounts()}
+                  onClick={() => handlePolkadotAccount()}
                 >
                   {polkadotLoading ? 'Connecting...' : 'Connect to a Wallet'}
                 </button>

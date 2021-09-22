@@ -153,7 +153,6 @@ export function useEthereumSign() {
           },
         );
         if (+contractAndWalletData.tokenBalance > 0) {
-          console.log('1');
           setStatus(MIGRATE_STATUS.APPROVING);
           const apporovePdexMigrateContract = await tokenContract.approve(
             PdexMigratateTestTokenContract.contractAddress,
