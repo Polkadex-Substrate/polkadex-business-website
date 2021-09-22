@@ -223,6 +223,9 @@ export const MigrationActions = styled.div`
   ${({ theme }) => css`
     text-align: center;
     margin-top: 2rem;
+    ul {
+      list-style: none;
+    }
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
@@ -240,8 +243,15 @@ export const MigrationActions = styled.div`
     ul {
       margin-bottom: 20px;
       li {
-        a:hover {
+        a {
           text-decoration: underline;
+          text-underline-position: under;
+          opacity: 0.6;
+          transition: opacity ease-in-out 0.4s;
+
+          :hover {
+            opacity: 1;
+          }
         }
       }
     }

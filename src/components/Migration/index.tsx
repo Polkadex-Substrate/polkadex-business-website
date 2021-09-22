@@ -197,7 +197,7 @@ export const MigrationConvert = () => {
                 href={`https://ropsten.etherscan.io/tx/${tx}`}
                 rel="noreferrer"
               >
-                https://ropsten.etherscan.io/tx/{tx}
+                See at Etherscan
               </a>
             </li>
           ))}
