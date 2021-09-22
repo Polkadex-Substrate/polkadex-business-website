@@ -171,6 +171,7 @@ export const MigrationConvert = () => {
         <button
           type="button"
           disabled={
+            Number(contractAndWalletData?.tokenBalance) === 0 ||
             isMigrated ||
             !selectedPolkadotAccount.address ||
             !contractAndWalletData.account ||
