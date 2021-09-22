@@ -60,7 +60,14 @@ export default function useSignIn() {
   const fetchAccountData = async () => {
     setLoading(true);
     try {
-      const { web3Enable } = await import('@polkadot/extension-dapp');
+      const { web3Enable, isWeb3Injected } = await import('@polkadot/extension-dapp');
+      //check if user has a polkadot web3 instance
+      if (!isWeb3Injected) {
+        alert("Install a polkadot extension");
+        setLoading(false);
+        return;
+      }
+
       const allInjected = await web3Enable('Polkadex');
 
       const { web3Accounts, web3FromAddress } = await import(
