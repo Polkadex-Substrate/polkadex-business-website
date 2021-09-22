@@ -9,9 +9,13 @@ export const Wrapper = styled.header`
   z-index: 10;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 0.5rem;
+  @media screen and (min-width: 560px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   &.sticky {
     ${({ theme }) => css`
       max-width: ${theme.grid.container};
@@ -35,7 +39,6 @@ export const Wrapper = styled.header`
 export const Container = styled.div`
   display: flex;
   padding: 1rem;
-
   ${Icon} {
     margin-right: 1rem;
   }

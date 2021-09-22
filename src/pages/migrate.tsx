@@ -9,7 +9,7 @@ import React from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
-export default function Migration() {
+export default function Migrate() {
   const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
 
   return (

@@ -5,9 +5,8 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   env: {
-    hostUrl: 'http://localhost:9002',
-    hostPort: 9002,
-    rangerHostUrl: 'ws://127.0.0.1',
-    rangerHostPort: 9944,
+    GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
+    RANGER_HOST_URL:
+      process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'ws://127.0.0.1:9944',
   },
 };

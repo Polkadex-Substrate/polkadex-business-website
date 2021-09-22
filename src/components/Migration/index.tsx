@@ -1,19 +1,9 @@
-import { useState } from 'react';
+import { Dropdown } from 'components';
 import { Icon } from 'components/Icon';
-import useSignIn from 'hooks/useSignIn';
-import { tokenAddress } from 'utils/ercWallet';
-import ERC20Contract from 'utils/contracts/ERC20Contract.json';
-import PdexMigratateTestTokenContract from 'utils/contracts/PdexMigratateTestTokenContract.json';
-// will be used on the main net
-import PdexContract from 'utils/contracts/PdexContract.json';
-
-
-import { ethers, constants as EthersConstants, BigNumber } from "ethers";
+import { MIGRATE_STATUS, useEthereumSign, usePolkadotSign } from 'hooks';
 
 import * as S from './styles';
 import { Props } from './types';
-import { connectWeb3, createContractInstance, tokenContractAllowance } from 'utils/etherjs';
-import { formatAmount } from 'utils/helpers';
 
 export const MigrationHero = () => {
   return (
@@ -33,213 +23,191 @@ export const MigrationHero = () => {
   );
 };
 
-const MIGRATE_STATUS = {
-  INITIAL: 0,
-  APPROVING: 1,
-  AUTHORIZING: 2,
-  PROCESSING_ON_ETHEREUM: 3,
-  PROCESSING_ON_RELAYER: 4,
-  FAILED: 5,
-}
-
-
 export const MigrationConvert = () => {
-  const { fetchAccount, loading, error, account: subAddress, isMigrated } = useSignIn();
-  const [contractAndWalletData, setContractAndWalletData] = useState<Partial<{
-    tokenBalance: string;
-    totalBalance: BigNumber;
-    accounts: Array<string>;
-    account: string;
-    provider: ethers.providers.Provider;
-    signer: ethers.Signer
-  }>>({});
-  const [status, setStatus] = useState<number>(MIGRATE_STATUS.INITIAL);
-  const [txs, setTxs] = useState<string[]>([]);
+  const {
+    polkadotLoading,
+    polkadotError,
+    selectedPolkadotAccount,
+    polkadotAccounts,
+    handlePolkadotAccount,
+    handleChangePolkadotAccount,
+    isMigrated,
+    polkadotApiPromise,
+  } = usePolkadotSign();
 
-  const handleErcWalletConnect = async () => {
-    try {
-      const connect = await connectWeb3();
-      if(!connect.provider) {
-        alert("Install Metamask wallet")
-        return;
-      }
-      // pdex token contract
-      const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, connect.provider);
-      // get account signed 
-      const accounts = await connect.provider.listAccounts();
-      if (!accounts?.length) {
-        setContractAndWalletData({
-          accounts: [],
-          account: null,
-          provider: connect.provider,
-          signer: connect.signer
-        });
-        return;
-      }
-      // get balance 
-      const tokenBalanceInWei = await tokenContract.balanceOf(accounts[0]);
-      const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
+  const {
+    handleEthereumAccounts,
+    handleMigration,
+    contractAndWalletData,
+    status,
+    txs,
+    ethereumError,
+    ethereumLoading,
+    ethereumApiPromise,
+  } = useEthereumSign();
 
-      setContractAndWalletData({
-        tokenBalance: formatAmount(tokenBalance),
-        totalBalance: ethers.utils.parseEther("1"),
-        accounts,
-        account: accounts[0],
-        provider: connect.provider,
-        signer: connect.signer
-      });
-
-    } catch (error) {
-      console.log({ error });
-      setContractAndWalletData({
-        accounts: [],
-        account: null,
-        provider: null,
-        signer: null
-      });
-    }
-  }
-
-  // use this for now will clean the code up when its ready
-  const handleMigration = async () => {
-    if (contractAndWalletData.signer) {
-      try {
-        const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, contractAndWalletData.signer);
-        // this will be pdex token contract
-        // const pdexContractInstance = createContractInstance(PdexContract.contractAddress, PdexContract.abi, contractAndWalletData.signer)
-
-        // migrate 
-        const pdexMigrateTestTokenContractInstance = createContractInstance(PdexMigratateTestTokenContract.contractAddress, PdexMigratateTestTokenContract.abi, contractAndWalletData.signer);
-        // listen to PdexMigratedEvent
-        pdexMigrateTestTokenContractInstance.on("PdexMigratedEvent", async () => {
-          const tokenBalanceInWei = await tokenContract.balanceOf(contractAndWalletData.account);
-          const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
-          const newBalance = formatAmount(tokenBalance);
-          console.log({ tokenBalanceInWei, tokenBalance, x: contractAndWalletData.tokenBalance });
-          setContractAndWalletData({ ...contractAndWalletData, tokenBalance: newBalance });
-        });
-
-        // check for allowance before approving
-        const allowance = await tokenContractAllowance(tokenContract, contractAndWalletData.account, PdexMigratateTestTokenContract.contractAddress);
-        const totalBalance = parseFloat(ethers.utils.formatEther(contractAndWalletData.totalBalance));
-
-        if (+contractAndWalletData.tokenBalance > 0) {
-          if (allowance < totalBalance) {
-            setStatus(MIGRATE_STATUS.APPROVING);
-            const apporovePdexMigrateContract = await tokenContract.approve(PdexMigratateTestTokenContract.contractAddress, EthersConstants.MaxUint256);
-            setTxs([...txs, apporovePdexMigrateContract.hash]);
-            await apporovePdexMigrateContract.wait();
-          }
-
-          // migrate
-          setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
-          const migrate = await pdexMigrateTestTokenContractInstance.migrate(contractAndWalletData.account, subAddress.hexPublicKey, contractAndWalletData.totalBalance);
-          setTxs([...txs, migrate.hash]);
-          await migrate.wait();
-
-          // approve on relayer
-          setStatus(MIGRATE_STATUS.PROCESSING_ON_RELAYER);
-        }
-        else {
-          alert("Balance too low")
-        }
-
-      } catch (error) {
-        console.log({ error })
-        setStatus(MIGRATE_STATUS.FAILED)
-      }
-    }
-    else {
-      alert("pls connect wallets")
-    }
-  }
-
+  //! Create Loading
+  if (!polkadotApiPromise || !ethereumApiPromise) return <div />;
   return (
     <S.MigrationConvert>
       <S.Title>
         <h2>Convert Now</h2>
         <Icon name="ArrowBottom" background="none" />
       </S.Title>
-
       <MigrationCard
         title="Step 1"
         description="Select the wallet in which you want to receive your PDEX. You need to install Polkadot{.js}"
       >
-        {subAddress.address ? (
-          <S.Input>
-            <label htmlFor="myPolkadotjs">
-              {`My Polkadot{.js} address`}
-              <S.InputBox>
-                <S.ImageContainer>
-                  <img src="/img/avatar.svg" alt="Polkadojs Avatar" />
-                </S.ImageContainer>
-                <S.Card>
-                  <S.Flex>
-                    <span>{subAddress.account.meta.name}</span>
-                    <span>Balance: {subAddress.balance?.toHuman()}</span>
-                  </S.Flex>
-                  <input
-                    disabled
-                    name="myPolkadotjs"
-                    type="text"
-                    value={subAddress.address}
-                  />
-                </S.Card>
-              </S.InputBox>
-            </label>
-          </S.Input>
+        {polkadotError.code === 1 ? (
+          <a
+            href="https://polkadot.js.org/extension/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {`Download Polkadot{.js} Extension`}
+          </a>
         ) : (
-          <button type="button" disabled={loading} onClick={fetchAccount}>
-            {loading ? 'Connecting...' : 'Connect to a Wallet'}
-          </button>
+          <div>
+            {selectedPolkadotAccount.address ? (
+              <S.Input>
+                <S.InpuTitle>{`Select your Polkadot{.js} wallet`}</S.InpuTitle>
+                <Dropdown
+                  title={
+                    <PolkadotWallet
+                      name={selectedPolkadotAccount.meta.name}
+                      balance={selectedPolkadotAccount.balance?.free}
+                      address={selectedPolkadotAccount.address}
+                      // eslint-disable-next-line @typescript-eslint/no-empty-function
+                      changeAccount={() => {}}
+                    />
+                  }
+                >
+                  <S.MigrationDropdown>
+                    {polkadotAccounts.map((item) => (
+                      <PolkadotWallet
+                        selected={
+                          selectedPolkadotAccount.address === item.address
+                        }
+                        key={item.address}
+                        name={item.meta.name}
+                        balance={item.balance?.free}
+                        address={item.address}
+                        changeAccount={() =>
+                          handleChangePolkadotAccount(item.address)
+                        }
+                      />
+                    ))}
+                  </S.MigrationDropdown>
+                </Dropdown>
+              </S.Input>
+            ) : (
+              <div>
+                <button
+                  type="button"
+                  disabled={polkadotLoading}
+                  onClick={() => handlePolkadotAccount()}
+                >
+                  {polkadotLoading ? 'Connecting...' : 'Connect to a Wallet'}
+                </button>
+                {polkadotError.status && (
+                  <S.ErrorTag>
+                    <span>Error</span>
+                    {polkadotError.message}
+                  </S.ErrorTag>
+                )}
+              </div>
+            )}
+          </div>
         )}
       </MigrationCard>
-
       <MigrationCard
         title="Step 2"
         description="Connect the ERC20 wallet where you have your PDEX stored."
       >
-        {
-          contractAndWalletData.account ? <S.Input>
-            <label htmlFor="myEth">
-              My ERC-20 address
-              <S.InputBox>
-                <S.ImageContainer>
-                  <img src="/img/eth.svg" alt="Polkadojs Avatar" />
-                </S.ImageContainer>
-                <S.Card>
-                  <S.Flex>
-                    <span>PDEX ERC-20</span>
-                    <span>Balance: {contractAndWalletData.tokenBalance} </span>
-                  </S.Flex>
-                  <input
-                    disabled
-                    name="myEth"
-                    type="text"
-                    value={contractAndWalletData.account}
-                  />
-                </S.Card>
-              </S.InputBox>
-            </label>
-          </S.Input> : (
-            <button type="button" onClick={handleErcWalletConnect}>
-              Connect to a Wallet
-            </button>
-          )
-        }
+        {ethereumError.code === 1 ? (
+          <a
+            href="https://metamask.io/download.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download Metamask Extension
+          </a>
+        ) : (
+          <div>
+            {contractAndWalletData.account ? (
+              <S.Input>
+                <S.InpuTitle>My ERC-20 address </S.InpuTitle>
+                <Wallet
+                  balance={contractAndWalletData.tokenBalance}
+                  account={contractAndWalletData.account}
+                />
+                {ethereumError.status && (
+                  <S.ErrorTag>
+                    <span>Error</span>
+                    {ethereumError.message}
+                  </S.ErrorTag>
+                )}
+              </S.Input>
+            ) : (
+              <button
+                disabled={ethereumLoading}
+                type="button"
+                onClick={handleEthereumAccounts}
+              >
+                {ethereumLoading ? 'Connecting...' : 'Connect to a Wallet'}
+              </button>
+            )}
+          </div>
+        )}
       </MigrationCard>
-      <S.MigrationActions>
-        <button type="button" disabled={isMigrated || !subAddress.address || !contractAndWalletData.account || status === MIGRATE_STATUS.APPROVING || status === MIGRATE_STATUS.AUTHORIZING || status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM || status === MIGRATE_STATUS.PROCESSING_ON_RELAYER} onClick={handleMigration}>
-          {
-            isMigrated ? "Migrated!" : (status === MIGRATE_STATUS.APPROVING ? 'Approving' :
-              status === MIGRATE_STATUS.AUTHORIZING ? 'Authorizing' :
-                status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ? 'Processing on Ethereum' :
-                  status === MIGRATE_STATUS.PROCESSING_ON_RELAYER ? 'Processing on Relayer' :
-                    status === MIGRATE_STATUS.FAILED ? 'Failed' : 'Migrate Now')
+      <S.MigrationActions
+        isLoading={
+          status === MIGRATE_STATUS.APPROVING ||
+          status === MIGRATE_STATUS.AUTHORIZING ||
+          status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ||
+          (status === MIGRATE_STATUS.PROCESSING_ON_RELAYER && !isMigrated)
+        }
+      >
+        <button
+          type="button"
+          disabled={
+            Number(contractAndWalletData?.tokenBalance) === 0 ||
+            isMigrated ||
+            !selectedPolkadotAccount.address ||
+            !contractAndWalletData.account ||
+            status === MIGRATE_STATUS.APPROVING ||
+            status === MIGRATE_STATUS.AUTHORIZING ||
+            status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ||
+            status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
           }
+          onClick={() => handleMigration(selectedPolkadotAccount)}
+        >
+          {isMigrated
+            ? 'Migrated'
+            : status === MIGRATE_STATUS.APPROVING
+            ? 'Approving'
+            : status === MIGRATE_STATUS.AUTHORIZING
+            ? 'Authorizing'
+            : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
+            ? 'Processing on Ethereum'
+            : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
+            ? 'Processing on Relayer'
+            : status === MIGRATE_STATUS.FAILED
+            ? 'Failed'
+            : 'Migrate Now'}
         </button>
         <ul>
-          {txs.map(tx => <li key={tx}><a target="_blank" href={`https://ropsten.etherscan.io/tx/${tx}`}>https://ropsten.etherscan.io/tx/{tx}</a></li>)}
+          {txs.map((tx) => (
+            <li key={tx}>
+              <a
+                target="_blank"
+                href={`https://ropsten.etherscan.io/tx/${tx}`}
+                rel="noreferrer"
+              >
+                See at Etherscan
+              </a>
+            </li>
+          ))}
         </ul>
         <p>
           <strong>
@@ -252,14 +220,48 @@ export const MigrationConvert = () => {
   );
 };
 
-const MigrationCard = ({ title, description, children }: Props) => {
-  return (
-    <S.CardWrapper>
-      <S.CardContainer>
-        <h4>{title}</h4>
-        <p>{description}</p>
-      </S.CardContainer>
-      {children}
-    </S.CardWrapper>
-  );
-};
+const MigrationCard = ({ title, description, children }: Props) => (
+  <S.CardWrapper>
+    <S.CardContainer>
+      <h4>{title}</h4>
+      <p>{description}</p>
+    </S.CardContainer>
+    {children}
+  </S.CardWrapper>
+);
+
+const Wallet = ({ balance, account, selected = false }) => (
+  <S.InputBox selected={selected}>
+    <S.ImageContainer>
+      <img src="/img/eth.svg" alt="Polkadojs Avatar" />
+    </S.ImageContainer>
+    <S.Card>
+      <S.Flex>
+        <span>PDEX ERC-20</span>
+        <span>Balance: {balance} </span>
+      </S.Flex>
+      <p>{account}</p>
+    </S.Card>
+  </S.InputBox>
+);
+
+const PolkadotWallet = ({
+  name,
+  address,
+  balance,
+  selected = false,
+  changeAccount,
+}) => (
+  <S.InputBox selected={selected} onClick={changeAccount}>
+    <S.ImageContainer>
+      <img src="/img/avatar.svg" alt="Polkadojs Avatar" />
+    </S.ImageContainer>
+    <S.Card>
+      <S.Flex>
+        <span>{name}</span>
+        <span>Balance: {balance}</span>
+      </S.Flex>
+      <p>{address}</p>
+    </S.Card>
+  </S.InputBox>
+);

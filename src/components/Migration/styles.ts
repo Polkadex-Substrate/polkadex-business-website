@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   background-image: url('/img/migrationBg.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 110vh;
+  min-height: 100rem;
   position: relative;
   margin: -10rem auto 0 auto;
   ${({ theme }) => css`
@@ -22,6 +22,10 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (min-width: 1000px) {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  @media screen and (min-width: 1000px) and {
     grid-template-columns: 1fr 1.8fr;
   }
 `;
@@ -63,16 +67,14 @@ export const Box = styled.div`
 export const MigrationConvert = styled.div`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    margin: auto auto 5rem auto;
     position: relative;
-    @media screen and (max-width: 600px) {
-      margin-top: -15rem;
-    }
-    @media screen and (min-width: 600px) {
+    margin: -28rem auto 5rem auto;
+    @media screen and (min-width: 600px) and (max-width: 1000px) {
       margin-top: -38rem;
     }
-    @media screen and (min-width: 1200px) {
-      margin-top: -28rem;
+    //responsive
+    @media screen and (max-width: 600px) {
+      margin-top: -15rem;
     }
   `}
 `;
@@ -89,7 +91,7 @@ export const Title = styled.div`
 `;
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.secondaryBackground};
+    background: ${theme.colors.gradientBackground};
     padding: 2rem;
     border-radius: 1rem;
     max-width: 70rem;
@@ -99,11 +101,45 @@ export const CardWrapper = styled.div`
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
-      padding: 1rem;
+      padding: 1.3rem 1rem;
       border-radius: 1rem;
       margin-bottom: 2rem;
       font-weight: 550;
       cursor: pointer;
+      :disabled {
+        background: gray;
+        cursor: not-allowed;
+      }
+    }
+    a {
+      text-decoration: underline;
+      text-underline-position: under;
+      opacity: 0.6;
+      transition: opacity ease-in-out 0.4s;
+
+      :hover {
+        opacity: 1;
+      }
+    }
+  `}
+`;
+
+export const ErrorTag = styled.div`
+  ${({ theme }) => css`
+    display: block;
+    font-size: ${theme.font.sizes.small};
+    border: 1px solid ${theme.colors.secondary};
+    background-color: #6745d240;
+    border-radius: 0.5rem;
+    padding: 1.5rem 0.5rem;
+    line-height: 0;
+    width: fit-content;
+    span {
+      background: ${theme.colors.secondary};
+      border-radius: 0.3rem;
+      padding: 0.3rem;
+      margin-right: 0.5rem;
+      font-weight: 550;
     }
   `}
 `;
@@ -123,6 +159,12 @@ export const Input = styled.div`
   }
 `;
 
+export const InpuTitle = styled.label`
+  margin-left: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 550;
+`;
+
 export const ImageContainer = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.secondaryBackground};
@@ -139,11 +181,12 @@ export const ImageContainer = styled.div`
 `;
 export const Card = styled.div`
   flex: 1;
-  input {
+  p {
     color: white;
     font-weight: 600;
     font-size: 1.4rem;
     width: 100%;
+    word-break: break-word;
   }
 `;
 export const Flex = styled.div`
@@ -152,21 +195,40 @@ export const Flex = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-export const InputBox = styled.div`
-  ${({ theme }) => css`
-    background: ${theme.colors.secondaryBackground};
+export const InputBox = styled.div<{ selected: boolean }>`
+  ${({ theme, selected }) => css`
+    background: ${selected ? '#E6007A24' : theme.colors.secondaryBackground};
+    ${selected &&
+    css`
+      border: 1px solid ${theme.colors.primary};
+    `}
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
+    width: 100%;
+    cursor: pointer;
   `}
   margin-top: 1rem;
 `;
 
-export const MigrationActions = styled.div`
+export const MigrationDropdown = styled.div`
   ${({ theme }) => css`
+    background-color: ${theme.colors.secondaryBackgroundSolid};
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    shadow: ${theme.shadow.primary};
+  `}
+`;
+
+export const MigrationActions = styled.div<{ isLoading: boolean }>`
+  ${({ theme, isLoading }) => css`
     text-align: center;
     margin-top: 2rem;
+    ul {
+      list-style: none;
+    }
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
@@ -175,8 +237,34 @@ export const MigrationActions = styled.div`
       margin-bottom: 2rem;
       font-weight: 550;
       cursor: pointer;
+      ${isLoading &&
+      css`
+        :after {
+          content: '.';
+          animation: dots 1.5s steps(5, end) infinite;
+        }
 
-      &:disabled {
+        @keyframes dots {
+          0%,
+          20% {
+            color: rgba(0, 0, 0, 0);
+            text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+          }
+          40% {
+            color: white;
+            text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+          }
+          60% {
+            text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
+          }
+          80%,
+          100% {
+            text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+          }
+        }
+      `}
+
+      :disabled {
         cursor: inherit;
         background: gray;
       }
@@ -184,8 +272,15 @@ export const MigrationActions = styled.div`
     ul {
       margin-bottom: 20px;
       li {
-        a:hover {
+        a {
           text-decoration: underline;
+          text-underline-position: under;
+          opacity: 0.6;
+          transition: opacity ease-in-out 0.4s;
+
+          :hover {
+            opacity: 1;
+          }
         }
       }
     }
