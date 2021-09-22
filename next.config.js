@@ -7,6 +7,7 @@ module.exports = {
   env: {
     GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
     RANGER_HOST_URL:
-      process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'ws://127.0.0.1:9944',
+      process.env.NEXT_PUBLIC_RANGER_HOST_URL ||
+      'wss://blockchain.polkadex.trade',
   },
 };
