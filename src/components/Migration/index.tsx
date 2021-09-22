@@ -165,7 +165,7 @@ export const MigrationConvert = () => {
           status === MIGRATE_STATUS.APPROVING ||
           status === MIGRATE_STATUS.AUTHORIZING ||
           status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ||
-          status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
+          (status === MIGRATE_STATUS.PROCESSING_ON_RELAYER && !isMigrated)
         }
       >
         <button
@@ -182,9 +182,8 @@ export const MigrationConvert = () => {
           }
           onClick={() => handleMigration(selectedPolkadotAccount)}
         >
-          {/*! Refactor it */}
           {isMigrated
-            ? 'Migrated!'
+            ? 'Migrated'
             : status === MIGRATE_STATUS.APPROVING
             ? 'Approving'
             : status === MIGRATE_STATUS.AUTHORIZING

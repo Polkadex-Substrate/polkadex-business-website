@@ -144,11 +144,6 @@ export function useEthereumSign() {
             );
             const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
             contractAndWalletData.tokenBalance = formatAmount(tokenBalance);
-            console.log({
-              tokenBalanceInWei,
-              tokenBalance,
-              x: contractAndWalletData.tokenBalance,
-            });
             setContractAndWalletData({ ...contractAndWalletData });
           },
         );
@@ -173,12 +168,8 @@ export function useEthereumSign() {
 
           // approve on relayer
           setStatus(MIGRATE_STATUS.PROCESSING_ON_RELAYER);
-        } else {
-          //! Check it
-          console.log('...');
         }
       } catch (error) {
-        console.log({ error });
         setStatus(MIGRATE_STATUS.FAILED);
       }
     } else {

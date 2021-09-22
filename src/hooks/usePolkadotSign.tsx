@@ -1,5 +1,3 @@
-//! Create Error Message Timeout
-
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { MetadataVersioned } from '@polkadot/types/metadata/MetadataVersioned';
 import { Signer } from '@polkadot/types/types';
@@ -33,7 +31,6 @@ export function usePolkadotSign() {
   );
   const [polkadotAccounts, setPolkadotAccounts] = useState<Props[]>([]);
   const [polkadotLoading, setPolkadotLoading] = useState(false);
-  const [relayerEvent, setRelayerEvent] = useState(false);
   const [polkadotApiPromise, setPolkadotApiPromise] = useState<ApiPromise>(
     null,
   );
@@ -49,43 +46,42 @@ export function usePolkadotSign() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (polkadotApiPromise) {
-  //     fetchUpdatedAccount();
-  //   }
-  // }, [relayerEvent]);
+  useEffect(() => {
+    if (isMigrated) {
+      fetchUpdatedAccount();
+    }
+  }, [isMigrated]);
 
   useEffect(() => {
     extensionChecker();
   }, []);
 
   // Update balance
-  // const fetchUpdatedAccount = async () => {
-  //   const { data: balance } = await polkadotApiPromise.query.system.account(
-  //     selectedPolkadotAccount.address,
-  //   );
-  //   setSelectedPolkadotAccount({
-  //     ...selectedPolkadotAccount,
-  //     balance: balance.toHuman(),
-  //   });
-  //   setIsMigrated(true);
-  // };
+  const fetchUpdatedAccount = async () => {
+    const { data: balance } = await polkadotApiPromise.query.system.account(
+      selectedPolkadotAccount.address,
+    );
+    setSelectedPolkadotAccount({
+      ...selectedPolkadotAccount,
+      balance: balance.toHuman(),
+    });
+  };
 
   // Change the selected Polkadot{.js} account
-  const handleChangePolkadotAccount = (address: string) => {
+  const handleChangePolkadotAccount = async (address: string) => {
     const result = polkadotAccounts.filter((item) => item.address === address);
     setSelectedPolkadotAccount(result[0]);
 
-    polkadotApiPromise.query.system.events((events) => {
+    await polkadotApiPromise.query.system.events((events) => {
       // Loop through the Vec<EventRecord>
       events.forEach((record) => {
         // Extract the phase, event and the event types
         const { event, phase } = record;
         if (event.method === 'NativePDEXMintedAndLocked') {
+          setIsMigrated(true);
           const account = event.data[1].toJSON();
-
           if (account === result[0].address) {
-            setRelayerEvent(!relayerEvent);
+            setIsMigrated(true);
           }
         }
       });
@@ -180,17 +176,16 @@ export function usePolkadotSign() {
     const result = await handlePolkadotAccounts();
     setSelectedPolkadotAccount(result);
     // listen to events
-    polkadotApiPromise.query.system.events((events) => {
+    await polkadotApiPromise.query.system.events((events) => {
       // Loop through the Vec<EventRecord>
       events.forEach((record) => {
         // Extract the phase, event and the event types
         const { event, phase } = record;
-        console.log('Current Event:', event.method);
 
         if (event.method === 'NativePDEXMintedAndLocked') {
           const account = event.data[1].toJSON();
           if (account === result.address) {
-            setRelayerEvent(!relayerEvent);
+            setIsMigrated(true);
           }
         }
       });
