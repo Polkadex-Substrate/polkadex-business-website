@@ -16,7 +16,7 @@ export const connectWeb3 = async () => {
             // For this, you need the account signer...
             signer = provider.getSigner();
         } catch (error) {
-
+            throw new Error(error);
         }
     }
 
@@ -30,8 +30,8 @@ export const createContractInstance = (contractAddress: string, abi: ContractInt
     return new ethers.Contract(contractAddress, abi, _provider);
 }
 
-export const tokenContractAllowance = async (tokenContract: Contract, ownerAddress: string, spenderAddress: string): Promise<Number> => {
-    const allowance = await tokenContract.allowance(ownerAddress, spenderAddress)
+export const tokenContractAllowance = async (tokenContract: Contract, ownerAddress: string, spenderAddress: string): Promise<number> => {
+    const allowance = await tokenContract.allowance(ownerAddress, spenderAddress);
     return parseFloat(ethers.utils.formatEther(allowance));
 }
 
