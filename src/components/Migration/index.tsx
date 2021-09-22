@@ -160,7 +160,14 @@ export const MigrationConvert = () => {
           </div>
         )}
       </MigrationCard>
-      <S.MigrationActions>
+      <S.MigrationActions
+        isLoading={
+          status === MIGRATE_STATUS.APPROVING ||
+          status === MIGRATE_STATUS.AUTHORIZING ||
+          status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ||
+          status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
+        }
+      >
         <button
           type="button"
           disabled={

@@ -219,8 +219,8 @@ export const MigrationDropdown = styled.div`
   `}
 `;
 
-export const MigrationActions = styled.div`
-  ${({ theme }) => css`
+export const MigrationActions = styled.div<{ isLoading: boolean }>`
+  ${({ theme, isLoading }) => css`
     text-align: center;
     margin-top: 2rem;
     ul {
@@ -234,29 +234,32 @@ export const MigrationActions = styled.div`
       margin-bottom: 2rem;
       font-weight: 550;
       cursor: pointer;
-      /* :after {
-        content: '.';
-        animation: dots 1.5s steps(5, end) infinite;
-      }
+      ${isLoading &&
+      css`
+        :after {
+          content: '.';
+          animation: dots 1.5s steps(5, end) infinite;
+        }
 
-      @keyframes dots {
-        0%,
-        20% {
-          color: rgba(0, 0, 0, 0);
-          text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+        @keyframes dots {
+          0%,
+          20% {
+            color: rgba(0, 0, 0, 0);
+            text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+          }
+          40% {
+            color: white;
+            text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+          }
+          60% {
+            text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
+          }
+          80%,
+          100% {
+            text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+          }
         }
-        40% {
-          color: white;
-          text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
-        }
-        60% {
-          text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
-        }
-        80%,
-        100% {
-          text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
-        }
-      } */
+      `}
 
       :disabled {
         cursor: inherit;
