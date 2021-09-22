@@ -7,7 +7,7 @@ module.exports = {
   env: {
     hostUrl: 'http://localhost:9002',
     hostPort: 9002,
-    rangerHostUrl: 'ws://127.0.0.1',
-    rangerHostPort: 9944,
+    RANGER_HOST_URL:
+      process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'ws://127.0.0.1:9944',
   },
 };
