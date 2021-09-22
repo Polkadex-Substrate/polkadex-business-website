@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   background-image: url('/img/migrationBg.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 110vh;
+  min-height: 100rem;
   position: relative;
   margin: -10rem auto 0 auto;
   ${({ theme }) => css`
@@ -22,6 +22,10 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (min-width: 1000px) {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  @media screen and (min-width: 1000px) and {
     grid-template-columns: 1fr 1.8fr;
   }
 `;
@@ -63,16 +67,16 @@ export const Box = styled.div`
 export const MigrationConvert = styled.div`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    margin: auto auto 5rem auto;
+    /* margin: auto auto 5rem auto; */
     position: relative;
-    @media screen and (max-width: 600px) {
-      margin-top: -15rem;
-    }
-    @media screen and (min-width: 600px) {
+    margin-top: -28rem;
+
+    @media screen and (min-width: 600px) and (max-width: 1000px) {
       margin-top: -38rem;
     }
-    @media screen and (min-width: 1200px) {
-      margin-top: -28rem;
+    //responsive
+    @media screen and (max-width: 600px) {
+      margin-top: -15rem;
     }
   `}
 `;
@@ -184,6 +188,7 @@ export const Card = styled.div`
     font-weight: 600;
     font-size: 1.4rem;
     width: 100%;
+    word-break: break-word;
   }
 `;
 export const Flex = styled.div`
