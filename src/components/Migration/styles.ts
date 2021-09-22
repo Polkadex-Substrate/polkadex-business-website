@@ -67,11 +67,8 @@ export const Box = styled.div`
 export const MigrationConvert = styled.div`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    /* margin: auto auto 5rem auto; */
     position: relative;
-    margin-top: -28rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: -28rem auto 5rem auto;
     @media screen and (min-width: 600px) and (max-width: 1000px) {
       margin-top: -38rem;
     }
