@@ -147,7 +147,7 @@ export function usePolkadotSign() {
         setPolkadotError({
           status: true,
           code: 4,
-          message: 'Your Polkadot wallet {.js} is empty ',
+          message: 'Your Polkadot{.js} wallet is empty ',
         });
       }
       setPolkadotLoading(false);
