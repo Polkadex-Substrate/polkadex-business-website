@@ -12,7 +12,7 @@ import { ethers, constants as EthersConstants, BigNumber } from "ethers";
 
 import * as S from './styles';
 import { Props } from './types';
-import { connectWeb3, createContractInstance } from 'utils/etherjs';
+import { connectWeb3, createContractInstance, tokenContractAllowance } from 'utils/etherjs';
 import { formatAmount } from 'utils/helpers';
 
 export const MigrationHero = () => {
@@ -59,6 +59,10 @@ export const MigrationConvert = () => {
   const handleErcWalletConnect = async () => {
     try {
       const connect = await connectWeb3();
+      if(!connect.provider) {
+        alert("Install Metamask wallet")
+        return;
+      }
       // pdex token contract
       const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, connect.provider);
       // get account signed 
@@ -78,7 +82,6 @@ export const MigrationConvert = () => {
 
       setContractAndWalletData({
         tokenBalance: formatAmount(tokenBalance),
-        // one for now to test
         totalBalance: ethers.utils.parseEther("1"),
         accounts,
         account: accounts[0],
@@ -102,7 +105,7 @@ export const MigrationConvert = () => {
     if (contractAndWalletData.signer) {
       try {
         const tokenContract = createContractInstance(tokenAddress, ERC20Contract.abi, contractAndWalletData.signer);
-         // this will be pdex token contract
+        // this will be pdex token contract
         // const pdexContractInstance = createContractInstance(PdexContract.contractAddress, PdexContract.abi, contractAndWalletData.signer)
 
         // migrate 
@@ -111,16 +114,22 @@ export const MigrationConvert = () => {
         pdexMigrateTestTokenContractInstance.on("PdexMigratedEvent", async () => {
           const tokenBalanceInWei = await tokenContract.balanceOf(contractAndWalletData.account);
           const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
-          contractAndWalletData.tokenBalance = formatAmount(tokenBalance);
+          const newBalance = formatAmount(tokenBalance);
           console.log({ tokenBalanceInWei, tokenBalance, x: contractAndWalletData.tokenBalance });
-          setContractAndWalletData({ ...contractAndWalletData });
+          setContractAndWalletData({ ...contractAndWalletData, tokenBalance: newBalance });
         });
-       
+
+        // check for allowance before approving
+        const allowance = await tokenContractAllowance(tokenContract, contractAndWalletData.account, PdexMigratateTestTokenContract.contractAddress);
+        const totalBalance = parseFloat(ethers.utils.formatEther(contractAndWalletData.totalBalance));
+
         if (+contractAndWalletData.tokenBalance > 0) {
-          setStatus(MIGRATE_STATUS.APPROVING);
-          const apporovePdexMigrateContract = await tokenContract.approve(PdexMigratateTestTokenContract.contractAddress, EthersConstants.MaxUint256);
-          setTxs([...txs, apporovePdexMigrateContract.hash]);
-          await apporovePdexMigrateContract.wait();
+          if (allowance < totalBalance) {
+            setStatus(MIGRATE_STATUS.APPROVING);
+            const apporovePdexMigrateContract = await tokenContract.approve(PdexMigratateTestTokenContract.contractAddress, EthersConstants.MaxUint256);
+            setTxs([...txs, apporovePdexMigrateContract.hash]);
+            await apporovePdexMigrateContract.wait();
+          }
 
           // migrate
           setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
@@ -130,6 +139,9 @@ export const MigrationConvert = () => {
 
           // approve on relayer
           setStatus(MIGRATE_STATUS.PROCESSING_ON_RELAYER);
+        }
+        else {
+          alert("Balance too low")
         }
 
       } catch (error) {
@@ -227,7 +239,7 @@ export const MigrationConvert = () => {
           }
         </button>
         <ul>
-          {txs.map(tx => <li key={tx}><a href={`https://ropsten.etherscan.io/tx/${tx}`}>https://ropsten.etherscan.io/tx/{tx}</a></li>)}
+          {txs.map(tx => <li key={tx}><a target="_blank" href={`https://ropsten.etherscan.io/tx/${tx}`}>https://ropsten.etherscan.io/tx/{tx}</a></li>)}
         </ul>
         <p>
           <strong>
