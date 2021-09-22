@@ -78,7 +78,6 @@ export function usePolkadotSign() {
         // Extract the phase, event and the event types
         const { event, phase } = record;
         if (event.method === 'NativePDEXMintedAndLocked') {
-          setIsMigrated(true);
           const account = event.data[1].toJSON();
           if (account === result[0].address) {
             setIsMigrated(true);
