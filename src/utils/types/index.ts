@@ -21,6 +21,7 @@ export type IIcons =
   | 'Send'
   | 'Telegram'
   | 'ThirdParty'
+  | 'Discord'
   | 'Token'
   | 'Twitter'
   | 'Upgrade'
