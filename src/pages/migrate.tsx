@@ -18,7 +18,7 @@ export default function Migrate() {
       <main>
         <MigrationHero />
         <MigrationConvert />
-        <Newsletter {...newsletter} />;
+        <Newsletter {...newsletter} />
       </main>
       <Footer {...footer} />;
     </S.Wrapper>

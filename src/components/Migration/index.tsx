@@ -1,5 +1,4 @@
-import { Dropdown } from 'components';
-import { Icon } from 'components/Icon';
+import { Dropdown, Icon, Spinner } from 'components';
 import { MIGRATE_STATUS, useEthereumSign, usePolkadotSign } from 'hooks';
 
 import * as S from './styles';
@@ -46,8 +45,17 @@ export const MigrationConvert = () => {
     ethereumApiPromise,
   } = useEthereumSign();
 
-  //! Create Loading
-  if (!polkadotApiPromise || !ethereumApiPromise) return <div />;
+  if (!polkadotApiPromise || !ethereumApiPromise)
+    return (
+      <S.LoadingWrapper>
+        <Spinner />
+        <span>
+          {!polkadotApiPromise
+            ? 'Checking Polkadex blockchain status..'
+            : 'Checking Ethereum blockchain status..'}
+        </span>
+      </S.LoadingWrapper>
+    );
   return (
     <S.MigrationConvert>
       <S.Title>
@@ -214,6 +222,8 @@ export const MigrationConvert = () => {
             The PDEX ERC20 migration for PDEX Mainnet is irreversible
           </strong>
           , be sure to select the correct wallet.
+          {/* If you have any questions or
+          issues, please <a href="/"> contact us </a>. */}
         </p>
       </S.MigrationActions>
     </S.MigrationConvert>
