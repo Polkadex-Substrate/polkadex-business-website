@@ -221,9 +221,16 @@ export const MigrationConvert = () => {
           <strong>
             The PDEX ERC20 migration for PDEX Mainnet is irreversible
           </strong>
-          , be sure to select the correct wallet.
-          {/* If you have any questions or
-          issues, please <a href="/"> contact us </a>. */}
+          , be sure to select the correct wallet. If you have any questions or
+          issues, please&nbsp;
+          <a
+            target="_blank"
+            href="https://4ja1jqavh8j.typeform.com/to/voALLQK0"
+            rel="noreferrer"
+          >
+            contact us
+          </a>
+          .
         </p>
       </S.MigrationActions>
     </S.MigrationConvert>
