@@ -127,7 +127,7 @@ export function usePolkadotSign() {
       );
       await web3Enable('Polkadex');
 
-      const allAccounts = await web3Accounts();
+      const allAccounts = await web3Accounts({ ss58Format: 88 });
       if (allAccounts.length) {
         result = await Promise.all(
           allAccounts.map(async (item) => {
