@@ -1,4 +1,5 @@
 import { Wrapper as Icon } from 'components/Icon/styles';
+import { Wrapper as Loading } from 'components/Spinner/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -18,6 +19,7 @@ export const Container = styled.div`
   grid-gap: 1rem;
   align-items: center;
   padding-top: 10rem;
+
   @media screen and (min-width: 600px) and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -25,7 +27,7 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1.5fr;
   }
 
-  @media screen and (min-width: 1000px) and {
+  @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 1.8fr;
   }
 `;
@@ -64,20 +66,28 @@ export const Box = styled.div`
   `}
 `;
 
-export const MigrationConvert = styled.div`
+export const Template = styled.div`
+  margin: -28rem auto 0 auto;
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    margin-top: -38rem;
+  }
+  @media screen and (min-width: 770px) {
+    margin-bottom: 5rem;
+  }
+  //responsive
+  @media screen and (max-width: 600px) {
+    margin-top: -15rem;
+  }
+`;
+
+export const MigrationConvert = styled(Template)`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
     position: relative;
-    margin: -28rem auto 5rem auto;
-    @media screen and (min-width: 600px) and (max-width: 1000px) {
-      margin-top: -38rem;
-    }
-    //responsive
-    @media screen and (max-width: 600px) {
-      margin-top: -15rem;
-    }
   `}
 `;
+
 export const Title = styled.div`
   text-align: center;
   margin-bottom: 3rem;
@@ -89,6 +99,7 @@ export const Title = styled.div`
     margin: 0 auto;
   }
 `;
+
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.gradientBackground};
@@ -120,6 +131,23 @@ export const CardWrapper = styled.div`
       :hover {
         opacity: 1;
       }
+    }
+  `}
+`;
+
+export const LoadingWrapper = styled(Template)`
+  ${({ theme }) => css`
+    background: ${theme.colors.gradientBackground};
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 70rem;
+    text-align: center;
+    ${Loading} {
+      margin-right: 2.1rem;
+    }
+    span {
+      display: block;
+      margin-top: 1rem;
     }
   `}
 `;
@@ -271,17 +299,15 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
     }
     ul {
       margin-bottom: 20px;
-      li {
-        a {
-          text-decoration: underline;
-          text-underline-position: under;
-          opacity: 0.6;
-          transition: opacity ease-in-out 0.4s;
+    }
+    a {
+      text-decoration: underline;
+      text-underline-position: under;
+      opacity: 0.6;
+      transition: opacity ease-in-out 0.4s;
 
-          :hover {
-            opacity: 1;
-          }
-        }
+      :hover {
+        opacity: 1;
       }
     }
     p {

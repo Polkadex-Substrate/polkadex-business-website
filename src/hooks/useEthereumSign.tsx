@@ -46,7 +46,7 @@ export function useEthereumSign() {
   }, []);
 
   useEffect(() => {
-    ethereumtApiInstance();
+    if (!ethereumApiPromise) ethereumtApiInstance();
   }, []);
 
   // Create a Ethereum Instance connection

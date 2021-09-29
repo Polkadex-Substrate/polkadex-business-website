@@ -41,20 +41,16 @@ export function usePolkadotSign() {
     message: '',
   });
   useEffect(() => {
-    if (!polkadotApiPromise) {
-      polkadotApiInstance();
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isMigrated) {
-      fetchUpdatedAccount();
-    }
-  }, [isMigrated]);
-
-  useEffect(() => {
     extensionChecker();
   }, []);
+
+  useEffect(() => {
+    if (!polkadotApiPromise) polkadotApiInstance();
+  }, [polkadotApiPromise]);
+
+  useEffect(() => {
+    if (isMigrated) fetchUpdatedAccount();
+  }, [isMigrated]);
 
   // Update balance
   const fetchUpdatedAccount = async () => {
