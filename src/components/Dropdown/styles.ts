@@ -27,11 +27,8 @@ export const Header = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    z-index: ${theme.layers.alwaysOnTop};
+    z-index: 49;
     transition: ${theme.transition.default};
-    & :hover {
-      opacity: 0.5;
-    }
   `}
 `;
 
@@ -42,6 +39,7 @@ export const Content = styled.div<Partial<Props>>`
     margin-top: ${theme.spacings.xsmall};
     position: absolute;
     z-index: ${theme.layers.alwaysOnTop};
+    width: 100%;
     ${wrapperModifiers[direction]};
   `}
 `;
@@ -60,7 +58,6 @@ export const Overlay = styled.div`
 export const Wrapper = styled.div<StyleProps>`
   ${({ theme, isOpen }) => css`
     position: relative;
-    width: max-content;
     ${Content},
     ${Overlay} {
       transition: transform 0.2s ease-in, opacity ${theme.transition.default};

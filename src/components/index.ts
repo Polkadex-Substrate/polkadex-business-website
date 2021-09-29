@@ -20,7 +20,11 @@ export * from './Header';
 export * from './Icon';
 export * from './LanguageSelector';
 export * from './Logo';
+export * from './Migration';
+export * from './Return';
+export * from './Spinner';
 export * from './ThemeSwitcher';
+
 export {
   Announcement,
   ContractAnnouncement,

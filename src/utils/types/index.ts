@@ -24,6 +24,8 @@ export type IIcons =
   | 'Discord'
   | 'Token'
   | 'Twitter'
+  | 'ArrowLeft'
+  | 'ArrowBottom'
   | 'Upgrade'
   | 'Waiting'
   | 'Whatsapp'
