@@ -4,6 +4,7 @@ import ERC20Contract from 'utils/contracts/ERC20Contract.json';
 // will be used on the main net
 import PdexContract from 'utils/contracts/PdexContract.json';
 import PdexMigratateTestTokenContract from 'utils/contracts/PdexMigratateTestTokenContract.json';
+import PdexMigratateTokenContract from 'utils/contracts/PdexMigrateTokenContract.json';
 import { tokenAddress } from 'utils/ercWallet';
 import { connectWeb3, createContractInstance } from 'utils/etherjs';
 import { formatAmount } from 'utils/helpers';
@@ -54,8 +55,8 @@ export function useEthereumSign() {
       const connect = await connectWeb3();
       // pdex token contract
       const tokenContract = createContractInstance(
-        tokenAddress,
-        ERC20Contract.abi,
+        PdexContract.contractAddress,
+        PdexContract.abi,
         connect.provider,
       );
       setEthereumApiPromise({ tokenContract, connect });
@@ -96,7 +97,7 @@ export function useEthereumSign() {
             return {
               tokenBalance: formatAmount(tokenBalance),
               // one for now to test
-              totalBalance: ethers.utils.parseEther('1'),
+              totalBalance: ethers.utils.parseEther(tokenBalance),
               account: item,
               provider: await ethereumApiPromise.connect.provider,
               signer: await ethereumApiPromise.connect.signer,
@@ -121,8 +122,8 @@ export function useEthereumSign() {
     if (contractAndWalletData.signer) {
       try {
         const tokenContract = createContractInstance(
-          tokenAddress,
-          ERC20Contract.abi,
+          PdexContract.contractAddress,
+          PdexContract.abi,
           contractAndWalletData.signer,
         );
 
@@ -131,8 +132,8 @@ export function useEthereumSign() {
 
         // migrate
         const pdexMigrateTestTokenContractInstance = createContractInstance(
-          PdexMigratateTestTokenContract.contractAddress,
-          PdexMigratateTestTokenContract.abi,
+          PdexMigratateTokenContract.contractAddress,
+          PdexMigratateTokenContract.abi,
           contractAndWalletData.signer,
         );
         // listen to PdexMigratedEvent
@@ -150,7 +151,7 @@ export function useEthereumSign() {
         if (+contractAndWalletData.tokenBalance > 0) {
           setStatus(MIGRATE_STATUS.APPROVING);
           const apporovePdexMigrateContract = await tokenContract.approve(
-            PdexMigratateTestTokenContract.contractAddress,
+            PdexMigratateTokenContract.contractAddress,
             EthersConstants.MaxUint256,
           );
           setTxs([...txs, apporovePdexMigrateContract.hash]);
