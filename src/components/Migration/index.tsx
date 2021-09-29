@@ -199,7 +199,7 @@ export const MigrationConvert = () => {
             : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
             ? 'Processing on Ethereum'
             : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
-            ? 'Processing on Relayer'
+            ? 'Processing on Relayer (15 blocks + 1 min)'
             : status === MIGRATE_STATUS.FAILED
             ? 'Failed'
             : 'Migrate Now'}
