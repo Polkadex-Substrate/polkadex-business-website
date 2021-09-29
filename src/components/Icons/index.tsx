@@ -1,6 +1,7 @@
 export { default as ArrowBottom } from './ArrowBottom';
 export { default as ArrowLeft } from './ArrowLeft';
 export { default as Close } from './Close';
+export { default as Discord } from './Discord';
 export { default as DoubleArrowRight } from './DoubleArrowRight';
 export { default as Ethereum } from './Ethereum';
 export { default as Facebook } from './Facebook';

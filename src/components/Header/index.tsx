@@ -66,11 +66,8 @@ export const Header = ({
               name="LinkedIn"
               link="https://www.linkedin.com/company/69690544"
             />
-            <Icon
-              hoverable
-              name="Reddit"
-              link="https://www.reddit.com/r/polkadex"
-            />
+            <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
+            <Icon name="Discord" link="https://discord.com/invite/Uvua83QAzk" />
             <PrimaryButton
               content={ctaButton}
               icon="Telegram"
