@@ -500,7 +500,7 @@ const ENLanguage = {
             timeline: 'February 2021',
             status: true,
           },
-          { title: 'Testnet V3.0 Launch', timeline: 'June 2021' },
+          { title: 'Testnet V3.0 Launch', timeline: 'June 2021', status: true },
           { title: 'Security Audit', timeline: 'July 2021' },
         ],
       },
@@ -520,7 +520,7 @@ const ENLanguage = {
           { title: 'Parachain Development' },
           { title: 'Polkadot Crowdfunding' },
           { title: 'Parachain Auction' },
-          { title: 'Mainnet Launch', timeline: 'September 2021' },
+          { title: 'Mainnet Launch', timeline: 'September 2021', status: true },
         ],
       },
       {
