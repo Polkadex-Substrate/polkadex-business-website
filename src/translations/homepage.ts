@@ -501,7 +501,7 @@ const ENLanguage = {
             status: true,
           },
           { title: 'Testnet V3.0 Launch', timeline: 'June 2021', status: true },
-          { title: 'Security Audit', timeline: 'July 2021' },
+          { title: 'Security Audit', timeline: 'July 2021', status: true },
         ],
       },
       {
