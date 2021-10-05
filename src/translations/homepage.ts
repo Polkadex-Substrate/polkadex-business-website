@@ -342,17 +342,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Senior Rust Engineer',
-        name: 'Cem Eligüzel',
-        image: 'cemPhotography',
-        socialMedia: [
-          {
-            name: 'linkedin',
-            link: 'https://www.linkedin.com/in/cemeliguzel/',
-          },
-        ],
-      },
-      {
         title: 'Project Manager',
         name: 'Pavan Kanteti',
         image: 'pavanPhotography',
