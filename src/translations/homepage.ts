@@ -2,8 +2,13 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
-        title: 'Products',
-        href: 'https://docs.polkadex.trade/orderbookIntroduction',
+        title: 'Migrate',
+        href: '/migrate',
+      },
+      {
+        title: 'Explorer',
+        href:
+          'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
       },
       {
         title: 'Docs',
@@ -47,7 +52,11 @@ const ENLanguage = {
     title: 'The trading engine for Web3 and DeFi',
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
-    ctaButton: 'Testnet Explorer',
+    ctaButton: 'PDEX Migration',
+    ctaLink: '/migrate',
+    secondaryCtaButton: 'Mainnet Explorer',
+    secondaryCtaLink:
+      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
     chainsTitle: 'Supported Chains',
   },
   orderbook: {

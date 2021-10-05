@@ -11,6 +11,9 @@ const Hero = ({
   title,
   description,
   ctaButton,
+  ctaLink,
+  secondaryCtaButton,
+  secondaryCtaLink,
   chainsTitle,
 }: Props['hero']) => {
   const ImageHeroRef = useRef<HTMLImageElement>();
@@ -33,10 +36,13 @@ const Hero = ({
       <S.Container>
         <h1>{title}</h1>
         <h2>{description}.</h2>
-        <PrimaryButton
-          content={ctaButton}
-          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fblockchain.polkadex.trade#/explorer"
-        />
+        <S.CtaContainer>
+          <PrimaryButton content={ctaButton} href={ctaLink} />
+          <S.SecondaryButton href={secondaryCtaLink}>
+            {secondaryCtaButton}
+          </S.SecondaryButton>
+        </S.CtaContainer>
+
         <S.Row>
           <span>{chainsTitle}</span>
           <S.Col>

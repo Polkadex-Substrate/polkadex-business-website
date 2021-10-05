@@ -55,6 +55,25 @@ export const Container = styled.div`
   }
 `;
 
+export const CtaContainer = styled.div`
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+  }
+`;
+export const SecondaryButton = styled.a`
+  transition: opacity 0.2s;
+  :hover {
+    opacity: 0.7;
+  }
+  @media screen and (max-width: 375px) {
+    margin-top: 1.5rem;
+  }
+  @media screen and (min-width: 375px) {
+    margin-left: 1.5rem;
+  }
+`;
 export const Row = styled.div`
   margin-top: 8rem;
   & span {
