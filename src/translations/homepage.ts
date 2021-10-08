@@ -431,6 +431,17 @@ const ENLanguage = {
           },
         ],
       },
+      {
+        title: 'Cryptography and Secure Computation Advisor',
+        name: 'Omer Shlomovits',
+        image: 'omerPhotography',
+        socialMedia: [
+          {
+            name: 'twitter',
+            link: 'https://twitter.com/OmerShlomovits',
+          },
+        ],
+      },
     ],
   },
   roadmap: {
