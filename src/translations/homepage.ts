@@ -388,7 +388,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Cryptography and Secure Computation Advisor',
+        title: 'Threshold Cryptography Advisor',
         name: 'Omer Shlomovits',
         image: 'omerPhotography',
         socialMedia: [
