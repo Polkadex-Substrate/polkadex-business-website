@@ -388,6 +388,17 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Cryptography and Secure Computation Advisor',
+        name: 'Omer Shlomovits',
+        image: 'omerPhotography',
+        socialMedia: [
+          {
+            name: 'twitter',
+            link: 'https://twitter.com/OmerShlomovits',
+          },
+        ],
+      },
+      {
         title: 'Cryptoeconomic Advisor',
         name: 'Matthias Hafner',
         image: 'matthiasPhotography',
@@ -428,17 +439,6 @@ const ENLanguage = {
           {
             name: 'linkedin',
             link: 'https://www.linkedin.com/in/garlam/',
-          },
-        ],
-      },
-      {
-        title: 'Cryptography and Secure Computation Advisor',
-        name: 'Omer Shlomovits',
-        image: 'omerPhotography',
-        socialMedia: [
-          {
-            name: 'twitter',
-            link: 'https://twitter.com/OmerShlomovits',
           },
         ],
       },
