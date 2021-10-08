@@ -24,8 +24,8 @@ function App({ Component, pageProps }: AppProps) {
   }
 
   useEffect(() => {
-    checkCookies();
-  }, []);
+    if (!state) checkCookies();
+  }, [state]);
 
   const { theme, themeToogle } = useTheming();
   return (

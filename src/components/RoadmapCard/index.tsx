@@ -1,3 +1,5 @@
+import * as Icons from 'components/Icons';
+
 import * as S from './styles';
 import Props from './types';
 
@@ -18,22 +20,20 @@ const RoadmapCard = ({
       </S.Title>
       <S.Content>
         {content &&
-          content.map((item, index) => (
-            <div key={index}>
-              {item.timeline && (
-                <span className={item.status ? 'checked' : ''}>
-                  {item.timeline}
-                </span>
-              )}
-              {item.status && (
-                <img
-                  src={`/img/icons/${item.status ? 'selected' : 'waiting'}.svg`}
-                  alt="selected icon"
-                />
-              )}
-              <p>{item.title}</p>
-            </div>
-          ))}
+          content.map((item, index) => {
+            const IconComponent = item.status ? Icons.Selected : Icons.Waiting;
+            return (
+              <div key={index}>
+                {item.timeline && (
+                  <span className={item.status ? 'checked' : ''}>
+                    {item.timeline}
+                  </span>
+                )}
+                {item.status && <IconComponent />}
+                <p>{item.title}</p>
+              </div>
+            );
+          })}
       </S.Content>
     </div>
   </S.Wrapper>

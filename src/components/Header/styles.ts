@@ -103,90 +103,87 @@ export const Column = styled.div`
 `;
 
 export const TopContainer = styled.div`
-  position: relative;
+  ${({ theme }) => css`
+    position: relative;
 
-  @media screen and (min-width: 915px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-  }
-
-  &.sticky {
-    ${({ theme }) => css`
-      max-width: ${theme.grid.container};
-    `}
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-    }
-    background: rgba(0, 0, 0, 0.65);
-
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    padding: 1rem 2rem;
-    z-index: 5;
-    border-radius: 0 0 2rem 2rem;
-  }
-
-  @media screen and (max-width: 1200px) {
-    padding: 1rem 2rem;
-  }
-
-  @media screen and (max-width: 915px) {
-    &.show {
+    @media screen and (min-width: 915px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 1rem 0;
+    }
 
-      ${Container} {
-        :nth-child(1) {
-          padding: 0 2rem;
-        }
-        :nth-child(2) {
-          position: fixed;
-          top: 0;
-          width: 100%;
-          display: block;
-          border-radius: 1rem;
-          padding: 2rem;
-          ${({ theme }) => css`
-            background: ${theme.colors.secondaryBackgroundSolid};
-          `}
-        }
+    &.sticky {
+      max-width: ${theme.grid.container};
+      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+      }
+      background: ${theme.colors.overlay};
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding: 1rem 2rem;
+      z-index: 5;
+      border-radius: 0 0 2rem 2rem;
+    }
 
-        & ${Column} {
-          :first-child {
-            margin-bottom: 2rem;
+    @media screen and (max-width: 1200px) {
+      padding: 1rem 2rem;
+    }
+
+    @media screen and (max-width: 915px) {
+      &.show {
+        padding: 1rem 0;
+
+        ${Container} {
+          :nth-child(1) {
+            padding: 0 2rem;
           }
-          & ul li {
+          :nth-child(2) {
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: block;
-            :not(:last-child) {
-              margin-bottom: 1rem;
+            border-radius: 1rem;
+            padding: 2rem;
+            background: ${theme.colors.secondaryBackgroundSolid};
+          }
+
+          & ${Column} {
+            :first-child {
+              margin-bottom: 2rem;
+            }
+            & ul li {
+              display: block;
+              :not(:last-child) {
+                margin-bottom: 1rem;
+              }
             }
           }
         }
-      }
-      ${MenuWrapper} {
-        .line1 {
-          stroke-dasharray: 90 207;
-          stroke-dashoffset: -134;
-          stroke-width: 6;
-        }
-        .line2 {
-          stroke-dasharray: 1 60;
-          stroke-dashoffset: -30;
-          stroke-width: 6;
-        }
-        .line3 {
-          stroke-dasharray: 90 207;
-          stroke-dashoffset: -134;
-          stroke-width: 6;
+        ${MenuWrapper} {
+          .line1 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+          }
+          .line2 {
+            stroke-dasharray: 1 60;
+            stroke-dashoffset: -30;
+            stroke-width: 6;
+          }
+          .line3 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+          }
         }
       }
     }
-  }
+  `}
 `;
 
 export const BottomContainer = styled.div`

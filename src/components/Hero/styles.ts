@@ -107,6 +107,7 @@ export const PlannedIcon = styled.div`
   border-radius: 0.9rem;
   width: 3.5rem;
   height: 3.5rem;
+  padding: 0.8rem;
   margin-right: 0.5rem;
   display: flex;
   align-items: center;
