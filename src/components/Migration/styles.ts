@@ -251,6 +251,9 @@ export const MigrationDropdown = styled.div`
     border-radius: 0.5rem;
     width: 100%;
     shadow: ${theme.shadow.primary};
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 15rem;
   `}
 `;
 
