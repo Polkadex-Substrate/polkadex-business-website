@@ -1,11 +1,7 @@
 import { BigNumber, constants as EthersConstants, ethers } from 'ethers';
 import { useEffect, useState } from 'react';
-import ERC20Contract from 'utils/contracts/ERC20Contract.json';
-// will be used on the main net
-import PdexContract from 'utils/contracts/PdexContract.json';
-import PdexMigratateTestTokenContract from 'utils/contracts/PdexMigratateTestTokenContract.json';
-import PdexMigratateTokenContract from 'utils/contracts/PdexMigrateTokenContract.json';
-import { tokenAddress } from 'utils/ercWallet';
+import * as PolkadexContract from 'utils/contracts';
+import * as PolkadexMigrateContract from 'utils/contracts/migrate';
 import { connectWeb3, createContractInstance } from 'utils/etherjs';
 import { formatAmount } from 'utils/helpers';
 
@@ -28,6 +24,18 @@ export const MIGRATE_STATUS = {
 };
 
 export function useEthereumSign() {
+  const isTestnet =
+    process.env.RANGER_HOST_URL === 'wss://blockchain.polkadex.trade';
+
+  console.log('es testnet?', isTestnet);
+  const PdexContract = isTestnet
+    ? PolkadexContract.PdexTestContract
+    : PolkadexContract.PdexContract;
+
+  const PdexMigratateTokenContract = isTestnet
+    ? PolkadexMigrateContract.PdexMigratateTestTokenContract
+    : PolkadexMigrateContract.PdexMigratateTokenContract;
+
   const [contractAndWalletData, setContractAndWalletData] = useState<
     Partial<Props>
   >({});
@@ -72,7 +80,7 @@ export function useEthereumSign() {
   const extensionChecker = async () => {
     const ethereumExtension = await import('utils/etherjs');
     const extension = await ethereumExtension.connectWeb3();
-    if (!extension.provider)
+    if (!extension?.provider)
       setEthereumError({
         status: true,
         code: 1,

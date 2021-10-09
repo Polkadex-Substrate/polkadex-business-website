@@ -1,5 +1,6 @@
 export { default as ArrowBottom } from './ArrowBottom';
 export { default as ArrowLeft } from './ArrowLeft';
+export { default as Avatar } from './Avatar';
 export { default as Close } from './Close';
 export { default as CoinGecko } from './CoinGecko';
 export { default as CoinmarketCap } from './CoinmarketCap';
@@ -21,6 +22,7 @@ export { default as LinkedIn } from './LinkedIn';
 export { default as Liquidity } from './Liquidity';
 export { default as MarketSquare } from './MarketSquare';
 export { default as Medium } from './Medium';
+export { default as MigrationHero } from './MigrationHero';
 export { default as Moon } from './Moon';
 export { default as MoreFeatures } from './MoreFeatures';
 export { default as MultipleWallets } from './MultipleWallets';

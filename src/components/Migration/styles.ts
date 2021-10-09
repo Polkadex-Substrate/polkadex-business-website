@@ -39,6 +39,7 @@ export const Box = styled.div`
         padding: 0.2rem 0.5rem;
         border-radius: 0.5rem;
         background-color: ${theme.colors.primary};
+        color: ${theme.colors.white};
         font-weight: bold;
         font-size: 1.6rem;
         display: block;
@@ -103,6 +104,7 @@ export const Title = styled.div`
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.gradientBackground};
+    box-shadow: ${theme.shadow.primary};
     padding: 2rem;
     border-radius: 1rem;
     max-width: 70rem;
@@ -208,14 +210,16 @@ export const ImageContainer = styled.div`
   `}
 `;
 export const Card = styled.div`
-  flex: 1;
-  p {
-    color: white;
-    font-weight: 600;
-    font-size: 1.4rem;
-    width: 100%;
-    word-break: break-word;
-  }
+  ${({ theme }) => css`
+    flex: 1;
+    p {
+      color: ${theme.colors.text};
+      font-weight: 600;
+      font-size: 1.4rem;
+      width: 100%;
+      word-break: break-word;
+    }
+  `}
 `;
 export const Flex = styled.div`
   display: flex;

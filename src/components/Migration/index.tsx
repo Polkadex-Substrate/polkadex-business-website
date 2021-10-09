@@ -1,4 +1,9 @@
 import { Dropdown, Icon, Spinner } from 'components';
+import {
+  Avatar,
+  Ethereum,
+  MigrationHero as MigrationHeroIllustration,
+} from 'components/Icons';
 import { MIGRATE_STATUS, useEthereumSign, usePolkadotSign } from 'hooks';
 
 import * as S from './styles';
@@ -15,7 +20,7 @@ export const MigrationHero = () => {
           </h1>
         </S.Box>
         <S.Box>
-          <img src="/img/migrationHero.svg" alt="Migration Illustraiton" />
+          <MigrationHeroIllustration />
         </S.Box>
       </S.Container>
     </S.Wrapper>
@@ -86,7 +91,7 @@ export const MigrationConvert = () => {
                       balance={selectedPolkadotAccount.balance?.free}
                       address={selectedPolkadotAccount.address}
                       // eslint-disable-next-line @typescript-eslint/no-empty-function
-                      changeAccount={() => { }}
+                      changeAccount={() => {}}
                     />
                   }
                 >
@@ -193,23 +198,27 @@ export const MigrationConvert = () => {
           {isMigrated
             ? 'Migrated'
             : status === MIGRATE_STATUS.APPROVING
-              ? 'Approving'
-              : status === MIGRATE_STATUS.AUTHORIZING
-                ? 'Authorizing'
-                : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
-                  ? 'Processing on Ethereum'
-                  : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
-                    ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
-                    : status === MIGRATE_STATUS.FAILED
-                      ? 'Failed'
-                      : 'Migrate Now'}
+            ? 'Approving'
+            : status === MIGRATE_STATUS.AUTHORIZING
+            ? 'Authorizing'
+            : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
+            ? 'Processing on Ethereum'
+            : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
+            ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
+            : status === MIGRATE_STATUS.FAILED
+            ? 'Failed'
+            : 'Migrate Now'}
         </button>
         <ul>
           {txs.map((tx) => (
             <li key={tx}>
               <a
                 target="_blank"
-                href={`https://${process.env.RANGER_HOST_URL.includes("mainnet") ? "" : "ropsten."}etherscan.io/tx/${tx}`}
+                href={`https://${
+                  process.env.RANGER_HOST_URL.includes('mainnet')
+                    ? ''
+                    : 'ropsten.'
+                }etherscan.io/tx/${tx}`}
                 rel="noreferrer"
               >
                 See at Etherscan
@@ -250,7 +259,7 @@ const MigrationCard = ({ title, description, children }: Props) => (
 const Wallet = ({ balance, account, selected = false }) => (
   <S.InputBox selected={selected}>
     <S.ImageContainer>
-      <img src="/img/eth.svg" alt="Polkadojs Avatar" />
+      <Ethereum />;
     </S.ImageContainer>
     <S.Card>
       <S.Flex>
@@ -271,7 +280,7 @@ const PolkadotWallet = ({
 }) => (
   <S.InputBox selected={selected} onClick={changeAccount}>
     <S.ImageContainer>
-      <img src="/img/avatar.svg" alt="Polkadojs Avatar" />
+      <Avatar />
     </S.ImageContainer>
     <S.Card>
       <S.Flex>

@@ -95,6 +95,7 @@ const light = {
     overlay: 'rgba(255, 255, 255, 0.99)',
     linearBackground:
       'linear-gradient( 0.83deg, #fff 18.58%,rgba(255, 255, 255, 0) 99.36%)',
+    inverse: '#ffffff',
   },
   shadow: {
     primary: '0px 10px 40px rgba(171, 192, 227, 0.25)',
@@ -130,6 +131,7 @@ const dark = {
     overlay: 'rgba(0, 0, 0, 0.98)',
     linearBackground:
       'linear-gradient( 0.83deg, #1c1c26 18.58%,rgba(28, 28, 38, 0) 99.36%)',
+    inverse: '#000000',
   },
   shadow: {
     primary: '0px 10px 15px rgba(0, 0, 0, 0.05)',

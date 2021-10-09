@@ -116,10 +116,10 @@ export const TopContainer = styled.div`
     &.sticky {
       max-width: ${theme.grid.container};
       @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        backdrop-filter: saturate(180%) blur(20px);
         -webkit-backdrop-filter: saturate(180%) blur(20px);
       }
-      background: ${theme.colors.overlay};
+      background: ${theme.colors.inverse}F2;
+      box-shadow: ${theme.shadow.primary};
       position: fixed;
       top: 0;
       left: 50%;

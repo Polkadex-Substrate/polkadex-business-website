@@ -1,4 +1,4 @@
-import { Icon, Logo } from 'components';
+import { Icon, Logo, ThemeSwitcher } from 'components';
 import { PrimaryButton } from 'components/Button';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -34,6 +34,7 @@ export const Return = () => {
           <Icon name="ArrowLeft" background="none" />
         </button>
         <Logo size="Medium" />
+        <ThemeSwitcher />
       </S.Container>
       <S.Box>
         <Icon hoverable name="Twitter" link="https://twitter.com/polkadex" />
