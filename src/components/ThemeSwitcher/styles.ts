@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     align-items: center;
     background: ${theme.colors.secondaryBackground};
     border-radius: 0.8rem;
+    height: fit-content;
     & span {
       font-size: ${theme.font.sizes.xsmall};
     }

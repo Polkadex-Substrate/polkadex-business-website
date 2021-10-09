@@ -101,13 +101,30 @@ export const Title = styled.div`
   }
 `;
 
+export const MigrationWrapper = styled.div`
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+`;
+export const MigrationCardLoading = styled.div<{ isActive?: boolean }>`
+  ${({ theme, isActive }) => css`
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 70;
+    display: ${isActive ? 'flex' : 'none'};
+    justify-content: center;
+    align-items: center;
+    background: ${theme.colors.primaryBackground}BF;
+  `}
+`;
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.gradientBackground};
     box-shadow: ${theme.shadow.primary};
     padding: 2rem;
     border-radius: 1rem;
-    max-width: 70rem;
     margin: 0 auto;
     margin-bottom: 3rem;
 
@@ -166,6 +183,7 @@ export const ErrorTag = styled.div`
     width: fit-content;
     span {
       background: ${theme.colors.secondary};
+      color: ${theme.colors.white};
       border-radius: 0.3rem;
       padding: 0.3rem;
       margin-right: 0.5rem;
@@ -270,7 +288,7 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
       padding: 1rem;
       border-radius: 1rem;
       margin-bottom: 2rem;
-      font-weight: 550;
+      font-weight: 600;
       cursor: pointer;
       ${isLoading &&
       css`
@@ -320,6 +338,34 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
     p {
       max-width: 45rem;
       margin: 0 auto;
+    }
+  `}
+`;
+export const PercentWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    border: 1px solid ${theme.colors.secondaryBackground};
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+  `}
+`;
+
+export const PercentCard = styled.div<{ isActive?: boolean }>`
+  ${({ theme, isActive }) => css`
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-weight: 500;
+    ${isActive &&
+    css`
+      background: ${theme.colors.primary}99;
+      border: 1px solid ${theme.colors.primary};
+      border-radius: 0.2rem;
+    `};
+    :not(:last-child) {
+      margin-right: 1rem;
     }
   `}
 `;
