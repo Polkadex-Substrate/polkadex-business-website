@@ -27,8 +27,8 @@ export const Wrapper = styled.section<{ isDark?: boolean }>`
 
     @media screen and (min-width: 795px) {
       background-image: ${isDark
-        ? 'url(/img/newsletterHeroDark.svg)'
-        : 'url(/img/newsletterHeroLight.svg)'};
+      ? 'url(/img/newsletterHeroDark.svg)'
+      : 'url(/img/newsletterHeroLightMode.svg)'};
       background-repeat: no-repeat;
       background-size: contain;
     }
