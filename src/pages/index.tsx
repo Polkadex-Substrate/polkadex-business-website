@@ -58,7 +58,7 @@ export default function Home() {
         <Team {...team} />
         <Roadmap {...roadmap} />
         <TokenEconomics {...tokenEconomics} />
-        {/* <Media {...media} /> */}
+        <Media {...media} />
         <Newsletter {...newsletter} />
       </main>
       <Footer {...footer} />
