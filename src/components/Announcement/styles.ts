@@ -19,7 +19,7 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    & img {
+    & svg {
       max-width: 2rem;
     }
 
@@ -34,10 +34,9 @@ export const Content = styled.div`
 export const Container = styled.div`
   ${({ theme }) => css`
     background: ${`${theme.colors.secondary}4D`};
-    border: ${` 1px solid ${theme.colors.secondary}`};
   `}
   display: flex;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   padding: 1rem 2rem;
   justify-content: space-between;
   align-items: center;

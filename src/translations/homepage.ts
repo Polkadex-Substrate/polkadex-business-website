@@ -7,8 +7,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href:
-          'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
       },
       {
         title: 'Docs',
@@ -16,8 +15,7 @@ const ENLanguage = {
       },
       {
         title: 'Lightpaper',
-        href:
-          'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
+        href: 'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
       },
     ],
     bottomLinks: [
@@ -71,19 +69,19 @@ const ENLanguage = {
         title: 'Register multiple hot wallets',
         description:
           'Connect hot wallets based on browser extensions, mobile phones or iPads and add on-chain trading bots to automate trading with your funds',
-        icon: 'multipleWallets',
+        icon: 'MultipleWallets',
       },
       {
         title: 'Delegate your assets to third parties',
         description:
           'Manage your assets with Polkadex Orderbook and delegate them to third parties. Make profits through algorithmic trading while still keeping control of your crypto assets',
-        icon: 'thirdParty',
+        icon: 'ThirdParty',
       },
       {
         title: 'Keep your assets safe and secure',
         description:
           'Leave your assets on the exchange without worrying about hacks and save on transaction fees for moving your funds in and out every time you want to trade',
-        icon: 'secureAssets',
+        icon: 'SecureAssets',
       },
     ],
     technologiesTitle: 'Technologies',
@@ -159,56 +157,56 @@ const ENLanguage = {
             title: 'High-Frequency Trading',
             description:
               'Polkadex can connect to all the favourite trading bots of the community seamlessly enabling users to implement multiple trading strategies',
-            icon: 'speed',
+            icon: 'Speed',
             alt: 'Block speed icon',
           },
           {
             title: 'Polkadex IDO pallet',
             description:
               'Polkadex IDO pallet allows token projects to create ERC-20 like tokens with built-in support for parachain transfers and one-click listing in the Polkadex Orderbook. It also helps teams to raise funds through IDOs in a decentralized manner',
-            icon: 'IDO',
+            icon: 'Ido',
             alt: '',
           },
           {
             title: 'Polkadex Fiat',
             description:
               'Polkadex supports fiat currencies in the Polkadex Orderbook. Traders can easily use a credit card to buy crypto',
-            icon: 'fiat',
+            icon: 'Fiat',
             alt: '',
           },
           {
             title: 'Decentralized KYC Option',
             description:
               'At Polkadex we believe that traders deserve privacy. Hence we have decentralized the KYC process for our users offering to store their data on wallets instead of our platform',
-            icon: 'kyc',
+            icon: 'Kyc',
             alt: '',
           },
           {
             title: 'Polkadex NFTs',
             description:
               'Polkadex NFTs will gamify our trading ecosystem and make it more fun for users. We aim to provide this functionality shortly after the Mainnet launch',
-            icon: 'nft',
+            icon: 'Nft',
             alt: '',
           },
           {
             title: 'New Token Generation',
             description:
               'Tokens generated in Polkadex have native support for cross-chain transfers to other parachains and networks connected to our ecosystem. Thus we eliminate the need to conduct expensive audits and delays in new token releases for the project teams',
-            icon: 'token',
+            icon: 'Token',
             alt: '',
           },
           {
             title: 'High liquidity',
             description:
               'Polkadex enables institutional liquidity on the platform with the help of a decentralized KYC system',
-            icon: 'liquidity',
+            icon: 'Liquidity',
             alt: '',
           },
           {
             title: 'Forkless Upgrade',
             description:
               'Polkadex upgrades for new features bridges to new blockchains bug fixes and performance improvements do not require hard forks',
-            icon: 'upgrade',
+            icon: 'Upgrade',
             alt: '',
           },
         ],
@@ -233,7 +231,7 @@ const ENLanguage = {
         image: 'vivekPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/vivekprasannan/',
           },
         ],
@@ -244,11 +242,11 @@ const ENLanguage = {
         image: 'gauthamPhotography',
         socialMedia: [
           {
-            name: 'github',
+            name: 'Github',
             link: 'https://github.com/Gauthamastro',
           },
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/gautham-j-a4a559133/',
           },
         ],
@@ -259,7 +257,7 @@ const ENLanguage = {
         image: 'deepanshPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/deepanshconnect/',
           },
         ],
@@ -270,7 +268,7 @@ const ENLanguage = {
         image: 'kseniiaPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/kseniia-baziian-98382652/',
           },
         ],
@@ -281,7 +279,7 @@ const ENLanguage = {
         image: 'francisPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/francis-dufour-25357960/',
           },
         ],
@@ -292,7 +290,7 @@ const ENLanguage = {
         image: 'mambisiPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/mambisi/',
           },
         ],
@@ -303,7 +301,7 @@ const ENLanguage = {
         image: 'frankPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/frank-li-b6b388203/',
           },
         ],
@@ -314,13 +312,12 @@ const ENLanguage = {
         image: 'gabrielPhotography',
         socialMedia: [
           {
-            name: 'github',
+            name: 'Github',
             link: 'https://github.com/arrudagates',
           },
           {
-            name: 'linkedin',
-            link:
-              'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
           },
         ],
       },
@@ -330,7 +327,7 @@ const ENLanguage = {
         image: 'pabloPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/pablosolanasmartin/',
           },
         ],
@@ -341,11 +338,11 @@ const ENLanguage = {
         image: 'adrielPhotography',
         socialMedia: [
           {
-            name: 'github',
+            name: 'Github',
             link: 'https://github.com/AdrielVBomfim',
           },
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/adrielvb/',
           },
         ],
@@ -356,7 +353,7 @@ const ENLanguage = {
         image: 'pavanPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/pavankanteti/',
           },
         ],
@@ -367,11 +364,11 @@ const ENLanguage = {
         image: 'fredikPhotography',
         socialMedia: [
           {
-            name: 'github',
+            name: 'Github',
             link: 'https://github.com/simonsso/',
           },
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/fredriksimonsson/',
           },
         ],
@@ -382,7 +379,7 @@ const ENLanguage = {
         image: 'rodolfoPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/rodolfo-ferreira-91824819a/',
           },
         ],
@@ -393,7 +390,7 @@ const ENLanguage = {
         image: 'omerPhotography',
         socialMedia: [
           {
-            name: 'twitter',
+            name: 'Twitter',
             link: 'https://twitter.com/OmerShlomovits',
           },
         ],
@@ -404,7 +401,7 @@ const ENLanguage = {
         image: 'matthiasPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/matthias-hafner-26b069b8/',
           },
         ],
@@ -415,7 +412,7 @@ const ENLanguage = {
         image: 'sherwinPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/sherwin-lee-89735b153/',
           },
         ],
@@ -426,7 +423,7 @@ const ENLanguage = {
         image: 'zhiPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/loyzhihao/',
           },
         ],
@@ -437,7 +434,7 @@ const ENLanguage = {
         image: 'garlamPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/garlam/',
           },
         ],
@@ -782,6 +779,10 @@ const ENLanguage = {
           {
             title: 'Substrate',
             href: 'https://www.substrate.io/',
+          },
+          {
+            title: 'Brand Assets',
+            href: '/brandAssets',
           },
         ],
       },

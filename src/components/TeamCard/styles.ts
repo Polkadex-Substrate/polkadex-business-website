@@ -30,19 +30,25 @@ export const Wrapper = styled.div`
     }
   }
 
-  & div a {
-    ${({ theme }) => css`
-      transition: ${theme.transition.default};
-    `}
-    opacity: 0.6;
-    &:hover {
-      opacity: 1;
+  & div {
+    text-align: center;
+    a {
+      ${({ theme }) => css`
+        transition: ${theme.transition.default};
+      `}
+      opacity: 0.6;
+      display: inline-block;
+      text-align: center;
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      :not(:last-child) {
+        margin-right: 1rem;
+      }
     }
-    :not(:last-child) {
-      margin-right: 1rem;
-    }
-  }
-  & div img {
-    max-width: 3rem;
   }
 `;

@@ -39,6 +39,7 @@ export const Box = styled.div`
         padding: 0.2rem 0.5rem;
         border-radius: 0.5rem;
         background-color: ${theme.colors.primary};
+        color: ${theme.colors.white};
         font-weight: bold;
         font-size: 1.6rem;
         display: block;
@@ -100,12 +101,30 @@ export const Title = styled.div`
   }
 `;
 
+export const MigrationWrapper = styled.div`
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+`;
+export const MigrationCardLoading = styled.div<{ isActive?: boolean }>`
+  ${({ theme, isActive }) => css`
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 70;
+    display: ${isActive ? 'flex' : 'none'};
+    justify-content: center;
+    align-items: center;
+    background: ${theme.colors.primaryBackground}BF;
+  `}
+`;
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.gradientBackground};
+    box-shadow: ${theme.shadow.primary};
     padding: 2rem;
     border-radius: 1rem;
-    max-width: 70rem;
     margin: 0 auto;
     margin-bottom: 3rem;
 
@@ -154,18 +173,20 @@ export const LoadingWrapper = styled(Template)`
 
 export const ErrorTag = styled.div`
   ${({ theme }) => css`
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: ${theme.font.sizes.small};
     border: 1px solid ${theme.colors.secondary};
     background-color: #6745d240;
     border-radius: 0.5rem;
-    padding: 1.5rem 0.5rem;
-    line-height: 0;
+    padding: 0.5rem;
     width: fit-content;
     span {
+      display: block;
       background: ${theme.colors.secondary};
+      color: ${theme.colors.white};
       border-radius: 0.3rem;
-      padding: 0.3rem;
+      padding: 0.5rem;
       margin-right: 0.5rem;
       font-weight: 550;
     }
@@ -208,14 +229,16 @@ export const ImageContainer = styled.div`
   `}
 `;
 export const Card = styled.div`
-  flex: 1;
-  p {
-    color: white;
-    font-weight: 600;
-    font-size: 1.4rem;
-    width: 100%;
-    word-break: break-word;
-  }
+  ${({ theme }) => css`
+    flex: 1;
+    p {
+      color: ${theme.colors.text};
+      font-weight: 600;
+      font-size: 1.4rem;
+      width: 100%;
+      word-break: break-word;
+    }
+  `}
 `;
 export const Flex = styled.div`
   display: flex;
@@ -247,6 +270,9 @@ export const MigrationDropdown = styled.div`
     border-radius: 0.5rem;
     width: 100%;
     shadow: ${theme.shadow.primary};
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 15rem;
   `}
 `;
 
@@ -263,7 +289,7 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
       padding: 1rem;
       border-radius: 1rem;
       margin-bottom: 2rem;
-      font-weight: 550;
+      font-weight: 600;
       cursor: pointer;
       ${isLoading &&
       css`
@@ -313,6 +339,34 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
     p {
       max-width: 45rem;
       margin: 0 auto;
+    }
+  `}
+`;
+export const PercentWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    border: 1px solid ${theme.colors.secondaryBackground};
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+  `}
+`;
+
+export const PercentCard = styled.div<{ isActive?: boolean }>`
+  ${({ theme, isActive }) => css`
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-weight: 500;
+    ${isActive &&
+    css`
+      background: ${theme.colors.primary}99;
+      border: 1px solid ${theme.colors.primary};
+      border-radius: 0.2rem;
+    `};
+    :not(:last-child) {
+      margin-right: 1rem;
     }
   `}
 `;

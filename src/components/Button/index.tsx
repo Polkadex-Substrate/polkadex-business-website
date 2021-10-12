@@ -11,7 +11,6 @@ export const PrimaryButton = ({
   background = 'primary',
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
-
   return (
     <S.PrimaryWrapper
       href={href}
