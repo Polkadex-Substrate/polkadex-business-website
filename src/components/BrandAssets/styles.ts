@@ -105,6 +105,9 @@ export const BrandAssetsCards = styled(Template)`
   position: relative;
   max-width: 70rem;
   margin: 0 auto;
+  @media screen and (min-width: 784px) {
+    margin-bottom: 4rem;
+  }
 `;
 
 export const BrandAssetsCardsWrapper = styled.div``;

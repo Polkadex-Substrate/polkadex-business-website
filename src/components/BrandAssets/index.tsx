@@ -42,7 +42,7 @@ export const BrandAssetsCards = () => {
           fileName="ZIP"
           filesUrl="/brandAssets/PolkadexLogo.zip"
         />
-        <AssetsCard
+        {/* <AssetsCard
           title="Screenshots"
           iconName="Screenshots"
           size="160kb"
@@ -56,7 +56,7 @@ export const BrandAssetsCards = () => {
           size="230kb"
           fileName="ZIP"
           filesUrl="#"
-        />
+        /> */}
       </S.BrandAssetsCardsWrapper>
     </S.BrandAssetsCards>
   );

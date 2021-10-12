@@ -7,8 +7,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href:
-          'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
       },
       {
         title: 'Docs',
@@ -16,8 +15,7 @@ const ENLanguage = {
       },
       {
         title: 'Lightpaper',
-        href:
-          'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
+        href: 'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
       },
     ],
     bottomLinks: [
@@ -319,8 +317,7 @@ const ENLanguage = {
           },
           {
             name: 'LinkedIn',
-            link:
-              'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
+            link: 'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
           },
         ],
       },
@@ -782,6 +779,10 @@ const ENLanguage = {
           {
             title: 'Substrate',
             href: 'https://www.substrate.io/',
+          },
+          {
+            title: 'Brand Assets',
+            href: '/brandAssets',
           },
         ],
       },

@@ -10,16 +10,12 @@ import * as S from './styles';
 import { Props } from './types';
 
 const percents = ['5', '25', '50', '75', '100'];
-export const MigrationHero = () => {
+export const MigrationHero = ({ isMainnet = true }) => {
   return (
     <S.Wrapper>
       <S.Container>
         <S.Box>
-          <span>
-            {process.env.RANGER_HOST_URL === 'wss://mainnet.polkadex.trade'
-              ? 'Mainnet'
-              : 'Testnet'}
-          </span>
+          <span>{isMainnet ? 'Mainnet' : 'Testnet'}</span>
           <h1>
             Convert ERC-20 PDEX to <strong>native PDEX</strong>
           </h1>
@@ -32,9 +28,7 @@ export const MigrationHero = () => {
   );
 };
 
-export const MigrationConvert = () => {
-  const isMainnet =
-    process.env.RANGER_HOST_URL === 'wss://mainnet.polkadex.trade';
+export const MigrationConvert = ({ isMainnet = true }) => {
   const {
     polkadotLoading,
     polkadotError,
@@ -44,7 +38,7 @@ export const MigrationConvert = () => {
     handleChangePolkadotAccount,
     isMigrated,
     polkadotApiPromise,
-  } = usePolkadotSign();
+  } = usePolkadotSign({ isMainnet });
 
   const {
     handleEthereumAccounts,
@@ -81,6 +75,13 @@ export const MigrationConvert = () => {
         <Icon name="ArrowBottom" background="none" />
       </S.Title>
       <S.MigrationWrapper>
+        <S.ErrorTag style={{ marginBottom: 10 }}>
+          <span>Attention</span>
+          <p>
+            Ledger hardware wallets are not supported yet, please don&apos;t
+            transfer to Ledger wallets.
+          </p>
+        </S.ErrorTag>
         <MigrationCard
           title="Step 1"
           description="Select the wallet in which you want to receive your PDEX. You need to install Polkadot{.js}"
@@ -139,7 +140,7 @@ export const MigrationConvert = () => {
                   {polkadotError.status && (
                     <S.ErrorTag>
                       <span>Error</span>
-                      {polkadotError.message}
+                      <p>{polkadotError.message}</p>
                     </S.ErrorTag>
                   )}
                 </div>
@@ -164,7 +165,7 @@ export const MigrationConvert = () => {
               {ethereumError.code === 5 ? (
                 <S.ErrorTag>
                   <span>Error</span>
-                  {ethereumError.message}
+                  <p>{ethereumError.message}</p>
                 </S.ErrorTag>
               ) : (
                 <div>
@@ -178,7 +179,7 @@ export const MigrationConvert = () => {
                       {ethereumError.status && (
                         <S.ErrorTag>
                           <span>Error</span>
-                          {ethereumError.message}
+                          <p>{ethereumError.message}</p>
                         </S.ErrorTag>
                       )}
                     </S.Input>
