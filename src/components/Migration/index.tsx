@@ -10,12 +10,12 @@ import * as S from './styles';
 import { Props } from './types';
 
 const percents = ['5', '25', '50', '75', '100'];
-export const MigrationHero = ({ isMainnet = true }) => {
+export const MigrationHero = () => {
   return (
     <S.Wrapper>
       <S.Container>
         <S.Box>
-          <span>{isMainnet ? 'Mainnet' : 'Testnet'}</span>
+          <span>Mainnet</span>
           <h1>
             Convert ERC-20 PDEX to <strong>native PDEX</strong>
           </h1>
@@ -28,7 +28,7 @@ export const MigrationHero = ({ isMainnet = true }) => {
   );
 };
 
-export const MigrationConvert = ({ isMainnet = true }) => {
+export const MigrationConvert = () => {
   const {
     polkadotLoading,
     polkadotError,
@@ -38,7 +38,7 @@ export const MigrationConvert = ({ isMainnet = true }) => {
     handleChangePolkadotAccount,
     isMigrated,
     polkadotApiPromise,
-  } = usePolkadotSign({ isMainnet });
+  } = usePolkadotSign();
 
   const {
     handleEthereumAccounts,
@@ -51,7 +51,7 @@ export const MigrationConvert = ({ isMainnet = true }) => {
     ethereumApiPromise,
     percent,
     setPercent,
-  } = useEthereumSign({ isMainnet });
+  } = useEthereumSign();
 
   if (!polkadotApiPromise || !ethereumApiPromise)
     return (
@@ -59,12 +59,8 @@ export const MigrationConvert = ({ isMainnet = true }) => {
         <Spinner />
         <span>
           {!polkadotApiPromise
-            ? `Checking Polkadex ${
-                isMainnet ? 'mainnet' : 'testnet'
-              } blockchain status..`
-            : `Checking Ethereum ${
-                isMainnet ? 'mainnet' : 'testnet'
-              } blockchain status..`}
+            ? `Checking Polkadex mainnet blockchain status..`
+            : `Checking Ethereum mainnet blockchain status..`}
         </span>
       </S.LoadingWrapper>
     );

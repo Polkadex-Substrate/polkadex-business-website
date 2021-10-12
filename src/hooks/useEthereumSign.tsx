@@ -1,7 +1,7 @@
 import { BigNumber, constants as EthersConstants, ethers } from 'ethers';
 import { useEffect, useState } from 'react';
-import * as PolkadexContract from 'utils/contracts';
-import * as PolkadexMigrateContract from 'utils/contracts/migrate';
+import { PdexContract } from 'utils/contracts';
+import { PdexMigratateTokenContract } from 'utils/contracts/migrate';
 import { connectWeb3, createContractInstance } from 'utils/etherjs';
 import { formatAmount } from 'utils/helpers';
 
@@ -23,15 +23,7 @@ export const MIGRATE_STATUS = {
   FAILED: 5,
 };
 
-export function useEthereumSign({ isMainnet }) {
-  const PdexContract = isMainnet
-    ? PolkadexContract.PdexContract
-    : PolkadexContract.PdexTestContract;
-
-  const PdexMigratateTokenContract = isMainnet
-    ? PolkadexMigrateContract.PdexMigratateTokenContract
-    : PolkadexMigrateContract.PdexMigratateTestTokenContract;
-
+export function useEthereumSign() {
   const [contractAndWalletData, setContractAndWalletData] = useState<
     Partial<Props>
   >({});
@@ -91,30 +83,23 @@ export function useEthereumSign({ isMainnet }) {
     let result = [];
 
     try {
-      const {
-        chainId,
-      } = await ethereumApiPromise.connect.signer.provider.getNetwork();
+      const { chainId } =
+        await ethereumApiPromise.connect.signer.provider.getNetwork();
 
-      if (isMainnet && chainId !== 1) {
+      if (chainId !== 1) {
         setEthereumError({
           status: true,
           code: 5,
           message: 'Open Metamask and change the Network for Ethereum Mainnet',
         });
-      } else if (!isMainnet && chainId !== 3) {
-        setEthereumError({
-          status: true,
-          code: 5,
-          message: 'Open Metamask and change the Network for Ropsten Testnet',
-        });
       } else {
-        const allAccounts = await ethereumApiPromise.tokenContract.provider.listAccounts();
+        const allAccounts =
+          await ethereumApiPromise.tokenContract.provider.listAccounts();
         if (allAccounts?.length) {
           result = await Promise.all(
             allAccounts.map(async (item) => {
-              const tokenBalanceInWei = await ethereumApiPromise.tokenContract.balanceOf(
-                item,
-              );
+              const tokenBalanceInWei =
+                await ethereumApiPromise.tokenContract.balanceOf(item);
               const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
               return {
                 tokenBalance: formatAmount(tokenBalance),

@@ -6,7 +6,7 @@ import {
   Return,
 } from 'components';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
@@ -15,15 +15,14 @@ export default function Migrate() {
   const router = useRouter();
   const { id } = router.query;
 
-  const availableRoutes = 'mainnet' || 'testnet';
-  if (id !== availableRoutes) router.push('/migrate');
+  if (id !== 'mainnet') router.push('/migrate');
 
   return (
     <S.Wrapper>
       <Return />
       <main>
-        <MigrationHero isMainnet={id === 'mainnet'} />
-        <MigrationConvert isMainnet={id === 'mainnet'} />
+        <MigrationHero />
+        <MigrationConvert />
         <Newsletter {...newsletter} />
       </main>
       <Footer {...footer} />;
