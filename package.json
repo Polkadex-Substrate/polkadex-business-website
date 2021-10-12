@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "generate": "yarn plop --plopfile generators/plopfile.js",
-    "generateIcons": "svgr -d src/components/Icons/ public/img/icons/ --typescript --icon"
+    "generateIcons": "svgr -d src/components/Icons/ public/img/icons/ --typescript --icon",
+    "checkTypes": "tsc --noEmit"
   },
   "dependencies": {
     "@polkadot/api": "^6.3.1",
