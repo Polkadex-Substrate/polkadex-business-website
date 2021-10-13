@@ -1,9 +1,4 @@
 import { Dropdown, Icon, Spinner } from 'components';
-import {
-  Avatar,
-  Ethereum,
-  MigrationHero as MigrationHeroIllustration,
-} from 'components/Icons';
 import { MIGRATE_STATUS, useEthereumSign, usePolkadotSign } from 'hooks';
 
 import * as S from './styles';
@@ -20,7 +15,7 @@ export const MigrationHero = () => {
           </h1>
         </S.Box>
         <S.Box>
-          <MigrationHeroIllustration />
+          <img src="/img/migrationHero.svg" alt="Migration Illustraiton" />
         </S.Box>
       </S.Container>
     </S.Wrapper>
@@ -56,8 +51,8 @@ export const MigrationConvert = () => {
         <Spinner />
         <span>
           {!polkadotApiPromise
-            ? `Checking Polkadex mainnet blockchain status..`
-            : `Checking Ethereum mainnet blockchain status..`}
+            ? 'Checking Polkadex blockchain status..'
+            : 'Checking Ethereum blockchain status..'}
         </span>
       </S.LoadingWrapper>
     );
@@ -67,143 +62,112 @@ export const MigrationConvert = () => {
         <h2>Convert Now</h2>
         <Icon name="ArrowBottom" background="none" />
       </S.Title>
-      <S.MigrationWrapper>
-        <S.ErrorTag style={{ marginBottom: 10 }}>
-          <span>Attention</span>
-          <p>
-            Ledger hardware wallets are not supported yet, please don&apos;t
-            transfer to Ledger wallets.
-          </p>
-        </S.ErrorTag>
-        <MigrationCard
-          title="Step 1"
-          description="Select the wallet in which you want to receive your PDEX. You need to install Polkadot{.js}"
-        >
-          {polkadotError.code === 1 ? (
-            <a
-              href="https://polkadot.js.org/extension/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {`Download Polkadot{.js} Extension`}
-            </a>
-          ) : (
-            <div>
-              {selectedPolkadotAccount.address ? (
-                <S.Input>
-                  <S.InpuTitle>{`Select your Polkadot{.js} wallet`}</S.InpuTitle>
-                  <Dropdown
-                    title={
+      <MigrationCard
+        title="Step 1"
+        description="Select the wallet in which you want to receive your PDEX. You need to install Polkadot{.js}"
+      >
+        {polkadotError.code === 1 ? (
+          <a
+            href="https://polkadot.js.org/extension/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {`Download Polkadot{.js} Extension`}
+          </a>
+        ) : (
+          <div>
+            {selectedPolkadotAccount.address ? (
+              <S.Input>
+                <S.InpuTitle>{`Select your Polkadot{.js} wallet`}</S.InpuTitle>
+                <Dropdown
+                  title={
+                    <PolkadotWallet
+                      name={selectedPolkadotAccount.meta.name}
+                      balance={selectedPolkadotAccount.balance?.free}
+                      address={selectedPolkadotAccount.address}
+                      // eslint-disable-next-line @typescript-eslint/no-empty-function
+                      changeAccount={() => { }}
+                    />
+                  }
+                >
+                  <S.MigrationDropdown>
+                    {polkadotAccounts.map((item) => (
                       <PolkadotWallet
-                        name={selectedPolkadotAccount.meta.name}
-                        balance={selectedPolkadotAccount.balance?.free}
-                        address={selectedPolkadotAccount.address}
-                        // eslint-disable-next-line @typescript-eslint/no-empty-function
-                        changeAccount={() => {}}
+                        selected={
+                          selectedPolkadotAccount.address === item.address
+                        }
+                        key={item.address}
+                        name={item.meta.name}
+                        balance={item.balance?.free}
+                        address={item.address}
+                        changeAccount={() =>
+                          handleChangePolkadotAccount(item.address)
+                        }
                       />
-                    }
-                  >
-                    <S.MigrationDropdown>
-                      {polkadotAccounts.map((item) => (
-                        <PolkadotWallet
-                          selected={
-                            selectedPolkadotAccount.address === item.address
-                          }
-                          key={item.address}
-                          name={item.meta.name}
-                          balance={item.balance?.free}
-                          address={item.address}
-                          changeAccount={() =>
-                            handleChangePolkadotAccount(item.address)
-                          }
-                        />
-                      ))}
-                    </S.MigrationDropdown>
-                  </Dropdown>
-                </S.Input>
-              ) : (
-                <div>
-                  <button
-                    type="button"
-                    disabled={polkadotLoading}
-                    onClick={() => handlePolkadotAccount()}
-                  >
-                    {polkadotLoading ? 'Connecting...' : 'Connect to a Wallet'}
-                  </button>
-                  {polkadotError.status && (
-                    <S.ErrorTag>
-                      <span>Error</span>
-                      <p>{polkadotError.message}</p>
-                    </S.ErrorTag>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-        </MigrationCard>
-        <MigrationCard
-          title="Step 2"
-          description="Connect the ERC20 wallet where you have your PDEX stored."
-        >
-          {ethereumError.code === 1 ? (
-            <a
-              href="https://metamask.io/download.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download Metamask Extension
-            </a>
-          ) : (
-            <div>
-              {ethereumError.code === 5 ? (
-                <S.ErrorTag>
-                  <span>Error</span>
-                  <p>{ethereumError.message}</p>
-                </S.ErrorTag>
-              ) : (
-                <div>
-                  {contractAndWalletData.account ? (
-                    <S.Input>
-                      <S.InpuTitle>My ERC-20 address </S.InpuTitle>
-                      <Wallet
-                        balance={contractAndWalletData.tokenBalance}
-                        account={contractAndWalletData.account}
-                      />
-                      {ethereumError.status && (
-                        <S.ErrorTag>
-                          <span>Error</span>
-                          <p>{ethereumError.message}</p>
-                        </S.ErrorTag>
-                      )}
-                    </S.Input>
-                  ) : (
-                    <button
-                      disabled={ethereumLoading}
-                      type="button"
-                      onClick={handleEthereumAccounts}
-                    >
-                      {ethereumLoading
-                        ? 'Connecting...'
-                        : 'Connect to a Wallet'}
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-        </MigrationCard>
-        <S.MigrationCardLoading
-          isActive={
-            status === MIGRATE_STATUS.APPROVING ||
-            status === MIGRATE_STATUS.AUTHORIZING ||
-            status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM ||
-            (status === MIGRATE_STATUS.PROCESSING_ON_RELAYER && !isMigrated)
-          }
-        >
-          <Spinner />
-        </S.MigrationCardLoading>
-      </S.MigrationWrapper>
-
+                    ))}
+                  </S.MigrationDropdown>
+                </Dropdown>
+              </S.Input>
+            ) : (
+              <div>
+                <button
+                  type="button"
+                  disabled={polkadotLoading}
+                  onClick={() => handlePolkadotAccount()}
+                >
+                  {polkadotLoading ? 'Connecting...' : 'Connect to a Wallet'}
+                </button>
+                {polkadotError.status && (
+                  <S.ErrorTag>
+                    <span>Error</span>
+                    {polkadotError.message}
+                  </S.ErrorTag>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </MigrationCard>
+      <MigrationCard
+        title="Step 2"
+        description="Connect the ERC20 wallet where you have your PDEX stored."
+      >
+        {ethereumError.code === 1 ? (
+          <a
+            href="https://metamask.io/download.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download Metamask Extension
+          </a>
+        ) : (
+          <div>
+            {contractAndWalletData.account ? (
+              <S.Input>
+                <S.InpuTitle>My ERC-20 address </S.InpuTitle>
+                <Wallet
+                  balance={contractAndWalletData.tokenBalance}
+                  account={contractAndWalletData.account}
+                />
+                {ethereumError.status && (
+                  <S.ErrorTag>
+                    <span>Error</span>
+                    {ethereumError.message}
+                  </S.ErrorTag>
+                )}
+              </S.Input>
+            ) : (
+              <button
+                disabled={ethereumLoading}
+                type="button"
+                onClick={handleEthereumAccounts}
+              >
+                {ethereumLoading ? 'Connecting...' : 'Connect to a Wallet'}
+              </button>
+            )}
+          </div>
+        )}
+      </MigrationCard>
       <S.MigrationActions
         isLoading={
           status === MIGRATE_STATUS.APPROVING ||
@@ -229,29 +193,23 @@ export const MigrationConvert = () => {
           {isMigrated
             ? 'Migrated'
             : status === MIGRATE_STATUS.APPROVING
-            ? 'Approving'
-            : status === MIGRATE_STATUS.AUTHORIZING
-            ? 'Authorizing'
-            : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
-            ? 'Processing on Ethereum'
-            : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
-            ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
-            : status === MIGRATE_STATUS.FAILED
-            ? 'Failed'
-            : `Migrate Now`}
+              ? 'Approving'
+              : status === MIGRATE_STATUS.AUTHORIZING
+                ? 'Authorizing'
+                : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
+                  ? 'Processing on Ethereum'
+                  : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
+                    ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
+                    : status === MIGRATE_STATUS.FAILED
+                      ? 'Failed'
+                      : 'Migrate Now'}
         </button>
         <ul>
           {txs.map((tx) => (
             <li key={tx}>
               <a
                 target="_blank"
-                href={`https://${
-                  process.env.NEXT_PUBLIC_RANGER_HOST_UR_MAINNET.includes(
-                    'mainnet',
-                  )
-                    ? ''
-                    : 'ropsten.'
-                }etherscan.io/tx/${tx}`}
+                href={`https://${process.env.RANGER_HOST_URL.includes("mainnet") ? "" : "ropsten."}etherscan.io/tx/${tx}`}
                 rel="noreferrer"
               >
                 See at Etherscan
@@ -292,7 +250,7 @@ const MigrationCard = ({ title, description, children }: Props) => (
 const Wallet = ({ balance, account, selected = false }) => (
   <S.InputBox selected={selected}>
     <S.ImageContainer>
-      <Ethereum />
+      <img src="/img/eth.svg" alt="Polkadojs Avatar" />
     </S.ImageContainer>
     <S.Card>
       <S.Flex>
@@ -313,7 +271,7 @@ const PolkadotWallet = ({
 }) => (
   <S.InputBox selected={selected} onClick={changeAccount}>
     <S.ImageContainer>
-      <Avatar />
+      <img src="/img/avatar.svg" alt="Polkadojs Avatar" />
     </S.ImageContainer>
     <S.Card>
       <S.Flex>

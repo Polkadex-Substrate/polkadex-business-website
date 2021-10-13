@@ -10,8 +10,6 @@ const GlobalStyles = createGlobalStyle`
    }
    svg {
      fill: ${theme.colors.text};
-     width: 100%;
-     height: 100%;
      /* stroke: ${theme.colors.text}; */
    }
  `}

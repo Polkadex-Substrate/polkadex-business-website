@@ -26,9 +26,9 @@ export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   ${InvestorCard} {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     :not(:last-child) {
-      margin-right: 2rem;
+      margin-right: 4rem;
     }
   }
 

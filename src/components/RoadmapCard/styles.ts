@@ -18,37 +18,35 @@ const wrapperModifier = {
 };
 
 export const Line = styled.div<Partial<Props>>`
-  ${({ theme }) => css`
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 2.8rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 2.8rem;
 
-    ::before {
-      position: absolute;
-      margin-top: -0.5rem;
-      content: '';
-      width: 2rem;
-      height: 2rem;
-      background: ${theme.colors.text}33;
-      border-radius: 4rem;
-    }
-    ::after {
-      position: absolute;
-      margin-top: 0.8rem;
-      content: '';
-      width: 1px;
-      background: ${theme.colors.text};
-      height: 120%;
-    }
+  ::before {
+    position: absolute;
+    margin-top: -0.5rem;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4rem;
+  }
+  ::after {
+    position: absolute;
+    margin-top: 0.8rem;
+    content: '';
+    width: 1px;
+    background: white;
+    height: 120%;
+  }
 
-    & div {
-      width: 1rem;
-      height: 1rem;
-      background: ${theme.colors.text}72;
-      border-radius: 2rem;
-    }
-  `}
+  & div {
+    width: 1rem;
+    height: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+  }
 `;
 
 export const Content = styled.div`
@@ -62,9 +60,7 @@ export const Content = styled.div`
       margin-bottom: 1rem;
     }
 
-    & svg {
-      width: 2rem;
-      height: 2rem;
+    & img {
       margin-right: 0.5rem;
     }
 

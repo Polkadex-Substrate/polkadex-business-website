@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { FormButton } from 'components/Button';
-import { ThemingContext } from 'context';
-import { useTheming } from 'hooks';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
@@ -69,10 +67,9 @@ const Newsletter = ({
       });
     }
   };
-  const { theme } = useContext(ThemingContext);
 
   return (
-    <S.Wrapper id="newsletter" isDark={theme.value.title === 'dark'}>
+    <S.Wrapper id="newsletter">
       <S.Container>
         <h3>{title}</h3>
         <p>{description}</p>

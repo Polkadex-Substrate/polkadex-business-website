@@ -43,7 +43,7 @@ export const CustomCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(139, 161, 190, 0.8);
+  background: rgba(139, 161, 190, 0.2);
   padding: 2rem;
   border-radius: 2rem;
 

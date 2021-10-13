@@ -15,11 +15,7 @@ export const ThemeSwitcher = () => {
         type="button"
         onClick={() => themeToogle('dark')}
       >
-        <Icon
-          name="Moon"
-          background="none"
-          isActive={theme.value.title === 'dark'}
-        />
+        <Icon name="Moon" isActive={theme.value.title === 'dark'} />
       </button>
       <button
         aria-label="Change to light mode"
@@ -29,7 +25,7 @@ export const ThemeSwitcher = () => {
       >
         <Icon
           name="Sun"
-          background="none"
+          background="transparent"
           isActive={theme.value.title === 'light'}
         />
       </button>
