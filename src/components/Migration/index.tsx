@@ -9,7 +9,6 @@ import { MIGRATE_STATUS, useEthereumSign, usePolkadotSign } from 'hooks';
 import * as S from './styles';
 import { Props } from './types';
 
-const percents = ['5', '25', '50', '75', '100'];
 export const MigrationHero = () => {
   return (
     <S.Wrapper>
@@ -49,8 +48,6 @@ export const MigrationConvert = () => {
     ethereumError,
     ethereumLoading,
     ethereumApiPromise,
-    percent,
-    setPercent,
   } = useEthereumSign();
 
   if (!polkadotApiPromise || !ethereumApiPromise)
@@ -195,25 +192,6 @@ export const MigrationConvert = () => {
             </div>
           )}
         </MigrationCard>
-        {contractAndWalletData.account && selectedPolkadotAccount.address && (
-          <MigrationCard
-            title="Step 3(Optional)"
-            description="Select the amount you want to migrate."
-          >
-            <S.PercentWrapper>
-              {percents.map((item) => (
-                <S.PercentCard
-                  key={item}
-                  onClick={() => setPercent(Number(item))}
-                  isActive={percent === Number(item)}
-                  role="button"
-                >
-                  {item}%
-                </S.PercentCard>
-              ))}
-            </S.PercentWrapper>
-          </MigrationCard>
-        )}
         <S.MigrationCardLoading
           isActive={
             status === MIGRATE_STATUS.APPROVING ||
@@ -260,10 +238,7 @@ export const MigrationConvert = () => {
             ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
             : status === MIGRATE_STATUS.FAILED
             ? 'Failed'
-            : `Migrate Now ${
-                (percent / 100) * Number(contractAndWalletData?.tokenBalance) ||
-                0
-              } PDEX ERC-20`}
+            : `Migrate Now`}
         </button>
         <ul>
           {txs.map((tx) => (

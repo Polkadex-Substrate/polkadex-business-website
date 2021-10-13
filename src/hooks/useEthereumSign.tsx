@@ -31,7 +31,6 @@ export function useEthereumSign() {
   const [status, setStatus] = useState<number>(MIGRATE_STATUS.INITIAL);
   const [txs, setTxs] = useState<string[]>([]);
   const [ethereumLoading, setEthereumLoading] = useState(false);
-  const [percent, setPercent] = useState(100);
 
   const [ethereumError, setEthereumError] = useState({
     status: false,
@@ -162,13 +161,6 @@ export function useEthereumSign() {
         );
         if (+contractAndWalletData.tokenBalance > 0) {
           setStatus(MIGRATE_STATUS.APPROVING);
-          const formatedBalance = ethers.utils.formatEther(
-            contractAndWalletData.totalBalance,
-          );
-          const amountFromPercent = (percent / 100) * Number(formatedBalance);
-          const amountToMigrate = ethers.utils.parseEther(
-            amountFromPercent.toString(),
-          );
           const apporovePdexMigrateContract = await tokenContract.approve(
             PdexMigratateTokenContract.contractAddress,
             EthersConstants.MaxUint256,
@@ -182,7 +174,7 @@ export function useEthereumSign() {
           const migrate = await pdexMigrateTestTokenContractInstance.migrate(
             contractAndWalletData.account,
             selectedAddress.hexPublicKey,
-            amountToMigrate,
+            contractAndWalletData.totalBalance,
           );
           setTxs([...txs, migrate.hash]);
           await migrate.wait();
@@ -207,7 +199,5 @@ export function useEthereumSign() {
     ethereumError,
     ethereumLoading,
     ethereumApiPromise,
-    percent,
-    setPercent,
   };
 }
