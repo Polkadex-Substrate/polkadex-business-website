@@ -6,19 +6,20 @@ import {
   Return,
 } from 'components';
 import { useRouter } from 'next/router';
-import React from 'react';
+import { useEffect } from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Migrate() {
   const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
   const router = useRouter();
-
   const { id } = router.query;
-  console.log(id);
-  console.log('InsMaiinet:', id === 'mainnet');
-  if (!id) return <div />;
 
+  useEffect(() => {
+    if (id && id !== 'testnet' && id !== 'mainnet') router.push('/migrate');
+  }, [id, router]);
+
+  if (!id) return <div />;
   return (
     <S.Wrapper>
       <Return />

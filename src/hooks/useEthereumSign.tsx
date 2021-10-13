@@ -183,6 +183,7 @@ export function useEthereumSign({ isMainnet }) {
           const amountToMigrate = ethers.utils.parseEther(
             amountFromPercent.toString(),
           );
+          console.log('Amount to migrate:', amountToMigrate);
           const apporovePdexMigrateContract = await tokenContract.approve(
             PdexMigratateTokenContract.contractAddress,
             EthersConstants.MaxUint256,

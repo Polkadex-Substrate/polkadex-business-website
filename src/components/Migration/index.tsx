@@ -52,7 +52,6 @@ export const MigrationConvert = ({ isMainnet = true }) => {
     percent,
     setPercent,
   } = useEthereumSign({ isMainnet });
-
   if (!polkadotApiPromise || !ethereumApiPromise)
     return (
       <S.LoadingWrapper>
@@ -275,11 +274,7 @@ export const MigrationConvert = ({ isMainnet = true }) => {
               <a
                 target="_blank"
                 href={`https://${
-                  process.env.NEXT_PUBLIC_RANGER_HOST_UR_MAINNET.includes(
-                    'mainnet',
-                  )
-                    ? ''
-                    : 'ropsten.'
+                  isMainnet ? '' : 'ropsten.'
                 }etherscan.io/tx/${tx}`}
                 rel="noreferrer"
               >

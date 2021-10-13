@@ -7,7 +7,7 @@ module.exports = {
   env: {
     GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
     RANGER_HOST_URL_MAINNET:
-      process.env.NEXT_PUBLIC_RANGER_HOST_UR_MAINNET ||
+      process.env.NEXT_PUBLIC_RANGER_HOST_URL_MAINNET ||
       'wss://mainnet.polkadex.trade',
     RANGER_HOST_URL_TESTNET:
       process.env.NEXT_PUBLIC_RANGER_HOST_URL_TESTNET ||
