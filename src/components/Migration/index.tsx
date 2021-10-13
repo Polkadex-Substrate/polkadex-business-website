@@ -265,7 +265,8 @@ export const MigrationConvert = ({ isMainnet = true }) => {
             : status === MIGRATE_STATUS.FAILED
             ? 'Failed'
             : `Migrate Now ${
-                (percent / 100) * contractAndWalletData?.tokenBalance || 0
+                (percent / 100) * Number(contractAndWalletData?.tokenBalance) ||
+                0
               } PDEX ERC-20`}
         </button>
         <ul>
@@ -274,7 +275,9 @@ export const MigrationConvert = ({ isMainnet = true }) => {
               <a
                 target="_blank"
                 href={`https://${
-                  process.env.RANGER_HOST_URL.includes('mainnet')
+                  process.env.NEXT_PUBLIC_RANGER_HOST_UR_MAINNET.includes(
+                    'mainnet',
+                  )
                     ? ''
                     : 'ropsten.'
                 }etherscan.io/tx/${tx}`}

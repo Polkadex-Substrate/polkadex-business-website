@@ -91,9 +91,8 @@ export function useEthereumSign({ isMainnet }) {
     let result = [];
 
     try {
-      const {
-        chainId,
-      } = await ethereumApiPromise.connect.signer.provider.getNetwork();
+      const { chainId } =
+        await ethereumApiPromise.connect.signer.provider.getNetwork();
 
       if (isMainnet && chainId !== 1) {
         setEthereumError({
@@ -108,13 +107,13 @@ export function useEthereumSign({ isMainnet }) {
           message: 'Open Metamask and change the Network for Ropsten Testnet',
         });
       } else {
-        const allAccounts = await ethereumApiPromise.tokenContract.provider.listAccounts();
+        const allAccounts =
+          await ethereumApiPromise.tokenContract.provider.listAccounts();
         if (allAccounts?.length) {
           result = await Promise.all(
             allAccounts.map(async (item) => {
-              const tokenBalanceInWei = await ethereumApiPromise.tokenContract.balanceOf(
-                item,
-              );
+              const tokenBalanceInWei =
+                await ethereumApiPromise.tokenContract.balanceOf(item);
               const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
               return {
                 tokenBalance: formatAmount(tokenBalance),

@@ -20,7 +20,10 @@ export const MenuWrapper = styled.div`
     display: none;
     z-index: 10;
     padding: 1rem;
-
+    svg {
+      max-width: 3rem;
+      max-height: 3rem;
+    }
     :hover {
       opacity: 0.6;
     }
