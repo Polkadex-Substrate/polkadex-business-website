@@ -102,7 +102,7 @@ export const MigrationConvert = () => {
                         balance={selectedPolkadotAccount.balance?.free}
                         address={selectedPolkadotAccount.address}
                         // eslint-disable-next-line @typescript-eslint/no-empty-function
-                        changeAccount={() => { }}
+                        changeAccount={() => {}}
                       />
                     }
                   >
@@ -251,30 +251,32 @@ export const MigrationConvert = () => {
           {isMigrated
             ? 'Migrated'
             : status === MIGRATE_STATUS.APPROVING
-              ? 'Approving'
-              : status === MIGRATE_STATUS.AUTHORIZING
-                ? 'Authorizing'
-                : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
-                  ? 'Processing on Ethereum'
-                  : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
-                    ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
-                    : status === MIGRATE_STATUS.FAILED
-                      ? 'Failed'
-                      : `Migrate Now ${(percent / 100) * Number(contractAndWalletData?.tokenBalance) ||
-                      0
-                      } PDEX ERC-20`}
+            ? 'Approving'
+            : status === MIGRATE_STATUS.AUTHORIZING
+            ? 'Authorizing'
+            : status === MIGRATE_STATUS.PROCESSING_ON_ETHEREUM
+            ? 'Processing on Ethereum'
+            : status === MIGRATE_STATUS.PROCESSING_ON_RELAYER
+            ? 'Processing on Relayer,it will take 15 blocks of confirmation + 1min'
+            : status === MIGRATE_STATUS.FAILED
+            ? 'Failed'
+            : `Migrate Now ${
+                (percent / 100) * Number(contractAndWalletData?.tokenBalance) ||
+                0
+              } PDEX ERC-20`}
         </button>
         <ul>
           {txs.map((tx) => (
             <li key={tx}>
               <a
                 target="_blank"
-                href={`https://${process.env.NEXT_PUBLIC_RANGER_HOST_UR_MAINNET.includes(
-                  'mainnet',
-                )
+                href={`https://${
+                  process.env.NEXT_PUBLIC_RANGER_HOST_UR_MAINNET.includes(
+                    'mainnet',
+                  )
                     ? ''
                     : 'ropsten.'
-                  }etherscan.io/tx/${tx}`}
+                }etherscan.io/tx/${tx}`}
                 rel="noreferrer"
               >
                 See at Etherscan
