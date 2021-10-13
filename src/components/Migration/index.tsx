@@ -62,6 +62,14 @@ export const MigrationConvert = () => {
         <h2>Convert Now</h2>
         <Icon name="ArrowBottom" background="none" />
       </S.Title>
+      <S.MigrationWrapper>
+        <S.ErrorTag style={{ marginBottom: 10 }}>
+          <span>Attention</span>
+          <p>
+            Ledger hardware wallets are not supported yet, please don&apos;t
+            transfer to Ledger wallets.
+          </p>
+        </S.ErrorTag>
       <MigrationCard
         title="Step 1"
         description="Select the wallet in which you want to receive your PDEX. You need to install Polkadot{.js}"
