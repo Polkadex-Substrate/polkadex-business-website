@@ -154,18 +154,20 @@ export const LoadingWrapper = styled(Template)`
 
 export const ErrorTag = styled.div`
   ${({ theme }) => css`
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: ${theme.font.sizes.small};
     border: 1px solid ${theme.colors.secondary};
     background-color: #6745d240;
     border-radius: 0.5rem;
-    padding: 1.5rem 0.5rem;
-    line-height: 0;
+    padding: 0.5rem;
     width: fit-content;
     span {
+      display: block;
       background: ${theme.colors.secondary};
+      color: ${theme.colors.white};
       border-radius: 0.3rem;
-      padding: 0.3rem;
+      padding: 0.5rem;
       margin-right: 0.5rem;
       font-weight: 550;
     }
@@ -249,7 +251,11 @@ export const MigrationDropdown = styled.div`
     shadow: ${theme.shadow.primary};
   `}
 `;
-
+export const MigrationWrapper = styled.div`
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+`;
 export const MigrationActions = styled.div<{ isLoading: boolean }>`
   ${({ theme, isLoading }) => css`
     text-align: center;
