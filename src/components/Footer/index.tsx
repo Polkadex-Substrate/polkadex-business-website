@@ -1,4 +1,4 @@
-import { Icon, Logo, ThemeSwitcher } from 'components';
+import { Icon, Logo } from 'components';
 import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
@@ -84,7 +84,7 @@ const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
           />
           <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
         </S.SocialWrapper>
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
       </S.Col>
     </S.Row>
   </S.Wrapper>

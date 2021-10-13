@@ -13,12 +13,7 @@ export const Wrapper = styled.section`
   margin: 0 auto;
 `;
 
-export const Col = styled.div`
-  svg {
-    max-height: 5rem;
-    max-width: 5rem;
-  }
-`;
+export const Col = styled.div``;
 
 export const TitleContainer = styled.div`
   display: flex;

@@ -1,68 +1,63 @@
 import { FormWrapper as Button } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.section<{ isDark?: boolean }>`
-  ${({ isDark }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    max-width: 120rem;
-    margin: 0 auto;
-    min-height: 45rem;
-    border-radius: 2rem;
+export const Wrapper = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 120rem;
+  margin: 0 auto;
+  min-height: 45rem;
+  border-radius: 2rem;
 
-    @media screen and (min-width: 1060px) and (max-width: 1200px) {
-      min-height: 43rem;
-    }
-    @media screen and (min-width: 960px) and (max-width: 1060px) {
-      min-height: 39rem;
-    }
-    @media screen and (min-width: 860px) and (max-width: 960px) {
-      min-height: 35rem;
-    }
-    @media screen and (min-width: 795px) and (max-width: 860px) {
-      min-height: 32rem;
-    }
+  @media screen and (min-width: 1060px) and (max-width: 1200px) {
+    min-height: 43rem;
+  }
+  @media screen and (min-width: 960px) and (max-width: 1060px) {
+    min-height: 39rem;
+  }
+  @media screen and (min-width: 860px) and (max-width: 960px) {
+    min-height: 35rem;
+  }
+  @media screen and (min-width: 795px) and (max-width: 860px) {
+    min-height: 32rem;
+  }
 
-    @media screen and (min-width: 795px) {
-      background-image: ${isDark
-        ? 'url(/img/newsletterHeroDark.svg)'
-        : 'url(/img/newsletterHeroLight.svg)'};
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
+  @media screen and (min-width: 795px) {
+    background-image: url('/img/newsletterHero.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
+  & h3 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding: 2rem;
     & h3 {
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
+      font-size: 3.2rem;
     }
-
-    @media screen and (max-width: 1200px) {
-      padding: 2rem;
-      & h3 {
-        font-size: 3.2rem;
-      }
-    }
-  `}
+  }
 `;
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    & form {
+  & form {
+    ${({ theme }) => css`
       background: ${theme.colors.primaryBackground};
-      box-shadow: ${theme.shadow.tertiary};
-      margin-top: 3rem;
-      padding: 1rem 1rem 1rem 2rem;
-      border-radius: 1rem;
-      max-width: 40rem;
-      width: 100%;
-    }
-  `}
+    `}
+    margin-top: 3rem;
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 2rem;
+    max-width: 40rem;
+    width: 100%;
+  }
 `;
 export const FormWrapper = styled.div`
   display: flex;

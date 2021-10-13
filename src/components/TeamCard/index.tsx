@@ -1,5 +1,3 @@
-import * as Icon from 'components/Icons';
-
 import * as S from './styles';
 import Props from './types';
 
@@ -12,14 +10,11 @@ const TeamCard = ({ name, image, position, socialMedia }: Props) => (
     <p>{name}</p>
     <div>
       {socialMedia &&
-        socialMedia.map((item) => {
-          const IconComponent = item.name && Icon[item.name];
-          return (
-            <a key={item.name} href={item.link}>
-              <IconComponent />
-            </a>
-          );
-        })}
+        socialMedia.map((item) => (
+          <a key={item.name} href={item.link}>
+            <img src={`/img/icons/${item.name}.svg`} alt={`${name} icon`} />
+          </a>
+        ))}
     </div>
   </S.Wrapper>
 );

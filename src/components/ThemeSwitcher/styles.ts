@@ -1,3 +1,4 @@
+import { Wrapper as IconWrapper } from 'components/Icon/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -6,14 +7,20 @@ export const Wrapper = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 0.6rem;
     background: ${theme.colors.secondaryBackground};
-    border-radius: 0.8rem;
-    height: fit-content;
+    border-radius: 1rem;
     & span {
       font-size: ${theme.font.sizes.xsmall};
     }
+    ${IconWrapper}:active {
+      background: ${theme.colors.primary};
+    }
     & button {
       cursor: pointer;
+      :nth-child(2) {
+        margin-left: 0.5rem;
+      }
     }
   `}
 `;

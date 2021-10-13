@@ -14,7 +14,6 @@ import Roadmap from 'components/Roadmap';
 import Team from 'components/Team';
 import TokenEconomics from 'components/TokenEconomics';
 
-export * from './BrandAssets';
 export * from './Button';
 export * from './Dropdown';
 export * from './Header';

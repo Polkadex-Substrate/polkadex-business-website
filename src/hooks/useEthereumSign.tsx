@@ -1,7 +1,11 @@
 import { BigNumber, constants as EthersConstants, ethers } from 'ethers';
 import { useEffect, useState } from 'react';
-import { PdexContract } from 'utils/contracts';
-import { PdexMigratateTokenContract } from 'utils/contracts/migrate';
+import ERC20Contract from 'utils/contracts/ERC20Contract.json';
+// will be used on the main net
+import PdexContract from 'utils/contracts/PdexContract.json';
+import PdexMigratateTestTokenContract from 'utils/contracts/PdexMigratateTestTokenContract.json';
+import PdexMigratateTokenContract from 'utils/contracts/PdexMigrateTokenContract.json';
+import { tokenAddress } from 'utils/ercWallet';
 import { connectWeb3, createContractInstance } from 'utils/etherjs';
 import { formatAmount } from 'utils/helpers';
 
@@ -31,8 +35,6 @@ export function useEthereumSign() {
   const [status, setStatus] = useState<number>(MIGRATE_STATUS.INITIAL);
   const [txs, setTxs] = useState<string[]>([]);
   const [ethereumLoading, setEthereumLoading] = useState(false);
-  const [percent, setPercent] = useState(100);
-
   const [ethereumError, setEthereumError] = useState({
     status: false,
     code: 0,
@@ -70,7 +72,7 @@ export function useEthereumSign() {
   const extensionChecker = async () => {
     const ethereumExtension = await import('utils/etherjs');
     const extension = await ethereumExtension.connectWeb3();
-    if (!extension?.provider)
+    if (!extension.provider)
       setEthereumError({
         status: true,
         code: 1,
@@ -83,39 +85,28 @@ export function useEthereumSign() {
     let result = [];
 
     try {
-      const { chainId } =
-        await ethereumApiPromise.connect.signer.provider.getNetwork();
+      const allAccounts = await ethereumApiPromise.tokenContract.provider.listAccounts();
+      if (allAccounts?.length) {
+        result = await Promise.all(
+          allAccounts.map(async (item) => {
+            const tokenBalanceInWei = await ethereumApiPromise.tokenContract.balanceOf(
+              item,
+            );
+            const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
 
-      if (chainId !== 1) {
-        setEthereumError({
-          status: true,
-          code: 5,
-          message: 'Open Metamask and change the Network for Ethereum Mainnet',
-        });
-      } else {
-        const allAccounts =
-          await ethereumApiPromise.tokenContract.provider.listAccounts();
-        if (allAccounts?.length) {
-          result = await Promise.all(
-            allAccounts.map(async (item) => {
-              const tokenBalanceInWei =
-                await ethereumApiPromise.tokenContract.balanceOf(item);
-              const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
-              return {
-                tokenBalance: formatAmount(tokenBalance),
-                // one for now to test
-                totalBalance: ethers.utils.parseEther(tokenBalance),
-                account: item,
-                provider: await ethereumApiPromise.connect.provider,
-                signer: await ethereumApiPromise.connect.signer,
-              };
-            }),
-          );
-          setContractAndWalletData(result[0]);
-          setEthereumLoading(false);
-        }
+            return {
+              tokenBalance: formatAmount(tokenBalance),
+              // one for now to test
+              totalBalance: ethers.utils.parseEther(tokenBalance),
+              account: item,
+              provider: await ethereumApiPromise.connect.provider,
+              signer: await ethereumApiPromise.connect.signer,
+            };
+          }),
+        );
+        setContractAndWalletData(result[0]);
+        setEthereumLoading(false);
       }
-      setEthereumLoading(false);
     } catch (error) {
       setEthereumLoading(false);
       setEthereumError({
@@ -145,7 +136,6 @@ export function useEthereumSign() {
           PdexMigratateTokenContract.abi,
           contractAndWalletData.signer,
         );
-
         // listen to PdexMigratedEvent
         pdexMigrateTestTokenContractInstance.on(
           'PdexMigratedEvent',
@@ -154,21 +144,12 @@ export function useEthereumSign() {
               contractAndWalletData.account,
             );
             const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
-
             contractAndWalletData.tokenBalance = formatAmount(tokenBalance);
-
             setContractAndWalletData({ ...contractAndWalletData });
           },
         );
         if (+contractAndWalletData.tokenBalance > 0) {
           setStatus(MIGRATE_STATUS.APPROVING);
-          const formatedBalance = ethers.utils.formatEther(
-            contractAndWalletData.totalBalance,
-          );
-          const amountFromPercent = (percent / 100) * Number(formatedBalance);
-          const amountToMigrate = ethers.utils.parseEther(
-            amountFromPercent.toString(),
-          );
           const apporovePdexMigrateContract = await tokenContract.approve(
             PdexMigratateTokenContract.contractAddress,
             EthersConstants.MaxUint256,
@@ -178,11 +159,10 @@ export function useEthereumSign() {
 
           // migrate
           setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
-
           const migrate = await pdexMigrateTestTokenContractInstance.migrate(
             contractAndWalletData.account,
             selectedAddress.hexPublicKey,
-            amountToMigrate,
+            contractAndWalletData.totalBalance,
           );
           setTxs([...txs, migrate.hash]);
           await migrate.wait();
@@ -207,7 +187,5 @@ export function useEthereumSign() {
     ethereumError,
     ethereumLoading,
     ethereumApiPromise,
-    percent,
-    setPercent,
   };
 }

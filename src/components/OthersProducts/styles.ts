@@ -39,8 +39,13 @@ export const ProductsContainer = styled.div`
       & ${ColContainer} {
         position: relative;
         padding: 3rem 2rem;
-        background: ${theme.colors.linearBackground};
+        background: linear-gradient(
+          0.83deg,
+          #1c1c26 18.58%,
+          rgba(28, 28, 38, 0) 99.36%
+        );
         height: 100%;
+
         & img {
           max-height: 20rem;
           height: 100%;
@@ -60,35 +65,35 @@ export const ProductsContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  ${({ theme }) => css`
-    & div {
-      display: flex;
-      align-items: center;
-      margin: 1.5rem 0;
-    }
+  & div {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
 
-    & div span {
+  & div span {
+    ${({ theme }) => css`
       background: ${`${theme.colors.primary}4D`};
       border: 1px solid ${theme.colors.primary};
-      display: block;
-      margin-right: 1rem;
-    }
+    `}
+    display: block;
+    margin-right: 1rem;
+  }
 
-    & h5 {
-      font-size: 2rem;
-    }
+  & h5 {
+    font-size: 2rem;
+  }
 
-    @media screen and (max-width: 450px) {
-      & div {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      & div span {
-        margin: 0 0 1rem 0;
-        width: fit-content;
-      }
+  @media screen and (max-width: 450px) {
+    & div {
+      flex-direction: column;
+      align-items: flex-start;
     }
-  `};
+    & div span {
+      margin: 0 0 1rem 0;
+      width: fit-content;
+    }
+  }
 `;
 
 export const Tag = styled.span`

@@ -37,28 +37,26 @@ export const Wrapper = styled.div<Partial<Props>>`
 `;
 
 export const Line = styled.div`
-  ${({ theme }) => css`
-    margin-right: 1.5rem;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    transform: rotate(90deg);
-    display: none;
+  margin-right: 1.5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transform: rotate(90deg);
+  display: none;
 
-    @media screen and (min-width: 1000px) {
-      display: block;
-    }
+  @media screen and (min-width: 1000px) {
+    display: block;
+  }
 
-    ::after {
-      position: absolute;
-      margin-top: 0.8rem;
-      content: '';
-      width: 1px;
-      background: ${theme.colors.text};
-      height: 9rem;
-    }
-  `}
+  ::after {
+    position: absolute;
+    margin-top: 0.8rem;
+    content: '';
+    width: 1px;
+    background: white;
+    height: 9rem;
+  }
 `;
 
 export const ContentContainer = styled.div`

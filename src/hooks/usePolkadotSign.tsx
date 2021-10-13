@@ -31,8 +31,9 @@ export function usePolkadotSign() {
   );
   const [polkadotAccounts, setPolkadotAccounts] = useState<Props[]>([]);
   const [polkadotLoading, setPolkadotLoading] = useState(false);
-  const [polkadotApiPromise, setPolkadotApiPromise] =
-    useState<ApiPromise>(null);
+  const [polkadotApiPromise, setPolkadotApiPromise] = useState<ApiPromise>(
+    null,
+  );
   const [isMigrated, setIsMigrated] = useState(false);
   const [polkadotError, setPolkadotError] = useState({
     status: false,
@@ -99,7 +100,7 @@ export function usePolkadotSign() {
   // Create a Polkador{.js} Instance connection
   const polkadotApiInstance = async () => {
     try {
-      const wsProvider = new WsProvider(process.env.RANGER_HOST_URL_MAINNET);
+      const wsProvider = new WsProvider(process.env.RANGER_HOST_URL);
       // I need know the pallet types for migration the one used is for polkadotIDO
       const api = await ApiPromise.create({
         provider: wsProvider,
@@ -135,8 +136,9 @@ export function usePolkadotSign() {
             const hexPublicKey = u8aToHex(publicKey);
 
             // get balance
-            const { data: balance } =
-              await polkadotApiPromise.query.system.account(item.address);
+            const {
+              data: balance,
+            } = await polkadotApiPromise.query.system.account(item.address);
             return {
               ...item,
               hexPublicKey,

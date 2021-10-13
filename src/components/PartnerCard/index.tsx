@@ -1,16 +1,10 @@
-import * as Icons from 'components/Icons';
-
 import * as S from './styles';
 import Props from './types';
 
-const PartnerCard = ({ name, height = '8rem', width, opacity = 1 }: Props) => {
-  const IconComponent = name && Icons[name];
-
-  return (
-    <S.Wrapper width={width} opacity={opacity} height={height}>
-      {name && <IconComponent />}
-    </S.Wrapper>
-  );
-};
+const PartnerCard = ({ name, width, opacity = 1 }: Props) => (
+  <S.Wrapper width={width} opacity={opacity}>
+    {name && <img src={`/img/partners/${name}.svg`} alt={`${name} Logo`} />}
+  </S.Wrapper>
+);
 
 export default PartnerCard;
