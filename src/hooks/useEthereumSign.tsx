@@ -7,7 +7,6 @@ import { formatAmount } from 'utils/helpers';
 
 type Props = {
   tokenBalance: string;
-  totalBalance: BigNumber;
   accounts: Array<string>;
   account: string;
   provider: ethers.providers.Provider;
@@ -118,8 +117,6 @@ export function useEthereumSign({ isMainnet }) {
               const tokenBalance = ethers.utils.formatUnits(tokenBalanceInWei);
               return {
                 tokenBalance: formatAmount(tokenBalance),
-                // one for now to test
-                totalBalance: ethers.utils.parseEther(tokenBalance),
                 account: item,
                 provider: await ethereumApiPromise.connect.provider,
                 signer: await ethereumApiPromise.connect.signer,
@@ -177,13 +174,8 @@ export function useEthereumSign({ isMainnet }) {
         );
         if (+contractAndWalletData.tokenBalance > 0) {
           setStatus(MIGRATE_STATUS.APPROVING);
-          const formatedBalance = ethers.utils.formatEther(
-            contractAndWalletData.totalBalance,
-          );
-          const amountFromPercent = (percent / 100) * Number(formatedBalance);
-          const amountToMigrate = ethers.utils.parseEther(
-            amountFromPercent.toString(),
-          );
+          const amountInPercent = (percent / 100) * Number(contractAndWalletData.tokenBalance);
+          const amountToMigrate = ethers.utils.parseEther(`${amountInPercent}`);        
           const apporovePdexMigrateContract = await tokenContract.approve(
             PdexMigratateTokenContract.contractAddress,
             EthersConstants.MaxUint256,
