@@ -1,3 +1,4 @@
+import { id } from '@ethersproject/hash';
 import { BigNumber, constants as EthersConstants, ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import * as PolkadexContract from 'utils/contracts';
@@ -35,8 +36,7 @@ export function useEthereumSign({ isMainnet }) {
     Partial<Props>
   >({});
   const [ethereumApiPromise, setEthereumApiPromise] = useState(null);
-  const [status, setStatus] = useState<number>(MIGRATE_STATUS.INITIAL);
-  const [txs, setTxs] = useState<string[]>([]);
+  const [status, setStatus] = useState([]);
   const [ethereumLoading, setEthereumLoading] = useState(false);
   const [percent, setPercent] = useState(100);
 
@@ -53,6 +53,21 @@ export function useEthereumSign({ isMainnet }) {
   useEffect(() => {
     if (!ethereumApiPromise) ethereumtApiInstance();
   }, []);
+
+  const handleUpdate = (code: number, txd: string) => {
+    setStatus((prevState) => [
+      ...prevState.map((statusInfo) => {
+        if (statusInfo.code === code)
+          return {
+            ...statusInfo,
+            tx: txd,
+          };
+        return {
+          ...statusInfo,
+        };
+      }),
+    ]);
+  };
 
   // Create a Ethereum Instance connection
   const ethereumtApiInstance = async () => {
@@ -172,7 +187,13 @@ export function useEthereumSign({ isMainnet }) {
           },
         );
         if (+contractAndWalletData.tokenBalance > 0) {
-          setStatus(MIGRATE_STATUS.APPROVING);
+          setStatus((prevState) => [
+            ...prevState,
+            {
+              code: MIGRATE_STATUS.APPROVING,
+            },
+          ]);
+
           const amountInPercent =
             (percent / 100) * Number(contractAndWalletData.tokenBalance);
           const amountToMigrate = ethers.utils.parseEther(`${amountInPercent}`);
@@ -180,25 +201,40 @@ export function useEthereumSign({ isMainnet }) {
             PdexMigratateTokenContract.contractAddress,
             EthersConstants.MaxUint256,
           );
-          setTxs([...txs, apporovePdexMigrateContract.hash]);
-          await apporovePdexMigrateContract.wait();
 
+          handleUpdate(
+            MIGRATE_STATUS.APPROVING,
+            apporovePdexMigrateContract.hash,
+          );
+
+          await apporovePdexMigrateContract.wait();
           // migrate
-          setStatus(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM);
+          setStatus((prevState) => [
+            ...prevState,
+            { code: MIGRATE_STATUS.PROCESSING_ON_ETHEREUM },
+          ]);
 
           const migrate = await pdexMigrateTestTokenContractInstance.migrate(
             contractAndWalletData.account,
             selectedAddress.hexPublicKey,
             amountToMigrate,
           );
-          setTxs([...txs, migrate.hash]);
-          await migrate.wait();
+          handleUpdate(MIGRATE_STATUS.PROCESSING_ON_ETHEREUM, migrate.hash);
 
+          await migrate.wait();
           // approve on relayer
-          setStatus(MIGRATE_STATUS.PROCESSING_ON_RELAYER);
+          setStatus((prevState) => [
+            ...prevState,
+            { code: MIGRATE_STATUS.PROCESSING_ON_RELAYER },
+          ]);
         }
       } catch (error) {
-        setStatus(MIGRATE_STATUS.FAILED);
+        setStatus((prevState) => [
+          ...prevState,
+          {
+            code: MIGRATE_STATUS.FAILED,
+          },
+        ]);
       }
     } else {
       alert('pls connect wallets');
@@ -210,7 +246,6 @@ export function useEthereumSign({ isMainnet }) {
     handleMigration,
     contractAndWalletData,
     status,
-    txs,
     ethereumError,
     ethereumLoading,
     ethereumApiPromise,

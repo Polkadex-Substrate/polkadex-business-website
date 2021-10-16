@@ -102,9 +102,12 @@ export const Title = styled.div`
 `;
 
 export const MigrationWrapper = styled.div`
-  position: relative;
   max-width: 70rem;
   margin: 0 auto;
+`;
+
+export const MigrationContainer = styled.div`
+  position: relative;
 `;
 export const MigrationCardLoading = styled.div<{ isActive?: boolean }>`
   ${({ theme, isActive }) => css`
@@ -286,8 +289,8 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
-      padding: 1rem;
-      border-radius: 1rem;
+      padding: 1.5rem;
+      border-radius: 0.6rem;
       margin-bottom: 2rem;
       font-weight: 600;
       cursor: pointer;
@@ -369,4 +372,12 @@ export const PercentCard = styled.div<{ isActive?: boolean }>`
       margin-right: 1rem;
     }
   `}
+`;
+export const StatusLink = styled.div`
+  ul {
+    list-style: none;
+    li {
+      text-align: center;
+    }
+  }
 `;

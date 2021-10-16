@@ -29,6 +29,7 @@ export type IIcons =
   | 'Upgrade'
   | 'Waiting'
   | 'Whatsapp'
+  | 'Checked'
   | 'Youtube'
   | 'Sun'
   | 'Translate'

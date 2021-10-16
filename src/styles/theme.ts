@@ -47,6 +47,7 @@ export const defaultTheme = {
     green: '#0CA564',
     white: '#ffffff',
     black: '#000000',
+    orange: '#FFA500',
   },
   spacings: {
     xxxsmall: '0.5rem',
