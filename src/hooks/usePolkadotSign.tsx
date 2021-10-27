@@ -19,7 +19,7 @@ type Props = {
   version?: MetadataVersioned;
 };
 
-export function usePolkadotSign({ isMainnet }) {
+export function usePolkadotSign() {
   const [selectedPolkadotAccount, setSelectedPolkadotAccount] = useState<Props>(
     {
       meta: {
@@ -99,11 +99,7 @@ export function usePolkadotSign({ isMainnet }) {
   // Create a Polkador{.js} Instance connection
   const polkadotApiInstance = async () => {
     try {
-      const wsProvider = new WsProvider(
-        isMainnet
-          ? process.env.RANGER_HOST_URL_MAINNET
-          : process.env.RANGER_HOST_URL_TESTNET,
-      );
+      const wsProvider = new WsProvider(process.env.RANGER_HOST_URL);
       // I need know the pallet types for migration the one used is for polkadotIDO
       const api = await ApiPromise.create({
         provider: wsProvider,
@@ -130,9 +126,7 @@ export function usePolkadotSign({ isMainnet }) {
       );
       await web3Enable('Polkadex');
 
-      const allAccounts = await web3Accounts({
-        ss58Format: isMainnet ? 88 : 42,
-      });
+      const allAccounts = await web3Accounts({ ss58Format: 88 });
       if (allAccounts.length) {
         result = await Promise.all(
           allAccounts.map(async (item) => {

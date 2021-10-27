@@ -19,14 +19,12 @@ export const Container = styled.div`
   grid-gap: 1rem;
   align-items: center;
   padding-top: 10rem;
-
   @media screen and (min-width: 600px) and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 1.5fr;
   }
-
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 1.8fr;
   }
@@ -39,7 +37,6 @@ export const Box = styled.div`
         padding: 0.2rem 0.5rem;
         border-radius: 0.5rem;
         background-color: ${theme.colors.primary};
-        color: ${theme.colors.white};
         font-weight: bold;
         font-size: 1.6rem;
         display: block;
@@ -69,7 +66,6 @@ export const Box = styled.div`
 
 export const Template = styled.div`
   margin: -28rem auto 0 auto;
-
   @media screen and (min-width: 600px) and (max-width: 1000px) {
     margin-top: -38rem;
   }
@@ -101,36 +97,14 @@ export const Title = styled.div`
   }
 `;
 
-export const MigrationWrapper = styled.div`
-  max-width: 70rem;
-  margin: 0 auto;
-`;
-
-export const MigrationContainer = styled.div`
-  position: relative;
-`;
-export const MigrationCardLoading = styled.div<{ isActive?: boolean }>`
-  ${({ theme, isActive }) => css`
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 70;
-    display: ${isActive ? 'flex' : 'none'};
-    justify-content: center;
-    align-items: center;
-    background: ${theme.colors.primaryBackground}BF;
-  `}
-`;
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.gradientBackground};
-    box-shadow: ${theme.shadow.primary};
     padding: 2rem;
     border-radius: 1rem;
+    max-width: 70rem;
     margin: 0 auto;
     margin-bottom: 3rem;
-
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
@@ -149,7 +123,6 @@ export const CardWrapper = styled.div`
       text-underline-position: under;
       opacity: 0.6;
       transition: opacity ease-in-out 0.4s;
-
       :hover {
         opacity: 1;
       }
@@ -273,12 +246,13 @@ export const MigrationDropdown = styled.div`
     border-radius: 0.5rem;
     width: 100%;
     shadow: ${theme.shadow.primary};
-    overflow-y: scroll;
-    scrollbar-width: none;
-    max-height: 15rem;
   `}
 `;
-
+export const MigrationWrapper = styled.div`
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+`;
 export const MigrationActions = styled.div<{ isLoading: boolean }>`
   ${({ theme, isLoading }) => css`
     text-align: center;
@@ -289,10 +263,10 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
-      padding: 1.5rem;
-      border-radius: 0.6rem;
+      padding: 1rem;
+      border-radius: 1rem;
       margin-bottom: 2rem;
-      font-weight: 600;
+      font-weight: 550;
       cursor: pointer;
       ${isLoading &&
       css`
@@ -300,7 +274,6 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
           content: '.';
           animation: dots 1.5s steps(5, end) infinite;
         }
-
         @keyframes dots {
           0%,
           20% {
@@ -320,7 +293,6 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
           }
         }
       `}
-
       :disabled {
         cursor: inherit;
         background: gray;
@@ -334,7 +306,6 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
       text-underline-position: under;
       opacity: 0.6;
       transition: opacity ease-in-out 0.4s;
-
       :hover {
         opacity: 1;
       }
@@ -344,40 +315,4 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
       margin: 0 auto;
     }
   `}
-`;
-export const PercentWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    border: 1px solid ${theme.colors.secondaryBackground};
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    width: fit-content;
-  `}
-`;
-
-export const PercentCard = styled.div<{ isActive?: boolean }>`
-  ${({ theme, isActive }) => css`
-    display: inline-block;
-    cursor: pointer;
-    padding: 0.5rem;
-    font-weight: 500;
-    ${isActive &&
-    css`
-      background: ${theme.colors.primary}99;
-      border: 1px solid ${theme.colors.primary};
-      border-radius: 0.2rem;
-    `};
-    :not(:last-child) {
-      margin-right: 1rem;
-    }
-  `}
-`;
-export const StatusLink = styled.div`
-  ul {
-    list-style: none;
-    li {
-      text-align: center;
-    }
-  }
 `;
