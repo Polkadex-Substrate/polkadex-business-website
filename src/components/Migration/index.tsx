@@ -9,13 +9,13 @@ export const MigrationHero = () => {
     <S.Wrapper>
       <S.Container>
         <S.Box>
-          <span>Mainnet</span>
+          <span>Polkadex Mainnet</span>
           <h1>
             Convert ERC-20 PDEX to <strong>native PDEX</strong>
           </h1>
         </S.Box>
         <S.Box>
-          <img src="/img/migrationHero.svg" alt="Migration Illustraiton" />
+          <img src="/img/migrationHero.svg" alt="" />
         </S.Box>
       </S.Container>
     </S.Wrapper>

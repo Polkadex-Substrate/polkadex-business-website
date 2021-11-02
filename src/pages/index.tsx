@@ -15,6 +15,7 @@ import {
   Team,
   TokenEconomics,
 } from 'components';
+import Head from 'next/head';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
@@ -38,6 +39,9 @@ export default function Home() {
 
   return (
     <S.Wrapper>
+      <Head>
+        <title>Polkadex - The trading engine for Web3 and DeFi</title>
+      </Head>
       <Announcement
         content={
           <ContractAnnouncement

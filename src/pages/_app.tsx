@@ -35,8 +35,6 @@ function App({ Component, pageProps }: AppProps) {
       ) : (
         <ThemeProvider theme={theme.value}>
           <Head>
-            <title>Polkadex</title>
-
             <link
               rel="apple-touch-icon"
               sizes="57x57"
@@ -133,7 +131,6 @@ function App({ Component, pageProps }: AppProps) {
           </Head>
           <GlobalStyles />
           {maintenance ? <Maintenance /> : <Component {...pageProps} />}
-
           <PrivacyPopUp
             action={handleAccept}
             visible={state}

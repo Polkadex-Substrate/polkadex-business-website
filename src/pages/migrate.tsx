@@ -5,6 +5,7 @@ import {
   Newsletter,
   Return,
 } from 'components';
+import Head from 'next/head';
 import React from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
@@ -14,6 +15,9 @@ export default function Migrate() {
 
   return (
     <S.Wrapper>
+      <Head>
+        <title>Polkadex - Token Migration</title>
+      </Head>
       <Return />
       <main>
         <MigrationHero />
