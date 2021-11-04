@@ -7,8 +7,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href:
-          'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
       },
       {
         title: 'Docs',
@@ -16,8 +15,7 @@ const ENLanguage = {
       },
       {
         title: 'Lightpaper',
-        href:
-          'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
+        href: 'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
       },
     ],
     bottomLinks: [
@@ -319,8 +317,7 @@ const ENLanguage = {
           },
           {
             name: 'linkedin',
-            link:
-              'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
+            link: 'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
           },
         ],
       },
@@ -384,6 +381,17 @@ const ENLanguage = {
           {
             name: 'linkedin',
             link: 'https://www.linkedin.com/in/rodolfo-ferreira-91824819a/',
+          },
+        ],
+      },
+      {
+        title: 'Senior Frontend Engineer',
+        name: 'Charles Chiakwa',
+        image: 'charlesPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
           },
         ],
       },
