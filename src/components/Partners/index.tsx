@@ -35,19 +35,19 @@ const Partners = ({
         </S.Card>
         <S.Card>
           <S.Row>
-            <PartnerCard name="kilt" />
-            <PartnerCard name="fractal" />
-            <PartnerCard name="kucoin" />
-            <PartnerCard name="openware" />
-            <PartnerCard name="marketSquare" />
-            <PartnerCard width="auto" opacity={0.2} />
+            <PartnerCard name="Kilt" />
+            <PartnerCard name="Fractal" />
+            <PartnerCard name="Kucoin" />
+            <PartnerCard name="Openware" />
+            <PartnerCard name="MarketSquare" />
+            <PartnerCard width="auto" opacity={0.4} />
           </S.Row>
           <S.Row>
-            <PartnerCard name="scs" />
-            <PartnerCard name="coinmarketcap" />
-            <PartnerCard name="gateio" />
-            <PartnerCard name="coingecko" />
-            <PartnerCard width="auto" opacity={0.2} />
+            <PartnerCard name="Scs" />
+            <PartnerCard name="CoinmarketCap" />
+            <PartnerCard name="Gateio" />
+            <PartnerCard name="CoinGecko" />
+            <PartnerCard width="auto" opacity={0.3} />
           </S.Row>
         </S.Card>
       </S.Box>

@@ -30,8 +30,6 @@ const Investors = ({
         <InvestorCard name="Cluster" link="https://www.cluster.vc/" />
         <InvestorCard name="MasterVentures" link="https://master.ventures/" />
         <InvestorCard name="PNYXVentures" link="https://pnyx.ventures/" />
-      </S.Row>
-      <S.Row>
         <InvestorCard name="CMSHolding" link="http://cmsholdings.io/" />
         <InvestorCard name="BlockSync" link="https://www.blocksync.com/" />
         <InvestorCard name="ExistentialCapital" link="https://exst.vc/" />
@@ -42,8 +40,6 @@ const Investors = ({
         />
         <InvestorCard name="NGCVentures" link="https://www.ngc.fund/" />
         <InvestorCard name="Waterdrip" link="http://waterdrip.io/" />
-      </S.Row>
-      <S.Row>
         <InvestorCard name="GenblockCapital" link="https://genblock.capital/" />
         <InvestorCard name="JRR" link="http://www.jrr.group/" />
         <InvestorCard name="Kenetic" link="https://kenetic.capital/" />
@@ -52,8 +48,6 @@ const Investors = ({
         <InvestorCard name="QSN" link="https://qsnholdings.com/?lang=en" />
         <InvestorCard name="YBBFoundation" link="http://www.ybb.io/" />
         <InvestorCard name="GBIC" link="http://gbic.io/" />
-      </S.Row>
-      <S.Row>
         <InvestorCard name="GD10Ventures" link="https://www.gd10.ventures" />
       </S.Row>
     </S.Container>

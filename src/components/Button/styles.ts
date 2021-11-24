@@ -6,14 +6,13 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
   ${({ theme, background }) => css`
     color: ${theme.colors.text};
     transition: ${theme.transition.default};
-    padding: ${background !== 'none' ? '0.8rem 1rem' : 0};
-
-    border-radius: 1.2rem;
+    padding: ${background !== 'none' ? '0.5rem 0.8rem 0.5rem 0.5rem' : 0};
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     line-height: 0;
     white-space: pre;
-
+    font-weight: 500;
     & div {
       display: flex;
       align-items: center;
@@ -33,13 +32,13 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
       ? `${theme.colors[background]}4D`
       : theme.colors[background]};
     border: ${withOpacity ? `1px solid ${theme.colors[background]}` : 'none'};
-    color: ${background === 'primary' || 'secondary'
+    color: ${background === 'primary' || ('secondary' && background !== 'none')
       ? theme.colors.white
       : theme.colors.text} !important;
     :hover {
       background: ${withOpacity
         ? theme.colors[background]
-        : `${theme.colors[background]}4D`};
+        : `${theme.colors[background]}90`};
     }
 
     & div {
@@ -56,17 +55,18 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
 
 export const FormWrapper = styled.button`
   ${({ theme }) => css`
-    color: ${theme.colors.text};
+    color: ${theme.colors.white};
+    font-weight: 600;
     background: ${theme.colors.primary};
     transition: ${theme.transition.default};
-    border-radius: 1.2rem;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     line-height: 0;
     white-space: pre;
     cursor: pointer;
     & :hover {
-      background: ${`${theme.colors.primary}4D`};
+      background: ${`${theme.colors.primary}99`};
     }
     & div {
       display: flex;
@@ -76,14 +76,12 @@ export const FormWrapper = styled.button`
       height: 3rem;
       border-radius: 0.9rem;
       margin-right: 0.5rem;
+      padding: 0.6rem;
       background: ${theme.colors.primaryBackground};
-      & img {
-        max-width: 1.8rem;
-      }
     }
   `}
 
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 0.8rem 0.5rem 0.5rem;
   border-radius: 1.2rem;
   display: flex;
   align-items: center;

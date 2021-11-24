@@ -19,14 +19,12 @@ export const Container = styled.div`
   grid-gap: 1rem;
   align-items: center;
   padding-top: 10rem;
-
   @media screen and (min-width: 600px) and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 1.5fr;
   }
-
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 1.8fr;
   }
@@ -68,7 +66,6 @@ export const Box = styled.div`
 
 export const Template = styled.div`
   margin: -28rem auto 0 auto;
-
   @media screen and (min-width: 600px) and (max-width: 1000px) {
     margin-top: -38rem;
   }
@@ -108,7 +105,6 @@ export const CardWrapper = styled.div`
     max-width: 70rem;
     margin: 0 auto;
     margin-bottom: 3rem;
-
     button {
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
@@ -127,7 +123,6 @@ export const CardWrapper = styled.div`
       text-underline-position: under;
       opacity: 0.6;
       transition: opacity ease-in-out 0.4s;
-
       :hover {
         opacity: 1;
       }
@@ -210,14 +205,16 @@ export const ImageContainer = styled.div`
   `}
 `;
 export const Card = styled.div`
-  flex: 1;
-  p {
-    color: white;
-    font-weight: 600;
-    font-size: 1.4rem;
-    width: 100%;
-    word-break: break-word;
-  }
+  ${({ theme }) => css`
+    flex: 1;
+    p {
+      color: ${theme.colors.text};
+      font-weight: 600;
+      font-size: 1.4rem;
+      width: 100%;
+      word-break: break-word;
+    }
+  `}
 `;
 export const Flex = styled.div`
   display: flex;
@@ -277,7 +274,6 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
           content: '.';
           animation: dots 1.5s steps(5, end) infinite;
         }
-
         @keyframes dots {
           0%,
           20% {
@@ -297,7 +293,6 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
           }
         }
       `}
-
       :disabled {
         cursor: inherit;
         background: gray;
@@ -311,7 +306,6 @@ export const MigrationActions = styled.div<{ isLoading: boolean }>`
       text-underline-position: under;
       opacity: 0.6;
       transition: opacity ease-in-out 0.4s;
-
       :hover {
         opacity: 1;
       }

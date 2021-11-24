@@ -1,6 +1,7 @@
 import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
-import React, { useEffect, useRef } from 'react';
+import { ThemingContext } from 'context';
+import React, { useContext, useEffect, useRef } from 'react';
 import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
@@ -17,6 +18,7 @@ const Hero = ({
   chainsTitle,
 }: Props['hero']) => {
   const ImageHeroRef = useRef<HTMLImageElement>();
+  const { theme } = useContext(ThemingContext);
 
   const handleScroll = () => {
     const scrollY = window.innerHeight * 0.05;
@@ -42,7 +44,6 @@ const Hero = ({
             {secondaryCtaButton}
           </S.SecondaryButton>
         </S.CtaContainer>
-
         <S.Row>
           <span>{chainsTitle}</span>
           <S.Col>
@@ -70,7 +71,11 @@ const Hero = ({
       <S.Container>
         <img
           ref={ImageHeroRef}
-          src="/img/polkadexExchange.svg"
+          src={`/img/${
+            theme.value.title === 'dark'
+              ? 'polkadexExchangeDark'
+              : 'polkadexExchangeLight'
+          }.svg`}
           alt="Polkadex Interface"
         />
       </S.Container>

@@ -3,15 +3,17 @@ import styled, { css } from 'styled-components';
 import Props from './types';
 
 export const Wrapper = styled.div<Partial<Props>>`
-  position: fixed;
-  bottom: 2%;
-  left: 0;
-  right: 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
   ${({ theme, visible }) => css`
+    position: fixed;
+    z-index: 50;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: ${theme.colors.inverse}D8;
+    box-shadow: ${theme.shadow.primary};
+    -webkit-backdrop-filter: blur(20px);
     display: ${visible ? 'flex' : 'none'};
 
     & a {

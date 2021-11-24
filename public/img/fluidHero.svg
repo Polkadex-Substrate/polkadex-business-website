@@ -1,7 +1,7 @@
 <svg width="1202" height="1034" viewBox="0 0 1202 1034" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect opacity="0.5" width="208.941" height="192.534" transform="matrix(0.866025 0.5 -0.866025 0.5 188.739 690)" fill="black"/>
-<rect opacity="0.5" width="142.079" height="130.922" transform="matrix(0.866025 0.5 -0.866025 0.5 881.382 668)" fill="black"/>
-<rect opacity="0.5" width="208.941" height="192.534" transform="matrix(0.866025 0.5 -0.866025 0.5 923.739 384)" fill="black"/>
+<rect opacity="0.5" width="208.941" height="192.534" transform="matrix(0.866025 0.5 -0.866025 0.5 188.739 690)" fill="#0000004C"/>
+<rect opacity="0.5" width="142.079" height="130.922" transform="matrix(0.866025 0.5 -0.866025 0.5 881.382 668)" fill="#0000004C"/>
+<rect opacity="0.5" width="208.941" height="192.534" transform="matrix(0.866025 0.5 -0.866025 0.5 923.739 384)" fill="#0000004C"/>
 <path d="M875 665L741.745 594.999C730.794 589.246 730.234 573.775 740.74 567.245L842.5 504" stroke="#E6007A" stroke-width="2"/>
 <path d="M847 734.999L752.759 682.435C733.459 671.669 709.845 672.185 691.032 683.784L449.255 832.845C430.557 844.373 407.104 844.957 387.855 834.375L303.5 788" stroke="#E6007A" stroke-width="2"/>
 <path d="M320.5 767L802.047 483" stroke="#E6007A" stroke-width="2"/>

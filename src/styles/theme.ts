@@ -47,6 +47,7 @@ export const defaultTheme = {
     green: '#0CA564',
     white: '#ffffff',
     black: '#000000',
+    orange: '#FFA500',
   },
   spacings: {
     xxxsmall: '0.5rem',
@@ -92,10 +93,19 @@ const light = {
     tertiaryBackground: '#F9FBFC99',
     secondaryBackgroundSolid: '#E8ECF2',
     text: '#000000',
+    overlay: 'rgba(255, 255, 255, 0.99)',
+    linearBackground:
+      'linear-gradient( 0.83deg, #fff 18.58%,rgba(255, 255, 255, 0) 99.36%)',
+    inverse: '#ffffff',
   },
   shadow: {
     primary: '0px 10px 40px rgba(171, 192, 227, 0.25)',
-    top: '0px -5px 15px rgba(171, 192, 227, 0.9)',
+    top: '0px -5px 15px rgba(171, 192, 227, 0.98)',
+    secondary:
+      'rgba(50, 50, 93, 0.05) 0px 0 100px -20px, rgba(0, 0, 0, 0.05) 0px 30px 0 -30px',
+    tertiary:
+      'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px',
+    quaternary: 'rgba(33, 35, 38, 0.1) 0px 10px 10px -10px',
   },
   skeleton: {
     default: `linear-gradient(
@@ -119,10 +129,19 @@ const dark = {
     tertiaryBackground: '#2E303C',
     secondaryBackgroundSolid: '#2F3340',
     text: '#f5f5f5',
+    overlay: 'rgba(0, 0, 0, 0.98)',
+    linearBackground:
+      'linear-gradient( 0.83deg, #1c1c26 18.58%,rgba(28, 28, 38, 0) 99.36%)',
+    inverse: '#000000',
   },
   shadow: {
     primary: '0px 10px 15px rgba(0, 0, 0, 0.05)',
     top: '0px -5px 15px rgba(0, 0, 0, 0.7)',
+    secondary:
+      'rgba(0, 0, 0, 0.25) 0px 0 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0 -30px',
+    tertiary:
+      'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px',
+    quaternary: 'rgba(33, 35, 38, 0.1) 0px 10px 10px -10px',
   },
   skeleton: {
     default: `linear-gradient(

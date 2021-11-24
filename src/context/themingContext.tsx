@@ -3,6 +3,6 @@ import { defaultThemes } from 'styles';
 
 import { ITheme } from './types';
 
-export const ThemingContext = createContext<ITheme>({
+export const ThemingContext = createContext<any>({
   theme: { value: defaultThemes.dark },
 });
