@@ -390,7 +390,7 @@ const ENLanguage = {
         image: 'charlesPhotography',
         socialMedia: [
           {
-            name: 'linkedin',
+            name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
           },
         ],
