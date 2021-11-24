@@ -14,8 +14,11 @@ export const Wrapper = styled.a`
 
 export const Col = styled.div`
   :first-child {
+    max-height: 20rem;
+    height: 100%;
     & img {
       width: 100%;
+      height: 100%;
       border-radius: 2rem;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }

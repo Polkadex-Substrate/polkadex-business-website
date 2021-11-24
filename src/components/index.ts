@@ -21,7 +21,6 @@ export * from './Header';
 export * from './Icon';
 export * from './LanguageSelector';
 export * from './Logo';
-export * from './MigrateStatus';
 export * from './Migration';
 export * from './Return';
 export * from './Spinner';

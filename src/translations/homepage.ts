@@ -385,6 +385,17 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Senior Frontend Engineer',
+        name: 'Charles Chiakwa',
+        image: 'charlesPhotography',
+        socialMedia: [
+          {
+            name: 'linkedin',
+            link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
+          },
+        ],
+      },
+      {
         title: 'Threshold Cryptography Advisor',
         name: 'Omer Shlomovits',
         image: 'omerPhotography',
