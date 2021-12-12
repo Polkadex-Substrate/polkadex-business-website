@@ -297,17 +297,6 @@ const ENLanguage = {
       },
       {
         title: 'Senior Rust Engineer',
-        name: 'Frank Li',
-        image: 'frankPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/frank-li-b6b388203/',
-          },
-        ],
-      },
-      {
-        title: 'Senior Rust Engineer',
         name: 'Gabriel Facco de Arruda',
         image: 'gabrielPhotography',
         socialMedia: [
