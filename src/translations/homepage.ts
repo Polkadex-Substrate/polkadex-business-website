@@ -385,6 +385,17 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Senior Rust Engineer',
+        name: 'Ivan Temchenko ',
+        image: 'ivanPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/35359595',
+          },
+        ],
+      },
+      {
         title: 'Threshold Cryptography Advisor',
         name: 'Omer Shlomovits',
         image: 'omerPhotography',

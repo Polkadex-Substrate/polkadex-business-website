@@ -15,7 +15,12 @@ const TeamCard = ({ name, image, position, socialMedia }: Props) => (
         socialMedia.map((item) => {
           const IconComponent = item.name && Icon[item.name];
           return (
-            <a key={item.name} href={item.link}>
+            <a
+              key={item.name}
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconComponent />
             </a>
           );
