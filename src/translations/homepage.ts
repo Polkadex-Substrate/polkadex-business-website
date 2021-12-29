@@ -551,7 +551,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 3,
+            distance: 18,
           },
         },
         items: [
@@ -594,11 +594,11 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 42,
+            distance: 35,
           },
           vertical: {
             side: 'bottom',
-            distance: 1,
+            distance: 6,
           },
         },
         items: [
