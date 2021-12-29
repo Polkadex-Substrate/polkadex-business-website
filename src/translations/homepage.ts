@@ -541,17 +541,64 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Q1 - 2022',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 0,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 3,
+          },
+        },
+        items: [
+          {
+            title: 'PolkaIDO',
+            subItems: [
+              {
+                title: 'Public Testnet',
+                timeline: 'Early January',
+              },
+              { title: 'Mainnet beta version' },
+            ],
+          },
+          {
+            title: 'Orderbook',
+            subItems: [
+              { title: 'Beta Testing', timeline: 'Mid January' },
+              { title: 'Public Testnet' },
+              { title: 'Mainnet beta version' },
+            ],
+          },
+          {
+            title: 'Orderbook Mobile App',
+            subItems: [
+              { title: 'Beta Testing' },
+              { title: 'Public Testnet' },
+              { title: 'Mainnet beta version' },
+            ],
+          },
+          {
+            title: 'Parachain Strategy Announcement',
+            timeline: 'Early January',
+          },
+        ],
+      },
+      {
         title: 'Q1-Q3 2022',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 20,
+            distance: 42,
           },
           vertical: {
             side: 'bottom',
-            distance: 13,
+            distance: 1,
           },
         },
         items: [
