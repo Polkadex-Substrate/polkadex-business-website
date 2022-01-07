@@ -38,7 +38,7 @@ const Partners = ({
             <PartnerCard name="Kilt" />
             <PartnerCard name="Fractal" />
             <PartnerCard name="Kucoin" />
-            <PartnerCard name="Openware" />
+            <PartnerCard width="auto" opacity={0.3} />
             <PartnerCard name="MarketSquare" />
             <PartnerCard width="auto" opacity={0.4} />
           </S.Row>

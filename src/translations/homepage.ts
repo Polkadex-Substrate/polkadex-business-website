@@ -297,17 +297,6 @@ const ENLanguage = {
       },
       {
         title: 'Senior Rust Engineer',
-        name: 'Frank Li',
-        image: 'frankPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/frank-li-b6b388203/',
-          },
-        ],
-      },
-      {
-        title: 'Senior Rust Engineer',
         name: 'Gabriel Facco de Arruda',
         image: 'gabrielPhotography',
         socialMedia: [
@@ -392,6 +381,17 @@ const ENLanguage = {
           {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
+          },
+        ],
+      },
+      {
+        title: 'Senior Rust Engineer',
+        name: 'Ivan Temchenko ',
+        image: 'ivanPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/35359595',
           },
         ],
       },
@@ -541,17 +541,64 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Q1 - 2022',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 0,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 18,
+          },
+        },
+        items: [
+          {
+            title: 'PolkaIDO',
+            subItems: [
+              {
+                title: 'Public Testnet',
+                timeline: 'Early January',
+              },
+              { title: 'Mainnet beta version' },
+            ],
+          },
+          {
+            title: 'Orderbook',
+            subItems: [
+              { title: 'Beta Testing', timeline: 'Mid January' },
+              { title: 'Public Testnet' },
+              { title: 'Mainnet beta version' },
+            ],
+          },
+          {
+            title: 'Orderbook Mobile App',
+            subItems: [
+              { title: 'Beta Testing' },
+              { title: 'Public Testnet' },
+              { title: 'Mainnet beta version' },
+            ],
+          },
+          {
+            title: 'Parachain Strategy Announcement',
+            timeline: 'Early January',
+          },
+        ],
+      },
+      {
         title: 'Q1-Q3 2022',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 20,
+            distance: 35,
           },
           vertical: {
             side: 'bottom',
-            distance: 13,
+            distance: 6,
           },
         },
         items: [

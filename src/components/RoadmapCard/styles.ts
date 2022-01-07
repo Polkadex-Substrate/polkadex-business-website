@@ -51,10 +51,14 @@ export const Line = styled.div<Partial<Props>>`
   `}
 `;
 
-export const Content = styled.div`
-  margin-right: 2rem;
+export const SubItem = styled.div`
+  :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+`;
 
-  & div {
+export const Item = styled.div<{ isHighligh?: boolean }>`
+  ${({ theme, isHighligh }) => css`
     display: flex;
     align-items: center;
 
@@ -69,14 +73,12 @@ export const Content = styled.div`
     }
 
     & span {
-      ${({ theme }) => css`
-        background: ${`${theme.colors.primary}4D`};
-        border: ${`1px solid ${theme.colors.primary}`};
-        &.checked {
-          background: ${`${theme.colors.secondaryBackgroundSolid}4D`};
-          border: ${`1px solid ${theme.colors.secondaryBackgroundSolid}`};
-        }
-      `}
+      background: ${`${theme.colors.primary}4D`};
+      border: ${`1px solid ${theme.colors.primary}`};
+      &.checked {
+        background: ${`${theme.colors.secondaryBackgroundSolid}4D`};
+        border: ${`1px solid ${theme.colors.secondaryBackgroundSolid}`};
+      }
 
       font-size: 1.1rem;
       text-transform: uppercase;
@@ -85,8 +87,15 @@ export const Content = styled.div`
       margin-right: 0.5rem;
       padding: 0.5rem 1rem;
     }
-  }
+    ${isHighligh &&
+    css`
+      font-size: 1.8rem;
+      font-weight: 600;
+    `}
+  `}
 `;
+
+export const Content = styled.div``;
 
 export const Wrapper = styled.div<Partial<Props>>`
   ${({ position, invert, alignRight }) => css`
@@ -103,10 +112,8 @@ export const Wrapper = styled.div<Partial<Props>>`
         transform: ${invert ? 'rotate(180deg) translateY(10rem)' : 'initial'};
       }
 
-      & ${Content} {
-        & div {
-          justify-content: ${alignRight ? 'flex-end' : 'flex-start'};
-        }
+      & ${Item} {
+        justify-content: ${alignRight ? 'flex-end' : 'flex-start'};
       }
     }
   `}

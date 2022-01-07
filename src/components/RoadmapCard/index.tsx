@@ -24,13 +24,28 @@ const RoadmapCard = ({
             const IconComponent = item.status ? Icons.Selected : Icons.Waiting;
             return (
               <div key={index}>
-                {item.timeline && (
-                  <span className={item.status ? 'checked' : ''}>
-                    {item.timeline}
-                  </span>
-                )}
-                {item.status && <IconComponent />}
-                <p>{item.title}</p>
+                <S.Item isHighligh={!!item.subItems?.length}>
+                  {item.timeline && (
+                    <span className={item.status ? 'checked' : ''}>
+                      {item.timeline}
+                    </span>
+                  )}
+                  {item.status && <IconComponent />}
+                  <p>{item.title}</p>
+                </S.Item>
+                {!!item.subItems?.length &&
+                  item.subItems.map((subItem) => (
+                    <S.Item>
+                      {subItem.timeline && (
+                        <span className={subItem.status ? 'checked' : ''}>
+                          {subItem.timeline}
+                        </span>
+                      )}
+                      {subItem.status && <IconComponent />}
+                      <p>{subItem.title}</p>
+                    </S.Item>
+                  ))}
+                <S.SubItem />
               </div>
             );
           })}
