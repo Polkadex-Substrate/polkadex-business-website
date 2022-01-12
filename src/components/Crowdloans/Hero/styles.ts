@@ -5,12 +5,20 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   display: grid;
   grid-gap: 1rem;
-  padding: 15rem 0 4rem 0;
   max-width: 95rem;
   margin: 0 auto;
-  grid-template-columns: 1fr 1.3fr;
-  @media screen and (max-width: 900px) {
+  padding-top: 5rem;
+
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
+
+  @media screen and (min-width: 720px) {
+    grid-template-columns: 1fr 1.3fr;
+    padding: 15rem 0 4rem 0;
+  }
+
   h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -27,9 +35,11 @@ export const Wrapper = styled.section`
 `;
 
 export const ScrollDown = styled.div`
-  margin-top: 18rem;
   cursor: pointer;
-
+  margin-top: 5rem;
+  @media screen and (min-width: 720px) {
+    margin-top: 18rem;
+  }
   ${Icon} {
     animation: goBottom 1s infinite;
 

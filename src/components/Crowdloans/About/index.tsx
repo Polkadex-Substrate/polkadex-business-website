@@ -1,4 +1,5 @@
 import { ParaChain, RelayChain } from 'components/Icons';
+import { useWindowSize } from 'hooks';
 import React from 'react';
 import SwiperCore, { Pagination } from 'swiper';
 // eslint-disable-next-line import/no-unresolved
@@ -9,6 +10,7 @@ import * as S from './styles';
 SwiperCore.use([Pagination]);
 
 export const About = () => {
+  const { width } = useWindowSize();
   return (
     <S.Wrapper id="hero">
       <S.Title>
@@ -26,7 +28,7 @@ export const About = () => {
 
       <S.Content>
         <Swiper
-          slidesPerView={2}
+          slidesPerView={width > 800 ? 2 : 1}
           spaceBetween={30}
           pagination={{
             clickable: true,
@@ -38,7 +40,7 @@ export const About = () => {
               <h3>hmm.. what are Parachains?</h3>
               <p>
                 Parachains are sovereign blockchains, with their own tokens and
-                specific use cases. Polkadex is a parachain optimized for
+                specific use cases. Polkadex is a parachai n optimized for
                 Exchange, and features it&apos;s own PDEX token.
               </p>
               <a href="#/">Learn More</a>

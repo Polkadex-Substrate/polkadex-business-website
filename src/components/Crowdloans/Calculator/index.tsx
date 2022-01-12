@@ -25,49 +25,52 @@ export const Calculator = () => {
             </p>
           </div>
         </S.Title>
-        <S.Calculator>
-          <S.Amount>
-            <div>
-              <span>Reward amount</span>
-              <S.AmountFlex>
-                <input
-                  type="text"
-                  value={state}
-                  placeholder="Enter an amount"
-                  onChange={(e) => setState(e.currentTarget.value)}
-                />
-                <S.AmountToken>
-                  <Icon name="Dot" />
-                  DOT
-                </S.AmountToken>
-              </S.AmountFlex>
-            </div>
-          </S.Amount>
-          <S.Reward>
-            <div>
-              <span>Reward amount</span>
-              <p>
-                {rewardAmount || 0} <small>PDEX</small>
-              </p>
-            </div>
-          </S.Reward>
-        </S.Calculator>
-        <S.Message>
-          The Reward amount result shown in this calculator is based on the
-          current number of total contributed DOT, and is not a guaranteed
-          amount. Polkadex rewards are paid as a % of your contribution to the
-          pool (Your DOT Contribution * 1.5 Million DOT&lsquo;s / Total DOT
-          Contributions )
-        </S.Message>
+        <S.CalculatorWrapper>
+          <S.Calculator>
+            <S.Amount>
+              <div>
+                <span>Reward amount</span>
+                <S.AmountFlex>
+                  <input
+                    type="text"
+                    value={state}
+                    placeholder="Enter an amount"
+                    onChange={(e) => setState(e.currentTarget.value)}
+                  />
+                  <S.AmountToken>
+                    <Icon name="Dot" />
+                    DOT
+                  </S.AmountToken>
+                </S.AmountFlex>
+              </div>
+            </S.Amount>
+            <S.Reward>
+              <div>
+                <span>Reward amount</span>
+                <p>
+                  {rewardAmount || 0} <small>PDEX</small>
+                </p>
+              </div>
+            </S.Reward>
+          </S.Calculator>
+          <S.Message>
+            The Reward amount result shown in this calculator is based on the
+            current number of total contributed DOT, and is not a guaranteed
+            amount. Polkadex rewards are paid as a % of your contribution to the
+            pool (Your DOT Contribution * 7.5 Million PDEX / Total DOT
+            Contributions)
+          </S.Message>
+        </S.CalculatorWrapper>
+
         <S.Actions>
-          <div>Polkadex Clowdloans</div>
+          <div>Polkadex Crowdloans</div>
           <Icon size="small" name="ArrowBottom" />
         </S.Actions>
         <S.Presentation>
-          <h2>Polkadex Clowdloans</h2>
+          <h2>Polkadex Crowdloans</h2>
           <p>
             Watch the video to learn about the Solochain to Parachain migration
-            and Crowdloans processes.
+            and Crowdloan process.
           </p>
           <iframe
             width="800"

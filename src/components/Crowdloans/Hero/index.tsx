@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <S.Wrapper id="hero">
       <div>
-        <h1>Contribute to the Polkadex crowdloan</h1>
+        <h1>Contribute to the Polkadex Crowdloan</h1>
         <p>
           Support Polkadex, invest in the next generation of Web3 Exchanges, and
           be a part of the future of the Defi.

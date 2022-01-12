@@ -24,11 +24,6 @@ export const Header = () => {
           <S.Social>
             <li>
               <a href="/#">
-                <Icon name="Facebook" />
-              </a>
-            </li>
-            <li>
-              <a href="/#">
                 <Icon name="Discord" />
               </a>
             </li>

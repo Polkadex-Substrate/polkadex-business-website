@@ -4,6 +4,10 @@ export const Wrapper = styled.section`
   padding: 5rem 0;
   max-width: 85rem;
   margin: 0 auto;
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   p,
   a {
     font-size: 1.5rem;
@@ -14,9 +18,11 @@ export const Wrapper = styled.section`
 export const Title = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
     margin-bottom: 5rem;
+    @media screen and (min-width: 720px) {
+      grid-template-columns: 1fr 1fr;
+    }
     h2 {
       font-size: 3.5rem;
     }
@@ -36,12 +42,20 @@ export const Information = styled.div`
   > div {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 560px) {
+      flex-direction: column;
+    }
   }
 `;
 
 export const InformationCard = styled.div`
   ${({ theme }) => css`
     position: relative;
+    @media screen and (max-width: 560px) {
+      :not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
     :not(:last-child) {
       :before {
         content: '';
@@ -71,8 +85,10 @@ export const Allocation = styled.div`
 
 export const AllocationContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
   grid-gap: 1rem;
+  @media screen and (min-width: 850px) {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
 `;
 export const AllocationCardHeader = styled.div`
   display: flex;
@@ -123,12 +139,16 @@ export const AllocationCardContent = styled.div`
 export const AllocationCardBoxWrapper = styled.div`
   flex: 1;
   display: grid;
-  grid-template-areas:
-    'early afterward referee'
-    'early afterward referred';
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+
+  @media screen and (min-width: 500px) {
+    grid-template-areas:
+      'early afterward referee'
+      'early afterward referred';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 `;
 
 export const AllocationBox = styled.div`
@@ -138,23 +158,27 @@ export const AllocationBox = styled.div`
     flex: 1;
     padding: 1rem;
     background: ${theme.colors.secondaryBackground};
-    :nth-child(1) {
-      grid-area: early;
-    }
-    :nth-child(2) {
-      grid-area: afterward;
-    }
-    :nth-child(3) {
-      grid-area: referee;
-    }
-    :nth-child(3) {
-      grid-area: referred;
+    @media screen and (min-width: 500px) {
+      :nth-child(1) {
+        grid-area: early;
+      }
+      :nth-child(2) {
+        grid-area: afterward;
+      }
+      :nth-child(3) {
+        grid-area: referee;
+      }
+      :nth-child(3) {
+        grid-area: referred;
+      }
     }
     justify-content: flex-end;
+
     span {
       font-size: 1.8rem;
       font-weight: bold;
     }
+
     p {
       font-size: 1.4rem;
     }
@@ -169,10 +193,15 @@ export const VestingTitle = styled.div`
   span {
     font-size: 1.2rem;
   }
+  @media screen and (max-width: 580px) {
+    flex-direction: column;
+  }
 `;
 const VestingTemplate = styled.div`
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  @media screen and (min-width: 500px) {
+    grid-template-columns: 1fr 4fr;
+  }
 `;
 
 export const VestingBar = styled(VestingTemplate)`

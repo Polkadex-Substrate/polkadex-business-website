@@ -115,6 +115,10 @@ function App({ Component, pageProps }: AppProps) {
               content="/ms-icon-144x144.png"
             />
             <meta name="theme-color" content="#ffffff" />
+            <meta
+              name="description"
+              content="Polkadex is the fully decentralized peer-to-peer orderbook-based trading engine for Web3 and DeFi. We need your help to win the Parachain auctions. Contribute to the Polkadex Crowdloan and get PDEX tokens & NFT rewards in return!"
+            />
             <meta property="og:title" content="Welcome to Polkadex" />
             <meta
               property="og:description"

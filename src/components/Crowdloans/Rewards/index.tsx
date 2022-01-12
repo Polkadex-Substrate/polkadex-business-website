@@ -9,9 +9,11 @@ export const Rewards = () => {
         </div>
         <div>
           <p>
-            Everyone who is eligible can apply for one or all bonus levels. In
-            total there is 2M PDEX (10% of the total supply) reserved for
-            crowdloans.
+            Everyone who is eligible can apply for one or all bonus levels.{' '}
+            <strong>
+              In total there is 2M PDEX (10% of the total supply) reserved for
+              crowdloans.
+            </strong>
           </p>
           <a href="#/">Polkadex Token Economics</a>
         </div>
@@ -34,7 +36,7 @@ export const Rewards = () => {
         </div>
       </S.Information>
       <S.Allocation>
-        <h3>Allocation for Crowloans</h3>
+        <h3>Crowdloan Reward Allocation</h3>
         <S.AllocationContent>
           <S.AllocationCard>
             <S.AllocationCardHeader>
@@ -45,7 +47,7 @@ export const Rewards = () => {
               <span>20%</span>
               <p>
                 Bonus to those who those who contributed to the Polkadex
-                crowdloan.
+                Crowdloan.
               </p>
             </S.AllocationCardContent>
           </S.AllocationCard>
@@ -60,7 +62,7 @@ export const Rewards = () => {
                   <span>15%</span>
                   <p>
                     Early bird entries within 72 hours of Polkadex crowdloan
-                    announcement
+                    announcement.
                   </p>
                 </div>
               </S.AllocationBox>
@@ -69,7 +71,7 @@ export const Rewards = () => {
                   <span>5%%</span>
                   <p>
                     Bonus on contributions after the first 72 hours and before
-                    the 9th day
+                    the 9th day.
                   </p>
                 </div>
               </S.AllocationBox>

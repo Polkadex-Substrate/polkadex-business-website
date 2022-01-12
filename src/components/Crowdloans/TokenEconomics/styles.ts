@@ -5,6 +5,10 @@ export const Wrapper = styled.section`
   padding: 5rem 0;
   max-width: 95rem;
   margin: 0 auto;
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   p {
     font-size: 1.5rem;
     line-height: 1.5;
@@ -12,21 +16,23 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.div`
-  ${({ theme }) => css`
-    display: grid;
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 5rem;
+  @media screen and (min-width: 720px) {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    margin-bottom: 5rem;
-    h2 {
-      font-size: 3.5rem;
-    }
-  `}
+  }
+  h2 {
+    font-size: 3.5rem;
+  }
 `;
 
 export const Community = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
+  @media screen and (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const Card = styled.div`
@@ -57,6 +63,14 @@ export const Social = styled.div`
     li {
       display: inline-block;
       text-decoration: none;
+      max-width: 3rem;
+      max-height: 3rem;
+      :not(:last-child) {
+        margin-right: 1rem;
+      }
+      svg {
+        width: 100%;
+      }
     }
 
     ${Icon} {

@@ -12,8 +12,10 @@ export const Faq = () => {
         <div>
           <strong>Have another question? </strong>
           <p>
-            Learn more in the Help Center, or join on Telegram to submit a
-            ticket.
+            <strong>
+              <a href="#/">Join the Polkadex Discord server</a>
+            </strong>
+            to submit a ticket.
           </p>
         </div>
       </S.Title>

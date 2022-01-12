@@ -23,7 +23,7 @@ export const Timeline = () => {
             <TimelineCard
               date="Jan, 20222"
               title="Contributions open"
-              description="Join the Polkadex Crowdloan by contributing DOT via exchanges and Polkadot.J S."
+              description="Join the Polkadex Crowdloan by contributing DOT via exchanges and Polkadot{.js}."
               isActive
             />
             <TimelineCard

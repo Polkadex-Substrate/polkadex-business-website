@@ -5,6 +5,10 @@ export const Wrapper = styled.section`
   padding: 5rem 0;
   max-width: 95rem;
   margin: 0 auto;
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   p,
   a {
     font-size: 1.5rem;
@@ -15,9 +19,12 @@ export const Wrapper = styled.section`
 export const Title = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
     margin-bottom: 5rem;
+
+    @media screen and (min-width: 720px) {
+      grid-template-columns: 1fr 1fr;
+    }
     h2 {
       font-size: 3.5rem;
     }
@@ -35,7 +42,6 @@ export const Content = styled.div`
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    max-width: 50rem;
     padding: 6rem 2.5rem;
     border-radius: 0.5rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
@@ -57,12 +63,15 @@ export const Card = styled.div`
       width: auto;
       height: 10rem;
     }
+    @media screena and (min-width: 800px) {
+      max-width: 50rem;
+    }
   `}
 `;
 export const Actions = styled.div<{ isRight?: boolean }>`
   ${({ isRight }) => css`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
     grid-gap: 2rem;
     margin-top: 2rem;
 

@@ -17,6 +17,7 @@ export const Container = styled.div`
   padding: 5rem 0;
   max-width: 95rem;
   margin: 0 auto;
+
   p {
     line-height: 1.5;
   }
@@ -24,14 +25,26 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   margin-bottom: 6rem;
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @media screen and (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
   h2 {
     font-size: 3.5rem;
   }
   p {
     font-size: 1.5rem;
+  }
+`;
+export const CalculatorWrapper = styled.div`
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 
@@ -40,7 +53,9 @@ export const Calculator = styled.div`
     background: ${theme.colors.inverse};
     border-radius: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    @media screen and (min-width: 760px) {
+      grid-template-columns: 1fr 1fr;
+    }
     span {
       display: block;
       margin-bottom: 1rem;
@@ -136,5 +151,11 @@ export const Presentation = styled.div`
   p {
     margin: 0.5rem 0 4rem 0;
     font-size: 1.5rem;
+  }
+  iframe {
+    width: 100%;
+    @media screen and (max-width: 600px) {
+      max-height: 30rem;
+    }
   }
 `;
