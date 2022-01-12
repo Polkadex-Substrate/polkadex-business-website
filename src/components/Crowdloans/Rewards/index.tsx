@@ -44,7 +44,7 @@ export const Rewards = () => {
               <p>1.5M PDEX</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
-              <span>20%</span>
+              <span>75%</span>
               <p>
                 Bonus to those who those who contributed to the Polkadex
                 Crowdloan.

@@ -124,9 +124,19 @@ export const Participate = () => {
               img="subscan"
             />
             <HorizontalCard
-              title="DotMarketCap"
+              title="Subvis"
               description="Explorer"
-              img="dotMarketCap"
+              img="subvis"
+            />
+            <HorizontalCard
+              title="PolkaProject"
+              description="Explorer"
+              img="polkaProject"
+            />
+            <HorizontalCard
+              title="Parachains.info"
+              description="Explorer"
+              img="parachains"
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
