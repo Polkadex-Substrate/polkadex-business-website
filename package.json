@@ -49,5 +49,10 @@
     "plop": "^2.7.4",
     "prettier": "^2.4.1",
     "typescript": "^4.4.3"
+  },
+  "resolutions": {
+    "json-schema": "^0.4.0",
+    "nth-check": "^2.0.1",
+    "ansi-regex": "^5.0.1"
   }
 }
