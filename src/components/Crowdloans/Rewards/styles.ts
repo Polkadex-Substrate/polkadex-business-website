@@ -114,6 +114,7 @@ export const AllocationCard = styled.div`
     }
     :nth-child(1) {
       background: ${theme.colors.primary};
+      color: ${theme.colors.white};
     }
     :nth-child(2) {
       border: 1px solid ${theme.colors.secondaryBackground};
@@ -186,16 +187,19 @@ export const AllocationBox = styled.div`
 `;
 export const Vesting = styled.div``;
 export const VestingTitle = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  span {
-    font-size: 1.2rem;
-  }
-  @media screen and (max-width: 580px) {
-    flex-direction: column;
-  }
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    span {
+      font-size: 1.2rem;
+      color: ${theme.colors.white};
+    }
+    @media screen and (max-width: 580px) {
+      flex-direction: column;
+    }
+  `}
 `;
 const VestingTemplate = styled.div`
   display: grid;
@@ -214,7 +218,7 @@ export const VestingBar = styled(VestingTemplate)`
     }
     div:last-child {
       background: ${theme.colors.secondary};
-      color: ${theme.colors.inverse};
+      color: ${theme.colors.white};
     }
   `}
 `;

@@ -2,14 +2,11 @@ import { Wrapper as Icon } from 'components/Icon/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  ${({ theme }) => css`
-    background: linear-gradient(
-      180deg,
-      #1c1c26 80.72%,
-      rgba(255, 255, 255, 0) 80.73%
-    );
-    color: ${theme.colors.inverse};
-  `}
+  background: linear-gradient(
+    180deg,
+    #1c1c26 80.72%,
+    rgba(255, 255, 255, 0) 80.73%
+  );
 `;
 
 export const Container = styled.div`
@@ -24,22 +21,31 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.div`
-  display: grid;
-  grid-gap: 1rem;
-  margin-bottom: 6rem;
-  @media screen and (max-width: 950px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  @media screen and (min-width: 720px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  h2 {
-    font-size: 3.5rem;
-  }
-  p {
-    font-size: 1.5rem;
-  }
+  ${({ theme }) => css`
+    display: grid;
+    grid-gap: 1rem;
+    margin-bottom: 6rem;
+    h2,
+    p {
+      color: ${theme.colors.white};
+    }
+    @media screen and (max-width: 950px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media screen and (min-width: 720px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  `}
 `;
 export const CalculatorWrapper = styled.div`
   @media screen and (max-width: 950px) {
@@ -78,9 +84,14 @@ export const Amount = styled.div`
 `;
 
 export const AmountFlex = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input {
+      color: ${theme.colors.text};
+    }
+  `}
 `;
 
 export const AmountToken = styled.div`
@@ -95,6 +106,11 @@ export const AmountToken = styled.div`
       display: inline-block;
       margin-right: 0.5rem;
       border-radius: 50%;
+      background: ${theme.colors.gradient};
+
+      svg {
+        fill: ${theme.colors.primary} !important;
+      }
     }
   `}
 `;
@@ -106,7 +122,7 @@ export const Reward = styled.div`
     justify-content: center;
     padding: 1.5rem;
     background: ${theme.colors.primary};
-    color: ${theme.colors.inverse};
+    color: ${theme.colors.white};
     border-radius: 1.5rem;
     input {
       color: ${theme.colors.inverse};
@@ -122,40 +138,48 @@ export const Reward = styled.div`
 `;
 
 export const Message = styled.p`
-  text-align: center;
-  font-size: 1.2rem;
-  margin: 1.5rem auto 0 auto;
-  max-width: 80rem;
+  ${({ theme }) => css`
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1.5rem auto 0 auto;
+    max-width: 80rem;
+    color: ${theme.colors.white};
+  `}
 `;
 
 export const Actions = styled.div`
   ${({ theme }) => css`
     margin: 6rem auto 3rem auto;
     text-align: center;
+    color: ${theme.colors.white};
+
     ${Icon} {
       margin: 1rem auto 0 auto;
       background: none;
       opacity: 0.6;
       svg {
-        fill: ${theme.colors.inverse};
+        fill: ${theme.colors.white};
       }
     }
   `}
 `;
 
 export const Presentation = styled.div`
-  text-align: center;
-  h2 {
-    font-size: 3.5rem;
-  }
-  p {
-    margin: 0.5rem 0 4rem 0;
-    font-size: 1.5rem;
-  }
-  iframe {
-    width: 100%;
-    @media screen and (max-width: 600px) {
-      max-height: 30rem;
+  ${({ theme }) => css`
+    text-align: center;
+    color: ${theme.colors.white};
+    h2 {
+      font-size: 3.5rem;
     }
-  }
+    p {
+      margin: 0.5rem 0 4rem 0;
+      font-size: 1.5rem;
+    }
+    iframe {
+      width: 100%;
+      @media screen and (max-width: 600px) {
+        max-height: 30rem;
+      }
+    }
+  `}
 `;

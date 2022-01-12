@@ -19,7 +19,8 @@ export const Menu = styled.ul<{ isActive?: boolean }>`
     li {
       font-weight: 500;
       display: inline-block;
-      color: ${isActive ? theme.colors.text : '#515177'};
+      color: ${theme.colors.text};
+      opacity: ${isActive ? 1 : 0.6};
       transition: color 0.3s ease;
 
       :hover {

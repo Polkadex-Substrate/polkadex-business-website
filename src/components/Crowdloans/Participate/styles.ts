@@ -20,7 +20,6 @@ export const Title = styled.div`
   display: grid;
   grid-gap: 1rem;
   margin-bottom: 5rem;
-
   @media screen and (min-width: 720px) {
     grid-template-columns: 1fr 1fr;
   }
