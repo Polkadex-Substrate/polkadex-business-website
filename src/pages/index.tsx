@@ -1,5 +1,4 @@
 import {
-  Announcement,
   ContractAnnouncement,
   Features,
   Footer,
@@ -15,6 +14,7 @@ import {
   Team,
   TokenEconomics,
 } from 'components';
+import { Announcement } from 'components/v1/Announcement';
 import Head from 'next/head';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';

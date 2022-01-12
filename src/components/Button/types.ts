@@ -8,6 +8,7 @@ export type Props = {
 export type ButtonProps = {
   withOpacity?: boolean;
   href: string;
+  hasIcon?: boolean;
 } & Props;
 
 export type ButtonFormProps = {

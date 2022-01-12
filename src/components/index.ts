@@ -1,4 +1,3 @@
-import Announcement from 'components/Announcement';
 import ContractAnnouncement from 'components/ContractAnnouncement';
 import Features from 'components/Features';
 import Footer from 'components/Footer';
@@ -14,6 +13,7 @@ import Roadmap from 'components/Roadmap';
 import Team from 'components/Team';
 import TokenEconomics from 'components/TokenEconomics';
 
+export * from './Announcement';
 export * from './BrandAssets';
 export * from './Button';
 export * from './Dropdown';
@@ -27,7 +27,6 @@ export * from './Spinner';
 export * from './ThemeSwitcher';
 
 export {
-  Announcement,
   ContractAnnouncement,
   Features,
   Footer,

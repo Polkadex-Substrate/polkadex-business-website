@@ -1,3 +1,7 @@
+/* eslint-disable import/no-unresolved */
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import PrivacyPopUp from 'components/PrivacyPopUp';
 import { ThemingContext } from 'context';
 import { useTheming } from 'hooks';
