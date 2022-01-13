@@ -32,7 +32,7 @@ export const Rewards = () => {
             <p>Lease Duration</p>
           </S.InformationCard>
           <S.InformationCard>
-            <span>7.5M DOT</span>
+            <span>8M DOT</span>
             <p>Auction cap</p>
           </S.InformationCard>
         </div>

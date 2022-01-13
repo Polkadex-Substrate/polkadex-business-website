@@ -21,13 +21,13 @@ export const Timeline = () => {
           </S.TimelineControls> */}
           <S.TimelineContent>
             <TimelineCard
-              date="Jan 20th, 2022"
+              date="Jan 17th, 2022"
               title="Contributions open"
               description="Join the Polkadex Crowdloan by contributing DOT via exchanges and Polkadot{.js}."
               isActive
             />
             <TimelineCard
-              date="Feb, 2022"
+              date="Jan 20th, 2022"
               title="Auction starts"
               description="Each auction takes place over the course of seven days and assigns a total slot duration of 96 weeks."
             />
