@@ -65,33 +65,75 @@ export const Social = styled.div`
 `;
 
 export const TokenEconomics = styled.div`
+  position: relative;
   display: grid;
-  grid-template-columns: 2fr 1fr;
   margin-bottom: 5rem;
   img {
     width: 100%;
     max-height: 72rem;
+  }
+
+  @media screen and (min-width: 830px) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @media screen and (max-width: 830px) {
+    img {
+      display: none;
+    }
   }
 `;
 export const TokenEconomicsWrapper = styled.div`
   position: relative;
 `;
 
-export const TokenEconomicCard = styled.div`
-  position: relative;
-  span {
-    font-weight: 600;
-  }
-  :not(:last-child) {
-    margin-bottom: 5rem;
-  }
-  :before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20rem;
-    height: 1px;
-    background: black;
-  }
+export const TokenEconomicCard = styled.div<{
+  top?: number;
+  left?: number;
+  right?: number;
+  bottom?: number;
+}>`
+  ${({ theme, top, bottom, left, right }) => css`
+    span {
+      display: block;
+      font-weight: 600;
+      /* max-width: 20rem; */
+    }
+    p {
+      opacity: 0.4;
+      font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: 830px) {
+      padding: 2rem;
+      background: ${theme.colors.primary}0C;
+      border-radius: 1rem;
+      :not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media screen and (min-width: 830px) {
+      position: absolute;
+      top: ${top ? `${top}rem` : 'initial'};
+      bottom: ${bottom ? `${bottom}rem` : 'initial'};
+      left: ${left ? `${left}rem` : 'initial'};
+      right: ${right ? `${right}rem` : 'initial'};
+      height: fit-content;
+
+      div:last-child {
+        position: relative;
+        :before {
+          content: '';
+          position: absolute;
+          top: 1rem;
+          margin-left: 1rem;
+          left: 100%;
+          width: 14rem;
+          height: 1px;
+          background: ${theme.colors.secondaryBackground};
+        }
+      }
+    }
+  `}
 `;

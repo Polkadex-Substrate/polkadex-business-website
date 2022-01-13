@@ -17,40 +17,55 @@ export const TokenEconomics = () => {
         </div>
       </S.Title>
       <S.TokenEconomics>
-        <S.TokenEconomicsWrapper>
-          <TokenEconomicCard
-            title="9% - Founders and team"
-            description="1,800,000 PDEX"
-          />
-          <TokenEconomicCard
-            title="7% - Seed round"
-            description="1,400,000 PDEX"
-          />
-          <TokenEconomicCard
-            title="8% - Strategic round"
-            description="1,600,000 PDEX"
-          />
-          <TokenEconomicCard
-            title="10.193% - Private round"
-            description="2,038,600 PDEX"
-          />
-          <TokenEconomicCard
-            title="41% - Treasury"
-            description="8,200,000 PDEX"
-          />
-          <TokenEconomicCard
-            title="10% - Parachain auction"
-            description="2,000,000 PDEX"
-          />
-          <TokenEconomicCard
-            title="6.807% - Marketing, Ecosystem and Partnerships"
-            description="1,361,400 PDEX"
-          />
-          <TokenEconomicCard
-            title="2% - Community Round"
-            description="400,000 PDEX"
-          />
-        </S.TokenEconomicsWrapper>
+        <TokenEconomicCard
+          title="9% - Founders and team"
+          description="1,800,000 PDEX"
+          top={4}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="7% - Seed round"
+          description="1,400,000 PDEX"
+          top={12}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="8% - Strategic round"
+          description="1,600,000 PDEX"
+          top={20}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="10.193% - Private round"
+          description="2,038,600 PDEX"
+          top={27}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="41% - Treasury"
+          description="8,200,000 PDEX"
+          top={35}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="10% - Parachain auction"
+          description="2,000,000 PDEX"
+          top={43}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="6.807% - Marketing, Ecosystem and Partnerships"
+          description="1,361,400 PDEX"
+          top={52}
+          right={42}
+        />
+        <TokenEconomicCard
+          title="2% - Community Round"
+          description="400,000 PDEX"
+          top={60}
+          right={42}
+        />
+        <div />
         <img src="img/tokenEconomics.svg" alt="building" />
       </S.TokenEconomics>
       <S.Community>
@@ -98,9 +113,18 @@ export const TokenEconomics = () => {
   );
 };
 
-const TokenEconomicCard = ({ title, description }) => (
-  <S.TokenEconomicCard>
-    <span>{title}</span>
-    <p>{description}</p>
+const TokenEconomicCard = ({
+  title,
+  description,
+  top = 0,
+  bottom = 0,
+  left = 0,
+  right = 0,
+}) => (
+  <S.TokenEconomicCard top={top} bottom={bottom} left={left} right={right}>
+    <div>
+      <span>{title}</span>
+      <p>{description}</p>
+    </div>
   </S.TokenEconomicCard>
 );
