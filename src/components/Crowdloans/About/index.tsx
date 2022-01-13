@@ -79,7 +79,7 @@ export const About = () => {
           <SwiperSlide>
             <S.Card>
               <RelayChain />
-              <h3>and... what&apos;s the Relay Chain</h3>
+              <h3>and... what&apos;s the Relay Chain?</h3>
               <p>
                 The Relay Chain is the central chain that is used by the
                 Polkadot network—its main task is to coordinate the overall

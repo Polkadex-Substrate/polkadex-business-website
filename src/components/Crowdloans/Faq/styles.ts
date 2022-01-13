@@ -42,6 +42,11 @@ export const Card = styled.div<{ isActive?: boolean }>`
     border: 1px solid ${theme.colors.secondaryBackground};
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    a {
+      color: ${theme.colors.primary};
+      text-decoration: underline;
+    }
+
     :hover {
       box-shadow: ${theme.shadow.primary};
     }

@@ -188,6 +188,12 @@ export const HorizontalCard = styled.a<{ isActive?: boolean }>`
     padding: 2rem;
     border-radius: 1rem;
     opacity: ${isActive ? 1 : 0.3};
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+    :hover {
+      transform: translateY(-0.2rem);
+      box-shadow: ${theme.shadow.secondary};
+    }
   `}
 `;
 export const HorizontalCardContent = styled.div`
