@@ -60,47 +60,37 @@ export const TokenEconomics = () => {
             Learn more about the next-generation blockchain for Decentralized
             Exchanges.
           </p>
-          <a href="#/">Explore blog</a>
+          <a
+            target="_blank"
+            href="https://polkadex.medium.com/"
+            rel="noreferrer"
+          >
+            Explore blog
+          </a>
         </S.Card>
         <S.Card>
           <span>Stay in touch</span>
           <p>Follow Polkadex and join the community!</p>
           <S.Social>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="Telegram" background="none" />
-              </a>
-            </li>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="Twitter" background="none" />{' '}
-              </a>
-            </li>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="LinkedIn" background="none" />
-              </a>
-            </li>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="Medium" background="none" />
-              </a>
-            </li>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="Youtube" background="none" />
-              </a>
-            </li>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="Reddit" background="none" />
-              </a>
-            </li>
-            <li>
-              <a href="#/">
-                <Icon size="medium" name="Discord" background="none" />
-              </a>
-            </li>
+            <Icon name="Telegram" link="https://t.me/Polkadex" />
+            <Icon
+              hoverable
+              name="Twitter"
+              link="https://twitter.com/polkadex"
+            />
+            <Icon hoverable name="Medium" link="https://polkadex.medium.com/" />
+            <Icon
+              hoverable
+              name="Youtube"
+              link="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+            />
+            <Icon
+              hoverable
+              name="LinkedIn"
+              link="https://www.linkedin.com/company/69690544"
+            />
+            <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
+            <Icon name="Discord" link="https://discord.com/invite/Uvua83QAzk" />
           </S.Social>
         </S.Card>
       </S.Community>

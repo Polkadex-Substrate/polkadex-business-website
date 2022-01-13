@@ -12,17 +12,17 @@ export const Hero = () => {
           be a part of the future of the Defi.
         </p>
         <S.Flex>
-          <PrimaryButton content="Contribute" href="contribute" />
+          <PrimaryButton content="Contribute" href="#participate" />
           <PrimaryButton
             icon="Calculator"
             content="Rewards Calculator"
-            href="calculator"
+            href="#calculator"
             background="none"
           />
         </S.Flex>
         <S.ScrollDown>
           <span>About Crowdloans</span>
-          <Icon background="transparent" name="ArrowBottom" />
+          <Icon background="transparent" name="ArrowBottom" link="#overview" />
         </S.ScrollDown>
       </div>
       <div>

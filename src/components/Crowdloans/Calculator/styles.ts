@@ -62,15 +62,18 @@ export const Calculator = styled.div`
     @media screen and (min-width: 760px) {
       grid-template-columns: 1fr 1fr;
     }
-    span {
-      display: block;
-      margin-bottom: 1rem;
-    }
+
     input {
       font-size: 2.5rem;
       font-weight: bold;
     }
   `}
+`;
+export const Heading = styled.div`
+  span {
+    display: block;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Amount = styled.div`
@@ -104,14 +107,15 @@ export const AmountToken = styled.div`
     padding: 0.5rem 0.8rem;
     border: 1px solid ${theme.colors.secondaryBackground};
     border-radius: 10rem;
-    vertical-align: middle;
     font-weight: 500;
     font-size: 1.4rem;
+    display: flex;
+    align-items: center;
     ${Icon} {
       display: inline-block;
       margin-right: 0.5rem;
-      border-radius: 50%;
-      background: ${theme.colors.gradient};
+      border-radius: 10rem;
+      background: ${theme.colors.text};
 
       svg {
         fill: ${theme.colors.primary} !important;

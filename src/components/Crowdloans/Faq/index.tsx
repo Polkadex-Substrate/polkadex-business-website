@@ -13,7 +13,13 @@ export const Faq = () => {
           <strong>Have another question? </strong>
           <p>
             <strong>
-              <a href="#/">Join the Polkadex Discord server</a>
+              <a
+                target="_blank"
+                href="https://discord.com/invite/Uvua83QAzk"
+                rel="noreferrer"
+              >
+                Join the Polkadex Discord server
+              </a>
             </strong>
             to submit a ticket.
           </p>

@@ -30,29 +30,15 @@ export const Title = styled.div`
 `;
 export const Content = styled.div``;
 
-export const Row = styled.div`
-  display: flex;
-  width: 100%;
+export const Row = styled.div``;
 
-  @media screen and (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-
-export const Column = styled.div`
-  @media screen and (min-width: 960px) {
-    :first-child {
-      margin-right: 1.5rem;
-    }
-  }
-`;
+export const Column = styled.div``;
 
 export const ColumnBox = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
   margin-top: 1rem;
-  @media screen and (max-width: 740px) {
-    flex-direction: column;
-  }
 `;
 
 export const ColumnContent = styled.div``;
@@ -121,7 +107,7 @@ export const ColumnCard = styled.div<{ isFlip?: boolean }>`
     text-align: center;
 
     img {
-      margin: 4rem 0;
+      margin: 7rem 0;
       max-height: 6rem;
     }
 
@@ -182,7 +168,6 @@ export const ColumnFooter = styled.div`
 
 export const RowFlat = styled.div`
   margin-top: 1.5rem;
-  opacity: 0.3;
 `;
 
 export const RowFlatWrapper = styled.div`
@@ -194,14 +179,15 @@ export const RowFlatWrapper = styled.div`
   }
 `;
 
-export const HorizontalCard = styled.div`
-  ${({ theme }) => css`
+export const HorizontalCard = styled.a<{ isActive?: boolean }>`
+  ${({ theme, isActive }) => css`
     display: flex;
     justify-content: space-between;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border: 1px solid ${theme.colors.secondaryBackground};
     padding: 2rem;
     border-radius: 1rem;
+    opacity: ${isActive ? 1 : 0.3};
   `}
 `;
 export const HorizontalCardContent = styled.div`

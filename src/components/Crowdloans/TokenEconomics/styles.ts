@@ -55,31 +55,13 @@ export const Card = styled.div`
 `;
 
 export const Social = styled.div`
-  ${({ theme }) => css`
-    margin-top: 1rem;
-    ul {
-      list-style: none;
-    }
-    li {
-      display: inline-block;
-      text-decoration: none;
-      max-width: 3rem;
-      max-height: 3rem;
-      :not(:last-child) {
-        margin-right: 1rem;
-      }
-      svg {
-        width: 100%;
-      }
-    }
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
 
-    ${Icon} {
-      background: none;
-      svg {
-        fill: ${theme.colors.primary};
-      }
-    }
-  `}
+  ${Icon} {
+    margin-right: 1rem;
+  }
 `;
 
 export const TokenEconomics = styled.div`

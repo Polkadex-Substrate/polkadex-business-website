@@ -20,8 +20,8 @@ export const Calculator = () => {
           </div>
           <div>
             <p>
-              Use this calculator to estimate how many PDEX tokens you would
-              receive if the crowdloan theoretically closed right now.
+              Use this calculator to see the minimum PDEX base reward amount you
+              will receive based on your DOT contribution.
             </p>
           </div>
         </S.Title>
@@ -29,7 +29,7 @@ export const Calculator = () => {
           <S.Calculator>
             <S.Amount>
               <div>
-                <span>Reward amount</span>
+                <S.Heading>Contribution amount</S.Heading>
                 <S.AmountFlex>
                   <input
                     type="text"
@@ -39,7 +39,7 @@ export const Calculator = () => {
                   />
                   <S.AmountToken>
                     <Icon name="Dot" />
-                    DOT
+                    <span>DOT</span>
                   </S.AmountToken>
                 </S.AmountFlex>
               </div>
@@ -47,26 +47,26 @@ export const Calculator = () => {
             <S.Reward>
               <span>Reward amount</span>
               <p>
-                {rewardAmount || 0} <small>PDEX</small>
+                {rewardAmount || 0}
+                {rewardAmount ? '+' : ''} <small>PDEX</small>
               </p>
             </S.Reward>
           </S.Calculator>
           <S.Message>
             The reward amount shown in this calculator is based on the total
-            number of contributed DOT reaching the 8 million DOT cap, and shows
+            number of contributed DOT reaching the 8 million DOT cap and shows
             the minimum guaranteed PDEX reward in that scenario. Your final PDEX
             reward amount will most likely be higher than what this calculator
             shows since PDEX rewards are paid as a % of your contribution to the
-            pool (the lower the total DOT contribution, the higher your
-            individual PDEX reward will be).
+            pool.
           </S.Message>
         </S.CalculatorWrapper>
 
         <S.Actions>
           <div>Polkadex Crowdloans</div>
-          <Icon size="small" name="ArrowBottom" />
+          <Icon size="small" name="ArrowBottom" link="#video" />
         </S.Actions>
-        <S.Presentation>
+        <S.Presentation id="video">
           <h2>Polkadex Crowdloans</h2>
           <p>
             Watch the video to learn about the Solochain to Parachain migration

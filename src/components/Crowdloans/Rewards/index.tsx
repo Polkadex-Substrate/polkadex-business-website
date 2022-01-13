@@ -15,7 +15,9 @@ export const Rewards = () => {
               crowdloans.
             </strong>
           </p>
-          <a href="#/">Polkadex Token Economics</a>
+          <a href="#tokenEconomics" rel="noreferrer">
+            Polkadex Token Economics
+          </a>
         </div>
       </S.Title>
       <S.Information>
@@ -44,7 +46,7 @@ export const Rewards = () => {
               <p>1.5M PDEX</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
-              <span>0.1875+ PDEX</span>
+              <span>Receive 0.1875+ PDEX per DOT as a base reward</span>
               <p>
                 Bonus to those who those who contributed to the Polkadex
                 Crowdloan.
@@ -61,14 +63,14 @@ export const Rewards = () => {
                 <div>
                   <span>15%</span>
                   <p>
-                    Early bird entries within 72 hours of Polkadex crowdloan
-                    announcement.
+                    Early bird contributions within 72hrs of Polkadex crowdloan
+                    announcement receive a 15% bonus on the base reward
                   </p>
                 </div>
               </S.AllocationBox>
               <S.AllocationBox>
                 <div>
-                  <span>5%%</span>
+                  <span>5%</span>
                   <p>
                     Bonus on contributions after the first 72 hours and before
                     the 9th day.

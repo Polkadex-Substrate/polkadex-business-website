@@ -22,7 +22,13 @@ export const About = () => {
             A crowdloan is a way for new projects to garner the support they
             need to connect to the Polkadot network as a parachain.
           </p>
-          <a href="#/">Learn More</a>
+          <a
+            target="_blank"
+            href="https://wiki.polkadot.network/docs/glossary#crowdloan"
+            rel="noreferrer"
+          >
+            Learn More
+          </a>
         </div>
       </S.Title>
 
@@ -43,7 +49,13 @@ export const About = () => {
                 specific use cases. Polkadex is a parachai n optimized for
                 Exchange, and features it&apos;s own PDEX token.
               </p>
-              <a href="#/">Learn More</a>
+              <a
+                target="_blank"
+                href="https://wiki.polkadot.network/docs/learn-parachains"
+                rel="noreferrer"
+              >
+                Learn More
+              </a>
             </S.Card>
           </SwiperSlide>
           <SwiperSlide>
@@ -55,7 +67,13 @@ export const About = () => {
                 Polkadot network—its main task is to coordinate the overall
                 system and its connected parachains.
               </p>
-              <a href="#/">Learn More</a>
+              <a
+                target="_blank"
+                href="https://wiki.polkadot.network/docs/learn-architecture#relay-chain"
+                rel="noreferrer"
+              >
+                Learn More
+              </a>
             </S.Card>
           </SwiperSlide>
           <SwiperSlide>
