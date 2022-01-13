@@ -89,9 +89,11 @@ export const About = () => {
               <ParaChain />
               <h3>hmm.. what are Parachains?</h3>
               <p>
-                Parachains are sovereign blockchains, with their own tokens and
-                specific use cases. Polkadex is a parachai n optimized for
-                Exchange, and features it&apos;s own PDEX token.
+                Parachains are Substrate-based interconnected blockchains, each
+                with their own tokens and tailored to specific use cases.
+                Polkadex is currently a Substrate-based solo-chain run by PDEX
+                and it is aiming to be a parachain optimized for decentralized
+                trading.
               </p>
               <a
                 target="_blank"
