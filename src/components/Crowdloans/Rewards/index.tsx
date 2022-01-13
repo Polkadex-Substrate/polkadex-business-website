@@ -47,7 +47,7 @@ export const Rewards = () => {
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
               <span>0.1875+ PDEX per 1 DOT</span>
-              <p>Base reward for all contributors to the Polkadex Crowdloan</p>
+              <p>Base reward for all contributors to the Polkadex Crowdloan.</p>
             </S.AllocationCardContent>
           </S.AllocationCard>
           <S.AllocationCard>
@@ -61,7 +61,7 @@ export const Rewards = () => {
                   <span>15%</span>
                   <p>
                     Early bird contributions within 72hrs of Polkadex crowdloan
-                    announcement receive a 15% bonus on the base reward
+                    announcement receive a 15% bonus on the base reward.
                   </p>
                 </div>
               </S.AllocationBox>
@@ -108,7 +108,7 @@ export const Rewards = () => {
           <h3>Vesting Terms</h3>
           <span>
             Vesting is the process of locking and releasing tokens after a given
-            time
+            time.
           </span>
         </S.VestingTitle>
         <S.VestingBar>

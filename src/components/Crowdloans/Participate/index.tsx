@@ -52,6 +52,9 @@ export const Participate = () => {
                     <strong>0.04 BNC tokens per DOT</strong>
                   </li>
                   <li>
+                    <strong>0.02 BNC per DOT referral bonus</strong>
+                  </li>
+                  <li>
                     <strong>1 vsDOT</strong> per <strong>every DOT</strong>
                   </li>
                 </ul>
@@ -71,6 +74,9 @@ export const Participate = () => {
                 <ul>
                   <li>
                     <strong>1 EQ</strong> tokens <strong>per DOT</strong>
+                  </li>
+                  <li>
+                    <strong>10.5 EQ per DOT referral bonus</strong>
                   </li>
                   <li>
                     <strong>1 xDOT</strong> per <strong>every DOT</strong>
