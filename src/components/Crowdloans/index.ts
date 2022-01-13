@@ -3,6 +3,7 @@ export * from './Calculator';
 export * from './Crowdloans';
 export * from './Faq';
 export * from './Header';
+export * from './HeaderCustom';
 export * from './Hero';
 export * from './Participate';
 export * from './Rewards';

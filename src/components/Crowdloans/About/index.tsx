@@ -12,7 +12,7 @@ SwiperCore.use([Pagination]);
 export const About = () => {
   const { width } = useWindowSize();
   return (
-    <S.Wrapper id="hero">
+    <S.Wrapper id="overview">
       <S.Title>
         <div>
           <h2>About the Polkadex Crowdloan</h2>

@@ -45,20 +45,20 @@ export const Calculator = () => {
               </div>
             </S.Amount>
             <S.Reward>
-              <div>
-                <span>Reward amount</span>
-                <p>
-                  {rewardAmount || 0} <small>PDEX</small>
-                </p>
-              </div>
+              <span>Reward amount</span>
+              <p>
+                {rewardAmount || 0} <small>PDEX</small>
+              </p>
             </S.Reward>
           </S.Calculator>
           <S.Message>
-            The Reward amount result shown in this calculator is based on the
-            current number of total contributed DOT, and is not a guaranteed
-            amount. Polkadex rewards are paid as a % of your contribution to the
-            pool (Your DOT Contribution * 7.5 Million PDEX / Total DOT
-            Contributions)
+            The reward amount shown in this calculator is based on the total
+            number of contributed DOT reaching the 8 million DOT cap, and shows
+            the minimum guaranteed PDEX reward in that scenario. Your final PDEX
+            reward amount will most likely be higher than what this calculator
+            shows since PDEX rewards are paid as a % of your contribution to the
+            pool (the lower the total DOT contribution, the higher your
+            individual PDEX reward will be).
           </S.Message>
         </S.CalculatorWrapper>
 

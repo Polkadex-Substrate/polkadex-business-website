@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     background: ${theme.colors.primary};
     padding: 2rem;
     text-align: center;
-    color: ${theme.colors.inverse};
+    color: ${theme.colors.white};
     a {
       font-weight: 600;
       text-decoration-line: underline;

@@ -3,7 +3,7 @@ import {
   About,
   Calculator,
   Faq,
-  Header,
+  HeaderCustom,
   Hero,
   Participate,
   Rewards,
@@ -16,7 +16,8 @@ import { HomeTranslations, IHomeTranslations } from 'translations';
 import * as S from './styles';
 
 export const Template = () => {
-  const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
+  const { footer, newsletter, header }: IHomeTranslations =
+    HomeTranslations['en-US'];
 
   return (
     <S.Wrapper>
@@ -24,7 +25,7 @@ export const Template = () => {
         <title>Polkadex - The trading engine for Web3 and DeFi</title>
       </Head>
       <AnnouncementSecondary />
-      <Header />
+      <HeaderCustom {...header} />
       <main>
         <Hero />
         <About />

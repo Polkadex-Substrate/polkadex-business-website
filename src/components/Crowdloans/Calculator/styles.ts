@@ -91,6 +91,11 @@ export const AmountFlex = styled.div`
     input {
       color: ${theme.colors.text};
     }
+    @media screen and (max-width: 400px) {
+      input {
+        width: 100%;
+      }
+    }
   `}
 `;
 
@@ -124,9 +129,7 @@ export const Reward = styled.div`
     background: ${theme.colors.primary};
     color: ${theme.colors.white};
     border-radius: 1.5rem;
-    input {
-      color: ${theme.colors.inverse};
-    }
+
     p {
       font-size: 2.5rem;
     }
