@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   padding: 5rem 0;
-  max-width: 85rem;
+  max-width: 95rem;
   margin: 0 auto;
   @media screen and (max-width: 950px) {
     padding-left: 1rem;
@@ -89,8 +89,9 @@ export const Allocation = styled.div`
 export const AllocationContent = styled.div`
   display: grid;
   grid-gap: 1rem;
-  @media screen and (min-width: 850px) {
-    grid-template-columns: 1fr 2fr 1fr;
+
+  @media screen and (min-width: 970px) {
+    grid-template-columns: 1fr 2.5fr 1fr;
   }
 `;
 export const AllocationCardHeader = styled.div`

@@ -94,7 +94,7 @@ export const AmountFlex = styled.div`
     input {
       color: ${theme.colors.text};
     }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 420px) {
       input {
         width: 100%;
       }
@@ -116,7 +116,8 @@ export const AmountToken = styled.div`
       margin-right: 0.5rem;
       border-radius: 10rem;
       background: ${theme.colors.text};
-
+      width: 3rem;
+      height: 3rem;
       svg {
         fill: ${theme.colors.primary} !important;
       }

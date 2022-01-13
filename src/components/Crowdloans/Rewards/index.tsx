@@ -46,11 +46,8 @@ export const Rewards = () => {
               <p>1.5M PDEX</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
-              <span>Receive 0.1875+ PDEX per DOT as a base reward</span>
-              <p>
-                Bonus to those who those who contributed to the Polkadex
-                Crowdloan.
-              </p>
+              <span>0.1875+ PDEX per 1 DOT</span>
+              <p>Base reward for all contributors to the Polkadex Crowdloan</p>
             </S.AllocationCardContent>
           </S.AllocationCard>
           <S.AllocationCard>
@@ -120,7 +117,7 @@ export const Rewards = () => {
         </S.VestingBar>
         <S.VestingInfo>
           <div>Immediate</div>
-          <div>Linear unlock over 96 weeks.</div>
+          <div>Linear unlock over 96 weeks</div>
         </S.VestingInfo>
       </S.Vesting>
     </S.Wrapper>

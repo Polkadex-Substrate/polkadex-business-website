@@ -68,6 +68,61 @@ export const Card = styled.div`
     }
   `}
 `;
+
+export const MainCard = styled.div`
+  ${({ theme }) => css`
+    padding: 6rem 2.5rem;
+    border-radius: 0.5rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    h3 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      margin-top: 3rem;
+    }
+    h4 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    svg {
+      width: auto;
+      height: 10rem;
+    }
+  `}
+`;
+export const MainCardTitle = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
+`;
+
+export const LogoWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${theme.colors.inverse};
+    box-shadow: ${theme.shadow.secondary};
+    border-radius: 10rem;
+    padding: 2rem;
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto;
+    svg {
+      width: 100%;
+    }
+  `}
+`;
+
+export const MainCardColumn = styled.div`
+  display: grid;
+  grid-gap: 3rem;
+  div :first-child {
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: 780px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
 export const Actions = styled.div<{ isRight?: boolean }>`
   ${({ isRight }) => css`
     display: grid;

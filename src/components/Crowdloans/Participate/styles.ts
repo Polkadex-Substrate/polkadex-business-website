@@ -36,9 +36,16 @@ export const Column = styled.div``;
 
 export const ColumnBox = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
   margin-top: 1rem;
+
+  @media screen and (min-width: 450px) and (max-width: 680px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 680px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 export const ColumnContent = styled.div``;

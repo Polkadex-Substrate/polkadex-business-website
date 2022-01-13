@@ -44,19 +44,19 @@ export const Timeline = () => {
             <S.RulesWrapper>
               <RuleCard
                 title="Rule 1"
-                description="You need unbonded DOTs to contribute to the crowdloan (Unbonding takes 28 days if you’re staking your DOTs on - chain)"
+                description="You need unbonded DOTs to contribute to the crowdloan (Unbonding takes 28 days if you’re staking your DOTs on - chain)."
               />
               <RuleCard
                 title="Rule 2"
-                description="To bid in the auctions, Polkadex needs to lock up DOTs raised through crowdloan for the duration of the lease 96 weeks"
+                description="To bid in the auctions, Polkadex needs to lock up DOTs raised through crowdloan for the duration of the lease 96 weeks."
               />
               <RuleCard
                 title="Rule 3"
-                description="While bonded for a lease, the DOT cannot be used for other activities like staking or transfers"
+                description="While bonded for a lease, the DOT cannot be used for other activities like staking or transfers."
               />
               <RuleCard
                 title="Rule 4"
-                description="You can contribute through partner wallets, projects & exchanges or on-chain"
+                description="You can contribute through partner wallets, projects & exchanges or on-chain."
               />
               <RuleCard
                 title="Rule 5"
