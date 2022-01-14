@@ -112,13 +112,15 @@ export const Rewards = () => {
           </span>
         </S.VestingTitle>
         <S.VestingBar>
-          <div>25%</div>
-          <div>75%</div>
+          <S.VestingInfo>
+            <div>25%</div>
+            <p>Immediate</p>
+          </S.VestingInfo>
+          <S.VestingInfo>
+            <div>75%</div>
+            <p>Linear unlock over 96 weeks</p>
+          </S.VestingInfo>
         </S.VestingBar>
-        <S.VestingInfo>
-          <div>Immediate</div>
-          <div>Linear unlock over 96 weeks</div>
-        </S.VestingInfo>
       </S.Vesting>
     </S.Wrapper>
   );

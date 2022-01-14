@@ -56,23 +56,20 @@ export const About = () => {
             <div>
               <h4>Why we are using it?</h4>
               <p>
-                Polkadex already has a mainnet with valuable tokens, once the
-                slot is secured, the seedling parachain will be active on
-                Polkadot and it will allow us to migrate our mainnet runtime to
-                Polkadot. Crowdloan and slot auctions don&apos;t stop Polkadex
-                from releasing and testing its features in the mainnet.
+                Seedling parachain is a bare-bones parachain that has the bare
+                minimum functionality to do a runtime upgrade.
               </p>
             </div>
             <div>
               <h4>What does it mean for the community?</h4>
               <p>
                 We will be able to deliver products to the community and kick
-                start all the features in the mainnet, community will be able to
-                test with real tokens while the crowdloan and slot auctions
-                continue simultaneously. It also allows us to test and get
-                valuable feedback from the community as early as possible
-                without waiting to become parachain. In this way, we can
-                effectively test and perfect our products.
+                start all the features in the mainnet. The community will be
+                able to test with real tokens while the crowdloan and parachain
+                slot auctions continue simultaneously. It also allows us to test
+                and get valuable feedback from the community as early as
+                possible without waiting to become parachain. In this way, we
+                can effectively perfect our products.
               </p>
             </div>
           </S.MainCardColumn>

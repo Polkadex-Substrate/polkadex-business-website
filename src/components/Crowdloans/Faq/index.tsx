@@ -40,41 +40,45 @@ export const Faq = () => {
         />
         <Card title="What is the minimum amount of DOT needed to participate?">
           <p>
-            If you are contributing your DOT directly on-chain through the
-            Polkadot.js interface, contributions are subject to a minimum of 5
-            DOT. If contributing through a partner, minimum contributions may
-            vary but will generally be lower than 5 DOT.
+            The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. Bonus
+            rewards and referrals can bring that ratio up to 1 DOT to over 0.24
+            PDEX. This is the minimum rewards ratio if Polkadex reaches its 8
+            million DOT auction cap. If the total DOT raised is lower, the
+            rewards ratio will be higher as there will be more PDEX to split
+            among less DOT.
           </p>
           <br />
           <p>
             Please be aware, if you do not currently have any PDEX in your
             Polkadot.js account, the minimum DOT contribution you’ll need to
-            guarantee you’ll receive your rewards is 21.34 DOT. This is because
+            guarantee you’ll receive your rewards is 21.4 DOT. This is because
             the existential deposit on a Polkadex account is 1 PDEX, and if an
             account has lower than 1 PDEX in its balance, the address will be
             inactive and the account will not be able to receive PDEX. The
-            reason why 21.34 DOT is the ‘guaranteed rewards’ contribution amount
+            reason why 21.4 DOT is the ‘guaranteed rewards’ contribution amount
             is because you will need at least 1 PDEX in the initial immediate
             vesting split (25%) of the rewards in order to ‘activate’ your
             address.
           </p>
           <br />
           <p>
-            In this scenario for 21.34 DOT, you would be getting at least 4 PDEX
+            In this scenario for 21.4 DOT, you would be getting at least 4 PDEX
             as base rewards. Since the 25% of the rewards are vested immediately
             after the Polkadex network becomes a parachain and the remaining 75%
             are vested linearly throughout the 96 week duration of the lease,
             that means you would receive a lump sum of 1 PDEX (A.K.A. the
             existential deposit) from your total of 4 PDEX base rewards after
             Polkadex becomes a parachain, while the remaining 3 PDEX are vested
-            to your account throughout the 96 weeks.{' '}
+            to your account throughout the 96 weeks. Learn more about the
+            concept of existential deposits here.{' '}
             <a
               target="_blank"
               href="https://wiki.polkadot.network/docs/build-protocol-info#existential-deposit"
               rel="noreferrer"
             >
-              Learn more about the concept of existential deposits here.
+              Learn more about the concept of existential deposits here
             </a>
+            .
           </p>
           <br />
           <p>
@@ -84,8 +88,12 @@ export const Faq = () => {
           </p>
           <br />
           <p>
-            With this in mind, the Polkadex team recommends you have some PDEX
-            in your Polkadot.js account before participating in the Crowdloan.
+            With this in mind,{' '}
+            <strong>
+              the Polkadex team recommends you have some PDEX in your
+              Polkadot.js account before participating in the Crowdloan
+            </strong>
+            , especially if you plan to contribute less than 21.4 DOT.
           </p>
         </Card>
         <Card
@@ -98,7 +106,7 @@ export const Faq = () => {
         />
         <Card
           title="When will the Polkadex Crowdloan go live on Polkadot?"
-          description="Mid-January"
+          description="January 17th 2022"
         />
         <Card
           title="What is the relationship between PDEX and DOT?"
@@ -112,10 +120,17 @@ export const Faq = () => {
               href="https://polkadot.js.org/extension/"
               rel="noreferrer"
             >
-              Polkadot.js browser extension
+              Polkadot.js browser extension wallet
             </a>{' '}
-            wallet to participate through the Polkadot.js parachain interface.
-            Other wallets supporting the Polkadex Crowdloan include{' '}
+            to participate through the{' '}
+            <a
+              target="_blank"
+              href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains/crowdloan"
+              rel="noreferrer"
+            >
+              Polkadot.js parachain interface
+            </a>
+            . Other wallets supporting the Polkadex Crowdloan include{' '}
             <a target="_blank" href="https://mathwallet.org" rel="noreferrer">
               MathWallet
             </a>
@@ -144,7 +159,7 @@ export const Faq = () => {
         </Card>
         <Card
           title="How can I receive my NFTs if I am one of the winners?"
-          description="Top contributors will receive their exclusive NFTs after the Parachain auction ends"
+          description="The 1,000 top contributors will receive their exclusive NFTs at around the same time they receive their PDEX rewards."
         />
       </S.Content>
     </S.Wrapper>

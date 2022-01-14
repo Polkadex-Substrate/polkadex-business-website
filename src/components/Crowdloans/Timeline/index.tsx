@@ -44,27 +44,27 @@ export const Timeline = () => {
             <S.RulesWrapper>
               <RuleCard
                 title="Rule 1"
-                description="You need unbonded DOTs to contribute to the crowdloan (Unbonding takes 28 days if you’re staking your DOTs on - chain)."
+                description="You need unbonded or transferable DOT to contribute to the Crowdloan (Unbonding takes 28 days if you’re staking your DOT on-chain)."
               />
               <RuleCard
                 title="Rule 2"
-                description="To bid in the auctions, Polkadex needs to lock up DOTs raised through crowdloan for the duration of the lease 96 weeks."
+                description="You can contribute through partner projects and wallets, supporting exchanges, or directly on-chain."
               />
               <RuleCard
                 title="Rule 3"
-                description="While bonded for a lease, the DOT cannot be used for other activities like staking or transfers."
+                description="If contributing on-chain, the minimum contribution is 5 DOT. If contributing through a partner, minimum contributions may vary but will generally be lower than 5 DOT. Referral bonuses are not applicable to on-chain, or non-partner, contributions."
               />
               <RuleCard
                 title="Rule 4"
-                description="You can contribute through partner wallets, projects & exchanges or on-chain."
+                description="Participating in the auction means your DOT is locked temporarily until the end of the auction."
               />
               <RuleCard
                 title="Rule 5"
-                description="Minimum contribution is 5 dots if contributed on-chain. Referrals are not applicable on-chain."
+                description="If Polkadex wins an auction and gets a Parachain slot, the DOT raised for the auction is locked on-chain for the duration of the lease: 96 weeks."
               />
               <RuleCard
                 title="Rule 6"
-                description="Participating in the auction means your DOT is locked temporarily until the end of the auction."
+                description="While bonded for a lease, the DOT cannot be used for other activities like staking or transfers."
               />
               <RuleCard
                 title="Rule 7"

@@ -198,35 +198,42 @@ export const VestingTitle = styled.div`
     margin-bottom: 1rem;
     span {
       font-size: 1.2rem;
-      color: ${theme.colors.white};
+      color: ${theme.colors.text};
+      text-align: center;
     }
     @media screen and (max-width: 580px) {
       flex-direction: column;
     }
   `}
 `;
-const VestingTemplate = styled.div`
+
+export const VestingBar = styled.div`
   display: grid;
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 415px) {
     grid-template-columns: 1fr 4fr;
   }
 `;
 
-export const VestingBar = styled(VestingTemplate)`
+export const VestingInfo = styled.div`
   ${({ theme }) => css`
-    margin-bottom: 0.5rem;
-    border: 1px solid ${theme.colors.secondaryBackground};
     div {
+      margin-bottom: 0.5rem;
+      border: 1px solid ${theme.colors.secondaryBackground};
       padding: 1rem;
       font-weight: bold;
     }
-    div:last-child {
+    :last-child div {
       background: ${theme.colors.secondary};
       color: ${theme.colors.white};
     }
-  `}
-`;
+    p {
+      font-size: 1.3rem;
+    }
 
-export const VestingInfo = styled(VestingTemplate)`
-  font-size: 1.3rem;
+    @media screen and (max-width: 415px) {
+      :first-child {
+        margin-bottom: 1rem;
+      }
+    }
+  `}
 `;
