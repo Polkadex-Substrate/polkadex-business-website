@@ -1,3 +1,4 @@
+import { Banner } from 'components/Banner';
 import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
 import { ThemingContext } from 'context';
@@ -37,10 +38,6 @@ const Hero = ({
   return (
     <S.Wrapper id="hero">
       <S.Container>
-        <Link href="/crowdloans">
-          <S.Tag>Polkadex Crowdloans</S.Tag>
-        </Link>
-
         <h1>{title}</h1>
         <h2>{description}.</h2>
         <S.CtaContainer>
@@ -49,6 +46,14 @@ const Hero = ({
             {secondaryCtaButton}
           </S.SecondaryButton>
         </S.CtaContainer>
+        <S.RowBanner>
+          <Banner
+            title="Polkadex Crowdloans will be live from Jan 17th, 2022."
+            description="Support Polkadex, invest in the next generation of Web3 Exchanges, and be a part of the future of the Defi."
+            buttonTitle="Polkadex Crowdloans"
+            href="/crowdloans"
+          />
+        </S.RowBanner>
         <S.Row>
           <span>{chainsTitle}</span>
           <S.Col>
