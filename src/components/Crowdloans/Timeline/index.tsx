@@ -23,7 +23,7 @@ export const Timeline = () => {
             <TimelineCard
               date="Jan 17th, 2022"
               title="Contributions open"
-              description="Join the Polkadex Crowdloan by contributing DOT via exchanges and Polkadot{.js}."
+              description="Join the Polkadex Crowdloan by contributing DOT via partners, exchanges and wallets."
               isActive
             />
             <TimelineCard
@@ -40,7 +40,7 @@ export const Timeline = () => {
         </S.Timeline>
         <S.Rules>
           <S.RulesContent>
-            <h3>Rules</h3>
+            <h3>Things to Keep in Mind</h3>
             <S.RulesWrapper>
               <RuleCard
                 title="Rule 1"
@@ -69,6 +69,10 @@ export const Timeline = () => {
               <RuleCard
                 title="Rule 7"
                 description="If Polkadex does not win a slot by the end of batch 2 auctions, the total amount of contributed DOT is once again unlocked. We will need to initiate a new campaign if we wish to continue participating in future auctions."
+              />
+              <RuleCard
+                title="Rule 8"
+                description="Heads up! If you do not have any PDEX in your Polkadot.js account, you should contribute at least 21.4 DOT in order to guarantee your PDEX rewards ‘beat’ the 1 PDEX existential deposit. If you prefer to contribute less than 21.4 DOT, the Polkadex team highly recommends you hold some PDEX in your account. For more details on how the existential deposit may affect your ability to receive PDEX rewards, check out the ‘minimum amount of DOT’ question on the FAQ section of this page"
               />
             </S.RulesWrapper>
           </S.RulesContent>

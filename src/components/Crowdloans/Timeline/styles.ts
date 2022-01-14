@@ -145,7 +145,8 @@ export const RulesWrapper = styled.div`
   @media screen and (min-width: 720px) {
     grid-template-areas:
       'rule1 rule2 rule3 rule4'
-      'rule5 rule6 rule7 rule7';
+      'rule5 rule6 rule7 rule7'
+      'rule8 rule8 rule8 rule8';
   }
   @media screen and (min-width: 580px) and (max-width: 720px) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -190,6 +191,9 @@ export const RuleCard = styled.div`
       }
       :nth-child(7) {
         grid-area: rule7;
+      }
+      :nth-child(8) {
+        grid-area: rule8;
       }
     }
   `}
