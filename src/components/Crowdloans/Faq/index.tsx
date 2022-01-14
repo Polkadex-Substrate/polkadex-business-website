@@ -40,12 +40,10 @@ export const Faq = () => {
         />
         <Card title="What is the minimum amount of DOT needed to participate?">
           <p>
-            The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. Bonus
-            rewards and referrals can bring that ratio up to 1 DOT to over 0.24
-            PDEX. This is the minimum rewards ratio if Polkadex reaches its 8
-            million DOT auction cap. If the total DOT raised is lower, the
-            rewards ratio will be higher as there will be more PDEX to split
-            among less DOT.
+            If you are contributing your DOT directly on-chain through the
+            Polkadot.js interface, contributions are subject to a minimum of 5
+            DOT. If contributing through a partner, minimum contributions may
+            vary but will generally be lower than 5 DOT.
           </p>
           <br />
           <p>
@@ -69,8 +67,7 @@ export const Faq = () => {
             that means you would receive a lump sum of 1 PDEX (A.K.A. the
             existential deposit) from your total of 4 PDEX base rewards after
             Polkadex becomes a parachain, while the remaining 3 PDEX are vested
-            to your account throughout the 96 weeks. Learn more about the
-            concept of existential deposits here.{' '}
+            to your account throughout the 96 weeks.{' '}
             <a
               target="_blank"
               href="https://wiki.polkadot.network/docs/build-protocol-info#existential-deposit"
