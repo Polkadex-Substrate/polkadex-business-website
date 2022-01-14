@@ -3,7 +3,7 @@ import * as S from './styles';
 export const AnnouncementSecondary = () => (
   <S.Wrapper>
     <p>
-      Crowdloans will be live from <strong>Jan 17th</strong>.
+      Polkadex Crowdloans will be live from <strong>Jan 17th, 2022</strong>.
       {/* <a href="/crowdLoans">Contribute now!</a> */}
     </p>
   </S.Wrapper>
