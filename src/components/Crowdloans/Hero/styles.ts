@@ -47,10 +47,12 @@ export const Illustration = styled.div`
     transform: translate(-50%, 0);
     grid-template-columns: 1fr 0.5fr 5fr;
   }
+
   @media screen and (min-width: 1100px) {
     max-width: 110rem;
     margin: 0 auto;
   }
+
   svg:first-child {
     margin-top: 13rem;
     max-width: 10rem;

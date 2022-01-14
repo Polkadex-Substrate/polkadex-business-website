@@ -69,6 +69,10 @@ export const Container = styled.div`
     }
   }
 `;
+export const RowBanner = styled.div`
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+`;
 
 export const CtaContainer = styled.div`
   display: flex;
@@ -90,7 +94,6 @@ export const SecondaryButton = styled.a`
   }
 `;
 export const Row = styled.div`
-  margin-top: 8rem;
   & span {
     display: block;
     opacity: 0.7;
