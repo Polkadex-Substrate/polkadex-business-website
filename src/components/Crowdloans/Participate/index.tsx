@@ -73,13 +73,13 @@ export const Participate = () => {
                 <span>Rewards</span>
                 <ul>
                   <li>
-                    <strong>1 EQ</strong> tokens <strong>per DOT</strong>
-                  </li>
-                  <li>
-                    <strong>10.5 EQ per DOT referral bonus</strong>
+                    <strong>10 EQ</strong> tokens <strong>per DOT</strong>
                   </li>
                   <li>
                     <strong>1 xDOT</strong> per <strong>every DOT</strong>
+                  </li>
+                  <li>
+                    <strong>0.5 EQ per DOT referral bonus</strong>
                   </li>
                 </ul>
                 <PrimaryButton
