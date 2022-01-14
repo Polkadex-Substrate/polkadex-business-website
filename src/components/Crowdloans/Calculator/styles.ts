@@ -168,6 +168,21 @@ export const Actions = styled.div`
       svg {
         fill: ${theme.colors.white};
       }
+      animation: goBottom 1s infinite;
+
+      @keyframes goBottom {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(1rem);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
     }
   `}
 `;

@@ -1,6 +1,7 @@
 import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
 import { ThemingContext } from 'context';
+import Link from 'next/link';
 import React, { useContext, useEffect, useRef } from 'react';
 import { IHomeTranslations } from 'translations';
 
@@ -36,6 +37,10 @@ const Hero = ({
   return (
     <S.Wrapper id="hero">
       <S.Container>
+        <Link href="/crowdloans">
+          <S.Tag>Polkadex Crowdloans</S.Tag>
+        </Link>
+
         <h1>{title}</h1>
         <h2>{description}.</h2>
         <S.CtaContainer>

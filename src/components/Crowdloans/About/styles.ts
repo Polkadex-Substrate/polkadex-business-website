@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
   @media screen and (max-width: 950px) {
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 0;
   }
   p,
   a {

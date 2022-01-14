@@ -4,6 +4,21 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.section`
   margin-top: 10rem;
 `;
+export const Tag = styled.a`
+  ${({ theme }) => css`
+    background: ${theme.colors.gradient};
+    color: ${theme.colors.white} !important;
+    font-weight: 500;
+    padding: 1rem;
+    border-radius: 20rem;
+    margin: 1rem auto 0 auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+    :hover {
+      transform: translateY(-0.2rem);
+    }
+  `}
+`;
 
 export const Container = styled.div`
   :first-child {
