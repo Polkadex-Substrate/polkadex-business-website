@@ -36,7 +36,7 @@ export const Faq = () => {
         />
         <Card
           title="How many PDEX tokens will I get for each DOT token that I contribute?"
-          description="The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. Bonus rewards and referrals can bring that ratio up to 1 DOT to over 0.24 PDEX. This is the minimum rewards ratio if Polkadex reaches its 8 million DOT auction cap. If the total DOT raised is lower, the rewards ratio will be higher as there will be more PDEX to split among less DOT."
+          description="The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. Bonus rewards and referrals can bring that ratio up to 1 DOT to over 0.24 PDEX. This is the minimum rewards ratio if Polkadex reaches its 8 million DOT auction cap."
         />
         <Card title="What is the minimum amount of DOT needed to participate?">
           <p>
