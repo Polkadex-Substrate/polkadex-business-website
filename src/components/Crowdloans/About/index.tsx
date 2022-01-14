@@ -56,8 +56,12 @@ export const About = () => {
             <div>
               <h4>Why we are using it?</h4>
               <p>
-                Seedling parachain is a bare-bones parachain that has the bare
-                minimum functionality to do a runtime upgrade.
+                Polkadex already has a mainnet with valuable tokens. Once the
+                Polkadex parachain slot is secured, the seedling parachain will
+                be active on Polkadot and it will allow us to migrate our
+                mainnet runtime to Polkadot. Crowdloan and slot auctions
+                don&apos;t stop Polkadex from releasing and testing its features
+                in the mainnet.
               </p>
             </div>
             <div>
