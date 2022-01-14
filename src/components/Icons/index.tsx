@@ -9,6 +9,8 @@ export { default as Checked } from './Checked';
 export { default as Close } from './Close';
 export { default as CoinGecko } from './CoinGecko';
 export { default as CoinmarketCap } from './CoinmarketCap';
+export { default as CrowdloanHero } from './CrowdloanHero';
+export { default as CrowdloanHeroBg } from './CrowdloanHeroBg';
 export { default as Discord } from './Discord';
 export { default as Dot } from './Dot';
 export { default as DoubleArrowRight } from './DoubleArrowRight';

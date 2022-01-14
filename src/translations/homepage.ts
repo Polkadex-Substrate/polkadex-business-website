@@ -14,8 +14,8 @@ const ENLanguage = {
         href: 'https://docs.polkadex.trade/',
       },
       {
-        title: 'Lightpaper',
-        href: 'https://github.com/Polkadex-Substrate/Documentation/blob/master/polkadex-lightpaper.md',
+        title: 'Crowdloans',
+        href: '/crowdloans',
       },
     ],
     bottomLinks: [
