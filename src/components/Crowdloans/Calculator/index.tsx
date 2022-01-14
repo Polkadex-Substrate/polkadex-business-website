@@ -75,7 +75,7 @@ export const Calculator = () => {
           <iframe
             width="800"
             height="530"
-            src="https://www.youtube.com/embed/PYi5JPZQvjc"
+            src="https://www.youtube.com/embed/A8NR4hKdD4o"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -228,8 +228,8 @@ const Card = ({ title, description, img, children = null }) => (
         <S.ColumnHeader>
           <div />
           <div>
-            <Icon background="none" name="Video" />
-            <span>Watch Tutorial</span>
+            {/* <Icon background="none" name="Video" />
+            <span>Watch Tutorial</span> */}
           </div>
         </S.ColumnHeader>
         <S.ColumnBody>
@@ -265,8 +265,8 @@ const HorizontalCard = ({
       </div>
     </S.HorizontalCardContent>
     <S.HorizontalCardVideo>
-      <Icon background="none" name="Video" />
-      <span>Watch Tutorial</span>
+      {/* <Icon background="none" name="Video" />
+      <span>Watch Tutorial</span> */}
     </S.HorizontalCardVideo>
   </S.HorizontalCard>
 );
