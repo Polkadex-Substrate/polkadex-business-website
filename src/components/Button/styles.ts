@@ -27,7 +27,7 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
 `;
 
 export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
-  ${({ theme, withOpacity, background }) => css`
+  ${({ theme, withOpacity, background, hasIcon }) => css`
     background: ${withOpacity
       ? `${theme.colors[background]}4D`
       : theme.colors[background]};
@@ -35,6 +35,11 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
     color: ${background === 'primary' || ('secondary' && background !== 'none')
       ? theme.colors.white
       : theme.colors.text} !important;
+
+    ${!hasIcon &&
+    css`
+      padding: 2rem;
+    `}
     :hover {
       background: ${withOpacity
         ? theme.colors[background]

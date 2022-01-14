@@ -1,5 +1,8 @@
 module.exports = {
-  webpack5: true,
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
   eslint: {
     // Warning: Dangerously allow production builds to successfully complete even if
     // your project has ESLint errors.

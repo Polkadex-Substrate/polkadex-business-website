@@ -861,11 +861,7 @@ const ENLanguage = {
     copyright: 'Copyright © 2022 Polkadex, Inc',
     bottomLinks: [
       {
-        title: 'Terms',
-        href: '/',
-      },
-      {
-        title: 'Privacy Policy',
+        title: 'Terms and Privacy Policy',
         href: '/',
       },
     ],

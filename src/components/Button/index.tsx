@@ -4,7 +4,7 @@ import * as S from './styles';
 import { ButtonFormProps, ButtonProps } from './types';
 
 export const PrimaryButton = ({
-  icon = 'DoubleArrowRight',
+  icon,
   content = 'Example',
   withOpacity = false,
   href = '#',
@@ -13,13 +13,17 @@ export const PrimaryButton = ({
   const IconComponent = Icons[icon];
   return (
     <S.PrimaryWrapper
+      hasIcon={!!icon}
       href={href}
       withOpacity={withOpacity}
       background={background}
     >
-      <div>
-        <IconComponent />
-      </div>
+      {!!icon && (
+        <div>
+          <IconComponent />
+        </div>
+      )}
+
       {content}
     </S.PrimaryWrapper>
   );
