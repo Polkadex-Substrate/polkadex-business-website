@@ -1,4 +1,5 @@
 import { Wrapper as Icon } from 'components/Icon/styles';
+import { Wrapper as Input } from 'components/Input/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -47,14 +48,62 @@ export const Title = styled.div`
     }
   `}
 `;
+export const CalculatorActionsContainer = styled.div`
+  h4 {
+    margin-bottom: 1rem;
+  }
+  @media screen and (max-width: 620px) {
+    :not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+`;
+
 export const CalculatorWrapper = styled.div`
   @media screen and (max-width: 950px) {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 `;
+export const CalculatorActions = styled.div`
+  ${({ theme }) => css`
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: ${theme.colors.inverse};
+    flex-direction: column;
+    @media screen and (min-width: 620px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  `}
+`;
+export const CalculatorActionsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 460px) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ${Input} {
+    :not(:last-child) {
+      margin-right: 1rem;
+      @media screen and (max-width: 460px) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+`;
 
 export const Calculator = styled.div`
+  ${({ theme }) => css`
+    border-radius: 2rem;
+    background: ${theme.colors.secondaryBackground};
+  `}
+`;
+
+export const CalculatorContainer = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.inverse};
     border-radius: 1.5rem;
@@ -66,6 +115,7 @@ export const Calculator = styled.div`
     input {
       font-size: 2.5rem;
       font-weight: bold;
+      width: 100%;
     }
   `}
 `;
@@ -84,6 +134,11 @@ export const Amount = styled.div`
     flex-direction: column;
     justify-content: center;
   `}
+`;
+export const Percent = styled.div`
+  span {
+    margin-right: 1rem;
+  }
 `;
 
 export const AmountFlex = styled.div`
