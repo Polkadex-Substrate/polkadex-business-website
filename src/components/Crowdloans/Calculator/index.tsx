@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import { Dropdown, Icon } from 'components';
+import { Icon } from 'components';
 import { Input } from 'components/Input';
 import { useMemo, useState } from 'react';
 
@@ -15,16 +15,11 @@ export const Calculator = () => {
 
   const [options, setOptions] = useState({
     early: 'none',
-    referral: false,
   });
 
   // Calculate Total Reward Amount
   const rewardAmount = useMemo(() => {
-    return (
-      ((Number(state) * 1500000) / 8000000) *
-      earlyOptions[options.early] *
-      (options.referral ? 1.05 : 1)
-    );
+    return ((Number(state) * 1500000) / 8000000) * earlyOptions[options.early];
   }, [state, options]);
 
   // Calculate Early Percent Aount
@@ -48,55 +43,35 @@ export const Calculator = () => {
         </S.Title>
         <S.CalculatorWrapper>
           <S.Calculator>
-            <S.CalculatorActions>
-              <S.CalculatorActionsContainer>
-                <h4>Early Bird Options</h4>
-                <S.CalculatorActionsWrapper>
-                  <Input
-                    type="radio"
-                    name="early72"
-                    label="Early bird 72h"
-                    value={options.early}
-                    checked={options.early === 'early72h'}
-                    onChange={() =>
-                      setOptions({ ...options, early: 'early72h' })
-                    }
-                  />
-                  <Input
-                    type="radio"
-                    name="early9th"
-                    label="From the 3rd to the 9th day"
-                    value={options.early}
-                    checked={options.early === 'early9th'}
-                    onChange={() =>
-                      setOptions({ ...options, early: 'early9th' })
-                    }
-                  />
-                  <Input
-                    type="radio"
-                    name="earlynone"
-                    label="None"
-                    value={options.early}
-                    checked={options.early === 'none'}
-                    onChange={() => setOptions({ ...options, early: 'none' })}
-                  />
-                </S.CalculatorActionsWrapper>
-              </S.CalculatorActionsContainer>
-              <S.CalculatorActionsContainer>
-                <h4>Referral Options</h4>
-                <S.CalculatorActionsWrapper>
-                  <Input
-                    type="checkbox"
-                    name="Referee"
-                    label="Referee or Referred"
-                    checked={options.referral}
-                    onChange={() =>
-                      setOptions({ ...options, referral: !options.referral })
-                    }
-                  />
-                </S.CalculatorActionsWrapper>
-              </S.CalculatorActionsContainer>
-            </S.CalculatorActions>
+            <S.CalculatorActionsContainer>
+              <h4>Early Bird Options</h4>
+              <S.CalculatorActionsWrapper>
+                <Input
+                  type="radio"
+                  name="early72"
+                  label="Early bird 72h"
+                  value={options.early}
+                  checked={options.early === 'early72h'}
+                  onChange={() => setOptions({ ...options, early: 'early72h' })}
+                />
+                <Input
+                  type="radio"
+                  name="early9th"
+                  label="From the 3rd to the 9th day"
+                  value={options.early}
+                  checked={options.early === 'early9th'}
+                  onChange={() => setOptions({ ...options, early: 'early9th' })}
+                />
+                <Input
+                  type="radio"
+                  name="earlynone"
+                  label="None"
+                  value={options.early}
+                  checked={options.early === 'none'}
+                  onChange={() => setOptions({ ...options, early: 'none' })}
+                />
+              </S.CalculatorActionsWrapper>
+            </S.CalculatorActionsContainer>
             <S.CalculatorContainer>
               <S.Amount>
                 <div>
@@ -112,7 +87,6 @@ export const Calculator = () => {
                       {options.early !== 'none' && (
                         <span>+{earlyPercentAmount}%</span>
                       )}
-                      {options.referral && <span>+5%</span>}
                     </S.Percent>
 
                     <S.AmountToken>
