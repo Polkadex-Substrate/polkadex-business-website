@@ -235,6 +235,8 @@ export const AsideRight = styled.div`
     align-items: center;
     list-style: none;
     justify-self: flex-end;
+    padding-right: 1rem;
+
     @media screen and (max-width: 720px) {
       display: none;
     }

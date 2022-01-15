@@ -49,9 +49,12 @@ export const Title = styled.div`
   `}
 `;
 export const CalculatorActionsContainer = styled.div`
-  h4 {
-    margin-bottom: 1rem;
-  }
+  ${({ theme }) => css`
+    h4 {
+      margin-bottom: 1rem;
+      color: ${theme.colors.white};
+    }
+  `}
   @media screen and (max-width: 620px) {
     :not(:last-child) {
       margin-bottom: 2rem;
@@ -79,21 +82,25 @@ export const CalculatorActions = styled.div`
   `}
 `;
 export const CalculatorActionsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: 460px) {
-    flex-direction: row;
-    align-items: center;
-  }
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 460px) {
+      flex-direction: row;
+      align-items: center;
+    }
 
-  ${Input} {
-    :not(:last-child) {
-      margin-right: 1rem;
-      @media screen and (max-width: 460px) {
-        margin-bottom: 1rem;
+    ${Input} {
+      color: ${theme.colors.white};
+
+      :not(:last-child) {
+        margin-right: 1rem;
+        @media screen and (max-width: 460px) {
+          margin-bottom: 1rem;
+        }
       }
     }
-  }
+  `}
 `;
 
 export const Calculator = styled.div`
