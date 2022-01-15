@@ -16,6 +16,7 @@ import {
 } from 'components';
 import { Announcement } from 'components/v1/Announcement';
 import Head from 'next/head';
+import { useEffect } from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
@@ -36,7 +37,18 @@ export default function Home() {
     newsletter,
     footer,
   }: IHomeTranslations = HomeTranslations['en-US'];
-
+  useEffect(() => {
+    const path = window.location.hash;
+    if (path && path.includes('#')) {
+      const id = path.replace('#', '');
+      const el = window.document.getElementById(id);
+      const r = el.getBoundingClientRect();
+      window.scrollTo({
+        top: r.top,
+        behavior: 'smooth',
+      });
+    }
+  });
   return (
     <S.Wrapper>
       <Head>
