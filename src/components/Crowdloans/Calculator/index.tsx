@@ -44,33 +44,42 @@ export const Calculator = () => {
         <S.CalculatorWrapper>
           <S.Calculator>
             <S.CalculatorActionsContainer>
-              <h4>Early Bird Options</h4>
-              <S.CalculatorActionsWrapper>
-                <Input
-                  type="radio"
-                  name="early72"
-                  label="Early bird 72h"
-                  value={options.early}
-                  checked={options.early === 'early72h'}
-                  onChange={() => setOptions({ ...options, early: 'early72h' })}
-                />
-                <Input
-                  type="radio"
-                  name="early9th"
-                  label="From the 3rd to the 9th day"
-                  value={options.early}
-                  checked={options.early === 'early9th'}
-                  onChange={() => setOptions({ ...options, early: 'early9th' })}
-                />
-                <Input
-                  type="radio"
-                  name="earlynone"
-                  label="None"
-                  value={options.early}
-                  checked={options.early === 'none'}
-                  onChange={() => setOptions({ ...options, early: 'none' })}
-                />
-              </S.CalculatorActionsWrapper>
+              <S.CalculatorActionsBox>
+                <h4>Early Bird Options</h4>
+                <S.CalculatorActionsWrapper>
+                  <Input
+                    type="radio"
+                    name="early72"
+                    label="Early bird 72h"
+                    value={options.early}
+                    checked={options.early === 'early72h'}
+                    onChange={() =>
+                      setOptions({ ...options, early: 'early72h' })
+                    }
+                  />
+                  <Input
+                    type="radio"
+                    name="early9th"
+                    label="From the 3rd to the 9th day"
+                    value={options.early}
+                    checked={options.early === 'early9th'}
+                    onChange={() =>
+                      setOptions({ ...options, early: 'early9th' })
+                    }
+                  />
+                  <Input
+                    type="radio"
+                    name="earlynone"
+                    label="None"
+                    value={options.early}
+                    checked={options.early === 'none'}
+                    onChange={() => setOptions({ ...options, early: 'none' })}
+                  />
+                </S.CalculatorActionsWrapper>
+              </S.CalculatorActionsBox>
+              <small>
+                Additional 5% referral reward for both referrer and referred
+              </small>
             </S.CalculatorActionsContainer>
             <S.CalculatorContainer>
               <S.Amount>

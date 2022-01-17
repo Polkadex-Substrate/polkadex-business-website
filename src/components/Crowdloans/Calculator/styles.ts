@@ -48,12 +48,11 @@ export const Title = styled.div`
     }
   `}
 `;
-export const CalculatorActionsContainer = styled.div`
+export const CalculatorActionsBox = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
     @media screen and (min-width: 650px) {
       align-items: center;
       flex-direction: row;
@@ -66,6 +65,17 @@ export const CalculatorActionsContainer = styled.div`
     }
     h4 {
       color: ${theme.colors.white};
+    }
+  `}
+`;
+
+export const CalculatorActionsContainer = styled.div`
+  ${({ theme }) => css`
+    padding: 2rem 2rem 1rem 2rem;
+    small {
+      display: block;
+      color: ${theme.colors.white};
+      margin-top: 1rem;
     }
   `}
 `;
