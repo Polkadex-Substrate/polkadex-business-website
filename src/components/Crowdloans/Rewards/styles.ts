@@ -189,6 +189,17 @@ export const AllocationBox = styled.div`
     }
   `}
 `;
+export const Graph = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.white};
+    padding: 2rem 2rem 0 2rem;
+    border-radius: 2rem;
+    border: 1px solid ${theme.colors.secondaryBackground};
+    color: ${theme.colors.black};
+    margin-top: 4rem;
+  `}
+`;
+
 export const Vesting = styled.div``;
 export const VestingTitle = styled.div`
   ${({ theme }) => css`

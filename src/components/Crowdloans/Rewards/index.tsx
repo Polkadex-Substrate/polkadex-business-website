@@ -1,6 +1,53 @@
+import { useState } from 'react';
+import Chart from 'react-apexcharts';
+
 import * as S from './styles';
 
 export const Rewards = () => {
+  const [state, setState] = useState({
+    options: {
+      chart: {
+        id: 'basic-bar',
+        foreColor: '#969696',
+        toolbar: {
+          show: false,
+        },
+      },
+      xaxis: {
+        categories: ['3M', '4M', '5M', '6M', '7M', '8M'],
+        title: {
+          text: 'DOT Cap',
+        },
+      },
+      yaxis: {
+        title: {
+          text: 'PDEX',
+        },
+        min: 0.1,
+        max: 0.5,
+      },
+      colors: ['#E6007A'],
+      dataLabels: {
+        enabled: true,
+        position: 'left',
+      },
+
+      grid: {
+        borderColor: '#e0e0e0',
+        row: {
+          colors: ['#f3f3f366', 'transparent'], // takes an array which will be repeated on columns
+          opacity: 0.5,
+        },
+      },
+    },
+    series: [
+      {
+        name: 'PDEX',
+        data: [0.5, 0.375, 0.3, 0.25, 0.21, 0.1875],
+      },
+    ],
+  });
+
   return (
     <S.Wrapper id="rewards">
       <S.Title>
@@ -122,6 +169,17 @@ export const Rewards = () => {
           </S.VestingInfo>
         </S.VestingBar>
       </S.Vesting>
+      <S.Graph>
+        <h3>Estimated Base Reward PDEX per DOT</h3>
+        <div>
+          <Chart
+            options={state.options}
+            series={state.series}
+            type="line"
+            height={250}
+          />
+        </div>
+      </S.Graph>
     </S.Wrapper>
   );
 };
