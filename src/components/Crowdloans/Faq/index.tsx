@@ -34,10 +34,16 @@ export const Faq = () => {
           title="What do I need to participate in the Crowdloan?"
           description="All you need is DOT tokens! Your DOT should be unbonded, or transferable. In other words, if your DOT is currently being staked, you need to unbond it to participate in the Crowdloan."
         />
-        <Card
-          title="How many PDEX tokens will I get for each DOT token that I contribute?"
-          description="The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. It can bump to over 0.215 PDEX + referral bonus. If Polkadex reaches its 8 million DOT auction cap, this is the minimum rewards ratio."
-        />
+        <Card title="How many PDEX tokens will I get for each DOT token that I contribute?">
+          <p>
+            The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. It can
+            bump to over 0.215 PDEX + referral bonus.{' '}
+            <i>
+              If Polkadex reaches its 8 million DOT auction cap, this is the
+              minimum rewards ratio.
+            </i>
+          </p>
+        </Card>
         <Card title="What is the minimum amount of DOT needed to participate?">
           <p>
             If you are contributing your DOT directly on-chain through the
