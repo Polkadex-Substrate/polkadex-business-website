@@ -51,52 +51,21 @@ export const Faq = () => {
             DOT. If contributing through a partner, minimum contributions may
             vary but will generally be lower than 5 DOT.
           </p>
-          <br />
           <p>
-            Please be aware, if you do not currently have any PDEX in your
-            Polkadot.js account, the minimum DOT contribution you’ll need to
-            guarantee you’ll receive your rewards is 21.4 DOT. This is because
-            the existential deposit on a Polkadex account is 1 PDEX, and if an
-            account has lower than 1 PDEX in its balance, the address will be
-            inactive and the account will not be able to receive PDEX. The
-            reason why 21.4 DOT is the ‘guaranteed rewards’ contribution amount
-            is because you will need at least 1 PDEX in the initial immediate
-            vesting split (25%) of the rewards in order to ‘activate’ your
-            address.
+            Please note, if you<strong> have 1 PDEX </strong>in your Polkadot.js
+            account, you can contribute as much or as little DOT as you want
+            without worrying about the existential deposit.
           </p>
-          <br />
           <p>
-            In this scenario for 21.4 DOT, you would be getting at least 4 PDEX
-            as base rewards. Since the 25% of the rewards are vested immediately
-            after the Polkadex network becomes a parachain and the remaining 75%
-            are vested linearly throughout the 96 week duration of the lease,
-            that means you would receive a lump sum of 1 PDEX (A.K.A. the
-            existential deposit) from your total of 4 PDEX base rewards after
-            Polkadex becomes a parachain, while the remaining 3 PDEX are vested
-            to your account throughout the 96 weeks.{' '}
-            <a
-              target="_blank"
-              href="https://wiki.polkadot.network/docs/build-protocol-info#existential-deposit"
-              rel="noreferrer"
-            >
+            If you<strong> do not currently have any PDEX </strong> in your
+            Polkadot.js account and wish to contribute less than 22 DOT, please
+            buy at least 1 PDEX, so the account has existential deposit
+            requirement and is in active state to receive the reward.
+          </p>
+          <p>
+            <a href="https://wiki.polkadot.network/docs/build-protocol-info#existential-deposit">
               Learn more about the concept of existential deposits here
             </a>
-            .
-          </p>
-          <br />
-          <p>
-            If you have PDEX in your Polkadot.js account, you can contribute as
-            much or as little DOT as you want without needing to worry about the
-            existential deposit.
-          </p>
-          <br />
-          <p>
-            With this in mind,{' '}
-            <strong>
-              the Polkadex team recommends you have some PDEX in your
-              Polkadot.js account before participating in the Crowdloan
-            </strong>
-            , especially if you plan to contribute less than 21.4 DOT.
           </p>
         </Card>
         <Card
