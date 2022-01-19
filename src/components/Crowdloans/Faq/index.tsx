@@ -78,7 +78,7 @@ export const Faq = () => {
         />
         <Card
           title="When will the Polkadex Crowdloan go live on Polkadot?"
-          description="January 2022"
+          description="January 19th 2022"
         />
         <Card
           title="What is the relationship between PDEX and DOT?"

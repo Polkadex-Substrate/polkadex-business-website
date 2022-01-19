@@ -48,7 +48,7 @@ const Hero = ({
         </S.CtaContainer>
         <S.RowBanner>
           <Banner
-            title="Polkadex Crowdloans will be live from Jan 2022."
+            title="Polkadex Crowdloans will be live from Jan 19th 2022."
             description="Support Polkadex, invest in the next generation of Web3 Exchanges, and be a part of the future of the Defi."
             buttonTitle="Polkadex Crowdloans"
             href="/crowdloans"
