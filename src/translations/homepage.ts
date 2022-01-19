@@ -386,12 +386,23 @@ const ENLanguage = {
       },
       {
         title: 'Senior Rust Engineer',
-        name: 'Ivan Temchenko ',
+        name: 'Ivan Temchenko',
         image: 'ivanPhotography',
         socialMedia: [
           {
             name: 'Github',
             link: 'https://github.com/35359595',
+          },
+        ],
+      },
+      {
+        title: 'Head of Marketing',
+        name: 'Dagmara Handzlik',
+        image: 'dagmaraPhotography',
+        socialMedia: [
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
           },
         ],
       },
