@@ -84,7 +84,7 @@ export const Participate = () => {
                 </ul>
                 <PrimaryButton
                   content="Contribute Now!"
-                  href="https://equilibrium.io"
+                  href="https://xdot.equilibrium.io/en/contribute?p=Polkadex"
                 />
               </S.Rewards>
             </Card>
