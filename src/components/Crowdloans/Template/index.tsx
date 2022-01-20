@@ -32,9 +32,7 @@ export const Template = () => {
         <Rewards />
         <Calculator />
         <Timeline />
-
         <Participate />
-
         <TokenEconomics />
         <Faq />
         <Newsletter {...newsletter} />

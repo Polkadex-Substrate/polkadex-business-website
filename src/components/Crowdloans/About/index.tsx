@@ -88,7 +88,7 @@ export const About = () => {
           <SwiperSlide>
             <S.Card>
               <ParaChain />
-              <h3>hmm.. what are Parachains?</h3>
+              <h3>What are Parachains?</h3>
               <p>
                 Parachains are Substrate-based interconnected blockchains, each
                 with their own tokens and tailored to specific use cases.
@@ -108,7 +108,7 @@ export const About = () => {
           <SwiperSlide>
             <S.Card>
               <RelayChain />
-              <h3>and... what&apos;s the Relay Chain</h3>
+              <h3>What&apos;s the Relay Chain</h3>
               <p>
                 The Relay Chain is the central chain that is used by the
                 Polkadot network—its main task is to coordinate the overall

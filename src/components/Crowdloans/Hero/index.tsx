@@ -11,7 +11,7 @@ export const Hero = () => {
           <h1>Contribute to the Polkadex Crowdloan</h1>
           <p>
             Support Polkadex, invest in the next generation of Web3 Exchanges,
-            and be a part of the future of the Defi.
+            and be a part of the future of Defi.
           </p>
           <S.Flex>
             <PrimaryButton content="Contribute" href="#participate" />
