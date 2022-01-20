@@ -60,7 +60,7 @@ export const Participate = () => {
                 </ul>
                 <PrimaryButton
                   content="Contribute Now!"
-                  href="https://bifrost.app/vCrowdloan"
+                  href="https://bifrost.app/vcrowdloan?paraId=2036"
                 />
               </S.Rewards>
             </Card>
