@@ -103,15 +103,13 @@ export const Participate = () => {
               title="Nova Wallet"
               description="Wallet"
               img="novaWallet"
-              isActive={false}
-              // link="https://novawallet.io"
+              link="https://novawallet.io"
             />
             <HorizontalCard
               title="Fearless Wallet"
               description="Wallet"
               img="fearlessWallet"
-              isActive={false}
-              // link="https://fearlesswallet.io"
+              link="https://fearlesswallet.io"
             />
             <HorizontalCard
               title="Math Wallet"
