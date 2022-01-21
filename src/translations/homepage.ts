@@ -404,6 +404,14 @@ const ENLanguage = {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
           },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/DagaCMO'
+          },
+          {
+            name: 'Instagram',
+            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en'
+          }
         ],
       },
       {
