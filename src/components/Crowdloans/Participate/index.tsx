@@ -97,7 +97,7 @@ export const Participate = () => {
               title="Polkadot{.js}"
               description="Wallet"
               img="polkadotjs"
-              link="https://polkadot.js.org/extension/"
+              link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains"
             />
             <HorizontalCard
               title="Nova Wallet"
