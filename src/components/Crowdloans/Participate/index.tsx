@@ -207,8 +207,7 @@ export const Participate = () => {
               title="Parachains.info"
               description="Explorer"
               img="parachains"
-              isActive={false}
-              // link="https://parachains.info"
+              link="https://parachains.info"
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
