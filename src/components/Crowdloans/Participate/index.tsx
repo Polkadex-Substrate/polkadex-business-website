@@ -122,8 +122,7 @@ export const Participate = () => {
               title="Talisman"
               description="Wallet"
               img="talisman"
-              isActive={false}
-              // link="https://app.talisman.xyz/portfolio"
+              link="https://app.talisman.xyz/portfolio"
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -195,8 +194,7 @@ export const Participate = () => {
               title="Subvis"
               description="Explorer"
               img="subvis"
-              isActive={false}
-              // link="https://subvis.io"
+              link="https://subvis.io"
             />
             <HorizontalCard
               title="PolkaProject"
