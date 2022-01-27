@@ -187,8 +187,7 @@ export const Participate = () => {
               title="Subscan"
               description="Explorer"
               img="subscan"
-              isActive={false}
-              // link="https://www.subscan.io"
+              link="https://www.subscan.io"
             />
             <HorizontalCard
               title="Subvis"
@@ -200,8 +199,7 @@ export const Participate = () => {
               title="PolkaProject"
               description="Explorer"
               img="polkaProject"
-              isActive={false}
-              // link="http://polkaproject.com"
+              link="http://polkaproject.com"
             />
             <HorizontalCard
               title="Parachains.info"
