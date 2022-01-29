@@ -133,8 +133,7 @@ export const Participate = () => {
               title="Kucoin"
               description="Exchange"
               img="kucoin"
-              isActive={false}
-              // link="https://www.kucoin.com"
+              link="https://www.kucoin.com"
             />
             <HorizontalCard
               title="AscendEX"
