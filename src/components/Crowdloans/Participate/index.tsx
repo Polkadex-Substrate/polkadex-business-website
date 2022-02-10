@@ -136,6 +136,12 @@ export const Participate = () => {
               link="https://www.kucoin.com"
             />
             <HorizontalCard
+              title="Gate.io"
+              description="Exchange"
+              img="gateio"
+              link="https://www.gate.io"
+            />
+            <HorizontalCard
               title="AscendEX"
               description="Exchange"
               img="ascendEX"
@@ -155,13 +161,6 @@ export const Participate = () => {
               img="huobi"
               isActive={false}
               // link="https://www.huobi.com"
-            />
-            <HorizontalCard
-              title="Gate.io"
-              description="Exchange"
-              img="gateio"
-              isActive={false}
-              // link="https://www.gate.io"
             />
             <HorizontalCard
               title="Okex"
