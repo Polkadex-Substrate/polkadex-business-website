@@ -263,6 +263,25 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Head of Marketing',
+        name: 'Dagmara Handzlik',
+        image: 'dagmaraPhotography',
+        socialMedia: [
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/DagaCMO',
+          },
+          {
+            name: 'Instagram',
+            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en',
+          },
+        ],
+      },
+      {
         title: 'Lead Community Manager',
         name: 'Francis Dufour',
         image: 'francisPhotography',
@@ -381,25 +400,6 @@ const ENLanguage = {
           {
             name: 'Github',
             link: 'https://github.com/35359595',
-          },
-        ],
-      },
-      {
-        title: 'Head of Marketing',
-        name: 'Dagmara Handzlik',
-        image: 'dagmaraPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
-          },
-          {
-            name: 'Twitter',
-            link: 'https://twitter.com/DagaCMO',
-          },
-          {
-            name: 'Instagram',
-            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en',
           },
         ],
       },
