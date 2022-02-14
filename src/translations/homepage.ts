@@ -337,7 +337,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Project Manager',
+        title: 'Product Manager',
         name: 'Pavan Kanteti',
         image: 'pavanPhotography',
         socialMedia: [
@@ -406,12 +406,12 @@ const ENLanguage = {
           },
           {
             name: 'Twitter',
-            link: 'https://twitter.com/DagaCMO'
+            link: 'https://twitter.com/DagaCMO',
           },
           {
             name: 'Instagram',
-            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en'
-          }
+            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en',
+          },
         ],
       },
       {
