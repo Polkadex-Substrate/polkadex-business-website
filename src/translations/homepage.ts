@@ -263,17 +263,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Chief Marketing Officer',
-        name: 'Kseniia Baziian',
-        image: 'kseniiaPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/kseniia-baziian-98382652/',
-          },
-        ],
-      },
-      {
         title: 'Lead Community Manager',
         name: 'Francis Dufour',
         image: 'francisPhotography',
