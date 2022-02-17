@@ -275,10 +275,6 @@ const ENLanguage = {
             name: 'Twitter',
             link: 'https://twitter.com/DagaCMO',
           },
-          {
-            name: 'Instagram',
-            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en',
-          },
         ],
       },
       {
