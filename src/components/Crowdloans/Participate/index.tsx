@@ -163,13 +163,6 @@ export const Participate = () => {
               // link="https://www.huobi.com"
             />
             <HorizontalCard
-              title="Okex"
-              description="Exchange"
-              img="okex"
-              isActive={false}
-              // link="https://www.okex.com"
-            />
-            <HorizontalCard
               title="MXC"
               description="Exchange"
               img="mxc"
