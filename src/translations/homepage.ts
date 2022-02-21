@@ -263,13 +263,17 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Chief Marketing Officer',
-        name: 'Kseniia Baziian',
-        image: 'kseniiaPhotography',
+        title: 'Head of Marketing',
+        name: 'Dagmara Handzlik',
+        image: 'dagmaraPhotography',
         socialMedia: [
           {
             name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/kseniia-baziian-98382652/',
+            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/DagaCMO',
           },
         ],
       },
@@ -337,7 +341,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Project Manager',
+        title: 'Product Manager',
         name: 'Pavan Kanteti',
         image: 'pavanPhotography',
         socialMedia: [
@@ -393,25 +397,6 @@ const ENLanguage = {
             name: 'Github',
             link: 'https://github.com/35359595',
           },
-        ],
-      },
-      {
-        title: 'Head of Marketing',
-        name: 'Dagmara Handzlik',
-        image: 'dagmaraPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
-          },
-          {
-            name: 'Twitter',
-            link: 'https://twitter.com/DagaCMO'
-          },
-          {
-            name: 'Instagram',
-            link: 'https://www.instagram.com/dagmara_handzlik/?hl=en'
-          }
         ],
       },
       {
