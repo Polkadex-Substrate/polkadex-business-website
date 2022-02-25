@@ -96,7 +96,7 @@ const ENLanguage = {
   otherProducts: [
     {
       releaseTag: 'Soon',
-      releaseDate: '2021 Q3-Q4',
+      releaseDate: 'Q1 - 2022',
       title: 'Polkadex IDO Platform',
       description:
         'Polkadex IDO Platform allows token projects to create ERC-20 like tokens. Teams can raise funds and get listed on the Polkadex exchange in one click',
@@ -105,7 +105,7 @@ const ENLanguage = {
     },
     {
       releaseTag: 'Soon',
-      releaseDate: '2021 Q3-Q4',
+      releaseDate: 'Q1 - 2022',
       title: 'Polkadex Mobile',
       description:
         'Polkadex Mobile allows traders to place modify and cancel trades from their air-gapped cold wallets as well as receive funds directly to it. It shows a paradigm shift in traditional trading',
