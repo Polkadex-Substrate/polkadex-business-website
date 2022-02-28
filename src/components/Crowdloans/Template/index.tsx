@@ -22,7 +22,7 @@ export const Template = () => {
   return (
     <S.Wrapper>
       <Head>
-        <title>Polkadex - The trading engine for Web3 and DeFi</title>
+        <title>Help Polkadex secure a Parachain slot. Join the Crowdloan now!</title>
       </Head>
       <AnnouncementSecondary />
       <HeaderCustom {...header} />
