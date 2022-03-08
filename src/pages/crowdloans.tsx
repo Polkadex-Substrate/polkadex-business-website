@@ -1,5 +1,4 @@
 import { Template } from 'components/Crowdloans';
-import Head from 'next/head';
 import { useEffect } from 'react';
 
 export const Crowdloans = () => {

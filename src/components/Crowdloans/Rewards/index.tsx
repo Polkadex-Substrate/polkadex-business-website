@@ -1,7 +1,9 @@
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import Chart from 'react-apexcharts';
 
 import * as S from './styles';
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export const Rewards = () => {
   const [state, setState] = useState({

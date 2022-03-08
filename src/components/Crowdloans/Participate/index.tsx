@@ -1,4 +1,4 @@
-import { Icon, PrimaryButton } from 'components';
+import { PrimaryButton } from 'components';
 
 import * as S from './styles';
 
@@ -112,17 +112,23 @@ export const Participate = () => {
               link="https://fearlesswallet.io"
             />
             <HorizontalCard
+              title="Talisman"
+              description="Wallet"
+              img="talisman"
+              link="https://app.talisman.xyz/portfolio"
+            />
+            <HorizontalCard
+              title="SubWallet"
+              description="Wallet"
+              img="subWallet"
+              link="https://subwallet.app"
+            />
+            <HorizontalCard
               title="Math Wallet"
               description="Wallet"
               img="mathWallet"
               isActive={false}
               // link="https://mathwallet.org"
-            />
-            <HorizontalCard
-              title="Talisman"
-              description="Wallet"
-              img="talisman"
-              link="https://app.talisman.xyz/portfolio"
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
