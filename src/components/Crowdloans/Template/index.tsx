@@ -1,12 +1,8 @@
-import { AnnouncementSecondary, Footer, Newsletter } from 'components';
+import { Footer, Newsletter } from 'components';
 import {
   About,
-  Calculator,
-  Faq,
   HeaderCustom,
   Hero,
-  Participate,
-  Rewards,
   Timeline,
   TokenEconomics,
 } from 'components/Crowdloans';
@@ -26,17 +22,12 @@ export const Template = () => {
           Help Polkadex secure a Parachain slot. Join the Crowdloan now!
         </title>
       </Head>
-      <AnnouncementSecondary />
       <HeaderCustom {...header} />
       <main>
         <Hero />
         <About />
-        <Rewards />
-        <Calculator />
         <Timeline />
-        <Participate />
         <TokenEconomics />
-        <Faq />
         <Newsletter {...newsletter} />
       </main>
       <Footer {...footer} />;

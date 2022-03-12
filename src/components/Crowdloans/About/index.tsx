@@ -39,45 +39,7 @@ export const About = () => {
           </a>
         </div>
       </S.Title>
-
       <S.Content>
-        <S.MainCard style={{ marginBottom: 25 }}>
-          <S.MainCardTitle>
-            <S.LogoWrapper>
-              <Polkadex />
-            </S.LogoWrapper>
-            <h3>What is seedling parachain?</h3>
-            <p>
-              Seedling parachain is a bare-bones parachain that has the bare
-              minimum functionality to do a runtime upgrade.
-            </p>
-          </S.MainCardTitle>
-          <S.MainCardColumn>
-            <div>
-              <h4>Why we are using it?</h4>
-              <p>
-                Polkadex already has a mainnet with valuable tokens. Once the
-                Polkadex parachain slot is secured, the seedling parachain will
-                be active on Polkadot and it will allow us to migrate our
-                mainnet runtime to Polkadot. Crowdloan and slot auctions
-                don&apos;t stop Polkadex from releasing and testing its features
-                in the mainnet.
-              </p>
-            </div>
-            <div>
-              <h4>What does it mean for the community?</h4>
-              <p>
-                We will be able to deliver products to the community and kick
-                start all the features in the mainnet. The community will be
-                able to test with real tokens while the crowdloan and parachain
-                slot auctions continue simultaneously. It also allows us to test
-                and get valuable feedback from the community as early as
-                possible without waiting to become parachain. In this way, we
-                can effectively perfect our products.
-              </p>
-            </div>
-          </S.MainCardColumn>
-        </S.MainCard>
         <Swiper
           slidesPerView={width > 800 ? 2 : 1}
           spaceBetween={30}

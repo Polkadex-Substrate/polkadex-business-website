@@ -13,15 +13,6 @@ export const Hero = () => {
             Support Polkadex, invest in the next generation of Web3 Exchanges,
             and be a part of the future of Defi.
           </p>
-          <S.Flex>
-            <PrimaryButton content="Contribute" href="#participate" />
-            <PrimaryButton
-              icon="Calculator"
-              content="Rewards Calculator"
-              href="#calculator"
-              background="none"
-            />
-          </S.Flex>
           <S.ScrollDown>
             <span>About Crowdloans</span>
             <Icon

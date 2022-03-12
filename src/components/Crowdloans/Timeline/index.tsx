@@ -21,18 +21,18 @@ export const Timeline = () => {
           </S.TimelineControls> */}
           <S.TimelineContent>
             <TimelineCard
-              date="Jan 19th, 2022"
+              date="Soon"
               title="Contributions open"
               description="Join the Polkadex Crowdloan by contributing DOT via partners, exchanges and wallets."
               isActive
             />
             <TimelineCard
-              date="Jan 20th, 2022"
+              date="Soon"
               title="Auction starts"
               description="Each auction takes place over the course of seven days and assigns a total slot duration of 96 weeks."
             />
             <TimelineCard
-              date="March 10th, 2022"
+              date="Soon"
               title="Crowdloan ends"
               description="We're aiming to win an auction slot in the second batch of the auctions. Your contribution will be returned if Polkadex doesn't win a slot."
             />
@@ -70,21 +70,6 @@ export const Timeline = () => {
                 title="Rule 7"
                 description="If Polkadex does not win a slot by the end of batch 2 auctions, the total amount of contributed DOT is once again unlocked. We will need to initiate a new campaign if we wish to continue participating in future auctions."
               />
-              <RuleCard title="Rule 8">
-                <p>
-                  If you<strong> have 1 PDEX</strong> in your Polkadot.js
-                  account, you can contribute as much or as little DOT as you
-                  want without worrying about the existential deposit.
-                </p>
-                <br />
-                <p>
-                  If you<strong> do not currently have any PDEX</strong> in your
-                  Polkadot.js account and wish to contribute less than 22 DOT,
-                  please buy at least 1 PDEX, so the account has existential
-                  deposit requirement and is in active state to receive the
-                  reward.
-                </p>
-              </RuleCard>
             </S.RulesWrapper>
           </S.RulesContent>
         </S.Rules>
