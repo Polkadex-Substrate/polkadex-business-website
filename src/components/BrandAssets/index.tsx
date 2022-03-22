@@ -79,7 +79,10 @@ export const AssetsCard = ({ iconName, fileName, size, filesUrl, title }) => {
           rel="noopener noreferrer"
           href={filesUrl}
         >
-          Download <Icon name="DoubleArrowRight" />
+          Download
+          <S.IconWrapper>
+            <Icons.ArrowBottom />
+          </S.IconWrapper>
         </a>
       </S.CardAside>
       <S.CardAside>

@@ -133,6 +133,9 @@ export const CardAside = styled.div`
     flex-direction: column;
     justify-content: space-between;
     a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       background-color: ${theme.colors.secondaryBackground};
       padding: 0.4rem 0.4rem 0.4rem 0.8rem;
       border-radius: 0.5rem;
@@ -163,6 +166,23 @@ export const CardAsideTitle = styled.div`
       font-size: ${theme.font.sizes.large};
       font-weight: 500;
       line-height: 1.4;
+    }
+  `}
+`;
+export const IconWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6rem;
+    background: ${theme.colors.secondaryBackground};
+    color: ${theme.colors.text};
+    transition: ${theme.transition.default};
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    padding: 0.6rem;
+    & svg {
+      fill: ${theme.colors.text};
     }
   `}
 `;
