@@ -99,7 +99,7 @@ export const Rewards = () => {
               <p>2M PDEX</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
-              <span>2 PDEX per 1 DOT</span>
+              <span>2+ PDEX per 1 DOT</span>
               <p>Base reward for all contributors to the Polkadex Crowdloan.</p>
             </S.AllocationCardContent>
           </S.AllocationCard>

@@ -51,6 +51,7 @@ export const Calculator = () => {
                 <span>Reward amount</span>
                 <p>
                   {rewardAmount ? rewardAmount.toFixed(6) : '0'}
+                  {rewardAmount ? '+' : ''}
                   <small> PDEX</small>
                 </p>
               </S.Reward>
