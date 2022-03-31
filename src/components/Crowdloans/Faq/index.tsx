@@ -36,8 +36,8 @@ export const Faq = () => {
         />
         <Card title="How many PDEX tokens will I get for each DOT token that I contribute?">
           <p>
-            The base DOT to PDEX reward ratio is 1 DOT to 0.1875 PDEX. It can
-            bump to over 0.215 PDEX + referral bonus.{' '}
+            The base DOT to PDEX reward ratio is 1 DOT to 2 PDEX. It can bump to
+            over 0.215 PDEX + referral bonus.{' '}
             <i>
               If Polkadex reaches its 8 million DOT auction cap, this is the
               minimum rewards ratio.

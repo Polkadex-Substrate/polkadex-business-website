@@ -5,10 +5,15 @@ import {
   Hero,
   Timeline,
   TokenEconomics,
+  TokenUtility,
 } from 'components/Crowdloans';
 import Head from 'next/head';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
+import { Calculator } from '../Calculator';
+import { Faq } from '../Faq';
+import { Participate } from '../Participate';
+import { Rewards } from '../Rewards';
 import * as S from './styles';
 
 export const Template = () => {
@@ -26,8 +31,13 @@ export const Template = () => {
       <main>
         <Hero />
         <About />
+        <Rewards />
+        <Calculator />
+        <TokenUtility />
         <Timeline />
+        <Participate />
         <TokenEconomics />
+        <Faq />
         <Newsletter {...newsletter} />
       </main>
       <Footer {...footer} />;

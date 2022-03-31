@@ -142,38 +142,16 @@ export const Participate = () => {
               link="https://www.kucoin.com"
             />
             <HorizontalCard
-              title="Gate.io"
-              description="Exchange"
-              img="gateio"
-              link="https://www.gate.io"
-            />
-            <HorizontalCard
-              title="AscendEX"
-              description="Exchange"
-              img="ascendEX"
-              isActive={false}
-              // link="https://ascendex.com"
-            />
-            <HorizontalCard
               title="Kraken"
               description="Exchange"
               img="kraken"
-              isActive={false}
-              // link="https://www.kraken.com"
-            />
-            <HorizontalCard
-              title="Huobi"
-              description="Exchange"
-              img="huobi"
-              isActive={false}
-              // link="https://www.huobi.com"
+              link="https://www.kraken.com"
             />
             <HorizontalCard
               title="MXC"
               description="Exchange"
               img="mxc"
-              isActive={false}
-              // link="https://www.mexc.com"
+              link="https://www.mexc.com"
             />
           </S.RowFlatWrapper>
         </S.RowFlat>

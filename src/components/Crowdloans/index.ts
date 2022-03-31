@@ -10,3 +10,4 @@ export * from './Rewards';
 export * from './Template';
 export * from './Timeline';
 export * from './TokenEconomics';
+export * from './TokenUtility';

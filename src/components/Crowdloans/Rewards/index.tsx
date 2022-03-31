@@ -16,7 +16,7 @@ export const Rewards = () => {
         },
       },
       xaxis: {
-        categories: ['3M', '4M', '5M', '6M', '7M', '8M'],
+        categories: ['0.25M', '0.4M', '0.75M', '1M'],
         title: {
           text: 'DOT Cap',
         },
@@ -45,7 +45,7 @@ export const Rewards = () => {
     series: [
       {
         name: 'PDEX',
-        data: [0.5, 0.375, 0.3, 0.25, 0.21, 0.1875],
+        data: [0.5, 0.375, 0.3, 0.25, 0.21, 2],
       },
     ],
   });
@@ -77,11 +77,15 @@ export const Rewards = () => {
             <p>Parachain batch 2 slot target</p>
           </S.InformationCard>
           <S.InformationCard>
+            <span>8-15</span>
+            <p>Lease Period</p>
+          </S.InformationCard>
+          <S.InformationCard>
             <span>96 weeks</span>
             <p>Lease Duration</p>
           </S.InformationCard>
           <S.InformationCard>
-            <span>8M DOT</span>
+            <span>1M DOT</span>
             <p>Auction cap</p>
           </S.InformationCard>
         </div>
@@ -92,50 +96,12 @@ export const Rewards = () => {
           <S.AllocationCard>
             <S.AllocationCardHeader>
               <span>Base reward</span>
-              <p>1.5M PDEX</p>
+              <p>2M PDEX</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
-              <span>0.1875+ PDEX per 1 DOT</span>
+              <span>2 PDEX per 1 DOT</span>
               <p>Base reward for all contributors to the Polkadex Crowdloan.</p>
             </S.AllocationCardContent>
-          </S.AllocationCard>
-          <S.AllocationCard>
-            <S.AllocationCardHeader>
-              <span>Bonus reward</span>
-              <p>0.5M PDEX</p>
-            </S.AllocationCardHeader>
-            <S.AllocationCardBoxWrapper>
-              <S.AllocationBox>
-                <div>
-                  <span>15%</span>
-                  <p>
-                    Early bird contributions within 72hrs of Polkadex crowdloan
-                    announcement receive a 15% bonus on the base reward.
-                  </p>
-                </div>
-              </S.AllocationBox>
-              <S.AllocationBox>
-                <div>
-                  <span>5%</span>
-                  <p>
-                    Bonus on contributions after the first 72 hours and before
-                    the 9th day.
-                  </p>
-                </div>
-              </S.AllocationBox>
-              <S.AllocationBox>
-                <div>
-                  <span>5%</span>
-                  <p>Referee</p>
-                </div>
-              </S.AllocationBox>
-              <S.AllocationBox>
-                <div>
-                  <span>5%</span>
-                  <p>Referred</p>
-                </div>
-              </S.AllocationBox>
-            </S.AllocationCardBoxWrapper>
           </S.AllocationCard>
           <S.AllocationCard>
             <S.AllocationCardHeader>
@@ -167,7 +133,7 @@ export const Rewards = () => {
           </S.VestingInfo>
           <S.VestingInfo>
             <div>75%</div>
-            <p>Linear unlock over 96 weeks</p>
+            <p>Linear unlock (per block)</p>
           </S.VestingInfo>
         </S.VestingBar>
       </S.Vesting>

@@ -91,7 +91,7 @@ export const AllocationContent = styled.div`
   grid-gap: 1rem;
 
   @media screen and (min-width: 970px) {
-    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 export const AllocationCardHeader = styled.div`
@@ -107,14 +107,10 @@ export const AllocationCard = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
+    padding: 2rem;
 
-    :nth-child(1),
-    :nth-child(3) {
+    :nth-child(1) {
       color: ${theme.colors.inverse};
-      padding: 2rem;
-    }
-    :nth-child(2) > ${AllocationCardHeader} {
-      padding: 1rem 2rem;
     }
     :nth-child(1) {
       background: ${theme.colors.primary};
