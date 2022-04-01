@@ -1,55 +1,6 @@
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-
 import * as S from './styles';
 
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
-
 export const Rewards = () => {
-  const [state, setState] = useState({
-    options: {
-      chart: {
-        id: 'basic-bar',
-        foreColor: '#969696',
-        toolbar: {
-          show: false,
-        },
-      },
-      xaxis: {
-        categories: ['0.25M', '0.4M', '0.75M', '1M'],
-        title: {
-          text: 'DOT Cap',
-        },
-      },
-      yaxis: {
-        title: {
-          text: 'PDEX',
-        },
-        min: 0.1,
-        max: 0.5,
-      },
-      colors: ['#E6007A'],
-      dataLabels: {
-        enabled: true,
-        position: 'left',
-      },
-
-      grid: {
-        borderColor: '#e0e0e0',
-        row: {
-          colors: ['#f3f3f366', 'transparent'], // takes an array which will be repeated on columns
-          opacity: 0.5,
-        },
-      },
-    },
-    series: [
-      {
-        name: 'PDEX',
-        data: [0.5, 0.375, 0.3, 0.25, 0.21, 2],
-      },
-    ],
-  });
-
   return (
     <S.Wrapper id="rewards">
       <S.Title>
@@ -137,17 +88,6 @@ export const Rewards = () => {
           </S.VestingInfo>
         </S.VestingBar>
       </S.Vesting>
-      <S.Graph>
-        <h3>Estimated Base Reward PDEX per DOT</h3>
-        <div>
-          <Chart
-            options={state.options}
-            series={state.series}
-            type="line"
-            height={250}
-          />
-        </div>
-      </S.Graph>
     </S.Wrapper>
   );
 };
