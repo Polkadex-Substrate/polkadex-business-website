@@ -110,10 +110,23 @@ export const Faq = () => {
             . At this time, Ledger is not supported.
           </p>
         </Card>
-        <Card
-          title="How can I receive my NFTs if I am one of the winners?"
-          description="The 1,000 top contributors will receive their exclusive NFTs at around the same time they receive their PDEX rewards."
-        />
+        <Card title="How can I receive my NFTs if I am one of the winners?">
+          <>
+            <p>
+              The 1,000 top contributors will receive their exclusive NFTs at
+              around the same time they receive their PDEX rewards.
+            </p>
+            <p>
+              <i>
+                Disclaimer: The NFTs are minted on Kusama. If there are no
+                bridges to move tokens from Kusama to Polkadex at the time of
+                the NFT and the implementation of its utility, the Polkadex team
+                will announce a buy-back in order to reissue them on the
+                Polkadex network.
+              </i>
+            </p>
+          </>
+        </Card>
       </S.Content>
     </S.Wrapper>
   );
