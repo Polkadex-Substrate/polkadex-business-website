@@ -27,8 +27,8 @@ export const Faq = () => {
       </S.Title>
       <S.Content>
         <Card
-          title="What are the benefits of participating in the Polkadex Crowdloan?"
-          description="It’s simple: Loan your DOT and receive PDEX rewards for supporting your favorite project!  You’re guaranteed a minimum of 0.1875 PDEX for every DOT you loan plus bonuses and referrals on top of that. The top 1,000 Crowdloan contributors will each receive a limited-edition NFT."
+          title="What are the benefits of participating in the Polkadex Crowdloan"
+          description="It’s simple: Loan your DOT and receive PDEX rewards for supporting your favorite project! You’re guaranteed a minimum of 2 PDEX for every DOT you loan plus partner referral bonuses on top of that. The top 1,000 Crowdloan contributors will each receive a limited-edition NFT."
         />
         <Card
           title="What do I need to participate in the Crowdloan?"
@@ -36,38 +36,19 @@ export const Faq = () => {
         />
         <Card title="How many PDEX tokens will I get for each DOT token that I contribute?">
           <p>
-            The base DOT to PDEX reward ratio is 1 DOT to 2 PDEX. It can bump to
-            over 0.215 PDEX + referral bonus.{' '}
+            he base DOT to PDEX reward ratio is 1 DOT to 2 PDEX. It can bump to
+            a higher number based on the overall DOTs contributed to the
+            crowdloan.{' '}
             <i>
-              If Polkadex reaches its 8 million DOT auction cap, this is the
+              If Polkadex reaches its 1 million DOT auction cap, this is the
               minimum rewards ratio.
             </i>
           </p>
         </Card>
-        <Card title="What is the minimum amount of DOT needed to participate?">
-          <p>
-            If you are contributing your DOT directly on-chain through the
-            Polkadot.js interface, contributions are subject to a minimum of 5
-            DOT. If contributing through a partner, minimum contributions may
-            vary but will generally be lower than 5 DOT.
-          </p>
-          <p>
-            Please note, if you<strong> have 1 PDEX </strong>in your Polkadot.js
-            account, you can contribute as much or as little DOT as you want
-            without worrying about the existential deposit.
-          </p>
-          <p>
-            If you<strong> do not currently have any PDEX </strong> in your
-            Polkadot.js account and wish to contribute less than 22 DOT, please
-            buy at least 1 PDEX, so the account has existential deposit
-            requirement and is in active state to receive the reward.
-          </p>
-          <p>
-            <a href="https://wiki.polkadot.network/docs/build-protocol-info#existential-deposit">
-              Learn more about the concept of existential deposits here
-            </a>
-          </p>
-        </Card>
+        <Card
+          title="What is the minimum amount of DOT needed to participate?"
+          description="If you are contributing your DOT directly on-chain through the Polkadot.js interface, contributions are subject to a minimum of 5 DOT. This is the same for our partner platforms as well. So we recommend a minimum contribution of 5 DOTs."
+        />
         <Card
           title="How long will the DOT tokens be locked in the Crowdloan?"
           description="Your DOT will be locked throughout the Parachain auction and, if Polkadex wins a slot, they will continue to be locked for the 96-week duration of the Parachain lease."
@@ -78,7 +59,7 @@ export const Faq = () => {
         />
         <Card
           title="When will the Polkadex Crowdloan go live on Polkadot?"
-          description="January 19th 2022"
+          description="April 5th 2022"
         />
         <Card
           title="What is the relationship between PDEX and DOT?"
