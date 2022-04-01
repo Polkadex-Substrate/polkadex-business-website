@@ -56,20 +56,6 @@ export const InformationCard = styled.div`
         margin-bottom: 2rem;
       }
     }
-    @media screen and (min-width: 560px) {
-      :not(:last-child) {
-        :before {
-          content: '';
-          position: absolute;
-          width: 1px;
-          height: 4rem;
-          background: ${theme.colors.text};
-          opacity: 0.1;
-          top: 0;
-          right: -50%;
-        }
-      }
-    }
 
     span {
       font-size: 3rem;

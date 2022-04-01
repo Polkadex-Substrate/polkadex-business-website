@@ -24,10 +24,6 @@ export const Rewards = () => {
         <h3>General Information</h3>
         <div>
           <S.InformationCard>
-            <span>8th - 11th</span>
-            <p>Parachain batch 2 slot target</p>
-          </S.InformationCard>
-          <S.InformationCard>
             <span>8-15</span>
             <p>Lease Period</p>
           </S.InformationCard>
