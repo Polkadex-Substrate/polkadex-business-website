@@ -1,5 +1,6 @@
 export * from './About';
 export * from './Calculator';
+export * from './ChainModel';
 export * from './Crowdloans';
 export * from './Faq';
 export * from './Header';

@@ -9,7 +9,8 @@ export const Calculator = () => {
 
   // Calculate Total Reward Amount
   const rewardAmount = useMemo(() => {
-    return (Number(state) * 20000000) / 10000000;
+    const result = (Number(state) * 20000000) / 10000000;
+    return Number.isInteger(result) ? result?.toFixed(2) : result?.toFixed(6);
   }, [state]);
 
   return (
@@ -50,7 +51,7 @@ export const Calculator = () => {
               <S.Reward>
                 <span>Reward amount</span>
                 <p>
-                  {rewardAmount ? rewardAmount.toFixed(6) : '0'}
+                  {rewardAmount || '0'}
                   {rewardAmount ? '+' : ''}
                   <small> PDEX</small>
                 </p>
@@ -59,11 +60,7 @@ export const Calculator = () => {
           </S.Calculator>
           <S.Message>
             The reward amount shown in this calculator is based on the total
-            number of contributed DOT reaching the 1 million DOT cap and shows
-            the minimum guaranteed PDEX reward in that scenario. Your final PDEX
-            reward amount will most likely be higher than what this calculator
-            shows since PDEX rewards are paid as a % of your contribution to the
-            pool.
+            number of contributed DOT reaching the 1 million DOT cap.
           </S.Message>
         </S.CalculatorWrapper>
 

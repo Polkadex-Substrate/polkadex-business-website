@@ -31,6 +31,10 @@ export const Container = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+  @media screen and (max-width: 950px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const Card = styled.div`

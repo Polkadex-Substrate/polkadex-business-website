@@ -11,6 +11,7 @@ import Head from 'next/head';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import { Calculator } from '../Calculator';
+import { ChainModel } from '../ChainModel';
 import { Faq } from '../Faq';
 import { Participate } from '../Participate';
 import { Rewards } from '../Rewards';
@@ -34,6 +35,7 @@ export const Template = () => {
         <Rewards />
         <Calculator />
         <TokenUtility />
+        <ChainModel />
         <Timeline />
         <Participate />
         <TokenEconomics />
