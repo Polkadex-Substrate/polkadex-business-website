@@ -3,6 +3,7 @@ type Item = {
   status?: boolean;
   timeline?: string;
   subItems?: Item[];
+  subInfo?: string;
 };
 
 type Props = {

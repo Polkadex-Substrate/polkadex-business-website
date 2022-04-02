@@ -25,6 +25,7 @@ export * from './Migration';
 export * from './Return';
 export * from './Spinner';
 export * from './ThemeSwitcher';
+export * from './Tooltip';
 
 export {
   ContractAnnouncement,

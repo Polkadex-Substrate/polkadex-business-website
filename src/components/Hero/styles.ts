@@ -94,6 +94,7 @@ export const SecondaryButton = styled.a`
   }
 `;
 export const Row = styled.div`
+  margin-top: 4rem;
   & span {
     display: block;
     opacity: 0.7;

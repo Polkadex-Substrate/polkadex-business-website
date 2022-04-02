@@ -23,6 +23,7 @@ export { default as Github } from './Github';
 export { default as GooglePlus } from './GooglePlus';
 export { default as IconsAndIllustrations } from './IconsAndIllustrations';
 export { default as Ido } from './Ido';
+export * from './Info';
 export { default as Instagram } from './Instagram';
 export { default as Kilt } from './Kilt';
 export { default as Kucoin } from './Kucoin';

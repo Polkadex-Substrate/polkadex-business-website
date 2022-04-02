@@ -18,7 +18,7 @@ const wrapperModifier = {
 };
 
 export const Line = styled.div<Partial<Props>>`
-  ${({ theme }) => css`
+  ${({ theme, invert }) => css`
     display: flex;
     justify-content: center;
     position: relative;
@@ -39,7 +39,7 @@ export const Line = styled.div<Partial<Props>>`
       content: '';
       width: 1px;
       background: ${theme.colors.text};
-      height: 120%;
+      height: ${invert ? '100%' : '120%'};
     }
 
     & div {
@@ -56,6 +56,12 @@ export const SubItem = styled.div`
     margin-bottom: 1rem;
   }
 `;
+export const Icon = styled.div`
+  margin-left: 0.5rem;
+  svg {
+    max-width: 1.5rem;
+  }
+`;
 
 export const Item = styled.div<{ isHighligh?: boolean }>`
   ${({ theme, isHighligh }) => css`
@@ -65,14 +71,16 @@ export const Item = styled.div<{ isHighligh?: boolean }>`
     :not(:last-child) {
       margin-bottom: 1rem;
     }
-
-    & svg {
+    p {
+      display: flex;
+    }
+    svg {
       width: 2rem;
       height: 2rem;
       margin-right: 0.5rem;
     }
 
-    & span {
+    span {
       background: ${`${theme.colors.primary}4D`};
       border: ${`1px solid ${theme.colors.primary}`};
       &.checked {

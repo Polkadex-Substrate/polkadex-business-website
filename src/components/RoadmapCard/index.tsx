@@ -1,4 +1,5 @@
 import * as Icons from 'components/Icons';
+import { Tooltip, TooltipContent, TooltipHeader } from 'components/Tooltip';
 
 import * as S from './styles';
 import Props from './types';
@@ -11,7 +12,7 @@ const RoadmapCard = ({
   alignRight = false,
 }: Props) => (
   <S.Wrapper position={position} invert={invert} alignRight={alignRight}>
-    <S.Line>
+    <S.Line invert={invert}>
       <div />
     </S.Line>
     <div>
@@ -42,7 +43,21 @@ const RoadmapCard = ({
                         </span>
                       )}
                       {subItem.status && <IconComponent />}
-                      <p>{subItem.title}</p>
+                      <p>
+                        {!!subItem?.subInfo?.length && (
+                          <Tooltip>
+                            <TooltipHeader>
+                              <S.Icon>
+                                <Icons.Info />
+                              </S.Icon>
+                            </TooltipHeader>
+                            <TooltipContent style={{ textAlign: 'left' }}>
+                              {subItem.subInfo}
+                            </TooltipContent>
+                          </Tooltip>
+                        )}
+                        {subItem.title}
+                      </p>
                     </S.Item>
                   ))}
                 <S.SubItem />

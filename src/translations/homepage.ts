@@ -545,7 +545,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Q1 - 2022',
+        title: 'Q2 - 2022',
         alignRight: true,
         invert: true,
         position: {
@@ -555,7 +555,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 18,
+            distance: 0,
           },
         },
         items: [
@@ -564,17 +564,33 @@ const ENLanguage = {
             subItems: [
               {
                 title: 'Public Testnet',
-                timeline: 'Early January',
+                timeline: 'Early April, 2022',
+                subInfo: 'With Token Minting & Token Transfers',
               },
-              { title: 'Mainnet beta version' },
+              { title: 'Mainnet', timeline: 'May, 2022' },
+            ],
+          },
+          {
+            title: 'Thea',
+            subItems: [
+              {
+                title: 'Beta Testers',
+                timeline: '1st week of April, 2022',
+              },
+              { title: 'Public Testnet', timeline: 'April, 2022' },
+              { title: 'Mainnet', timeline: 'May, 2022' },
             ],
           },
           {
             title: 'Orderbook',
             subItems: [
-              { title: 'Beta Testing', timeline: 'Mid January' },
-              { title: 'Public Testnet' },
-              { title: 'Mainnet beta version' },
+              {
+                title: 'Beta Testing',
+                timeline: 'Mid April, 2022',
+                subInfo: 'With blockchain Integration',
+              },
+              { title: 'Public Testnet', timeline: 'May, 2022' },
+              { title: 'Mainnet' },
             ],
           },
           {
@@ -598,11 +614,11 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 35,
+            distance: 45,
           },
           vertical: {
             side: 'bottom',
-            distance: 6,
+            distance: 3,
           },
         },
         items: [
