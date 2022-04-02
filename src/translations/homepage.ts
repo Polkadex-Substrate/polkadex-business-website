@@ -596,14 +596,9 @@ const ENLanguage = {
           {
             title: 'Orderbook Mobile App',
             subItems: [
-              { title: 'Beta Testing' },
               { title: 'Public Testnet' },
               { title: 'Mainnet beta version' },
             ],
-          },
-          {
-            title: 'Parachain Strategy Announcement',
-            timeline: 'Early January',
           },
         ],
       },
