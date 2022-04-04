@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  margin-bottom: 5rem;
+  margin: 1rem 0 6rem 0;
 `;
 
 export const Title = styled.div`

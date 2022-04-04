@@ -35,15 +35,7 @@ export const Faq = () => {
           description="All you need is DOT tokens! Your DOT should be unbonded, or transferable. In other words, if your DOT is currently being staked, you need to unbond it to participate in the Crowdloan."
         />
         <Card title="How many PDEX tokens will I get for each DOT token that I contribute?">
-          <p>
-            he base DOT to PDEX reward ratio is 1 DOT to 2 PDEX. It can bump to
-            a higher number based on the overall DOTs contributed to the
-            crowdloan.{' '}
-            <i>
-              If Polkadex reaches its 1 million DOT auction cap, this is the
-              minimum rewards ratio.
-            </i>
-          </p>
+          <p>The base DOT to PDEX reward ratio is 1 DOT to 2 PDEX.</p>
         </Card>
         <Card
           title="What is the minimum amount of DOT needed to participate?"
@@ -55,7 +47,7 @@ export const Faq = () => {
         />
         <Card
           title="When will I receive my PDEX reward tokens?"
-          description="25% of the PDEX will be vested to your account immediately after the Polkadex network becomes a Parachain, while the remaining 75% will be linearly unlocked throughout the 96-week duration of the lease."
+          description="25% of the PDEX will be vested to your account immediately after the Polkadex network becomes a Parachain, while the remaining 75% will be linearly unlocked through the 96-week duration of the lease."
         />
         <Card
           title="When will the Polkadex Crowdloan go live on Polkadot?"

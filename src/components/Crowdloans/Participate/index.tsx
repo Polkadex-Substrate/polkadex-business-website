@@ -11,7 +11,7 @@ export const Participate = () => {
         </div>
         <div>
           <p>
-            Be part of blockchain history by helping kick start your favorite
+            Be a part of blockchain history by helping kick start your favorite
             parachains.
           </p>
         </div>

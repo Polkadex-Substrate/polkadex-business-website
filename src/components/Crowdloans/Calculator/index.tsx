@@ -22,8 +22,8 @@ export const Calculator = () => {
           </div>
           <div>
             <p>
-              Use this calculator to see the minimum PDEX base reward amount you
-              will receive based on your DOT contribution.
+              Use this calculator to see the minimum PDEX base reward you will
+              receive based on your DOT contribution.
             </p>
           </div>
         </S.Title>

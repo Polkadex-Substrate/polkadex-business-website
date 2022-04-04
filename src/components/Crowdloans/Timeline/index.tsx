@@ -34,7 +34,7 @@ export const Timeline = () => {
             <TimelineCard
               date="June 23, 2022"
               title="Crowdloan ends"
-              description="We're aiming to win an auction slot in the second batch of the auctions. Your contribution will be returned if Polkadex doesn't win a slot."
+              description="We're aiming to win an auction slot in the third batch of the auctions. Your contribution will be returned if Polkadex doesn't win a slot."
             />
           </S.TimelineContent>
         </S.Timeline>

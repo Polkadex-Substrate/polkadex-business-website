@@ -156,12 +156,14 @@ export const RulesWrapper = styled.div`
 export const RulesContent = styled.div`
   max-width: 90rem;
   margin: 0 auto;
+  padding: 3rem 0;
 `;
 
 export const RuleCard = styled.div`
   ${({ theme }) => css`
     padding: 1.5rem;
-    background: ${theme.colors.inverse};
+    background: ${theme.colors.primaryBackground};
+    border-radius: 1rem;
     span {
       display: block;
       font-weight: bold;
