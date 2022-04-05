@@ -2,7 +2,7 @@ import { PrimaryButton } from 'components';
 
 import * as S from './styles';
 
-export const Participate = () => {
+export const Participate = ({ hasAccepted }) => {
   return (
     <S.Wrapper id="participate">
       <S.Title>
@@ -11,7 +11,7 @@ export const Participate = () => {
         </div>
         <div>
           <p>
-            Be part of blockchain history by helping kick start your favorite
+            Be a part of blockchain history by helping kick start your favorite
             parachains.
           </p>
         </div>
@@ -40,7 +40,9 @@ export const Participate = () => {
                 </ul>
                 <PrimaryButton
                   content="Contribute Now!"
-                  href="https://parallel.fi"
+                  href={hasAccepted ? 'https://parallel.fi' : '#participate'}
+                  target="_blank"
+                  disabled={!hasAccepted}
                 />
               </S.Rewards>
             </Card>
@@ -60,7 +62,13 @@ export const Participate = () => {
                 </ul>
                 <PrimaryButton
                   content="Contribute Now!"
-                  href="https://bifrost.app/vcrowdloan?paraId=2036"
+                  href={
+                    hasAccepted
+                      ? 'https://bifrost.app/vcrowdloan?paraId=2036'
+                      : '#participate'
+                  }
+                  target="_blank"
+                  disabled={!hasAccepted}
                 />
               </S.Rewards>
             </Card>
@@ -84,7 +92,13 @@ export const Participate = () => {
                 </ul>
                 <PrimaryButton
                   content="Contribute Now!"
-                  href="https://xdot.equilibrium.io/en/contribute?p=Polkadex"
+                  href={
+                    hasAccepted
+                      ? 'https://xdot.equilibrium.io/en/contribute?p=Polkadex'
+                      : '#participate'
+                  }
+                  target="_blank"
+                  disabled={!hasAccepted}
                 />
               </S.Rewards>
             </Card>
@@ -98,30 +112,35 @@ export const Participate = () => {
               description="Wallet"
               img="polkadotjs"
               link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Nova Wallet"
               description="Wallet"
               img="novaWallet"
               link="https://novawallet.io"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Fearless Wallet"
               description="Wallet"
               img="fearlessWallet"
               link="https://fearlesswallet.io"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Talisman"
               description="Wallet"
               img="talisman"
               link="https://app.talisman.xyz/portfolio"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="SubWallet"
               description="Wallet"
               img="subWallet"
               link="https://subwallet.app"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Math Wallet"
@@ -139,41 +158,22 @@ export const Participate = () => {
               title="Kucoin"
               description="Exchange"
               img="kucoin"
-              link="https://www.kucoin.com"
-            />
-            <HorizontalCard
-              title="Gate.io"
-              description="Exchange"
-              img="gateio"
-              link="https://www.gate.io"
-            />
-            <HorizontalCard
-              title="AscendEX"
-              description="Exchange"
-              img="ascendEX"
-              isActive={false}
-              // link="https://ascendex.com"
+              link="https://www.kucoin.com/trade/PDEX-USDT"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Kraken"
               description="Exchange"
               img="kraken"
-              isActive={false}
-              // link="https://www.kraken.com"
-            />
-            <HorizontalCard
-              title="Huobi"
-              description="Exchange"
-              img="huobi"
-              isActive={false}
-              // link="https://www.huobi.com"
+              link="https://www.kraken.com"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="MXC"
               description="Exchange"
               img="mxc"
-              isActive={false}
-              // link="https://www.mexc.com"
+              link="https://www.mexc.com"
+              hasAccepted={hasAccepted}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -185,24 +185,28 @@ export const Participate = () => {
               description="Explorer"
               img="subscan"
               link="https://www.subscan.io"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Subvis"
               description="Explorer"
               img="subvis"
               link="https://subvis.io"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="PolkaProject"
               description="Explorer"
               img="polkaProject"
               link="http://polkaproject.com"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Parachains.info"
               description="Explorer"
               img="parachains"
               link="https://parachains.info"
+              hasAccepted={hasAccepted}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -240,12 +244,14 @@ const HorizontalCard = ({
   description,
   img,
   isActive = true,
+  hasAccepted = false,
   link = '#',
 }) => (
   <S.HorizontalCard
     isActive={isActive}
-    href={link}
-    target={isActive ? '_blank' : '_self'}
+    href={!hasAccepted ? '#participate' : link}
+    target={isActive && hasAccepted ? '_blank' : '_self'}
+    hasAccepted={hasAccepted}
   >
     <S.HorizontalCardContent>
       <img src={`img/partnerLaunch/${img}.svg`} alt="polkadotjs" />

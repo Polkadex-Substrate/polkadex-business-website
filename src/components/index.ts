@@ -16,6 +16,7 @@ import TokenEconomics from 'components/TokenEconomics';
 export * from './Announcement';
 export * from './BrandAssets';
 export * from './Button';
+export * from './CountDown';
 export * from './Dropdown';
 export * from './Header';
 export * from './Icon';

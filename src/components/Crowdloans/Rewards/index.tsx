@@ -1,55 +1,6 @@
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-
 import * as S from './styles';
 
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
-
 export const Rewards = () => {
-  const [state, setState] = useState({
-    options: {
-      chart: {
-        id: 'basic-bar',
-        foreColor: '#969696',
-        toolbar: {
-          show: false,
-        },
-      },
-      xaxis: {
-        categories: ['3M', '4M', '5M', '6M', '7M', '8M'],
-        title: {
-          text: 'DOT Cap',
-        },
-      },
-      yaxis: {
-        title: {
-          text: 'PDEX',
-        },
-        min: 0.1,
-        max: 0.5,
-      },
-      colors: ['#E6007A'],
-      dataLabels: {
-        enabled: true,
-        position: 'left',
-      },
-
-      grid: {
-        borderColor: '#e0e0e0',
-        row: {
-          colors: ['#f3f3f366', 'transparent'], // takes an array which will be repeated on columns
-          opacity: 0.5,
-        },
-      },
-    },
-    series: [
-      {
-        name: 'PDEX',
-        data: [0.5, 0.375, 0.3, 0.25, 0.21, 0.1875],
-      },
-    ],
-  });
-
   return (
     <S.Wrapper id="rewards">
       <S.Title>
@@ -73,15 +24,15 @@ export const Rewards = () => {
         <h3>General Information</h3>
         <div>
           <S.InformationCard>
-            <span>8th - 11th</span>
-            <p>Parachain batch 2 slot target</p>
+            <span>8-15</span>
+            <p>Lease Period</p>
           </S.InformationCard>
           <S.InformationCard>
             <span>96 weeks</span>
             <p>Lease Duration</p>
           </S.InformationCard>
           <S.InformationCard>
-            <span>8M DOT</span>
+            <span>1M DOT</span>
             <p>Auction cap</p>
           </S.InformationCard>
         </div>
@@ -92,50 +43,13 @@ export const Rewards = () => {
           <S.AllocationCard>
             <S.AllocationCardHeader>
               <span>Base reward</span>
-              <p>1.5M PDEX</p>
+              <p>2M PDEX</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
-              <span>0.1875+ PDEX per 1 DOT</span>
+              <span>2+ PDEX per 1 DOT</span>
               <p>Base reward for all contributors to the Polkadex Crowdloan.</p>
+              <br />
             </S.AllocationCardContent>
-          </S.AllocationCard>
-          <S.AllocationCard>
-            <S.AllocationCardHeader>
-              <span>Bonus reward</span>
-              <p>0.5M PDEX</p>
-            </S.AllocationCardHeader>
-            <S.AllocationCardBoxWrapper>
-              <S.AllocationBox>
-                <div>
-                  <span>15%</span>
-                  <p>
-                    Early bird contributions within 72hrs of Polkadex crowdloan
-                    announcement receive a 15% bonus on the base reward.
-                  </p>
-                </div>
-              </S.AllocationBox>
-              <S.AllocationBox>
-                <div>
-                  <span>5%</span>
-                  <p>
-                    Bonus on contributions after the first 72 hours and before
-                    the 9th day.
-                  </p>
-                </div>
-              </S.AllocationBox>
-              <S.AllocationBox>
-                <div>
-                  <span>5%</span>
-                  <p>Referee</p>
-                </div>
-              </S.AllocationBox>
-              <S.AllocationBox>
-                <div>
-                  <span>5%</span>
-                  <p>Referred</p>
-                </div>
-              </S.AllocationBox>
-            </S.AllocationCardBoxWrapper>
           </S.AllocationCard>
           <S.AllocationCard>
             <S.AllocationCardHeader>
@@ -143,6 +57,7 @@ export const Rewards = () => {
               <p>Limited</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
+              <img src="/img/nftCard.png" alt="Polkadex NFT" />
               <span>Exclusive NFT</span>
               <p>
                 The top 1000 Crowdloan contributors will receive a
@@ -167,21 +82,10 @@ export const Rewards = () => {
           </S.VestingInfo>
           <S.VestingInfo>
             <div>75%</div>
-            <p>Linear unlock over 96 weeks</p>
+            <p>Linear unlock (per block)</p>
           </S.VestingInfo>
         </S.VestingBar>
       </S.Vesting>
-      <S.Graph>
-        <h3>Estimated Base Reward PDEX per DOT</h3>
-        <div>
-          <Chart
-            options={state.options}
-            series={state.series}
-            type="line"
-            height={250}
-          />
-        </div>
-      </S.Graph>
     </S.Wrapper>
   );
 };

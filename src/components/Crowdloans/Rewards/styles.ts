@@ -56,20 +56,6 @@ export const InformationCard = styled.div`
         margin-bottom: 2rem;
       }
     }
-    @media screen and (min-width: 560px) {
-      :not(:last-child) {
-        :before {
-          content: '';
-          position: absolute;
-          width: 1px;
-          height: 4rem;
-          background: ${theme.colors.text};
-          opacity: 0.1;
-          top: 0;
-          right: -50%;
-        }
-      }
-    }
 
     span {
       font-size: 3rem;
@@ -91,7 +77,7 @@ export const AllocationContent = styled.div`
   grid-gap: 1rem;
 
   @media screen and (min-width: 970px) {
-    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 export const AllocationCardHeader = styled.div`
@@ -107,14 +93,10 @@ export const AllocationCard = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-
-    :nth-child(1),
-    :nth-child(3) {
+    padding: 2rem;
+    justify-content: space-between;
+    :nth-child(1) {
       color: ${theme.colors.inverse};
-      padding: 2rem;
-    }
-    :nth-child(2) > ${AllocationCardHeader} {
-      padding: 1rem 2rem;
     }
     :nth-child(1) {
       background: ${theme.colors.primary};
@@ -130,7 +112,6 @@ export const AllocationCard = styled.div`
 `;
 
 export const AllocationCardContent = styled.div`
-  margin-top: 10rem;
   span {
     display: block;
     margin-bottom: 1rem;
@@ -139,6 +120,9 @@ export const AllocationCardContent = styled.div`
   }
   p {
     font-size: 1.3rem;
+  }
+  img {
+    max-width: 20rem;
   }
 `;
 export const AllocationCardBoxWrapper = styled.div`

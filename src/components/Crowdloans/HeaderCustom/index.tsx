@@ -106,7 +106,16 @@ export const HeaderCustom = ({
               <a href="#overview">Overview</a>
             </li>
             <li>
+              <a href="#rewards">Rewards</a>
+            </li>
+            <li>
               <a href="#timeline">Timeline & Rules</a>
+            </li>
+            <li>
+              <a href="#participate">Launch Partners</a>
+            </li>
+            <li>
+              <a href="#faq">FAQ</a>
             </li>
           </S.Menu>
         </S.AsideLeft>

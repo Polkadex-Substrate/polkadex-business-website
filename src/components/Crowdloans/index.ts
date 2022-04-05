@@ -1,5 +1,6 @@
 export * from './About';
 export * from './Calculator';
+export * from './ChainModel';
 export * from './Crowdloans';
 export * from './Faq';
 export * from './Header';
@@ -10,3 +11,4 @@ export * from './Rewards';
 export * from './Template';
 export * from './Timeline';
 export * from './TokenEconomics';
+export * from './TokenUtility';

@@ -1,4 +1,4 @@
-import { Icon, PrimaryButton } from 'components';
+import { CountDown, Icon, PrimaryButton } from 'components';
 import { CrowdloanHero, CrowdloanHeroBg } from 'components/Icons';
 
 import * as S from './styles';
@@ -13,6 +13,16 @@ export const Hero = () => {
             Support Polkadex, invest in the next generation of Web3 Exchanges,
             and be a part of the future of Defi.
           </p>
+          <S.Flex>
+            <PrimaryButton content="Contribute" href="#participate" />
+            <PrimaryButton
+              icon="Calculator"
+              content="Rewards Calculator"
+              href="#calculator"
+              background="none"
+            />
+            {/* <CountDown /> */}
+          </S.Flex>
           <S.ScrollDown>
             <span>About Crowdloans</span>
             <Icon
@@ -25,7 +35,7 @@ export const Hero = () => {
         <div />
       </S.Container>
       <S.Illustration>
-        <CrowdloanHeroBg />
+        <div />
         <div />
         <CrowdloanHero />
       </S.Illustration>

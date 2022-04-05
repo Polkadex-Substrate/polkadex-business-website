@@ -144,14 +144,11 @@ export const RulesWrapper = styled.div`
   grid-gap: 1rem;
   @media screen and (min-width: 720px) {
     grid-template-areas:
-      'rule1 rule2 rule3 rule4'
-      'rule5 rule6 rule7 rule7'
-      'rule8 rule8 rule8 rule8';
+      'rule1 rule2 rule3 rule3'
+      'rule4 rule5 rule6 rule6';
   }
-  @media screen and (min-width: 580px) and (max-width: 720px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media screen and (min-width: 450px) and (max-width: 580px) {
+
+  @media screen and (min-width: 450px) and (max-width: 720px) {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -159,12 +156,14 @@ export const RulesWrapper = styled.div`
 export const RulesContent = styled.div`
   max-width: 90rem;
   margin: 0 auto;
+  padding: 3rem 0;
 `;
 
 export const RuleCard = styled.div`
   ${({ theme }) => css`
     padding: 1.5rem;
-    background: ${theme.colors.inverse};
+    background: ${theme.colors.primaryBackground};
+    border-radius: 1rem;
     span {
       display: block;
       font-weight: bold;
@@ -188,12 +187,6 @@ export const RuleCard = styled.div`
       }
       :nth-child(6) {
         grid-area: rule6;
-      }
-      :nth-child(7) {
-        grid-area: rule7;
-      }
-      :nth-child(8) {
-        grid-area: rule8;
       }
     }
   `}

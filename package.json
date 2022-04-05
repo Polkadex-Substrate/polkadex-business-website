@@ -17,6 +17,7 @@
     "@polkadot/util-crypto": "^7.3.1",
     "apexcharts": "^3.33.0",
     "axios": "^0.22.0",
+    "dayjs": "^1.11.0",
     "ethers": "^5.4.6",
     "framer-motion": "^4.1.17",
     "next": "^12.1.0",
@@ -58,6 +59,5 @@
     "ansi-regex": "^5.0.1",
     "simple-get": "^4.0.1",
     "node-fetch": "^2.6.7"
-
   }
 }

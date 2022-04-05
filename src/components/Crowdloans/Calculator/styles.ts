@@ -118,7 +118,7 @@ export const Calculator = styled.div`
 
 export const CalculatorContainer = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.inverse};
+    background: ${theme.colors.white};
     border-radius: 1.5rem;
     display: grid;
     @media screen and (min-width: 760px) {
@@ -133,10 +133,13 @@ export const CalculatorContainer = styled.div`
   `}
 `;
 export const Heading = styled.div`
-  span {
-    display: block;
-    margin-bottom: 1rem;
-  }
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+    span {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  `}
 `;
 
 export const Amount = styled.div`
@@ -160,7 +163,7 @@ export const AmountFlex = styled.div`
     justify-content: space-between;
     align-items: center;
     input {
-      color: ${theme.colors.text};
+      color: ${theme.colors.black};
     }
     @media screen and (max-width: 420px) {
       input {
@@ -179,6 +182,9 @@ export const AmountToken = styled.div`
     font-size: 1.4rem;
     display: flex;
     align-items: center;
+    span {
+      color: ${theme.colors.black};
+    }
     ${Icon} {
       display: inline-block;
       margin-right: 0.5rem;

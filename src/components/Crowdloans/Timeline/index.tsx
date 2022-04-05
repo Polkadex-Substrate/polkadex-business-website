@@ -21,20 +21,20 @@ export const Timeline = () => {
           </S.TimelineControls> */}
           <S.TimelineContent>
             <TimelineCard
-              date="Soon"
+              date="April 5th"
               title="Contributions open"
               description="Join the Polkadex Crowdloan by contributing DOT via partners, exchanges and wallets."
               isActive
             />
             <TimelineCard
-              date="Soon"
+              date="April 5th"
               title="Auction starts"
               description="Each auction takes place over the course of seven days and assigns a total slot duration of 96 weeks."
             />
             <TimelineCard
-              date="Soon"
+              date="June 23, 2022"
               title="Crowdloan ends"
-              description="We're aiming to win an auction slot in the second batch of the auctions. Your contribution will be returned if Polkadex doesn't win a slot."
+              description="We're aiming to win an auction slot in the third batch of the auctions. Your contribution will be returned if Polkadex doesn't win a slot."
             />
           </S.TimelineContent>
         </S.Timeline>
@@ -52,23 +52,20 @@ export const Timeline = () => {
               />
               <RuleCard
                 title="Rule 3"
-                description="If contributing on-chain, the minimum contribution is 5 DOT. If contributing through a partner, minimum contributions may vary but will generally be lower than 5 DOT. Referral bonuses are not applicable to on-chain, or non-partner, contributions."
+                description="If contributing on-chain, the minimum contribution is 5 DOT. If contributing through a partner, minimum contributions may vary but will generally be 5 DOT. You can be eligible for certain referral bonuses from our partners if you contribute through their platforms. Please check their contribution pages for details."
               />
+
               <RuleCard
                 title="Rule 4"
-                description="Participating in the auction means your DOT is locked temporarily until the end of the auction."
-              />
-              <RuleCard
-                title="Rule 5"
                 description="If Polkadex wins an auction and gets a Parachain slot, the DOT raised for the auction is locked on-chain for the duration of the lease: 96 weeks."
               />
               <RuleCard
-                title="Rule 6"
-                description="While bonded for a lease, the DOT cannot be used for other activities like staking or transfers."
+                title="Rule 5"
+                description="While bonded for a lease, the DOT cannot be used for other activities like staking or transfers. You can receive liquid dots if you contribute through our partners. "
               />
               <RuleCard
-                title="Rule 7"
-                description="If Polkadex does not win a slot by the end of batch 2 auctions, the total amount of contributed DOT is once again unlocked. We will need to initiate a new campaign if we wish to continue participating in future auctions."
+                title="Rule 6"
+                description="If Polkadex does not win a slot by the end of auction slots we are competing for (block #10,881,400), the total amount of contributed DOT is once again unlocked. We will need to initiate a new campaign if we wish to continue participating in future auctions."
               />
             </S.RulesWrapper>
           </S.RulesContent>
