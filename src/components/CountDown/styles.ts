@@ -9,19 +9,21 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  `}
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 `;
 
 export const Card = styled.div`
   ${({ theme }) => css`
     position: relative;
     span {
-      font-size: 5rem;
-      font-weight: ;
+      font-size: 3rem;
+      color: ${theme.colors.primary};
+      font-weight: 500;
+      @media screen and (min-width: 375px) {
+        font-size: 5rem;
+      }
     }
     p {
       font-size: 1.3rem;

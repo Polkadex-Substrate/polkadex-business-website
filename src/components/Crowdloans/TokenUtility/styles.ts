@@ -27,18 +27,21 @@ export const Title = styled.div`
 export const Container = styled.div`
   max-width: 90rem;
   margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  gap: 5rem;
   @media screen and (max-width: 950px) {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  @media screen and (min-width: 700px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: 500px) and (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const Card = styled.div`
-  max-width: 16.4rem;
   img {
     max-width: 10rem;
     max-height: 10rem;

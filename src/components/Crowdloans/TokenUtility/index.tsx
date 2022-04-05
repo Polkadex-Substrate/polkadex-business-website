@@ -35,6 +35,11 @@ export const TokenUtility = () => {
           alt="abstract nominator"
           description="Nominate validators and collators of the network"
         />
+        <Card
+          name="stake"
+          alt="isometric coins"
+          description="Stake PDEX to participate in Thea protocol and earn rewards for enabling deposits and withdrawals to and from Polkadex Orderbook"
+        />
       </S.Container>
     </S.Wrapper>
   );
