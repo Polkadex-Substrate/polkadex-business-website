@@ -14,14 +14,14 @@ export const Hero = () => {
             and be a part of the future of Defi.
           </p>
           <S.Flex>
-            {/* <PrimaryButton content="Contribute" href="#participate" />
+            <PrimaryButton content="Contribute" href="#participate" />
             <PrimaryButton
               icon="Calculator"
               content="Rewards Calculator"
               href="#calculator"
               background="none"
-            /> */}
-            <CountDown />
+            />
+            {/* <CountDown /> */}
           </S.Flex>
           <S.ScrollDown>
             <span>About Crowdloans</span>
