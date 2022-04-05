@@ -3,7 +3,6 @@ import { PrimaryButton } from 'components';
 import * as S from './styles';
 
 export const Participate = ({ hasAccepted }) => {
-  console.log('User has accepted:', hasAccepted);
   return (
     <S.Wrapper id="participate">
       <S.Title>

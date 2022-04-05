@@ -85,6 +85,7 @@ export const TermsContainer = styled.div`
     }
     a {
       color: ${theme.colors.primary};
+      margin-left: 0.5rem;
     }
   `}
 `;
