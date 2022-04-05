@@ -8,6 +8,7 @@ export const PrimaryButton = ({
   content = 'Example',
   withOpacity = false,
   href = '#',
+  disabled = false,
   background = 'primary',
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
@@ -17,6 +18,7 @@ export const PrimaryButton = ({
       href={href}
       withOpacity={withOpacity}
       background={background}
+      disabled={disabled}
     >
       {!!icon && (
         <div>

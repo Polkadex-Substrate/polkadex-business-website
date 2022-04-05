@@ -94,7 +94,7 @@ export const AllocationCard = styled.div`
     display: flex;
     flex-direction: column;
     padding: 2rem;
-
+    justify-content: space-between;
     :nth-child(1) {
       color: ${theme.colors.inverse};
     }
@@ -112,7 +112,6 @@ export const AllocationCard = styled.div`
 `;
 
 export const AllocationCardContent = styled.div`
-  margin-top: 10rem;
   span {
     display: block;
     margin-bottom: 1rem;
@@ -121,6 +120,9 @@ export const AllocationCardContent = styled.div`
   }
   p {
     font-size: 1.3rem;
+  }
+  img {
+    max-width: 20rem;
   }
 `;
 export const AllocationCardBoxWrapper = styled.div`

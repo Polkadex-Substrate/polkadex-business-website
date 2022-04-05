@@ -48,6 +48,7 @@ export const Rewards = () => {
             <S.AllocationCardContent>
               <span>2+ PDEX per 1 DOT</span>
               <p>Base reward for all contributors to the Polkadex Crowdloan.</p>
+              <br />
             </S.AllocationCardContent>
           </S.AllocationCard>
           <S.AllocationCard>
@@ -56,6 +57,7 @@ export const Rewards = () => {
               <p>Limited</p>
             </S.AllocationCardHeader>
             <S.AllocationCardContent>
+              <img src="/img/nftCard.png" alt="Polkadex NFT" />
               <span>Exclusive NFT</span>
               <p>
                 The top 1000 Crowdloan contributors will receive a

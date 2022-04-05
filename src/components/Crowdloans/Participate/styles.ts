@@ -186,8 +186,11 @@ export const RowFlatWrapper = styled.div`
   }
 `;
 
-export const HorizontalCard = styled.a<{ isActive?: boolean }>`
-  ${({ theme, isActive }) => css`
+export const HorizontalCard = styled.a<{
+  isActive?: boolean;
+  hasAccepted?: boolean;
+}>`
+  ${({ theme, hasAccepted, isActive }) => css`
     display: flex;
     justify-content: space-between;
     background: ${theme.colors.secondaryBackgroundOpacity};
@@ -197,6 +200,7 @@ export const HorizontalCard = styled.a<{ isActive?: boolean }>`
     opacity: ${isActive ? 1 : 0.3};
     transition: transform 0.3s ease-in-out;
     transform: translateY(0);
+    cursor: ${hasAccepted ? 'initial' : 'not-allowed'};
     :hover {
       transform: translateY(-0.2rem);
       box-shadow: ${theme.shadow.secondary};

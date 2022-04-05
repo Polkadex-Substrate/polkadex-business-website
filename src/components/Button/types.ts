@@ -1,3 +1,4 @@
+import { AllHTMLAttributes } from 'react';
 import { IIcons } from 'utils/types';
 
 export type Props = {
@@ -7,9 +8,9 @@ export type Props = {
 };
 export type ButtonProps = {
   withOpacity?: boolean;
-  href: string;
   hasIcon?: boolean;
-} & Props;
+} & Props &
+  Pick<AllHTMLAttributes<HTMLDivElement>, 'target' | 'disabled' | 'href'>;
 
 export type ButtonFormProps = {
   action?: () => void;

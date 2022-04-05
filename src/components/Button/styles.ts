@@ -13,6 +13,7 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
     line-height: 0;
     white-space: pre;
     font-weight: 500;
+
     & div {
       display: flex;
       align-items: center;
@@ -27,7 +28,7 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
 `;
 
 export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
-  ${({ theme, withOpacity, background, hasIcon }) => css`
+  ${({ theme, withOpacity, background, hasIcon, disabled }) => css`
     background: ${withOpacity
       ? `${theme.colors[background]}4D`
       : theme.colors[background]};
@@ -35,6 +36,12 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
     color: ${background === 'primary' || ('secondary' && background !== 'none')
       ? theme.colors.white
       : theme.colors.text} !important;
+
+    ${disabled &&
+    css`
+      cursor: not-allowed;
+      background: gray;
+    `}
 
     ${!hasIcon &&
     css`
