@@ -104,6 +104,7 @@ export const Faq = () => {
         </Card>
         <Card title="How can I receive my NFTs if I am one of the winners?">
           <>
+            <img src="/img/nft.jpg" alt="Polkadex NFT" />
             <p>
               The 1,000 top contributors will receive their exclusive NFTs at
               around the same time they receive their PDEX rewards.
