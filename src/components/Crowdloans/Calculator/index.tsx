@@ -68,22 +68,6 @@ export const Calculator = () => {
           <div>Polkadex Crowdloans</div>
           <Icon size="small" name="ArrowBottom" link="#video" />
         </S.Actions>
-        <S.Presentation id="video">
-          <h2>Polkadex Crowdloans</h2>
-          <p>
-            Watch the video to learn about the Solochain to Parachain migration
-            and Crowdloan process.
-          </p>
-          <iframe
-            width="800"
-            height="530"
-            src="https://www.youtube.com/embed/A8NR4hKdD4o"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </S.Presentation>
       </S.Container>
     </S.Wrapper>
   );

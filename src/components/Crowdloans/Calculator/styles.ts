@@ -3,11 +3,7 @@ import { Wrapper as Input } from 'components/Input/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  background: linear-gradient(
-    180deg,
-    #1c1c26 80.72%,
-    rgba(255, 255, 255, 0) 80.73%
-  );
+  background: #1c1c26;
 `;
 
 export const Container = styled.div`

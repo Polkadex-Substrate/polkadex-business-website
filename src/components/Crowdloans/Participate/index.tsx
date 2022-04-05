@@ -159,21 +159,24 @@ export const Participate = ({ hasAccepted }) => {
               description="Exchange"
               img="kucoin"
               link="https://www.kucoin.com/trade/PDEX-USDT"
-              hasAccepted={hasAccepted}
+              // hasAccepted={hasAccepted}
+              isActive={false}
             />
             <HorizontalCard
               title="Kraken"
               description="Exchange"
               img="kraken"
               link="https://www.kraken.com"
-              hasAccepted={hasAccepted}
+              // hasAccepted={hasAccepted}
+              isActive={false}
             />
             <HorizontalCard
               title="MXC"
               description="Exchange"
               img="mxc"
               link="https://www.mexc.com"
-              hasAccepted={hasAccepted}
+              // hasAccepted={hasAccepted}
+              isActive={false}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
