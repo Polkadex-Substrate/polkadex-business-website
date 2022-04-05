@@ -63,5 +63,9 @@ export const Card = styled.div<{ isActive?: boolean }>`
     :not(:last-child) {
       margin-bottom: 1rem;
     }
+    img {
+      max-width: 40rem;
+      width: 100%;
+    }
   `}
 `;
