@@ -40,7 +40,11 @@ export const Participate = ({ hasAccepted }) => {
                 </ul>
                 <PrimaryButton
                   content="Contribute Now!"
-                  href={hasAccepted ? 'https://parallel.fi' : '#participate'}
+                  href={
+                    hasAccepted
+                      ? ' https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2040'
+                      : '#participate'
+                  }
                   target="_blank"
                   disabled={!hasAccepted}
                 />
