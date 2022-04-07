@@ -163,8 +163,7 @@ export const Participate = ({ hasAccepted }) => {
               description="Exchange"
               img="kucoin"
               link="https://www.kucoin.com/trade/PDEX-USDT"
-              // hasAccepted={hasAccepted}
-              isActive={false}
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Kraken"
