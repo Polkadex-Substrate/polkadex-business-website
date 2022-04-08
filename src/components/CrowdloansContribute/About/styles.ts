@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 90rem;
-  margin: 3rem auto 0 auto;
   @media screen and (min-width: 950px) {
     margin-top: 6rem;
   }
@@ -53,7 +51,8 @@ export const Button = styled.a`
   }
 `;
 export const Chain = styled.div`
-  margin-top: 4rem;
+  max-width: 90rem;
+  margin: 4rem auto 0 auto;
   @media screen and (max-width: 945px) {
     padding: 1rem;
   }
