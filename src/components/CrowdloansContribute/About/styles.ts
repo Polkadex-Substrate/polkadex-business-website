@@ -40,7 +40,7 @@ export const Aside = styled.div`
 export const Flex = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 2rem;
 `;
 

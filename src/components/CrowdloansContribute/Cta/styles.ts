@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.primaryBackground};
+    background: ${theme.colors.secondaryBackgroundOpacity};
     padding: 5rem;
     display: grid;
     border-radius: 2rem;

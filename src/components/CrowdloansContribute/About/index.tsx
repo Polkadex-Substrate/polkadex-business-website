@@ -5,7 +5,7 @@ import * as S from './styles';
 
 export const About = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="about">
       <S.Container>
         <img src="/img/orderbookPreview.png" alt="Polkadex Orderbook Preview" />
         <S.Aside>

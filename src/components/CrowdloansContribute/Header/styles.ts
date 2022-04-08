@@ -48,7 +48,7 @@ export const Box = styled.div`
     }
   `}
 `;
-export const CrowndloanLogo = styled.div`
+export const CrowndloanLogo = styled.a`
   max-width: 10rem;
 `;
 export const Menu = styled.div<{ isActive?: boolean }>`

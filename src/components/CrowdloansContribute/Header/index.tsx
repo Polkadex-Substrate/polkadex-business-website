@@ -11,18 +11,23 @@ export const Header = () => {
         <S.Aside>
           <Logo />
           <S.Box>
-            <S.CrowndloanLogo>
+            <S.CrowndloanLogo href="/crowdloans" target="_blank">
               <CrowndloanLogo />
             </S.CrowndloanLogo>
             <S.Menu>
               <li>
-                <a href="#overview">Overview</a>
-              </li>
-              <li>
                 <a href="#rewards">Rewards</a>
               </li>
               <li>
-                <a href="#timeline">Partners</a>
+                <a href="#contribute">Partners</a>
+              </li>
+              <li>
+                <a href="#about">Polkadex</a>
+              </li>
+              <li>
+                <a href="/crowdloans" target="_blank">
+                  More Info
+                </a>
               </li>
             </S.Menu>
           </S.Box>
