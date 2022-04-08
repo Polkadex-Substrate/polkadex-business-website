@@ -10,6 +10,7 @@ export const PrimaryButton = ({
   href = '#',
   disabled = false,
   background = 'primary',
+  onClick = undefined,
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
   return (
@@ -19,6 +20,7 @@ export const PrimaryButton = ({
       withOpacity={withOpacity}
       background={background}
       disabled={disabled}
+      onClick={onClick}
     >
       {!!icon && (
         <div>

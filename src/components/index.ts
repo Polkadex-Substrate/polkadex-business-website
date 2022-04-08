@@ -23,6 +23,8 @@ export * from './Icon';
 export * from './LanguageSelector';
 export * from './Logo';
 export * from './Migration';
+export * from './Popup';
+export * from './Portal';
 export * from './Return';
 export * from './Spinner';
 export * from './ThemeSwitcher';

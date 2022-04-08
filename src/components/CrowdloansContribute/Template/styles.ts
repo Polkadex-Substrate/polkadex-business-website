@@ -14,12 +14,8 @@ export const Terms = styled.div<{ isVisible?: boolean }>`
   ${({ theme, isVisible }) => css`
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: translateY(${isVisible ? '0' : '100%'});
-    opacity: ${isVisible ? 1 : 0};
     z-index: 50;
     background: ${`${theme.colors.primaryBackground}F9`};
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     padding: 3rem 4rem;
     width: 100%;

@@ -11,26 +11,21 @@ export const Terms = styled.div<{ isVisible?: boolean }>`
   ${({ theme, isVisible }) => css`
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: translateY(${isVisible ? '0' : '100%'});
-    opacity: ${isVisible ? 1 : 0};
-    z-index: 50;
     background: ${`${theme.colors.primaryBackground}F9`};
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     padding: 3rem 4rem;
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    box-shadow: 0px -8px 142px rgba(0, 0, 0, 0.1);
-    border-radius: 3rem 3rem 0 0;
+    box-shadow: 0px -8px 142px rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
   `}
 `;
 
 export const TermsContainer = styled.div`
   ${({ theme }) => css`
     h2 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
     }
     max-width: 90rem;

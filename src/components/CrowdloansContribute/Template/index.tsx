@@ -8,6 +8,7 @@ import {
   Rewards,
   Stats,
 } from 'components/CrowdloansContribute';
+import { Popup } from 'components/Popup';
 import Head from 'next/head';
 import { useCallback, useEffect, useState } from 'react';
 import { HomeTranslations, IHomeTranslations } from 'translations';
@@ -32,22 +33,6 @@ export const Template = () => {
     if (!state) checkTerms();
   }, [state, checkTerms]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting === true) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: [0] },
-    );
-
-    observer.observe(document.querySelector('#contribute'));
-    return () => observer.disconnect();
-  }, []);
-
   const { footer }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <S.Wrapper>
@@ -58,33 +43,44 @@ export const Template = () => {
         </title>
       </Head>
       <Header />
-      <S.Terms isVisible={isVisible && !state}>
-        <S.TermsContainer>
-          <h2>Crowdloans terms and conditions</h2>
-          <div>
-            <label htmlFor="terms">
-              <input
-                checked={state}
-                type="checkbox"
-                id="terms"
-                onChange={handleAccept}
-              />
-              <span />
-            </label>
-            <p>
-              I agree to
-              <a href="/terms" target="_blank">
-                Polkadex&apos;s terms and conditions
-              </a>
-            </p>
-          </div>
-        </S.TermsContainer>
-      </S.Terms>
+      <Popup
+        onClose={() => setIsVisible(false)}
+        isVisible={isVisible && !state}
+      >
+        <S.Terms isVisible={isVisible && !state}>
+          <S.TermsContainer>
+            <h2>Crowdloans terms and conditions</h2>
+            <div>
+              <label htmlFor="terms">
+                <input
+                  checked={state}
+                  type="checkbox"
+                  id="terms"
+                  onChange={handleAccept}
+                />
+                <span />
+              </label>
+              <p>
+                I agree to
+                <a href="/terms" target="_blank">
+                  Polkadex&apos;s terms and conditions
+                </a>
+              </p>
+            </div>
+          </S.TermsContainer>
+        </S.Terms>
+      </Popup>
+
       <main>
         <Hero />
         <Stats />
         <Rewards />
-        <Participate hasAccepted={state} />
+        <Participate
+          onAccept={
+            !isVisible && !state ? () => setIsVisible(!isVisible) : undefined
+          }
+          hasAccepted={state}
+        />
         <About />
         <Cta />
       </main>

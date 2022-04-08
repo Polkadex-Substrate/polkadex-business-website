@@ -2,7 +2,7 @@ import { PrimaryButton } from 'components';
 
 import * as S from './styles';
 
-export const Participate = ({ hasAccepted }) => {
+export const Participate = ({ hasAccepted, onAccept }) => {
   return (
     <S.Wrapper id="participate">
       <S.Title>
@@ -44,6 +44,7 @@ export const Participate = ({ hasAccepted }) => {
                   }
                   target="_blank"
                   disabled={!hasAccepted}
+                  onClick={onAccept}
                 />
               </S.Rewards>
             </Card>
@@ -67,6 +68,7 @@ export const Participate = ({ hasAccepted }) => {
                   }
                   target="_blank"
                   disabled={!hasAccepted}
+                  onClick={onAccept}
                 />
               </S.Rewards>
             </Card>
@@ -94,6 +96,7 @@ export const Participate = ({ hasAccepted }) => {
                   }
                   target="_blank"
                   disabled={!hasAccepted}
+                  onClick={onAccept}
                 />
               </S.Rewards>
             </Card>
@@ -108,6 +111,7 @@ export const Participate = ({ hasAccepted }) => {
               img="polkadotjs"
               link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Nova Wallet"
@@ -115,6 +119,7 @@ export const Participate = ({ hasAccepted }) => {
               img="novaWallet"
               link="https://novawallet.io"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Fearless Wallet"
@@ -122,6 +127,7 @@ export const Participate = ({ hasAccepted }) => {
               img="fearlessWallet"
               link="https://fearlesswallet.io"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Talisman"
@@ -129,6 +135,7 @@ export const Participate = ({ hasAccepted }) => {
               img="talisman"
               link="https://app.talisman.xyz/portfolio"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="SubWallet"
@@ -136,6 +143,7 @@ export const Participate = ({ hasAccepted }) => {
               img="subWallet"
               link="https://subwallet.app"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Math Wallet"
@@ -155,6 +163,7 @@ export const Participate = ({ hasAccepted }) => {
               img="kucoin"
               link="https://www.kucoin.com/earn/dot-slot-auction/staking?id=2161&rule_path=/en-kucoin-supports-dot-slot-machine-auction"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Kraken"
@@ -162,6 +171,7 @@ export const Participate = ({ hasAccepted }) => {
               img="kraken"
               link="https://www.kraken.com/u/earn/parachains"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="MXC"
@@ -169,6 +179,7 @@ export const Participate = ({ hasAccepted }) => {
               img="mxc"
               link="https://www.mexc.com/slot/polkadot"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Gate.io"
@@ -176,6 +187,7 @@ export const Participate = ({ hasAccepted }) => {
               img="gateio"
               link="https://www.gate.io/tw/slot_auction"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -188,6 +200,7 @@ export const Participate = ({ hasAccepted }) => {
               img="subscan"
               link="https://polkadot.subscan.io/crowdloan/2040-0?tab=contribute"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Subvis"
@@ -195,6 +208,7 @@ export const Participate = ({ hasAccepted }) => {
               img="subvis"
               link="https://subvis.io/crowdloan"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="PolkaProject"
@@ -202,6 +216,7 @@ export const Participate = ({ hasAccepted }) => {
               img="polkaProject"
               link="http://polkaproject.com"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
             <HorizontalCard
               title="Parachains.info"
@@ -209,6 +224,7 @@ export const Participate = ({ hasAccepted }) => {
               img="parachains"
               link="https://parachains.info/auctions"
               hasAccepted={hasAccepted}
+              onClick={onAccept}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -248,12 +264,14 @@ const HorizontalCard = ({
   isActive = true,
   hasAccepted = false,
   link = '#',
+  onClick = undefined,
 }) => (
   <S.HorizontalCard
     isActive={isActive}
     href={!hasAccepted ? '#participate' : link}
     target={isActive && hasAccepted ? '_blank' : '_self'}
     hasAccepted={hasAccepted}
+    onClick={onClick}
   >
     <S.HorizontalCardContent>
       <img src={`img/partnerLaunch/${img}.svg`} alt="polkadotjs" />

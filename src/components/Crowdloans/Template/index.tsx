@@ -7,6 +7,7 @@ import {
   TokenEconomics,
   TokenUtility,
 } from 'components/Crowdloans';
+import { Popup } from 'components/Popup';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
@@ -40,22 +41,6 @@ export const Template = () => {
     if (!state) checkTerms();
   }, [state, checkTerms]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting === true) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: [0] },
-    );
-
-    observer.observe(document.querySelector('#participate'));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <S.Wrapper>
       <Head>
@@ -64,28 +49,33 @@ export const Template = () => {
         </title>
       </Head>
       <HeaderCustom {...header} />
-      <S.Terms isVisible={isVisible && !state}>
-        <S.TermsContainer>
-          <h2>Crowdloans terms and conditions</h2>
-          <div>
-            <label htmlFor="terms">
-              <input
-                checked={state}
-                type="checkbox"
-                id="terms"
-                onChange={handleAccept}
-              />
-              <span />
-            </label>
-            <p>
-              I agree to
-              <a href="/terms" target="_blank">
-                Polkadex&apos;s terms and conditions
-              </a>
-            </p>
-          </div>
-        </S.TermsContainer>
-      </S.Terms>
+      <Popup
+        onClose={() => setIsVisible(false)}
+        isVisible={isVisible && !state}
+      >
+        <S.Terms isVisible={isVisible && !state}>
+          <S.TermsContainer>
+            <h2>Crowdloans terms and conditions</h2>
+            <div>
+              <label htmlFor="terms">
+                <input
+                  checked={state}
+                  type="checkbox"
+                  id="terms"
+                  onChange={handleAccept}
+                />
+                <span />
+              </label>
+              <p>
+                In order to proceed please read and agree to the
+                <a href="/terms" target="_blank">
+                  terms and conditions
+                </a>
+              </p>
+            </div>
+          </S.TermsContainer>
+        </S.Terms>
+      </Popup>
       <main>
         <Hero />
         <About />
@@ -94,7 +84,12 @@ export const Template = () => {
         <TokenUtility />
         <ChainModel />
         <Timeline />
-        <Participate hasAccepted={state} />
+        <Participate
+          onAccept={
+            !isVisible && !state ? () => setIsVisible(!isVisible) : undefined
+          }
+          hasAccepted={state}
+        />
         <TokenEconomics />
         <Faq />
         <Newsletter {...newsletter} />

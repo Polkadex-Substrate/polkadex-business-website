@@ -9,6 +9,7 @@ export type Props = {
 export type ButtonProps = {
   withOpacity?: boolean;
   hasIcon?: boolean;
+  onClick?: () => void | undefined;
 } & Props &
   Pick<AllHTMLAttributes<HTMLDivElement>, 'target' | 'disabled' | 'href'>;
 
