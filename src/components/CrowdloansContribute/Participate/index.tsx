@@ -103,7 +103,7 @@ export const Participate = ({ onAccept, hasAccepted }) => {
             <HorizontalCard
               title="Polkadot{.js}"
               img="polkadotjs"
-              link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains"
+              link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains/crowdloan"
               hasAccepted={hasAccepted}
               onClick={onAccept}
             />
