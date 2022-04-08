@@ -36,7 +36,7 @@ export const Aside = styled.div`
     h1 {
       line-height: 1.1;
       @media screen and (min-width: 660px) {
-        font-size: 6rem;
+        font-size: 5rem;
       }
       small {
         display: block;
