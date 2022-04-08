@@ -3,60 +3,71 @@ import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'footer'>;
+type Props = {
+  full?: boolean;
+} & Pick<IHomeTranslations, 'footer'>;
 
-const Footer = ({ rowLinks, copyright, bottomLinks }: Props['footer']) => (
+const Footer = ({
+  rowLinks,
+  copyright,
+  bottomLinks,
+  full = true,
+}: Props['footer']) => (
   <S.Wrapper>
     <S.Row>
-      <S.Col>
-        <Logo />
-        {/* <LanguageSelector /> */}
-      </S.Col>
-      <S.Col>
-        <div>
-          <h5>{rowLinks.polkadex.title}</h5>
-          <ul>
-            {rowLinks.polkadex.links.map((item, index) => (
-              <li key={index}>
-                <a href={`#${item.href}`}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h5>{rowLinks.community.title}</h5>
-          <ul>
-            {rowLinks.community.links.map((item, index) => (
-              <li key={index}>
-                <a href={item.href}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </S.Col>
-      <S.Col>
-        <div>
-          <h5>{rowLinks.resources.title}</h5>
-          <ul>
-            {rowLinks.resources.links.map((item, index) => (
-              <li key={index}>
-                <a href={item.href}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h5>{rowLinks.products.title}</h5>
-          <ul>
-            {rowLinks.products.links.map((item, index) => (
-              <li key={index}>
-                <a href={item.href}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </S.Col>
-      <S.Col />
+      {full && (
+        <>
+          <S.Col>
+            <Logo />
+            {/* <LanguageSelector /> */}
+          </S.Col>
+          <S.Col>
+            <div>
+              <h5>{rowLinks.polkadex.title}</h5>
+              <ul>
+                {rowLinks.polkadex.links.map((item, index) => (
+                  <li key={index}>
+                    <a href={`#${item.href}`}>{item.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h5>{rowLinks.community.title}</h5>
+              <ul>
+                {rowLinks.community.links.map((item, index) => (
+                  <li key={index}>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </S.Col>
+          <S.Col>
+            <div>
+              <h5>{rowLinks.resources.title}</h5>
+              <ul>
+                {rowLinks.resources.links.map((item, index) => (
+                  <li key={index}>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h5>{rowLinks.products.title}</h5>
+              <ul>
+                {rowLinks.products.links.map((item, index) => (
+                  <li key={index}>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </S.Col>
+          <S.Col />
+        </>
+      )}
     </S.Row>
     <S.Row>
       <S.Col>
