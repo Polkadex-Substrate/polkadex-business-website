@@ -64,7 +64,7 @@ export const Participate = ({ hasAccepted }) => {
                   content="Contribute Now!"
                   href={
                     hasAccepted
-                      ? 'https://bifrost.app/vcrowdloan?paraId=2036'
+                      ? 'https://bifrost.app/vcrowdloan'
                       : '#participate'
                   }
                   target="_blank"
