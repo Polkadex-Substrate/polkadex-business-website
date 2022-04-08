@@ -1,7 +1,7 @@
 import { Template } from 'components/CrowdloansContribute';
 
-export const Crowdloanscontribute = () => {
+export const Crowdloancontribute = () => {
   return <Template />;
 };
 
-export default Crowdloanscontribute;
+export default Crowdloancontribute;
