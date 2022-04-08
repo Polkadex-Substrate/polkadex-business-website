@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   `}
   min-height: 100vh;
   main {
-    padding-top: 5rem;
+    padding-top: 2rem;
   }
 `;
 

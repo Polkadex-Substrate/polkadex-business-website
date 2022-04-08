@@ -4,12 +4,19 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   max-width: 100rem;
   margin: 0 auto;
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
 `;
 
 export const Container = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.primaryBackground};
-    padding: 13rem 2rem 12rem 2rem;
+    padding: 8rem 2rem;
+
+    @media screen and (min-width: 660px) {
+      padding: 13rem 2rem 12rem 2rem;
+    }
     background-image: url('/img/hero.svg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -39,10 +46,12 @@ export const Aside = styled.div`
         color: ${theme.colors.primary};
       }
     }
+
     p {
       margin: 2rem 0;
       line-height: 1.5;
     }
+
     ${PrimaryWrapper} {
       width: fit-content;
     }

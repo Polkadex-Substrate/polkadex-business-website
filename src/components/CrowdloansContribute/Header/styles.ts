@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
     position: sticky;
     top: 0;
     background: ${theme.colors.primaryBackground};
+    z-index: 99;
   `}
 `;
 
@@ -15,9 +16,9 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  @media screen and (min-width: 930px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  @media screen and (max-width: 930px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 `;
 
@@ -41,6 +42,9 @@ export const Box = styled.div`
       height: 2rem;
       width: 1px;
       background: ${theme.colors.secondaryBackground};
+    }
+    @media screen and (max-width: 650px) {
+      display: none;
     }
   `}
 `;

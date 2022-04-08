@@ -2,10 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   max-width: 90rem;
-  margin: 3rem auto;
-  @media screen and (min-width: 950px) {
-    margin-top: 6rem;
-  }
+  margin: 5rem auto;
 `;
 
 export const Container = styled.div`
