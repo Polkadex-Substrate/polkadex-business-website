@@ -22,7 +22,7 @@ export const About = () => {
           </p>
           <S.Flex>
             <PrimaryButton content="Contribute Now" href="#contribute" />
-            <S.Button href="/">
+            <S.Button href="https://polkadex.trade" target="_blank">
               Learn more <Icons.ArrowRight />
             </S.Button>
           </S.Flex>
@@ -31,7 +31,10 @@ export const About = () => {
       <S.Chain>
         <S.ChainTitle>
           <h2>Two-chain model</h2>
-          <S.Button href="/">
+          <S.Button
+            href="https://github.com/Polkadex-Substrate/polkadex-docs/blob/master/docs/doc3-theaBridge.md"
+            target="_blank"
+          >
             THEA Whitepaper <Icons.ArrowRight />
           </S.Button>
         </S.ChainTitle>
