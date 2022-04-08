@@ -19,12 +19,12 @@ export const Template = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleAccept = () => {
-    localStorage.setItem('crowdloansTerms', 'true');
+    localStorage.setItem('crowdloansTermsCta', 'true');
     setState(true);
   };
 
   const checkTerms = useCallback(() => {
-    const result = localStorage.getItem('crowdloansTerms');
+    const result = localStorage.getItem('crowdloansTermsCta');
     if (result === 'true') setState(true);
   }, []);
 
@@ -53,7 +53,8 @@ export const Template = () => {
     <S.Wrapper>
       <Head>
         <title>
-          Help Polkadex secure a Parachain slot. Join the Crowdloan now!
+          Polkadex Crowdloan for the Polkadot parachain is live with 2M $PEDEX
+          rewards pool for contributors.
         </title>
       </Head>
       <Header />
