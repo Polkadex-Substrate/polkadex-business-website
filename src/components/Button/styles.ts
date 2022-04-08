@@ -33,10 +33,10 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
       ? `${theme.colors[background]}4D`
       : theme.colors[background]};
     border: ${withOpacity ? `1px solid ${theme.colors[background]}` : 'none'};
+
     color: ${background === 'primary' || ('secondary' && background !== 'none')
       ? theme.colors.white
       : theme.colors.text} !important;
-
     ${disabled &&
     css`
       cursor: not-allowed;

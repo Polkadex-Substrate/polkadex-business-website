@@ -799,6 +799,7 @@ const ENLanguage = {
     formButton: 'Subscribe',
   },
   footer: {
+    full: true,
     rowLinks: {
       polkadex: {
         title: 'Polkadex',
