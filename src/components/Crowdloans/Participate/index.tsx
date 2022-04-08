@@ -153,24 +153,29 @@ export const Participate = ({ hasAccepted }) => {
               title="Kucoin"
               description="Exchange"
               img="kucoin"
-              link="https://www.kucoin.com/trade/PDEX-USDT"
+              link="https://www.kucoin.com/earn/dot-slot-auction/staking?id=2161&rule_path=/en-kucoin-supports-dot-slot-machine-auction"
               hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Kraken"
               description="Exchange"
               img="kraken"
-              link="https://www.kraken.com"
-              // hasAccepted={hasAccepted}
-              isActive={false}
+              link="https://www.kraken.com/u/earn/parachains"
+              hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="MXC"
               description="Exchange"
               img="mxc"
-              link="https://www.mexc.com"
-              // hasAccepted={hasAccepted}
-              isActive={false}
+              link="https://www.mexc.com/slot/polkadot"
+              hasAccepted={hasAccepted}
+            />
+            <HorizontalCard
+              title="Gate.io"
+              description="Exchange"
+              img="gateio"
+              link="https://www.gate.io/tw/slot_auction"
+              hasAccepted={hasAccepted}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -181,14 +186,14 @@ export const Participate = ({ hasAccepted }) => {
               title="Subscan"
               description="Explorer"
               img="subscan"
-              link="https://www.subscan.io"
+              link="https://polkadot.subscan.io/crowdloan/2040-0?tab=contribute"
               hasAccepted={hasAccepted}
             />
             <HorizontalCard
               title="Subvis"
               description="Explorer"
               img="subvis"
-              link="https://subvis.io"
+              link="https://subvis.io/crowdloan"
               hasAccepted={hasAccepted}
             />
             <HorizontalCard
@@ -202,7 +207,7 @@ export const Participate = ({ hasAccepted }) => {
               title="Parachains.info"
               description="Explorer"
               img="parachains"
-              link="https://parachains.info"
+              link="https://parachains.info/auctions"
               hasAccepted={hasAccepted}
             />
           </S.RowFlatWrapper>
