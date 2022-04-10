@@ -41,11 +41,16 @@ export const Participate = ({ onAccept, hasAccepted }) => {
                   content="Contribute Now!"
                   href={
                     hasAccepted
-                      ? ' https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2040'
+                      ? 'https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2040'
                       : '#participate'
                   }
                   target="_blank"
-                  onClick={onAccept}
+                  disabled={!hasAccepted}
+                  onClick={() =>
+                    onAccept(
+                      'https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2040',
+                    )
+                  }
                 />
               </S.Rewards>
             </Card>
@@ -68,7 +73,8 @@ export const Participate = ({ onAccept, hasAccepted }) => {
                       : '#participate'
                   }
                   target="_blank"
-                  onClick={onAccept}
+                  disabled={!hasAccepted}
+                  onClick={() => onAccept('https://bifrost.app/vcrowdloan')}
                 />
               </S.Rewards>
             </Card>
@@ -91,7 +97,12 @@ export const Participate = ({ onAccept, hasAccepted }) => {
                       : '#participate'
                   }
                   target="_blank"
-                  onClick={onAccept}
+                  disabled={!hasAccepted}
+                  onClick={() =>
+                    onAccept(
+                      'https://xdot.equilibrium.io/en/contribute?p=Polkadex',
+                    )
+                  }
                 />
               </S.Rewards>
             </Card>
@@ -105,35 +116,39 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               img="polkadotjs"
               link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains/crowdloan"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() =>
+                onAccept(
+                  'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains/crowdloan',
+                )
+              }
             />
             <HorizontalCard
               title="Nova Wallet"
               img="novaWallet"
               link="https://novawallet.io"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://novawallet.io')}
             />
             <HorizontalCard
               title="Fearless Wallet"
               img="fearlessWallet"
               link="https://fearlesswallet.io"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://fearlesswallet.io')}
             />
             <HorizontalCard
               title="Talisman"
               img="talisman"
               link="https://app.talisman.xyz/portfolio"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://app.talisman.xyz/portfolio')}
             />
             <HorizontalCard
               title="SubWallet"
               img="subWallet"
               link="https://subwallet.app"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://subwallet.app')}
             />
             <HorizontalCard
               title="Math Wallet"
@@ -151,28 +166,34 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               img="kucoin"
               link="https://www.kucoin.com/earn/dot-slot-auction/staking?id=2161&rule_path=/en-kucoin-supports-dot-slot-machine-auction"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() =>
+                onAccept(
+                  'https://www.kucoin.com/earn/dot-slot-auction/staking?id=2161&rule_path=/en-kucoin-supports-dot-slot-machine-auction',
+                )
+              }
             />
             <HorizontalCard
               title="Kraken"
               img="kraken"
               link="https://www.kraken.com/u/earn/parachains"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() =>
+                onAccept('https://www.kraken.com/u/earn/parachains')
+              }
             />
             <HorizontalCard
               title="MXC"
               img="mxc"
               link="https://www.mexc.com/slot/polkadot"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://www.mexc.com/slot/polkadot')}
             />
             <HorizontalCard
               title="Gate.io"
               img="gateio"
               link="https://www.gate.io/tw/slot_auction"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://www.gate.io/tw/slot_auction')}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>
@@ -184,28 +205,32 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               img="subscan"
               link="https://polkadot.subscan.io/crowdloan/2040-0?tab=contribute"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() =>
+                onAccept(
+                  'https://polkadot.subscan.io/crowdloan/2040-0?tab=contribute',
+                )
+              }
             />
             <HorizontalCard
               title="Subvis"
               img="subvis"
               link="https://subvis.io/crowdloan"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://subvis.io/crowdloan')}
             />
             <HorizontalCard
               title="PolkaProject"
               img="polkaProject"
               link="http://polkaproject.com"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('http://polkaproject.com')}
             />
             <HorizontalCard
               title="Parachains.info"
               img="parachains"
               link="https://parachains.info/auctions"
               hasAccepted={hasAccepted}
-              onClick={onAccept}
+              onClick={() => onAccept('https://parachains.info/auctions')}
             />
           </S.RowFlatWrapper>
         </S.RowFlat>

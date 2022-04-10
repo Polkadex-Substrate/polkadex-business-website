@@ -22,7 +22,7 @@ import * as S from './styles';
 
 export const Template = () => {
   const [state, setState] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState({ isVisible: false, url: '' });
 
   const { footer, newsletter, header }: IHomeTranslations =
     HomeTranslations['en-US'];
@@ -30,6 +30,9 @@ export const Template = () => {
   const handleAccept = () => {
     localStorage.setItem('crowdloansTerms', 'true');
     setState(true);
+    setTimeout(() => {
+      window.open(isVisible.url);
+    }, 1000);
   };
 
   const checkTerms = useCallback(() => {
@@ -50,10 +53,10 @@ export const Template = () => {
       </Head>
       <HeaderCustom {...header} />
       <Popup
-        onClose={() => setIsVisible(false)}
-        isVisible={isVisible && !state}
+        onClose={() => setIsVisible({ ...isVisible, isVisible: false })}
+        isVisible={isVisible.isVisible && !state}
       >
-        <S.Terms isVisible={isVisible && !state}>
+        <S.Terms isVisible={isVisible.isVisible && !state}>
           <S.TermsContainer>
             <h2>Crowdloans terms and conditions</h2>
             <div>
@@ -86,7 +89,14 @@ export const Template = () => {
         <Timeline />
         <Participate
           onAccept={
-            !isVisible && !state ? () => setIsVisible(!isVisible) : undefined
+            !isVisible.isVisible && !state
+              ? (url) => {
+                  setIsVisible({
+                    isVisible: !isVisible.isVisible,
+                    url,
+                  });
+                }
+              : undefined
           }
           hasAccepted={state}
         />

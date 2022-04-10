@@ -17,11 +17,14 @@ import * as S from './styles';
 
 export const Template = () => {
   const [state, setState] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState({ isVisible: false, url: '' });
 
   const handleAccept = () => {
     localStorage.setItem('crowdloansTermsCta', 'true');
     setState(true);
+    setTimeout(() => {
+      window.open(isVisible.url);
+    }, 1000);
   };
 
   const checkTerms = useCallback(() => {
@@ -44,10 +47,10 @@ export const Template = () => {
       </Head>
       <Header />
       <Popup
-        onClose={() => setIsVisible(false)}
-        isVisible={isVisible && !state}
+        onClose={() => setIsVisible({ ...isVisible, isVisible: false })}
+        isVisible={isVisible.isVisible && !state}
       >
-        <S.Terms isVisible={isVisible && !state}>
+        <S.Terms isVisible={isVisible.isVisible && !state}>
           <S.TermsContainer>
             <h2>Crowdloans terms and conditions</h2>
             <div>
@@ -77,7 +80,14 @@ export const Template = () => {
         <Rewards />
         <Participate
           onAccept={
-            !isVisible && !state ? () => setIsVisible(!isVisible) : undefined
+            !isVisible.isVisible && !state
+              ? (url) => {
+                  setIsVisible({
+                    isVisible: !isVisible.isVisible,
+                    url,
+                  });
+                }
+              : undefined
           }
           hasAccepted={state}
         />
