@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 
@@ -13,6 +14,24 @@ const Custom404 = () => {
 
   return (
     <S.Wrapper>
+      <Head>
+        <title>Polkadex - 404 Error</title>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        />
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config','${process.env.GOOGLE_ANALYTICS}');
+          `,
+          }}
+        />
+      </Head>
       <S.Container>
         <S.TitleContainer>
           <h1>404</h1>

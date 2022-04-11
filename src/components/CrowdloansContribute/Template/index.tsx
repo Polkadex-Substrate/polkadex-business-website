@@ -44,6 +44,21 @@ export const Template = () => {
           Polkadex Crowdloan for the Polkadot parachain is live with 2M $PEDEX
           rewards pool for contributors.
         </title>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_CTA}`}
+        />
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config','${process.env.GOOGLE_ANALYTICS_CTA}');
+          `,
+          }}
+        />
       </Head>
       <Header />
       <Popup

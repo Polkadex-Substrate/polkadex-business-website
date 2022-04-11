@@ -16,7 +16,10 @@ module.exports = {
     ignoreBuildErrors: true,
   },
   env: {
-    GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
+    GOOGLE_ANALYTICS:
+      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-DYTPWG3R5M',
+    GOOGLE_ANALYTICS_CTA:
+      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_CTA || 'G-5FD4544T94',
     RANGER_HOST_URL:
       process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'wss://mainnet.polkadex.trade',
   },
