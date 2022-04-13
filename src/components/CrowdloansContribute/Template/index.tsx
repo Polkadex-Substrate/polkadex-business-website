@@ -52,25 +52,31 @@ export const Template = () => {
   return (
     <>
       <GoogleAnalytics />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+            !function(e,i){if(!e.pixie){var n=e.pixie=function(e,i,a){n.actionQueue.push({action:e,actionValue:i,params:a})};n.actionQueue=[];var a=i.createElement("script");a.async=!0,a.src="//acdn.adnxs.com/dmp/up/pixie.js";var t=i.getElementsByTagName("head")[0];t.insertBefore(a,t.firstChild)}}(window,document);
+pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
+            `,
+        }}
+      />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `pixie('event', 'PageView');`,
+        }}
+      />
+      <Script
+        src="https://secure.adnxs.com/px?id=1577865&t=1"
+        type="text/javascript"
+        strategy="afterInteractive"
+      />
       <S.Wrapper>
         <Head>
           <title>
             Polkadex Crowdloan for the Polkadot parachain is live with 2M $PEDEX
             rewards pool for contributors.
           </title>
-          <Script
-            dangerouslySetInnerHTML={{
-              __html: `
-            !function(e,i){if(!e.pixie){var n=e.pixie=function(e,i,a){n.actionQueue.push({action:e,actionValue:i,params:a})};n.actionQueue=[];var a=i.createElement("script");a.async=!0,a.src="//acdn.adnxs.com/dmp/up/pixie.js";var t=i.getElementsByTagName("head")[0];t.insertBefore(a,t.firstChild)}}(window,document);
-pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
-            `,
-            }}
-          />
-          <Script
-            dangerouslySetInnerHTML={{
-              __html: `pixie('event', 'PageView');`,
-            }}
-          />
+
           <noscript>
             <img
               src="https://ib.adnxs.com/pixie?pi=7a7062db-796b-4937-9aad-8d980417f3ff&e=PageView&script=0"
@@ -80,11 +86,6 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
               style={{ display: 'none' }}
             />
           </noscript>
-          <Script
-            src="https://secure.adnxs.com/px?id=1577865&t=1"
-            type="text/javascript"
-            strategy="afterInteractive"
-          />
         </Head>
         <Header />
         <Popup
