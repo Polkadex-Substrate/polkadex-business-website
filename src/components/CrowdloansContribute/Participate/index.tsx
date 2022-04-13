@@ -49,7 +49,7 @@ export const Participate = ({ onAccept, hasAccepted }) => {
                   onClick={() =>
                     onAccept(
                       'https://crowdloan.parallel.fi/#/auction/contribute/polkadot/2040',
-                      'Parallel Finance',
+                      'ParallelFinance',
                     )
                   }
                 />
@@ -132,7 +132,7 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               img="novaWallet"
               link="https://novawallet.io"
               hasAccepted={hasAccepted}
-              onClick={() => onAccept('https://novawallet.io', 'Nova Wallet')}
+              onClick={() => onAccept('https://novawallet.io', 'NovaWallet')}
             />
             <HorizontalCard
               title="Fearless Wallet"
@@ -140,7 +140,7 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               link="https://fearlesswallet.io"
               hasAccepted={hasAccepted}
               onClick={() =>
-                onAccept('https://fearlesswallet.io', 'Fearless Wallet')
+                onAccept('https://fearlesswallet.io', 'FearlessWallet')
               }
             />
             <HorizontalCard
@@ -206,7 +206,7 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               link="https://www.gate.io/tw/slot_auction"
               hasAccepted={hasAccepted}
               onClick={() =>
-                onAccept('https://www.gate.io/tw/slot_auction', 'Gate.io')
+                onAccept('https://www.gate.io/tw/slot_auction', 'Gateio')
               }
             />
           </S.RowFlatWrapper>
@@ -248,7 +248,7 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               link="https://parachains.info/auctions"
               hasAccepted={hasAccepted}
               onClick={() =>
-                onAccept('https://parachains.info/auctions', 'Parachains.info')
+                onAccept('https://parachains.info/auctions', 'Parachainsinfo')
               }
             />
           </S.RowFlatWrapper>
