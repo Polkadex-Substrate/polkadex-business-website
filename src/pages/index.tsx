@@ -16,6 +16,7 @@ import {
 } from 'components';
 import { Announcement } from 'components/v1/Announcement';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useEffect } from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
@@ -50,49 +51,51 @@ export default function Home() {
     }
   });
   return (
-    <S.Wrapper>
-      <Head>
-        <title>Polkadex - The trading engine for Web3 and DeFi</title>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-        />
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+      />
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config','${process.env.GOOGLE_ANALYTICS}');
           `,
-          }}
-        />
-      </Head>
-      <Announcement
-        content={
-          <ContractAnnouncement
-            contract="0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
-            href="https://etherscan.io/token/0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
-            {...announcement}
-          />
-        }
+        }}
       />
-      <Header {...header} />
-      <main>
-        <Hero {...hero} />
-        <OrderbookProduct {...orderbook} />
-        <Partners {...partners} />
-        <OthersProducts otherProducts={otherProducts} />
-        <Features {...features} />
-        <Investors {...investors} />
-        <Team {...team} />
-        <Roadmap {...roadmap} />
-        <TokenEconomics {...tokenEconomics} />
-        <Media {...media} />
-        <Newsletter {...newsletter} />
-      </main>
-      <Footer {...footer} />
-    </S.Wrapper>
+      <S.Wrapper>
+        <Head>
+          <title>Polkadex - The trading engine for Web3 and DeFi</title>
+        </Head>
+        <Announcement
+          content={
+            <ContractAnnouncement
+              contract="0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
+              href="https://etherscan.io/token/0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
+              {...announcement}
+            />
+          }
+        />
+        <Header {...header} />
+        <main>
+          <Hero {...hero} />
+          <OrderbookProduct {...orderbook} />
+          <Partners {...partners} />
+          <OthersProducts otherProducts={otherProducts} />
+          <Features {...features} />
+          <Investors {...investors} />
+          <Team {...team} />
+          <Roadmap {...roadmap} />
+          <TokenEconomics {...tokenEconomics} />
+          <Media {...media} />
+          <Newsletter {...newsletter} />
+        </main>
+        <Footer {...footer} />
+      </S.Wrapper>
+    </>
   );
 }

@@ -5638,6 +5638,11 @@ next@^12.1.0:
     "@next/swc-win32-ia32-msvc" "12.1.0"
     "@next/swc-win32-x64-msvc" "12.1.0"
 
+nextjs-google-analytics@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/nextjs-google-analytics/-/nextjs-google-analytics-1.0.9.tgz#29e0283c9d243644810a11cdf17d781c07838006"
+  integrity sha512-P7WXf4pgMCsac1jfMMN6EN+n0Q0edQ5andfzNCjjApnNH9D+CPLuW8Fo6R2DIVolqjaH5AdhCNScDFMQs4UjOA==
+
 no-case@^2.2.0, no-case@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"

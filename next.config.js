@@ -18,8 +18,8 @@ module.exports = {
   env: {
     GOOGLE_ANALYTICS:
       process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-DYTPWG3R5M',
-    GOOGLE_ANALYTICS_CTA:
-      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_CTA || 'G-5FD4544T94',
+    NEXT_PUBLIC_GA_MEASUREMENT_ID:
+      process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5FD4544T94',
     RANGER_HOST_URL:
       process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'wss://mainnet.polkadex.trade',
   },

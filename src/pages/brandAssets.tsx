@@ -6,6 +6,7 @@ import {
   Return,
 } from 'components';
 import Head from 'next/head';
+import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
@@ -14,32 +15,34 @@ export default function BrandAssets() {
   const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
 
   return (
-    <S.Wrapper>
-      <Head>
-        <title>Polkadex - Brand Assets</title>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-        />
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+      />
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config','${process.env.GOOGLE_ANALYTICS}');
           `,
-          }}
-        />
-      </Head>
-      <Return />
-      <main>
-        <BrandAssetsHero />
-        <BrandAssetsCards />
-        <Newsletter {...newsletter} />
-      </main>
-      <Footer {...footer} />;
-    </S.Wrapper>
+        }}
+      />
+      <S.Wrapper>
+        <Head>
+          <title>Polkadex - Brand Assets</title>
+        </Head>
+        <Return />
+        <main>
+          <BrandAssetsHero />
+          <BrandAssetsCards />
+          <Newsletter {...newsletter} />
+        </main>
+        <Footer {...footer} />;
+      </S.Wrapper>
+    </>
   );
 }
