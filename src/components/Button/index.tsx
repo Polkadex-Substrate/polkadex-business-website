@@ -10,6 +10,7 @@ export const PrimaryButton = ({
   href = '#',
   disabled = false,
   background = 'primary',
+  color = 'text',
   onClick = undefined,
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
@@ -21,6 +22,7 @@ export const PrimaryButton = ({
       background={background}
       disabled={disabled}
       onClick={onClick}
+      color={color}
     >
       {!!icon && (
         <div>

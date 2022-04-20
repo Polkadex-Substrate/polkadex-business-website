@@ -7,9 +7,9 @@ import {
   Hero,
   Participate,
   Rewards,
-  Stats,
 } from 'components/CrowdloansContribute';
 import { Popup } from 'components/Popup';
+import { Stats, StatsCard } from 'components/Stats';
 import Head from 'next/head';
 import Script from 'next/script';
 import { event, GoogleAnalytics } from 'nextjs-google-analytics';
@@ -118,7 +118,14 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
 
         <main>
           <Hero />
-          <Stats />
+          <Stats>
+            <>
+              <StatsCard title="LP15-LP8" description="Auction Starts" />
+              <StatsCard title="1M DOT" description="Auction Cap" />
+              <StatsCard title="96 weeks" description="Lease Duration" />
+              <StatsCard title="2M PDEX" description="Rewards" />
+            </>
+          </Stats>
           <Rewards />
           <Participate
             onAccept={

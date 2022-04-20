@@ -1,6 +1,7 @@
 export type IIcons =
   | 'Close'
   | 'DoubleArrowRight'
+  | 'Checked'
   | 'Ethereum'
   | 'Facebook'
   | 'Fiat'
@@ -53,6 +54,8 @@ export type IColors =
   | 'gradientBackground'
   | 'text'
   | 'gradient'
+  | 'white'
+  | 'black'
   | 'green'
   | 'orange'
   | 'transparent'
