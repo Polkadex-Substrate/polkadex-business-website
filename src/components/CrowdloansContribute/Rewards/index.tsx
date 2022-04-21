@@ -31,9 +31,20 @@ export const Rewards = () => {
           <div>
             <span>Exclusive NFT</span>
             <p>
-              <strong>The top 1000</strong> Crowdloan contributors
-              <strong> will receive a limited-edition NFT.</strong>
+              <strong>
+                The Polkadex hero NFT is awarded to the top 1k contributors to
+                the Polkadex Crowdloan.
+              </strong>
+              The ultimate emblem for proud early supporters of Polkadex, the
+              NFT will grant holders a 20% to 50% discount* on Polkadex
+              Orderbook trading fees.
             </p>
+            <small>
+              *The discount structure may be subject to change at the time of
+              the launch. While the NFTs will be distributed soon after Polkadex
+              secures a parachain spot, their utility is subject to changes and
+              will not be applied until 2023.
+            </small>
           </div>
         </S.Card>
       </S.Container>

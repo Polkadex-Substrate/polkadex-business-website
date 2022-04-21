@@ -17,15 +17,10 @@ export const Container = styled.div`
   padding: 5rem 0;
   grid-template-areas: 'title' 'reward' 'nft';
 
-  @media screen and (min-width: 930px) {
-    grid-template-areas: 'title reward nft';
-    grid-template-columns: 1fr 1.5fr 1.5fr;
-  }
-
-  @media screen and (min-width: 550px) and (max-width: 930px) {
+  @media screen and (min-width: 790px) {
     grid-template-areas:
-      'title title'
-      'reward nft';
+      'title title title'
+      'reward nft nft';
   }
 
   @media screen and (max-width: 950px) {
@@ -78,9 +73,15 @@ export const Card = styled.div`
       background: ${theme.colors.white};
       img {
         padding: 1rem;
+        max-width: 25rem;
       }
       div {
         padding: 0 2rem 2rem 2rem;
+      }
+      small {
+        display: block;
+        margin-top: 1rem;
+        line-height: 1.5;
       }
       @media screen and (min-width: 930px) {
         div {
