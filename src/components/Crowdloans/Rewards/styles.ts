@@ -77,7 +77,7 @@ export const AllocationContent = styled.div`
   grid-gap: 1rem;
 
   @media screen and (min-width: 970px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 25rem 1fr;
   }
 `;
 export const AllocationCardHeader = styled.div`
@@ -95,18 +95,28 @@ export const AllocationCard = styled.div`
     flex-direction: column;
     padding: 2rem;
     justify-content: space-between;
-    :nth-child(1) {
-      color: ${theme.colors.inverse};
+    img {
+      margin-bottom: 1rem;
+    }
+    small {
+      display: block;
+      margin-top: 1rem;
+      line-height: 1.5;
     }
     :nth-child(1) {
-      background: ${theme.colors.primary};
       color: ${theme.colors.white};
+      background: ${theme.colors.primary};
     }
+
     :nth-child(2) {
       border: 1px solid ${theme.colors.secondaryBackground};
-    }
-    :nth-child(3) {
-      background: ${theme.colors.text};
+      ${AllocationCardContent} {
+        @media screen and (min-width: 575px) {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+        }
+      }
     }
   `}
 `;
@@ -125,6 +135,7 @@ export const AllocationCardContent = styled.div`
     max-width: 20rem;
   }
 `;
+
 export const AllocationCardBoxWrapper = styled.div`
   flex: 1;
   display: grid;
