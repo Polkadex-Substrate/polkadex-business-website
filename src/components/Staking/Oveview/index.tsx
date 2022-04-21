@@ -2,7 +2,7 @@ import * as S from './styles';
 
 export const Overview = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="overview">
       <S.Card>
         <h2>
           <strong>Secure the network,</strong> earn PDEX returns.

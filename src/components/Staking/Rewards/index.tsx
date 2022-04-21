@@ -4,7 +4,7 @@ import * as S from './styles';
 
 export const Rewards = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="rewards">
       <S.Title>
         <h2>Ready to get started?</h2>
         <p>Join our community to help secure networks and earn rewards. </p>

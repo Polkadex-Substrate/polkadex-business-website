@@ -25,9 +25,7 @@ export const Header = () => {
                 <a href="#rewards">Rewards</a>
               </li>
               <li>
-                <a href="/crowdloans" target="_blank">
-                  How to Stake
-                </a>
+                <a href="#howtostake">How to Stake</a>
               </li>
             </S.Menu>
           </S.Box>

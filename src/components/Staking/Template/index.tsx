@@ -1,6 +1,12 @@
 import { Footer } from 'components';
 import Newsletter from 'components/Newsletter';
-import { Header, Hero, Overview, Rewards } from 'components/Staking';
+import {
+  Header,
+  Hero,
+  HowToStake,
+  Overview,
+  Rewards,
+} from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
 import Head from 'next/head';
 import { HomeTranslations, IHomeTranslations } from 'translations';
@@ -27,6 +33,7 @@ export const Template = () => {
         </Stats>
         <Overview />
         <Rewards />
+        <HowToStake />
         <Newsletter {...newsletter} />
       </main>
       <Footer {...footer} />

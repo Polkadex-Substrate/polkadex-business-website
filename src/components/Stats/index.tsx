@@ -2,7 +2,7 @@ import * as S from './styles';
 
 export const Stats = ({ children }) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="stats">
       <S.Container>{children}</S.Container>
     </S.Wrapper>
   );
