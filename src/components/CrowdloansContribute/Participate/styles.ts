@@ -58,12 +58,20 @@ export const Title = styled.div`
 `;
 export const Content = styled.div`
   h4 {
+    font-size: 1.6rem;
     padding-top: 2rem;
     padding-left: 2rem;
   }
 `;
 
-export const Row = styled.div``;
+export const Row = styled.div`
+  small {
+    padding-left: 2rem;
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+  }
+`;
 
 export const Column = styled.div``;
 

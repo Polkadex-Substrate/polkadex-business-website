@@ -28,9 +28,19 @@ export const Title = styled.div`
     font-size: 3.5rem;
   }
 `;
-export const Content = styled.div``;
+export const Content = styled.div`
+  h4 {
+    font-size: 1.6rem;
+  }
+`;
 
-export const Row = styled.div``;
+export const Row = styled.div`
+  small {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+  }
+`;
 
 export const Column = styled.div``;
 

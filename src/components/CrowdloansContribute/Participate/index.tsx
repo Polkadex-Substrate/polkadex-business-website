@@ -111,6 +111,11 @@ export const Participate = ({ onAccept, hasAccepted }) => {
               </S.Rewards>
             </Card>
           </S.ColumnBox>
+          <small>
+            <strong>Disclaimer:</strong>Polkadex Crowdloan Launch Partners are
+            responsible for distributing partners rewards. Polkadex is not
+            liable for additional partner rewards.
+          </small>
         </S.Row>
         <S.RowFlat>
           <h4>Wallets</h4>
