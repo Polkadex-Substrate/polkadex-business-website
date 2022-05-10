@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  margin: 1rem 0 6rem 0;
+  margin: 6rem 0;
 `;
 
 export const Title = styled.div`

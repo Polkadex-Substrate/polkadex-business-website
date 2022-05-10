@@ -1,5 +1,5 @@
-import { CountDown, Icon, PrimaryButton } from 'components';
-import { CrowdloanHero, CrowdloanHeroBg } from 'components/Icons';
+import { Icon, PrimaryButton } from 'components';
+import { CrowdloanHero } from 'components/Icons';
 
 import * as S from './styles';
 
@@ -8,20 +8,17 @@ export const Hero = () => {
     <S.Wrapper id="hero">
       <S.Container>
         <div>
-          <h1>Contribute to the Polkadex Crowdloan</h1>
+          <h1>Polkadex has won a Polkadot Parachain slot! </h1>
           <p>
-            Support Polkadex, invest in the next generation of Web3 Exchanges,
-            and be a part of the future of Defi.
+            Polkadex secured a parachain slot on Polkadot with 973k DOT ($13.8M)
+            contributed to the Polkadex Crowdloan! Thank you to all who have
+            contributed!
           </p>
           <S.Flex>
-            <PrimaryButton content="Contribute" href="#participate" />
             <PrimaryButton
-              icon="Calculator"
-              content="Rewards Calculator"
-              href="#calculator"
-              background="none"
+              content="Learn more"
+              href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
             />
-            {/* <CountDown /> */}
           </S.Flex>
           <S.ScrollDown>
             <span>About Crowdloans</span>

@@ -32,9 +32,9 @@ export const Timeline = () => {
               description="Each auction takes place over the course of seven days and assigns a total slot duration of 96 weeks."
             />
             <TimelineCard
-              date="June 23, 2022"
+              date="May 6"
               title="Crowdloan ends"
-              description="We're aiming to win an auction slot in the third batch of the auctions. Your contribution will be returned if Polkadex doesn't win a slot."
+              description="Polkadex wins Polkadot parachain slot  with 973k DOT ($13.8M) contributed to the Polkadex Crowdloan!"
             />
           </S.TimelineContent>
         </S.Timeline>

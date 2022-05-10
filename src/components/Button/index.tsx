@@ -11,6 +11,7 @@ export const PrimaryButton = ({
   disabled = false,
   background = 'primary',
   onClick = undefined,
+  target = '_self',
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
   return (
@@ -21,6 +22,7 @@ export const PrimaryButton = ({
       background={background}
       disabled={disabled}
       onClick={onClick}
+      target={target}
     >
       {!!icon && (
         <div>

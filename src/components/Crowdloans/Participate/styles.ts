@@ -17,15 +17,11 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.div`
-  display: grid;
-  grid-gap: 1rem;
   margin-bottom: 5rem;
-  @media screen and (min-width: 720px) {
-    grid-template-columns: 1fr 1fr;
-  }
 
   h2 {
     font-size: 3.5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 export const Content = styled.div`
@@ -198,7 +194,6 @@ export const RowFlatWrapper = styled.div`
 
 export const HorizontalCard = styled.a<{
   isActive?: boolean;
-  hasAccepted?: boolean;
 }>`
   ${({ theme, isActive }) => css`
     display: flex;
