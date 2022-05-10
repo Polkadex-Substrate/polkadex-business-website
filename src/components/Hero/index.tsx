@@ -41,17 +41,16 @@ const Hero = ({
         <h1>{title}</h1>
         <h2>{description}.</h2>
         <S.CtaContainer>
-          <PrimaryButton content={ctaButton} href={ctaLink} />
           <S.SecondaryButton href={secondaryCtaLink}>
             {secondaryCtaButton}
           </S.SecondaryButton>
         </S.CtaContainer>
         <S.RowBanner>
           <Banner
-            title="Polkadex Crowdloans is live!"
-            description="Support Polkadex, invest in the next generation of Web3 Exchanges, and be a part of the future of the Defi."
-            buttonTitle="Polkadex Crowdloans"
-            href="/crowdloans"
+            title="Polkadex has won a Polkadot Parachain slot!"
+            description="Polkadex secured a parachain slot on Polkadot with 973k DOT ($13.8M) contributed to the Polkadex Crowdloan!"
+            buttonTitle="Learn more"
+            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
           />
         </S.RowBanner>
         <S.Row>

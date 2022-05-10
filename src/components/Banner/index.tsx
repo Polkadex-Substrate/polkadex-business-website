@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import * as S from './styles';
 import { Props } from './types';
 
@@ -9,7 +7,9 @@ export const Banner = ({ title, description, buttonTitle, href }: Props) => (
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link href={href}>{buttonTitle}</Link>
+        <a href={href} target="_blank" rel="noreferrer">
+          {buttonTitle}
+        </a>
       </div>
       <div />
     </S.Container>
