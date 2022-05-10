@@ -21,7 +21,6 @@ export const About = () => {
             <strong> the first Cross-Chain orderbook based DEX</strong>.
           </p>
           <S.Flex>
-            <PrimaryButton content="Contribute Now" href="#contribute" />
             <S.Button href="https://polkadex.trade" target="_blank">
               Learn more <Icons.ArrowRight />
             </S.Button>

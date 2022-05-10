@@ -1,5 +1,3 @@
-import { PrimaryButton } from 'components/Button';
-
 import * as S from './styles';
 
 export const Rewards = () => {
@@ -7,12 +5,7 @@ export const Rewards = () => {
     <S.Wrapper id="rewards">
       <S.Container>
         <S.Title>
-          <h2>Earn Rewards</h2>
-          <p>
-            Loan your DOTs for the duration of our parachain and
-            <strong> earn generous rewards!</strong>
-          </p>
-          <PrimaryButton content="Contribute Now!" href="#contribute" />
+          <h2>Crowdloan reward distribution</h2>
         </S.Title>
         <S.Card>
           <div>

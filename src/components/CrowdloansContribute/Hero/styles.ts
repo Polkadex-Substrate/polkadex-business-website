@@ -15,7 +15,7 @@ export const Container = styled.div`
     padding: 8rem 2rem;
 
     @media screen and (min-width: 660px) {
-      padding: 13rem 2rem 12rem 2rem;
+      padding: 18rem 2rem 18rem 2rem;
     }
     background-image: url('/img/hero.svg');
     background-repeat: no-repeat;
@@ -38,10 +38,7 @@ export const Aside = styled.div`
       @media screen and (min-width: 660px) {
         font-size: 5rem;
       }
-      small {
-        display: block;
-        font-size: 2.8rem;
-      }
+
       strong {
         color: ${theme.colors.primary};
       }

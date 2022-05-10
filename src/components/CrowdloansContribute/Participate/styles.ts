@@ -35,7 +35,6 @@ export const Title = styled.div`
       margin-top: 2.5rem;
       p {
         font-size: 1.6rem;
-        font-weight: bold;
       }
       svg {
         margin-top: 2rem;

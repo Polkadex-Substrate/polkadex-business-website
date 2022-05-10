@@ -7,20 +7,18 @@ export const Hero = () => {
     <S.Wrapper>
       <S.Container>
         <S.Aside>
-          <h1>
-            Contribute to the Polkadex Crowdloan
-            <small>
-              & Grab your share of<strong> 2M PDEX rewards </strong> pool
-            </small>
-          </h1>
+          <h1>The Polkadex Crowdloan has ended</h1>
           <p>
-            Support Polkadex, invest in the next generation of Web3 Exchanges,
-            and be a part of the future of Defi and earn your PDEX rewards!
+            Polkadex has won a Polkadot Parachain slot with: Polkadex secured a
+            parachain slot on Polkadot with 973k DOT ($13.8M) contributed to the
+            Polkadex Crowdloan!
           </p>
-          <S.Flex>
-            <PrimaryButton content="Contribute Now" href="#contribute" />
-            <S.Button href="#rewards">Rewards Calculator</S.Button>
-          </S.Flex>
+          <PrimaryButton
+            content="Learn more"
+            target="_blank"
+            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
+          />
+          <S.Flex />
         </S.Aside>
       </S.Container>
     </S.Wrapper>

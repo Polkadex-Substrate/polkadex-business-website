@@ -1,8 +1,6 @@
 import { Banner } from 'components/Banner';
-import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
 import { ThemingContext } from 'context';
-import Link from 'next/link';
 import React, { useContext, useEffect, useRef } from 'react';
 import { IHomeTranslations } from 'translations';
 
@@ -13,8 +11,7 @@ type Props = Pick<IHomeTranslations, 'hero'>;
 const Hero = ({
   title,
   description,
-  ctaButton,
-  ctaLink,
+
   secondaryCtaButton,
   secondaryCtaLink,
   chainsTitle,

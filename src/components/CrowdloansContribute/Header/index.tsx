@@ -32,7 +32,6 @@ export const Header = () => {
             </S.Menu>
           </S.Box>
         </S.Aside>
-        <PrimaryButton content="Contribute Now" href="#contribute" />
       </S.Container>
     </S.Wrapper>
   );

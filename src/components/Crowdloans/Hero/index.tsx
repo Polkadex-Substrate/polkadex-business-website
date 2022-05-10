@@ -17,6 +17,7 @@ export const Hero = () => {
           <S.Flex>
             <PrimaryButton
               content="Learn more"
+              target="_blank"
               href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
             />
           </S.Flex>
