@@ -9,7 +9,7 @@ export const Calculator = () => {
 
   // Calculate Total Reward Amount
   const rewardAmount = useMemo(() => {
-    const result = (Number(state) * 20000000) / 10000000;
+    const result = (Number(state) * 20000000) / 9733230.6135;
     return Number.isInteger(result) ? result?.toFixed(2) : result?.toFixed(6);
   }, [state]);
 
@@ -60,7 +60,7 @@ export const Calculator = () => {
           </S.Calculator>
           <S.Message>
             The reward amount shown in this calculator is based on the total
-            number of contributed DOT reaching the 1 million DOT cap.
+            number of contributed DOT reaching the 973,323.6135 million DOT cap.
           </S.Message>
         </S.CalculatorWrapper>
 
