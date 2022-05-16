@@ -300,21 +300,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Senior Rust Engineer',
-        name: 'Gabriel Facco de Arruda',
-        image: 'gabrielPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/arrudagates',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/gabriel-facco-de-arruda-00880787/',
-          },
-        ],
-      },
-      {
         title: 'Social Media Manager',
         name: 'Pablo Solanas Martin',
         image: 'pabloPhotography',
@@ -348,21 +333,6 @@ const ENLanguage = {
           {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/pavankanteti/',
-          },
-        ],
-      },
-      {
-        title: 'Product Owner',
-        name: 'Fredrik Simonsson',
-        image: 'fredikPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/simonsso/',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/fredriksimonsson/',
           },
         ],
       },
