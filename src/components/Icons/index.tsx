@@ -43,6 +43,7 @@ export { default as Openware } from './Openware';
 export { default as ParaChain } from './ParaChain';
 export { default as Parathread } from './Parathread';
 export { default as Polkadex } from './Polkadex';
+export { default as PolkadexVision } from './PolkadexVision';
 export { default as Polkadot } from './Polkadot';
 export { default as PolkadotDefiAlliance } from './PolkadotDefiAlliance';
 export { default as Reddit } from './Reddit';

@@ -4,7 +4,7 @@ import { IIcons } from 'utils/types';
 export type Props = {
   content: string;
   icon?: IIcons;
-  background?: 'primary' | 'secondary' | 'none';
+  background?: string;
 };
 export type ButtonProps = {
   withOpacity?: boolean;
