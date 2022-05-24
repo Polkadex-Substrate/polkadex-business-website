@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import axios from 'axios';
 import * as Icons from 'components/Icons';
 import Link from 'next/link';
 
 import * as S from './styles';
 
-export const OpenJobs = () => {
+export const OpenJobs = ({ jobs, error }) => {
   return (
     <S.Wrapper id="openJobs">
       <S.Title>
@@ -12,66 +13,46 @@ export const OpenJobs = () => {
         <p>Browse and apply for open positions at Polkadex.</p>
       </S.Title>
       <S.Container>
-        <S.Jobs>
-          <h3>Engineer</h3>
-          <S.JobsContainer>
-            <Card
-              title="Rust Blockchain Developer"
-              category="Junior"
-              type="Hybrid"
-              place="India"
-            />
-            <Card
-              title="Full Stack Engineer "
-              category="Junior"
-              type="Senior"
-              place="India"
-            />
-            <Card
-              title="Solidity Developer"
-              category="Senior"
-              type="Hybrid"
-              place="India"
-            />
-          </S.JobsContainer>
-        </S.Jobs>
-        <S.Jobs>
-          <h3>Product Manager</h3>
-          <S.JobsContainer>
-            <Card
-              title="Product Lead "
-              category="Junior"
-              type="Hybrid"
-              place="India"
-            />
-            <Card
-              title="Product Manager"
-              category="Junior"
-              type="Senior"
-              place="India"
-            />
-          </S.JobsContainer>
-        </S.Jobs>
+        {error.length ? (
+          <p>{error}</p>
+        ) : (
+          <S.Jobs>
+            <S.JobsContainer>
+              {jobs.map((job) => (
+                <Card
+                  key={job.shortcode}
+                  id={job.shortcode}
+                  title={job.title}
+                  category={job.departament}
+                  // type="Hybrid"
+                  place={`${job.location.country} - ${job.location.region}`}
+                />
+              ))}
+            </S.JobsContainer>
+          </S.Jobs>
+        )}
       </S.Container>
     </S.Wrapper>
   );
 };
 
-const Card = ({ title = '', category = '', type, place }) => (
-  <Link href="/careers/test">
-    <S.Card>
-      <S.CardAside>
-        <p>{title}</p>
-        <S.CardInfo>
-          {!!category.length && <S.Category>{category}</S.Category>}
-          <span>{place}</span>
-          <span>{type}</span>
-        </S.CardInfo>
-      </S.CardAside>
-      <a>
-        More details
-        <Icons.ArrowRight />
-      </a>
-    </S.Card>
+const Card = ({ id, title = '', category = '', type = '', place }) => (
+  <Link href={`/careers/${id}`}>
+    <a>
+      <S.Card>
+        <S.CardAside>
+          <p>{title}</p>
+          <S.CardInfo>
+            {!!category.length && <S.Category>{category}</S.Category>}
+            <span>{place}</span>
+            {!!type.length && <span>{type}</span>}
+          </S.CardInfo>
+        </S.CardAside>
+        <S.Button>
+          More details
+          <Icons.ArrowRight />
+        </S.Button>
+      </S.Card>
+    </a>
   </Link>
 );

@@ -9,9 +9,7 @@ export const Wrapper = styled.div`
       display: block;
     }
   }
-  @media screen and (min-width: 950px) {
-    margin-top: 6rem;
-  }
+
   @media screen and (max-width: 1000px) {
     padding: 1rem;
   }

@@ -88,7 +88,10 @@ export const Overview = styled.div`
     background: ${theme.colors.quaternaryBackground};
     border-radius: 1rem;
     padding: 3rem;
-    button {
+    a {
+      text-align: center;
+      font-weight: 500;
+      display: block;
       background: ${theme.colors.primary};
       color: ${theme.colors.white};
       padding: 1.5rem;
@@ -103,9 +106,13 @@ export const Overview = styled.div`
         transform: scale(0.99);
       }
     }
+    p :not(:last-child) {
+      margin-bottom: 1rem;
+    }
   `}
 `;
 export const OverviewContainer = styled.div`
+  strong,
   h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;

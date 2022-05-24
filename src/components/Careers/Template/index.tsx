@@ -9,7 +9,7 @@ import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-export const Template = () => {
+export const Template = ({ jobs, error }) => {
   const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <>
@@ -37,7 +37,7 @@ export const Template = () => {
         <main>
           <Hero />
           <Vision />
-          <OpenJobs />
+          <OpenJobs jobs={jobs} error={error} />
           <Newsletter {...newsletter} />
         </main>
         <Footer {...footer} />;

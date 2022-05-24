@@ -45,7 +45,7 @@ export const JobsContainer = styled.div`
   margin-top: 1rem;
 `;
 
-export const Card = styled.a`
+export const Card = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -57,15 +57,7 @@ export const Card = styled.a`
     padding: 2.5rem;
     transition: background 0.3s ease-in-out;
     cursor: pointer;
-    a {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      svg {
-        max-width: 1rem;
-        margin-top: 0.1rem;
-      }
-    }
+
     :hover {
       background: ${theme.colors.primary};
       ${Category} {
@@ -77,6 +69,15 @@ export const Card = styled.a`
       margin-bottom: 1rem;
     }
   `}
+`;
+export const Button = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  svg {
+    max-width: 1rem;
+    margin-top: 0.1rem;
+  }
 `;
 
 export const CardAside = styled.div`

@@ -9,7 +9,7 @@ import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-export const Preview = () => {
+export const Preview = ({ data, error }) => {
   const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <>
@@ -31,11 +31,11 @@ export const Preview = () => {
       />
       <S.Wrapper>
         <Head>
-          <title>Polkadex Careers</title>
+          <title>Polkadex Careers - {data?.title}</title>
         </Head>
         <Header />
         <main>
-          <PreviewHero />
+          <PreviewHero data={data} error={error} />
           <Newsletter {...newsletter} />
         </main>
         <Footer {...footer} />
