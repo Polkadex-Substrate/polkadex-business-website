@@ -11,6 +11,10 @@ export const AsideRight = styled.div`
       color: black !important;
       border-radius: 0.8rem;
       padding: 1rem;
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.primary};
+      }
     }
     button {
       cursor: pointer;
@@ -66,9 +70,9 @@ export const IconWrapper = styled(motion.span)`
 
 export const Menu = styled(motion.div)`
   position: absolute;
-  min-width: 100vw;
+  width: 100%;
   top: 0;
-  margin-top: 4.5rem;
+  margin: 4.5rem auto 0 auto;
   padding: 1rem;
   @media screen and (min-width: 1200px) {
     padding: 1rem 0;

@@ -29,6 +29,13 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+   /* SuisseIntl - black */
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/SuisseIntl-black.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
   /* SuisseIntl - bold */
   @font-face {
     font-family: 'SuisseIntl';

@@ -1,26 +1,10 @@
-import { ContractAnnouncement, Features, Footer, Hero } from 'components';
-import { Announcement } from 'components/v1/Announcement';
 import { Header } from 'components/v2/Header';
+import { Hero } from 'components/v2/Hero';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect } from 'react';
 import * as S from 'styles/home';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Home() {
-  const { header, hero, footer }: IHomeTranslations = HomeTranslations['en-US'];
-  useEffect(() => {
-    const path = window.location.hash;
-    if (path && path.includes('#')) {
-      const id = path.replace('#', '');
-      const el = window.document.getElementById(id);
-      const r = el.getBoundingClientRect();
-      window.scrollTo({
-        top: r.top,
-        behavior: 'smooth',
-      });
-    }
-  });
   return (
     <>
       <Script
@@ -44,7 +28,7 @@ export default function Home() {
         </Head>
         <Header />
         <main>
-          {/* <Hero {...hero} /> */}
+          <Hero />
           {/* <OrderbookProduct {...orderbook} />
           <Partners {...partners} />
           <OthersProducts otherProducts={otherProducts} />

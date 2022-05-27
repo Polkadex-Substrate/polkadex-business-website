@@ -1,3 +1,5 @@
+export * from './Android';
+export * from './Apple';
 export { default as ArrowBottom } from './ArrowBottom';
 export { default as ArrowLeft } from './ArrowLeft';
 export { default as ArrowRight } from './ArrowRight';
