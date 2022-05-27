@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const AsideRight = styled.div`
@@ -12,6 +13,7 @@ export const AsideRight = styled.div`
       padding: 1rem;
     }
     button {
+      cursor: pointer;
       color: ${theme.colors.text};
       svg {
         width: 0.8rem;
@@ -23,22 +25,23 @@ export const AsideRight = styled.div`
 export const Wrapper = styled.header`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
+    position: relative;
+    margin: 0 auto;
   `}
-  position: relative;
-  margin: 0 auto;
 `;
 
 export const Container = styled.div`
-  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 1200px) {
-    padding: 1rem 1rem;
-  }
+
   ul li a,
   ${AsideRight} a {
     font-size: 1.3rem;
+  }
+  padding: 1rem;
+  @media screen and (min-width: 1200px) {
+    padding: 1rem 0;
   }
 `;
 
@@ -56,7 +59,22 @@ export const AsideLeft = styled.div`
   }
 `;
 
-export const Menu = styled.div``;
+export const IconWrapper = styled(motion.span)`
+  display: inline-block;
+  margin-left: 0.5rem;
+`;
+
+export const Menu = styled(motion.div)`
+  position: absolute;
+  min-width: 100vw;
+  top: 0;
+  margin-top: 4.5rem;
+  padding: 1rem;
+  @media screen and (min-width: 1200px) {
+    padding: 1rem 0;
+  }
+`;
+
 export const MenuWrapper = styled.div`
   padding: 2rem;
   border-radius: 1.5rem;
@@ -101,6 +119,8 @@ export const MenuContainer = styled.div`
     }
   `}
 `;
+export const MenuOverflow = styled.div``;
+
 export const MenuFlex = styled.div`
   display: flex;
   gap: 3rem;
