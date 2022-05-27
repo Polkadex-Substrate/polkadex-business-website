@@ -53,6 +53,7 @@ export { default as Scs } from './Scs';
 export { default as SecureAssets } from './SecureAssets';
 export { default as Selected } from './Selected';
 export { default as Send } from './Send';
+export * from './SingleArrowBottom';
 export { default as Speed } from './Speed';
 export { default as Sun } from './Sun';
 export { default as Telegram } from './Telegram';
