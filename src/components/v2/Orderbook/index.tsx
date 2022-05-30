@@ -6,7 +6,35 @@ import * as S from './styles';
 export const Orderbook = () => {
   return (
     <S.Wrapper>
-      <S.Slider />
+      <S.Slider>
+        <S.SliderImage>
+          <S.Controls>
+            <S.Button isActive type="button">
+              Web
+            </S.Button>
+            <S.Button isActive={false} type="button">
+              Mobile
+            </S.Button>
+          </S.Controls>
+          <img src="/img/orderbookWeb.png" alt="Orderbook" />
+        </S.SliderImage>
+        <S.Title>
+          <h2>Polkadex Orderbook</h2>
+          <p>
+            Non-custodial high frequency trading + advanced trading tools
+            <br />
+            <br />
+            Polkadex Orderbook is a cutting-edge Layer 2 trusted execution
+            environment built on the Polkadex Network.
+          </p>
+          <S.Actions>
+            <Link href="/">Start Trading</Link>
+            <a href="/">
+              Learn about Orderbook <Icons.ArrowRight />
+            </a>
+          </S.Actions>
+        </S.Title>
+      </S.Slider>
       <S.Features>
         <Card
           title="Faster"
@@ -24,7 +52,7 @@ export const Orderbook = () => {
         <Card
           title="Better Looking"
           description="All the functionality of a CEX combined with the sleek, minimalist user interface design of a DEX."
-          image="betterLoking"
+          image="betterLooking"
           alt="Mobile and desktop devices"
         />
         <Card
@@ -37,26 +65,23 @@ Leave your assets on your exchange without worrying about hacks and save on tran
         <Card
           title="Delegate"
           description="Whether it’s an algorithm or a fund manager, delegate your asset trading to a third party while keeping control of your funds and sit back and watch your profits roll in."
-          image="shield"
+          image="delegate"
           alt="Shield"
         />
         <Card
           title="Register multiple hot wallets"
           description="Connect hot wallets based on browser extensions, mobile phones or other devices to trade whenever, wherever."
-          image="wallet"
+          image="wallets"
           alt="Wallet"
         />
         <Card
           title="Bots"
           description="Add on-chain trading bots or integrate your favorite trading bot provider to automate trading!"
-          image="bot"
+          image="bots"
           alt="Robot"
         />
         <S.FlexCard>
-          <img
-            src="/img/orderbookFeatures/crosschain.png"
-            alt="Isometric polkadex connection"
-          />
+          <img src="/img/crosschain.png" alt="Isometric polkadex connection" />
           <S.FlexTitle>
             <span>Cross-chain for real</span>
             <p>
@@ -78,7 +103,7 @@ Leave your assets on your exchange without worrying about hacks and save on tran
 
 const Card = ({ image, alt, title, description }) => (
   <S.Card>
-    <img src={`/img/orderbookFeatures/${image}.png`} alt={alt} />
+    <img src={`/img/${image}.png`} alt={alt} />
     <span>{title}</span>
     <p>{description}</p>
   </S.Card>
