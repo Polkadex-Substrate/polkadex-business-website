@@ -59,7 +59,9 @@ export const FlexTitle = styled.div``;
 export const SliderImage = styled.div`
   position: relative;
   img {
+    object-fit: contain;
     width: 100%;
+    max-height: 60rem;
   }
 `;
 export const Controls = styled.div`
@@ -70,7 +72,7 @@ export const Controls = styled.div`
     transform: translateX(-50%);
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.3rem;
     background: ${theme.colors.white};
     border-radius: 10rem;
     padding: 0.5rem;
@@ -85,6 +87,13 @@ export const Button = styled.button<{ isActive?: boolean }>`
     padding: 1rem 2rem;
     font-weight: bold;
     font-size: 1.4rem;
+    transition: background 0.2s ease-in-out;
+    cursor: pointer;
+    :hover {
+      background: ${isActive
+        ? theme.colors.primary
+        : theme.colors.secondaryBackground};
+    }
   `}
 `;
 
@@ -105,11 +114,20 @@ export const Actions = styled.div`
     gap: 1rem;
     margin-top: 2rem;
     a {
+      transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+      border-radius: 0.8rem;
+      padding: 1rem 2rem;
       :first-child {
         background: ${theme.colors.white};
         color: ${theme.colors.black};
-        border-radius: 0.8rem;
-        padding: 1rem 2rem;
+
+        :hover {
+          background: ${theme.colors.primary};
+          color: ${theme.colors.white};
+        }
+      }
+      :last-child :hover {
+        background: ${theme.colors.secondaryBackgroundOpacity};
       }
       svg {
         width: 1rem;

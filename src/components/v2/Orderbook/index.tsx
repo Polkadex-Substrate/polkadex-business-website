@@ -1,32 +1,57 @@
 import * as Icons from 'components/Icons';
 import Link from 'next/link';
+import { useState } from 'react';
 
 import * as S from './styles';
 
+const sliders = [
+  {
+    isMobile: false,
+    image: 'orderbookWeb',
+    title: 'Polkadex Orderbook',
+    description:
+      'Non-custodial high frequency trading + advanced trading tools Polkadex Orderbook is a cutting-edge Layer 2 trusted execution environment built on the Polkadex Network.',
+  },
+  {
+    isMobile: true,
+    image: 'orderbookMobile',
+    title: 'Polkadex Mobile App',
+    description:
+      'Trade on the go. Place, modify, and cancel trades from your mobile app whe rever you may be while your funds remain in your air-gapped cold wallet.',
+  },
+];
 export const Orderbook = () => {
+  const [state, setState] = useState({ ...sliders[0] });
+
   return (
     <S.Wrapper>
       <S.Slider>
         <S.SliderImage>
           <S.Controls>
-            <S.Button isActive type="button">
+            <S.Button
+              onClick={
+                state.isMobile ? () => setState({ ...sliders[0] }) : undefined
+              }
+              isActive={!state.isMobile}
+              type="button"
+            >
               Web
             </S.Button>
-            <S.Button isActive={false} type="button">
+            <S.Button
+              onClick={
+                !state.isMobile ? () => setState({ ...sliders[1] }) : undefined
+              }
+              isActive={state.isMobile}
+              type="button"
+            >
               Mobile
             </S.Button>
           </S.Controls>
-          <img src="/img/orderbookWeb.png" alt="Orderbook" />
+          <img src={`/img/${state.image}.png`} alt="Orderbook" />
         </S.SliderImage>
         <S.Title>
-          <h2>Polkadex Orderbook</h2>
-          <p>
-            Non-custodial high frequency trading + advanced trading tools
-            <br />
-            <br />
-            Polkadex Orderbook is a cutting-edge Layer 2 trusted execution
-            environment built on the Polkadex Network.
-          </p>
+          <h2>{state.title}</h2>
+          <p>{state.description}</p>
           <S.Actions>
             <Link href="/">Start Trading</Link>
             <a href="/">
