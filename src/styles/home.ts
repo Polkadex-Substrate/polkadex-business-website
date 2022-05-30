@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  ${({ theme }) => css`
+    min-height: 100vh;
+    background: ${theme.colors.white};
+    position: relative;
+  `}
+`;
+export const Container = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.primaryBackground};
+    border-radius: 0 0 4rem 4rem;
+  `}
 `;
 export const Content = styled.div`
   padding: 5rem 2rem;

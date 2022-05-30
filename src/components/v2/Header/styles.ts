@@ -26,11 +26,21 @@ export const AsideRight = styled.div`
   `}
 `;
 
-export const Wrapper = styled.header`
+export const Main = styled.header`
+  ${({ theme }) => css`
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: ${theme.colors.primaryBackground};
+  `}
+`;
+
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    position: relative;
     margin: 0 auto;
+
+    position: relative;
   `}
 `;
 

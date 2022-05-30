@@ -118,7 +118,26 @@ Leave your assets on your exchange without worrying about hacks and save on tran
               token bridge, will connect to Ethereumand more blockchains and
               ecosystems down the line.
             </p>
-            <div />
+            <S.PairsContainer>
+              <S.Pair>
+                <div>
+                  <Icons.Ethereum />
+                </div>
+                <small>ETH/DOT</small>
+              </S.Pair>
+              <S.Pair>
+                <div>
+                  <Icons.Polkadot />
+                </div>
+                <small>aUSD/USDT</small>
+              </S.Pair>
+              <S.Pair>
+                <div>
+                  <Icons.Polkadex />
+                </div>
+                <small>PDEX/USDC</small>
+              </S.Pair>
+            </S.PairsContainer>
           </S.FlexTitle>
         </S.FlexCard>
       </S.Features>

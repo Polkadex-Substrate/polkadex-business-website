@@ -44,6 +44,7 @@ export const Card = styled.div`
     object-fit: contain;
   }
 `;
+
 export const FlexCard = styled.div`
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -56,6 +57,7 @@ export const FlexCard = styled.div`
   }
 `;
 export const FlexTitle = styled.div``;
+
 export const SliderImage = styled.div`
   position: relative;
   img {
@@ -64,6 +66,7 @@ export const SliderImage = styled.div`
     max-height: 60rem;
   }
 `;
+
 export const Controls = styled.div`
   ${({ theme }) => css`
     position: absolute;
@@ -107,6 +110,7 @@ export const Title = styled.div`
     line-height: 1.5;
   }
 `;
+
 export const Actions = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -132,6 +136,36 @@ export const Actions = styled.div`
       svg {
         width: 1rem;
         height: 1rem;
+      }
+    }
+  `}
+`;
+
+export const PairsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+`;
+export const Pair = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    small {
+      font-size: 1.3rem;
+    }
+    div {
+      background: ${theme.colors.secondaryBackground};
+      border-radius: 0.6rem;
+      padding: 0.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 100%;
       }
     }
   `}

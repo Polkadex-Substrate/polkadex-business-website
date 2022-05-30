@@ -4,6 +4,7 @@ import {
   Hero,
   Newsletter,
   Orderbook,
+  Partners,
   Wallets,
 } from 'components/v2';
 import Head from 'next/head';
@@ -34,9 +35,13 @@ export default function Home() {
         </Head>
         <Header />
         <main>
-          <Hero />
-          <Wallets />
-          <Orderbook />
+          <S.Container>
+            <Hero />
+            <Wallets />
+            <Orderbook />
+          </S.Container>
+
+          <Partners />
           <Newsletter />
         </main>
         <Footer />
