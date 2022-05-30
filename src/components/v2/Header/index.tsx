@@ -58,28 +58,6 @@ export const Header = () => {
           >
             <S.MenuWrapper>
               <S.MenuContainer>
-                <small>Products</small>
-                <ul>
-                  <li>
-                    <a href="/">Orderbook</a>
-                  </li>
-                  <li>
-                    <a href="/">PolkaIDO</a>
-                    <span>New</span>
-                  </li>
-                  <li>
-                    <a href="/">THEA Bridge</a>
-                    <span>New</span>
-                  </li>
-                  <li>
-                    <a href="/">Staking</a>
-                  </li>
-                  <li>
-                    <a href="/">Liquidity Mining</a>
-                  </li>
-                </ul>
-              </S.MenuContainer>
-              <S.MenuContainer>
                 <small>Resources</small>
                 <S.MenuFlex>
                   <ul>
@@ -112,6 +90,29 @@ export const Header = () => {
                   </ul>
                 </S.MenuFlex>
               </S.MenuContainer>
+              <S.MenuContainer>
+                <small>Products</small>
+                <ul>
+                  <li>
+                    <a href="/">Orderbook</a>
+                  </li>
+                  <li>
+                    <a href="/">PolkaIDO</a>
+                    <span>New</span>
+                  </li>
+                  <li>
+                    <a href="/">THEA Bridge</a>
+                    <span>New</span>
+                  </li>
+                  <li>
+                    <a href="/">Staking</a>
+                  </li>
+                  <li>
+                    <a href="/">Liquidity Mining</a>
+                  </li>
+                </ul>
+              </S.MenuContainer>
+
               <S.MenuContainer>
                 <small>About</small>
                 <ul>

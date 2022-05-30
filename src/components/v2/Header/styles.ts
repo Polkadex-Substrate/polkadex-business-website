@@ -57,6 +57,9 @@ export const AsideLeft = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
+    @media screen and (max-width: 835px) {
+      display: none;
+    }
     li {
       list-style: none;
     }
@@ -80,12 +83,15 @@ export const Menu = styled(motion.div)`
 `;
 
 export const MenuWrapper = styled.div`
-  padding: 2rem;
-  border-radius: 1.5rem;
-  background: white;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  ${({ theme }) => css`
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 3rem;
+    box-shadow: ${theme.shadow.secondary};
+  `}
 `;
 
 export const MenuContainer = styled.div`
@@ -128,4 +134,8 @@ export const MenuOverflow = styled.div``;
 export const MenuFlex = styled.div`
   display: flex;
   gap: 3rem;
+  flex-wrap: wrap;
+  @media screen and (max-width: 620px) {
+    justify-content: space-between;
+  }
 `;

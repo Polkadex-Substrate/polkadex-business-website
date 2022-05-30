@@ -1,3 +1,4 @@
+import { Footer } from 'components/v2/Footer';
 import { Header } from 'components/v2/Header';
 import { Hero } from 'components/v2/Hero';
 import Head from 'next/head';
@@ -40,7 +41,7 @@ export default function Home() {
           <Media {...media} />
           <Newsletter {...newsletter} /> */}
         </main>
-        {/* <Footer {...footer} /> */}
+        <Footer />
       </S.Wrapper>
     </>
   );
