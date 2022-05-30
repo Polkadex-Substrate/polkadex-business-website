@@ -537,7 +537,7 @@ const ENLanguage = {
                 timeline: 'Early April, 2022',
                 subInfo: 'With Token Minting & Token Transfers',
               },
-              { title: 'Mainnet', timeline: 'May, 2022' },
+              { title: 'Mainnet', timeline: 'June, 2022' },
             ],
           },
           {
@@ -548,7 +548,6 @@ const ENLanguage = {
                 timeline: '1st week of April, 2022',
               },
               { title: 'Public Testnet', timeline: 'April, 2022' },
-              { title: 'Mainnet', timeline: 'May, 2022' },
             ],
           },
           {
@@ -556,18 +555,22 @@ const ENLanguage = {
             subItems: [
               {
                 title: 'Beta Testing',
-                timeline: 'Mid April, 2022',
+                timeline: 'Early June, 2022',
                 subInfo: 'With blockchain Integration',
               },
-              { title: 'Public Testnet', timeline: 'May, 2022' },
-              { title: 'Mainnet' },
+              { title: 'Public Testnet', timeline: 'Mid June, 2022' },
+              { title: 'Mainnet', timeline: 'Late June - Early July' },
             ],
           },
           {
             title: 'Orderbook Mobile App',
             subItems: [
-              { title: 'Public Testnet' },
-              { title: 'Mainnet beta version' },
+              {
+                title: 'Beta Testing',
+                timeline: 'Early June, 2022',
+              },
+              { title: 'Public Testnet', timeline: 'Mid June, 2022' },
+              { title: 'Mainnet', timeline: 'Late June - Early July' },
             ],
           },
         ],
