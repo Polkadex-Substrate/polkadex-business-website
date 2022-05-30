@@ -1,3 +1,4 @@
+export { default as Airplane } from './Airplane';
 export * from './Android';
 export * from './Apple';
 export { default as ArrowBottom } from './ArrowBottom';

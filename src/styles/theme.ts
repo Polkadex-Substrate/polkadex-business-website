@@ -41,7 +41,10 @@ export const defaultTheme = {
     secondary: '#6745D2',
     secondaryBackground: 'rgba(139,161,190,0.2)',
     secondaryBackgroundOpacity: 'rgba(139,161,190,0.1)',
+    tertiaryBackgroundOpacity: 'rgba(139,161,190,0.03)',
     gradient: 'linear-gradient(47.94deg, #e6007a 0%, #6745d2 98.88%)',
+    secondaryGradient:
+      'linear-gradient(48.65deg, #2B0017 31.73%, #E6007A 143.69%)',
     transparent: 'transparent',
     none: 'none',
     green: '#0CA564',

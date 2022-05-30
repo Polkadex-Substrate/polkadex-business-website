@@ -1,19 +1,28 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 1rem;
+  ${({ theme }) => css`
+    padding: 1rem;
+    max-width: ${theme.grid.container};
+    margin: 0 auto;
+  `}
 `;
 export const Main = styled.div`
   padding: 4rem;
   background: white;
   color: black;
   display: grid;
-  grid-template-columns: 1fr 2fr;
   align-items: center;
   border-radius: 2rem;
+  @media screen and (min-width: 890px) {
+    grid-template-columns: 1fr 2fr;
+  }
 `;
 
 export const HeroImage = styled.div`
+  @media screen and (max-width: 890px) {
+    grid-row-start: 1;
+  }
   img {
     width: 100%;
   }

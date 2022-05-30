@@ -77,6 +77,9 @@ export const Menu = styled(motion.div)`
   top: 0;
   margin: 4.5rem auto 0 auto;
   padding: 1rem;
+  min-height: calc(100vh - 4.5rem);
+  display: flex;
+  flex-direction: column;
   @media screen and (min-width: 1200px) {
     padding: 1rem 0;
   }
@@ -84,7 +87,7 @@ export const Menu = styled(motion.div)`
 
 export const MenuWrapper = styled.div`
   ${({ theme }) => css`
-    padding: 2rem;
+    padding: 3rem 2rem;
     border-radius: 1.5rem;
     background: white;
     display: grid;
@@ -129,7 +132,10 @@ export const MenuContainer = styled.div`
     }
   `}
 `;
-export const MenuOverflow = styled.div``;
+export const MenuOverflow = styled.div`
+  opacity: 0;
+  flex: 1;
+`;
 
 export const MenuFlex = styled.div`
   display: flex;

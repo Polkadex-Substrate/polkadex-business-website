@@ -151,7 +151,7 @@ export const Header = () => {
                 </ul>
               </S.MenuContainer>
             </S.MenuWrapper>
-            <S.MenuOverflow />
+            <S.MenuOverflow onClick={handleClick} />
           </S.Menu>
         )}
       </AnimatePresence>

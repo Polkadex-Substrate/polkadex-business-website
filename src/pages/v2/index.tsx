@@ -1,6 +1,4 @@
-import { Footer } from 'components/v2/Footer';
-import { Header } from 'components/v2/Header';
-import { Hero } from 'components/v2/Hero';
+import { Footer, Header, Hero, Newsletter, Wallets } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import * as S from 'styles/home';
@@ -30,6 +28,7 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
+          <Wallets />
           {/* <OrderbookProduct {...orderbook} />
           <Partners {...partners} />
           <OthersProducts otherProducts={otherProducts} />
@@ -40,6 +39,7 @@ export default function Home() {
           <TokenEconomics {...tokenEconomics} />
           <Media {...media} />
           <Newsletter {...newsletter} /> */}
+          <Newsletter />
         </main>
         <Footer />
       </S.Wrapper>
