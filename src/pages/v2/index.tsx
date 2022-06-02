@@ -5,6 +5,8 @@ import {
   Newsletter,
   Orderbook,
   Partners,
+  Polkaido,
+  Staking,
   Wallets,
 } from 'components/v2';
 import Head from 'next/head';
@@ -29,9 +31,19 @@ export default function Home() {
           `,
         }}
       />
-      <S.Wrapper>
+      <S.Wrapper style={{ backgroundColor: 'white' }}>
         <Head>
           <title>Polkadex - The trading engine for Web3 and DeFi</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <Header />
         <main>
@@ -40,8 +52,9 @@ export default function Home() {
             <Wallets />
             <Orderbook />
           </S.Container>
-
           <Partners />
+          <Polkaido />
+          <Staking />
           <Newsletter />
         </main>
         <Footer />

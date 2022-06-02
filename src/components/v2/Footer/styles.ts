@@ -3,12 +3,15 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    margin: 4rem auto 2rem auto;
-    @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem 2rem 2rem;
-    }
+    margin: 4rem auto 0 auto;
+    color: ${theme.colors.black};
+    padding-bottom: 2rem;
+
     li {
       list-style: none;
+    }
+    svg {
+      fill: ${theme.colors.black};
     }
   `}
 `;

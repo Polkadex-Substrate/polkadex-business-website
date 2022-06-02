@@ -2,6 +2,8 @@ import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
  ${({ theme }) => css`
+   @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
    body {
      background: ${theme.colors.primaryBackground};
      color: ${theme.colors.text};
@@ -29,6 +31,16 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .animate {
+    animation: moveSlideshow 20s linear infinite;
+    @keyframes moveSlideshow {
+      100% {
+        transform: translate3d(calc(-100% + 100vw), 0, 0);
+      }
+    }
+  }
+  
    /* SuisseIntl - black */
   @font-face {
     font-family: 'SuisseIntl';

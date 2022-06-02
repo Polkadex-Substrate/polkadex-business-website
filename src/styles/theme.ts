@@ -133,7 +133,7 @@ const dark = {
     tertiaryBackground: '#2E303C',
     quaternaryBackground: 'rgba(139, 161, 190, 0.05)',
     secondaryBackgroundSolid: '#2F3340',
-    text: '#f5f5f5',
+    text: '#ffffff',
     overlay: 'rgba(0, 0, 0, 0.98)',
     linearBackground:
       'linear-gradient( 0.83deg, #1c1c26 18.58%,rgba(28, 28, 38, 0) 99.36%)',
