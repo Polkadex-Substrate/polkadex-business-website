@@ -5,9 +5,8 @@ export const Wrapper = styled.div`
     position: relative;
     margin: 6rem 0;
     color: ${theme.colors.black};
-    @media screen and (max-width: 1200px) {
-      padding: 4rem 1rem 2rem 1rem;
-    }
+    overflow: hidden;
+
     h2 {
       max-width: 110rem;
       margin: 0 auto;
@@ -17,20 +16,60 @@ export const Wrapper = styled.div`
   `}
 `;
 export const Content = styled.div`
-  position: absolute;
-  left: 0;
-  height: 100%;
+  position: relative;
+  margin-top: 2rem;
+  ::before,
+  ::after {
+    position: absolute;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    content: '';
+    height: 100%;
+    width: 25%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  ::before {
+    left: 0;
+    top: 0;
+  }
+  ::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
 `;
 
 export const Container = styled.ul`
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 5rem;
+  /* gap: 4rem; */
+  width: calc(150px * 33);
+  animation: scroll 35s linear infinite;
+  :hover {
+    animation-play-state: paused;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(calc(-150px * 11));
+    }
+  }
 `;
 
 export const Card = styled.li`
+  display: flex;
+  align-items: center;
   list-style: none;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
   img {
     object-fit: contain;
     max-height: 4rem;
