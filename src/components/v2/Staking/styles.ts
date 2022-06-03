@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    margin: 8rem 0;
+    margin: 4rem 0 8rem 0;
     background: ${theme.colors.tertiaryBackgroundOpacity};
   `}
 `;

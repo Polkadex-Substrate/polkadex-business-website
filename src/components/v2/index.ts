@@ -1,6 +1,7 @@
 export * from './Footer';
 export * from './Header';
 export * from './Hero';
+export * from './Media';
 export * from './Newsletter';
 export * from './Orderbook';
 export * from './Partners';

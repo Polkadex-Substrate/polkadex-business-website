@@ -11,7 +11,8 @@ export const Wrapper = styled.div`
       max-width: 110rem;
       margin: 0 auto;
       font-size: 1.5rem;
-      font-weight: 500;
+      font-weight: 400;
+      color: #8ba1be;
     }
   `}
 `;
@@ -66,6 +67,7 @@ export const Container = styled.ul`
 export const Card = styled.li`
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
   width: 150px;
   height: 60px;

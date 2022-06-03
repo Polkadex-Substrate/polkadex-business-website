@@ -3,6 +3,7 @@ export * from './Android';
 export * from './Apple';
 export { default as ArrowBottom } from './ArrowBottom';
 export * from './ArrowDetailOne';
+export * from './ArrowDetailTwo';
 export { default as ArrowLeft } from './ArrowLeft';
 export { default as ArrowRight } from './ArrowRight';
 export { default as Avatar } from './Avatar';

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
-    margin-top: 4rem;
+    margin: 15rem 0 0 0;
     color: ${theme.colors.black};
     overflow: hidden;
 
@@ -49,7 +49,7 @@ export const Container = styled.ul`
   align-items: center;
   flex-wrap: nowrap;
   /* gap: 4rem; */
-  width: calc(150px * 45);
+  width: calc(150px * 24);
   animation: scroll 35s linear infinite;
   :hover {
     animation-play-state: paused;
@@ -59,7 +59,7 @@ export const Container = styled.ul`
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(calc(-150px * 15));
+      transform: translateX(calc(-150px * 8));
     }
   }
 `;
@@ -67,12 +67,11 @@ export const Container = styled.ul`
 export const Card = styled.li`
   display: flex;
   align-items: center;
-  list-style: none;
   justify-content: center;
+  list-style: none;
   width: 150px;
   height: 60px;
   cursor: pointer;
-  margin-right: 2px;
   img {
     object-fit: contain;
     max-height: 4rem;

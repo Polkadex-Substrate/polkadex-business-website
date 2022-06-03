@@ -2,10 +2,79 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 4rem auto 0 auto;
-    @media screen and (max-width: 1200px) {
-      padding: 4rem 1rem 2rem 1rem;
+    position: relative;
+    margin-top: 12rem;
+    color: ${theme.colors.black};
+    overflow: hidden;
+
+    h2 {
+      max-width: 110rem;
+      margin: 0 auto;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #8ba1be;
     }
   `}
+`;
+export const Content = styled.div`
+  position: relative;
+  margin-top: 2rem;
+  ::before,
+  ::after {
+    position: absolute;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    content: '';
+    height: 100%;
+    width: 25%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  ::before {
+    left: 0;
+    top: 0;
+  }
+  ::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+`;
+
+export const Container = styled.ul`
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* gap: 4rem; */
+  width: calc(150px * 21);
+  animation: scroll 35s linear infinite;
+  :hover {
+    animation-play-state: paused;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(calc(-150px * 7));
+    }
+  }
+`;
+
+export const Card = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+  img {
+    object-fit: contain;
+    max-height: 4rem;
+    max-width: 12rem;
+  }
 `;

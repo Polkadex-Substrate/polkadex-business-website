@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Icons from 'components/Icons';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import * as S from './styles';
 
@@ -26,7 +26,6 @@ const initialState = [
 ];
 export const Polkaido = () => {
   const [state, setState] = useState({ ...initialState[1] });
-  console.log(state);
   return (
     <S.Wrapper>
       <S.Title>

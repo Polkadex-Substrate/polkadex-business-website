@@ -2,11 +2,15 @@ import {
   Footer,
   Header,
   Hero,
+  Media,
   Newsletter,
   Orderbook,
   Partners,
   Polkaido,
+  SecurityPartners,
   Staking,
+  StrategicInvestors,
+  Thea,
   Wallets,
 } from 'components/v2';
 import Head from 'next/head';
@@ -54,8 +58,12 @@ export default function Home() {
           </S.Container>
           <Partners />
           <Polkaido />
+          <Media />
+          <Thea />
+          <SecurityPartners />
           <Staking />
           <Newsletter />
+          <StrategicInvestors />
         </main>
         <Footer />
       </S.Wrapper>
