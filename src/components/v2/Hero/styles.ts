@@ -15,7 +15,7 @@ export const Main = styled.div`
   align-items: center;
   border-radius: 2rem;
   @media screen and (min-width: 890px) {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.3fr 2fr;
   }
 `;
 

@@ -1,4 +1,5 @@
 import * as Icons from 'components/Icons';
+import Typewriter from 'typewriter-effect';
 
 import * as S from './styles';
 
@@ -8,7 +9,17 @@ export const Hero = () => {
       <S.Main>
         <S.Container>
           <h1>
-            <strong>Better </strong> Decentralized Trading
+            <strong>
+              <Typewriter
+                options={{
+                  strings: ['Better', 'Easier', 'Cheaper', 'More Advanced'],
+                  autoStart: true,
+                  loop: true,
+                  cursor: '|',
+                }}
+              />
+            </strong>
+            Decentralized Trading
           </h1>
           <p>
             Polkadex is a fully decentralized peer-to-peer orderbook-based

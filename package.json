@@ -29,6 +29,7 @@
     "react-share": "^4.4.0",
     "styled-components": "^5.3.1",
     "swiper": "^7.4.1",
+    "typewriter-effect": "^2.18.2",
     "web3": "^1.7.0"
   },
   "devDependencies": {
