@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
-    margin-top: 12rem;
+    margin-top: 6rem;
     color: ${theme.colors.black};
     overflow: hidden;
 

@@ -16,7 +16,7 @@ export const Media = () => {
           />
           <Card src="/img/mediaList/marketwatch.png" alt="marketwatch logo" />
           <Card src="/img/mediaList/mashable.png" alt="mashable logo" />
-          <Card src="/img/mediaList/nasddaq.png" alt="nasddaq logo" />
+          <Card src="/img/mediaList/nasdaq.png" alt="nasdaq logo" />
           <Card src="/img/mediaList/techcrunch.png" alt="techcrunch logo" />
           <Card
             src="/img/mediaList/thecointelegraph.png"
@@ -31,7 +31,7 @@ export const Media = () => {
           />
           <Card src="/img/mediaList/marketwatch.png" alt="marketwatch logo" />
           <Card src="/img/mediaList/mashable.png" alt="mashable logo" />
-          <Card src="/img/mediaList/nasddaq.png" alt="nasddaq logo" />
+          <Card src="/img/mediaList/nasdaq.png" alt="nasdaq logo" />
           <Card src="/img/mediaList/techcrunch.png" alt="techcrunch logo" />
           <Card
             src="/img/mediaList/thecointelegraph.png"
@@ -46,7 +46,7 @@ export const Media = () => {
           />
           <Card src="/img/mediaList/marketwatch.png" alt="marketwatch logo" />
           <Card src="/img/mediaList/mashable.png" alt="mashable logo" />
-          <Card src="/img/mediaList/nasddaq.png" alt="nasddaq logo" />
+          <Card src="/img/mediaList/nasdaq.png" alt="nasdaq logo" />
           <Card src="/img/mediaList/techcrunch.png" alt="techcrunch logo" />
           <Card
             src="/img/mediaList/thecointelegraph.png"
