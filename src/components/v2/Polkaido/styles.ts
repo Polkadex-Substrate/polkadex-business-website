@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.section`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    margin: 10rem auto 6rem auto;
+    margin: 10rem auto;
     color: ${theme.colors.black};
     @media screen and (max-width: 1200px) {
       padding: 4rem 1rem 2rem 1rem;
@@ -49,6 +49,19 @@ export const Container = styled.div`
   grid-template-columns: 2fr 1fr;
   margin-top: 6rem;
   align-items: center;
+`;
+
+export const Video = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  video {
+    position: absolute;
+    top: 0;
+    left: -10rem;
+    width: 100%;
+    transform: scale(1.1);
+  }
 `;
 
 export const Content = styled.div`
