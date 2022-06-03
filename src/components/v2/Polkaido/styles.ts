@@ -34,33 +34,37 @@ export const TitleContainer = styled.div`
     gap: 1rem;
     flex: 1;
     svg {
-      max-width: 6rem;
+      width: 6rem;
     }
     span {
       font-family: Caveat;
       font-size: 2.5rem;
       white-space: nowrap;
     }
+    @media screen and (max-width: 760px) {
+      display: none;
+    }
   }
 `;
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
   margin-top: 6rem;
   align-items: center;
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 2fr 1fr;
+  }
 `;
 
 export const Video = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
+  display: flex;
+  align-items: center;
   video {
-    position: absolute;
-    top: 0;
-    left: -10rem;
     width: 100%;
-    transform: scale(1.1);
+    @media screen and (min-width: 900px) {
+      transform: scale(1.1);
+      margin-left: -10rem;
+    }
   }
 `;
 

@@ -10,9 +10,14 @@ export const Wrapper = styled.section`
 
 export const Slider = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
   align-items: center;
   gap: 1rem;
+  @media screen and (min-width: 1050px) {
+    grid-template-columns: 2fr 1fr;
+  }
+  @media screen and (min-width: 805px) and (max-width: 1050px) {
+    grid-template-columns: 1.3fr 1fr;
+  }
 `;
 
 export const Features = styled.div`
@@ -46,14 +51,19 @@ export const Card = styled.div`
 `;
 
 export const FlexCard = styled.div`
-  display: grid;
-  grid-template-columns: max-content 1fr;
+  display: flex;
   align-items: center;
   gap: 2rem;
-  max-width: 70rem;
   img {
     width: 100%;
     max-width: 35rem;
+    min-width: 35rem;
+  }
+  @media screen and (min-width: 1100px) {
+    max-width: 70rem;
+  }
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
   }
 `;
 export const FlexTitle = styled.div``;

@@ -10,7 +10,8 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.primaryBackground};
-    border-radius: 0 0 4rem 4rem;
+    border-radius: 0 0 5rem 5rem;
+    padding-bottom: 4rem;
   `}
 `;
 export const Content = styled.div`

@@ -8,12 +8,13 @@ export const AsideRight = styled.div`
     align-items: center;
     a {
       background: white;
-      color: black !important;
+      color: black;
       border-radius: 0.8rem;
       padding: 1rem;
-      transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
       :hover {
         background: ${theme.colors.primary};
+        color: ${theme.colors.white};
       }
     }
     button {

@@ -11,16 +11,26 @@ export const Container = styled.div`
     max-width: ${theme.grid.container};
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     align-items: center;
     @media screen and (max-width: 1200px) {
       padding: 4rem 1rem 2rem 1rem;
     }
+    @media screen and (min-width: 800px) {
+      grid-template-columns: 1.5fr 1fr;
+    }
   `}
 `;
 
-export const Hero = styled.div``;
+export const Hero = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 55rem;
+    width: 100%;
+  }
+`;
 export const Content = styled.div`
   ${({ theme }) => css`
     span {
