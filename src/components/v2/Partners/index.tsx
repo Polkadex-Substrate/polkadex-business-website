@@ -8,10 +8,6 @@ export const Partners = () => {
       <h2>Partners</h2>
       <S.Content>
         <S.Container>
-          <Card
-            src="/img/partnersList/equilibrium.png"
-            alt="equilibrium logo"
-          />
           <Card src="/img/partnersList/bifrost.png" alt="bifrost logo" />
           <Card src="/img/partnersList/acala.png" alt="acala logo" />
           <Card src="/img/partnersList/onfinality.png" alt="onfinality logo" />
@@ -26,10 +22,6 @@ export const Partners = () => {
           <Card src="/img/partnersList/parallel.png" alt="parallel logo" />
           <Card src="/img/partnersList/simplex.png" alt="simplex logo" />
 
-          <Card
-            src="/img/partnersList/equilibrium.png"
-            alt="equilibrium logo"
-          />
           <Card src="/img/partnersList/bifrost.png" alt="bifrost logo" />
           <Card src="/img/partnersList/acala.png" alt="acala logo" />
           <Card src="/img/partnersList/onfinality.png" alt="onfinality logo" />
@@ -44,10 +36,6 @@ export const Partners = () => {
           <Card src="/img/partnersList/parity.png" alt="parity logo" />
           <Card src="/img/partnersList/simplex.png" alt="simplex logo" />
 
-          <Card
-            src="/img/partnersList/equilibrium.png"
-            alt="equilibrium logo"
-          />
           <Card src="/img/partnersList/bifrost.png" alt="bifrost logo" />
           <Card src="/img/partnersList/acala.png" alt="acala logo" />
           <Card src="/img/partnersList/onfinality.png" alt="onfinality logo" />

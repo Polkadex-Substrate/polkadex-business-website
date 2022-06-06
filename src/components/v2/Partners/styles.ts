@@ -48,7 +48,7 @@ export const Container = styled.ul`
   align-items: center;
   flex-wrap: nowrap;
   /* gap: 4rem; */
-  width: calc(150px * 33);
+  width: calc(150px * 30);
   animation: scroll 35s linear infinite;
   :hover {
     animation-play-state: paused;
@@ -58,7 +58,7 @@ export const Container = styled.ul`
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(calc(-150px * 11));
+      transform: translateX(calc(-150px * 10));
     }
   }
 `;

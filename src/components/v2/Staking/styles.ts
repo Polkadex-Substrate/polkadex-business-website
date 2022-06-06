@@ -66,6 +66,10 @@ export const Content = styled.div`
       padding: 1rem;
       margin-top: 1rem;
       width: fit-content;
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.black};
+      }
     }
   `}
 `;

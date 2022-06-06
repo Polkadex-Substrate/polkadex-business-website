@@ -114,16 +114,24 @@ export const Actions = styled.div`
     a {
       border-radius: 0.8rem;
       padding: 1rem;
+      transition: background 0.3s ease-in-out;
       :first-child {
         color: ${theme.colors.white};
         background: ${theme.colors.primary};
+        :hover {
+          background: ${theme.colors.black};
+        }
       }
       :last-child {
         color: ${theme.colors.primary};
+        margin-left: 1rem;
         svg {
           margin-left: 1rem;
           width: 1rem;
           fill: ${theme.colors.primary};
+        }
+        :hover {
+          background: ${theme.colors.primary}19;
         }
       }
     }

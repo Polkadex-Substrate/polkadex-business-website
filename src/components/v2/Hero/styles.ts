@@ -58,12 +58,9 @@ export const Actions = styled.div`
       :first-child {
         color: ${theme.colors.white};
         background: ${theme.colors.primary};
-        transition: transform 0.2s ease-in-out;
+        transition: background 0.2s ease-in-out;
         :hover {
-          transform: scale(1.05);
-        }
-        :active {
-          transform: scale(0.95);
+          background: ${theme.colors.black};
         }
       }
       :last-child {
