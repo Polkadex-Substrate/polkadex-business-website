@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  max-width: 110rem;
-  margin: 4rem auto 0 auto;
-  @media screen and (max-width: 1200px) {
-    padding: 4rem 1rem 2rem 1rem;
-  }
+  ${({ theme }) => css`
+    max-width: ${theme.grid.container};
+    margin: 4rem auto 0 auto;
+    @media screen and (max-width: 1200px) {
+      padding: 4rem 1rem 2rem 1rem;
+    }
+  `}
 `;
 
 export const Slider = styled.div`
@@ -34,7 +36,7 @@ export const Features = styled.div`
     margin-bottom: 1rem;
   }
   p {
-    line-height: 1.6;
+    line-height: 1.5;
   }
 `;
 
@@ -47,6 +49,9 @@ export const Card = styled.div`
     align-self: flex-start;
     max-height: 14rem;
     object-fit: contain;
+  }
+  p {
+    line-height: 1.5;
   }
 `;
 
@@ -113,7 +118,7 @@ export const Button = styled.button<{ isActive?: boolean }>`
 export const Title = styled.div`
   h2 {
     line-height: 1.2;
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
   }
   p {

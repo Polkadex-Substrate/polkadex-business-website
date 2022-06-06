@@ -8,10 +8,6 @@ export const SecurityPartners = () => {
       <h2>Security Partners</h2>
       <S.Content>
         <S.Container>
-          <Card
-            src="/img/securityList/equilibrium.png"
-            alt="equilibrium logo"
-          />
           <Card src="/img/securityList/certik.png" alt="certik logo" />
           <Card src="/img/securityList/hacken.png" alt="hacken logo" />
           <Card src="/img/securityList/halborn.png" alt="halborn logo" />
@@ -19,10 +15,6 @@ export const SecurityPartners = () => {
           <Card src="/img/securityList/srl.png" alt="srl logo" />
           <Card src="/img/securityList/trailbits.png" alt="trailbits logo" />
 
-          <Card
-            src="/img/securityList/equilibrium.png"
-            alt="equilibrium logo"
-          />
           <Card src="/img/securityList/certik.png" alt="certik logo" />
           <Card src="/img/securityList/hacken.png" alt="hacken logo" />
           <Card src="/img/securityList/halborn.png" alt="halborn logo" />
@@ -30,10 +22,6 @@ export const SecurityPartners = () => {
           <Card src="/img/securityList/srl.png" alt="srl logo" />
           <Card src="/img/securityList/trailbits.png" alt="trailbits logo" />
 
-          <Card
-            src="/img/securityList/equilibrium.png"
-            alt="equilibrium logo"
-          />
           <Card src="/img/securityList/certik.png" alt="certik logo" />
           <Card src="/img/securityList/hacken.png" alt="hacken logo" />
           <Card src="/img/securityList/halborn.png" alt="halborn logo" />

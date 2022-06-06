@@ -103,9 +103,7 @@ export const Polkaido = () => {
           <S.Actions>
             <a href="/">Go to Polkaido</a>
             <Link href="/">
-              <a>
-                Learn more <Icons.ArrowRight />
-              </a>
+              <a>Learn more</a>
             </Link>
           </S.Actions>
         </S.Content>

@@ -8,11 +8,10 @@ export const Wrapper = styled.div`
     overflow: hidden;
 
     h2 {
-      max-width: 110rem;
+      max-width: ${theme.grid.container};
       margin: 0 auto;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #8ba1be;
+      font-weight: 550;
+      font-size: 1.8rem;
     }
   `}
 `;

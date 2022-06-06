@@ -39,7 +39,7 @@ export const Content = styled.div`
       color: ${theme.colors.text};
       border-radius: 0.5rem;
       padding: 0.5rem;
-      font-weight: 550;
+      font-weight: 500;
       width: fit-content;
       margin-bottom: 1rem;
     }
@@ -50,22 +50,21 @@ export const Content = styled.div`
     h2 {
       font-size: 5rem;
       line-height: 1.2;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       strong {
         color: ${theme.colors.primary};
       }
     }
     p {
-      line-height: 1.6;
+      line-height: 1.5;
     }
     a {
       display: block;
       color: ${theme.colors.white};
       background: ${theme.colors.primary};
-      padding: 1.5rem;
-      border-radius: 1rem;
+      border-radius: 0.8rem;
+      padding: 1rem;
       margin-top: 1rem;
-      font-weight: 500;
       width: fit-content;
     }
   `}

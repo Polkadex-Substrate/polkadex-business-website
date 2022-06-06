@@ -50,9 +50,7 @@ export const Thea = () => {
           connect Polkadex and Ethereum and will continue to add support for
           more blockchains in the future.
         </p>
-        <a href="/">
-          Check out the THEA Whitepaper <Icons.ArrowRight />
-        </a>
+        <a href="/">Check out the THEA Whitepaper</a>
       </S.Title>
       <S.Container>
         <S.Video>

@@ -13,19 +13,16 @@ export const Wrapper = styled.section`
 
 export const Title = styled.div`
   ${({ theme }) => css`
-    padding: 0 5rem;
     h2 {
       font-size: 6rem;
     }
     p {
       max-width: 60rem;
-      line-height: 1.8;
-      font-size: 1.8rem;
+      line-height: 1.5;
       margin-top: 1rem;
     }
     a {
       display: block;
-      font-weight: 550;
       color: ${theme.colors.primary};
       margin-top: 2rem;
       svg {
@@ -95,12 +92,9 @@ export const Card = styled.div<{ isActive?: boolean }>`
   ${({ theme, isActive }) => css`
     background: ${isActive ? theme.colors.secondaryBackgroundOpacity : 'none'};
     border-radius: 1rem;
-    padding: 2rem;
+    padding: ${isActive ? '2rem' : '1rem 2rem'};
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    :hover {
-      background: ${theme.colors.tertiaryBackgroundOpacity};
-    }
+
     p {
       display: ${isActive ? 'block' : 'none'};
       line-height: 1.6;
@@ -111,7 +105,7 @@ export const Card = styled.div<{ isActive?: boolean }>`
       align-items: center;
       justify-content: space-between;
       span {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 550;
       }
       svg {
@@ -132,9 +126,8 @@ export const Actions = styled.div`
     margin-top: 3rem;
     padding: 0 2rem;
     a {
-      padding: 1.5rem;
-      border-radius: 1rem;
-      font-weight: 550;
+      border-radius: 0.8rem;
+      padding: 1rem;
       :first-child {
         color: ${theme.colors.white};
         background: ${theme.colors.primary};

@@ -8,11 +8,10 @@ export const Wrapper = styled.div`
     overflow: hidden;
 
     h2 {
-      max-width: 110rem;
+      max-width: ${theme.grid.container};
       margin: 0 auto;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #8ba1be;
+      font-weight: 550;
+      font-size: 1.8rem;
     }
   `}
 `;
@@ -49,7 +48,7 @@ export const Container = styled.ul`
   align-items: center;
   flex-wrap: nowrap;
   /* gap: 4rem; */
-  width: calc(150px * 21);
+  width: calc(150px * 18);
   animation: scroll 35s linear infinite;
   :hover {
     animation-play-state: paused;
@@ -59,7 +58,7 @@ export const Container = styled.ul`
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(calc(-150px * 7));
+      transform: translateX(calc(-150px * 6));
     }
   }
 `;

@@ -37,7 +37,7 @@ export const Container = styled.div`
       font-size: 5rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      line-height: 1.1;
+      line-height: 1.2;
     }
     strong {
       display: block;
@@ -53,9 +53,8 @@ export const Actions = styled.div`
     gap: 1rem;
     margin: 2rem 0;
     a {
-      font-weight: 500;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
+      padding: 1rem;
+      border-radius: 0.8rem;
       :first-child {
         color: ${theme.colors.white};
         background: ${theme.colors.primary};

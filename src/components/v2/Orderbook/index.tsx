@@ -54,9 +54,7 @@ export const Orderbook = () => {
           <p>{state.description}</p>
           <S.Actions>
             <Link href="/">Start Trading</Link>
-            <a href="/">
-              Learn about Orderbook <Icons.ArrowRight />
-            </a>
+            <a href="/">Learn about Orderbook</a>
           </S.Actions>
         </S.Title>
       </S.Slider>
