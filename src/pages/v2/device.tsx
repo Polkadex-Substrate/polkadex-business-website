@@ -9,8 +9,8 @@ const deviceUrl = {
 };
 const Device = () => {
   const router = useRouter();
-  if (isAndroid) router.push(deviceUrl.ios);
-  else if (isIOS) router.push(deviceUrl.android);
+  if (isAndroid) router.push(deviceUrl.android);
+  else if (isIOS) router.push(deviceUrl.ios);
   else router.push('/v2');
   return <div />;
 };
