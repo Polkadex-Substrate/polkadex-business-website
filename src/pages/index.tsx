@@ -28,7 +28,6 @@ export default function Home() {
     hero,
     orderbook,
     partners,
-    otherProducts,
     features,
     investors,
     team,
@@ -85,7 +84,6 @@ export default function Home() {
           <Hero {...hero} />
           <OrderbookProduct {...orderbook} />
           <Partners {...partners} />
-          <OthersProducts otherProducts={otherProducts} />
           <Features {...features} />
           <Investors {...investors} />
           <Team {...team} />
