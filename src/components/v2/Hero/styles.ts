@@ -97,16 +97,20 @@ export const DownloadLinks = styled.div`
 `;
 
 export const ScanQrCode = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  img {
-    max-width: 8rem;
-  }
-  span svg {
-    width: 1rem;
-    height: 1rem;
-    fill: black;
-    margin-right: 1rem;
-  }
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    img {
+      max-width: 8rem;
+      padding: 0.2rem;
+      box-shadow: ${theme.shadow.tertiary};
+    }
+    span svg {
+      width: 1rem;
+      height: 1rem;
+      fill: black;
+      margin-right: 1rem;
+    }
+  `}
 `;

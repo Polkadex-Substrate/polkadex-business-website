@@ -40,7 +40,7 @@ export const Hero = () => {
             </a>
           </S.DownloadLinks>
           <S.ScanQrCode>
-            <img src="/img/qrCode.png" alt="QrCode " />
+            <img src="/img/polkadexDevice.svg" alt="Polkadex Device QrCode" />
             <span>
               <Icons.ArrowLeft />
               Scan to download
