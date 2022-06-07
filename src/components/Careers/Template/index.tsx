@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
-import { Footer } from 'components';
-import { Header, Hero, OpenJobs, Vision } from 'components/Careers';
+import { Hero, OpenJobs, Vision } from 'components/Careers';
 import Newsletter from 'components/Newsletter';
+import { Footer, Header } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
@@ -33,14 +33,30 @@ export const Template = ({ jobs, error }) => {
         <Head>
           <title>Polkadex Careers</title>
         </Head>
-        <Header />
+        <Header
+          logo="Careers"
+          links={[
+            {
+              title: 'Overview',
+              href: '/v2/careers/#overview',
+            },
+            {
+              title: 'Vision',
+              href: '/v2/careers/#vision',
+            },
+          ]}
+          cta={{
+            title: 'Open App',
+            href: 'https://beta.tokenmanager.polkadex.trade/ido',
+          }}
+        />
         <main>
           <Hero />
           <Vision />
           <OpenJobs jobs={jobs} error={error} />
           <Newsletter {...newsletter} />
         </main>
-        <Footer {...footer} />;
+        <Footer isDark />;
       </S.Wrapper>
     </>
   );

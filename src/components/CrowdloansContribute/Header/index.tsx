@@ -1,6 +1,5 @@
-import { Logo } from 'components';
-import { PrimaryButton } from 'components/Button';
-import { CrowndloanLogo } from 'components/Logo';
+import { Polkadex } from 'components';
+import { Crowndloan } from 'components/Logo';
 
 import * as S from './styles';
 
@@ -9,10 +8,10 @@ export const Header = () => {
     <S.Wrapper>
       <S.Container>
         <S.Aside>
-          <Logo />
+          <Polkadex />
           <S.Box>
             <S.CrowndloanLogo href="/crowdloans" target="_blank">
-              <CrowndloanLogo />
+              <Crowndloan />
             </S.CrowndloanLogo>
             <S.Menu>
               <li>

@@ -37,7 +37,7 @@ export const OpenJobs = ({ jobs, error }) => {
 };
 
 const Card = ({ id, title = '', category = '', type = '', place }) => (
-  <Link href={`/careers/${id}`}>
+  <Link href={`/v2/careers/${id}`}>
     <a>
       <S.Card>
         <S.CardAside>

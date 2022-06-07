@@ -541,7 +541,7 @@ const ENLanguage = {
             ],
           },
           {
-            title: 'Thea',
+            title: 'THEA',
             subItems: [
               {
                 title: 'Beta Testers',

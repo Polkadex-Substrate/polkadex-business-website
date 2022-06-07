@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import * as S from './styles';
 
-export const Footer = () => {
+export const Footer = ({ isDark = false }) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper isDark={isDark}>
       <S.Header>
         <div>
           <span>Polkadex</span>
@@ -54,7 +54,10 @@ export const Footer = () => {
                   <Link href="/">Polkapool AMM</Link>
                 </li>
                 <li>
-                  <Link href="/">Polkaido</Link>
+                  <Link href="/">PolkaIDO</Link>
+                </li>
+                <li>
+                  <Link href="/">THEA Bridge</Link>
                 </li>
               </ul>
             </div>
@@ -116,7 +119,7 @@ export const Footer = () => {
       <S.Footer>
         <S.Copyright>
           <ul>
-            <li>Copyright © 2021 Polkadex, Inc.</li>
+            <li>Copyright © 2022 Polkadex, Inc.</li>
             <li>
               <a href="/" target="_blank">
                 Terms
@@ -134,7 +137,7 @@ export const Footer = () => {
             </li>
           </ul>
         </S.Copyright>
-        <S.Social>
+        <S.Social isDark={isDark}>
           <span>Join us on</span>
           <ul>
             <li>

@@ -1,6 +1,5 @@
-import { Logo } from 'components';
 import { PrimaryButton } from 'components/Button';
-import { CareersLogo } from 'components/Logo';
+import { Careers, Polkadex } from 'components/Logo';
 
 import * as S from './styles';
 
@@ -9,11 +8,11 @@ export const Header = () => {
     <S.Wrapper>
       <S.Container>
         <S.Aside>
-          <Logo />
+          <Polkadex />
           <S.Flex>
             <S.Box>
               <S.Logo>
-                <CareersLogo />
+                <Careers />
               </S.Logo>
               <S.Menu>
                 <li>

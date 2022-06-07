@@ -1,23 +1,9 @@
-import {
-  Footer,
-  Header,
-  Hero,
-  Media,
-  Newsletter,
-  Orderbook,
-  Partners,
-  Polkaido,
-  SecurityPartners,
-  Staking,
-  StrategicInvestors,
-  Thea,
-  Wallets,
-} from 'components/v2';
+import { Footer, Header } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
-import * as S from 'styles/home';
+import * as S from 'styles/polkaido';
 
-export default function Home() {
+export default function Polkaido() {
   return (
     <>
       <Script
@@ -50,52 +36,31 @@ export default function Home() {
           />
         </Head>
         <Header
+          logo="Polkaido"
           links={[
             {
               title: 'Overview',
-              href: '/v2/#overview',
+              href: '/v2/polkaido/#overview',
             },
             {
-              title: 'Orderbook',
-              href: '/v2/#orderbook',
+              title: 'For teams',
+              href: '/v2/polkaido/#forteams',
             },
             {
-              title: 'PolkaIDO',
-              href: '/v2/#polkaido',
+              title: 'For investors',
+              href: '/v2/polkaido/#forinvestors',
             },
             {
-              title: 'THEA',
-              href: '/v2/#thea',
-            },
-            {
-              title: 'Polkapool',
-              href: '/v2/#polkapool',
-            },
-            {
-              title: 'Staking',
-              href: '/v2/#staking',
+              title: 'Upcoming projects',
+              href: '/v2/polkaido/#upcomingprojects',
             },
           ]}
           cta={{
-            title: 'Start Trading',
-            href: 'https://orderbook-beta.polkadex.trade/',
+            title: 'Open App',
+            href: 'https://beta.tokenmanager.polkadex.trade/ido',
           }}
         />
-        <main>
-          <S.Container>
-            <Hero />
-            <Wallets />
-            <Orderbook />
-          </S.Container>
-          <Partners />
-          <Polkaido />
-          <Media />
-          <Thea />
-          <SecurityPartners />
-          <Staking />
-          <Newsletter />
-          <StrategicInvestors />
-        </main>
+        <main />
         <Footer />
       </S.Wrapper>
     </>

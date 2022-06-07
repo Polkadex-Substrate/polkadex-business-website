@@ -1,39 +1,30 @@
-import { Logo } from 'components';
 import * as Icons from 'components/Icons';
+import * as Logo from 'components/Logo';
 import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import * as S from './styles';
+import * as T from './types';
 
-export const Header = () => {
+export const Header = ({ logo = undefined, links = [], cta }: T.Props) => {
   const [state, setState] = useState(false);
 
   const handleClick = () => setState(!state);
+  const LogoComponent = Logo[logo];
   return (
     <S.Main>
       <S.Wrapper>
         <S.Container>
           <S.AsideLeft>
-            <Logo size="Medium" />
+            <Logo.Polkadex />
+            {logo?.length && <LogoComponent size="Medium" />}
             <ul>
-              <li>
-                <a href="/">Overview</a>
-              </li>
-              <li>
-                <a href="/">Orderbook</a>
-              </li>
-              <li>
-                <a href="/">Polkaido</a>
-              </li>
-              <li>
-                <a href="/">THEA</a>
-              </li>
-              <li>
-                <a href="/">Polkapool</a>
-              </li>
-              <li>
-                <a href="/">Staking</a>
-              </li>
+              {links.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>{item.title}</Link>
+                </li>
+              ))}
             </ul>
           </S.AsideLeft>
           <S.AsideRight>
@@ -47,7 +38,7 @@ export const Header = () => {
                 <Icons.SingleArrowBottom />
               </S.IconWrapper>
             </button>
-            <a href="/">Start Trading</a>
+            <a href={cta.href}>{cta.title}</a>
           </S.AsideRight>
         </S.Container>
         <AnimatePresence>
@@ -95,18 +86,18 @@ export const Header = () => {
                   <small>Products</small>
                   <ul>
                     <li>
-                      <a href="/">Orderbook</a>
+                      <Link href="/v2/orderbook">Orderbook</Link>
                     </li>
                     <li>
-                      <a href="/">PolkaIDO</a>
+                      <Link href="/v2/polkaido">PolkaIDO</Link>
                       <span>New</span>
                     </li>
                     <li>
-                      <a href="/">THEA Bridge</a>
+                      <Link href="/v2/thea">THEA Bridge</Link>
                       <span>New</span>
                     </li>
                     <li>
-                      <a href="/">Staking</a>
+                      <a href="/v2/staking">Staking</a>
                     </li>
                     <li>
                       <a href="/">Liquidity Mining</a>
@@ -128,6 +119,9 @@ export const Header = () => {
                     </li>
                     <li>
                       <a href="/">Brand Assets</a>
+                    </li>
+                    <li>
+                      <Link href="/v2/careers">Careers</Link>
                     </li>
                   </ul>
                 </S.MenuContainer>

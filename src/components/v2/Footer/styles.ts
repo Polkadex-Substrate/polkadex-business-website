@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
-  ${({ theme }) => css`
+export const Wrapper = styled.div<{ isDark?: boolean }>`
+  ${({ theme, isDark }) => css`
     max-width: ${theme.grid.container};
     margin: 4rem auto 0 auto;
-    color: ${theme.colors.black};
+    color: ${isDark ? theme.colors.white : theme.colors.black};
     padding-bottom: 2rem;
 
     li {
@@ -59,19 +59,22 @@ export const Copyright = styled.div`
   }
 `;
 
-export const Social = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  ul {
+export const Social = styled.div<{ isDark: boolean }>`
+  ${({ theme, isDark }) => css`
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     flex-wrap: wrap;
-  }
-  a svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    a svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: ${isDark ? theme.colors.white : theme.colors.black};
+    }
+  `}
 `;

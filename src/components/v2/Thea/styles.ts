@@ -25,10 +25,15 @@ export const Title = styled.div`
       display: block;
       color: ${theme.colors.primary};
       margin-top: 2rem;
+      transition: opacity 0.5s ease-in-out;
+
       svg {
         margin-left: 1rem;
         width: 1rem;
         fill: ${theme.colors.primary};
+      }
+      :hover {
+        opacity: 0.7;
       }
     }
   `}
