@@ -67,3 +67,19 @@ export const Careers = styled.div`
     opacity: 0.2;
   }
 `;
+
+export const Staking = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 10rem;
+  :before {
+    padding-right: 1px;
+    margin-right: 2rem;
+    content: '';
+    right: 0;
+    height: 2rem;
+    max-width: 1px;
+    background-color: white;
+    opacity: 0.2;
+  }
+`;

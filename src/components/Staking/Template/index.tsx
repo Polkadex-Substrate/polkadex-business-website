@@ -1,26 +1,41 @@
-import { Footer } from 'components';
-import Newsletter from 'components/Newsletter';
-import {
-  Header,
-  Hero,
-  HowToStake,
-  Overview,
-  Rewards,
-} from 'components/Staking';
+import { Hero, HowToStake, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
 export const Template = () => {
-  const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <S.Wrapper>
       <Head>
         <title>Polkadex Staking</title>
       </Head>
-      <Header />
+      <Header
+        logo="Staking"
+        links={[
+          {
+            title: 'Stats',
+            href: '/v2/staking/#stats',
+          },
+          {
+            title: 'Overview',
+            href: '/v2/staking/#overview',
+          },
+          {
+            title: 'Rewards',
+            href: '/v2/staking/#rewards',
+          },
+          {
+            title: 'How to stake',
+            href: '/v2/staking/#howtostake',
+          },
+        ]}
+        cta={{
+          title: 'Stake Now',
+          href: '#overview',
+        }}
+      />
       <main>
         <Hero />
         <Stats>
@@ -34,9 +49,9 @@ export const Template = () => {
         <Overview />
         <Rewards />
         <HowToStake />
-        <Newsletter {...newsletter} />
+        <Newsletter />
       </main>
-      <Footer {...footer} />
+      <Footer isDark />
     </S.Wrapper>
   );
 };

@@ -2,11 +2,13 @@ import { PrimaryWrapper } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 100rem;
-  margin: 0 auto;
-  @media screen and (max-width: 1000px) {
-    padding: 1rem;
-  }
+  ${({ theme }) => css`
+    max-width: ${theme.grid.container};
+    margin: 0 auto;
+    @media screen and (max-width: 1000px) {
+      padding: 1rem;
+    }
+  `}
 `;
 
 export const Container = styled.div`
@@ -15,9 +17,9 @@ export const Container = styled.div`
     padding: 8rem 2rem;
 
     @media screen and (min-width: 660px) {
-      padding: 15rem 2rem 18rem 2rem;
+      padding: 19rem 2rem 23rem 2rem;
     }
-    background-image: url('/img/stakingHero.svg');
+    background-image: url('/img/stakingPageHero.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;

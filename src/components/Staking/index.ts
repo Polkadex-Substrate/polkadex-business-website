@@ -1,4 +1,3 @@
-export * from './Header';
 export * from './Hero';
 export * from './HowToStake';
 export * from './Oveview';
