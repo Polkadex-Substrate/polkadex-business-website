@@ -27,6 +27,7 @@ export * from './Popup';
 export * from './Portal';
 export * from './Return';
 export * from './Spinner';
+export * from './Stats';
 export * from './ThemeSwitcher';
 export * from './Tooltip';
 

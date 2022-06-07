@@ -10,6 +10,7 @@ export const PrimaryButton = ({
   href = '#',
   disabled = false,
   background = 'primary',
+  color = 'text',
   onClick = undefined,
   target = '_self',
 }: ButtonProps) => {
@@ -23,6 +24,7 @@ export const PrimaryButton = ({
       disabled={disabled}
       onClick={onClick}
       target={target}
+      color={color}
     >
       {!!icon && (
         <div>

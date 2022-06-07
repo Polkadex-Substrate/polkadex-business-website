@@ -29,6 +29,7 @@ export const SocialWrapper = styled.div`
 `;
 export const Row = styled.div`
   display: grid;
+  align-items: flex-start;
   column-gap: 1rem;
   row-gap: 2rem;
   & h5 {
