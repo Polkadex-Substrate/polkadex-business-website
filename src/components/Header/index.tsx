@@ -1,4 +1,10 @@
-import { Icon, Logo, PrimaryButton, ThemeSwitcher } from 'components';
+import {
+  AvailableMessage,
+  Icon,
+  Logo,
+  PrimaryButton,
+  ThemeSwitcher,
+} from 'components';
 import { useEffect } from 'react';
 import { IHomeTranslations } from 'translations';
 
@@ -45,7 +51,13 @@ export const Header = ({
             <ul>
               {topLinks.map((item, index) => (
                 <li key={index}>
-                  <a href={item.href}>{item.title}</a>
+                  {item.soon ? (
+                    <AvailableMessage message="Soon">
+                      <a href={item.href}>{item.title}</a>
+                    </AvailableMessage>
+                  ) : (
+                    <a href={item.href}>{item.title}</a>
+                  )}
                 </li>
               ))}
             </ul>

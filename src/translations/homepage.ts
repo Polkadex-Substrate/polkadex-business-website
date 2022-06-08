@@ -2,20 +2,29 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
+        title: 'THEA',
+        href: '#',
+        soon: true,
+      },
+      {
         title: 'Migrate',
         href: '/migrate',
+        soon: false,
       },
       {
         title: 'Explorer',
         href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+        soon: false,
       },
       {
         title: 'Docs',
         href: 'https://docs.polkadex.trade/',
+        soon: false,
       },
       {
         title: 'Crowdloans',
         href: '/crowdloans',
+        soon: false,
       },
     ],
     bottomLinks: [
