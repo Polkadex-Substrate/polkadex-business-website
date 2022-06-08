@@ -1,4 +1,6 @@
-import { Footer, Header } from 'components/v2';
+import { Footer, Header, Newsletter, StrategicInvestors } from 'components/v2';
+import { PolkaidoHero } from 'components/v2/PolkaidoHero';
+import { PolkaidoOverview } from 'components/v2/PolkaidoOverview';
 import Head from 'next/head';
 import Script from 'next/script';
 import * as S from 'styles/polkaido';
@@ -21,7 +23,7 @@ export default function Polkaido() {
           `,
         }}
       />
-      <S.Wrapper style={{ backgroundColor: 'white' }}>
+      <S.Wrapper>
         <Head>
           <title>Polkadex - The trading engine for Web3 and DeFi</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,8 +62,13 @@ export default function Polkaido() {
             href: 'https://beta.tokenmanager.polkadex.trade/ido',
           }}
         />
-        <main />
-        <Footer />
+        <main>
+          <PolkaidoHero />
+          <PolkaidoOverview />
+          <Newsletter />
+          {/* <StrategicInvestors /> */}
+        </main>
+        <Footer isDark />
       </S.Wrapper>
     </>
   );
