@@ -6,7 +6,9 @@ export const Wrapper = styled.div<{ isDark?: boolean }>`
     margin: 4rem auto 0 auto;
     color: ${isDark ? theme.colors.white : theme.colors.black};
     padding-bottom: 2rem;
-
+    @media screen and (max-width: 1200px) {
+      margin: 4rem 2rem;
+    }
     li {
       list-style: none;
     }
@@ -45,7 +47,7 @@ export const Footer = styled.div`
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid ${theme.colors.secondaryBackgroundOpacity};
   `}

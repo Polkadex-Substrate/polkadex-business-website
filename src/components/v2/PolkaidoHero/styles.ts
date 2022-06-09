@@ -58,7 +58,9 @@ export const Actions = styled.div`
 
 export const Slider = styled.div`
   position: relative;
+  overflow: hidden;
 `;
+
 export const Controls = styled.div`
   ${({ theme }) => css`
     position: absolute;

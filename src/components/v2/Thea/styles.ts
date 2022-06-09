@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
     margin: 6rem auto 10rem auto;
     color: ${theme.colors.black};
     @media screen and (max-width: 1200px) {
-      padding: 4rem 1rem 2rem 1rem;
+      margin: 4rem 2rem;
     }
   `}
 `;

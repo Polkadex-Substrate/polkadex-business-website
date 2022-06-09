@@ -71,6 +71,7 @@ export { default as Upgrade } from './Upgrade';
 export { default as Validate } from './Validate';
 export { default as Validator } from './Validator';
 export { default as Video } from './Video';
+export { default as Vs } from './Vs';
 export { default as Waiting } from './Waiting';
 export { default as Whatsapp } from './Whatsapp';
 export { default as Youtube } from './Youtube';

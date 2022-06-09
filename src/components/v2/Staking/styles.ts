@@ -4,6 +4,9 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     margin: 4rem 0 8rem 0;
     background: ${theme.colors.tertiaryBackgroundOpacity};
+    @media screen and (max-width: 1200px) {
+      margin: 4rem 2rem;
+    }
   `}
 `;
 export const Container = styled.div`
@@ -13,9 +16,7 @@ export const Container = styled.div`
     display: grid;
     gap: 2rem;
     align-items: center;
-    @media screen and (max-width: 1200px) {
-      padding: 4rem 1rem 2rem 1rem;
-    }
+
     @media screen and (min-width: 800px) {
       grid-template-columns: 1.5fr 1fr;
     }

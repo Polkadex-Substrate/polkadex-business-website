@@ -22,7 +22,7 @@ export const Container = styled.div`
     gap: 2rem;
     flex-wrap: wrap;
     @media screen and (min-width: 657px) {
-      padding: 5rem 4rem;
+      padding: 6rem 4rem;
     }
     form {
       display: flex;
@@ -37,7 +37,7 @@ export const Container = styled.div`
         width: 100%;
       }
       button {
-        padding: 1.5rem;
+        padding: 1.8rem;
         background: ${theme.colors.primary};
         color: white;
         font-weight: bold;
@@ -69,7 +69,7 @@ export const ImageWrapper = styled.div`
 
 export const Title = styled.div`
   h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 550;
     line-height: 1.5;
   }
