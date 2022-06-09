@@ -1,16 +1,13 @@
 /* eslint-disable react/no-danger */
-import { Footer } from 'components';
-import { Header, PreviewHero } from 'components/Careers';
-import Newsletter from 'components/Newsletter';
+import { PreviewHero } from 'components/Careers';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
 export const Preview = ({ data, error }) => {
-  const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <>
       <GoogleAnalytics />
@@ -33,12 +30,28 @@ export const Preview = ({ data, error }) => {
         <Head>
           <title>Polkadex Careers - {data?.title}</title>
         </Head>
-        <Header />
+        <Header
+          logo="Careers"
+          links={[
+            {
+              title: 'Overview',
+              href: '/v2/careers/#overview',
+            },
+            {
+              title: 'Vision',
+              href: '/v2/careers/#vision',
+            },
+          ]}
+          cta={{
+            title: 'Open Jobs',
+            href: 'https://beta.tokenmanager.polkadex.trade/ido',
+          }}
+        />
         <main>
           <PreviewHero data={data} error={error} />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer isDark />
       </S.Wrapper>
     </>
   );

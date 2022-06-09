@@ -13,13 +13,12 @@ import {
 import * as S from './styles';
 
 export const PreviewHero = ({ data, error }) => {
-  console.log(data);
   const { asPath } = useRouter();
   const url = `https://polkadex.trade${asPath}`;
   return (
     <S.Wrapper>
       <S.GoBack>
-        <Link href="/careers">
+        <Link href="/v2/careers">
           <a>
             <Icons.ArrowLeft /> Go Back
           </a>

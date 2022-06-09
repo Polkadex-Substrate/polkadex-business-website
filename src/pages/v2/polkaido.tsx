@@ -1,6 +1,14 @@
-import { Footer, Header, Newsletter, StrategicInvestors } from 'components/v2';
-import { PolkaidoHero } from 'components/v2/PolkaidoHero';
-import { PolkaidoOverview } from 'components/v2/PolkaidoOverview';
+import {
+  Footer,
+  ForInvestors,
+  ForTeams,
+  Header,
+  Newsletter,
+  PolkaidoHero,
+  PolkaidoOverview,
+  StrategicInvestors,
+  UpcomingProjects,
+} from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import * as S from 'styles/polkaido';
@@ -65,7 +73,13 @@ export default function Polkaido() {
         <main>
           <PolkaidoHero />
           <PolkaidoOverview />
-          <Newsletter />
+          <ForTeams />
+          <ForInvestors />
+          <UpcomingProjects />
+          <Newsletter
+            title="Sign-up for the PolkaIDO news!"
+            description="Hear about the best IDOs to invest in and stay on top of latest updates."
+          />
           {/* <StrategicInvestors /> */}
         </main>
         <Footer isDark />

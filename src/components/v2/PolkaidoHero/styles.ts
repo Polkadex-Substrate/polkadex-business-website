@@ -2,9 +2,15 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    padding: 8rem 1rem;
+    padding: 8rem 1rem 0 1rem;
     max-width: ${theme.grid.container};
     margin: 0 auto;
+    border-radius: 2rem;
+    background: linear-gradient(
+      179.95deg,
+      rgba(139, 161, 190, 0.05) 0.04%,
+      rgba(139, 161, 190, 0) 63.37%
+    );
   `}
 `;
 

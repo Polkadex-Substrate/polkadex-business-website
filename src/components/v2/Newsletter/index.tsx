@@ -2,7 +2,10 @@ import * as Icons from 'components/Icons';
 
 import * as S from './styles';
 
-export const Newsletter = () => {
+export const Newsletter = ({
+  title = 'Stay in the loop',
+  description = 'Subscribe to the Polkadex newsletter',
+}) => {
   return (
     <S.Wrapper>
       <S.Container>
@@ -10,8 +13,8 @@ export const Newsletter = () => {
           <Icons.Airplane />
         </S.ImageWrapper>
         <S.Title>
-          <h2>Stay in the loop</h2>
-          <p>Subscribe to the Polkadex newsletter</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </S.Title>
         <form>
           <input type="email" placeholder="Enter your email" />

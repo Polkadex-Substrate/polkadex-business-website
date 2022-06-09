@@ -1,16 +1,13 @@
 /* eslint-disable react/no-danger */
 import { Hero, OpenJobs, Vision } from 'components/Careers';
-import Newsletter from 'components/Newsletter';
-import { Footer, Header } from 'components/v2';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
 export const Template = ({ jobs, error }) => {
-  const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <>
       <GoogleAnalytics />
@@ -46,7 +43,7 @@ export const Template = ({ jobs, error }) => {
             },
           ]}
           cta={{
-            title: 'Open App',
+            title: 'Open Jobs',
             href: 'https://beta.tokenmanager.polkadex.trade/ido',
           }}
         />
@@ -54,7 +51,7 @@ export const Template = ({ jobs, error }) => {
           <Hero />
           <Vision />
           <OpenJobs jobs={jobs} error={error} />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
         <Footer isDark />;
       </S.Wrapper>
