@@ -8,15 +8,23 @@ export const Wrapper = styled.section`
 `;
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
   align-items: center;
   gap: 5rem;
+
   img {
     width: 100%;
   }
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: 1.8fr 1fr;
+  }
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 4rem;
+  }
 `;
 export const Content = styled.div`
-  max-width: 35rem;
+  @media screen and (min-width: 1000px) {
+    max-width: 35rem;
+  }
 `;
 
 export const Title = styled.div`

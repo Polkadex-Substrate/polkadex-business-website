@@ -19,9 +19,14 @@ export const Title = styled.div`
 `;
 export const Comparison = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 10rem;
+  gap: 2rem;
   margin-top: 3rem;
+  @media screen and (min-width: 930px) {
+    gap: 10rem;
+  }
+  @media screen and (min-width: 750px) {
+    grid-template-columns: 1fr auto 1fr;
+  }
 `;
 export const ComparisonCard = styled.div`
   ${({ theme }) => css`
