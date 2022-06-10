@@ -27,14 +27,20 @@ export const Container = styled.div`
     form {
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
       flex: 1;
-      padding-left: 1.5rem;
       border-radius: 1rem;
       background: white;
-      min-width: 35rem;
-
+      @media screen and (min-width: 430px) {
+        flex-direction: row;
+        padding-left: 1.5rem;
+        min-width: 35rem;
+      }
       input {
         width: 100%;
+        @media screen and (max-width: 430px) {
+          padding: 2rem;
+        }
       }
       button {
         padding: 1.8rem;

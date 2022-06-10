@@ -13,6 +13,9 @@ export const Header = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 2rem;
+  @media screen and (max-width: 860px) {
+    display: none;
+  }
 `;
 
 export const HeaderCard = styled.div`
@@ -47,6 +50,9 @@ export const Title = styled.div`
       line-height: 1.2;
       font-size: 4rem;
       margin-bottom: 1rem;
+      @media screen and (max-width: 700px) {
+        font-size: 3.5rem;
+      }
     }
     p {
       line-height: 1.5;
@@ -75,7 +81,11 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 5rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
+
+  @media screen and (min-width: 500px) {
+    margin-top: 10rem;
+  }
 `;
 export const Card = styled.div`
   ${({ theme }) => css`

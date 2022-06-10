@@ -1,6 +1,24 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
+
 import * as Icons from 'components/Icons';
 
 import * as S from './styles';
+
+const slides = [
+  {
+    src: '/img/slider1.png',
+    alt: 'Polkadex Polkaido preview',
+  },
+  {
+    src: '/img/slider2.png',
+    alt: 'Polkadex Polkaido preview',
+  },
+  {
+    src: '/img/slider3.png',
+    alt: 'Polkadex Polkaido preview',
+  },
+];
 
 export const PolkaidoHero = () => {
   return (
@@ -26,11 +44,21 @@ export const PolkaidoHero = () => {
           <Icons.ArrowLeft />
         </S.Controls>
         <S.SliderContainer>
-          <img src="/img/slider1.png" alt="Polkadex Polkaido preview" />
-          <img src="/img/slider2.png" alt="Polkadex Polkaido preview" />
-          <img src="/img/slider3.png" alt="Polkadex Polkaido preview" />
+          {slides.map((slide, i) => (
+            <Slide key={i} img={slide.src} alt={slide.alt} />
+          ))}
         </S.SliderContainer>
       </S.Slider>
     </S.Wrapper>
+  );
+};
+
+const Slide = ({ img, alt }) => {
+  return (
+    <S.Slide>
+      <div>
+        <img src={img} alt={alt} />
+      </div>
+    </S.Slide>
   );
 };

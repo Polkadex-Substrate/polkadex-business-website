@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.section`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    margin: 2rem auto 10rem auto;
+    margin: 0rem auto 10rem auto;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 8rem 2rem;
     }
   `}
 `;
@@ -15,9 +15,17 @@ export const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
+    @media screen and (max-width: 540px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     h2 {
       line-height: 1.2;
       font-size: 4rem;
+      @media screen and (max-width: 700px) {
+        font-size: 3.5rem;
+      }
     }
     a {
       border: 1px solid ${theme.colors.text}33;
@@ -53,6 +61,12 @@ export const Card = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.tertiaryBackgroundOpacity};
     border-radius: 2rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      box-shadow: ${theme.shadow.primary};
+      transform: translateY(-0.5rem);
+    }
   `}
 `;
 

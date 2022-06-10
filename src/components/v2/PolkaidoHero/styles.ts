@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    padding: 8rem 1rem 0 1rem;
+    padding-top: 8rem;
     max-width: ${theme.grid.container};
     margin: 0 auto;
     border-radius: 2rem;
@@ -22,11 +22,17 @@ export const Title = styled.div`
     font-size: 5rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    @media screen and (max-width: 700px) {
+      font-size: 3.5rem;
+    }
   }
   p {
     max-width: 55rem;
     font-size: 1.6rem;
     line-height: 1.6;
+  }
+  @media screen and (max-width: 915px) {
+    margin: 0 2rem;
   }
 `;
 
@@ -80,6 +86,8 @@ export const Controls = styled.div`
     transform: translateY(50%);
     border-radius: 2rem;
     z-index: 10;
+    transition: background 0.5s ease-in-out;
+    cursor: pointer;
     svg {
       max-width: 1.5rem;
     }
@@ -92,26 +100,18 @@ export const Controls = styled.div`
         transform: rotate(180deg);
       }
     }
+    :hover {
+      background: ${theme.colors.primary};
+    }
   `}
 `;
+
 export const SliderContainer = styled.div`
-  position: relatve;
-  img {
-    width: 100%;
-    :nth-child(1) {
-      position: relative;
-      z-index: 1;
-    }
-    :nth-child(2),
-    :nth-child(3) {
-      position: absolute;
-      max-width: 100rem;
-    }
-    :nth-child(2) {
-      left: -10rem;
-    }
-    :nth-child(3) {
-      right: -10rem;
-    }
-  }
+  position: relative;
+  display: flex;
+  gap: 4rem;
+`;
+
+export const Slide = styled.div`
+  width: 100%;
 `;

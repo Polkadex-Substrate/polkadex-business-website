@@ -5,9 +5,15 @@ export const Wrapper = styled.section`
 `;
 export const Container = styled.div`
   ${({ theme }) => css`
-    padding: 8rem 1rem;
+    padding: 2rem 0;
     max-width: ${theme.grid.container};
     margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+      margin: 0 2rem;
+    }
+    @media screen and (min-width: 1200px) {
+      padding: 8rem 0;
+    }
   `}
 `;
 
@@ -15,6 +21,9 @@ export const Title = styled.div`
   h2 {
     line-height: 1.2;
     font-size: 5rem;
+    @media screen and (max-width: 700px) {
+      font-size: 3.5rem;
+    }
   }
 `;
 export const Comparison = styled.div`
@@ -27,11 +36,16 @@ export const Comparison = styled.div`
   @media screen and (min-width: 750px) {
     grid-template-columns: 1fr auto 1fr;
   }
+  @media screen and (max-width: 750px) {
+    text-align: center;
+  }
 `;
 export const ComparisonCard = styled.div`
   ${({ theme }) => css`
     :nth-child(2) {
-      margin-bottom: 11rem;
+      @media screen and (min-width: 750px) {
+        margin-bottom: 11rem;
+      }
       svg {
         width: 4rem;
       }
@@ -50,6 +64,7 @@ export const ComparisonContainer = styled.div`
     background: ${theme.colors.tertiaryBackgroundOpacity};
     border-radius: 2rem;
     padding: 5rem 3rem;
+
     div {
       display: flex;
       align-items: center;
@@ -91,8 +106,12 @@ export const Overview = styled.div`
   background-image: url('/img/statHero.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  min-height: 45rem;
-  padding-top: 5rem;
+  background-position: bottom;
+  min-height: 30rem;
+  @media screen and (min-width: 800px) {
+    padding-top: 5rem;
+    min-height: 45rem;
+  }
 `;
 
 export const OverviewContainer = styled.div`
@@ -103,9 +122,12 @@ export const OverviewContainer = styled.div`
 `;
 export const OverviewWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
   max-width: 90rem;
+  @media screen and (max-width: 1200px) {
+    margin: 0 2rem;
+  }
 `;
 
 export const OverviewCard = styled.div`
