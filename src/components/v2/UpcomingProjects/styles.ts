@@ -31,6 +31,10 @@ export const Title = styled.div`
       border: 1px solid ${theme.colors.text}33;
       padding: 1rem;
       border-radius: 0.8rem;
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.text}11;
+      }
     }
   `}
 `;
@@ -47,6 +51,11 @@ export const Container = styled.div`
       border: 1px solid ${theme.colors.text}33;
       padding: 1rem;
       border-radius: 0.8rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.text}11;
+      }
     }
   `}
 `;

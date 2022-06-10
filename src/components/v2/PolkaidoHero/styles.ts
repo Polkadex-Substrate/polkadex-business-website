@@ -107,11 +107,58 @@ export const Controls = styled.div`
 `;
 
 export const SliderContainer = styled.div`
-  position: relative;
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
+  margin-top: 5rem;
+  overflow: hidden;
 `;
 
 export const Slide = styled.div`
-  width: 100%;
+  display: block;
+  min-width: 100vmin;
+  max-height: 60rem;
+  opacity: 0.25;
+  transition: opacity calc(600ms / 2) cubic-bezier(0.25, 0.46, 0.45, 0.84),
+    transform calc(600ms / 2) cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  /* cursor: pointer; */
+
+  video {
+    width: 100%;
+  }
+
+  &.slide--previous,
+  &.slide--next {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &.slide--previous {
+    cursor: w-resize;
+
+    &:hover {
+      transform: translateX(2%);
+    }
+  }
+
+  &.slide--next {
+    cursor: e-resize;
+
+    &:hover {
+      transform: translateX(-2%);
+    }
+  }
+
+  &.slide--current {
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+
+    @media (hover: hover) {
+      &:hover .slide__image-wrapper {
+        transform: scale(1.025)
+          translate(calc(0 / 50 * 1px), calc(0 / 50 * 1px));
+      }
+    }
+  }
 `;

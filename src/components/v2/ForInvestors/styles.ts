@@ -62,16 +62,19 @@ export const Title = styled.div`
     a {
       display: block;
       color: ${theme.colors.primary} !important;
-      margin-top: 2rem;
+      margin: 2rem auto 0 auto;
       font-weight: 550;
-      transition: opacity 0.2s ease-in-out;
+      width: fit-content;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.primary}19;
+      }
       svg {
         fill: ${theme.colors.primary};
         max-width: 1rem;
         margin-left: 0.5rem;
-      }
-      :hover {
-        opacity: 0.7;
       }
     }
   `}
@@ -113,7 +116,6 @@ export const Card = styled.div`
       margin-top: 2rem;
       font-weight: 550;
       transition: opacity 0.2s ease-in-out;
-
       :hover {
         opacity: 0.7;
       }

@@ -10,10 +10,11 @@ export const Container = styled.div`
   display: grid;
   align-items: center;
   gap: 5rem;
-
-  img {
+  margin-bottom: 8rem;
+  video {
     width: 100%;
   }
+
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1.8fr 1fr;
   }
@@ -79,6 +80,10 @@ export const ContentCard = styled.div`
       display: block;
       padding: 1.5rem;
       border-radius: 1rem;
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.primary}cc;
+      }
     }
   `}
 `;
