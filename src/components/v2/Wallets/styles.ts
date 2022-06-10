@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     max-width: ${theme.grid.container};
     margin: 4rem auto 0 auto;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
     h2 {
       font-weight: 550;

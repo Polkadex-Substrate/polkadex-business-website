@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
   `}
 `;
 export const Main = styled.div`
-  padding: 4rem;
+  padding: 2rem;
   background: white;
   color: black;
   display: grid;
@@ -16,6 +16,7 @@ export const Main = styled.div`
   border-radius: 2rem;
   @media screen and (min-width: 890px) {
     grid-template-columns: 1fr 2fr;
+    padding: 4rem;
   }
 `;
 
@@ -38,10 +39,13 @@ export const Container = styled.div`
       font-weight: 700;
       margin-bottom: 1rem;
       line-height: 1.2;
-    }
-    strong {
-      display: block;
-      color: ${theme.colors.primary};
+      @media screen and (max-width: 700px) {
+        font-size: 3.5rem;
+      }
+      strong {
+        display: block;
+        color: ${theme.colors.primary};
+      }
     }
   `}
 `;

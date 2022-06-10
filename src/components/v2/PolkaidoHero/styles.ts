@@ -32,7 +32,7 @@ export const Title = styled.div`
     line-height: 1.6;
   }
   @media screen and (max-width: 915px) {
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
 `;
 

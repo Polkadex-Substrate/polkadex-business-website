@@ -17,6 +17,6 @@ export const Wrapper = styled.div`
   }
   video {
     max-width: 80rem;
-    width: max-content;
+    width: 100%;
   }
 `;

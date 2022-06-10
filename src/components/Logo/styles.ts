@@ -74,7 +74,7 @@ export const Careers = styled.div`
 export const Staking = styled.div`
   display: flex;
   align-items: center;
-  max-width: 10rem;
+  width: 10rem;
   :before {
     padding-right: 1px;
     margin-right: 2rem;
@@ -84,5 +84,8 @@ export const Staking = styled.div`
     max-width: 1px;
     background-color: white;
     opacity: 0.2;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
   }
 `;

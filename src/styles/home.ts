@@ -10,8 +10,12 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.primaryBackground};
-    border-radius: 0 0 5rem 5rem;
-    padding-bottom: 4rem;
+    border-radius: 0 0 3rem 3rem;
+    padding-bottom: 1rem;
+    @media screen and (min-width: 1200px) {
+      border-radius: 0 0 5rem 5rem;
+      padding-bottom: 3rem;
+    }
   `}
 `;
 export const Content = styled.div`

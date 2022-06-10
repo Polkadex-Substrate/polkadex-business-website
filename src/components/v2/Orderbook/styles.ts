@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
     max-width: ${theme.grid.container};
     margin: 4rem auto 0 auto;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
   `}
 `;
@@ -62,7 +62,9 @@ export const FlexCard = styled.div`
   img {
     width: 100%;
     max-width: 35rem;
-    min-width: 35rem;
+    @media screen and (min-width: 500px) {
+      min-width: 35rem;
+    }
   }
   @media screen and (min-width: 1100px) {
     max-width: 70rem;
@@ -120,6 +122,9 @@ export const Title = styled.div`
     line-height: 1.2;
     font-size: 5rem;
     margin-bottom: 1.5rem;
+    @media screen and (max-width: 700px) {
+      font-size: 3.5rem;
+    }
   }
   p {
     line-height: 1.5;
@@ -161,7 +166,12 @@ export const PairsContainer = styled.div`
   align-items: center;
   gap: 1.5rem;
   margin-top: 2rem;
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
+
 export const Pair = styled.div`
   ${({ theme }) => css`
     display: flex;

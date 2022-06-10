@@ -7,7 +7,7 @@ export const Wrapper = styled.div<{ isDark?: boolean }>`
     color: ${isDark ? theme.colors.white : theme.colors.black};
     padding-bottom: 2rem;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
     li {
       list-style: none;

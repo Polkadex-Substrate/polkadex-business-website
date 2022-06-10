@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     color: ${theme.colors.black};
     overflow: hidden;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
     h2 {
       max-width: 110rem;

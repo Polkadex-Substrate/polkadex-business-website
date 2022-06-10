@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
     margin: 4rem 0 8rem 0;
     background: ${theme.colors.tertiaryBackgroundOpacity};
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
   `}
 `;
@@ -54,6 +54,9 @@ export const Content = styled.div`
       margin-bottom: 1rem;
       strong {
         color: ${theme.colors.primary};
+      }
+      @media screen and (max-width: 700px) {
+        font-size: 3.5rem;
       }
     }
     p {

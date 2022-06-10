@@ -20,7 +20,6 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    padding: 0 1rem;
     @media screen and (max-width: 519px) {
       :first-child {
         margin-bottom: 5rem;
@@ -31,6 +30,7 @@ export const Card = styled.div`
       position: absolute;
       max-width: 33rem;
       padding: 0;
+
       :first-child {
         top: 10rem;
         right: 0;

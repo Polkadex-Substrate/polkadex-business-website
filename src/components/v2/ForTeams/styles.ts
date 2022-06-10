@@ -26,7 +26,7 @@ export const Content = styled.div`
     max-width: 35rem;
   }
   @media screen and (max-width: 1000px) {
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
 `;
 
@@ -90,7 +90,7 @@ export const Benefits = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
     @media screen and (max-width: 1000px) {
-      margin: 0 2rem;
+      margin: 0 1rem;
     }
   `}
 `;

@@ -9,7 +9,7 @@ export const Container = styled.div`
     max-width: ${theme.grid.container};
     margin: 0 auto;
     @media screen and (max-width: 1200px) {
-      margin: 0 2rem;
+      margin: 0 1rem;
     }
     @media screen and (min-width: 1200px) {
       padding: 8rem 0;
@@ -126,7 +126,7 @@ export const OverviewWrapper = styled.div`
   gap: 1rem;
   max-width: 90rem;
   @media screen and (max-width: 1200px) {
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
 `;
 

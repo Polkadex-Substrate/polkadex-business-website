@@ -6,14 +6,18 @@ export const Wrapper = styled.section`
     margin: 10rem auto;
     color: ${theme.colors.black};
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
   `}
 `;
 
 export const Title = styled.div`
   h2 {
+    line-height: 1.2;
     font-size: 5rem;
+    @media screen and (max-width: 700px) {
+      font-size: 3.5rem;
+    }
   }
   p {
     max-width: 60rem;
@@ -67,7 +71,9 @@ export const Video = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 2rem;
+  @media screen and (min-width: 700px) {
+    padding: 2rem;
+  }
 `;
 
 export const Text = styled.div`

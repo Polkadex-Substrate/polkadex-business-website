@@ -1,9 +1,11 @@
 import * as Icons from 'components/Icons';
+import { isAndroid, isIOS } from 'react-device-detect';
 import Typewriter from 'typewriter-effect';
 
 import * as S from './styles';
 
 export const Hero = () => {
+  const isDevice = isAndroid || isIOS;
   return (
     <S.Wrapper id="hero">
       <S.Main>
@@ -39,13 +41,15 @@ export const Hero = () => {
               Google Play
             </a>
           </S.DownloadLinks>
-          <S.ScanQrCode>
-            <img src="/img/polkadexDevice.svg" alt="Polkadex Device QrCode" />
-            <span>
-              <Icons.ArrowLeft />
-              Scan to download
-            </span>
-          </S.ScanQrCode>
+          {!isDevice && (
+            <S.ScanQrCode>
+              <img src="/img/polkadexDevice.svg" alt="Polkadex Device QrCode" />
+              <span>
+                <Icons.ArrowLeft />
+                Scan to download
+              </span>
+            </S.ScanQrCode>
+          )}
         </S.Container>
         <S.HeroImage>
           <img src="/img/hero.png" alt="Orderbook mockup" />

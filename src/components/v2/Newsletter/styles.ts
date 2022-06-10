@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
     max-width: ${theme.grid.container};
     margin: 2rem auto;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 2rem;
+      margin: 4rem 1rem;
     }
   `}
 `;
