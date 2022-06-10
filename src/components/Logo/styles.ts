@@ -27,6 +27,7 @@ export const Link = styled.a<Partial<Props>>`
   ${({ size, theme }) => css`
     transition: ${theme.transition.default};
     color: ${theme.colors.text};
+    cursor: pointer;
     & svg {
       ${!!size && imageModifier[size]}
     }
@@ -68,6 +69,9 @@ export const Careers = styled.div`
     max-width: 1px;
     background-color: white;
     opacity: 0.2;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
   }
 `;
 

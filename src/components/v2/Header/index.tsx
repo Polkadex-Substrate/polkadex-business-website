@@ -97,10 +97,10 @@ export const Header = ({ logo = undefined, links = [], cta }: T.Props) => {
                       <span>New</span>
                     </li>
                     <li>
-                      <a href="/v2/staking">Staking</a>
+                      <Link href="/v2/staking">Staking</Link>
                     </li>
                     <li>
-                      <a href="/">Liquidity Mining</a>
+                      <Link href="/v2/staking">Liquidity Mining</Link>
                     </li>
                   </ul>
                 </S.MenuContainer>
@@ -109,16 +109,16 @@ export const Header = ({ logo = undefined, links = [], cta }: T.Props) => {
                   <small>About</small>
                   <ul>
                     <li>
-                      <a href="/">Vision</a>
+                      <Link href="/v2/#vision">Vision</Link>
                     </li>
                     <li>
-                      <a href="/">Team</a>
+                      <a href="/v2/#team">Team</a>
                     </li>
                     <li>
-                      <a href="/">Tokenomics</a>
+                      <a href="/v2/#tokenomicss">Tokenomics</a>
                     </li>
                     <li>
-                      <a href="/">Brand Assets</a>
+                      <a href="/v2/brandassets">Brand Assets</a>
                     </li>
                     <li>
                       <Link href="/v2/careers">Careers</Link>

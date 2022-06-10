@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Icons from 'components/Icons';
 import Link from 'next/link';
 
@@ -11,19 +12,19 @@ export const Footer = ({ isDark = false }) => {
           <span>Polkadex</span>
           <ul>
             <li>
-              <Link href="/">Overview</Link>
+              <Link href="/v2/#overview">Overview</Link>
             </li>
             <li>
-              <Link href="/">Features</Link>
+              <Link href="/v2/#features">Features</Link>
             </li>
             <li>
-              <Link href="/">Roadmap</Link>
+              <Link href="/v2/#roadmap">Roadmap</Link>
             </li>
             <li>
-              <Link href="/">Team</Link>
+              <Link href="/v2/#team">Team</Link>
             </li>
             <li>
-              <Link href="/">Tokenomics</Link>
+              <Link href="/v2/#tokenomics">Tokenomics</Link>
             </li>
           </ul>
         </div>
@@ -48,16 +49,16 @@ export const Footer = ({ isDark = false }) => {
               <span>Products</span>
               <ul>
                 <li>
-                  <Link href="/">Orderbook</Link>
+                  <Link href="/v2/orderbook">Orderbook</Link>
                 </li>
                 <li>
-                  <Link href="/">Polkapool AMM</Link>
+                  <Link href="/v2/polkapool">Polkapool AMM</Link>
                 </li>
                 <li>
-                  <Link href="/">PolkaIDO</Link>
+                  <Link href="/v2/polkaido">PolkaIDO</Link>
                 </li>
                 <li>
-                  <Link href="/">THEA Bridge</Link>
+                  <Link href="/v2/thea">THEA Bridge</Link>
                 </li>
               </ul>
             </div>
@@ -97,21 +98,23 @@ export const Footer = ({ isDark = false }) => {
           <span>Compay</span>
           <ul>
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/v2/about">About Us</Link>
             </li>
             <li>
-              <Link href="/">Partners</Link>
+              <Link href="/v2/partners">Partners</Link>
             </li>
             <li>
-              <Link href="/">Contract</Link>
+              <Link href="/v2/contract">Contract</Link>
             </li>
             <li>
-              <Link href="/">Brand Assets</Link>
+              <Link href="/v2/brandassets">Brand Assets</Link>
             </li>
             <li>
-              <a href="/">
-                Careers <small>We&apos;re higing</small>
-              </a>
+              <Link href="/v2/careers">
+                <a>
+                  Careers <small>We&apos;re higing</small>
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
