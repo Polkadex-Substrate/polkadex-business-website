@@ -568,18 +568,14 @@ const ENLanguage = {
                 subInfo: 'With blockchain Integration',
               },
               { title: 'Public Testnet', timeline: 'Mid June, 2022' },
-              { title: 'Mainnet', timeline: 'Late June - Early July' },
+              { title: 'Mainnet', timeline: 'TBA' },
             ],
           },
           {
             title: 'Orderbook Mobile App',
             subItems: [
-              {
-                title: 'Beta Testing',
-                timeline: 'Early June, 2022',
-              },
-              { title: 'Public Testnet', timeline: 'Mid June, 2022' },
-              { title: 'Mainnet', timeline: 'Late June - Early July' },
+              { title: 'Public Testnet', timeline: 'TBA' },
+              { title: 'Mainnet', timeline: 'TBA' },
             ],
           },
         ],
