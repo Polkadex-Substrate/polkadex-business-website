@@ -9,19 +9,19 @@ import * as S from './styles';
 const slides = [
   {
     id: 0,
-    src: 'https://cdn.sketch.com/assets/pages/collaborate/real-time-collab-visual.mp4',
+    src: 'https://dsc.cloud/0ebce1/polkaido-Regiser-Account.mov',
   },
   {
     id: 1,
-    src: 'https://cdn.sketch.com/assets/pages/collaborate/handoff-visual-2.mp4',
+    src: 'https://dsc.cloud/0ebce1/mintToken.mov',
   },
   {
     id: 2,
-    src: 'https://cdn.sketch.com/assets/pages/design/design-system-visual.mp4',
+    src: 'https://dsc.cloud/0ebce1/polkaido-Regiser-Account.mov',
   },
   {
     id: 3,
-    src: 'https://cdn.sketch.com/assets/pages/design/collaborate-visual.mp4',
+    src: 'https://dsc.cloud/0ebce1/mintToken.mov',
   },
 ];
 
@@ -104,7 +104,7 @@ const Slide = ({ src, current, handleClick, i }) => {
     >
       <video
         key={src}
-        poster="https://sketch-cdn.imgix.net/assets/pages/collaborate/real-time-collab-visual@2x.png?ixlib=rb-4.0.1&amp;q=95&amp;fm=png&amp;auto=format&amp;s=345ffba50881bab34acc2e05c1f6c265"
+        // poster="https://dsc.cloud/0ebce1/cover.jpg"
         data-autoplay-in-viewport="true"
         loop
         muted

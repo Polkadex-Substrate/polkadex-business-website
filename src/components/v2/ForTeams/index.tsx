@@ -5,8 +5,8 @@ export const ForTeams = () => {
     <S.Wrapper id="forteams">
       <S.Container>
         <video
-          key="https://cdn.sketch.com/assets/pages/collaborate/real-time-collab-visual.mp4"
-          poster="https://sketch-cdn.imgix.net/assets/pages/collaborate/real-time-collab-visual@2x.png?ixlib=rb-4.0.1&amp;q=95&amp;fm=png&amp;auto=format&amp;s=345ffba50881bab34acc2e05c1f6c265"
+          key="https://dsc.cloud/0ebce1/mintToken.mov"
+          // poster="https://sketch-cdn.imgix.net/assets/pages/collaborate/real-time-collab-visual@2x.png?ixlib=rb-4.0.1&amp;q=95&amp;fm=png&amp;auto=format&amp;s=345ffba50881bab34acc2e05c1f6c265"
           data-autoplay-in-viewport="true"
           loop
           muted
@@ -15,7 +15,7 @@ export const ForTeams = () => {
           data-hs-allowed="true"
           data-entrance-is-intersecting-value="true"
         >
-          <source src="https://cdn.sketch.com/assets/pages/collaborate/real-time-collab-visual.mp4" />
+          <source src="https://dsc.cloud/0ebce1/mintToken.mov" />
         </video>
         <S.Content>
           <S.Title>
