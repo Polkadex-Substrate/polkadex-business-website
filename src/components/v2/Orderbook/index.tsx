@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import * as S from './styles';
+import * as T from './types';
 
 const sliders = [
   {
@@ -80,17 +81,19 @@ export const Orderbook = () => {
         />
         <Card
           title="Your keys, your crypto"
-          description="Non-custodial means there’s no centralized honeypot for hackers to go after. In other words, your funds stay safe and secure in your wallet at all times. 
-Leave your assets on your exchange without worrying about hacks and save on transaction fees for moving your funds in and out every time you want to trade."
+          description="Non-custodial means there’s no centralized honeypot for hackers to go after. In other words, your funds stay safe and secure in your wallet at all times."
           image="keys"
           alt="Key"
         />
-        <Card
-          title="Delegate"
-          description="Whether it’s an algorithm or a fund manager, delegate your asset trading to a third party while keeping control of your funds and sit back and watch your profits roll in."
-          image="delegate"
-          alt="Shield"
-        />
+        <Card title="Delegate" image="delegate" alt="Shield">
+          <>
+            <p>Sit back and watch your profits roll in.</p>
+            <p>
+              Whether it’s an algorithm or a fund manager, delegate your asset
+              trading to a third party while keeping control of your funds.
+            </p>
+          </>
+        </Card>
         <Card
           title="Register multiple hot wallets"
           description="Connect hot wallets based on browser extensions, mobile phones or other devices to trade whenever, wherever."
@@ -108,12 +111,12 @@ Leave your assets on your exchange without worrying about hacks and save on tran
           <S.FlexTitle>
             <span>Cross-chain for real</span>
             <p>
-              Polkadex parachain + Thea bridge Cutting edge meets cutting edge.
+              Polkadex parachain + THEA bridge Cutting edge meets cutting edge.
               <br />
               <br />
               The Polkadex parachain connects Polkadex to the Polkadot ecosystem
-              and its parachains. Thea, Polkadex’s cutting-edge decentralized
-              token bridge, will connect to Ethereumand more blockchains and
+              and its parachains. THEA, Polkadex’s cutting-edge decentralized
+              token bridge, will connect to Ethereum and more blockchains and
               ecosystems down the line.
             </p>
             <S.PairsContainer>
@@ -143,10 +146,10 @@ Leave your assets on your exchange without worrying about hacks and save on tran
   );
 };
 
-const Card = ({ image, alt, title, description }) => (
+const Card = ({ image, alt, title, description = '', children }: T.Props) => (
   <S.Card>
     <img src={`/img/${image}.png`} alt={alt} />
     <span>{title}</span>
-    <p>{description}</p>
+    {description.length ? <p>{description}</p> : children}
   </S.Card>
 );

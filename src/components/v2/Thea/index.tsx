@@ -74,7 +74,7 @@ export const Thea = () => {
             isActive={state.id === 0}
             onChange={() => setState({ ...initialState[0] })}
             title="Interoperability"
-            description="Thea transactions should happen in just one operation. No more approve & transfer."
+            description="THEA transactions should happen in just one operation. No more approve & transfer."
           />
           <Card
             isActive={state.id === 1}

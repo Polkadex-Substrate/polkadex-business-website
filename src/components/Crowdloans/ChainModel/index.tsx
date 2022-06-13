@@ -18,7 +18,7 @@ export const ChainModel = () => {
             <p>
               <strong>
                 The Polkadex network will have all Polkadex products on top of
-                it, as well as Thea, which means it will be connected to
+                it, as well as THEA, which means it will be connected to
                 Ethereum
               </strong>
               (and other blockchains further down the line)
@@ -30,7 +30,7 @@ export const ChainModel = () => {
                 Polkadex network and Polkadex parachain will be two different
                 networks
               </strong>
-              due to the fact that Thea cannot be deployed onto the parachain
+              due to the fact that THEA cannot be deployed onto the parachain
               for at least another year.
             </p>
           </div>
