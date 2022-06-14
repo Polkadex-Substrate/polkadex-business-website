@@ -74,6 +74,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Title = styled.div`
+  color: white;
   h2 {
     font-size: 3rem;
     font-weight: 550;

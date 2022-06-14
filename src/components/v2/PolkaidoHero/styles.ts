@@ -60,6 +60,10 @@ export const Actions = styled.div`
         display: flex;
         align-items: center;
         transition: background 0.2s ease-in-out;
+        color: ${theme.colors.primary};
+        svg {
+          fill: ${theme.colors.primary};
+        }
         :hover {
           background: ${theme.colors.primary}19;
         }
