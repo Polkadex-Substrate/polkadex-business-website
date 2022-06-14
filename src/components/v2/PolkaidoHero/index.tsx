@@ -2,7 +2,7 @@
 /* eslint-disable no-return-assign */
 
 import * as Icons from 'components/Icons';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import * as S from './styles';
 
@@ -59,7 +59,7 @@ export const PolkaidoHero = () => {
         <S.Actions>
           <a href="/">Fund your idea</a>
           <a href="/">
-            Open rounds <Icons.ArrowRight />
+            Check open rounds <Icons.ArrowRight />
           </a>
         </S.Actions>
       </S.Title>
