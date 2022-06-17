@@ -545,8 +545,9 @@ const ENLanguage = {
                 title: 'Public Testnet',
                 timeline: 'Early April, 2022',
                 subInfo: 'With Token Minting & Token Transfers',
+                isHoverable: false,
               },
-              { title: 'Mainnet', timeline: 'June, 2022' },
+              { title: 'Mainnet', timeline: 'TBA', isHoverable: true },
             ],
           },
           {
@@ -555,8 +556,13 @@ const ENLanguage = {
               {
                 title: 'Beta Testers',
                 timeline: '1st week of April, 2022',
+                isHoverable: false,
               },
-              { title: 'Public Testnet', timeline: 'April, 2022' },
+              {
+                title: 'Public Testnet',
+                timeline: 'April, 2022',
+                isHoverable: false,
+              },
             ],
           },
           {
@@ -566,16 +572,21 @@ const ENLanguage = {
                 title: 'Beta Testing',
                 timeline: 'Early June, 2022',
                 subInfo: 'With blockchain Integration',
+                isHoverable: false,
               },
-              { title: 'Public Testnet', timeline: 'Mid June, 2022' },
-              { title: 'Mainnet', timeline: 'TBA' },
+              {
+                title: 'Public Testnet',
+                timeline: 'Mid June, 2022',
+                isHoverable: false,
+              },
+              { title: 'Mainnet', timeline: 'TBA', isHoverable: false },
             ],
           },
           {
             title: 'Orderbook Mobile App',
             subItems: [
-              { title: 'Public Testnet', timeline: 'TBA' },
-              { title: 'Mainnet', timeline: 'TBA' },
+              { title: 'Public Testnet', timeline: 'TBA', isHoverable: false },
+              { title: 'Mainnet', timeline: 'TBA', isHoverable: false },
             ],
           },
         ],

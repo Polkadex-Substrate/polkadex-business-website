@@ -37,11 +37,23 @@ const RoadmapCard = ({
                 {!!item.subItems?.length &&
                   item.subItems.map((subItem) => (
                     <S.Item>
-                      {subItem.timeline && (
-                        <span className={subItem.status ? 'checked' : ''}>
-                          {subItem.timeline}
-                        </span>
-                      )}
+                      {subItem.timeline &&
+                        (subItem.isHoverable ? (
+                          <Tooltip>
+                            <TooltipHeader>
+                              <span className={subItem.status ? 'checked' : ''}>
+                                {subItem.timeline}
+                              </span>
+                            </TooltipHeader>
+                            <TooltipContent style={{ textAlign: 'left' }}>
+                              To go out along with orderbook mainnet
+                            </TooltipContent>
+                          </Tooltip>
+                        ) : (
+                          <span className={subItem.status ? 'checked' : ''}>
+                            {subItem.timeline}
+                          </span>
+                        ))}
                       {subItem.status && <IconComponent />}
                       <p>
                         {!!subItem?.subInfo?.length && (
