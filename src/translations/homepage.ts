@@ -820,11 +820,11 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadot',
-            href: 'https://web3.foundation/',
+            href: 'https://www.polkadot.network/',
           },
           {
             title: 'Web3 Foundation',
-            href: 'https://www.polkadot.network/',
+            href: 'https://web3.foundation/',
           },
         ],
       },
