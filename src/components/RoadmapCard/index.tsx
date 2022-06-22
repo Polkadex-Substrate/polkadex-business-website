@@ -31,8 +31,24 @@ const RoadmapCard = ({
                       {item.timeline}
                     </span>
                   )}
-                  {item.status && <IconComponent />}
-                  <p>{item.title}</p>
+                  {item.isHoverable ? (
+                    <Tooltip>
+                      <TooltipHeader>
+                        <div style={{ display: 'flex' }}>
+                          {item.status && <IconComponent />}
+                          <p>{item.title}</p>
+                        </div>
+                      </TooltipHeader>
+                      <TooltipContent style={{ textAlign: 'left' }}>
+                        {item.subInfo}
+                      </TooltipContent>
+                    </Tooltip>
+                  ) : (
+                    <>
+                      {item.status && <IconComponent />}
+                      <p>{item.title}</p>
+                    </>
+                  )}
                 </S.Item>
                 {!!item.subItems?.length &&
                   item.subItems.map((subItem) => (

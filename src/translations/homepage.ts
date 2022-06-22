@@ -444,15 +444,15 @@ const ENLanguage = {
     cards: [
       {
         title: 'Q3 2020',
-        alignRight: true,
+        alignRight: false,
         position: {
           horizontal: {
             side: 'left',
-            distance: 10,
+            distance: 0,
           },
           vertical: {
             side: 'top',
-            distance: -9.5,
+            distance: -10.5,
           },
         },
         items: [
@@ -465,12 +465,12 @@ const ENLanguage = {
         title: 'Q4 2020',
         position: {
           horizontal: {
-            side: 'right',
-            distance: 20,
+            side: 'left',
+            distance: 40,
           },
           vertical: {
             side: 'top',
-            distance: 5,
+            distance: -8,
           },
         },
         items: [
@@ -482,49 +482,74 @@ const ENLanguage = {
       },
       {
         title: 'Q1-Q2 2021',
-        alignRight: true,
+        alignRight: false,
         position: {
           horizontal: {
-            side: 'left',
-            distance: 3,
+            side: 'right',
+            distance: 20,
           },
           vertical: {
             side: 'top',
-            distance: 27,
+            distance: 5,
           },
         },
         items: [
-          { title: 'Public Sale', timeline: 'April 2021', status: true },
+          { title: 'Public Sale', status: true },
           {
             title: 'Testnet V2.0 Launch',
-            timeline: 'February 2021',
             status: true,
           },
-          { title: 'Testnet V3.0 Launch', timeline: 'June 2021', status: true },
-          { title: 'Security Audit', timeline: 'July 2021', status: true },
+          { title: 'Testnet V3.0 Launch', status: true },
+          { title: 'Security Audit', status: true },
         ],
       },
       {
         title: 'Q3-Q4 2021',
+        alignRight: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 15,
+          },
+          vertical: {
+            side: 'top',
+            distance: 23,
+          },
+        },
+        items: [
+          { title: 'Mainnet Launch', status: true },
+          { title: 'ERC20 to native PDEX migration', status: true },
+          { title: 'Launch of Private Beta Tester Program', status: true },
+          { title: 'Parachain Strategy Development', status: true },
+        ],
+      },
+      {
+        title: 'Q1 2022',
+        alignRight: false,
         position: {
           horizontal: {
             side: 'right',
-            distance: 3,
+            distance: 0,
           },
           vertical: {
             side: 'bottom',
-            distance: 42,
+            distance: 40,
           },
         },
         items: [
-          { title: 'Parachain Development' },
-          { title: 'Polkadot Crowdfunding' },
-          { title: 'Parachain Auction' },
-          { title: 'Mainnet Launch', timeline: 'September 2021', status: true },
+          { title: 'PolkaIDO', status: true },
+          { title: 'PolkaIDO Public Testnet', status: true },
+          { title: 'Polkadex Crowdloan Campaign', status: true },
+          {
+            title: 'Polkadex Orderbook Beta*',
+            status: true,
+            subInfo: 'Without blockchain integration',
+            isHoverable: true,
+          },
         ],
       },
       {
-        title: 'Q2 - 2022',
+        title: 'Q2 2022',
         alignRight: true,
         invert: true,
         position: {
@@ -534,81 +559,67 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 0,
+            distance: 20,
           },
         },
         items: [
+          { title: 'THEA Public Testnet', status: true },
           {
-            title: 'PolkaIDO',
-            subItems: [
-              {
-                title: 'Public Testnet',
-                timeline: 'Early April, 2022',
-                subInfo: 'With Token Minting & Token Transfers',
-                isHoverable: false,
-              },
-              { title: 'Mainnet', timeline: 'TBA', isHoverable: true },
-            ],
+            title: 'PolkaIDO* Public Testnet',
+            status: true,
+            subInfo: 'Token minting + token bridging',
+            isHoverable: true,
           },
+          { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
+          { title: 'Open Beta Program' },
           {
-            title: 'Thea',
-            subItems: [
-              {
-                title: 'Beta Testers',
-                timeline: '1st week of April, 2022',
-                isHoverable: false,
-              },
-              {
-                title: 'Public Testnet',
-                timeline: 'April, 2022',
-                isHoverable: false,
-              },
-            ],
-          },
-          {
-            title: 'Orderbook',
-            subItems: [
-              {
-                title: 'Beta Testing',
-                timeline: 'Early June, 2022',
-                subInfo: 'With blockchain Integration',
-                isHoverable: false,
-              },
-              {
-                title: 'Public Testnet',
-                timeline: 'Mid June, 2022',
-                isHoverable: false,
-              },
-              { title: 'Mainnet', timeline: 'TBA', isHoverable: false },
-            ],
-          },
-          {
-            title: 'Orderbook Mobile App',
-            subItems: [
-              { title: 'Public Testnet', timeline: 'TBA', isHoverable: false },
-              { title: 'Mainnet', timeline: 'TBA', isHoverable: false },
-            ],
+            title: 'Polkadex Orderbook Public Testnet*',
+            subInfo: 'With blockchain integration',
+            isHoverable: true,
           },
         ],
       },
       {
-        title: 'Q1-Q3 2022',
+        title: 'Q3 2022',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 45,
+            distance: 30,
           },
           vertical: {
             side: 'bottom',
-            distance: 3,
+            distance: 8,
           },
         },
         items: [
-          { title: 'Margin/Lending' },
-          { title: 'Futures/Options' },
-          { title: 'Pebble Consensus Upgrade' },
+          { title: 'Polkadex Orderbook Mainnet' },
+          { title: 'PolkaIDO Mainnet' },
+          { title: 'Mobile App Public Testnet' },
+        ],
+      },
+      {
+        title: 'Q4 2022',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 30,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 0,
+          },
+        },
+        items: [
+          { title: 'Release Polkadex Orderbook to Parachain' },
+          {
+            title: 'Polkadex Orderbook Mobile Apps* in app stores',
+            subInfo: 'iOS, Android',
+            isHoverable: true,
+          },
         ],
       },
     ],
