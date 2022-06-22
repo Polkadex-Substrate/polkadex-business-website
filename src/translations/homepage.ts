@@ -537,7 +537,7 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'PolkaIDO', status: true },
+          { title: 'PolkaIDO Beta', status: true },
           { title: 'PolkaIDO Public Testnet', status: true },
           { title: 'Polkadex Crowdloan Campaign', status: true },
           {
