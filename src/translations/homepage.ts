@@ -2,6 +2,11 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
+        title: 'Subscan',
+        href: 'https://polkadex.subscan.io/',
+        soon: false,
+      },
+      {
         title: 'THEA',
         href: '#',
         soon: true,
@@ -59,8 +64,8 @@ const ENLanguage = {
     title: 'The trading engine for Web3 and DeFi',
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
-    ctaButton: 'Polkadex Crowdloans',
-    ctaLink: '/crowdloans#participate',
+    ctaButton: 'Orderbook Open Beta',
+    ctaLink: 'http://orderbook-beta.polkadex.trade',
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
       'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',

@@ -77,6 +77,7 @@ export const RowBanner = styled.div`
 export const CtaContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: 2rem;
   @media screen and (max-width: 375px) {
     flex-direction: column;
   }
