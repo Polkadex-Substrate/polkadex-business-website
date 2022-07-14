@@ -303,17 +303,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Senior Rust Engineer',
-        name: 'Mambisi Zempare',
-        image: 'mambisiPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/mambisi/',
-          },
-        ],
-      },
-      {
         title: 'Social Media Manager',
         name: 'Pablo Solanas Martin',
         image: 'pabloPhotography',
@@ -367,6 +356,10 @@ const ENLanguage = {
         image: 'charlesPhotography',
         socialMedia: [
           {
+            name: 'Github',
+            link: 'https://github.com/charleslukes',
+          },
+          {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
           },
@@ -380,6 +373,36 @@ const ENLanguage = {
           {
             name: 'Github',
             link: 'https://github.com/35359595',
+          },
+        ],
+      },
+      {
+        title: 'Junior Rust Engineer',
+        name: 'Nakul Amate',
+        image: 'nakulPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/nakul1010',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/nakul-amate/',
+          },
+        ],
+      },
+      {
+        title: 'Junior Rust Engineer',
+        name: 'Faisal Ahmed',
+        image: 'faisalPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/felixfaisal',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/faisal-ahmed-farooq-6395a0174/',
           },
         ],
       },
