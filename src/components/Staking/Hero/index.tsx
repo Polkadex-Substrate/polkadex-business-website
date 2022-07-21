@@ -14,10 +14,10 @@ export const Hero = () => {
             </strong>
           </h1>
           <p>
-            Support Polkadex, invest in the next generation of Web3 Exchanges,
-            and be a part of the future of Defi and earn your PDEX rewards!
+            Make your PDEX work for you and enjoy passive income. Stake your
+            PDEX to secure the Polkadex network and earn daily rewards!
           </p>
-          <PrimaryButton content="Stake Now" href="#stake" />
+          <PrimaryButton content="Stake now" href="#stake" />
         </S.Aside>
       </S.Container>
     </S.Wrapper>

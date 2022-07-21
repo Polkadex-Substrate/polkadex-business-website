@@ -95,7 +95,7 @@ export const Footer = ({ isDark = false }) => {
           </ul>
         </div>
         <div>
-          <span>Compay</span>
+          <span>Company</span>
           <ul>
             <li>
               <Link href="/v2/about">About Us</Link>

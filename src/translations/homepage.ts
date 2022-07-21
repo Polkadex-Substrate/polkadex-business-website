@@ -2,6 +2,11 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
+        title: 'Staking',
+        href: '/staking',
+        soon: false,
+      },
+      {
         title: 'THEA',
         href: '#',
         soon: true,

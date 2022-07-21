@@ -1,7 +1,14 @@
 import axios from 'axios';
 import { Preview as PreviewComponent } from 'components/Careers';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export const Preview = ({ data, error = '' }) => {
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/');
+  });
+  return <div />;
   return <PreviewComponent data={data} error={error} />;
 };
 

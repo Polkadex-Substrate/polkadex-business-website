@@ -7,7 +7,7 @@ export const Rewards = () => {
     <S.Wrapper id="rewards">
       <S.Title>
         <h2>Ready to get started?</h2>
-        <p>Join our community to help secure networks and earn rewards. </p>
+        <p>Join our community to help secure the network and earn rewards.</p>
         <div>
           <Icons.ArrowRight />
         </div>
@@ -16,8 +16,7 @@ export const Rewards = () => {
         title="Nominate"
         description="42.31% average APY"
         benefits={[
-          'The easy way to get daily PDEX reward',
-          'Stake your PDEX by nominating a validator',
+          'The easiest way to get daily PDEX rewards',
           'Choose a set of validators you trust',
           'Get daily rewards paid out by your validator',
         ]}

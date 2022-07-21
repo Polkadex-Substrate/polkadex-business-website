@@ -1,7 +1,15 @@
 import axios from 'axios';
 import { Template } from 'components/Careers';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export const Careers = ({ jobs = [], error = '' }) => {
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/');
+  });
+  return <div />;
+
   return <Template jobs={jobs} error={error} />;
 };
 
