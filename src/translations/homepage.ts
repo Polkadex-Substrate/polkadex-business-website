@@ -2,19 +2,14 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
-        title: 'Staking',
-        href: '/staking',
+        title: 'Subscan',
+        href: 'https://polkadex.subscan.io/',
         soon: false,
       },
       {
         title: 'THEA',
         href: '#',
         soon: true,
-      },
-      {
-        title: 'Migrate',
-        href: '/migrate',
-        soon: false,
       },
       {
         title: 'Explorer',
@@ -64,8 +59,8 @@ const ENLanguage = {
     title: 'The trading engine for Web3 and DeFi',
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
-    ctaButton: 'Polkadex Crowdloans',
-    ctaLink: '/crowdloans#participate',
+    ctaButton: 'Orderbook Open Beta',
+    ctaLink: 'http://orderbook-beta.polkadex.trade',
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
       'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
@@ -303,17 +298,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Senior Rust Engineer',
-        name: 'Mambisi Zempare',
-        image: 'mambisiPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/mambisi/',
-          },
-        ],
-      },
-      {
         title: 'Social Media Manager',
         name: 'Pablo Solanas Martin',
         image: 'pabloPhotography',
@@ -367,6 +351,10 @@ const ENLanguage = {
         image: 'charlesPhotography',
         socialMedia: [
           {
+            name: 'Github',
+            link: 'https://github.com/charleslukes',
+          },
+          {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
           },
@@ -380,6 +368,36 @@ const ENLanguage = {
           {
             name: 'Github',
             link: 'https://github.com/35359595',
+          },
+        ],
+      },
+      {
+        title: 'Junior Rust Engineer',
+        name: 'Nakul Amate',
+        image: 'nakulPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/nakul1010',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/nakul-amate/',
+          },
+        ],
+      },
+      {
+        title: 'Junior Rust Engineer',
+        name: 'Faisal Ahmed',
+        image: 'faisalPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/felixfaisal',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/faisal-ahmed-farooq-6395a0174/',
           },
         ],
       },
@@ -449,15 +467,15 @@ const ENLanguage = {
     cards: [
       {
         title: 'Q3 2020',
-        alignRight: true,
+        alignRight: false,
         position: {
           horizontal: {
             side: 'left',
-            distance: 10,
+            distance: 0,
           },
           vertical: {
             side: 'top',
-            distance: -9.5,
+            distance: -10.5,
           },
         },
         items: [
@@ -470,12 +488,12 @@ const ENLanguage = {
         title: 'Q4 2020',
         position: {
           horizontal: {
-            side: 'right',
-            distance: 20,
+            side: 'left',
+            distance: 40,
           },
           vertical: {
             side: 'top',
-            distance: 5,
+            distance: -8,
           },
         },
         items: [
@@ -487,49 +505,74 @@ const ENLanguage = {
       },
       {
         title: 'Q1-Q2 2021',
-        alignRight: true,
+        alignRight: false,
         position: {
           horizontal: {
-            side: 'left',
-            distance: 3,
+            side: 'right',
+            distance: 20,
           },
           vertical: {
             side: 'top',
-            distance: 27,
+            distance: 5,
           },
         },
         items: [
-          { title: 'Public Sale', timeline: 'April 2021', status: true },
+          { title: 'Public Sale', status: true },
           {
             title: 'Testnet V2.0 Launch',
-            timeline: 'February 2021',
             status: true,
           },
-          { title: 'Testnet V3.0 Launch', timeline: 'June 2021', status: true },
-          { title: 'Security Audit', timeline: 'July 2021', status: true },
+          { title: 'Testnet V3.0 Launch', status: true },
+          { title: 'Security Audit', status: true },
         ],
       },
       {
         title: 'Q3-Q4 2021',
+        alignRight: true,
         position: {
           horizontal: {
-            side: 'right',
-            distance: 3,
+            side: 'left',
+            distance: 15,
           },
           vertical: {
-            side: 'bottom',
-            distance: 42,
+            side: 'top',
+            distance: 23,
           },
         },
         items: [
-          { title: 'Parachain Development' },
-          { title: 'Polkadot Crowdfunding' },
-          { title: 'Parachain Auction' },
-          { title: 'Mainnet Launch', timeline: 'September 2021', status: true },
+          { title: 'Mainnet Launch', status: true },
+          { title: 'ERC20 to native PDEX migration', status: true },
+          { title: 'Launch of Private Beta Tester Program', status: true },
+          { title: 'Parachain Strategy Development', status: true },
         ],
       },
       {
-        title: 'Q2 - 2022',
+        title: 'Q1 2022',
+        alignRight: false,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 0,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 40,
+          },
+        },
+        items: [
+          { title: 'PolkaIDO Beta', status: true },
+          { title: 'PolkaIDO Public Testnet', status: true },
+          { title: 'Polkadex Crowdloan Campaign', status: true },
+          {
+            title: 'Polkadex Orderbook Beta*',
+            status: true,
+            subInfo: 'Without blockchain integration',
+            isHoverable: true,
+          },
+        ],
+      },
+      {
+        title: 'Q2 2022',
         alignRight: true,
         invert: true,
         position: {
@@ -539,11 +582,21 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 0,
+            distance: 20,
           },
         },
         items: [
+          { title: 'THEA Public Testnet', status: true },
           {
+            title: 'PolkaIDO* Public Testnet',
+            status: true,
+            subInfo: 'Token minting + token bridging',
+            isHoverable: true,
+          },
+          { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
+          { title: 'Open Beta Program' },
+          {
+<<<<<<< HEAD
             title: 'PolkaIDO',
             subItems: [
               {
@@ -586,27 +639,59 @@ const ENLanguage = {
               { title: 'Public Testnet', timeline: 'Mid June, 2022' },
               { title: 'Mainnet', timeline: 'Late June - Early July' },
             ],
+=======
+            title: 'Polkadex Orderbook Public Testnet*',
+            subInfo: 'With blockchain integration',
+            isHoverable: true,
+>>>>>>> feature
           },
         ],
       },
       {
+<<<<<<< HEAD
         title: 'Q1-Q3 2022',
+=======
+        title: 'Q3 2022',
+>>>>>>> feature
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 45,
+            distance: 30,
           },
           vertical: {
             side: 'bottom',
-            distance: 3,
+            distance: 8,
           },
         },
         items: [
-          { title: 'Margin/Lending' },
-          { title: 'Futures/Options' },
-          { title: 'Pebble Consensus Upgrade' },
+          { title: 'Polkadex Orderbook Mainnet' },
+          { title: 'PolkaIDO Mainnet' },
+          { title: 'Mobile App Public Testnet' },
+        ],
+      },
+      {
+        title: 'Q4 2022',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 30,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 0,
+          },
+        },
+        items: [
+          { title: 'Release Polkadex Orderbook to Parachain' },
+          {
+            title: 'Polkadex Orderbook Mobile Apps* in app stores',
+            subInfo: 'iOS, Android',
+            isHoverable: true,
+          },
         ],
       },
     ],
@@ -818,11 +903,11 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadot',
-            href: 'https://web3.foundation/',
+            href: 'https://www.polkadot.network/',
           },
           {
             title: 'Web3 Foundation',
-            href: 'https://www.polkadot.network/',
+            href: 'https://web3.foundation/',
           },
         ],
       },

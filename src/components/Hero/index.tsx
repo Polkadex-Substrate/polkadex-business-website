@@ -1,4 +1,5 @@
 import { Banner } from 'components/Banner';
+import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
 import { ThemingContext } from 'context';
 import React, { useContext, useEffect, useRef } from 'react';
@@ -11,7 +12,8 @@ type Props = Pick<IHomeTranslations, 'hero'>;
 const Hero = ({
   title,
   description,
-
+  ctaButton,
+  ctaLink,
   secondaryCtaButton,
   secondaryCtaLink,
   chainsTitle,
@@ -41,6 +43,7 @@ const Hero = ({
           <S.SecondaryButton href={secondaryCtaLink}>
             {secondaryCtaButton}
           </S.SecondaryButton>
+          <PrimaryButton target="_blank" href={ctaLink} content={ctaButton} />
         </S.CtaContainer>
         <S.RowBanner>
           <Banner

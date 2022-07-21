@@ -4,6 +4,7 @@ type Item = {
   timeline?: string;
   subItems?: Item[];
   subInfo?: string;
+  isHoverable?: boolean;
 };
 
 type Props = {
