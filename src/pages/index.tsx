@@ -70,15 +70,6 @@ export default function Home() {
         <Head>
           <title>Polkadex - The trading engine for Web3 and DeFi</title>
         </Head>
-        <Announcement
-          content={
-            <ContractAnnouncement
-              contract="0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
-              href="https://etherscan.io/token/0xF59ae934f6fe444afC309586cC60a84a0F89Aaea"
-              {...announcement}
-            />
-          }
-        />
         <Header {...header} />
         <main>
           <Hero {...hero} />

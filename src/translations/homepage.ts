@@ -2,6 +2,11 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
+        title: 'Staking',
+        href: '/staking',
+        soon: false,
+      },
+      {
         title: 'Subscan',
         href: 'https://polkadex.subscan.io/',
         soon: false,
@@ -596,63 +601,14 @@ const ENLanguage = {
           { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
           { title: 'Open Beta Program' },
           {
-<<<<<<< HEAD
-            title: 'PolkaIDO',
-            subItems: [
-              {
-                title: 'Public Testnet',
-                timeline: 'Early April, 2022',
-                subInfo: 'With Token Minting & Token Transfers',
-              },
-              { title: 'Mainnet', timeline: 'June, 2022' },
-            ],
-          },
-          {
-            title: 'THEA',
-            subItems: [
-              {
-                title: 'Beta Testers',
-                timeline: '1st week of April, 2022',
-              },
-              { title: 'Public Testnet', timeline: 'April, 2022' },
-            ],
-          },
-          {
-            title: 'Orderbook',
-            subItems: [
-              {
-                title: 'Beta Testing',
-                timeline: 'Early June, 2022',
-                subInfo: 'With blockchain Integration',
-              },
-              { title: 'Public Testnet', timeline: 'Mid June, 2022' },
-              { title: 'Mainnet', timeline: 'Late June - Early July' },
-            ],
-          },
-          {
-            title: 'Orderbook Mobile App',
-            subItems: [
-              {
-                title: 'Beta Testing',
-                timeline: 'Early June, 2022',
-              },
-              { title: 'Public Testnet', timeline: 'Mid June, 2022' },
-              { title: 'Mainnet', timeline: 'Late June - Early July' },
-            ],
-=======
             title: 'Polkadex Orderbook Public Testnet*',
             subInfo: 'With blockchain integration',
             isHoverable: true,
->>>>>>> feature
           },
         ],
       },
       {
-<<<<<<< HEAD
-        title: 'Q1-Q3 2022',
-=======
         title: 'Q3 2022',
->>>>>>> feature
         alignRight: true,
         invert: true,
         position: {

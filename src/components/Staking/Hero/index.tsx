@@ -17,7 +17,7 @@ export const Hero = () => {
             Make your PDEX work for you and enjoy passive income. Stake your
             PDEX to secure the Polkadex network and earn daily rewards!
           </p>
-          <PrimaryButton content="Stake now" href="#stake" />
+          <PrimaryButton content="Stake now" href="#howtostake" />
         </S.Aside>
       </S.Container>
     </S.Wrapper>
