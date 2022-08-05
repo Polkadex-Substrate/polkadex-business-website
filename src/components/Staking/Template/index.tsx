@@ -7,7 +7,7 @@ import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-export const Template = () => {
+export const Template = ({ data, error }) => {
   const { header, newsletter, footer }: IHomeTranslations =
     HomeTranslations['en-US'];
   return (
@@ -36,10 +36,25 @@ export const Template = () => {
           <Hero />
           <Stats>
             <>
-              <StatsCard title="3,673" description="Holders" />
-              <StatsCard title="2.655 M" description="Staked Value" />
-              <StatsCard title="140" description="Validators" />
-              <StatsCard title="4.62%" description="Inflation Rate" />
+              <StatsCard
+                title={data.metadata.count_account}
+                description="Holders"
+              />
+              <StatsCard
+                title={`${String(data.tokenInfo.bonded_locked_balance).slice(
+                  0,
+                  4,
+                )}M`}
+                description="Staked Value"
+              />
+              <StatsCard
+                title={data.metadata.validator_count}
+                description="Validators"
+              />
+              <StatsCard
+                title={`${String(data?.tokenInfo?.inflation).slice(0, 4)}%`}
+                description="Inflation Rate"
+              />
             </>
           </Stats>
           <Overview />
