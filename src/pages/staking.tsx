@@ -19,8 +19,8 @@ Staking.getInitialProps = async (ctx) => {
 
     return {
       data: {
-        metadata: metadata.data.data,
-        tokenInfo: tokenInfo.data.data.detail.PDEX,
+        metadata: metadata?.data?.data,
+        tokenInfo: tokenInfo?.data?.data?.detail?.PDEX,
       },
     };
   } catch (error) {

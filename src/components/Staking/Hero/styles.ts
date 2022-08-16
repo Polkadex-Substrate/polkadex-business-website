@@ -23,7 +23,8 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;
-    border-radius: 2.5rem;
+    border-radius: 3rem;
+    border: 2px solid ${theme.colors.secondaryBackgroundOpacity};
   `}
 `;
 export const Aside = styled.div`

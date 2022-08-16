@@ -37,18 +37,18 @@ export const Template = ({ data, error }) => {
           <Stats>
             <>
               <StatsCard
-                title={data.metadata.count_account}
+                title={data?.metadata?.count_account}
                 description="Holders"
               />
               <StatsCard
-                title={`${String(data.tokenInfo.bonded_locked_balance).slice(
+                title={`${String(data?.tokenInfo?.bonded_locked_balance).slice(
                   0,
                   4,
                 )}M`}
                 description="Staked Value"
               />
               <StatsCard
-                title={data.metadata.validator_count}
+                title={data?.metadata?.validator_count}
                 description="Validators"
               />
               <StatsCard

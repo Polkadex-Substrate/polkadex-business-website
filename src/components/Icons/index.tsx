@@ -75,3 +75,4 @@ export { default as Vs } from './Vs';
 export { default as Waiting } from './Waiting';
 export { default as Whatsapp } from './Whatsapp';
 export { default as Youtube } from './Youtube';
+export { default as YoutubeOriginal } from './YoutubeOriginal';
