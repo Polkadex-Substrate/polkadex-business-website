@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 10rem auto 5rem auto;
+  margin: 10rem auto;
   text-align: center;
   align-items: center;
   gap: 3rem;
@@ -27,7 +27,10 @@ export const Title = styled.div`
     line-height: 1;
     margin-bottom: 1rem;
     font-size: 2.5rem;
-
+    text-align: left;
+    h2 {
+      max-width: 40rem;
+    }
     button {
       display: inline-block;
       font-size: 1.5rem;
@@ -190,7 +193,7 @@ export const ContentCardSteps = styled.div`
   `}
 `;
 
-export const ContentCardVideo = styled.div`
+export const ContentCardVideo = styled.a`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -199,6 +202,10 @@ export const ContentCardVideo = styled.div`
     padding: 1.8rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
     margin-top: 4rem;
+    transition: transform 0.3s ease-in-out;
+    :hover {
+      transform: translateY(-0.2rem);
+    }
     div {
       text-align: left;
     }
@@ -209,6 +216,47 @@ export const ContentCardVideo = styled.div`
       display: block;
       font-weight: 550;
       margin-bottom: 0.5rem;
+    }
+  `}
+`;
+
+export const OthersWays = styled.div`
+  margin-top: 5rem;
+  h2 {
+    font-size: 3rem;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+`;
+
+export const OthersWaysContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: left;
+  margin-top: 4rem;
+  span {
+    font-weight: 550;
+  }
+`;
+
+export const OthersWaysCard = styled.a`
+  ${({ theme }) => css`
+    border-radius: 1.5rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    max-width: 32rem;
+    transition: transform 0.3s ease-in-out;
+    img,
+    div {
+      max-width: 4rem;
+    }
+    :hover {
+      transform: translateY(-0.5rem);
     }
   `}
 `;

@@ -86,6 +86,9 @@ export const IconWrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    svg {
+      stroke: ${theme.colors.text};
+    }
   `}
 `;
 

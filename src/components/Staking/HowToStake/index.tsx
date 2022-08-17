@@ -91,7 +91,7 @@ export const HowToStake = () => {
   return (
     <S.Wrapper id="howtostake">
       <S.Title>
-        <h2>How to Stake PDEX</h2>
+        <h2>How to Stake PDEX via Polkadot.js </h2>
         <button type="button" onClick={handleNextClick}>
           Next
           <Icons.ArrowRight />
@@ -112,6 +112,48 @@ export const HowToStake = () => {
           />
         ))}
       </S.Content>
+      <S.OthersWays>
+        <h2>Other ways to Stake PDEX and generate passive income</h2>
+        <S.OthersWaysContent>
+          <S.OthersWaysCard
+            href="https://novawallet.io"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="img/partnerLaunch/novaWallet.svg" alt="" />
+            <span>Nova Wallet</span>
+            <p>
+              Stake and grow your PDEX directly from your mobile device with the
+              Nova Wallet app.
+            </p>
+          </S.OthersWaysCard>
+          <S.OthersWaysCard
+            href="https://subwallet.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="img/partnerLaunch/subWallet.svg" alt="" />
+            <span>Subwallet</span>
+            <p>
+              Subwallet’s browser extension wallet and its intuitive user
+              interface make staking easy
+            </p>
+          </S.OthersWaysCard>
+          <S.OthersWaysCard
+            href="https://ascendex.com/en/cashtrade-spottrading/usdt/pdex"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div>
+              <Icons.AscendEX />
+            </div>
+            <span>AscendEx</span>
+            <p>
+              Buy PDEX and stake it without ever having to leave your exchange.
+            </p>
+          </S.OthersWaysCard>
+        </S.OthersWaysContent>
+      </S.OthersWays>
     </S.Wrapper>
   );
 };
@@ -151,7 +193,11 @@ const Card = ({
           <h3>{title}</h3>
           <S.ContentWrapper dangerouslySetInnerHTML={{ __html: description }} />
           {hasVideo && (
-            <S.ContentCardVideo>
+            <S.ContentCardVideo
+              href="https://www.youtube.com/watch?v=Oya2_Tg7Ojc"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div>
                 <span>Video Tutorial</span>
                 <p>Step by step how to Stake Polkadex (PDEX)</p>

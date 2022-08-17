@@ -6,6 +6,7 @@ export * from './ArrowDetailOne';
 export * from './ArrowDetailTwo';
 export { default as ArrowLeft } from './ArrowLeft';
 export { default as ArrowRight } from './ArrowRight';
+export * from './ascendEX';
 export { default as Avatar } from './Avatar';
 export { default as BrandAssetsHero } from './BrandAssetsHero';
 export { default as Bridge } from './Bridge';
