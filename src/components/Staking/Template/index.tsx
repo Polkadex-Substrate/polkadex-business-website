@@ -1,4 +1,5 @@
 import { Footer, Header, Newsletter } from 'components';
+import { StakingFaq } from 'components/Crowdloans';
 import { Hero, HowToStake, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
 import Head from 'next/head';
@@ -60,6 +61,7 @@ export const Template = ({ data, error }) => {
           <Overview />
           <Rewards />
           <HowToStake />
+          <StakingFaq />
           <Newsletter {...newsletter} />
         </main>
         <Footer {...footer} />

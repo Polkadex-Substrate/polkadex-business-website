@@ -6,8 +6,8 @@ export const Wallets = () => {
       <h2>Wallets</h2>
       <S.Container>
         <S.Card href="/" target="_blank">
-          <img src="/img/wallets/ledger.png" alt="Ledger Wallet Logo" />
-          <p>Ledger</p>
+          <img src="/img/partnersList/simplex.png" alt="Ledger Wallet Logo" />
+          <p>Simplex</p>
         </S.Card>
         <S.Card href="/" target="_blank">
           <img src="/img/wallets/nova.png" alt="Nova Wallet Logo" />

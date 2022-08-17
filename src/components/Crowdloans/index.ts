@@ -8,6 +8,7 @@ export * from './HeaderCustom';
 export * from './Hero';
 export * from './Participate';
 export * from './Rewards';
+export * from './StakingFaq';
 export * from './Template';
 export * from './Timeline';
 export * from './TokenEconomics';

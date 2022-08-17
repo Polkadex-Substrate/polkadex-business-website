@@ -12,7 +12,7 @@ export const Staking = () => {
         <S.Content>
           <span>Polkadex Staking</span>
           <h2>
-            Stake $PDEX and EARN up to <strong> 43.34% YPY</strong>
+            Stake $PDEX and EARN up to <strong> 43.34% APY</strong>
           </h2>
           <p>
             It’s simple. Create your account and start earning passive income

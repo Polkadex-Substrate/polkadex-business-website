@@ -77,6 +77,13 @@ export const Actions = styled.div`
     }
   `}
 `;
+export const DownloadLinksContent = styled.div`
+  span {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+`;
 
 export const DownloadLinks = styled.div`
   display: flex;
@@ -84,10 +91,8 @@ export const DownloadLinks = styled.div`
   gap: 2rem;
   margin-bottom: 2rem;
   a {
-    transition: opacity 0.2s ease-in-out;
-    :hover {
-      opacity: 0.8;
-    }
+    opacity: 0.4;
+
     svg {
       margin-right: 0.5rem;
       vertical-align: middle;

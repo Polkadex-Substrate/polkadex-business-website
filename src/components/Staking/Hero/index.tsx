@@ -10,7 +10,7 @@ export const Hero = () => {
           <h1>
             Stake your PDEX
             <strong>
-              and earn <span>44.7% APY</span>
+              and earn <span>28.74 APY</span>
             </strong>
           </h1>
           <p>

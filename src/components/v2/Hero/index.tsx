@@ -1,3 +1,4 @@
+import { AvailableMessage } from 'components/AvailableMessage';
 import * as Icons from 'components/Icons';
 import { isAndroid, isIOS } from 'react-device-detect';
 import Typewriter from 'typewriter-effect';
@@ -28,28 +29,22 @@ export const Hero = () => {
             cryptocurrency exchange for the DeFi ecosystem built on Substrate.
           </p>
           <S.Actions>
-            <a href="/">Start Trading</a>
-            <a href="/">Mainnet Explorer</a>
+            <a href="/">Start trading</a>
+            <a href="/">Mainnet explorer</a>
           </S.Actions>
-          <S.DownloadLinks>
-            <a href="/">
-              <Icons.Apple />
-              App Store
-            </a>
-            <a href="/">
-              <Icons.Android />
-              Google Play
-            </a>
-          </S.DownloadLinks>
-          {!isDevice && (
-            <S.ScanQrCode>
-              <img src="/img/polkadexDevice.svg" alt="Polkadex Device QrCode" />
-              <span>
-                <Icons.ArrowLeft />
-                Scan to download
-              </span>
-            </S.ScanQrCode>
-          )}
+          <S.DownloadLinksContent>
+            <span>Coming soon</span>
+            <S.DownloadLinks>
+              <a href="#">
+                <Icons.Apple />
+                App Store
+              </a>
+              <a href="#">
+                <Icons.Android />
+                Google Play
+              </a>
+            </S.DownloadLinks>
+          </S.DownloadLinksContent>
         </S.Container>
         <S.HeroImage>
           <img src="/img/hero.png" alt="Orderbook mockup" />

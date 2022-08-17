@@ -1,3 +1,4 @@
+import { PrimaryWrapper as Button } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -59,39 +60,54 @@ export const ContentBox = styled.div`
   width: 100%;
 
   @media screen and (min-width: 710px) {
-    grid-template-columns: minmax(30rem, 35rem) auto;
+    grid-template-columns: minmax(35rem, 35rem) auto;
     max-width: 65rem;
     min-width: 65rem;
     gap: 4rem;
   }
+  &.slide--previous,
+  &.slide--next {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &.slide--previous {
+    cursor: w-resize;
+
+    &:hover {
+      transform: translateX(2%);
+    }
+  }
+
+  &.slide--next {
+    cursor: e-resize;
+
+    &:hover {
+      transform: translateX(-2%);
+    }
+  }
+
+  &.slide--current {
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+
+    @media (hover: hover) {
+      &:hover .slide__image-wrapper {
+        transform: scale(1.025)
+          translate(calc(0 / 50 * 1px), calc(0 / 50 * 1px));
+      }
+    }
+  }
 `;
 
-export const ContentBannerOverflow = styled.div`
+export const ContentWrapper = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    text-align: left;
-    p,
-    strong {
-      color: ${theme.colors.black};
-    }
-    strong {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
     a {
       color: ${theme.colors.primary};
-    }
-    img {
-      width: 100%;
-    }
-    div {
-      padding: 3rem;
+      text-decoration: underline;
+      font-weight: 500;
     }
   `}
 `;
@@ -112,24 +128,47 @@ export const ContentCardNumber = styled.div`
   }
 `;
 
+export const ContentBannerOverflow = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    min-height: 50rem;
+    width: 100%;
+    background: ${theme.colors.white};
+    border-radius: 2.5rem;
+    z-index: 2;
+    img {
+      width: 100%;
+    }
+    div {
+      padding: 3rem;
+    }
+  `}
+`;
+
+export const ContentOverflow = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background-color: ${theme.colors.white}10;
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: translateX(3rem) rotate(5deg) scale(0.9);
+  `}
+`;
+
 export const ContentBanner = styled.div`
   ${({ theme }) => css`
     position: relative;
     max-width: 40rem;
-    width: 100%;
-    background: ${theme.colors.white};
-    border-radius: 2.5rem;
     min-width: 30rem;
-    :before {
-      position: absolute;
-      content: '';
-      background-color: ${theme.colors.white}11;
-      border-radius: 2rem;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      transform: translateX(-17rem) rotate(5deg) scale(0.9);
-    }
   `}
 `;
 
@@ -144,6 +183,9 @@ export const ContentCardSteps = styled.div`
     }
     p {
       line-height: 1.5;
+    }
+    ${Button} {
+      margin-top: 2rem;
     }
   `}
 `;

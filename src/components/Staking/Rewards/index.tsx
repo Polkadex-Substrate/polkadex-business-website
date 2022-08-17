@@ -14,7 +14,7 @@ export const Rewards = () => {
       </S.Title>
       <Card
         title="Nominate"
-        description="42.31% average APY"
+        description="28.74% average APY"
         benefits={[
           'The easiest way to get daily PDEX rewards',
           'Choose a set of validators you trust',
@@ -23,7 +23,7 @@ export const Rewards = () => {
       />
       <Card
         title="Validate"
-        description="44.62% average APY"
+        description="30.77% average APY"
         benefits={[
           'Maximize your rewards',
           'Run a validator node',
