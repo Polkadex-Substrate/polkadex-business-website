@@ -14,18 +14,10 @@ import {
   Wallets,
 } from 'components/v2';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { useEffect } from 'react';
 import * as S from 'styles/home';
 
 export default function Home() {
-  const router = useRouter();
-  useEffect(() => {
-    router.push('/');
-  });
-
-  return <div />;
   return (
     <>
       <Script
