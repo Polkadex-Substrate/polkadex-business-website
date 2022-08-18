@@ -1,12 +1,12 @@
 /* eslint-disable import/no-unresolved */
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import PrivacyPopUp from 'components/PrivacyPopUp';
 import { ThemingContext } from 'context';
 import { useTheming } from 'hooks';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'styles';

@@ -64,6 +64,20 @@ export const Content = styled.div`
     .swiper-pagination-bullet-active {
       background-color: ${theme.colors.primary};
     }
+    .swiper-button-prev,
+    .swiper-button-next {
+      border-radius: 2rem;
+      width: 4rem;
+      height: 4rem;
+      padding: 1rem;
+      background: ${theme.colors.primary};
+      color: ${theme.colors.text};
+      font-size: 1rem;
+      ::after {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
   `}
 `;
 

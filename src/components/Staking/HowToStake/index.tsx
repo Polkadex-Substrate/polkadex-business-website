@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { PrimaryButton } from 'components/Button';
 import { useWindowSize } from 'hooks';
-import SwiperCore, { Pagination } from 'swiper';
+import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import * as Icons from '../../Icons';
 import * as S from './styles';
-
-SwiperCore.use([Pagination]);
 
 const data = [
   {
@@ -82,9 +80,13 @@ export const HowToStake = () => {
         <Swiper
           slidesPerView={width > 1360 ? 2 : 1}
           spaceBetween={30}
+          navigation
+          mousewheel
+          keyboard
           pagination={{
             clickable: true,
           }}
+          modules={[Navigation, Mousewheel, Pagination, Keyboard]}
         >
           {data.map((value, i) => (
             <SwiperSlide key={i}>
