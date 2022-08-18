@@ -84,7 +84,6 @@ export const HowToStake = () => {
           spaceBetween={30}
           pagination={{
             clickable: true,
-            bulletClass: 'pagination',
           }}
         >
           {data.map((value, i) => (
