@@ -60,6 +60,7 @@ export const Content = styled.div`
     .swiper-pagination-bullet {
       width: 1.2rem;
       height: 1.2rem;
+      background: ${theme.colors.text};
     }
     .swiper-pagination-bullet-active {
       background-color: ${theme.colors.primary};
