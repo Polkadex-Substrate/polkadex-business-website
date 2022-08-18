@@ -28,7 +28,7 @@ const ENLanguage = {
       },
       {
         title: 'Crowdloans',
-        href: '/crowdloans',
+        href: 'https://polkadex.medium.com/polkadex-has-secured-a-parachain-slot-a04513f2c913',
         soon: false,
       },
     ],

@@ -51,10 +51,20 @@ export const Actions = styled.div`
   gap: 2rem;
 `;
 export const Content = styled.div`
-  display: flex;
-  gap: 10rem;
-  width: 100%;
-  overflow-x: hidden;
+  ${({ theme }) => css`
+    display: flex;
+    gap: 10rem;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0 2rem;
+    .swiper-pagination-bullet {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: ${theme.colors.primary};
+    }
+  `}
 `;
 
 export const ContentBox = styled.div`
@@ -67,41 +77,6 @@ export const ContentBox = styled.div`
     max-width: 65rem;
     min-width: 65rem;
     gap: 4rem;
-  }
-  &.slide--previous,
-  &.slide--next {
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-
-  &.slide--previous {
-    cursor: w-resize;
-
-    &:hover {
-      transform: translateX(2%);
-    }
-  }
-
-  &.slide--next {
-    cursor: e-resize;
-
-    &:hover {
-      transform: translateX(-2%);
-    }
-  }
-
-  &.slide--current {
-    opacity: 1;
-    pointer-events: auto;
-    user-select: auto;
-
-    @media (hover: hover) {
-      &:hover .slide__image-wrapper {
-        transform: scale(1.025)
-          translate(calc(0 / 50 * 1px), calc(0 / 50 * 1px));
-      }
-    }
   }
 `;
 

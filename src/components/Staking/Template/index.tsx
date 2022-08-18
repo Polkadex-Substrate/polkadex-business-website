@@ -30,7 +30,19 @@ export const Template = ({ data, error }) => {
       />
       <S.Wrapper>
         <Head>
-          <title>Polkadex Staking</title>
+          <title>Stake your PDEX</title>
+          <meta
+            name="description"
+            content=" Staking is an easy way to earn passive income from cryptocurrencies. It’s like investing in real estate but without the hassle. Stake PDEX token and earn high APY return!"
+          />
+          <meta
+            property="og:title"
+            content="Stake PDEX crypto token & start earning passive income"
+          />
+          <meta
+            name="keywords"
+            content="Staking, stake, investing, passive income, crypto, cryptocurrencies, earn, high APY"
+          />
         </Head>
         <Header {...header} disableBottomMenu={false} />
         <main>

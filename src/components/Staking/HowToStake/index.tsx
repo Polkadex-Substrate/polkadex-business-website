@@ -1,9 +1,14 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { PrimaryButton } from 'components/Button';
-import { useRef, useState } from 'react';
+import { useWindowSize } from 'hooks';
+import SwiperCore, { Pagination } from 'swiper';
+// eslint-disable-next-line import/no-unresolved
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import * as Icons from '../../Icons';
 import * as S from './styles';
+
+SwiperCore.use([Pagination]);
 
 const data = [
   {
@@ -66,51 +71,35 @@ const data = [
 ];
 
 export const HowToStake = () => {
-  const [state, setState] = useState({ current: 0 });
-
-  const handlePreviousClick = () => {
-    const previous = state.current - 1;
-    setState({
-      current: previous < 0 ? data.length - 1 : previous,
-    });
-  };
-
-  const handleNextClick = () => {
-    const next = state.current + 1;
-    setState({
-      current: next === data.length ? 0 : next,
-    });
-  };
-
-  const handleSlideClick = (index) =>
-    state.current !== index &&
-    setState({
-      current: index,
-    });
+  const { width } = useWindowSize();
 
   return (
     <S.Wrapper id="howtostake">
       <S.Title>
         <h2>How to Stake PDEX via Polkadot.js </h2>
-        <button type="button" onClick={handleNextClick}>
-          Next
-          <Icons.ArrowRight />
-        </button>
       </S.Title>
-
       <S.Content>
-        {data.map((value, i) => (
-          <Card
-            current={i}
-            key={i}
-            title={value.title}
-            description={value.description}
-            image={value.image}
-            hasLink={value?.hasLink}
-            hasVideo={value?.hasVideo}
-            page={i}
-          />
-        ))}
+        <Swiper
+          slidesPerView={width > 1360 ? 2 : 1}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+            bulletClass: 'pagination',
+          }}
+        >
+          {data.map((value, i) => (
+            <SwiperSlide key={i}>
+              <Card
+                title={value.title}
+                description={value.description}
+                image={value.image}
+                hasLink={value?.hasLink}
+                hasVideo={value?.hasVideo}
+                page={i}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </S.Content>
       <S.OthersWays>
         <h2>Other ways to Stake PDEX and generate passive income</h2>
@@ -165,18 +154,9 @@ const Card = ({
   hasLink = false,
   hasVideo = false,
   page,
-  current,
 }) => {
-  let classNames = 'slide';
-  const wrapperTransform = {
-    transform: `translateX(-${current * (410 / data.length)}%)`,
-  };
-
-  if (current === page) classNames += ' slide--current';
-  else if (current - 1 === page) classNames += ' slide--previous';
-  else if (current + 1 === page) classNames += ' slide--next';
   return (
-    <S.ContentBox className={classNames}>
+    <S.ContentBox>
       <S.ContentBanner>
         <S.ContentBannerOverflow>
           <img src={`/img/${image}.png`} alt="Polkadot.js extension software" />
@@ -188,7 +168,7 @@ const Card = ({
           <S.ContentCardNumber>
             <span>0{page + 1}</span>
             <hr />
-            <span>0{data.length + 1}</span>
+            <span>0{data.length}</span>
           </S.ContentCardNumber>
           <h3>{title}</h3>
           <S.ContentWrapper dangerouslySetInnerHTML={{ __html: description }} />
