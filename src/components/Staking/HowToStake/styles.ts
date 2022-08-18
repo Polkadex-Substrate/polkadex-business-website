@@ -233,12 +233,12 @@ export const OthersWaysContent = styled.div`
 export const OthersWaysCard = styled.a`
   ${({ theme }) => css`
     border-radius: 1.5rem;
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
-    max-width: 32rem;
+    max-width: 24rem;
     transition: transform 0.3s ease-in-out;
     img,
     div {

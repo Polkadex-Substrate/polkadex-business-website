@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { PrimaryButton } from 'components/Button';
 import { useWindowSize } from 'hooks';
-import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
+import { Keyboard, Navigation, Pagination } from 'swiper';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -81,12 +81,11 @@ export const HowToStake = () => {
           slidesPerView={width > 1360 ? 2 : 1}
           spaceBetween={30}
           navigation
-          mousewheel
           keyboard
           pagination={{
             clickable: true,
           }}
-          modules={[Navigation, Mousewheel, Pagination, Keyboard]}
+          modules={[Navigation, Pagination, Keyboard]}
         >
           {data.map((value, i) => (
             <SwiperSlide key={i}>
@@ -140,6 +139,20 @@ export const HowToStake = () => {
             <span>AscendEx</span>
             <p>
               Buy PDEX and stake it without ever having to leave your exchange.
+            </p>
+          </S.OthersWaysCard>
+          <S.OthersWaysCard
+            href="https://www.stakingrewards.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div>
+              <Icons.StakingRewards />
+            </div>
+            <span>Staking Rewards </span>
+            <p>
+              Staking rewards is one of the leading data providers for staking
+              and other tools for earning passive income with crypto.
             </p>
           </S.OthersWaysCard>
         </S.OthersWaysContent>

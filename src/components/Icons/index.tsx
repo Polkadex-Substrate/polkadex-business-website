@@ -62,6 +62,7 @@ export { default as Selected } from './Selected';
 export { default as Send } from './Send';
 export * from './SingleArrowBottom';
 export { default as Speed } from './Speed';
+export * from './StakingRewards';
 export { default as Sun } from './Sun';
 export { default as Telegram } from './Telegram';
 export { default as ThirdParty } from './ThirdParty';
