@@ -46,7 +46,7 @@ export const Template = ({ data, error }) => {
         </Head>
         <Header {...header} disableBottomMenu={false} />
         <main>
-          <Hero />
+          <Hero apy={data?.metadata?.apy || '28.91%'} />
           <Stats>
             <>
               <StatsCard
@@ -71,7 +71,7 @@ export const Template = ({ data, error }) => {
             </>
           </Stats>
           <Overview />
-          <Rewards />
+          <Rewards apy={data?.metadata?.apy || '28.91%'} />
           <HowToStake />
           <StakingFaq />
           <Newsletter {...newsletter} />

@@ -10,6 +10,59 @@ export const Wrapper = styled.div`
     }
   `}
 `;
+export const Hero = styled.div``;
+export const Banner = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 100rem;
+    background-color: white;
+    border-radius: 2rem;
+    margin: -2rem auto 0 auto;
+    @media screen and (min-width: 750px) {
+      margin-top: -4rem;
+    }
+  `}
+`;
+export const BannerContent = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+
+    :first-child {
+      gap: 2rem;
+      @media screen and (max-width: 520px) {
+        flex-direction: column;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      img {
+        max-width: 15rem;
+      }
+      h2,
+      p {
+        color: black;
+      }
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+      @media screen and (max-width: 730px) {
+        padding: 1rem;
+      }
+    }
+    :last-child {
+      flex: 1;
+      justify-content: center;
+      padding: 1rem;
+    }
+  `}
+`;
 
 export const Container = styled.div`
   ${({ theme }) => css`

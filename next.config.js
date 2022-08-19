@@ -30,5 +30,7 @@ module.exports = {
     SUBSCAN_URL:
       process.env.SUBSCAN_URL || 'https://polkadex.api.subscan.io/api',
     SUBSCAN_API: process.env.SUBSCAN_API || '1542770994e249439ecf422602aba56d',
+    STAKING_SCRAP:
+      process.env.STAKING_SCRAP || 'https://stakingscrapping.herokuapp.com',
   },
 };

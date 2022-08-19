@@ -17,6 +17,12 @@ Staking.getInitialProps = async (ctx) => {
       `${process.env.SUBSCAN_URL}/scan/token`,
     );
 
+    const apy: any = await axios.get(
+      `${process.env.STAKING_SCRAP}/api/infos/1`,
+    );
+
+    metadata.data.data.apy = apy.data.data.attributes.value;
+
     return {
       data: {
         metadata: metadata?.data?.data,

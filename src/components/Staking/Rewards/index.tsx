@@ -2,7 +2,7 @@ import * as Icons from 'components/Icons';
 
 import * as S from './styles';
 
-export const Rewards = () => {
+export const Rewards = ({ apy }) => {
   return (
     <S.Wrapper id="rewards">
       <S.Title>
@@ -14,7 +14,7 @@ export const Rewards = () => {
       </S.Title>
       <Card
         title="Nominate"
-        description="28.74% average APY"
+        description={`${apy} average APY`}
         benefits={[
           'The easiest way to get daily PDEX rewards',
           'Choose a set of validators you trust',
