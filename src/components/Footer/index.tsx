@@ -1,4 +1,4 @@
-import { Icon, Logo, ThemeSwitcher } from 'components';
+import { Icon, Polkadex, ThemeSwitcher } from 'components';
 import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
@@ -18,7 +18,7 @@ const Footer = ({
       {full && (
         <>
           <S.Col>
-            <Logo />
+            <Polkadex />
             {/* <LanguageSelector /> */}
           </S.Col>
           <S.Col>

@@ -15,13 +15,12 @@ export const useTheming = () => {
   };
   const handleTheme = () => {
     const localTheme = window.localStorage.getItem('theme');
-    const OSDefaultTheme = window.matchMedia('(prefers-color-scheme: dark)')
-      .matches
-      ? 'dark'
-      : 'light';
+    // const OSDefaultTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    //   .matches
+    //   ? 'dark'
+    //   : 'light';
     if (localTheme) themeToogle(localTheme);
-    else themeToogle(OSDefaultTheme);
-
+    else themeToogle('dark');
     setHasDefault(true);
   };
 

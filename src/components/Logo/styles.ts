@@ -27,6 +27,7 @@ export const Link = styled.a<Partial<Props>>`
   ${({ size, theme }) => css`
     transition: ${theme.transition.default};
     color: ${theme.colors.text};
+    cursor: pointer;
     & svg {
       ${!!size && imageModifier[size]}
     }
@@ -34,5 +35,61 @@ export const Link = styled.a<Partial<Props>>`
 
   & :hover ${LogoText} {
     opacity: 0.5;
+  }
+`;
+export const Polkaido = styled.div`
+  display: flex;
+  align-items: center;
+  width: 12rem;
+  :before {
+    padding-right: 1px;
+    margin-right: 2rem;
+    content: '';
+    right: 0;
+    height: 2rem;
+    max-width: 1px;
+    background-color: white;
+    opacity: 0.2;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+export const Careers = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 10rem;
+  :before {
+    padding-right: 1px;
+    margin-right: 2rem;
+    content: '';
+    right: 0;
+    height: 2rem;
+    max-width: 1px;
+    background-color: white;
+    opacity: 0.2;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+export const Staking = styled.div`
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  :before {
+    padding-right: 1px;
+    margin-right: 2rem;
+    content: '';
+    right: 0;
+    height: 2rem;
+    max-width: 1px;
+    background-color: white;
+    opacity: 0.2;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
   }
 `;

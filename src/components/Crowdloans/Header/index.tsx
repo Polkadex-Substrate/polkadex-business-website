@@ -1,4 +1,4 @@
-import { CrowndloanLogo, Icon, Logo } from 'components';
+import { Crowndloan, Icon, Polkadex } from 'components';
 
 import * as S from './styles';
 
@@ -7,7 +7,7 @@ export const Header = () => {
     <S.Wrapper>
       <S.Header>
         <S.AsideLeft>
-          <Logo />
+          <Polkadex />
           <S.Menu>
             <li>
               <a href="#/">Products</a>
@@ -47,7 +47,7 @@ export const Header = () => {
       <S.Footer>
         <S.AsideLeft>
           <S.CrowndloanLogo>
-            <CrowndloanLogo />
+            <Crowndloan />
           </S.CrowndloanLogo>
           <S.Menu>
             <li>

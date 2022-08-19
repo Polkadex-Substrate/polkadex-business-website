@@ -1,7 +1,7 @@
 import {
   AvailableMessage,
   Icon,
-  Logo,
+  Polkadex,
   PrimaryButton,
   ThemeSwitcher,
 } from 'components';
@@ -10,13 +10,14 @@ import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'header'>;
+type Props = { disableBottomMenu?: boolean } & IHomeTranslations['header'];
 
 export const Header = ({
   topLinks,
   bottomLinks,
   ctaButton,
-}: Props['header']) => {
+  disableBottomMenu = true,
+}: Props) => {
   useEffect(() => {
     const header = document.getElementById('topHeader');
     const sticky = header.offsetTop;
@@ -42,7 +43,7 @@ export const Header = ({
     <S.Wrapper>
       <S.TopContainer id="topHeader">
         <S.Container>
-          <Logo size="Medium" />
+          <Polkadex size="Medium" />
           <ThemeSwitcher />
           {/* <LanguageSelector /> */}
         </S.Container>
@@ -102,18 +103,20 @@ export const Header = ({
           </svg>
         </S.MenuWrapper>
       </S.TopContainer>
-      <S.BottomContainer>
-        <div>
-          <ul>
-            {bottomLinks.map((item, index) => (
-              <li key={index}>
-                <a href={`#${item.href}`}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div />
-      </S.BottomContainer>
+      {disableBottomMenu && (
+        <S.BottomContainer>
+          <div>
+            <ul>
+              {bottomLinks.map((item, index) => (
+                <li key={index}>
+                  <a href={`#${item.href}`}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div />
+        </S.BottomContainer>
+      )}
     </S.Wrapper>
   );
 };

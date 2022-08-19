@@ -1,7 +1,7 @@
 import {
-  CrowndloanLogo,
+  Crowndloan,
   Icon,
-  Logo,
+  Polkadex,
   PrimaryButton,
   ThemeSwitcher,
 } from 'components';
@@ -42,7 +42,7 @@ export const HeaderCustom = ({
     <S.Wrapper>
       <S.TopContainer id="topHeader">
         <S.Container>
-          <Logo size="Medium" />
+          <Polkadex size="Medium" />
           <ThemeSwitcher />
           {/* <LanguageSelector /> */}
         </S.Container>
@@ -99,7 +99,7 @@ export const HeaderCustom = ({
       <S.BottomContainer>
         <S.AsideLeft>
           <S.CrowndloanLogo>
-            <CrowndloanLogo />
+            <Crowndloan />
           </S.CrowndloanLogo>
           <S.Menu>
             <li>

@@ -1,4 +1,4 @@
-import { Icon, Logo, ThemeSwitcher } from 'components';
+import { Icon, Polkadex, ThemeSwitcher } from 'components';
 import { PrimaryButton } from 'components/Button';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -33,7 +33,7 @@ export const Return = () => {
         <button type="button" onClick={() => router.back()}>
           <Icon name="ArrowLeft" background="none" />
         </button>
-        <Logo size="Medium" />
+        <Polkadex size="Medium" />
         <ThemeSwitcher />
       </S.Container>
       <S.Box>

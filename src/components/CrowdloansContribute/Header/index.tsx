@@ -1,6 +1,4 @@
-import { Logo } from 'components';
-import { PrimaryButton } from 'components/Button';
-import { CrowndloanLogo } from 'components/Logo';
+import { Polkadex } from 'components';
 
 import * as S from './styles';
 
@@ -9,11 +7,12 @@ export const Header = () => {
     <S.Wrapper>
       <S.Container>
         <S.Aside>
-          <Logo />
+          <Polkadex />
           <S.Box>
-            <S.CrowndloanLogo href="/crowdloans" target="_blank">
-              <CrowndloanLogo />
-            </S.CrowndloanLogo>
+            <S.CrowndloanLogo
+              href="/https://polkadex.medium.com/polkadex-has-secured-a-parachain-slot-a04513f2c913  "
+              target="_blank"
+            />
             <S.Menu>
               <li>
                 <a href="#rewards">Rewards</a>
@@ -25,7 +24,10 @@ export const Header = () => {
                 <a href="#about">Polkadex</a>
               </li>
               <li>
-                <a href="/crowdloans" target="_blank">
+                <a
+                  href="/https://polkadex.medium.com/polkadex-has-secured-a-parachain-slot-a04513f2c913  "
+                  target="_blank"
+                >
                   More Info
                 </a>
               </li>

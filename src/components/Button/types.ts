@@ -1,11 +1,13 @@
 import { AllHTMLAttributes } from 'react';
-import { IIcons } from 'utils/types';
+import { IColors, IIcons } from 'utils/types';
 
 export type Props = {
   content: string;
   icon?: IIcons;
-  background?: 'primary' | 'secondary' | 'none';
+  background?: IColors;
+  color?: IColors;
 };
+
 export type ButtonProps = {
   withOpacity?: boolean;
   hasIcon?: boolean;

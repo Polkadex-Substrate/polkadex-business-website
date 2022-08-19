@@ -28,7 +28,7 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
 `;
 
 export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
-  ${({ theme, withOpacity, background, hasIcon, disabled }) => css`
+  ${({ theme, withOpacity, background, hasIcon, disabled, color }) => css`
     ${disabled
       ? css`
           background: gray;
@@ -39,9 +39,9 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
             : theme.colors[background]};
         `}
     border: ${withOpacity ? `1px solid ${theme.colors[background]}` : 'none'};
-    color: ${background === 'primary' || ('secondary' && background !== 'none')
+    color: ${background === 'primary'
       ? theme.colors.white
-      : theme.colors.text} !important;
+      : theme.colors[color]} !important;
 
     ${!hasIcon &&
     css`

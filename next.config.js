@@ -22,5 +22,15 @@ module.exports = {
       process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5FD4544T94',
     RANGER_HOST_URL:
       process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'wss://mainnet.polkadex.trade',
+    WORKABLE_URL:
+      process.env.WORKABLE_URL || 'https://test-432836.workable.com',
+    WORKABLE_TOKEN:
+      process.env.WORKABLE_URL ||
+      '6d1b13ffa60afe18c4a016cc321b8cd8858dbad70679291516a8d90cd766e6dd',
+    SUBSCAN_URL:
+      process.env.SUBSCAN_URL || 'https://polkadex.api.subscan.io/api',
+    SUBSCAN_API: process.env.SUBSCAN_API || '1542770994e249439ecf422602aba56d',
+    STAKING_SCRAP:
+      process.env.STAKING_SCRAP || 'https://stakingscrapping.herokuapp.com',
   },
 };
