@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { Template } from 'components/Staking';
 
-export const Staking = ({ data, error = '' }) => {
-  return <Template data={data} error={error} />;
-};
+export const Staking = ({ data, error = '' }) => (
+  <Template data={data} error={error} />
+);
 
 export default Staking;
 
@@ -21,12 +21,11 @@ Staking.getInitialProps = async (ctx) => {
       `${process.env.STAKING_SCRAP}/api/infos/1`,
     );
 
-    metadata.data.data.apy = apy.data.data.attributes.value;
-
     return {
       data: {
         metadata: metadata?.data?.data,
         tokenInfo: tokenInfo?.data?.data?.detail?.PDEX,
+        apy: apy?.data?.data?.attributes?.value,
       },
     };
   } catch (error) {

@@ -18,6 +18,7 @@ import Script from 'next/script';
 import * as S from 'styles/home';
 
 export default function Home() {
+  return <div />;
   return (
     <>
       <Script

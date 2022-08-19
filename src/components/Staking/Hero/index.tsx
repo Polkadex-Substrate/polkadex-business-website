@@ -1,5 +1,4 @@
 import { PrimaryButton } from 'components/Button';
-import Link from 'next/link';
 
 import * as S from './styles';
 

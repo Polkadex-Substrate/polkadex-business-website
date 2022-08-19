@@ -14,6 +14,7 @@ import Script from 'next/script';
 import * as S from 'styles/polkaido';
 
 export default function Polkaido() {
+  return <div />;
   return (
     <>
       <Script
