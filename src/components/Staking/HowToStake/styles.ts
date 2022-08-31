@@ -244,6 +244,7 @@ export const SwipperCard = styled.div`
       width: 100%;
       max-width: 40rem;
       align-self: flex-end;
+      justify-self: flex-end;
     }
   `}
 `;
