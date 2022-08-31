@@ -11,6 +11,14 @@ import * as S from './styles';
 export const Template = ({ data, error }) => {
   const { header, newsletter, footer }: IHomeTranslations =
     HomeTranslations['en-US'];
+  const stakedValue = (
+    Math.round(data?.tokenInfo?.bonded_locked_balance || 0 * 1000) / 1000
+  ).toLocaleString();
+
+  const totalNominator = (
+    Math.round(data?.metadata?.count_account || 0 * 1000) / 1000
+  ).toLocaleString('de-DE');
+
   return (
     <>
       <Script
@@ -50,29 +58,22 @@ export const Template = ({ data, error }) => {
           <Stats>
             <>
               <StatsCard
-                title={data?.metadata?.count_account}
-                description="Holders"
+                title={totalNominator}
+                description="Total Nominators"
               />
               <StatsCard
-                title={`${String(data?.tokenInfo?.bonded_locked_balance).slice(
-                  0,
-                  4,
-                )}M`}
-                description="Staked Value"
+                title={`${String(stakedValue).slice(0, 4)} million`}
+                description="PDEX Staked"
               />
               <StatsCard
-                title={data?.metadata?.validator_count}
-                description="Validators"
-              />
-              <StatsCard
-                title={`${String(data?.tokenInfo?.inflation).slice(0, 4)}%`}
-                description="Inflation Rate"
+                title={data?.metadata?.validator_count || 0}
+                description="Active Validators"
               />
             </>
           </Stats>
-          <Overview />
           <Rewards apy={data?.apy || '28.91%'} />
           <HowToStake />
+          <Overview />
           <StakingFaq />
           <Newsletter {...newsletter} />
         </main>

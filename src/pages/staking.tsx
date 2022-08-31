@@ -16,16 +16,20 @@ Staking.getInitialProps = async (ctx) => {
     const tokenInfo: any = await axios.get(
       `${process.env.SUBSCAN_URL}/scan/token`,
     );
-
-    const apy: any = await axios.get(
-      `${process.env.STAKING_SCRAP}/api/infos/1`,
-    );
-
+    // const apy: any = await axios.get(
+    //   `${process.env.STAKING_SCRAP}/api/infos/1`,
+    // );
+    // return {
+    //   data: {
+    //     metadata: metadata?.data?.data,
+    //     tokenInfo: tokenInfo?.data?.data?.detail?.PDEX,
+    //     apy: apy?.data?.data?.attributes?.value,
+    //   },
     return {
       data: {
         metadata: metadata?.data?.data,
         tokenInfo: tokenInfo?.data?.data?.detail?.PDEX,
-        apy: apy?.data?.data?.attributes?.value,
+        apy: null,
       },
     };
   } catch (error) {

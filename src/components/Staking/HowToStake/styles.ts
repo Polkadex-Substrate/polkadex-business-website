@@ -211,18 +211,23 @@ export const ContentCardVideo = styled.a`
 `;
 
 export const OthersWays = styled.div`
-  margin-top: 5rem;
-  h2 {
-    font-size: 3rem;
-    max-width: 50rem;
-    margin: 0 auto;
-  }
+  ${({ theme }) => css`
+    margin-top: 5rem;
+    h2 {
+      font-size: 3rem;
+      max-width: 50rem;
+      margin: 0 auto;
+      strong {
+        color: ${theme.colors.primary};
+      }
+    }
+  `}
 `;
 
 export const OthersWaysContent = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
   flex-wrap: wrap;
   text-align: left;
   margin-top: 4rem;
@@ -231,22 +236,35 @@ export const OthersWaysContent = styled.div`
   }
 `;
 
-export const OthersWaysCard = styled.a`
+export const OthersWaysCard = styled.div`
   ${({ theme }) => css`
     border-radius: 1.5rem;
-    padding: 2rem;
+    padding: 3rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    max-width: 31rem;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    background: ${theme.colors.secondaryBackgroundOpacity};
-    max-width: 24rem;
-    transition: transform 0.3s ease-in-out;
-    img,
-    div {
-      max-width: 4rem;
-    }
+    justify-content: space-between;
     :hover {
       transform: translateY(-0.5rem);
+      background: ${theme.colors.primary};
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    a {
+      text-decoration: underline;
     }
   `}
+`;
+export const OthersWaysCardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  img,
+  div {
+    max-width: 4rem;
+  }
+  margin-bottom: 1.5rem;
 `;

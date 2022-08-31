@@ -102,58 +102,57 @@ export const HowToStake = () => {
         </Swiper>
       </S.Content>
       <S.OthersWays>
-        <h2>Other ways to Stake PDEX and generate passive income</h2>
+        <h2>
+          <strong>Other ways to Stake PDEX </strong> and generate passive income
+        </h2>
         <S.OthersWaysContent>
-          <S.OthersWaysCard
-            href="https://novawallet.io"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="img/partnerLaunch/novaWallet.svg" alt="" />
-            <span>Nova Wallet</span>
-            <p>
-              Stake and grow your PDEX directly from your mobile device with the
-              Nova Wallet app.
-            </p>
+          <S.OthersWaysCard>
+            <S.OthersWaysCardWrapper>
+              <img src="img/partnerLaunch/novaWallet.svg" alt="" />
+              <span>Nova Wallet</span>
+              <p>
+                Stake and grow your PDEX directly from your mobile device with
+                the Nova Wallet app.
+              </p>
+            </S.OthersWaysCardWrapper>
+
+            <a href="https://novawallet.io" target="_blank" rel="noreferrer">
+              Stake PDEX with Nova
+            </a>
           </S.OthersWaysCard>
-          <S.OthersWaysCard
-            href="https://subwallet.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="img/partnerLaunch/subWallet.svg" alt="" />
-            <span>Subwallet</span>
-            <p>
-              Subwallet’s browser extension wallet and its intuitive user
-              interface make staking easy
-            </p>
+          <S.OthersWaysCard>
+            <S.OthersWaysCardWrapper>
+              <img src="img/partnerLaunch/subWallet.svg" alt="" />
+              <span>Subwallet</span>
+              <p>
+                Subwallet’s browser extension wallet and its intuitive user
+                interface make staking easy
+              </p>
+            </S.OthersWaysCardWrapper>
+
+            <a href="https://subwallet.app/" target="_blank" rel="noreferrer">
+              Stake PDEX with SubWallet
+            </a>
           </S.OthersWaysCard>
-          <S.OthersWaysCard
-            href="https://ascendex.com/en/cashtrade-spottrading/usdt/pdex"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div>
-              <Icons.AscendEX />
-            </div>
-            <span>AscendEx</span>
-            <p>
-              Buy PDEX and stake it without ever having to leave your exchange.
-            </p>
-          </S.OthersWaysCard>
-          <S.OthersWaysCard
-            href="https://www.stakingrewards.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div>
-              <Icons.StakingRewards />
-            </div>
-            <span>Staking Rewards </span>
-            <p>
-              Staking rewards is one of the leading data providers for staking
-              and other tools for earning passive income with crypto.
-            </p>
+          <S.OthersWaysCard>
+            <S.OthersWaysCardWrapper>
+              <div>
+                <Icons.AscendEX />
+              </div>
+              <span>AscendEx</span>
+              <p>
+                Buy PDEX and stake it without ever having to leave your
+                exchange.
+              </p>
+            </S.OthersWaysCardWrapper>
+
+            <a
+              href="https://ascendex.com/en/cashtrade-spottrading/usdt/pdex"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Stake PDEX with AscendEX
+            </a>
           </S.OthersWaysCard>
         </S.OthersWaysContent>
       </S.OthersWays>

@@ -1,49 +1,21 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: relative;
+  display: grid;
+  align-items: center;
+`;
+export const Container = styled.div`
   max-width: 100rem;
   margin: 0 auto;
-
-  @media screen and (min-width: 520px) {
-    background-image: url('/img/stakingCta.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-    min-height: 110rem;
-    position: relative;
-  }
-
-  @media screen and (max-width: 1000px) {
-    padding: 1rem;
-  }
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  align-items: center;
+  min-height: 70rem;
 `;
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    @media screen and (max-width: 519px) {
-      :first-child {
-        margin-bottom: 5rem;
-      }
-    }
-
-    @media screen and (min-width: 520px) {
-      position: absolute;
-      max-width: 33rem;
-      padding: 0;
-
-      :first-child {
-        top: 10rem;
-        right: 0;
-        h2 strong {
-          display: block;
-        }
-      }
-      :last-child {
-        bottom: 0rem;
-        left: 0;
-      }
-    }
-
     h2 {
       font-size: 3rem;
       strong {
@@ -55,4 +27,10 @@ export const Card = styled.div`
       line-height: 1.7;
     }
   `}
+`;
+
+export const OverviewHero = styled.div`
+  position: absolute;
+  max-width: 60rem;
+  justify-self: flex-end;
 `;

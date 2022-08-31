@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.section`
   padding: 2rem 0;
   max-width: 100rem;
-  margin: 0 auto 5rem auto;
+  margin: 5rem auto;
   @media screen and (max-width: 950px) {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -21,14 +21,20 @@ export const Title = styled.div`
     grid-gap: 1rem;
     margin-bottom: 5rem;
     @media screen and (min-width: 720px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 0.5fr;
     }
     h2 {
       font-size: 3.5rem;
+      max-width: 40rem;
+    }
+    small {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
     }
     a {
-      display: block;
-      margin-top: 1rem;
+      text-decoration: underline;
       color: ${theme.colors.primary};
     }
   `}
