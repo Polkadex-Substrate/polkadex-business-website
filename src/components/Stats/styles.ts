@@ -18,7 +18,7 @@ export const Container = styled.div`
     border-radius: 2rem;
     max-width: 60rem;
     @media screen and (max-width: 950px) {
-      padding: 1rem;
+      padding: 1.5rem;
     }
   `}
 `;

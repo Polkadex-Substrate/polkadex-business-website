@@ -26,7 +26,7 @@ export const Hero = ({ apy }) => {
                 content="Stake via polkadot.js"
                 href="#howtostake"
               />
-              <S.SecondaryLink href="#">
+              <S.SecondaryLink href="#othersWays">
                 Check other ways of staking PDEX
               </S.SecondaryLink>
             </S.Links>

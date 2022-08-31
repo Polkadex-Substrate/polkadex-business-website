@@ -71,7 +71,8 @@ export const ContentVideoWrapper = styled.div`
   min-width: 28rem;
 `;
 
-export const ContentVideoBox = styled.div`
+export const ContentVideoBox = styled.a`
+  display: block;
   max-width: 30rem;
   text-align: left;
   padding: 2.5rem;
@@ -105,18 +106,49 @@ export const Actions = styled.div`
   display: flex;
   gap: 2rem;
 `;
-export const Content = styled.div`
+export const ActionButton = styled.button`
+  border-radius: 10rem;
+  padding: 1rem;
+  vertical-align: middle;
+  transition: transform 0.1s ease-in;
+  cursor: pointer;
+  :hover {
+    transform: translateY(0.2rem);
+  }
+  svg {
+    width: 1rem;
+  }
+`;
+
+export const PrevButton = styled(ActionButton)`
+  ${({ theme }) => css`
+    background: ${theme.colors.white};
+    svg {
+      fill: ${theme.colors.black};
+      margin-right: 0.5rem;
+    }
+  `}
+`;
+export const NextButton = styled(ActionButton)`
+  ${({ theme }) => css`
+    background: ${theme.colors.primary};
+    color: white;
+    svg {
+      margin-left: 0.5rem;
+    }
+  `}
+`;
+
+export const ContentFlex = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: 3rem;
-    width: 100%;
-    max-width: 100rem;
-    margin: 0 auto;
     overflow-x: hidden;
+
     .swiper-pagination-bullet {
       width: 1.2rem;
       height: 1.2rem;
       background: ${theme.colors.text};
+      display: none;
     }
     .swiper-pagination-bullet-active {
       background-color: ${theme.colors.primary};
@@ -134,6 +166,28 @@ export const Content = styled.div`
         font-size: 2rem;
         font-weight: bold;
       }
+    }
+  `}
+`;
+export const SwipperCardActions = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+  `}
+`;
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    overflow-x: hidden;
+    @media screen and (max-width: 950px) {
+      flex-direction: column;
     }
   `}
 `;
@@ -180,10 +234,12 @@ export const ContentCardNumber = styled.div`
 export const SwipperCard = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 0.8fr 1fr;
     align-items: center;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border-radius: 2rem;
+    @media screen and (min-width: 760px) {
+      grid-template-columns: 0.8fr 1fr;
+    }
     img {
       width: 100%;
       max-width: 40rem;
@@ -310,10 +366,11 @@ export const OthersWays = styled.div`
 export const OthersWaysContent = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
   flex-wrap: wrap;
   text-align: left;
   margin-top: 4rem;
+
   span {
     font-weight: 550;
   }
@@ -324,11 +381,14 @@ export const OthersWaysCard = styled.div`
     border-radius: 1.5rem;
     padding: 3rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
-    max-width: 31rem;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    @media screen and (min-width: 1000px) {
+      max-width: 32rem;
+    }
     :hover {
       transform: translateY(-0.5rem);
       background: ${theme.colors.primary};

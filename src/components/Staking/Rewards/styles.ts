@@ -7,9 +7,14 @@ export const Title = styled.div`
   max-width: 100rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
   p {
     line-height: 1.6;
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
+  @media screen and (min-width: 830px) {
+    grid-template-columns: 0.5fr 1fr;
   }
 `;
 
@@ -21,22 +26,29 @@ export const TitleWrapper = styled.div`
   }
 `;
 export const TitleContainer = styled.div`
-  max-width: 40rem;
   justify-self: flex-end;
+  @media screen and (min-width: 830px) {
+    max-width: 40rem;
+  }
 `;
 
 export const Container = styled.div``;
 export const ContainerWrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.secondaryBackgroundOpacity};
-    padding: 4rem;
+    padding: 1rem;
+    @media screen and (min-width: 590px) {
+      padding: 4rem;
+    }
   `}
 `;
 export const ContainerBox = styled.div`
   max-width: 100rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  @media screen and (min-width: 960px) {
+    grid-template-columns: 0.5fr 1fr;
+  }
 `;
 
 export const Nominator = styled.div`
@@ -157,8 +169,10 @@ export const NominatorFooter = styled(NominatorFooterTemplate)``;
 
 export const ValidatorFooter = styled(NominatorFooterTemplate)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  @media screen and (min-width: 590px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 export const FooterWrapperTemplte = styled.div`
   ${({ theme }) => css`
@@ -206,7 +220,7 @@ export const ValidateLinks = styled.div`
   flex-direction: column;
   gap: 1.5rem;
 `;
-export const ValidateLinksCard = styled.div`
+export const ValidateLinksCard = styled.a`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

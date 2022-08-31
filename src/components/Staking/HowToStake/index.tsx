@@ -1,9 +1,4 @@
-/* eslint-disable jsx-a11y/media-has-caption */
-import { PrimaryButton } from 'components/Button';
-import { useWindowSize } from 'hooks';
-import { Keyboard, Navigation, Pagination } from 'swiper';
-// eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 import * as Icons from '../../Icons';
 import * as S from './styles';
@@ -69,8 +64,6 @@ const data = [
 ];
 
 export const HowToStake = () => {
-  const { width } = useWindowSize();
-
   return (
     <S.Wrapper id="howtostake">
       <S.Title>
@@ -81,7 +74,10 @@ export const HowToStake = () => {
       <S.Content>
         <S.ContentVideo>
           <S.ContentVideoWrapper>
-            <S.ContentVideoBox>
+            <S.ContentVideoBox
+              href="https://www.youtube.com/watch?v=dEoJz7jOMg0&t=6s"
+              target="_blank"
+            >
               <h4>Play Video</h4>
               <p>
                 Watch our video tutorial to see{' '}
@@ -95,35 +91,22 @@ export const HowToStake = () => {
           </S.ContentVideoWrapper>
           <S.Round />
         </S.ContentVideo>
-
-        <Swiper
-          slidesPerView={width > 1360 ? 2 : 1}
-          spaceBetween={30}
-          navigation
-          keyboard
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Navigation, Pagination, Keyboard]}
-        >
-          {data.map((value, i) => (
-            <SwiperSlide key={i}>
-              <S.SwipperCard>
-                <S.SwipperCardWrapper>
-                  <h3>
-                    0{i + 1} {value.title}
-                  </h3>
-                  <S.ContentWrapper
-                    dangerouslySetInnerHTML={{ __html: value.description }}
-                  />
-                </S.SwipperCardWrapper>
-                <img src={`/img/${value.image}.png`} alt="" />
-              </S.SwipperCard>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <S.ContentFlex>
+          <Swiper slidesPerView={1} spaceBetween={30}>
+            {data.map((value, i) => (
+              <SwiperSlide key={i}>
+                <Card
+                  title={value.title}
+                  description={value.description}
+                  image={value.image}
+                  page={i}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </S.ContentFlex>
       </S.Content>
-      <S.OthersWays>
+      <S.OthersWays id="othersWays">
         <h2>
           <strong>Other ways to Stake PDEX </strong> and generate passive income
         </h2>
@@ -182,53 +165,30 @@ export const HowToStake = () => {
   );
 };
 
-const Card = ({
-  title,
-  description,
-  image,
-  hasLink = false,
-  hasVideo = false,
-  page,
-}) => {
+const Card = ({ title, description, image, page }) => {
+  const swiper = useSwiper();
   return (
-    <S.ContentBox>
-      <S.ContentBanner>
-        <S.ContentBannerOverflow>
-          <img src={`/img/${image}.png`} alt="Polkadot.js extension software" />
-        </S.ContentBannerOverflow>
-        <S.ContentOverflow />
-      </S.ContentBanner>
-      <S.ContentCard>
-        <S.ContentCardSteps>
-          <S.ContentCardNumber>
-            <span>0{page + 1}</span>
-            <hr />
-            <span>0{data.length}</span>
-          </S.ContentCardNumber>
-          <h3>{title}</h3>
-          <S.ContentWrapper dangerouslySetInnerHTML={{ __html: description }} />
-          {hasVideo && (
-            <S.ContentCardVideo
-              href="https://www.youtube.com/watch?v=Oya2_Tg7Ojc"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div>
-                <span>Video Tutorial</span>
-                <p>Step by step how to Stake Polkadex (PDEX)</p>
-              </div>
-              <Icons.YoutubeOriginal />
-            </S.ContentCardVideo>
+    <S.SwipperCard>
+      <S.SwipperCardWrapper>
+        <h3>
+          0{page + 1} {title}
+        </h3>
+        <S.ContentWrapper dangerouslySetInnerHTML={{ __html: description }} />
+        <S.SwipperCardActions>
+          {page >= 1 && (
+            <S.PrevButton onClick={() => swiper.slidePrev()} type="button">
+              <Icons.ArrowLeft />
+              Previous
+            </S.PrevButton>
           )}
-          {hasLink && (
-            <PrimaryButton
-              content="Get started"
-              href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer"
-              target="_blank"
-            />
+          {page + 2 <= data.length && (
+            <S.NextButton onClick={() => swiper.slideNext()} type="button">
+              Next <Icons.ArrowRight />
+            </S.NextButton>
           )}
-        </S.ContentCardSteps>
-      </S.ContentCard>
-    </S.ContentBox>
+        </S.SwipperCardActions>
+      </S.SwipperCardWrapper>
+      <img src={`/img/${image}.png`} alt="" />
+    </S.SwipperCard>
   );
 };

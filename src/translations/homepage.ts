@@ -906,7 +906,7 @@ const ENLanguage = {
     bottomLinks: [
       {
         title: 'Terms and Privacy Policy',
-        href: '/',
+        href: 'https://docs.google.com/document/d/1CaJ6Xhn4fICkWo4rRCEADwi3uszmX_fP',
       },
     ],
   },

@@ -3,7 +3,7 @@ import * as Icons from 'components/Icons';
 
 import * as S from './styles';
 
-export const Rewards = ({ apy }) => {
+export const Rewards = ({ apy, validatorApy = '30.78%' }) => {
   return (
     <S.Wrapper id="rewards">
       <S.Title>
@@ -99,7 +99,7 @@ export const Rewards = ({ apy }) => {
                           <Icons.Checked />
                         </div>
                         <p>
-                          Average APY <strong>{apy}</strong>
+                          Average APY <strong>{validatorApy}</strong>
                         </p>
                       </S.NominatorFooterCard>
                       <S.NominatorFooterCard>
@@ -128,21 +128,27 @@ export const Rewards = ({ apy }) => {
                       </S.NominatorFooterCard>
                       <PrimaryButton
                         content="Run a Validator Node"
-                        href="#howtostake"
+                        href="https://github.com/Polkadex-Substrate/Polkadex/blob/main-net-runtime/docs/run-a-validator.md"
                       />
                     </S.ValidatorFooterWrapper>
                   </S.ValidatorCard>
                   <S.ValidatorCard>
                     <h3>How to run a validator node? </h3>
                     <S.ValidateLinks>
-                      <S.ValidateLinksCard>
+                      <S.ValidateLinksCard
+                        target="_blank"
+                        href="https://github.com/Polkadex-Substrate/Polkadex/blob/main-net-runtime/docs/run-a-validator.md"
+                      >
                         <Icons.ArrowRight />
                         <p>
                           Set up and run your own validator node with our
                           detailed guide
                         </p>
                       </S.ValidateLinksCard>
-                      <S.ValidateLinksCard>
+                      <S.ValidateLinksCard
+                        target="_blank"
+                        href="https://youtu.be/cjsUhh8XgXs "
+                      >
                         <Icons.ArrowRight />
                         <p>
                           Let OnFinality do all the heavy lifting and take the
@@ -169,7 +175,7 @@ const VerticalLineWithDetails = () => (
     viewBox="0 0 1512 228"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ marginBottom: '-0.4rem' }}
+    style={{ marginBottom: '-0.5rem' }}
   >
     <path d="M1512 228V51L0 228H1512Z" fill="#8BA1BE" fillOpacity="0.1" />
     <path d="M1465.5 57V0L1198 27.5V87.5L1465.5 57Z" fill="#E6007A" />
