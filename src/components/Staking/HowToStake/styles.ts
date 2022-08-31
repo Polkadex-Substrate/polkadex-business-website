@@ -10,10 +10,6 @@ export const Wrapper = styled.div`
   align-items: center;
   gap: 3rem;
   overflow-x: hidden;
-  video {
-    max-width: 80rem;
-    width: 100%;
-  }
 `;
 
 export const Title = styled.div`
@@ -30,6 +26,9 @@ export const Title = styled.div`
     text-align: left;
     h2 {
       max-width: 40rem;
+      strong {
+        color: ${theme.colors.primary};
+      }
     }
     button {
       display: inline-block;
@@ -46,6 +45,62 @@ export const Title = styled.div`
     }
   `}
 `;
+export const ContentOverlay = styled.div``;
+
+export const Round = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    top: -50%;
+    transform: translate(0, 50%);
+    z-index: 1;
+    width: 20rem;
+    height: 100%;
+    border-radius: 0 100rem 100rem 0;
+    background: ${theme.colors.primary}99;
+    margin-left: -12rem;
+  `}
+`;
+
+export const ContentVideoWrapper = styled.div`
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 0 3rem 3rem 0;
+  height: 100%;
+  min-width: 28rem;
+`;
+
+export const ContentVideoBox = styled.div`
+  max-width: 30rem;
+  text-align: left;
+  padding: 2.5rem;
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  p {
+    line-height: 1.6;
+  }
+  div {
+    margin-top: 2rem;
+    position: relative;
+    svg {
+      max-width: 5rem;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    img {
+      width: 100%;
+    }
+  }
+`;
+
+export const ContentVideo = styled.div`
+  position: relative;
+`;
+
 export const Actions = styled.div`
   display: flex;
   gap: 2rem;
@@ -53,10 +108,11 @@ export const Actions = styled.div`
 export const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: 10rem;
+    gap: 3rem;
     width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
     overflow-x: hidden;
-    padding: 0 2rem;
     .swiper-pagination-bullet {
       width: 1.2rem;
       height: 1.2rem;
@@ -118,6 +174,33 @@ export const ContentCardNumber = styled.div`
     :last-child {
       opacity: 0.5;
     }
+  }
+`;
+
+export const SwipperCard = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    align-items: center;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border-radius: 2rem;
+    img {
+      width: 100%;
+      max-width: 40rem;
+      align-self: flex-end;
+    }
+  `}
+`;
+export const SwipperCardWrapper = styled.div`
+  padding: 3rem;
+  text-align: left;
+  h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  p {
+    line-height: 1.6;
   }
 `;
 

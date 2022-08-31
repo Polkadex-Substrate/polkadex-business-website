@@ -74,9 +74,28 @@ export const HowToStake = () => {
   return (
     <S.Wrapper id="howtostake">
       <S.Title>
-        <h2>How to Stake PDEX via Polkadot.js </h2>
+        <h2>
+          <strong>How to Stake PDEX </strong>via Polkadot.js{' '}
+        </h2>
       </S.Title>
       <S.Content>
+        <S.ContentVideo>
+          <S.ContentVideoWrapper>
+            <S.ContentVideoBox>
+              <h4>Play Video</h4>
+              <p>
+                Watch our video tutorial to see{' '}
+                <strong>how to stake PDEX on Polkadex mainnet</strong>.
+              </p>
+              <div>
+                <img src="/img/youtubeTumb.png" alt="" />
+                <Icons.YoutubeOriginal />
+              </div>
+            </S.ContentVideoBox>
+          </S.ContentVideoWrapper>
+          <S.Round />
+        </S.ContentVideo>
+
         <Swiper
           slidesPerView={width > 1360 ? 2 : 1}
           spaceBetween={30}
@@ -89,14 +108,17 @@ export const HowToStake = () => {
         >
           {data.map((value, i) => (
             <SwiperSlide key={i}>
-              <Card
-                title={value.title}
-                description={value.description}
-                image={value.image}
-                hasLink={value?.hasLink}
-                hasVideo={value?.hasVideo}
-                page={i}
-              />
+              <S.SwipperCard>
+                <S.SwipperCardWrapper>
+                  <h3>
+                    0{i + 1} {value.title}
+                  </h3>
+                  <S.ContentWrapper
+                    dangerouslySetInnerHTML={{ __html: value.description }}
+                  />
+                </S.SwipperCardWrapper>
+                <img src={`/img/${value.image}.png`} alt="" />
+              </S.SwipperCard>
             </SwiperSlide>
           ))}
         </Swiper>
