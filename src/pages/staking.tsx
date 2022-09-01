@@ -25,6 +25,7 @@ Staking.getInitialProps = async (ctx) => {
         metadata: metadata?.data?.data,
         tokenInfo: tokenInfo?.data?.data?.detail?.PDEX,
         apy: apy?.data?.data?.attributes?.value,
+        apyValidator: apy?.data?.data?.attributes?.apyValidator,
       },
     };
   } catch (error) {

@@ -3,7 +3,7 @@ import * as Icons from 'components/Icons';
 
 import * as S from './styles';
 
-export const Rewards = ({ apy, validatorApy = '30.78%' }) => {
+export const Rewards = ({ apy, apyValidator }) => {
   return (
     <S.Wrapper id="rewards">
       <S.Title>
@@ -99,7 +99,7 @@ export const Rewards = ({ apy, validatorApy = '30.78%' }) => {
                           <Icons.Checked />
                         </div>
                         <p>
-                          Average APY <strong>{validatorApy}</strong>
+                          Average APY <strong>{apyValidator}</strong>
                         </p>
                       </S.NominatorFooterCard>
                       <S.NominatorFooterCard>

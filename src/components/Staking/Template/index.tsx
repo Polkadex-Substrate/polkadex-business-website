@@ -71,7 +71,10 @@ export const Template = ({ data, error }) => {
               />
             </>
           </Stats>
-          <Rewards apy={data?.apy || '28.91%'} />
+          <Rewards
+            apy={data?.apy || '28.91%'}
+            apyValidator={data?.apyValidator || '30.78%'}
+          />
           <HowToStake />
           <Overview />
           <StakingFaq />
