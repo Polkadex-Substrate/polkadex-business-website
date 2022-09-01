@@ -10,53 +10,75 @@ export const StakingFaq = () => {
           <h2>Frequently Asked Questions</h2>
         </div>
         <div>
-          <strong>Have another question? </strong>
+          <small>Have any other questions?</small>
           <p>
+            Ask in the Polkadex{' '}
             <strong>
               <a
                 target="_blank"
                 href="https://discord.com/invite/Uvua83QAzk"
                 rel="noreferrer"
               >
-                Join the Polkadex Discord server
+                Discord server
+              </a>
+            </strong>{' '}
+            and the official{' '}
+            <strong>
+              <a
+                target="_blank"
+                href="https://discord.com/invite/Uvua83QAzk"
+                rel="noreferrer"
+              >
+                Telegram channel
               </a>
             </strong>
-            to submit a ticket.
           </p>
         </div>
       </S.Title>
       <S.Content>
-        <Card title="What's the difference between a Stash and Controller account?">
+        <Card title="What’s the difference between Nominator and Validator?">
           <>
             <p>
-              When staking PDEX, it is recommended to make two accounts: a
-              controller account and a stash account. The stash account should
-              have the large majority of your funds and its seed phrase should
-              be stored offline (e.g. on a piece of paper kept somewhere safe
-              and away from others) as a cold wallet. The controller account
-              will allow you to stake/unstake your stash’s PDEX but won’t let
-              you transfer PDEX away from your stash. With this setup, the most
-              an attacker will be able to do is to unstake your PDEX, but they
-              will not be able to transfer or steal any PDEX from your stash.
-              You can keep the controller account online in your browser
-              extension as a hot wallet, however, you should still keep the seed
-              phrase as secure as possible.
-            </p>
-            <p>
-              Using controller and stash accounts when staking makes your PDEX
-              at stake infinitely more secure.
+              Nominators and validators are the participants in the Polkadex
+              staking subsystem. A validator runs 24/7 nodes that validate
+              blocks and keep the network running. A nominator plays a more
+              passive role and is tasked with selecting ‘good’ validators
+              (validators that act in an honest manner) and staking their PDEX
+              with their trusted validators.
             </p>
           </>
         </Card>
-        <Card title="What is the difference between APR and APY?">
+        <Card title="What's the difference between a Stash and Controller account?">
           <p>
-            APR or annual percentage rate is the rate at which your PDEX is
-            expected to grow for a year, while APY or annual percentage yield is
-            the rate at which your PDEX is expected to grow for a year with
-            compounding returns. If you select ‘Increase the amount at stake’
-            for the destination of your staking rewards, you will essentially
-            compound your staking returns and earn PDEX at a higher rate.
+            When staking PDEX, it is recommended to make two accounts: a
+            controller account and a stash account. The stash account should
+            have the large majority of your funds and its seed phrase should be
+            stored offline (e.g. on a piece of paper kept somewhere safe and
+            away from others) as a cold wallet. The controller account will
+            allow you to stake/unstake your stash’s PDEX but won’t let you
+            transfer PDEX away from your stash. With this setup, the most an
+            attacker will be able to do is to unstake your PDEX, but they will
+            not be able to transfer or steal any PDEX from your stash. You can
+            keep the controller account online in your browser extension as a
+            hot wallet, however, you should still keep the seed phrase as secure
+            as possible.
           </p>
+          <p>
+            Using controller and stash accounts when staking makes your PDEX at
+            stake infinitely more secure.
+          </p>
+        </Card>
+        <Card title="What is the difference between APR and APY?">
+          <>
+            <p>
+              APR or annual percentage rate is the rate at which your PDEX is
+              expected to grow for a year, while APY or annual percentage yield
+              is the rate at which your PDEX is expected to grow for a year with
+              compounding returns. If you select ‘Increase the amount at stake’
+              for the destination of your staking rewards, you will essentially
+              compound your staking returns and earn PDEX at a higher rate.
+            </p>
+          </>
         </Card>
         <Card title="What affects the APR and APY value?">
           <>
@@ -90,7 +112,7 @@ export const StakingFaq = () => {
               axis represents the total staked amount and the y axis a
               percentage, the blue line represents inflation rate while the
               green is staking APR) you can see how the rate of inflation grows
-              until &gt;50% of PDEX are at stake. 50% PDEX at stake from the
+              until&gt;50% of PDEX are at stake. 50% PDEX at stake from the
               total PDEX supply is the ‘ideal’ staked amount. While the total
               amount of PDEX staked will fluctuate, the chart below illustrates
               the impact that the total staked amount and the inflation rate
@@ -103,7 +125,7 @@ export const StakingFaq = () => {
             />
           </>
         </Card>
-        <Card title="What is the difference between APR and APY?">
+        <Card title="How to stake PDEX as a validator?">
           <p>
             Interested in becoming a validator? Check out the ‘how to run a
             validator on Polkadex’ guide on Github (or in the Polkadex Docs)
@@ -141,20 +163,82 @@ export const StakingFaq = () => {
         </Card>
         <Card title="What’s the staking reward distribution process?">
           <p>
-            The short answer is it depends on the validator. It is customary for
-            validators to trigger daily payouts on behalf of their nominators.
-            However, you may find that, as a nominator, you can also trigger
-            reward payouts from your nominated validators to your staking
-            accounts.
+            Rewards are distributed directly on the network. As far as timelines
+            and responsibilities go, the short answer is it depends on the
+            validator. It is customary for validators to trigger daily payouts
+            on behalf of their nominators. However, you may find that, as a
+            nominator, you can also trigger reward payouts from your nominated
+            validators to your staking accounts.
           </p>
         </Card>
         <Card title="What is the unstaking process, timeline, etc?">
           <p>
             Stakers are free to unbond their PDEX and stop staking whenever. It
-            is important to note that 2there is a 28 day unbonding period in
+            is important to note that there is a 28 day unbonding period in
             which the unbonding PDEX is locked without earning daily staking
             rewards before it becomes transferable.
           </p>
+        </Card>
+        <Card title="What are some examples of ‘good’ and ‘bad’ actors in the staking mechanism?">
+          <>
+            <p>
+              For example, validators who maintain nodes with 24/7 uptime and
+              regularly trigger reward payouts will generally be rewarded with
+              higher PDEX return rates, whereas validators who voluntarily or
+              involuntarily act against the common good of the network (e.g. not
+              maintaining their nodes up to date, charging excessive commission
+              rates) will generally earn lower rewards and may even be slashed.
+            </p>
+          </>
+        </Card>
+        <Card title="What is slashing? Should I be worried about it?">
+          <>
+            <p>
+              Slashing is part of what keeps the Polkadex network running
+              securely.
+            </p>
+            <p>
+              Polkadex, like other Substrate-based networks (including
+              Polkadot), uses a nominated Proof of Stake (nPoS) consensus
+              mechanism. In nPOS networks, the security of the blockchain as a
+              whole is the responsibility of a group of Validators who are
+              nominated by the rest of the stakers in the network (Nominators)
+              to make and validate blocks.
+            </p>
+            <p>
+              Slashing penalizes network participants who are actively
+              nominating a Validator that does something ‘bad’. Slashing
+              incentivizes nominators to ensure they only vote for Validators
+              they ‘trust’ won’t do something bad in order to keep their own
+              stake safe, thus securing the network as a whole. In this
+              scenario, Nominators only stake with trusted Validators because if
+              Validators do something wrong, their Nominators’ staked PDEX could
+              be slashed.
+            </p>
+            <p>
+              However, slashing is extremely rare. If a slashing event does
+              happen, the slashed amounts are usually minor. As an example, if a
+              Validator (who is supposed to be online and validating blocks
+              24/7) goes offline for over 4 hours a slashing could happen.
+              However, in this case, the slashing event would only take place if
+              at least 10% of the network’s Validators are also offline
+              simultaneously. Since the Polkadex network is quite large already,
+              if a handful of Validators go offline, there won’t be any issues.
+              However, if, say, over 10% of Validators were to go offline at the
+              same time, each of those Validators and their Nominators would get
+              1% of their staked PDEX slashed. The slashing percentage increases
+              in correlation with higher percentages of offline Validators.
+              Therefore, if 50% of the network’s Validators went offline, their
+              stakes would be slashed 7%. 7% is the maximum slashing penalty in
+              this scenario.
+            </p>
+            <p>
+              Rest assured, Polkadex has never had a slashing event. Polkadot
+              has had 2 slashing events so far with the first being overturned
+              by the governance council and the second resulting in the culpable
+              Validator paying their Nominators back for their slashed DOT.
+            </p>
+          </>
         </Card>
       </S.Content>
     </S.Wrapper>

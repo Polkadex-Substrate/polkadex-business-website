@@ -1,9 +1,4 @@
-/* eslint-disable jsx-a11y/media-has-caption */
-import { PrimaryButton } from 'components/Button';
-import { useWindowSize } from 'hooks';
-import { Keyboard, Navigation, Pagination } from 'swiper';
-// eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 import * as Icons from '../../Icons';
 import * as S from './styles';
@@ -69,91 +64,104 @@ const data = [
 ];
 
 export const HowToStake = () => {
-  const { width } = useWindowSize();
-
   return (
     <S.Wrapper id="howtostake">
       <S.Title>
-        <h2>How to Stake PDEX via Polkadot.js </h2>
+        <h2>
+          <strong>How to Stake PDEX </strong>via Polkadot.js{' '}
+        </h2>
       </S.Title>
       <S.Content>
-        <Swiper
-          slidesPerView={width > 1360 ? 2 : 1}
-          spaceBetween={30}
-          navigation
-          keyboard
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Navigation, Pagination, Keyboard]}
-        >
-          {data.map((value, i) => (
-            <SwiperSlide key={i}>
-              <Card
-                title={value.title}
-                description={value.description}
-                image={value.image}
-                hasLink={value?.hasLink}
-                hasVideo={value?.hasVideo}
-                page={i}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <S.ContentVideo>
+          <S.ContentVideoWrapper>
+            <S.ContentVideoBox
+              href="https://www.youtube.com/watch?v=dEoJz7jOMg0&t=6s"
+              target="_blank"
+            >
+              <h4>Play Video</h4>
+              <p>
+                Watch our video tutorial to see{' '}
+                <strong>how to stake PDEX on Polkadex mainnet</strong>.
+              </p>
+              <div>
+                <img src="/img/youtubeTumb.png" alt="" />
+                <Icons.YoutubeOriginal />
+              </div>
+            </S.ContentVideoBox>
+          </S.ContentVideoWrapper>
+          <S.Round />
+        </S.ContentVideo>
+        <S.ContentFlex>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            pagination={{ clickable: true }}
+          >
+            {data.map((value, i) => (
+              <SwiperSlide key={i}>
+                <Card
+                  title={value.title}
+                  description={value.description}
+                  image={value.image}
+                  page={i}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </S.ContentFlex>
       </S.Content>
-      <S.OthersWays>
-        <h2>Other ways to Stake PDEX and generate passive income</h2>
+      <S.OthersWays id="othersWays">
+        <h2>
+          <strong>Other ways to Stake PDEX </strong> and generate passive income
+        </h2>
         <S.OthersWaysContent>
-          <S.OthersWaysCard
-            href="https://novawallet.io"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="img/partnerLaunch/novaWallet.svg" alt="" />
-            <span>Nova Wallet</span>
-            <p>
-              Stake and grow your PDEX directly from your mobile device with the
-              Nova Wallet app.
-            </p>
+          <S.OthersWaysCard>
+            <S.OthersWaysCardWrapper>
+              <img src="img/partnerLaunch/novaWallet.svg" alt="" />
+              <span>Nova Wallet</span>
+              <p>
+                Stake and grow your PDEX directly from your mobile device with
+                the Nova Wallet app.
+              </p>
+            </S.OthersWaysCardWrapper>
+
+            <a href="https://novawallet.io" target="_blank" rel="noreferrer">
+              Stake PDEX with Nova
+            </a>
           </S.OthersWaysCard>
-          <S.OthersWaysCard
-            href="https://subwallet.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="img/partnerLaunch/subWallet.svg" alt="" />
-            <span>Subwallet</span>
-            <p>
-              Subwallet’s browser extension wallet and its intuitive user
-              interface make staking easy
-            </p>
+          <S.OthersWaysCard>
+            <S.OthersWaysCardWrapper>
+              <img src="img/partnerLaunch/subWallet.svg" alt="" />
+              <span>Subwallet</span>
+              <p>
+                Subwallet’s browser extension wallet and its intuitive user
+                interface make staking easy
+              </p>
+            </S.OthersWaysCardWrapper>
+
+            <a href="https://subwallet.app/" target="_blank" rel="noreferrer">
+              Stake PDEX with SubWallet
+            </a>
           </S.OthersWaysCard>
-          <S.OthersWaysCard
-            href="https://ascendex.com/en/cashtrade-spottrading/usdt/pdex"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div>
-              <Icons.AscendEX />
-            </div>
-            <span>AscendEx</span>
-            <p>
-              Buy PDEX and stake it without ever having to leave your exchange.
-            </p>
-          </S.OthersWaysCard>
-          <S.OthersWaysCard
-            href="https://www.stakingrewards.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div>
-              <Icons.StakingRewards />
-            </div>
-            <span>Staking Rewards </span>
-            <p>
-              Staking rewards is one of the leading data providers for staking
-              and other tools for earning passive income with crypto.
-            </p>
+          <S.OthersWaysCard>
+            <S.OthersWaysCardWrapper>
+              <div>
+                <Icons.AscendEX />
+              </div>
+              <span>AscendEx</span>
+              <p>
+                Buy PDEX and stake it without ever having to leave your
+                exchange.
+              </p>
+            </S.OthersWaysCardWrapper>
+
+            <a
+              href="https://ascendex.com/en/cashtrade-spottrading/usdt/pdex"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Stake PDEX with AscendEX
+            </a>
           </S.OthersWaysCard>
         </S.OthersWaysContent>
       </S.OthersWays>
@@ -161,53 +169,30 @@ export const HowToStake = () => {
   );
 };
 
-const Card = ({
-  title,
-  description,
-  image,
-  hasLink = false,
-  hasVideo = false,
-  page,
-}) => {
+const Card = ({ title, description, image, page }) => {
+  const swiper = useSwiper();
   return (
-    <S.ContentBox>
-      <S.ContentBanner>
-        <S.ContentBannerOverflow>
-          <img src={`/img/${image}.png`} alt="Polkadot.js extension software" />
-        </S.ContentBannerOverflow>
-        <S.ContentOverflow />
-      </S.ContentBanner>
-      <S.ContentCard>
-        <S.ContentCardSteps>
-          <S.ContentCardNumber>
-            <span>0{page + 1}</span>
-            <hr />
-            <span>0{data.length}</span>
-          </S.ContentCardNumber>
-          <h3>{title}</h3>
-          <S.ContentWrapper dangerouslySetInnerHTML={{ __html: description }} />
-          {hasVideo && (
-            <S.ContentCardVideo
-              href="https://www.youtube.com/watch?v=Oya2_Tg7Ojc"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div>
-                <span>Video Tutorial</span>
-                <p>Step by step how to Stake Polkadex (PDEX)</p>
-              </div>
-              <Icons.YoutubeOriginal />
-            </S.ContentCardVideo>
+    <S.SwipperCard>
+      <S.SwipperCardWrapper>
+        <h3>
+          0{page + 1} {title}
+        </h3>
+        <S.ContentWrapper dangerouslySetInnerHTML={{ __html: description }} />
+        <S.SwipperCardActions>
+          {page >= 1 && (
+            <S.PrevButton onClick={() => swiper.slidePrev()} type="button">
+              <Icons.ArrowLeft />
+              Previous
+            </S.PrevButton>
           )}
-          {hasLink && (
-            <PrimaryButton
-              content="Get started"
-              href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer"
-              target="_blank"
-            />
+          {page + 2 <= data.length && (
+            <S.NextButton onClick={() => swiper.slideNext()} type="button">
+              Next <Icons.ArrowRight />
+            </S.NextButton>
           )}
-        </S.ContentCardSteps>
-      </S.ContentCard>
-    </S.ContentBox>
+        </S.SwipperCardActions>
+      </S.SwipperCardWrapper>
+      <img src={`/img/${image}.png`} alt="" />
+    </S.SwipperCard>
   );
 };
