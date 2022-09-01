@@ -92,7 +92,11 @@ export const HowToStake = () => {
           <S.Round />
         </S.ContentVideo>
         <S.ContentFlex>
-          <Swiper slidesPerView={1} spaceBetween={30}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            pagination={{ clickable: true }}
+          >
             {data.map((value, i) => (
               <SwiperSlide key={i}>
                 <Card

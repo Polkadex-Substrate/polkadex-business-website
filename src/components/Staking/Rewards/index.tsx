@@ -127,6 +127,7 @@ export const Rewards = ({ apy, apyValidator }) => {
                         <p>Charge commissions from your nominators</p>
                       </S.NominatorFooterCard>
                       <PrimaryButton
+                        target="_blank"
                         content="Run a Validator Node"
                         href="https://github.com/Polkadex-Substrate/Polkadex/blob/main-net-runtime/docs/run-a-validator.md"
                       />

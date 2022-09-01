@@ -148,7 +148,6 @@ export const ContentFlex = styled.div`
       width: 1.2rem;
       height: 1.2rem;
       background: ${theme.colors.text};
-      display: none;
     }
     .swiper-pagination-bullet-active {
       background-color: ${theme.colors.primary};
@@ -237,6 +236,7 @@ export const SwipperCard = styled.div`
     align-items: center;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border-radius: 2rem;
+    height: 100%;
     @media screen and (min-width: 760px) {
       grid-template-columns: 0.8fr 1fr;
     }
