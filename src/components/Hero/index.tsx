@@ -1,6 +1,7 @@
 import { Banner } from 'components/Banner';
 import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
+import { Tooltip, TooltipContent, TooltipHeader } from 'components/Tooltip';
 import { ThemingContext } from 'context';
 import React, { useContext, useEffect, useRef } from 'react';
 import { IHomeTranslations } from 'translations';
@@ -43,7 +44,16 @@ const Hero = ({
           <S.SecondaryButton href={secondaryCtaLink}>
             {secondaryCtaButton}
           </S.SecondaryButton>
-          <PrimaryButton target="_blank" href={ctaLink} content={ctaButton} />
+          <Tooltip>
+            <TooltipHeader>
+              <PrimaryButton
+                target="_blank"
+                href={ctaLink}
+                content={ctaButton}
+              />
+            </TooltipHeader>
+            <TooltipContent>Testnet is down for maintenance</TooltipContent>
+          </Tooltip>
         </S.CtaContainer>
         <S.RowBanner>
           <Banner
