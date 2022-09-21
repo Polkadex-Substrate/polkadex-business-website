@@ -623,7 +623,6 @@ const ENLanguage = {
         },
         items: [
           { title: 'Polkadex Orderbook Mainnet' },
-          { title: 'PolkaIDO Mainnet' },
           { title: 'Mobile App Public Testnet' },
         ],
       },
