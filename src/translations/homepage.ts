@@ -624,7 +624,7 @@ const ENLanguage = {
         },
         items: [
           { title: 'Mobile App Public Testnet' },
-          { title: 'Add Orderbook Testnet with Withdrawals' },
+          { title: 'Orderbook Testnet with Withdrawals' },
           { title: 'Cross Chain Transfer of test tokens to trade' },
         ],
       },
