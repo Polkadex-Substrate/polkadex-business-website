@@ -599,11 +599,12 @@ const ENLanguage = {
             isHoverable: true,
           },
           { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
-          { title: 'Open Beta Program' },
+          { title: 'Open Beta Program', status: true },
           {
             title: 'Polkadex Orderbook Public Testnet*',
             subInfo: 'With blockchain integration',
             isHoverable: true,
+            status: true,
           },
         ],
       },
@@ -622,8 +623,9 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Polkadex Orderbook Mainnet' },
           { title: 'Mobile App Public Testnet' },
+          { title: 'Add Orderbook Testnet with Withdrawals' },
+          { title: 'Cross Chain Transfer of test tokens to trade' },
         ],
       },
       {
@@ -641,10 +643,11 @@ const ENLanguage = {
           },
         },
         items: [
+          { title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4' },
           { title: 'Release Polkadex Orderbook to Parachain' },
           {
             title: 'Polkadex Orderbook Mobile Apps* in app stores',
-            subInfo: 'iOS, Android',
+            subInfo: 'iOS & Android',
             isHoverable: true,
           },
         ],
