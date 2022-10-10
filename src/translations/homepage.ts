@@ -623,7 +623,6 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Mobile App Public Testnet' },
           { title: 'Orderbook Testnet with Withdrawals' },
           { title: 'Cross Chain Transfer of test tokens to trade' },
         ],
@@ -643,6 +642,7 @@ const ENLanguage = {
           },
         },
         items: [
+          { title: 'Mobile App Public Testnet', timeline: 'Early Q4' },
           { title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4' },
           { title: 'Release Polkadex Orderbook to Parachain' },
           {
