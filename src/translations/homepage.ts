@@ -615,16 +615,19 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 30,
+            distance: 20,
           },
           vertical: {
             side: 'bottom',
-            distance: 8,
+            distance: 10,
           },
         },
         items: [
-          { title: 'Orderbook Testnet with Withdrawals' },
-          { title: 'Cross Chain Transfer of test tokens to trade' },
+          { title: 'Orderbook Testnet with Withdrawals', status: true },
+          {
+            title: 'Cross Chain Transfer of test tokens to trade',
+            status: true,
+          },
         ],
       },
       {
@@ -638,7 +641,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 0,
+            distance: -3,
           },
         },
         items: [
