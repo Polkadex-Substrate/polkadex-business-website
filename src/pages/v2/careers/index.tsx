@@ -1,21 +1,22 @@
 import axios from 'axios';
 import { Template } from 'components/Careers';
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 export const Careers = ({ jobs = [], error = '' }) => {
   const router = useRouter();
-  useEffect(() => {
-    router.push('/');
-  });
-  return <div />;
+  // useEffect(() => {
+  //   router.push('/');
+  // });
+  // return <div />;
 
   return <Template jobs={jobs} error={error} />;
 };
 
 export default Careers;
 
-Careers.getInitialProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   try {
     const { data }: any = await axios.get(
       `${process.env.WORKABLE_URL}/spi/v3/jobs`,
@@ -26,8 +27,8 @@ Careers.getInitialProps = async () => {
         },
       },
     );
-    return { jobs: data.jobs };
+    return { props: { jobs: data?.jobs } };
   } catch (error) {
-    return { error: error?.message };
+    return { props: { error: error?.message } };
   }
 };

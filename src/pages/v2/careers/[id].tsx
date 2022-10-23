@@ -1,20 +1,21 @@
 import axios from 'axios';
 import { Preview as PreviewComponent } from 'components/Careers';
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-export const Preview = ({ data, error = '' }) => {
+export const Preview = ({ data, error }) => {
   const router = useRouter();
-  useEffect(() => {
-    router.push('/');
-  });
-  return <div />;
+  // useEffect(() => {
+  //   router.push('/');
+  // });
+  // return <div />;
   return <PreviewComponent data={data} error={error} />;
 };
 
 export default Preview;
 
-Preview.getInitialProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   try {
     const { data }: any = await axios.get(
       `${process.env.WORKABLE_URL}/spi/v3/jobs/${ctx.query.id}`,
@@ -25,8 +26,8 @@ Preview.getInitialProps = async (ctx) => {
         },
       },
     );
-    return { data };
+    return { props: { data } };
   } catch (error) {
-    return { error: error.message };
+    return { props: { error: error?.message } };
   }
 };
