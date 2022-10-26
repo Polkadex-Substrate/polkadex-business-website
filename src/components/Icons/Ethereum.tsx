@@ -3,19 +3,35 @@ import * as React from 'react';
 function SvgEthereum(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="1em"
-      height="1em"
-      viewBox="0 0 12 20"
+      width="50"
+      height="50"
+      viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g opacity={0.8}>
-        <path d="M5.941.077L5.816.5v12.314l.125.125 5.716-3.38L5.941.078z" />
-        <path d="M5.941.077L.226 9.56 5.94 12.94V.077zM5.941 14.8l-.07.085v4.386l.07.206 5.72-8.055L5.94 14.8z" />
-        <path d="M5.941 19.477v-4.678L.226 11.422l5.715 8.055zM5.941 12.94l5.716-3.379-5.716-2.598v5.977z" />
-        <path d="M.226 9.56l5.715 3.38V6.962L.226 9.56z" />
-      </g>
+      <path
+        d="M15.4675 0.606934L15.1296 1.75525V35.0766L15.4675 35.4139L30.9349 26.2711L15.4675 0.606934Z"
+        fill="white"
+      />
+      <path
+        opacity="0.5"
+        d="M15.4674 0.606934L0 26.2711L15.4674 35.414V19.2408V0.606934Z"
+        fill="white"
+      />
+      <path
+        d="M15.4677 40.4463L15.2773 40.6783V52.5482L15.4677 53.1042L30.9444 31.3081L15.4677 40.4463Z"
+        fill="white"
+      />
+      <path
+        opacity="0.5"
+        d="M15.4674 53.1043V40.4463L0 31.3081L15.4674 53.1043Z"
+        fill="white"
+      />
+      <path
+        d="M15.4672 35.4144L30.9343 26.2718L15.4672 19.2415V35.4144Z"
+        fill="white"
+      />
     </svg>
   );
 }

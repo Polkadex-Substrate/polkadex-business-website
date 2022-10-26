@@ -2,6 +2,7 @@ module.exports = {
   experimental: {
     // Enables the styled-components SWC transform
     styledComponents: true,
+    images: { layoutRaw: true },
   },
   eslint: {
     // Warning: Dangerously allow production builds to successfully complete even if

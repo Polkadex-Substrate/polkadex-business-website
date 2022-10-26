@@ -13,24 +13,46 @@ import Roadmap from 'components/Roadmap';
 import Team from 'components/Team';
 import TokenEconomics from 'components/TokenEconomics';
 
+export * from './AnimatedDarkGradient';
 export * from './Announcement';
 export * from './AvailableMessage';
 export * from './BrandAssets';
 export * from './Button';
+export * from './Container';
+export * from './Container';
 export * from './CountDown';
 export * from './Dropdown';
+export * from './FeetDifference';
+export * from './FeetDifference';
+export * from './FlyCube';
+export * from './FlyCube';
 export * from './Header';
 export * from './Icon';
 export * from './LanguageSelector';
 export * from './Logo';
 export * from './Migration';
+export * from './PolkadexBlock';
 export * from './Popup';
 export * from './Portal';
+export * from './Promo';
 export * from './Return';
+export * from './SelectBox';
+export * from './Slider';
 export * from './Spinner';
 export * from './Stats';
 export * from './ThemeSwitcher';
 export * from './Tooltip';
+export * from './TradeAnywhere';
+export * from './TradingStrategy';
+export * from './FeetDifference';
+export * from './FlyCube';
+
+export * from './Container';
+export * from './Slider';
+export * from './YourKeys';
+export * from './DownloadButton';
+export * from './ComingSoon';
+export * from './PolkadexBlock';
 
 export {
   ContractAnnouncement,

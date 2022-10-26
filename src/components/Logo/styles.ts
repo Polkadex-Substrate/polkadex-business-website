@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import Props from './types';
 
@@ -7,7 +7,7 @@ const imageModifier = {
     width: 8rem;
   `,
   Medium: () => css`
-    width: 14rem;
+    width: 10rem;
   `,
   Large: () => css`
     width: 18rem;
@@ -24,7 +24,7 @@ export const LogoText = styled.g`
 export const LogoIcon = styled.g``;
 
 export const Link = styled.a<Partial<Props>>`
-  ${({ size, theme }) => css`
+  ${({size, theme}) => css`
     transition: ${theme.transition.default};
     color: ${theme.colors.text};
     cursor: pointer;
@@ -89,6 +89,15 @@ export const Staking = styled.div`
     background-color: white;
     opacity: 0.2;
   }
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+export const Orderbook = styled.div`
+  display: flex;
+  align-items: center;
+  width: 12rem;
+
   @media screen and (max-width: 500px) {
     display: none;
   }

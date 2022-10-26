@@ -1,6 +1,7 @@
 import {
   ContractAnnouncement,
   Features,
+  FeetDifference,
   Footer,
   Header,
   Hero,
@@ -10,16 +11,29 @@ import {
   OrderbookProduct,
   OthersProducts,
   Partners,
+  PolkadexBlock,
+  Promo,
   Roadmap,
   Team,
   TokenEconomics,
+  TradeAnywhere,
+  TradingStrategy,
 } from 'components';
-import { Announcement } from 'components/v1/Announcement';
+import {CrossChain} from 'components/CrossChain';
+import OldFooter from 'components/OldFooter';
+import {OldHeader} from 'components/OldHeader';
+import {Question} from 'components/Question';
+import {SpeedLimit} from 'components/SpeedLimits';
+import {StatisticBlock} from 'components/StatisticBlock';
+import {Announcement} from 'components/v1/Announcement';
+import {YourKeys} from 'components/YourKeys';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect } from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import ReactDom from 'react-dom';
+import {useInView} from 'react-intersection-observer';
 import * as S from 'styles/home';
-import { HomeTranslations, IHomeTranslations } from 'translations';
+import {HomeTranslations, IHomeTranslations} from 'translations';
 
 export default function Home() {
   const {
@@ -32,11 +46,23 @@ export default function Home() {
     investors,
     team,
     roadmap,
-    tokenEconomics,
-    media,
+    statistic,
+    question,
     newsletter,
-    footer,
+    oldFooter,
+    promo,
+    keys,
+    speedlimits,
+    tradeAnywhere,
+    tradeStrategy,
+    feetDifference,
+    polkadex,
+    crossChain,
+    oldHeader,
   }: IHomeTranslations = HomeTranslations['en-US'];
+
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const path = window.location.hash;
     if (path && path.includes('#')) {
@@ -49,6 +75,11 @@ export default function Home() {
       });
     }
   });
+
+  useEffect(() => {
+    ref.current.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Script
@@ -70,20 +101,22 @@ export default function Home() {
         <Head>
           <title>Polkadex - The trading engine for Web3 and DeFi</title>
         </Head>
-        <Header {...header} />
-        <main>
-          <Hero {...hero} />
+        <main ref={ref} style={{overflow: 'hidden'}}>
+          <Promo {...promo} />
+
+          <StatisticBlock {...statistic} />
+          <YourKeys {...keys} />
+          <SpeedLimit {...speedlimits} />
+          <CrossChain {...crossChain} />
+          <Question {...question} />
+          <TradingStrategy {...tradeStrategy} />
+          <FeetDifference {...feetDifference} />
+          <TradeAnywhere {...tradeAnywhere} />
           <OrderbookProduct {...orderbook} />
-          <Partners {...partners} />
-          <Features {...features} />
-          <Investors {...investors} />
-          <Team {...team} />
-          <Roadmap {...roadmap} />
-          <TokenEconomics {...tokenEconomics} />
-          <Media {...media} />
+          <PolkadexBlock {...polkadex} />
           <Newsletter {...newsletter} />
         </main>
-        <Footer {...footer} />
+        <OldFooter {...oldFooter} />
       </S.Wrapper>
     </>
   );

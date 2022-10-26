@@ -1,10 +1,11 @@
-import { Banner } from 'components/Banner';
-import { PrimaryButton } from 'components/Button';
-import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
-import { Tooltip, TooltipContent, TooltipHeader } from 'components/Tooltip';
-import { ThemingContext } from 'context';
-import React, { useContext, useEffect, useRef } from 'react';
-import { IHomeTranslations } from 'translations';
+import {Banner} from 'components/Banner';
+import {PrimaryButton} from 'components/Button';
+import {Ethereum, Polkadex, Polkadot} from 'components/Icons';
+import {LanguageSelector} from 'components/LanguageSelector';
+import {Tooltip, TooltipContent, TooltipHeader} from 'components/Tooltip';
+import {ThemingContext} from 'context';
+import React, {useContext, useEffect, useRef} from 'react';
+import {IHomeTranslations} from 'translations';
 
 import * as S from './styles';
 
@@ -20,7 +21,7 @@ const Hero = ({
   chainsTitle,
 }: Props['hero']) => {
   const ImageHeroRef = useRef<HTMLImageElement>();
-  const { theme } = useContext(ThemingContext);
+  const {theme} = useContext(ThemingContext);
 
   const handleScroll = () => {
     const scrollY = window.innerHeight * 0.05;

@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 
-import { ButtonProps } from './types';
+import {ButtonProps} from './types';
 
 export const Wrapper = styled.a<Partial<ButtonProps>>`
-  ${({ theme, background }) => css`
+  ${({theme, background}) => css`
     color: ${theme.colors.text};
     transition: ${theme.transition.default};
     padding: ${background !== 'none' ? '0.5rem 0.8rem 0.5rem 0.5rem' : 0};
@@ -28,7 +28,7 @@ export const Wrapper = styled.a<Partial<ButtonProps>>`
 `;
 
 export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
-  ${({ theme, withOpacity, background, hasIcon, disabled, color }) => css`
+  ${({theme, withOpacity, background, hasIcon, disabled, color}) => css`
     ${disabled
       ? css`
           background: gray;
@@ -72,7 +72,7 @@ export const PrimaryWrapper = styled(Wrapper)<Partial<ButtonProps>>`
 `;
 
 export const FormWrapper = styled.button`
-  ${({ theme }) => css`
+  ${({theme}) => css`
     color: ${theme.colors.white};
     font-weight: 600;
     background: ${theme.colors.primary};
@@ -109,5 +109,10 @@ export const FormWrapper = styled.button`
 export const SecondaryWrpaper = styled(Wrapper)`
   :hover {
     opacity: 0.5;
+  }
+  & > div {
+    width: 16px;
+    height: auto;
+    margin-left: 10px;
   }
 `;

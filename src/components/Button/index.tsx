@@ -1,7 +1,7 @@
 import * as Icons from 'components/Icons';
 
 import * as S from './styles';
-import { ButtonFormProps, ButtonProps } from './types';
+import {ButtonFormProps, ButtonProps} from './types';
 
 export const PrimaryButton = ({
   icon,
@@ -42,6 +42,7 @@ export const SecondaryButton = ({
   content = 'Example',
   href = '#',
   background = 'none',
+  ...iconProps
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
 
@@ -49,7 +50,7 @@ export const SecondaryButton = ({
     <S.SecondaryWrpaper href={href} background={background}>
       {content}
       <div>
-        <IconComponent />
+        <IconComponent {...iconProps} />
       </div>
     </S.SecondaryWrpaper>
   );

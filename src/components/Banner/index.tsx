@@ -1,7 +1,6 @@
 import * as S from './styles';
-import { Props } from './types';
-
-export const Banner = ({ title, description, buttonTitle, href }: Props) => (
+import {Props} from './types';
+export const Banner = ({title, description, buttonTitle, href}: Props) => (
   <S.Wrapper>
     <S.Container>
       <div>

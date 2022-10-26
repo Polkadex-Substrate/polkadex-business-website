@@ -2,6 +2,61 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
+        title: 'Overview',
+        href: '/',
+
+        soon: false,
+      },
+      {
+        title: 'Features',
+        href: '/ll1',
+        soon: false,
+      },
+      {
+        title: 'Architecture',
+        href: '/ll2',
+        soon: false,
+      },
+      {
+        title: 'Devices',
+        href: '/ll3',
+        soon: false,
+      },
+    ],
+    products: {
+      title: 'Products',
+      data: [
+        {text: 'Orderbook', new: false},
+        {text: 'PolkaIDO', new: true},
+        {text: 'Staking', new: false},
+        {text: 'Liquidity Mining', new: false},
+        {text: 'Thea Bridge', new: true},
+      ],
+    },
+    bottomLinks: [
+      {
+        title: 'Resources',
+        data: ['Roadmap', 'Ecosystem', 'Wiki', 'Blog (Learn)'],
+      },
+      {
+        title: '',
+        data: ['Crowdloans', 'Explorer', 'Network (governance)', 'Migrate'],
+      },
+      {
+        title: 'About',
+        data: ['Vision', 'Team', 'Tokenomics', 'Brand Assets'],
+      },
+      {
+        title: 'Community',
+        data: ['Twitter', 'Discord', 'Telegram', 'Reddit', 'Github'],
+      },
+    ],
+    ctaButton: 'TradeNow',
+    menuButton: 'All Polkadex',
+  },
+  oldHeader: {
+    topLinks: [
+      {
         title: 'Staking',
         href: '/staking',
         soon: false,
@@ -56,6 +111,16 @@ const ENLanguage = {
     ],
     ctaButton: 'Join on Telegram',
   },
+  promo: {
+    title: 'The CEXiest DEX in DeFi',
+    subtitle: 'The best of centralized exchanges',
+    advantage: 'The best of decentralized exchanges',
+    disadvantage: ' The disadvantages of both',
+    polkadex: 'Polkadex Orderbook',
+    available: 'Available on',
+    button: 'Trade now',
+    learn: 'Learn more',
+  },
   announcement: {
     title: 'Polkadex Contract',
     ctaButton: 'See at Etherscan',
@@ -73,11 +138,14 @@ const ENLanguage = {
   },
   orderbook: {
     tag: 'Products',
-    title: 'Polkadex',
+    title: 'How is it all possible',
     highlight: 'Orderbook',
     description:
-      'Polkadex Orderbook is a non-custodial Layer 2 based exchange on the Polkadex Network',
+      'A unique combination of multiple state-of-the-art technologies like blockchain, Polkadot parachains, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
+    fullDescription:
+      'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.\n\nInteresting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
     ctaButton: 'Polkadex Orderbook',
+    button: 'Open trading account',
     cards: [
       {
         title: 'Register multiple hot wallets',
@@ -233,6 +301,22 @@ const ENLanguage = {
     highlight: 'Investors',
     description:
       'The early backers who supported and funded Polkadex helping us reach our goals and aim even higher',
+  },
+  tradeAnywhere: {
+    title: 'Trade anywhere, anytime',
+    description:
+      'Take Polkadex Orderbook with you and trade anywhere you want with the ',
+    mobile: 'Polkadex Mobile App',
+    advice:
+      'Place, modify, and cancel trades from your mobile device while your private keys remain in your air-gapped cold wallet.',
+    subtitle: 'Aviable on',
+    possibleTitle: 'How is it all possible',
+    possibleDescription:
+      'A unique combination of multiple state-of-the-art technologies like blockchain, Polkadot parachains, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
+    subDescription: [
+      'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.',
+      'Interesting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
+    ],
   },
   team: {
     tag: 'Team',
@@ -484,9 +568,9 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Web3 Milestone #1', status: true },
-          { title: 'Refactoring Polkadex Engine', status: true },
-          { title: 'Code Documentation', status: true },
+          {title: 'Web3 Milestone #1', status: true},
+          {title: 'Refactoring Polkadex Engine', status: true},
+          {title: 'Code Documentation', status: true},
         ],
       },
       {
@@ -502,10 +586,10 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Website Launch', status: true },
-          { title: 'Whitepaper Release', status: true },
-          { title: 'Testnet V1.0 Launch', status: true },
-          { title: 'SAFT based Token PreSale', status: true },
+          {title: 'Website Launch', status: true},
+          {title: 'Whitepaper Release', status: true},
+          {title: 'Testnet V1.0 Launch', status: true},
+          {title: 'SAFT based Token PreSale', status: true},
         ],
       },
       {
@@ -522,13 +606,13 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Public Sale', status: true },
+          {title: 'Public Sale', status: true},
           {
             title: 'Testnet V2.0 Launch',
             status: true,
           },
-          { title: 'Testnet V3.0 Launch', status: true },
-          { title: 'Security Audit', status: true },
+          {title: 'Testnet V3.0 Launch', status: true},
+          {title: 'Security Audit', status: true},
         ],
       },
       {
@@ -545,10 +629,10 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Mainnet Launch', status: true },
-          { title: 'ERC20 to native PDEX migration', status: true },
-          { title: 'Launch of Private Beta Tester Program', status: true },
-          { title: 'Parachain Strategy Development', status: true },
+          {title: 'Mainnet Launch', status: true},
+          {title: 'ERC20 to native PDEX migration', status: true},
+          {title: 'Launch of Private Beta Tester Program', status: true},
+          {title: 'Parachain Strategy Development', status: true},
         ],
       },
       {
@@ -565,9 +649,9 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'PolkaIDO Beta', status: true },
-          { title: 'PolkaIDO Public Testnet', status: true },
-          { title: 'Polkadex Crowdloan Campaign', status: true },
+          {title: 'PolkaIDO Beta', status: true},
+          {title: 'PolkaIDO Public Testnet', status: true},
+          {title: 'Polkadex Crowdloan Campaign', status: true},
           {
             title: 'Polkadex Orderbook Beta*',
             status: true,
@@ -591,15 +675,15 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'THEA Public Testnet', status: true },
+          {title: 'THEA Public Testnet', status: true},
           {
             title: 'PolkaIDO* Public Testnet',
             status: true,
             subInfo: 'Token minting + token bridging',
             isHoverable: true,
           },
-          { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
-          { title: 'Open Beta Program', status: true },
+          {title: 'Polkadex secures Polkadot’s parachain slot', status: true},
+          {title: 'Open Beta Program', status: true},
           {
             title: 'Polkadex Orderbook Public Testnet*',
             subInfo: 'With blockchain integration',
@@ -623,7 +707,7 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Orderbook Testnet with Withdrawals', status: true },
+          {title: 'Orderbook Testnet with Withdrawals', status: true},
           {
             title: 'Cross Chain Transfer of test tokens to trade',
             status: true,
@@ -645,9 +729,9 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Mobile App Public Testnet', timeline: 'Early Q4' },
-          { title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4' },
-          { title: 'Release Polkadex Orderbook to Parachain' },
+          {title: 'Mobile App Public Testnet', timeline: 'Early Q4'},
+          {title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4'},
+          {title: 'Release Polkadex Orderbook to Parachain'},
           {
             title: 'Polkadex Orderbook Mobile Apps* in app stores',
             subInfo: 'iOS & Android',
@@ -831,7 +915,7 @@ const ENLanguage = {
     formPlaceholder: 'Enter your email',
     formButton: 'Subscribe',
   },
-  footer: {
+  oldFooter: {
     full: true,
     rowLinks: {
       polkadex: {
@@ -914,6 +998,222 @@ const ENLanguage = {
         href: 'https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf',
       },
     ],
+  },
+  footer: {
+    full: true,
+    rowLinks: {
+      polkadex: {
+        title: 'Polkadex',
+        links: [
+          {
+            title: 'Overview',
+            href: 'hero',
+          },
+          {
+            title: 'Features',
+            href: 'features',
+          },
+          {
+            title: 'Roadmap',
+            href: 'roadmap',
+          },
+          {
+            title: 'Team',
+            href: 'team',
+          },
+          {
+            title: 'Token Economics',
+            href: 'tokenEconomics',
+          },
+        ],
+      },
+      community: {
+        title: 'Community',
+        links: [
+          {
+            title: 'Polkadot',
+            href: 'https://www.polkadot.network/',
+          },
+          {
+            title: 'Web3 Foundation',
+            href: 'https://web3.foundation/',
+          },
+        ],
+      },
+      resources: {
+        title: 'Resources',
+        links: [
+          {
+            title: 'Documentation',
+            href: 'https://docs.polkadex.trade/',
+          },
+          {
+            title: 'Github Repository',
+            href: 'https://github.com/Polkadex-Substrate',
+          },
+          {
+            title: 'Substrate',
+            href: 'https://www.substrate.io/',
+          },
+          {
+            title: 'Tutorials',
+            href: '/tutorials',
+          },
+          {
+            title: 'Open Beta',
+            href: '/beta',
+          },
+        ],
+      },
+      company: {
+        title: 'Company',
+        links: [
+          {
+            title: 'About Us',
+            href: 'https://docs.polkadex.trade/',
+          },
+          {
+            title: 'Partners',
+            href: 'https://github.com/Polkadex-Substrate',
+          },
+          {
+            title: 'Contact',
+            href: 'https://www.substrate.io/',
+          },
+          {
+            title: 'Brand Assets',
+            href: '/brandAssets',
+          },
+          {
+            title: 'Careers',
+            href: '/brandAssets',
+          },
+        ],
+      },
+
+      products: {
+        title: 'Products',
+        links: [
+          {
+            title: 'Polkadex Orderbook',
+            href: 'https://docs.polkadex.trade/orderbookIntroduction',
+          },
+          {
+            title: 'Polkadex IDO',
+            href: 'https://docs.polkadex.trade/IDOPlatform',
+          },
+        ],
+      },
+    },
+    copyright: 'Copyright © 2022 Polkadex, Inc',
+    bottomLinks: [
+      {
+        title: 'Terms and conditions',
+        href: 'https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf',
+      },
+      {
+        title: 'Privacy policy',
+        href: 'https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf',
+      },
+    ],
+  },
+
+  keys: {
+    title: 'Your keys, your crypto, your exchange',
+    description:
+      'Polkadex Orderbook is non-custodial which means only you control your money.',
+    highlight: 'No risk of security breach',
+    firstDescription:
+      'Unlike CEXs, Polkadex Orderbook is the first exchange where you can hold your funds without worrying about security breaches. There’s no centralized honeypot for hackers to go after.',
+    secondDescription:
+      'In other words, your funds remain safe and secure in your wallet at all times while being available for trading whenever you need them.',
+    button: 'Start trading now',
+  },
+
+  speedlimits: {
+    title: '500k TPS = no speed limits',
+    descriptionFirst:
+      'Trade crypto on a DEX that’s as fast as (if not faster than) CEXs',
+    descriptionSecond:
+      ' Capable of scaling to 500,000 transactions per second, Polkadex Orderbook is non-custodial crypto trading in real time with sub-milisecond latency.',
+
+    sections: [
+      {
+        title: 'Cheaper',
+        firstDescription: '0% trading fees for the first 6 months.',
+        secondDescription: 'Zero gas fees.',
+        thirdDescription: 'No order placement/cancellation fees.',
+      },
+      {
+        title: 'Limit & market orders.',
+        firstDescription: 'Get the exact price you want with limit orders.',
+        secondDescription:
+          'Market orders are executed instantly and transparently.',
+      },
+    ],
+    buttonText: 'Trade now',
+  },
+  tradeStrategy: {
+    title: 'All trading strategies are welcome',
+    boost: 'Let bots trade',
+    boostDesc:
+      'Determine your strategy and let a robot do the rest. \n\nIntegrate a bot from popular trading bot providers to automate trading!',
+    multipleAcc: 'Register multiple accounts',
+    multipleAccDesc:
+      'Use your desktop, phone, tablet, or any other device to register a hot wallet and trade wherever, whenever.\n\nHot wallets allow you to trade on the go without being able to withdraw or transfer your funds to other accounts. \n\nConvenience meets security.',
+    delegate: 'Delegate',
+    delegteDesc:
+      'Whether it’s an algorithm or a fund manager, delegate your assets trading to a third party while keeping control of your funds and sit back and watch your profits roll in.',
+  },
+  feetDifference: {
+    title: 'Feel the difference',
+    subtitle: 'Start trading in real time with 0 gas fees',
+    open_beta: 'Open an account',
+  },
+  polkadex: {
+    title: 'The four core components of \n Polkadex Orderbook',
+    tabs: [
+      'Polkadex Network',
+      'Trusted Execution Environment',
+      'Orderbook Engine',
+    ],
+    cards: [
+      {
+        title: 'Polkadex Network',
+        subtitle:
+          'The native blockchain is maintained by PDEX staking, which secures the actions of Polkadex Orderbook.',
+        desc: 'The Polkadex network connects to the Polkadex parachain via a Substrate-to-Substrate bridge, bringing in liquidity from other Polkadot parachains.',
+        sec_desc:
+          'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
+        button: 'Make your first trade',
+        learnMore: 'Learn more',
+      },
+    ],
+  },
+
+  crossChain: {
+    title: 'Truly cross-chain ',
+    description: 'Trade tokens from the following \n\nsupported networks:',
+    subDesc: 'Through the Polkadex parachain Polkadot and Polkadot parachains',
+    dubDescTwo: 'Through THEA bridge Ethereum',
+    readMore: 'Read more',
+    comeSoon: 'More to come soon!',
+    subtitle: 'Better looking',
+    subtitleDesc:
+      '“If you’re going to build a non-custodial orde rbook-based DEX capable of high frequency trading, why not do it with some style?” All the function ality of a CEX and the security of a DEX wrapped into a sleek, minimalist, and easy-to-use interface.',
+  },
+
+  question: {
+    question: 'Interested in listing your token on the',
+    boldtext: 'Polkadex Orderbook?',
+    button: 'Coming soon!',
+  },
+
+  statistic: {
+    blockOne: 'Trades per second',
+    blockTwo: 'Gas fees orders',
+    blockTree: 'Non-custodial',
+    BlockFour: 'Trading fee',
   },
 };
 
