@@ -1,12 +1,10 @@
-import {ComingSoon} from 'components/ComingSoon';
-import {Container} from 'components/Container';
-import React from 'react';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { ComingSoon } from 'components/ComingSoon';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'tradeAnywhere'>;
+type Props = Pick<IOrderbookTranslations, 'tradeAnywhere'>;
 export const TradeAnywhere = ({
   title,
   description,
@@ -14,7 +12,7 @@ export const TradeAnywhere = ({
   advice,
   subtitle,
 }: Props['tradeAnywhere']) => {
-  const {ref, inView} = useInView({delay: 1000, triggerOnce: true});
+  const { ref, inView } = useInView({ delay: 1000, triggerOnce: true });
 
   return (
     <S.Container>

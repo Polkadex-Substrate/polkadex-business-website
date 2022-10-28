@@ -1,10 +1,10 @@
-import {Container} from 'components/Container';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { Container } from 'components/Container';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'statistic'>;
+type Props = Pick<IOrderbookTranslations, 'statistic'>;
 
 export const StatisticBlock = ({
   blockOne,
@@ -12,7 +12,7 @@ export const StatisticBlock = ({
   blockTree,
   BlockFour,
 }: Props['statistic']) => {
-  const {ref, inView, entry} = useInView({triggerOnce: true});
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Container>

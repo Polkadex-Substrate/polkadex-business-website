@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function CrossChainBridge(props: React.SVGProps<SVGSVGElement>) {
+export function CrossChainBridge(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1305"
@@ -2993,5 +2993,3 @@ function CrossChainBridge(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-export default CrossChainBridge;

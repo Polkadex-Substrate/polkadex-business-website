@@ -1,72 +1,7 @@
-import {createGlobalStyle, css} from 'styled-components';
-
-//Fix fonts. Old fonts import
-
-//  @font-face {
-//     font-family: 'SuisseIntl';
-//     font-style: normal;
-//     font-weight: 700;
-//     src: url('/fonts/SuisseIntl-black.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//   /* SuisseIntl - bold */
-//   @font-face {
-//     font-family: 'SuisseIntl';
-//     font-style: normal;
-//     font-weight: 600;
-//     src: url('/fonts/SuisseIntl-Bold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//   /* SuisseIntl - semibold */
-//   @font-face {
-//     font-family: 'SuisseIntl';
-//     font-style: normal;
-//     font-weight: 500;
-//     src: url('/fonts/SuisseIntl-SemiBold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//   /* SuisseIntl - regular */
-//   @font-face {
-//     font-family: 'SuisseIntl';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url('/fonts/SuisseIntl-Regular.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//   /* SuisseIntl - light */
-//   @font-face {
-//     font-family: 'SuisseIntl';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url('/fonts/SuisseIntl-Light.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//    /* SuisseIntl - thin */
-//   @font-face {
-//     font-family: 'SuisseIntl';
-//     font-style: normal;
-//     font-weight: 200;
-//     src: url('/fonts/SuisseIntl-Thin.woff') format('woff');/* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-// 	/* work-sans-300 - latin */
-//   @font-face {
-//     font-family: 'Work Sans';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url('/fonts/work-sans-v8-latin-300.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//   /* work-sans-regular - latin */
-//   @font-face {
-//     font-family: 'Work Sans';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url('/fonts/work-sans-v8-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
-//   /* work-sans-600 - latin */
-//   @font-face {
-//     font-family: 'Work Sans';
-//     font-style: normal;
-//     font-weight: 600;
-//     src: url('/fonts/work-sans-v8-latin-600.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-//   }
+import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
- ${({theme}) => css`
+ ${({ theme }) => css`
    @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
    body {
@@ -107,7 +42,68 @@ const GlobalStyles = createGlobalStyle`
   }
   
    /* SuisseIntl - black */
- 
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/SuisseIntl-black.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* SuisseIntl - bold */
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/SuisseIntl-Bold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* SuisseIntl - semibold */
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/SuisseIntl-SemiBold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* SuisseIntl - regular */
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/SuisseIntl-Regular.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* SuisseIntl - light */
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/SuisseIntl-Light.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+   /* SuisseIntl - thin */
+  @font-face {
+    font-family: 'SuisseIntl';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/SuisseIntl-Thin.woff') format('woff');/* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+	/* work-sans-300 - latin */
+  @font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/work-sans-v8-latin-300.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* work-sans-regular - latin */
+  @font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/work-sans-v8-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* work-sans-600 - latin */
+  @font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/work-sans-v8-latin-600.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
   /* ----------------------------------------------------------------------------------------------------
   Reset Link
   ----------------------------------------------------------------------------------------------------*/

@@ -1,21 +1,19 @@
-import {PrimaryButton, SecondaryButton} from 'components/Button';
-import {Container} from 'components/Container';
-import {ArrowRight} from 'components/Icons';
-import Planet from 'components/Icons/Planet';
-import {Slider} from 'components/Slider';
-import {useInView} from 'react-intersection-observer';
-import React, {useEffect, useRef, useState} from 'react';
+import { PrimaryButton, SecondaryButton } from 'components/Button';
+import { Planet } from 'components/Icons';
+import { Slider } from 'components/Slider';
+import { useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import SlideLib from 'react-slick';
-import {IHomeTranslations} from 'translations';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'polkadex'>;
+type Props = Pick<IOrderbookTranslations, 'polkadex'>;
 
-export const PolkadexBlock = ({cards, tabs, title}: Props['polkadex']) => {
+export const PolkadexBlock = ({ cards, tabs, title }: Props['polkadex']) => {
   const [current, setCurrent] = useState(0);
 
-  const {ref: refObserver, inView} = useInView({triggerOnce: true});
+  const { ref: refObserver, inView } = useInView({ triggerOnce: true });
 
   const ref = useRef<SlideLib>();
 
@@ -61,7 +59,7 @@ type TProps = {
   isViewed: boolean;
 };
 
-const Tab = ({isCurrent, content, isViewed}: TProps) => {
+const Tab = ({ isCurrent, content, isViewed }: TProps) => {
   return (
     <S.Tab>
       <S.TabWrapper>

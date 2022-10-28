@@ -1,17 +1,19 @@
-import {AnimatedDarkGradient} from 'components/AnimatedDarkGradient';
-import {SecondaryButton} from 'components/Button';
-import {Container} from 'components/Container';
-import {Ethereum} from 'components/Icons';
-import CrossChainBridge from 'components/Icons/CrossChainBrige';
-import {CrossChainCircle} from 'components/Icons/CrossChainCircle';
-import {CrossChainLaptop} from 'components/Icons/CrossChainLaptop';
-import {memo} from 'react';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { AnimatedDarkGradient } from 'components/AnimatedDarkGradient';
+import { SecondaryButton } from 'components/Button';
+import { Container } from 'components/Container';
+import {
+  CrossChainBridge,
+  CrossChainCircle,
+  CrossChainLaptop,
+  Ethereum,
+} from 'components/Icons';
+import { memo } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'crossChain'>;
+type Props = Pick<IOrderbookTranslations, 'crossChain'>;
 
 export const CrossChain = memo(
   ({
@@ -24,7 +26,7 @@ export const CrossChain = memo(
     subtitle,
     subtitleDesc,
   }: Props['crossChain']) => {
-    const {ref, inView, entry} = useInView({triggerOnce: true});
+    const { ref, inView, entry } = useInView({ triggerOnce: true });
 
     return (
       <Container>

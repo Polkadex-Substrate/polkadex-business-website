@@ -1,15 +1,15 @@
-import {PrimaryButton} from 'components/Button';
-import {Container} from 'components/Container';
-import QuestionIcon, {SecondQaIcon} from 'components/Icons/QuestionIcon';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { PrimaryButton } from 'components/Button';
+import { Container } from 'components/Container';
+import QuestionIcon, { SecondQaIcon } from 'components/Icons/QuestionIcon';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'question'>;
+type Props = Pick<IOrderbookTranslations, 'question'>;
 
-export const Question = ({question, boldtext, button}: Props['question']) => {
-  const {ref, inView} = useInView({triggerOnce: true});
+export const Question = ({ question, boldtext, button }: Props['question']) => {
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Container>

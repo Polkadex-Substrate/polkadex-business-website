@@ -1,24 +1,19 @@
-import {PrimaryButton, SecondaryButton} from 'components/Button';
-import {ComingSoon} from 'components/ComingSoon';
-import {Container} from 'components/Container';
-import {Header} from 'components/Header';
-import {OldHeader} from 'components/OldHeader';
-import React, {
-  FC,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
-import {useInView} from 'react-intersection-observer';
-import {HomeTranslations, IHomeTranslations} from 'translations';
+import { PrimaryButton, SecondaryButton } from 'components/Button';
+import { ComingSoon } from 'components/ComingSoon';
+import { Container } from 'components/Container';
+import { Header } from 'components/Header';
+import React, { useCallback, useEffect, useState } from 'react';
+import {
+  HomeTranslations,
+  IHomeTranslations,
+  IOrderbookTranslations,
+} from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'promo'>;
+type Props = Pick<IOrderbookTranslations, 'promo'>;
 
-const {oldHeader}: IHomeTranslations = HomeTranslations['en-US'];
+const { header }: IHomeTranslations = HomeTranslations['en-US'];
 
 export const Promo = ({
   title,
@@ -52,28 +47,21 @@ export const Promo = ({
       document.body.style.overflowY = 'hidden';
 
       window.addEventListener('wheel', onScroll, false);
-    } else {
-      if (step === 2) {
-        const timer = setInterval(() => {
-          setStep((step) => {
-            console.log(step);
-
-            if (step + 1 === 4) {
-              clearInterval(timer);
-            }
-
-            return step + 1;
-          });
-        }, 800);
-        window.removeEventListener('wheel', onScroll, false);
-      }
+    } else if (step === 2) {
+      const timer = setInterval(() => {
+        setStep((value) => {
+          if (value + 1 === 4) clearInterval(timer);
+          return value + 1;
+        });
+      }, 800);
+      window.removeEventListener('wheel', onScroll, false);
     }
   }, [step]);
 
   return (
     <S.Overlay step={step === 4 ? enableFixed : step}>
       <S.Wrapper step={step === 4 ? enableFixed : step}>
-        <OldHeader {...oldHeader} canSticky={step === 4} />
+        <Header {...header} />
         <S.Container step={step === 4 ? enableFixed : step}>
           <Container hasNotRelative>
             <S.Main step={step}>

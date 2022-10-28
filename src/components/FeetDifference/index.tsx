@@ -1,11 +1,11 @@
-import {PrimaryButton} from 'components/Button';
-import {Container} from 'components/Container';
-import * as Icons from 'components/Icons';
-import {Slider} from 'components/Slider';
-import {ThemingContext} from 'context';
-import React, {FC, memo, useContext, useEffect, useRef, useState} from 'react';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+/* eslint-disable camelcase */
+import { PrimaryButton } from 'components/Button';
+import { Container } from 'components/Container';
+import { Slider } from 'components/Slider';
+import { ThemingContext } from 'context';
+import React, { FC, memo, useContext, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
@@ -28,13 +28,13 @@ const slides = [
   },
 ];
 
-type Props = Pick<IHomeTranslations, 'feetDifference'>;
+type Props = Pick<IOrderbookTranslations, 'feetDifference'>;
 
 export const FeetDifference = memo(
-  ({title, open_beta, subtitle}: Props['feetDifference']) => {
+  ({ title, open_beta, subtitle }: Props['feetDifference']) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const {ref, inView} = useInView({triggerOnce: true});
+    const { ref, inView } = useInView({ triggerOnce: true });
 
     console.log(
       slides.map((_, i) => ({
@@ -96,8 +96,8 @@ type TProps = {
   i: number;
 };
 
-export const Slide: FC<TProps> = ({current, next, prev, slide, i}) => {
-  const {theme} = useContext(ThemingContext);
+export const Slide: FC<TProps> = ({ current, next, prev, slide, i }) => {
+  const { theme } = useContext(ThemingContext);
 
   return (
     <S.Slide i={i} current={current} next={next} prev={prev}>

@@ -1,14 +1,14 @@
-import {PrimaryButton} from 'components/Button';
-import {Container} from 'components/Container';
+import { PrimaryButton } from 'components/Button';
+import { Container } from 'components/Container';
 import Image from 'next/image';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import security from './img/security.png';
 import circle from './img/youKeysDetail.png';
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'keys'>;
+type Props = Pick<IOrderbookTranslations, 'keys'>;
 
 export const YourKeys = ({
   title,
@@ -18,7 +18,7 @@ export const YourKeys = ({
   secondDescription,
   button,
 }: Props['keys']) => {
-  const {ref, inView} = useInView({triggerOnce: true});
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Container>

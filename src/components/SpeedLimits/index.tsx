@@ -1,18 +1,16 @@
-import {AnimatedDarkGradient} from 'components/AnimatedDarkGradient';
-import {PrimaryButton} from 'components/Button';
-import {Container} from 'components/Container';
-import {FlyCube} from 'components/FlyCube';
+import { AnimatedDarkGradient } from 'components/AnimatedDarkGradient';
+import { PrimaryButton } from 'components/Button';
+import { Container } from 'components/Container';
 import CheaperIcon from 'components/Icons/CheaperIcon';
 import LimitIcon from 'components/Icons/LimitIcon';
 import RocketIcon from 'components/Icons/RocketIcon';
-import {memo} from 'react';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import doneIcon from './icon/doneIcon.svg';
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'speedlimits'>;
+type Props = Pick<IOrderbookTranslations, 'speedlimits'>;
 
 const ICONS = [<CheaperIcon />, <LimitIcon />];
 
@@ -23,7 +21,7 @@ export const SpeedLimit = ({
   sections,
   buttonText,
 }: Props['speedlimits']) => {
-  const {ref, inView} = useInView({delay: 200, triggerOnce: true});
+  const { ref, inView } = useInView({ delay: 200, triggerOnce: true });
 
   return (
     <Container>

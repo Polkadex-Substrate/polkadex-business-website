@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function Planet(props: React.SVGProps<SVGSVGElement>) {
+export function Planet(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="535"
@@ -35222,5 +35222,3 @@ function Planet(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-export default Planet;

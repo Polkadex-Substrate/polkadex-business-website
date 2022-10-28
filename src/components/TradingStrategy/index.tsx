@@ -1,15 +1,13 @@
-import {AnimatedDarkGradient} from 'components/AnimatedDarkGradient';
-import {Container} from 'components/Container';
-import {FlyCube} from 'components/FlyCube';
-import {Robot, Shield} from 'components/Icons';
-import React from 'react';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { AnimatedDarkGradient } from 'components/AnimatedDarkGradient';
+import { Container } from 'components/Container';
+import { Robot, Shield } from 'components/Icons';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import device from './images/device.png';
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'tradeStrategy'>;
+type Props = Pick<IOrderbookTranslations, 'tradeStrategy'>;
 
 export const TradingStrategy = ({
   title,
@@ -20,7 +18,7 @@ export const TradingStrategy = ({
   delegate,
   delegteDesc,
 }: Props['tradeStrategy']) => {
-  const {ref, inView} = useInView({triggerOnce: true});
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Container>
