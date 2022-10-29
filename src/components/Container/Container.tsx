@@ -1,13 +1,13 @@
-import React, {FC, ReactNode, useEffect, useRef, useState} from 'react';
+import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
 
-import {ObservBox, Wrapper} from './Container.styles';
+import { ObservBox, Wrapper } from './Container.styles';
 
 type TProps = {
   children: ReactNode | ReactNode[];
   hasNotRelative?: boolean;
 };
 
-export const Container: FC<TProps> = ({children, hasNotRelative = false}) => {
+export const Container: FC<TProps> = ({ children, hasNotRelative = false }) => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 

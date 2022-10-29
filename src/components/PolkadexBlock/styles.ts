@@ -6,7 +6,7 @@ type TProps = {
 };
 
 export const Wrapper = styled.section`
-  padding-bottom: 92px;
+  padding-bottom: 2rem;
 
   @media screen and (max-width: 664px) {
     padding-bottom: 32px;
@@ -14,9 +14,9 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.h2<TProps>`
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 28px;
-
+  font-weight: 550;
   text-align: center;
 
   white-space: pre-wrap;

@@ -11,10 +11,10 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2<TPropsGeneral>`
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 0.8rem;
   font-size: 4rem;
-  font-weight: 600;
-  opacity: ${({isViewed}) => +isViewed};
+  font-weight: 550;
+  opacity: ${({ isViewed }) => +isViewed};
   transition: 500ms opacity;
   @media screen and (max-width: 650px) {
     font-size: 4rem;
@@ -22,11 +22,11 @@ export const Title = styled.h2<TPropsGeneral>`
 `;
 export const Subtitle = styled.h3<TPropsGeneral>`
   text-align: center;
-  margin-bottom: 58px;
+  margin-bottom: 3rem;
+  font-weight: normal;
+  font-size: 1.6rem;
 
-  font-size: 2rem;
-
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
   transition: 500ms opacity;
 `;
@@ -37,13 +37,6 @@ export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  & > a {
-    text-align: center;
-    justify-content: center;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
 `;
 
 type TProps = {
@@ -56,15 +49,15 @@ type TProps = {
 export const Slide = styled.div<TProps>`
   position: relative;
 
-  z-index: ${({current, i}) => (current ? 10 : i)};
+  z-index: ${({ current, i }) => (current ? 10 : i)};
 `;
 
 export const Img = styled.img<TProps>`
   max-width: 100%;
 
-  filter: blur(${({current}) => (current ? 0 : 2)}px);
+  filter: blur(${({ current }) => (current ? 0 : 2)}px);
 
-  transform: ${({current, next, prev, i}) =>
+  transform: ${({ current, next, prev, i }) =>
     current
       ? ''
       : `translateX(${

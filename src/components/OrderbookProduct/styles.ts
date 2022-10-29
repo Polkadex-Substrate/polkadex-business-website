@@ -34,8 +34,8 @@ export const TechnologiesContainer = styled.div`
 export const Subtitle = styled.h3<TProps>`
   margin-bottom: 23px;
 
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 550;
 
   opacity: ${({ isViewed }) => +isViewed};
 

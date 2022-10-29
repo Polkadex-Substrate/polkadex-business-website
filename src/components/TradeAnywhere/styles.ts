@@ -5,20 +5,17 @@ type TProps = {
 };
 
 export const Wrapper = styled.div`
-  padding: 150px 20px 0;
   max-width: 120rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 39rem auto;
 `;
 export const Container = styled.div`
-  padding-left: 15px;
-
+  padding: 23rem 0 20rem 0;
   transition: transform 1s ease-in;
-
   position: relative;
   background-image: url(/img/orderbookAppMockup.svg);
-  background-size: 1600px 100vw;
+  background-size: 1400px 100vw;
 
   background-position: right;
   background-repeat: no-repeat;
@@ -31,7 +28,6 @@ export const Container = styled.div`
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 300px;
   @media screen and (max-width: 1000px) {
     width: 65%;
   }
@@ -54,7 +50,7 @@ export const Title = styled.h2<TProps>`
 `;
 export const Available = styled.p`
   font-size: 1.5rem;
-  margin-top: 4rem;
+
   @media screen and (max-width: 878px) {
     text-align: center;
     align-items: center;
@@ -85,4 +81,6 @@ export const Advice = styled.p<TProps>`
 
   transition: 500ms opacity, 500ms transform;
 `;
-export const Soon = styled.div``;
+export const Soon = styled.div`
+  margin-top: 8rem;
+`;
