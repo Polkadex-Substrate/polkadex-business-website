@@ -1,26 +1,19 @@
-import {PrimaryButton} from 'components/Button';
-import {Container} from 'components/Container';
-import * as Icon from 'components/Icons';
-import Title from 'components/Title';
-import {useInView} from 'react-intersection-observer';
-import {IHomeTranslations} from 'translations';
+import { PrimaryButton } from 'components/Button';
+import { Container } from 'components/Container';
+import { useInView } from 'react-intersection-observer';
+import { IOrderbookTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = Pick<IHomeTranslations, 'orderbook'>;
+type Props = Pick<IOrderbookTranslations, 'orderbook'>;
 
 const OrderbookProduct = ({
-  tag,
   title,
-  highlight,
   description,
   fullDescription,
-  ctaButton,
-  cards,
-  technologiesTitle,
   button,
 }: Props['orderbook']) => {
-  const {ref, inView} = useInView({triggerOnce: true});
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <S.Wrapper>

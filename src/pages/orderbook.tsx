@@ -78,7 +78,9 @@ export default function Home() {
       />
       <S.Wrapper>
         <Head>
-          <title>Polkadex - The trading engine for Web3 and DeFi</title>
+          <title>
+            Polkadex Orderbook - The trading engine for Web3 and DeFi
+          </title>
         </Head>
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <Promo {...promo} />

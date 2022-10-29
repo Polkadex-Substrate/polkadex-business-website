@@ -1,7 +1,7 @@
 import * as Icons from 'components/Icons';
 
 import * as S from './styles';
-import {ButtonFormProps, ButtonProps} from './types';
+import { ButtonFormProps, ButtonProps } from './types';
 
 export const PrimaryButton = ({
   icon,

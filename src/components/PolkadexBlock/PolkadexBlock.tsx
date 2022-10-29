@@ -45,7 +45,7 @@ export const PolkadexBlock = ({ cards, tabs, title }: Props['polkadex']) => {
             isViewed={inView}
             key={`polkadex-slider-${tab}`}
             isCurrent={i === current}
-            content={cards[0]}
+            content={cards[i]}
           />
         ))}
       </Slider>
@@ -89,8 +89,6 @@ const Tab = ({ isCurrent, content, isViewed }: TProps) => {
                 content={content.learnMore}
                 icon="ArrowRight"
               />
-              {/* {content.learnMore}
-              <ArrowRight /> */}
             </S.LearnMore>
           </S.Footer>
         </S.TabContent>

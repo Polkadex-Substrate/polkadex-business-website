@@ -17,18 +17,19 @@ export const TradeAnywhere = ({
   return (
     <S.Container>
       <S.Wrapper>
-        <div ref={ref} />
-
         <S.ContentWrapper>
           <S.Title isViewed={inView}>{title}</S.Title>
-
-          <S.Subtitle isViewed={inView}>{description}</S.Subtitle>
+          <S.Subtitle isViewed={inView}>
+            {description}
+            <strong>{mobile}</strong>
+          </S.Subtitle>
           <S.Advice isViewed={inView}>{advice}</S.Advice>
           <S.Soon>
             <S.Available>{subtitle}</S.Available>
             <ComingSoon />
           </S.Soon>
         </S.ContentWrapper>
+        <div ref={ref} />
       </S.Wrapper>
     </S.Container>
   );

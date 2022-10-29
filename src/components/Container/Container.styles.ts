@@ -8,7 +8,7 @@ export const Wrapper = styled.div<{
 
   transition: transform 1s ease-in;
 
-  position: ${({hasNotRelative}) => (hasNotRelative ? 'static' : 'relative')};
+  position: ${({ hasNotRelative }) => (hasNotRelative ? 'static' : 'relative')};
 
   @media screen and (min-width: 576px) {
     padding: 0 calc(50vw - 280px);
@@ -20,7 +20,7 @@ export const Wrapper = styled.div<{
     padding: 0 calc(50vw - 590px);
   }
   @media screen and (min-width: 1200px) {
-    padding: 0 calc(50vw - 700px);
+    padding: 0 calc(54.5vw - 700px);
   }
 `;
 

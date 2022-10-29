@@ -1,5 +1,5 @@
-import {DownloadButton} from 'components/DownloadButton';
-import {AppleIcon, PlaymarketIcon} from 'components/Icons';
+import { DownloadButton } from 'components/DownloadButton';
+import { AppleIcon, PlaymarketIcon } from 'components/Icons';
 
 import * as S from './styles';
 

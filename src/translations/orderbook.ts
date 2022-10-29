@@ -309,7 +309,7 @@ const ENLanguage = {
     mobile: 'Polkadex Mobile App',
     advice:
       'Place, modify, and cancel trades from your mobile device while your private keys remain in your air-gapped cold wallet.',
-    subtitle: 'Aviable on',
+    subtitle: 'Available on',
     possibleTitle: 'How is it all possible',
     possibleDescription:
       'A unique combination of multiple state-of-the-art technologies like blockchain, Polkadot parachains, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
@@ -1183,6 +1183,25 @@ const ENLanguage = {
         subtitle:
           'The native blockchain is maintained by PDEX staking, which secures the actions of Polkadex Orderbook.',
         desc: 'The Polkadex network connects to the Polkadex parachain via a Substrate-to-Substrate bridge, bringing in liquidity from other Polkadot parachains.',
+        sec_desc:
+          'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
+        button: 'Make your first trade',
+        learnMore: 'Learn more',
+      },
+      {
+        title: 'Trusted Execution Environment (TEE)',
+        subtitle:
+          'Invented by Intel, TEE technology allows modern CPUs to have an isolated section independent of the Operating System, BIOS and other core components of a computer',
+        desc: 'The main advantage is that the computation executed in the TEE is verified by the blockchain and any tampering in the logic will result in the blockchain rejecting the TEE.',
+        sec_desc:
+          'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
+        button: 'Make your first trade',
+        learnMore: 'Learn more',
+      },
+      {
+        title: 'Orderbook Engine',
+        subtitle: 'Runs a high-performance order book',
+        desc: 'Matches trades. Provides orders with TEEs for verification and settlement.',
         sec_desc:
           'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
         button: 'Make your first trade',

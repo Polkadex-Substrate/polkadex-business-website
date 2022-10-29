@@ -11,6 +11,7 @@ export const Wrapper = styled.section`
   background-repeat: no-repeat;
   background-size: 60% 100%;
   background-position: left;
+  margin-bottom: 5rem;
   @media screen and (max-width: 780px) {
     background-image: none;
   }
@@ -36,9 +37,9 @@ export const Subtitle = styled.h3<TProps>`
   font-size: 4rem;
   font-weight: 700;
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
 
   transition: 500ms opacity, 500ms transform;
 
@@ -46,14 +47,14 @@ export const Subtitle = styled.h3<TProps>`
     font-size: 2.2rem;
   }
 `;
-export const Text = styled.p<TProps & {size: number}>`
-  font-size: ${({size = 1.6}) => size}rem;
+export const Text = styled.p<TProps & { size: number }>`
+  font-size: ${({ size = 1.6 }) => size}rem;
   line-height: 160%;
   white-space: pre-wrap;
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
 
   transition: 500ms opacity, 500ms transform;
 
@@ -88,17 +89,9 @@ export const Button = styled.div<TProps>`
   justify-content: center;
   margin-top: 50px;
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
 
   transition: 500ms opacity, 500ms transform;
-
-  & > a {
-    text-align: center;
-    justify-content: center;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
 `;
