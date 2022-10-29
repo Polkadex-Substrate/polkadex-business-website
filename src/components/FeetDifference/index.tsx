@@ -2,8 +2,7 @@
 import { PrimaryButton } from 'components/Button';
 import { Container } from 'components/Container';
 import { Slider } from 'components/Slider';
-import { ThemingContext } from 'context';
-import React, { FC, memo, useContext, useState } from 'react';
+import React, { FC, memo, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { IOrderbookTranslations } from 'translations';
 
@@ -12,19 +11,31 @@ import * as S from './styles';
 const slides = [
   {
     id: 0,
-    src: 'https://dsc.cloud/0ebce1/polkaido-Regiser-Account.mov',
+    src: '/img/orderbookPreview/orderbookPreview1.svg',
   },
   {
     id: 1,
-    src: 'https://dsc.cloud/0ebce1/mintToken.mov',
+    src: '/img/orderbookPreview/orderbookPreview2.svg',
   },
   {
     id: 2,
-    src: 'https://dsc.cloud/0ebce1/polkaido-Regiser-Account.mov',
+    src: '/img/orderbookPreview/orderbookPreview3.svg',
   },
   {
     id: 3,
-    src: 'https://dsc.cloud/0ebce1/mintToken.mov',
+    src: '/img/orderbookPreview/orderbookPreview4.svg',
+  },
+  {
+    id: 4,
+    src: '/img/orderbookPreview/orderbookPreview5.svg',
+  },
+  {
+    id: 5,
+    src: '/img/orderbookPreview/orderbookPreview6.svg',
+  },
+  {
+    id: 6,
+    src: '/img/orderbookPreview/orderbookPreview7.svg',
   },
 ];
 
@@ -35,15 +46,6 @@ export const FeetDifference = memo(
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const { ref, inView } = useInView({ triggerOnce: true });
-
-    console.log(
-      slides.map((_, i) => ({
-        current: i === currentSlide,
-        next: i > currentSlide,
-        prev: i < currentSlide,
-        i: i < currentSlide ? i - currentSlide : currentSlide - i,
-      })),
-    );
 
     return (
       <Container>
@@ -74,7 +76,7 @@ export const FeetDifference = memo(
                   current={i === currentSlide}
                   next={i > currentSlide}
                   prev={i < currentSlide}
-                  slide={slide}
+                  slide={slide.src}
                   i={i < currentSlide ? i - currentSlide : currentSlide - i}
                 />
               ))}
@@ -90,62 +92,14 @@ type TProps = {
   current: boolean;
   next: boolean;
   prev: boolean;
-  slide: {
-    src: string;
-  };
+  slide: string;
   i: number;
 };
 
 export const Slide: FC<TProps> = ({ current, next, prev, slide, i }) => {
-  const { theme } = useContext(ThemingContext);
-
   return (
     <S.Slide i={i} current={current} next={next} prev={prev}>
-      <S.Img
-        i={i}
-        current={current}
-        next={next}
-        prev={prev}
-        src={`/img/${
-          theme.value.title === 'dark'
-            ? 'orderbookPreviewLand'
-            : 'orderbookPreviewLand'
-        }.svg`}
-      />
+      <S.Img i={i} current={current} next={next} prev={prev} src={slide} />
     </S.Slide>
   );
 };
-
-// const Slide = ({ src, current, handleClick, i }) => {
-//   const { theme } = useContext(ThemingContext);
-//   const ref = useRef<HTMLDivElement>();
-
-//   let classNames = 'slide';
-//   const wrapperTransform = {
-//     transform: `translateX(-${current * ref.current?.clientWidth}px)`,
-//   };
-
-//   if (current === i) classNames += ' slide--current';
-//   else if (current - 1 === i) classNames += ' slide--previous';
-//   else if (current + 1 === i) classNames += ' slide--next';
-
-//   return (
-//     <S.Slide
-//       onClick={handleClick}
-//       className={classNames}
-//       style={wrapperTransform}
-//       ref={ref}
-//     >
-//       <div>
-//         <img
-//           key={src}
-//           src={`/img/${
-//             theme.value.title === 'dark'
-//               ? 'polkadexExchangeDark'
-//               : 'polkadexExchangeLight'
-//           }.svg`}
-//         />
-//       </div>
-//     </S.Slide>
-//   );
-// };

@@ -37,6 +37,9 @@ export const ContentWrapper = styled.div`
     align-items: center;
     padding-bottom: 20px;
   }
+  @media screen and (max-width: 1200px) {
+    padding-left: 2rem;
+  }
 `;
 export const Title = styled.h2<TProps>`
   font-weight: 500;

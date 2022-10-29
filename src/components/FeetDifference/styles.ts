@@ -6,7 +6,6 @@ type TPropsGeneral = {
 
 export const Wrapper = styled.div`
   padding: 64px 0;
-  padding-bottom: 0;
 `;
 
 export const Title = styled.h2<TPropsGeneral>`
