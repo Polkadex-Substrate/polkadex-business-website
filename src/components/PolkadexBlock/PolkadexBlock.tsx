@@ -94,25 +94,25 @@ const Tab = ({
           <br />
           <S.TabDescription isViewed={isViewed}>
             {content.sec_desc}
-            {extraData && (
-              <S.ExtraData>
-                <p>The TEE takes care of the following:</p>
-
-                <ul>
-                  <li>Handles Polkadex Orderbook users’ balance states</li>
-                  <li>Prevents theft of funds</li>
-                  <li>
-                    Verifies the matched trades provided by the Orderbook engine
-                  </li>
-                  <li>Settles trades</li>
-                  <li>
-                    Enables traders to reserve and unreserve assets on the
-                    native blockchain
-                  </li>
-                </ul>
-              </S.ExtraData>
-            )}
           </S.TabDescription>
+          {extraData && (
+            <S.ExtraData>
+              <p>The TEE takes care of the following:</p>
+
+              <ul>
+                <li>Handles Polkadex Orderbook users’ balance states</li>
+                <li>Prevents theft of funds</li>
+                <li>
+                  Verifies the matched trades provided by the Orderbook engine
+                </li>
+                <li>Settles trades</li>
+                <li>
+                  Enables traders to reserve and unreserve assets on the native
+                  blockchain
+                </li>
+              </ul>
+            </S.ExtraData>
+          )}
           <S.Footer>
             <S.LearnMore>
               <PrimaryButton

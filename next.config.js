@@ -15,10 +15,6 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  images: {
-    loader: 'imgix',
-    path: '/',
-  },
   env: {
     GOOGLE_ANALYTICS:
       process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-DYTPWG3R5M',

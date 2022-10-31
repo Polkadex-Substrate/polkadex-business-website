@@ -101,7 +101,7 @@ export const NoRiskContainer = styled.div`
 export const NoRiskImageContainer = styled.div<TProps>`
   position: absolute;
   left: 0;
-  max-width: 90%;
+  max-width: 75%;
   z-index: -1;
 
   opacity: ${({ isViewed }) => +isViewed};
@@ -112,7 +112,7 @@ export const NoRiskImageContainer = styled.div<TProps>`
   & > img {
     width: 90%;
     height: auto;
-    margin-top: -80px;
+    margin-top: -110px;
   }
 
   @media screen and (max-width: 1000px) {

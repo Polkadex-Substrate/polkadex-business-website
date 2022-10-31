@@ -1,12 +1,7 @@
 import { AnimatedDarkGradient } from 'components/AnimatedDarkGradient';
 import { SecondaryButton } from 'components/Button';
 import { Container } from 'components/Container';
-import {
-  CrossChainBridge,
-  CrossChainCircle,
-  CrossChainLaptop,
-  Ethereum,
-} from 'components/Icons';
+import { CrossChainBridge, CrossChainCircle, Ethereum } from 'components/Icons';
 import { memo } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { IOrderbookTranslations } from 'translations';
@@ -86,7 +81,10 @@ export const CrossChain = memo(
 
               <S.LowerComponentWrapper>
                 <S.LaptopWrapper>
-                  <CrossChainLaptop />
+                  <img
+                    src="/img/betterLookingMockup.png"
+                    alt="orderbook mockup"
+                  />
                 </S.LaptopWrapper>
 
                 <S.LowerTextComponent>

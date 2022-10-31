@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { IOrderbookTranslations } from 'translations';
 
-import security from './img/security.png';
 import circle from './img/youKeysDetail.png';
 import * as S from './styles';
 
@@ -36,7 +35,7 @@ export const YourKeys = ({
 
         <S.NoRiskContainer>
           <S.NoRiskImageContainer isViewed={inView}>
-            <Image src={security} layout="raw" />
+            <img src="/img/security.svg" alt="Security" />
           </S.NoRiskImageContainer>
 
           <S.Item isViewed={inView}>

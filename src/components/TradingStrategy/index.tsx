@@ -66,7 +66,7 @@ export const TradingStrategy = ({
                   {multipleAccDesc}
                 </S.Text>
               </div>
-              <S.Img layout="raw" src={device} />
+              <S.Img src="/img/device.png" alt="orderbook layout" />
             </S.LightItemContent>
           </S.LightItem>
         </S.Items>

@@ -7,7 +7,6 @@ import RocketIcon from 'components/Icons/RocketIcon';
 import { useInView } from 'react-intersection-observer';
 import { IOrderbookTranslations } from 'translations';
 
-import doneIcon from './icon/doneIcon.svg';
 import * as S from './styles';
 
 type Props = Pick<IOrderbookTranslations, 'speedlimits'>;
@@ -47,7 +46,7 @@ export const SpeedLimit = ({
                     <S.TextAndIconWrapper>
                       <S.ImageWrapper>
                         <S.DoneIconWrapper
-                          src={doneIcon}
+                          src="/img/doneIcon.svg"
                           height="12px"
                           width="12px"
                         />
@@ -58,7 +57,7 @@ export const SpeedLimit = ({
                     <S.TextAndIconWrapper>
                       <S.ImageWrapper>
                         <S.DoneIconWrapper
-                          src={doneIcon}
+                          src="/img/doneIcon.svg"
                           height="12px"
                           width="12px"
                         />
@@ -70,7 +69,7 @@ export const SpeedLimit = ({
                       <S.TextAndIconWrapper>
                         <S.ImageWrapper>
                           <S.DoneIconWrapper
-                            src={doneIcon}
+                            src="/img/doneIcon.svg"
                             height="12px"
                             width="12px"
                           />

@@ -147,6 +147,9 @@ export const LaptopWrapper = styled.div`
   @media screen and (max-width: 1060px) {
     display: none;
   }
+  img {
+    width: 100%;
+  }
 `;
 
 export const LowerTextComponent = styled.div`

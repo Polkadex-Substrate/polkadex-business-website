@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 
 type TProps = TGeneralProps & {
@@ -111,11 +110,12 @@ export const DarkContent = styled.div`
   height: 50%;
 `;
 
-export const Img = styled(Image)`
+export const Img = styled.img`
   max-width: 396px;
   width: 100%;
   height: auto;
   transform: translateX(-60px);
+  margin-top: 1.5rem;
   @media screen and (max-width: 650px) {
     transform: translateX(-40px);
   }

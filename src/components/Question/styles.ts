@@ -13,12 +13,13 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 20px;
-  margin: 20rem auto 12rem;
   background-image: url('/img/question.svg');
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-
+  @media screen and (min-width: 1060px) {
+    margin: 20rem auto 12rem;
+  }
   @media screen and (max-width: 660px) {
     background-image: none;
     max-height: 820px;
