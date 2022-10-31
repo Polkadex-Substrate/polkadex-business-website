@@ -44,16 +44,7 @@ const Hero = ({
           <S.SecondaryButton href={secondaryCtaLink}>
             {secondaryCtaButton}
           </S.SecondaryButton>
-          <Tooltip>
-            <TooltipHeader>
-              <PrimaryButton
-                target="_blank"
-                href={ctaLink}
-                content={ctaButton}
-              />
-            </TooltipHeader>
-            <TooltipContent>Testnet is down for maintenance</TooltipContent>
-          </Tooltip>
+          <PrimaryButton target="_blank" href={ctaLink} content={ctaButton} />
         </S.CtaContainer>
         <S.RowBanner>
           <Banner
