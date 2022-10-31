@@ -18,7 +18,7 @@ module.exports = {
   },
   images: {
     loader: 'imgix',
-    path: '',
+    path: '/',
   },
   env: {
     GOOGLE_ANALYTICS:
