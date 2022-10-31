@@ -46,6 +46,7 @@ export const PolkadexBlock = ({ cards, tabs, title }: Props['polkadex']) => {
             key={`polkadex-slider-${tab}`}
             isCurrent={i === current}
             content={cards[i]}
+            hasImage={i === 0}
           />
         ))}
       </Slider>
@@ -57,15 +58,19 @@ type TProps = {
   isCurrent: boolean;
   content: Props['polkadex']['cards'][0];
   isViewed: boolean;
+  hasImage?: boolean;
 };
 
-const Tab = ({ isCurrent, content, isViewed }: TProps) => {
+const Tab = ({ isCurrent, content, isViewed, hasImage }: TProps) => {
   return (
     <S.Tab>
-      <S.TabWrapper>
-        <S.TabImage>
-          <Planet />
-        </S.TabImage>
+      <S.TabWrapper hasImage={hasImage}>
+        {hasImage && (
+          <S.TabImage>
+            <Planet />
+          </S.TabImage>
+        )}
+
         <S.TabContent>
           <S.TabTitle isViewed={isViewed}>{content.title}</S.TabTitle>
           <S.TabSubtitle isViewed={isViewed}>{content.subtitle}</S.TabSubtitle>

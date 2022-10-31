@@ -5,7 +5,7 @@ type TProps = {
 };
 
 export const Content = styled.div<TProps>`
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
   transition: 500ms opacity;
 `;
 
@@ -38,12 +38,12 @@ export const UpperTextComponent = styled.div`
 `;
 
 export const Title = styled.h5<TProps>`
-  font-weight: 700;
-  font-size: 5rem;
+  font-weight: 550;
+  font-size: 3rem;
   margin-bottom: 30px;
 
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : -40)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : -40)}%);
   transition: 500ms opacity, 500ms transform;
 
   @media screen and (max-width: 576px) {
@@ -53,12 +53,12 @@ export const Title = styled.h5<TProps>`
 `;
 
 export const Description = styled.p<TProps>`
-  font-size: 1.5rem;
-
+  font-size: 1.6rem;
+  line-height: 1.8;
   margin-bottom: 60px;
 
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 40)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 40)}%);
   transition: 500ms opacity, 500ms transform;
   @media screen and (max-width: 576px) {
     font-size: 1.6rem;
@@ -84,8 +84,8 @@ export const IconTextWrapper = styled.div<TProps>`
   align-items: center;
   margin-bottom: 20px;
 
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : -20)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : -20)}%);
   transition: 500ms opacity, 500ms transform;
   & svg {
     width: 50px;
@@ -94,8 +94,8 @@ export const IconTextWrapper = styled.div<TProps>`
 `;
 
 export const ButtonWrapper = styled.div<TProps>`
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
   transition: 500ms opacity, 500ms transform;
 
   margin-left: 60px;

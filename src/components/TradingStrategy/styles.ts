@@ -17,7 +17,7 @@ export const Title = styled.h2`
   text-align: center;
   max-width: 50%;
   font-size: 4rem;
-  font-weight: 600;
+  font-weight: 550;
   margin: 0 auto 78px;
 
   @media screen and (max-width: 992px) {
@@ -49,34 +49,35 @@ export const Items = styled.div`
 export const Text = styled.p<TProps>`
   white-space: pre-wrap;
 
-  color: ${({theme, inverse = false}) =>
+  color: ${({ theme, inverse = false }) =>
     theme.colors[inverse ? 'black' : 'white']};
 
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   margin: 0;
   margin-bottom: 0;
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
   transition: 500ms opacity;
 `;
 export const Subtitle = styled.h3<TProps>`
   font-weight: 600;
   font-size: 3rem;
-  line-height: 55px;
+  line-height: 1.6;
   margin: 0;
   margin-bottom: 12px;
 
-  color: ${({theme, inverse = false}) =>
+  color: ${({ theme, inverse = false }) =>
     theme.colors[inverse ? 'black' : 'white']};
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
   transition: 500ms opacity;
 `;
 
 export const LightItem = styled.div`
-  background-color: ${({theme}) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.gray};
   max-width: 560px;
   margin-left: 30px;
   border-radius: 15px;

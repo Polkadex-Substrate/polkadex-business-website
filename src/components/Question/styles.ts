@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 20px;
-  margin: 0 auto 130px;
+  margin: 20rem auto 12rem;
   background-image: url('/img/question.svg');
   background-size: cover;
   background-position: right;
@@ -55,9 +55,9 @@ export const ButtonWrapper = styled.div<TProps>`
   display: flex;
   align-items: center;
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
-  transform: translateX(${({isViewed}) => (isViewed ? 0 : -20)}%);
+  transform: translateX(${({ isViewed }) => (isViewed ? 0 : -20)}%);
 
   transition: 500ms opacity, 500ms transform;
   & a {
@@ -93,7 +93,7 @@ export const ComingSoon = styled.div`
   border-top: 3px solid white;
   border-bottom: 3px solid white;
   color: '#000';
-  background-color: ${({theme}) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.black};
   opacity: 0.95;
   font-weight: 500;
   font-size: 14px;
@@ -119,10 +119,10 @@ export const Soon = styled.span<TProps>`
   font-size: 20px;
   font-weight: 500;
 
-  opacity: ${({isViewed}) => +isViewed};
-  ${({isViewed}) => (isViewed ? 'inherit' : 'hidden')};
+  opacity: ${({ isViewed }) => +isViewed};
+  ${({ isViewed }) => (isViewed ? 'inherit' : 'hidden')};
 
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
 
   transition: 500ms opacity, 500ms transform;
 `;

@@ -76,8 +76,8 @@ export const Tab = styled.div`
   padding: 3rem 0;
 `;
 
-export const TabWrapper = styled.div`
-  ${({ theme }) => css`
+export const TabWrapper = styled.div<{ hasImage?: boolean }>`
+  ${({ theme, hasImage }) => css`
     width: 65%;
     display: grid;
     align-items: center;
@@ -85,11 +85,12 @@ export const TabWrapper = styled.div`
     gap: 5rem;
     background: ${theme.colors.tertiaryBackgroundOpacity};
     border-radius: 2rem;
+    padding: 5rem;
     @media screen and (max-width: 1200px) {
       width: 100%;
     }
     @media screen and (min-width: 1000px) {
-      grid-template-columns: auto 40rem;
+      grid-template-columns: ${hasImage ? 'auto 40rem' : '1fr'};
     }
   `}
 `;
@@ -100,7 +101,6 @@ export const TabContent = styled.div`
   justify-self: flex-start;
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
 
   @media screen and (max-width: 1000px) {
     align-items: center;
