@@ -1,16 +1,90 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type TProps = {
   step: number;
 };
+export const Wrapper = styled.section`
+  display: flex;
+  margin: 3rem 0;
+  @media screen and (min-width: 800px) {
+    background-image: url('/img/heroMockup.png');
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  @media screen and (min-width: 1020px) {
+    min-height: 55rem;
+    background-size: contain;
+  }
 
-export const Container = styled.div<TProps>`
-  padding-top: ${({ step }) => (step === 4 ? 0 : 0)}px;
-  transition: padding 500ms ease-out, padding-top 500ms ease-out;
-  padding: 10rem calc(54.5vw - 720px);
-  will-change: padding-top;
-  will-change: padding;
-  position: relative;
+  @media screen and (min-width: 800px) and (max-width: 1020px) {
+    background-size: 50rem;
+  }
+`;
+
+export const Container = styled.div`
+  display: grid;
+
+  align-items: center;
+  max-width: 120rem;
+  margin: 0 auto;
+  @media screen and (max-width: 120rem) {
+    padding: 1rem;
+  }
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 2fr;
+  }
+`;
+export const Box = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    img {
+      max-width: 50rem;
+      width: 100%;
+    }
+    @media screen and (min-width: 800px) {
+      img {
+        display: none;
+      }
+    }
+    h1 {
+      font-size: 5rem;
+      font-weight: 550;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      li {
+        font-size: 1.6rem;
+        span {
+          color: ${theme.colors.primary};
+        }
+        :not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  `}
+`;
+
+export const Available = styled.div`
+  margin-top: 4rem;
+  small {
+    font-size: 1.3rem;
+  }
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
 `;
 
 export const Overlay = styled.div<TProps>`
@@ -32,44 +106,6 @@ export const Overlay = styled.div<TProps>`
 
     height: 450px;
     overflow-y: hidden;
-    z-index: 1;
-  }
-`;
-
-export const Wrapper = styled.section<TProps>`
-  position: relative;
-
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0px;
-  z-index: 10;
-
-  overflow: hidden;
-
-  @media screen and (max-width: 1440px) {
-    padding: 0
-      ${({ step }) =>
-        step === 1 ? 34 : step === 2 ? 62 : step === 4 ? 0 : 92}px;
-    padding-top: ${({ step }) => (step === 4 ? 70 : 0)}px;
-  }
-  @media screen and (max-width: 1200px) {
-    padding: 0
-      ${({ step }) =>
-        step === 1 ? 34 : step === 2 ? 32 : step === 4 ? 0 : 52}px;
-    padding-top: ${({ step }) => (step === 4 ? 70 : 0)}px;
-  }
-
-  @media screen and (max-width: 996px) {
-    padding: 0
-      ${({ step }) =>
-        step === 1 ? 16 : step === 2 ? 12 : step === 4 ? 0 : 8}px;
-    padding-top: ${({ step }) => (step === 4 ? 70 : 0)}px;
-  }
-
-  @media screen and (max-width: 878px) {
-    padding-top: 0px;
-    position: relative;
     z-index: 1;
   }
 `;

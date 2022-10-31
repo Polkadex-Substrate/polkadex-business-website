@@ -1,6 +1,7 @@
 import {
   FeetDifference,
   Footer,
+  Header,
   Newsletter,
   OrderbookProduct,
   PolkadexBlock,
@@ -39,7 +40,7 @@ export default function Home() {
     polkadex,
     crossChain,
   }: IOrderbookTranslations = OrderbookTranslations['en-US'];
-  const { footer }: IHomeTranslations = HomeTranslations['en-US'];
+  const { footer, header }: IHomeTranslations = HomeTranslations['en-US'];
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -82,6 +83,8 @@ export default function Home() {
             Polkadex Orderbook - The trading engine for Web3 and DeFi
           </title>
         </Head>
+        <Header {...header} />
+
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <Promo {...promo} />
           <StatisticBlock {...statistic} />
