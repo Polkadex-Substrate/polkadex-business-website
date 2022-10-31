@@ -30,30 +30,30 @@ export const Promo = ({
       <S.Container>
         <S.Box>
           <img src="/img/heroMockup1.png" alt="Orderbook mockup" />
-          <h1>The CEXiest DEX in DeFi</h1>
-          <p>The best of centralized exchanges</p>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
           <ul>
             <li>
               <span>+</span>
-              The best of decentralized exchanges
+              {advantage}
             </li>
             <li>
               <span>-</span>
-              The disadvantages of both
+              {disadvantage}
             </li>
             <li>
               <span>=</span>
-              <strong>Polkadex Orderbook</strong>
+              <strong>{polkadex}</strong>
             </li>
           </ul>
           <S.Actions>
             <PrimaryButton
-              content="Trade now"
-              href="http://orderbook.polkadex.trade"
+              content={button}
+              href="https://orderbook.polkadex.trade"
               target="_blank"
             />
             <SecondaryButton
-              content="Learn more"
+              content={learn}
               icon="ArrowRight"
               href="https://docs.polkadex.trade"
               target="_blank"

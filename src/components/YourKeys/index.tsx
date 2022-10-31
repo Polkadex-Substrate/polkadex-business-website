@@ -48,6 +48,7 @@ export const YourKeys = ({
               <PrimaryButton
                 href="http://orderbook.polkadex.trade"
                 content={button}
+                target="_blank"
               />
             </S.ButtonWrapper>
           </S.Item>

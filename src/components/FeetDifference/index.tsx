@@ -56,6 +56,7 @@ export const FeetDifference = memo(
             <PrimaryButton
               content={open_beta}
               href="http://orderbook.polkadex.trade"
+              target="_blank"
             />
           </S.ButtonWrapper>
 

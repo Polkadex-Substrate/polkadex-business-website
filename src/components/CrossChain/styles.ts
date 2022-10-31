@@ -65,14 +65,16 @@ export const Description = styled.p<TProps>`
     text-align: center;
   }
 `;
-
+export const IconContainer = styled.div`
+  width: 3rem;
+  height: 3rem;
+`;
+export const InfoContainer = styled.div`
+  margin-left: 20px;
+`;
 export const SubDescription = styled.p`
   font-weight: 500;
   font-size: 2.1rem;
-
-  margin-left: 20px;
-
-  width: 70%;
 
   @media screen and (max-width: 576px) {
     font-size: 1.8rem;
@@ -82,24 +84,18 @@ export const SubDescription = styled.p`
 export const IconTextWrapper = styled.div<TProps>`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-
+  margin-bottom: 4rem;
+  gap: 1rem;
   opacity: ${({ isViewed }) => +isViewed};
   transform: translateY(${({ isViewed }) => (isViewed ? 0 : -20)}%);
   transition: 500ms opacity, 500ms transform;
-  & svg {
-    width: 50px;
-    height: 50px;
-  }
 `;
 
 export const ButtonWrapper = styled.div<TProps>`
   opacity: ${({ isViewed }) => +isViewed};
   transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
   transition: 500ms opacity, 500ms transform;
-
-  margin-left: 60px;
-  margin-bottom: 60px;
+  margin-top: 1rem;
   & a {
     color: #e6007a;
   }
@@ -111,8 +107,7 @@ export const ButtonWrapper = styled.div<TProps>`
 export const SoonComponent = styled.p`
   display: inline-block;
   padding: 2px 9px;
-  margin-left: 60px;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 25px;

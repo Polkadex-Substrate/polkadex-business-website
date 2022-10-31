@@ -115,7 +115,7 @@ const ENLanguage = {
     title: 'The CEXiest DEX in DeFi',
     subtitle: 'The best of centralized exchanges',
     advantage: 'The best of decentralized exchanges',
-    disadvantage: ' The disadvantages of both',
+    disadvantage: 'The disadvantages of both',
     polkadex: 'Polkadex Orderbook',
     available: 'Available on',
     button: 'Trade now',
@@ -145,7 +145,7 @@ const ENLanguage = {
     fullDescription:
       'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.\n\nInteresting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
     ctaButton: 'Polkadex Orderbook',
-    button: 'Open trading account',
+    button: 'Open a trading account',
     cards: [
       {
         title: 'Register multiple hot wallets',
@@ -1131,11 +1131,11 @@ const ENLanguage = {
   },
 
   speedlimits: {
-    title: '500k TPS = no speed limits',
+    title: '500k TPS per second = no speed limits',
     descriptionFirst:
       'Trade crypto on a DEX that’s as fast as (if not faster than) CEXs',
     descriptionSecond:
-      ' Capable of scaling to 500,000 transactions per second, Polkadex Orderbook is non-custodial crypto trading in real time with sub-milisecond latency.',
+      'Capable of scaling to 500,000 trades per second, Polkadex Orderbook is non-custodial crypto trading in real time with sub-milisecond latency.',
 
     sections: [
       {
@@ -1184,17 +1184,14 @@ const ENLanguage = {
           'The native blockchain is maintained by PDEX staking, which secures the actions of Polkadex Orderbook.',
         desc: 'The Polkadex network connects to the Polkadex parachain via a Substrate-to-Substrate bridge, bringing in liquidity from other Polkadot parachains.',
         sec_desc:
-          'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
+          'The Polkadex network also connects to other blockchains like Ethereum via Chainbridge.',
         button: 'Make your first trade',
         learnMore: 'Learn more',
       },
       {
         title: 'Trusted Execution Environment (TEE)',
-        subtitle:
-          'Invented by Intel, TEE technology allows modern CPUs to have an isolated section independent of the Operating System, BIOS and other core components of a computer',
-        desc: 'The main advantage is that the computation executed in the TEE is verified by the blockchain and any tampering in the logic will result in the blockchain rejecting the TEE.',
         sec_desc:
-          'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
+          'Invented by Intel, TEE technology allows modern CPUs to have an isolated section independent of the Operating System, BIOS and other core components of a computer. The main advantage is that the computation executed in the TEE is verified by the blockchain and any tampering in the logic will result in the blockchain rejecting the TEE. ',
         button: 'Make your first trade',
         learnMore: 'Learn more',
       },
@@ -1212,18 +1209,18 @@ const ENLanguage = {
 
   crossChain: {
     title: 'Truly cross-chain ',
-    description: 'Trade tokens from the following \n\nsupported networks:',
-    subDesc: 'Through the Polkadex parachain Polkadot and Polkadot parachains',
-    dubDescTwo: 'Through THEA bridge Ethereum',
+    description: 'Trade tokens from the following supported networks:',
+    subDesc: 'Through the Polkadex parachain',
+    dubDescTwo: 'Through THEA',
     readMore: 'Read more',
     comeSoon: 'More to come soon!',
     subtitle: 'Better looking',
     subtitleDesc:
-      '“If you’re going to build a non-custodial orde rbook-based DEX capable of high frequency trading, why not do it with some style?” All the function ality of a CEX and the security of a DEX wrapped into a sleek, minimalist, and easy-to-use interface.',
+      '“If you’re going to build a non-custodial orderbook-based DEX capable of high frequency trading, why not do it with some style?“',
   },
 
   question: {
-    question: 'Interested in listing your token on the',
+    question: 'Interested in listing your token on ',
     boldtext: 'Polkadex Orderbook?',
     button: 'Coming soon!',
   },

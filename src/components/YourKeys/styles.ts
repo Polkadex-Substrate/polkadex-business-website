@@ -155,7 +155,6 @@ export const NoRiscDescription = styled.p`
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5;
-  color: #ffffff;
   margin-top: 28px;
   margin-left: auto;
   margin-bottom: 2rem;

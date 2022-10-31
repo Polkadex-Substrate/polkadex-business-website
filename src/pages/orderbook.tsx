@@ -2,8 +2,8 @@ import {
   FeetDifference,
   Footer,
   Header,
+  NewOrderbookProduct,
   Newsletter,
-  OrderbookProduct,
   PolkadexBlock,
   Promo,
   TradeAnywhere,
@@ -79,11 +79,18 @@ export default function Home() {
       />
       <S.Wrapper>
         <Head>
-          <title>
-            Polkadex Orderbook - The trading engine for Web3 and DeFi
-          </title>
+          <title>Polkadex Orderbook Crypto Currency Exchange</title>
+          <meta
+            name="description"
+            content="Trade crypto with the Polkadex Orderbook decentralized exchange. The CEXiest DEX in DeFi."
+          />
+          <meta
+            property="og:title"
+            content=" Polkadex Orderbook Crypto Currency Exchange
+"
+          />
         </Head>
-        <Header {...header} />
+        <Header {...header} disableLight />
 
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <Promo {...promo} />
@@ -95,11 +102,11 @@ export default function Home() {
           <TradingStrategy {...tradeStrategy} />
           <FeetDifference {...feetDifference} />
           <TradeAnywhere {...tradeAnywhere} />
-          <OrderbookProduct {...orderbook} />
+          <NewOrderbookProduct {...orderbook} />
           <PolkadexBlock {...polkadex} />
           <Newsletter {...newsletter} />
         </main>
-        <Footer {...footer} />
+        <Footer {...footer} disableLight />
       </S.Wrapper>
     </>
   );

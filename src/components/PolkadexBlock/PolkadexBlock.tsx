@@ -47,6 +47,7 @@ export const PolkadexBlock = ({ cards, tabs, title }: Props['polkadex']) => {
             isCurrent={i === current}
             content={cards[i]}
             hasImage={i === 0}
+            extraData={i === 1}
           />
         ))}
       </Slider>
@@ -59,9 +60,16 @@ type TProps = {
   content: Props['polkadex']['cards'][0];
   isViewed: boolean;
   hasImage?: boolean;
+  extraData?: boolean;
 };
 
-const Tab = ({ isCurrent, content, isViewed, hasImage }: TProps) => {
+const Tab = ({
+  isCurrent,
+  content,
+  isViewed,
+  hasImage,
+  extraData = false,
+}: TProps) => {
   return (
     <S.Tab>
       <S.TabWrapper hasImage={hasImage}>
@@ -73,19 +81,44 @@ const Tab = ({ isCurrent, content, isViewed, hasImage }: TProps) => {
 
         <S.TabContent>
           <S.TabTitle isViewed={isViewed}>{content.title}</S.TabTitle>
-          <S.TabSubtitle isViewed={isViewed}>{content.subtitle}</S.TabSubtitle>
-          <S.TabDescription isViewed={isViewed}>
-            {content.desc}
-          </S.TabDescription>
+          {!!content.subtitle && (
+            <S.TabSubtitle isViewed={isViewed}>
+              {content.subtitle}
+            </S.TabSubtitle>
+          )}
+          {!!content?.desc && (
+            <S.TabDescription isViewed={isViewed}>
+              {content.desc}
+            </S.TabDescription>
+          )}
           <br />
           <S.TabDescription isViewed={isViewed}>
             {content.sec_desc}
+            {extraData && (
+              <S.ExtraData>
+                <p>The TEE takes care of the following:</p>
+
+                <ul>
+                  <li>Handles Polkadex Orderbook users’ balance states</li>
+                  <li>Prevents theft of funds</li>
+                  <li>
+                    Verifies the matched trades provided by the Orderbook engine
+                  </li>
+                  <li>Settles trades</li>
+                  <li>
+                    Enables traders to reserve and unreserve assets on the
+                    native blockchain
+                  </li>
+                </ul>
+              </S.ExtraData>
+            )}
           </S.TabDescription>
           <S.Footer>
             <S.LearnMore>
               <PrimaryButton
                 href="http://orderbook.polkadex.trade/"
                 content={content.button}
+                target="_blank"
               />
             </S.LearnMore>
             <S.LearnMore>
@@ -93,6 +126,7 @@ const Tab = ({ isCurrent, content, isViewed, hasImage }: TProps) => {
                 href="https://docs.polkadex.trade/"
                 content={content.learnMore}
                 icon="ArrowRight"
+                target="_blank"
               />
             </S.LearnMore>
           </S.Footer>

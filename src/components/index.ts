@@ -3,6 +3,7 @@ import Features from 'components/Features';
 import Hero from 'components/Hero';
 import Investors from 'components/Investors';
 import Media from 'components/Media';
+import NewOrderbookProduct from 'components/NewOrderbookProduct';
 import Newsletter from 'components/Newsletter';
 import OrderbookProduct from 'components/OrderbookProduct';
 import OthersProducts from 'components/OthersProducts';
@@ -61,6 +62,7 @@ export {
   Hero,
   Investors,
   Media,
+  NewOrderbookProduct,
   Newsletter,
   OrderbookProduct,
   OthersProducts,

@@ -28,7 +28,7 @@ export const StatisticBlock = ({
         </S.Block>
 
         <S.Block>
-          <S.Stat>100%</S.Stat>
+          <S.Stat>🤯</S.Stat>
           <S.Description>{blockTree}</S.Description>
         </S.Block>
 

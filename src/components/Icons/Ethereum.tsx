@@ -3,9 +3,9 @@ import * as React from 'react';
 function SvgEthereum(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="50"
-      height="50"
-      viewBox="0 0 50 50"
+      width="1em"
+      height="1em"
+      viewBox="0 0 31 54"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -29,7 +29,7 @@ function SvgEthereum(props: React.SVGProps<SVGSVGElement>) {
         fill="white"
       />
       <path
-        d="M15.4672 35.4144L30.9343 26.2718L15.4672 19.2415V35.4144Z"
+        d="M15.4672 35.4147L30.9343 26.272L15.4672 19.2417V35.4147Z"
         fill="white"
       />
     </svg>

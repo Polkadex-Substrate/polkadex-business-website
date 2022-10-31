@@ -90,6 +90,7 @@ export const SpeedLimit = ({
         <PrimaryButton
           href="http://orderbook.polkadex.trade"
           content={buttonText}
+          target="_blank"
         />
       </S.ButtonWrapper>
     </Container>

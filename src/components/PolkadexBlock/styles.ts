@@ -154,6 +154,13 @@ export const TabDescription = styled.p<TProps>`
     font-size: 1.2rem;
   }
 `;
+export const ExtraData = styled.div`
+  margin-top: 1rem;
+  ul {
+    margin-left: 2rem;
+  }
+`;
+
 export const LearnMore = styled.a`
   display: flex;
   align-items: center;

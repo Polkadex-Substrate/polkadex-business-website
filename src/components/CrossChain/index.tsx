@@ -38,29 +38,44 @@ export const CrossChain = memo(
                   <S.Title isViewed={inView}>{title}</S.Title>
                   <S.Description isViewed={inView}>{description}</S.Description>
                   <S.IconTextWrapper isViewed={inView}>
-                    <CrossChainCircle />
-                    <S.SubDescription>{subDesc}</S.SubDescription>
-                  </S.IconTextWrapper>
-                  <S.ButtonWrapper isViewed={inView}>
-                    <SecondaryButton
-                      content={readMore}
-                      href=" https://polkadex.trade/crowdloancontribute"
-                      icon="ArrowRight"
-                    />
-                  </S.ButtonWrapper>
+                    <S.IconContainer>
+                      <CrossChainCircle />
+                    </S.IconContainer>
 
-                  <S.SoonComponent>{comeSoon}</S.SoonComponent>
-                  <S.IconTextWrapper isViewed={inView}>
-                    <Ethereum />
-                    <S.SubDescription>{dubDescTwo}</S.SubDescription>
+                    <S.InfoContainer>
+                      <S.SubDescription>{subDesc}</S.SubDescription>
+                      <span>Polkadot and Polkadot parachains</span>
+                      <S.ButtonWrapper isViewed={inView}>
+                        <SecondaryButton
+                          content={readMore}
+                          href=" https://polkadex.trade/crowdloancontribute"
+                          icon="ArrowRight"
+                          target="_blank"
+                        />
+                      </S.ButtonWrapper>
+                    </S.InfoContainer>
                   </S.IconTextWrapper>
-                  <S.ButtonWrapper isViewed={inView}>
-                    <SecondaryButton
-                      content={readMore}
-                      href="https://github.com/Polkadex-Substrate/polkadex-docs/blob/master/docs/doc3-theaBridge.md"
-                      icon="ArrowRight"
-                    />
-                  </S.ButtonWrapper>
+
+                  <S.IconTextWrapper isViewed={inView}>
+                    <S.IconContainer>
+                      <Ethereum />
+                    </S.IconContainer>
+
+                    <S.InfoContainer>
+                      <S.SoonComponent>{comeSoon}</S.SoonComponent>
+
+                      <S.SubDescription>{dubDescTwo}</S.SubDescription>
+                      <span>Ethereum</span>
+                      <S.ButtonWrapper isViewed={inView}>
+                        <SecondaryButton
+                          content={readMore}
+                          href="https://github.com/Polkadex-Substrate/polkadex-docs/blob/master/docs/doc3-theaBridge.md"
+                          icon="ArrowRight"
+                          target="_blank"
+                        />
+                      </S.ButtonWrapper>
+                    </S.InfoContainer>
+                  </S.IconTextWrapper>
                 </S.UpperTextComponent>
                 <div ref={ref} />
 
