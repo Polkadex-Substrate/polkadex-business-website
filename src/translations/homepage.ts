@@ -64,8 +64,8 @@ const ENLanguage = {
     title: 'The trading engine for Web3 and DeFi',
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
-    ctaButton: 'Orderbook Open Beta',
-    ctaLink: 'http://orderbook-beta.polkadex.trade',
+    ctaButton: 'Orderbook',
+    ctaLink: 'http://orderbook.polkadex.trade',
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
       'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
