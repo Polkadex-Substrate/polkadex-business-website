@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   text-align: left;
   @media screen and (min-width: 690px) {
-    grid-template-columns: 0.8fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -63,7 +63,7 @@ export const Wrapper = styled.div`
     @media screen and (max-width: 690px) {
       flex-direction: column-reverse;
       img {
-        max-width: 40rem;
+        max-width: 50rem;
         align-self: flex-start;
         width: 90%;
         margin-bottom: 2rem;

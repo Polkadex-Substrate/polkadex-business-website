@@ -9,12 +9,12 @@ export const Banner = ({ title, description, buttonTitle, href }: Props) => (
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link href={href} target="_blank" rel="noreferrer">
+        <a href={href} target="_blank" rel="noreferrer">
           {buttonTitle}
-        </Link>
+        </a>
       </div>
       <div />
     </S.Container>
-    <img alt="polkadex crowdloan city" src="/img/heroMockup1.png" />
+    <img alt="polkadex crowdloan city" src="/img/crowdloanHeroBanner.svg" />
   </S.Wrapper>
 );

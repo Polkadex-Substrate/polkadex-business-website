@@ -39,6 +39,15 @@ const Hero = ({
   return (
     <S.Wrapper id="hero">
       <S.Container>
+        <S.OrderbookLive>
+          <span>🎉 Polkadex Orderbook is now live!</span>
+          <PrimaryButton
+            background="white"
+            color="black"
+            href="/orderbook"
+            content="Learn more"
+          />
+        </S.OrderbookLive>
         <h1>{title}</h1>
         <h2>{description}.</h2>
         <S.CtaContainer>
@@ -49,10 +58,10 @@ const Hero = ({
         </S.CtaContainer>
         <S.RowBanner>
           <Banner
-            title="Orderbook is live!"
-            description="💹 Start trading on the new non-custodial order book-based #DEX now 👇"
+            title="Polkadex has won a Polkadot Parachain slot!"
+            description="Polkadex secured a parachain slot on Polkadot with 973k DOT ($13.8M) contributed to the Polkadex Crowdloan!"
             buttonTitle="Learn more"
-            href="/orderbook"
+            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
           />
         </S.RowBanner>
         <S.Row>

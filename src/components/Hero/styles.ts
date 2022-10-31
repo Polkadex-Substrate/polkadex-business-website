@@ -19,6 +19,20 @@ export const Tag = styled.a`
     }
   `}
 `;
+export const OrderbookLive = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.secondary};
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    span {
+      font-weight: 500;
+    }
+  `}
+`;
 
 export const Container = styled.div`
   :first-child {
