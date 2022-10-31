@@ -15,14 +15,14 @@ export const Wrapper = styled.section`
 `;
 
 export const Item = styled.div<TProps>`
-  opacity: ${({isViewed}) => +isViewed};
-  ${({isViewed}) => (isViewed ? 'inherit' : 'hidden')};
+  opacity: ${({ isViewed }) => +isViewed};
+  ${({ isViewed }) => (isViewed ? 'inherit' : 'hidden')};
 
   &:first-child {
-    transform: translateY(${({isViewed}) => (isViewed ? 0 : -20)}%);
+    transform: translateY(${({ isViewed }) => (isViewed ? 0 : -20)}%);
   }
   &:last-child {
-    transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+    transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
   }
 
   transition: 500ms opacity, 500ms transform;
@@ -33,15 +33,15 @@ export const SpeedLimitsContainer = styled.div<TProps>`
   max-width: 560px;
 
   width: 100%;
-  padding: 50px;
+  padding: 7rem 7rem 30rem 7rem;
   margin-right: 30px;
   background: linear-gradient(180deg, #e6007a 0%, rgba(230, 0, 122, 0) 92.41%);
   border-radius: 15px;
   overflow: hidden;
 
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
-  transform: translateX(${({isViewed}) => (isViewed ? 0 : -20)}%);
+  transform: translateX(${({ isViewed }) => (isViewed ? 0 : -20)}%);
 
   transition: 500ms opacity, 500ms transform;
 
@@ -52,10 +52,10 @@ export const SpeedLimitsContainer = styled.div<TProps>`
 `;
 
 export const Title = styled.h5`
-  font-weight: 600;
+  font-weight: 550;
   font-size: 3rem;
 
-  line-height: 50px;
+  line-height: 1.3;
   color: #ffffff;
   margin-bottom: 20px;
   max-width: 25vw;
@@ -68,8 +68,8 @@ export const Title = styled.h5`
 export const Description = styled.p`
   display: block;
 
-  font-size: 2rem;
-  line-height: 1.5;
+  font-size: 1.6rem;
+  line-height: 1.6;
   color: #ffffff;
   margin-bottom: 20px;
 `;
@@ -89,14 +89,15 @@ export const RocketWrapper = styled.div`
 `;
 
 export const BlockContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   max-width: 560px;
 
+  gap: 3rem;
   width: 100%;
 
   & div:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 
   @media screen and (max-width: 1005px) {
@@ -105,9 +106,7 @@ export const BlockContainer = styled.div`
 `;
 
 export const BlockWrapper = styled.div`
-  padding: 50px 23px;
-
-  height: 350px;
+  padding: 5rem;
 
   display: flex;
   flex-direction: row;
@@ -121,7 +120,7 @@ export const BlockWrapper = styled.div`
 `;
 
 export const BlockTitle = styled.li`
-  font-weight: 600;
+  font-weight: 550;
   font-size: 3rem;
   line-height: 25px;
   color: #ffffff;
@@ -129,7 +128,7 @@ export const BlockTitle = styled.li`
 `;
 
 export const BlockText = styled.li`
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   color: #ffffff;
 `;
@@ -162,8 +161,8 @@ export const ImageWrapper = styled.div`
   /* padding-top: 10px; */
 
   & span {
-    height: 24px !important;
-    width: 24px !important;
+    height: 20px !important;
+    width: 20px !important;
   }
 `;
 
@@ -175,16 +174,14 @@ export const TextAndIconWrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div<TProps>`
-  opacity: ${({isViewed}) => +isViewed};
+  opacity: ${({ isViewed }) => +isViewed};
 
-  transform: translateX(${({isViewed}) => (isViewed ? 0 : -20)}%);
+  transform: translateX(${({ isViewed }) => (isViewed ? 0 : -20)}%);
 
   transition: 500ms opacity, 500ms transform;
 
   & a {
     margin: 0 auto 92px;
-    font-weight: 500;
-    font-size: 1.8rem;
     width: 166px;
     justify-content: center;
 

@@ -10,8 +10,9 @@ export const Wrapper = styled.div<TProps>`
   display: flex;
   justify-content: space-between;
   /* margin-bottom: 150px; */
-
-  opacity: ${({viewed}) => +viewed};
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  opacity: ${({ viewed }) => +viewed};
 
   transition: 500ms opacity;
 
@@ -74,19 +75,14 @@ export const Stat = styled.p`
   color: #e6007a;
   font-style: normal;
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 550;
   text-align: center;
   margin-bottom: 5px;
-
-  @media screen and (max-width: 1060px) {
-    font-size: 5rem;
-  }
 `;
 
 export const Description = styled.p`
   font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.6rem;
 
   text-align: center;
 

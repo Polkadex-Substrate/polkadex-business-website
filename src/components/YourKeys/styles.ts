@@ -42,19 +42,18 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.h5<TProps>`
-  font-weight: 700;
-
+  font-weight: 500;
+  line-height: 1.2;
   font-size: 5rem;
-  padding-bottom: 39px;
+  padding-bottom: 2.5rem;
 
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
 
   transition: 500ms opacity, 500ms transform;
 
   @media screen and (max-width: 875px) {
     text-align: center;
-    font-weight: 700;
     font-size: 4rem;
   }
 `;
@@ -62,12 +61,12 @@ export const Title = styled.h5<TProps>`
 export const TitleDescription = styled.p<TProps>`
   display: block;
   max-width: 30vw;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #ffffff;
-
-  opacity: ${({isViewed}) => +isViewed};
-  ${({isViewed}) => (isViewed ? 'inherit' : 'hidden')};
-  transform: translateY(${({isViewed}) => (isViewed ? 0 : 20)}%);
+  line-height: 1.5;
+  opacity: ${({ isViewed }) => +isViewed};
+  ${({ isViewed }) => (isViewed ? 'inherit' : 'hidden')};
+  transform: translateY(${({ isViewed }) => (isViewed ? 0 : 20)}%);
 
   transition: 500ms opacity, 500ms transform;
 
@@ -105,8 +104,8 @@ export const NoRiskImageContainer = styled.div<TProps>`
   max-width: 90%;
   z-index: -1;
 
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateX(${({isViewed}) => (isViewed ? 0 : -100)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateX(${({ isViewed }) => (isViewed ? 0 : -100)}%);
 
   transition: 500ms opacity, 500ms transform;
 
@@ -124,7 +123,8 @@ export const NoRiskImageContainer = styled.div<TProps>`
 export const NoRiscTitle = styled.h5`
   position: relative;
   font-weight: 500;
-  font-size: 3.5rem;
+  font-size: 3.4rem;
+  line-height: 1.3;
   margin-top: 36px;
   margin-left: auto;
 
@@ -153,12 +153,12 @@ export const NoRiscTitle = styled.h5`
 
 export const NoRiscDescription = styled.p`
   font-weight: 400;
-  font-size: 2rem;
-  line-height: 150%;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #ffffff;
   margin-top: 28px;
   margin-left: auto;
-  margin-bottom: 60px;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 1000px) {
     margin-top: 18px;
@@ -169,24 +169,14 @@ export const NoRiscDescription = styled.p`
 export const ButtonWrapper = styled.div`
   display: flex;
 
-  & a {
-    font-weight: 500;
-    font-size: 1.8rem;
-    /* width: 190px; */
-    /* line-height: 20px; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-
   @media screen and (max-width: 1000px) {
     justify-content: center;
   }
 `;
 
 export const Item = styled.div<TProps>`
-  opacity: ${({isViewed}) => +isViewed};
-  transform: translateX(${({isViewed}) => (isViewed ? 0 : 100)}%);
+  opacity: ${({ isViewed }) => +isViewed};
+  transform: translateX(${({ isViewed }) => (isViewed ? 0 : 100)}%);
 
   transition: 500ms opacity, 500ms transform;
 `;

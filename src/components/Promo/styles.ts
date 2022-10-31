@@ -7,10 +7,9 @@ type TProps = {
 export const Container = styled.div<TProps>`
   padding-top: ${({ step }) => (step === 4 ? 0 : 0)}px;
   transition: padding 500ms ease-out, padding-top 500ms ease-out;
-
+  padding: 10rem calc(54.5vw - 720px);
   will-change: padding-top;
   will-change: padding;
-
   position: relative;
 `;
 

@@ -44,7 +44,6 @@ export const YourKeys = ({
 
             <S.NoRiscDescription>{firstDescription}</S.NoRiscDescription>
             <S.NoRiscDescription>{secondDescription}</S.NoRiscDescription>
-
             <S.ButtonWrapper>
               <PrimaryButton
                 href="http://orderbook.polkadex.trade"
