@@ -12,7 +12,6 @@ import * as S from './styles';
 
 type Props = {
   disableBottomMenu?: boolean;
-  disableLight?: boolean;
 } & IHomeTranslations['header'];
 
 export const Header = ({

@@ -90,7 +90,7 @@ export default function Home() {
 "
           />
         </Head>
-        <Header {...header} disableLight />
+        <Header {...header} />
 
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <Promo {...promo} />
@@ -106,7 +106,7 @@ export default function Home() {
           <PolkadexBlock {...polkadex} />
           <Newsletter {...newsletter} />
         </main>
-        <Footer {...footer} disableLight />
+        <Footer {...footer} />
       </S.Wrapper>
     </>
   );

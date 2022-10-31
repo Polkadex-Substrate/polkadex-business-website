@@ -1,11 +1,11 @@
-import {Banner} from 'components/Banner';
-import {PrimaryButton} from 'components/Button';
-import {Ethereum, Polkadex, Polkadot} from 'components/Icons';
-import {LanguageSelector} from 'components/LanguageSelector';
-import {Tooltip, TooltipContent, TooltipHeader} from 'components/Tooltip';
-import {ThemingContext} from 'context';
-import React, {useContext, useEffect, useRef} from 'react';
-import {IHomeTranslations} from 'translations';
+import { Banner } from 'components/Banner';
+import { PrimaryButton } from 'components/Button';
+import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
+import { LanguageSelector } from 'components/LanguageSelector';
+import { Tooltip, TooltipContent, TooltipHeader } from 'components/Tooltip';
+import { ThemingContext } from 'context';
+import React, { useContext, useEffect, useRef } from 'react';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
@@ -21,7 +21,7 @@ const Hero = ({
   chainsTitle,
 }: Props['hero']) => {
   const ImageHeroRef = useRef<HTMLImageElement>();
-  const {theme} = useContext(ThemingContext);
+  const { theme } = useContext(ThemingContext);
 
   const handleScroll = () => {
     const scrollY = window.innerHeight * 0.05;
@@ -45,23 +45,14 @@ const Hero = ({
           <S.SecondaryButton href={secondaryCtaLink}>
             {secondaryCtaButton}
           </S.SecondaryButton>
-          <Tooltip>
-            <TooltipHeader>
-              <PrimaryButton
-                target="_blank"
-                href={ctaLink}
-                content={ctaButton}
-              />
-            </TooltipHeader>
-            <TooltipContent>Testnet is down for maintenance</TooltipContent>
-          </Tooltip>
+          <PrimaryButton target="_blank" href={ctaLink} content={ctaButton} />
         </S.CtaContainer>
         <S.RowBanner>
           <Banner
-            title="Polkadex has won a Polkadot Parachain slot!"
-            description="Polkadex secured a parachain slot on Polkadot with 973k DOT ($13.8M) contributed to the Polkadex Crowdloan!"
+            title="Orderbook is live!"
+            description="💹 Start trading on the new non-custodial order book-based #DEX now 👇"
             buttonTitle="Learn more"
-            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
+            href="/orderbook"
           />
         </S.RowBanner>
         <S.Row>

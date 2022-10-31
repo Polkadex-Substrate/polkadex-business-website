@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   text-align: left;
   @media screen and (min-width: 690px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.8fr 1fr;
   }
 `;
 
@@ -56,7 +56,7 @@ export const Wrapper = styled.div`
         position: absolute;
         bottom: 0;
         right: 0;
-        max-width: 50rem;
+        max-width: 45rem;
         z-index: 1;
       }
     }
