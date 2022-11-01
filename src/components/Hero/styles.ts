@@ -1,3 +1,4 @@
+import { Wrapper as Button } from 'components/Button/styles';
 import { Wrapper as Icon } from 'components/Icon/styles';
 import styled, { css } from 'styled-components';
 
@@ -21,19 +22,43 @@ export const Tag = styled.a`
 `;
 export const OrderbookLive = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.secondary};
+    max-width: 50rem;
+    background: ${theme.colors.primary};
     border-radius: 1rem;
-    padding: 1rem 1rem 1rem 2rem;
-    display: flex;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
     gap: 2rem;
     margin-bottom: 1rem;
+  `}
+`;
+export const OrderbookLiveContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     span {
+      display: block;
       font-weight: 500;
+      font-size: 2rem;
+      text-align: left;
+    }
+    ${Button} {
+      width: fit-content;
     }
   `}
 `;
-
+export const OrderbookLiveImage = styled.div`
+  ${({ theme }) => css`
+    max-width: 30rem;
+    img {
+      width: 100%;
+      margin-top: -2rem;
+      transform: scale(1.1);
+    }
+  `}
+`;
 export const Container = styled.div`
   :first-child {
     display: flex;
