@@ -1,6 +1,5 @@
 import { PrimaryButton } from 'components/Button';
 import { Container } from 'components/Container';
-import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { IOrderbookTranslations } from 'translations';
 
@@ -22,7 +21,7 @@ export const YourKeys = ({
   return (
     <Container>
       <S.ImageContainer>
-        <Image src={circle} />
+        <img src="/img/youKeysDetail.svg" alt="details" />
       </S.ImageContainer>
       <S.Wrapper>
         <S.TitleContainer>
@@ -35,7 +34,7 @@ export const YourKeys = ({
 
         <S.NoRiskContainer>
           <S.NoRiskImageContainer isViewed={inView}>
-            <img src="/img/security.svg" alt="Security" />
+            <img src="/img/security.png" alt="Security" />
           </S.NoRiskImageContainer>
 
           <S.Item isViewed={inView}>

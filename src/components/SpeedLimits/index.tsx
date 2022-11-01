@@ -45,11 +45,7 @@ export const SpeedLimit = ({
                     <S.BlockTitle>{item.title}</S.BlockTitle>
                     <S.TextAndIconWrapper>
                       <S.ImageWrapper>
-                        <S.DoneIconWrapper
-                          src="/img/doneIcon.svg"
-                          height="12px"
-                          width="12px"
-                        />
+                        <S.DoneIconWrapper src="/img/doneIcon.svg" />
                       </S.ImageWrapper>
                       <S.BlockText>{item.firstDescription}</S.BlockText>
                     </S.TextAndIconWrapper>

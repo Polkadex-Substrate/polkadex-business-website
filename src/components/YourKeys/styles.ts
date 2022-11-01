@@ -25,6 +25,9 @@ export const ImageContainer = styled.div`
   @media screen and (max-width: 1200px) {
     display: none;
   }
+  img {
+    width: 100%;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -113,6 +116,7 @@ export const NoRiskImageContainer = styled.div<TProps>`
     width: 90%;
     height: auto;
     margin-top: -110px;
+    margin-left: -1rem;
   }
 
   @media screen and (max-width: 1000px) {

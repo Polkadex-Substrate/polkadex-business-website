@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 
 type TProps = {
@@ -151,7 +150,7 @@ export const BlockIcon = styled.div`
   }
 `;
 
-export const DoneIconWrapper = styled(Image)`
+export const DoneIconWrapper = styled.img`
   height: 24px;
   width: 24px;
 `;
