@@ -25,7 +25,7 @@ import {
   OrderbookTranslations,
 } from 'translations';
 
-export default function Home() {
+export default function Orderbook() {
   const {
     orderbook,
     statistic,
