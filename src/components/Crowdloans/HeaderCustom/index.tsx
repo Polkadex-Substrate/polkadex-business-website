@@ -1,5 +1,5 @@
 import {
-  Crowndloan,
+  CrowndloanLogo,
   Icon,
   Polkadex,
   PrimaryButton,
@@ -99,7 +99,7 @@ export const HeaderCustom = ({
       <S.BottomContainer>
         <S.AsideLeft>
           <S.CrowndloanLogo>
-            <Crowndloan />
+            <CrowndloanLogo />
           </S.CrowndloanLogo>
           <S.Menu>
             <li>

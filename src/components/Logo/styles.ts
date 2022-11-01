@@ -93,3 +93,11 @@ export const Staking = styled.div`
     display: none;
   }
 `;
+export const Orderbook = styled.div`
+  display: flex;
+  align-items: center;
+  width: 12rem;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;

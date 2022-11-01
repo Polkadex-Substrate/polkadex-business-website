@@ -2,6 +2,11 @@ const ENLanguage = {
   header: {
     topLinks: [
       {
+        title: 'Orderbook',
+        href: '/orderbook',
+        soon: false,
+      },
+      {
         title: 'Staking',
         href: '/staking',
         soon: false,

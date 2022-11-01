@@ -53,6 +53,7 @@ export type IColors =
   | 'popupBackground'
   | 'gradientBackground'
   | 'text'
+  | 'disable'
   | 'gradient'
   | 'white'
   | 'black'

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import * as S from './styles';
 import { Props } from './types';
 

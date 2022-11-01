@@ -46,7 +46,7 @@ export const MenuWrapper = styled.div`
       stroke-dasharray: 60 207;
       stroke-width: 6;
     }
-    @media screen and (max-width: 915px) {
+    @media screen and (max-width: 1080px) {
       display: block;
     }
   `}
@@ -60,11 +60,11 @@ export const Container = styled.div`
   ${LanguageSelector} {
     margin-left: 1rem;
   }
-  @media screen and (max-width: 915px) {
+  @media screen and (max-width: 1080px) {
     grid-template-columns: min-content auto;
   }
   :nth-child(2) {
-    @media screen and (max-width: 915px) {
+    @media screen and (max-width: 1080px) {
       display: none;
     }
   }
@@ -109,7 +109,7 @@ export const TopContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
 
-    @media screen and (min-width: 915px) {
+    @media screen and (min-width: 1080px) {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -137,7 +137,7 @@ export const TopContainer = styled.div`
       padding: 1rem 2rem;
     }
 
-    @media screen and (max-width: 915px) {
+    @media screen and (max-width: 1080px) {
       &.show {
         padding: 1rem 0;
 

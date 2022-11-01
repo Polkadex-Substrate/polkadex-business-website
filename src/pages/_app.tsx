@@ -4,18 +4,22 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import PrivacyPopUp from 'components/PrivacyPopUp';
-import { ThemingContext } from 'context';
-import { useTheming } from 'hooks';
-import { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from 'styles';
+import {ThemingContext} from 'context';
+import {useTheming} from 'hooks';
+import {AppProps} from 'next/app';
+import {useEffect, useState} from 'react';
+import {ThemeProvider} from 'styled-components';
+import {GlobalStyles} from 'styles';
 
 import Maintenance from './maintenance';
 
+import '/public/index.css';
+
 const maintenance = false;
 
-function App({ Component, pageProps }: AppProps) {
+import 'slick-carousel/slick/slick.css';
+
+function App({Component, pageProps}: AppProps) {
   const [state, setState] = useState(false);
 
   const handleAccept = () => {
@@ -31,9 +35,9 @@ function App({ Component, pageProps }: AppProps) {
     if (!state) checkCookies();
   }, [state]);
 
-  const { theme, themeToogle } = useTheming();
+  const {theme, themeToogle} = useTheming();
   return (
-    <ThemingContext.Provider value={{ theme, themeToogle }}>
+    <ThemingContext.Provider value={{theme, themeToogle}}>
       {theme.loading ? (
         <div />
       ) : (

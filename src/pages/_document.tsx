@@ -5,7 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import {ServerStyleSheet} from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -48,6 +48,7 @@ export default class MyDocument extends Document {
             sizes="60x60"
             href="/apple-icon-60x60.png"
           />
+          <link rel="stylesheet" href="/index.css" />
           <link
             rel="apple-touch-icon"
             sizes="72x72"

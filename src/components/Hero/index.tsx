@@ -1,6 +1,7 @@
 import { Banner } from 'components/Banner';
 import { PrimaryButton } from 'components/Button';
 import { Ethereum, Polkadex, Polkadot } from 'components/Icons';
+import { LanguageSelector } from 'components/LanguageSelector';
 import { Tooltip, TooltipContent, TooltipHeader } from 'components/Tooltip';
 import { ThemingContext } from 'context';
 import React, { useContext, useEffect, useRef } from 'react';
@@ -38,6 +39,20 @@ const Hero = ({
   return (
     <S.Wrapper id="hero">
       <S.Container>
+        <S.OrderbookLive>
+          <S.OrderbookLiveContainer>
+            <span>Polkadex Orderbook is now live! 🎉</span>
+            <PrimaryButton
+              background="white"
+              color="black"
+              href="/orderbook"
+              content="Learn more"
+            />
+          </S.OrderbookLiveContainer>
+          <S.OrderbookLiveImage>
+            <img src="/img/heroMockup1.png" alt="polkadex orderbook" />
+          </S.OrderbookLiveImage>
+        </S.OrderbookLive>
         <h1>{title}</h1>
         <h2>{description}.</h2>
         <S.CtaContainer>

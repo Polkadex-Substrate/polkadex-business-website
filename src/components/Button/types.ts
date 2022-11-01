@@ -1,5 +1,5 @@
-import { AllHTMLAttributes } from 'react';
-import { IColors, IIcons } from 'utils/types';
+import {AllHTMLAttributes} from 'react';
+import {IColors, IIcons} from 'utils/types';
 
 export type Props = {
   content: string;

@@ -56,14 +56,14 @@ export const Wrapper = styled.div`
         position: absolute;
         bottom: 0;
         right: 0;
-        max-width: 50rem;
+        max-width: 45rem;
         z-index: 1;
       }
     }
     @media screen and (max-width: 690px) {
       flex-direction: column-reverse;
       img {
-        max-width: 40rem;
+        max-width: 50rem;
         align-self: flex-start;
         width: 90%;
         margin-bottom: 2rem;
