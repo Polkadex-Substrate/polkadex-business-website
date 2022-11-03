@@ -110,4 +110,9 @@ export const SecondaryWrpaper = styled(Wrapper)`
   :hover {
     opacity: 0.5;
   }
+  & > div {
+    width: 16px;
+    height: auto;
+    margin-left: 10px;
+  }
 `;

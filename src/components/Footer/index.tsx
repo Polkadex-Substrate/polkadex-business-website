@@ -7,7 +7,7 @@ type Props = {
   full?: boolean;
 } & Pick<IHomeTranslations, 'footer'>;
 
-const Footer = ({
+export const Footer = ({
   rowLinks,
   copyright,
   bottomLinks,
@@ -100,5 +100,3 @@ const Footer = ({
     </S.Row>
   </S.Wrapper>
 );
-
-export default Footer;

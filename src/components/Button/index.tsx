@@ -42,6 +42,7 @@ export const SecondaryButton = ({
   content = 'Example',
   href = '#',
   background = 'none',
+  ...iconProps
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
 
@@ -49,7 +50,7 @@ export const SecondaryButton = ({
     <S.SecondaryWrpaper href={href} background={background}>
       {content}
       <div>
-        <IconComponent />
+        <IconComponent {...iconProps} />
       </div>
     </S.SecondaryWrpaper>
   );

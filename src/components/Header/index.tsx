@@ -10,7 +10,9 @@ import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-type Props = { disableBottomMenu?: boolean } & IHomeTranslations['header'];
+type Props = {
+  disableBottomMenu?: boolean;
+} & IHomeTranslations['header'];
 
 export const Header = ({
   topLinks,

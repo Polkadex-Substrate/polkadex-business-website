@@ -1,4 +1,4 @@
-import { IColors, IIcons, ISizes } from 'utils/types';
+import {IColors, IIcons, ISizes} from 'utils/types';
 
 export type Props = {
   name: IIcons;
