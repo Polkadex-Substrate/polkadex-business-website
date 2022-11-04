@@ -6,12 +6,12 @@ import { useEffect } from 'react';
 
 export const Careers = ({ jobs = [], error = '' }) => {
   const router = useRouter();
-  // useEffect(() => {
-  //   router.push('/');
-  // });
-  // return <div />;
+  useEffect(() => {
+    router.push('/');
+  });
+  return <div />;
 
-  return <Template jobs={jobs} error={error} />;
+  // return <Template jobs={jobs} error={error} />;
 };
 
 export default Careers;
