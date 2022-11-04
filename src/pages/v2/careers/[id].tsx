@@ -15,19 +15,19 @@ export const Preview = ({ data, error }) => {
 
 export default Preview;
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  try {
-    const { data }: any = await axios.get(
-      `${process.env.WORKABLE_URL}/spi/v3/jobs/${ctx.query.id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.WORKABLE_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      },
-    );
-    return { props: { data } };
-  } catch (error) {
-    return { props: { error: error?.message } };
-  }
-};
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   try {
+//     const { data }: any = await axios.get(
+//       `${process.env.WORKABLE_URL}/spi/v3/jobs/${ctx.query.id}`,
+//       {
+//         headers: {
+//           Authorization: `Bearer ${process.env.WORKABLE_TOKEN}`,
+//           'Content-Type': 'application/json',
+//         },
+//       },
+//     );
+//     return { props: { data } };
+//   } catch (error) {
+//     return { props: { error: error?.message } };
+//   }
+// };

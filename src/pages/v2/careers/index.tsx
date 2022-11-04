@@ -16,19 +16,19 @@ export const Careers = ({ jobs = [], error = '' }) => {
 
 export default Careers;
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  try {
-    const { data }: any = await axios.get(
-      `${process.env.WORKABLE_URL}/spi/v3/jobs`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.WORKABLE_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      },
-    );
-    return { props: { jobs: data?.jobs } };
-  } catch (error) {
-    return { props: { error: error?.message } };
-  }
-};
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   try {
+//     const { data }: any = await axios.get(
+//       `${process.env.WORKABLE_URL}/spi/v3/jobs`,
+//       {
+//         headers: {
+//           Authorization: `Bearer ${process.env.WORKABLE_TOKEN}`,
+//           'Content-Type': 'application/json',
+//         },
+//       },
+//     );
+//     return { props: { jobs: data?.jobs } };
+//   } catch (error) {
+//     return { props: { error: error?.message } };
+//   }
+// };
