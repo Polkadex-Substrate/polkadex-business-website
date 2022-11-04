@@ -1,0 +1,115 @@
+import styled, { css } from 'styled-components';
+
+export const Wrapper = styled.section`
+  max-width: 120rem;
+  margin: 0 auto;
+  border-radius: 4rem;
+  position: relative;
+  background: linear-gradient(
+    179.94deg,
+    #e6007a 0.05%,
+    rgba(230, 0, 122, 0) 69.15%
+  );
+  padding-bottom: 10rem;
+  margin-top: 2rem;
+`;
+export const Container = styled.div`
+  background-image: url('/img/orderbookListing.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+`;
+export const Content = styled.div`
+  max-width: 100rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  padding-top: 5rem;
+`;
+
+export const Title = styled.div`
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10rem;
+  div {
+    p {
+      max-width: 28rem;
+      line-height: 1.6;
+      font-size: 1.6rem;
+      strong {
+        font-weight: 550;
+      }
+    }
+    :first-child {
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+`;
+export const Form = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: ${theme.colors.gradientBackground};
+    padding: 2rem;
+    border-radius: 2rem;
+    button {
+      background: ${theme.colors.primary};
+      padding: 2rem;
+      border-radius: 1rem;
+      font-size: 1.4rem;
+      color: ${theme.colors.white};
+      font-weight: 550;
+    }
+  `}
+`;
+export const Flex = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+export const Input = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    flex: 1;
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      span {
+        opacity: 0.5;
+        font-size: 1.2rem;
+      }
+      input {
+        color: ${theme.colors.text};
+        font-size: 1.4rem;
+      }
+    }
+  `}
+`;
+export const Terms = styled.label`
+  ${({ theme }) => css`
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin: 1rem 0;
+    input {
+      margin-top: 0.2rem;
+    }
+    a {
+      color: ${theme.colors.primary};
+      font-weight: 500;
+    }
+    p {
+      line-height: 1.4;
+    }
+  `}
+`;
