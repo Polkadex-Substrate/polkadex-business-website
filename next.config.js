@@ -33,5 +33,7 @@ module.exports = {
     SUBSCAN_API: process.env.SUBSCAN_API || '1542770994e249439ecf422602aba56d',
     STAKING_SCRAP:
       process.env.STAKING_SCRAP || 'https://stakingscrapping.herokuapp.com',
+    ZENDESK_URL:
+      process.env.ZENDESK_URL || 'https://d3v-orejas.zendesk.com/api/v2',
   },
 };

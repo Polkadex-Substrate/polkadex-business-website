@@ -6,11 +6,11 @@ import { useEffect } from 'react';
 
 export const Preview = ({ data, error }) => {
   const router = useRouter();
-  // useEffect(() => {
-  //   router.push('/');
-  // });
-  // return <div />;
-  return <PreviewComponent data={data} error={error} />;
+  useEffect(() => {
+    router.push('/');
+  });
+  return <div />;
+  // return <PreviewComponent data={data} error={error} />;
 };
 
 export default Preview;
