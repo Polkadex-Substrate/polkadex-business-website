@@ -7,6 +7,9 @@ export const Wrapper = styled.section`
 export const Container = styled.div`
   max-width: 100rem;
   margin: 0 auto;
+  @media screen and (max-width: 1000px) {
+    padding: 2rem;
+  }
   h2 {
     text-align: center;
     font-size: 1.8rem;
@@ -27,6 +30,7 @@ export const Social = styled.div`
 export const SocialWrapper = styled.div`
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 `;
 
 export const SocialCard = styled.a`
@@ -90,8 +94,10 @@ export const DropdownContent = styled.div`
 
 export const Info = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.8fr;
   gap: 3rem;
+  @media screen and (min-width: 700px) {
+    grid-template-columns: 1fr 1.8fr;
+  }
 `;
 export const InfoVertical = styled.div`
   ${({ theme }) => css`
@@ -112,7 +118,10 @@ export const InfoVertical = styled.div`
       border-radius: 1.5rem;
       div {
         margin-bottom: 4rem;
-        padding: 4rem;
+        padding: 2rem;
+        @media screen and (min-width: 500px) {
+          padding: 4rem;
+        }
       }
       h3,
       p {
@@ -143,7 +152,10 @@ export const InfoVertical = styled.div`
             color: ${theme.colors.inverse};
           }
         }
-        padding: 4rem;
+        padding: 2rem;
+        @media screen and (min-width: 500px) {
+          padding: 4rem;
+        }
         border-radius: 1.5rem;
       }
     }

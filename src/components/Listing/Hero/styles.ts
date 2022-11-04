@@ -10,33 +10,50 @@ export const Wrapper = styled.section`
     #e6007a 0.05%,
     rgba(230, 0, 122, 0) 69.15%
   );
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
+
+  @media screen and (min-width: 870px) {
+    padding-bottom: 10rem;
+  }
   margin-top: 2rem;
 `;
 export const Container = styled.div`
-  background-image: url('/img/orderbookListing.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top right;
+  @media screen and (min-width: 870px) {
+    background-image: url('/img/orderbookListing.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top right;
+  }
 `;
 export const Content = styled.div`
   max-width: 100rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
   gap: 2rem;
   padding-top: 5rem;
+  @media screen and (max-width: 1000px) {
+    padding: 2rem;
+  }
+  @media screen and (min-width: 870px) {
+    grid-template-columns: 1.2fr 1fr;
+  }
 `;
 
 export const Title = styled.div`
-  max-width: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 10rem;
+  padding-top: 4rem;
+  @media screen and (min-width: 870px) {
+    max-width: 40rem;
+    padding-top: 10rem;
+
+    div p {
+      max-width: 28rem;
+    }
+  }
   div {
     p {
-      max-width: 28rem;
       line-height: 1.6;
       font-size: 1.6rem;
       strong {
@@ -45,7 +62,10 @@ export const Title = styled.div`
     }
     :first-child {
       h1 {
-        font-size: 4rem;
+        @media screen and (min-width: 870px) {
+          font-size: 4rem;
+        }
+        font-size: 3rem;
         line-height: 1.2;
         margin-bottom: 2rem;
       }
@@ -58,8 +78,8 @@ export const Form = styled.div`
     flex-direction: column;
     gap: 1rem;
     background: ${theme.colors.gradientBackground};
-    padding: 2rem;
     border-radius: 2rem;
+    padding: 1.5rem;
     button {
       background: ${theme.colors.primary};
       padding: 2rem;
@@ -68,11 +88,17 @@ export const Form = styled.div`
       color: ${theme.colors.white};
       font-weight: 550;
     }
+    @media screen and (min-width: 320px) {
+      padding: 2rem;
+    }
   `}
 `;
 export const Flex = styled.div`
   display: flex;
   gap: 1rem;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 export const Input = styled.div`
   ${({ theme }) => css`

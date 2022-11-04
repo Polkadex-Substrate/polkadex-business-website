@@ -8,13 +8,18 @@ export const Wrapper = styled.section`
     rgba(230, 0, 122, 0) 100%
   );
   padding: 5rem 0;
-  margin-top: 5rem;
+  @media screen and (min-width: 870px) {
+    margin-top: 5rem;
+  }
 `;
 
 export const Container = styled.div`
   max-width: 100rem;
   margin: 0 auto;
   padding-top: 5rem;
+  @media screen and (max-width: 1000px) {
+    padding: 2rem;
+  }
 `;
 export const About = styled.div`
   position: relative;
@@ -23,16 +28,33 @@ export const About = styled.div`
   }
 `;
 export const AboutImage = styled.div`
-  max-width: 76rem;
   position: absolute;
+  max-width: 70rem;
+  display: block;
   top: -25rem;
-  right: -30rem;
+  right: -16rem;
+  @media screen and (max-width: 950px) {
+    top: -16rem;
+    right: 15rem;
+    max-width: 40rem;
+  }
+  @media screen and (max-width: 570px) {
+    display: none;
+  }
 `;
 
 export const AboutWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
   gap: 2rem;
+  padding-top: 25rem;
+
+  @media screen and (min-width: 950px) {
+    grid-template-columns: 1fr 1.4fr;
+    padding-top: 0;
+  }
+  @media screen and (max-width: 570px) {
+    padding-top: 0;
+  }
 `;
 
 export const Title = styled.div`
@@ -47,6 +69,7 @@ export const Title = styled.div`
     font-size: 1.6rem;
   }
 `;
+
 export const Benefits = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,8 +80,11 @@ export const Benefits = styled.div`
     rgba(230, 0, 122, 0) 100%
   );
   margin-top: 5rem;
-  padding: 5rem;
+  padding: 3rem;
   border-radius: 1.5rem;
+  @media screen and (min-width: 540px) {
+    padding: 5rem;
+  }
   h3 {
     font-size: 2.3rem;
     font-weight: 500;
@@ -68,7 +94,7 @@ export const Benefits = styled.div`
 export const Content = styled.div`
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   row-gap: 4rem;
   column-gap: 6rem;
 `;
