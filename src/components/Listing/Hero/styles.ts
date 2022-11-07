@@ -72,7 +72,37 @@ export const Title = styled.div`
     }
   }
 `;
-export const Form = styled.div`
+export const Success = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: ${theme.colors.gradientBackground};
+    border-radius: 2rem;
+    padding: 1.5rem;
+    p {
+      max-width: 35rem;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    div {
+      width: 3rem;
+      height: 3rem;
+      border: 2px solid ${theme.colors.green};
+      border-radius: 10rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  `}
+`;
+
+export const Form = styled.form`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -87,6 +117,9 @@ export const Form = styled.div`
       font-size: 1.4rem;
       color: ${theme.colors.white};
       font-weight: 550;
+      :disabled {
+        background: gray;
+      }
     }
     @media screen and (min-width: 320px) {
       padding: 2rem;
@@ -96,6 +129,7 @@ export const Form = styled.div`
 export const Flex = styled.div`
   display: flex;
   gap: 1rem;
+  align-items: flex-start;
   @media screen and (max-width: 480px) {
     flex-direction: column;
   }
@@ -106,6 +140,13 @@ export const Input = styled.div`
     border-radius: 0.8rem;
     padding: 1.5rem;
     flex: 1;
+    select {
+      -webkit-appearance: none;
+      box-shadow: none !important;
+      :-webkit-autofill {
+        color: #fff !important;
+      }
+    }
     label {
       display: flex;
       flex-direction: column;
@@ -114,13 +155,27 @@ export const Input = styled.div`
         opacity: 0.5;
         font-size: 1.2rem;
       }
-      input {
+      input,
+      select {
         color: ${theme.colors.text};
         font-size: 1.4rem;
       }
     }
   `}
 `;
+export const InputWrapper = styled.div`
+  ${({ theme }) => css`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    p {
+      color: red;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  `}
+`;
+
 export const Terms = styled.label`
   ${({ theme }) => css`
     display: flex;

@@ -19,6 +19,7 @@
     "axios": "^0.22.0",
     "dayjs": "^1.11.0",
     "ethers": "^5.4.6",
+    "formik": "^2.2.9",
     "framer-motion": "^7.5.3",
     "next": "^12.1.6",
     "nextjs-google-analytics": "^1.0.9",
@@ -33,8 +34,10 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",
     "swiper": "^8.3.2",
+    "swr": "^1.3.0",
     "typewriter-effect": "^2.18.2",
-    "web3": "^1.7.0"
+    "web3": "^1.7.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

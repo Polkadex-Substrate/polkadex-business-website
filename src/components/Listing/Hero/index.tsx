@@ -1,6 +1,114 @@
+import axios from 'axios';
+import { useFormik } from 'formik';
+import { useState } from 'react';
+import useSWR from 'swr';
+import * as Yup from 'yup';
+
 import * as S from './styles';
 
+export const listingFormValidations = Yup.object().shape({
+  userName: Yup.string()
+    .min(2, 'Enter your original name!')
+    .max(30, 'Enter your original name')
+    .required('Required'),
+  email: Yup.string().email('Must be a valid email').required('Required'),
+  projectName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(30, 'Too long!')
+    .required('Required'),
+  token: Yup.string()
+    .min(2, 'Too Short!')
+    .max(10, 'Too long!')
+    .required('Required'),
+  website: Yup.string().url('Must be a valid url').required('Required'),
+  twitter: Yup.string().url('Must be a valid url').required('Required'),
+  network: Yup.string()
+    .oneOf(['Ethereum - ETH', 'Polkadot - DOT'])
+    .required('Required'),
+  termsAccepted: Yup.boolean().oneOf([true]).required('Required'),
+});
+const instance = axios.create({
+  baseURL: process.env.FRESHDESK_BASE_URL,
+  auth: {
+    username: process.env.FRESHDESK_API,
+    password: '',
+  },
+});
+
 export const Hero = () => {
+  const [state, setState] = useState(false);
+  const [succesFull, setSuccesFull] = useState(false);
+
+  const {
+    errors,
+    values,
+    touched,
+    handleSubmit,
+    getFieldProps,
+    isValid,
+    dirty,
+  } = useFormik({
+    initialValues: {
+      userName: '',
+      email: '',
+      projectName: '',
+      token: '',
+      network: 'Ethereum - ETH',
+      website: '',
+      twitter: '',
+      termsAccepted: false,
+    },
+    validationSchema: listingFormValidations,
+    onSubmit: () => setState(true),
+  });
+  type Fetcher = {
+    url: string;
+    email: string;
+    network: string;
+    userName: string;
+    website: string;
+    token: string;
+    twitter: string;
+    projectName: string;
+  };
+  const fetcher = async ({
+    url,
+    email,
+    network,
+    userName,
+    website,
+    token,
+    twitter,
+    projectName,
+  }: Fetcher) => {
+    const { data } = await instance.post(url, {
+      description: `<div style ='font-family:Arial,Helvetica,sans-serif'><h2 style ='font-size:15px;font-weight:500;'>Hello Polkadex Team, I'm interested in listing my project on your platform.</h2><table style ='width:519.140625px;height:168px'><tbody><tr style ='height:23.84375px'><td style ='width:135px;height:23.84375px'>My name</td><td style ='width:377.140625px;height:23.84375px'>${userName}</td></tr><tr style ='height:23px'><td style ='width:135px;height:23px'>Email</td><td style ='width:377.140625px;height:23px'>${email}</td></tr><tr style ='height:23px'><td style ='width:135px;height:23px'>Project name</td><td style ='width:377.140625px;height:23px'>${projectName}</td></tr><tr style ='height:23px'><td style ='width:135px;height:23px'>Token</td><td style ='width:377.140625px;height:23px'>${token}</td></tr><tr style ='height:23px'><td style ='width:135px;height:23px'>Network</td><td style ='width:377.140625px;height:23px'>${network}</td></tr><tr style ='height:23px'><td style ='width:135px;height:23px'>Website</td><td style ='width:377.140625px;height:23px'>${website}</td></tr><tr style ='height:23px'><td style ='width:135px;height:23px'>Project twitter</td><td style ='width:377.140625px;height:23px'>${twitter}</td></tr></tbody></table></div>`,
+      priority: 1,
+      status: 2,
+      subject: `Orderbook listing ${projectName} - ${token}`,
+      email,
+      custom_fields: {
+        cf_network: network,
+      },
+      type: 'Listing',
+    });
+    setSuccesFull(true);
+    return data;
+  };
+
+  useSWR(state ? '/tickets' : null, (e) =>
+    fetcher({
+      url: e,
+      email: values.email.toLowerCase(),
+      network: values.network,
+      userName: values.userName,
+      website: values.website.toLowerCase(),
+      token: values.token.toUpperCase(),
+      twitter: values.twitter.toLowerCase(),
+      projectName: values.projectName,
+    }),
+  );
+
   return (
     <S.Wrapper id="hero">
       <S.Container>
@@ -22,48 +130,118 @@ export const Hero = () => {
               </p>
             </div>
           </S.Title>
-          <S.Form>
-            <Input label="Name" placeholder="Enter your name" />
-            <Input label="Email" placeholder="Enter your email" />
-            <S.Flex>
-              <Input
-                label="Project name"
-                placeholder="Enter your project name"
-              />
-              <Input label="Token" placeholder="Enter your token name" />
-            </S.Flex>
-            <Input label="Network" placeholder="Enter your project network" />
-            <Input label="Website" placeholder="Enter your project website" />
-            <Input
-              label="Project twitter handle"
-              placeholder="https://twitter.com/..."
-            />
-            <S.Terms htmlFor="terms">
-              <input name="terms" id="terms" type="checkbox" />
+          {succesFull ? (
+            <S.Success>
+              <div>
+                <img src="/img/doneIcon.svg" alt="done" />
+              </div>
+
               <p>
-                Visit our{' '}
-                <a href="/testing.com" target="_blank">
-                  privacy policy
-                </a>{' '}
-                to learn how we collect, keep, and process your private
-                information.
+                Thank you for submitting your details! You will shortly receive
+                an email from <strong> listing@polkadex.trade </strong> with
+                further instructions
               </p>
-            </S.Terms>
-            <button type="button" onClick={() => console.log('Sending...')}>
-              Submit
-            </button>
-          </S.Form>
+            </S.Success>
+          ) : (
+            <S.Form onSubmit={handleSubmit}>
+              <Input
+                {...getFieldProps('userName')}
+                label="Name"
+                placeholder="Enter your name"
+                error={errors.userName && touched.userName && errors.userName}
+              />
+              <Input
+                {...getFieldProps('email')}
+                label="Email"
+                placeholder="Enter your email"
+                error={errors.email && touched.email && errors.email}
+              />
+              <S.Flex>
+                <Input
+                  {...getFieldProps('projectName')}
+                  label="Project name"
+                  placeholder="Enter your project name"
+                  error={
+                    errors.projectName &&
+                    touched.projectName &&
+                    errors.projectName
+                  }
+                />
+                <Input
+                  {...getFieldProps('token')}
+                  label="Token"
+                  placeholder="Enter your token name"
+                  error={errors.token && touched.token && errors.token}
+                />
+              </S.Flex>
+              <InputSelect
+                {...getFieldProps('network')}
+                label="Network"
+                placeholder="Enter your project network"
+                error={errors.network && touched.network && errors.network}
+              />
+              <Input
+                {...getFieldProps('website')}
+                label="Website"
+                placeholder="Enter your project website"
+                error={errors.website && touched.website && errors.website}
+              />
+              <Input
+                {...getFieldProps('twitter')}
+                label="Project twitter handle"
+                placeholder="https://twitter.com/..."
+                error={errors.twitter && touched.twitter && errors.twitter}
+              />
+              <S.Terms htmlFor="terms">
+                <input
+                  {...getFieldProps('termsAccepted')}
+                  name="termsAccepted"
+                  id="termsAccepted"
+                  type="checkbox"
+                />
+                <p>
+                  Visit our{' '}
+                  <a href="/testing.com" target="_blank">
+                    privacy policy
+                  </a>{' '}
+                  to learn how we collect, keep, and process your private
+                  information.
+                </p>
+              </S.Terms>
+              <button type="submit" disabled={!(isValid && dirty)}>
+                Submit
+              </button>
+            </S.Form>
+          )}
         </S.Content>
       </S.Container>
     </S.Wrapper>
   );
 };
 
-const Input = ({ label, ...props }) => (
-  <S.Input>
-    <label htmlFor={props.name}>
-      <span>{label}</span>
-      <input name={props.name} type="text" {...props} />
-    </label>
-  </S.Input>
+const Input = ({ label, error, ...props }) => (
+  <S.InputWrapper>
+    <S.Input>
+      <label htmlFor={props.name}>
+        <span>{label}</span>
+        <input name={props.name} type="text" {...props} />
+      </label>
+    </S.Input>
+    {!!error && <p>{error}</p>}
+  </S.InputWrapper>
+);
+
+const InputSelect = ({ label, error, ...props }) => (
+  <S.InputWrapper>
+    <S.Input>
+      <label htmlFor={props.name}>
+        <span>{label}</span>
+        <select name={props.name} id={props.name} {...props}>
+          <option value="Ethereum - ETH">Ethereum - ETH</option>
+          <option value="Polkadot - DOT">Polkadot - DOT</option>
+        </select>
+      </label>
+    </S.Input>
+    {!!error && <p>{error}</p>}
+  </S.InputWrapper>
 );
