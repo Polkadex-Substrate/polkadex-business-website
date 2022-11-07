@@ -1,4 +1,5 @@
 import * as Icons from 'components/Icons';
+import Link from 'next/link';
 
 import * as S from './styles';
 
@@ -47,13 +48,21 @@ export const About = () => {
             <Card icon="ListingFees">No hidden fees</Card>
           </S.Content>
           <S.Actions>
-            <a href="/testing..">
-              Learm more about Orderbook{' '}
-              <div>
-                <Icons.ArrowRight />
-              </div>{' '}
+            <Link href="/orderbook">
+              <a>
+                Learm more about Orderbook{' '}
+                <div>
+                  <Icons.ArrowRight />
+                </div>{' '}
+              </a>
+            </Link>
+            <a
+              href="https://orderbook.polkadex.trade"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Start trading
             </a>
-            <a href="/testing">Start trading</a>
           </S.Actions>
         </S.Benefits>
       </S.Container>

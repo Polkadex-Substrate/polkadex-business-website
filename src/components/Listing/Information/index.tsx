@@ -13,22 +13,34 @@ export const Information = () => {
         </h2>
         <S.Social>
           <S.SocialWrapper>
-            <S.SocialCard target="_blank" href="/twitter">
+            <S.SocialCard target="_blank" href="https://twitter.com/polkadex">
               <Icons.Twitter />
             </S.SocialCard>
-            <S.SocialCard target="_blank" href="/medium">
+            <S.SocialCard target="_blank" href="https://polkadex.medium.com/">
               <Icons.Medium />
             </S.SocialCard>
-            <S.SocialCard target="_blank" href="/linkedin">
+            <S.SocialCard
+              target="_blank"
+              href="https://www.linkedin.com/company/69690544"
+            >
               <Icons.LinkedIn />
             </S.SocialCard>
-            <S.SocialCard target="_blank" href="/discord">
+            <S.SocialCard
+              target="_blank"
+              href="https://discord.com/invite/Uvua83QAzk"
+            >
               <Icons.Discord />
             </S.SocialCard>
-            <S.SocialCard target="_blank" href="/youtube">
+            <S.SocialCard
+              target="_blank"
+              href="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+            >
               <Icons.Youtube />
             </S.SocialCard>
-            <S.SocialCard target="_blank" href="/reddit">
+            <S.SocialCard
+              target="_blank"
+              href="https://www.reddit.com/r/polkadex"
+            >
               <Icons.Reddit />
             </S.SocialCard>
             <Dropdown
@@ -45,10 +57,18 @@ export const Information = () => {
               }
             >
               <S.DropdownContent>
-                <a href="/announcement" target="_blank">
+                <a
+                  href="https://t.me/PolkadexAnnouncements"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Announcement
                 </a>
-                <a href="/announcement" target="_blank">
+                <a
+                  href="https://t.me/Polkadex"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Community Chat
                 </a>
               </S.DropdownContent>
@@ -67,7 +87,11 @@ export const Information = () => {
               }
             >
               <S.DropdownContent>
-                <a href="/announcement" target="_blank">
+                <a
+                  href="https://t.me/Polkadex"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Russian community
                 </a>
               </S.DropdownContent>

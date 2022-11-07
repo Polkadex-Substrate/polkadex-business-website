@@ -134,17 +134,36 @@ export const Flex = styled.div`
     flex-direction: column;
   }
 `;
-export const Input = styled.div`
-  ${({ theme }) => css`
+export const Input = styled.div<{ hasArrow?: boolean }>`
+  ${({ theme, hasArrow }) => css`
+    position: relative;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border-radius: 0.8rem;
     padding: 1.5rem;
     flex: 1;
+    ${hasArrow &&
+    css`
+      :after {
+        position: absolute;
+        right: 2rem;
+        top: 55%;
+        content: '';
+        border: solid ${theme.colors.text};
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+      }
+    `}
+
     select {
       -webkit-appearance: none;
       box-shadow: none !important;
       :-webkit-autofill {
         color: #fff !important;
+      }
+      :focus {
+        outline: none;
       }
     }
     label {
@@ -176,12 +195,19 @@ export const InputWrapper = styled.div`
   `}
 `;
 
+export const TermsWrapper = styled.div`
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
 export const Terms = styled.label`
   ${({ theme }) => css`
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    margin: 1rem 0;
+
     input {
       margin-top: 0.2rem;
     }

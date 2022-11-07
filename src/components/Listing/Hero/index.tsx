@@ -11,7 +11,9 @@ export const listingFormValidations = Yup.object().shape({
     .min(2, 'Enter your original name!')
     .max(30, 'Enter your original name')
     .required('Required'),
-  email: Yup.string().email('Must be a valid email').required('Required'),
+  emailListing: Yup.string()
+    .email('Must be a valid email')
+    .required('Required'),
   projectName: Yup.string()
     .min(2, 'Too Short!')
     .max(30, 'Too long!')
@@ -22,10 +24,9 @@ export const listingFormValidations = Yup.object().shape({
     .required('Required'),
   website: Yup.string().url('Must be a valid url').required('Required'),
   twitter: Yup.string().url('Must be a valid url').required('Required'),
-  network: Yup.string()
-    .oneOf(['Ethereum - ETH', 'Polkadot - DOT'])
-    .required('Required'),
+  network: Yup.string().oneOf(['Ethereum', 'Polkadot']).required('Required'),
   termsAccepted: Yup.boolean().oneOf([true]).required('Required'),
+  policyAccepted: Yup.boolean().oneOf([true]).required('Required'),
 });
 const instance = axios.create({
   baseURL: process.env.FRESHDESK_BASE_URL,
@@ -50,13 +51,14 @@ export const Hero = () => {
   } = useFormik({
     initialValues: {
       userName: '',
-      email: '',
+      emailListing: '',
       projectName: '',
       token: '',
-      network: 'Ethereum - ETH',
+      network: 'Ethereum',
       website: '',
       twitter: '',
       termsAccepted: false,
+      policyAccepted: false,
     },
     validationSchema: listingFormValidations,
     onSubmit: () => setState(true),
@@ -93,18 +95,19 @@ export const Hero = () => {
       type: 'Listing',
     });
     setSuccesFull(true);
+    setState(false);
     return data;
   };
 
   useSWR(state ? '/tickets' : null, (e) =>
     fetcher({
       url: e,
-      email: values.email.toLowerCase(),
+      email: values.emailListing.toLowerCase(),
       network: values.network,
       userName: values.userName,
       website: values.website.toLowerCase(),
       token: values.token.toUpperCase(),
-      twitter: values.twitter.toLowerCase(),
+      twitter: values.twitter,
       projectName: values.projectName,
     }),
   );
@@ -135,11 +138,10 @@ export const Hero = () => {
               <div>
                 <img src="/img/doneIcon.svg" alt="done" />
               </div>
-
               <p>
                 Thank you for submitting your details! You will shortly receive
                 an email from <strong> listing@polkadex.trade </strong> with
-                further instructions
+                further instructions.
               </p>
             </S.Success>
           ) : (
@@ -151,15 +153,19 @@ export const Hero = () => {
                 error={errors.userName && touched.userName && errors.userName}
               />
               <Input
-                {...getFieldProps('email')}
+                {...getFieldProps('emailListing')}
                 label="Email"
                 placeholder="Enter your email"
-                error={errors.email && touched.email && errors.email}
+                error={
+                  errors.emailListing &&
+                  touched.emailListing &&
+                  errors.emailListing
+                }
               />
               <S.Flex>
                 <Input
                   {...getFieldProps('projectName')}
-                  label="Project name"
+                  label="Project Name"
                   placeholder="Enter your project name"
                   error={
                     errors.projectName &&
@@ -169,8 +175,8 @@ export const Hero = () => {
                 />
                 <Input
                   {...getFieldProps('token')}
-                  label="Token"
-                  placeholder="Enter your token name"
+                  label="Token Ticker"
+                  placeholder="Enter your token ticker"
                   error={errors.token && touched.token && errors.token}
                 />
               </S.Flex>
@@ -192,22 +198,48 @@ export const Hero = () => {
                 placeholder="https://twitter.com/..."
                 error={errors.twitter && touched.twitter && errors.twitter}
               />
-              <S.Terms htmlFor="terms">
-                <input
-                  {...getFieldProps('termsAccepted')}
-                  name="termsAccepted"
-                  id="termsAccepted"
-                  type="checkbox"
-                />
-                <p>
-                  Visit our{' '}
-                  <a href="/testing.com" target="_blank">
-                    privacy policy
-                  </a>{' '}
-                  to learn how we collect, keep, and process your private
-                  information.
-                </p>
-              </S.Terms>
+              <S.TermsWrapper>
+                <S.Terms htmlFor="terms">
+                  <input
+                    {...getFieldProps('policyAccepted')}
+                    name="policyAccepted"
+                    id="policyAccepted"
+                    type="checkbox"
+                  />
+                  <p>
+                    Visit our{' '}
+                    <a
+                      href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      privacy policy
+                    </a>{' '}
+                    to learn how we collect, keep, and process your private
+                    information.
+                  </p>
+                </S.Terms>
+                <S.Terms htmlFor="terms">
+                  <input
+                    {...getFieldProps('termsAccepted')}
+                    name="termsAccepted"
+                    id="termsAccepted"
+                    type="checkbox"
+                  />
+                  <p>
+                    I have read and understood{' '}
+                    <a
+                      href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Polkadex Listing Guidelines
+                    </a>
+                    .
+                  </p>
+                </S.Terms>
+              </S.TermsWrapper>
+
               <button type="submit" disabled={!(isValid && dirty)}>
                 Submit
               </button>
@@ -233,12 +265,12 @@ const Input = ({ label, error, ...props }) => (
 
 const InputSelect = ({ label, error, ...props }) => (
   <S.InputWrapper>
-    <S.Input>
+    <S.Input hasArrow>
       <label htmlFor={props.name}>
         <span>{label}</span>
         <select name={props.name} id={props.name} {...props}>
-          <option value="Ethereum - ETH">Ethereum - ETH</option>
-          <option value="Polkadot - DOT">Polkadot - DOT</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="Polkadot">Polkadot</option>
         </select>
       </label>
     </S.Input>

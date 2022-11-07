@@ -896,6 +896,10 @@ const ENLanguage = {
             title: 'Brand Assets',
             href: '/brandAssets',
           },
+          {
+            title: 'Listing',
+            href: '/listing',
+          },
         ],
       },
       products: {
@@ -903,7 +907,7 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadex Orderbook',
-            href: 'https://docs.polkadex.trade/orderbookIntroduction',
+            href: '/orderbook',
           },
           {
             title: 'Polkadex IDO',

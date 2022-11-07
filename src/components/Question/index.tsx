@@ -26,6 +26,7 @@ export const Question = ({ question, boldtext, button }: Props['question']) => {
               content={button}
               color="primary"
               background="white"
+              href="/listing"
             />
           </S.ButtonWrapper>
         </S.ContentWrapper>
