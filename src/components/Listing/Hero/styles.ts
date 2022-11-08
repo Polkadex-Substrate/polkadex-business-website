@@ -141,6 +141,19 @@ export const Input = styled.div<{ hasArrow?: boolean }>`
     border-radius: 0.8rem;
     padding: 1.5rem;
     flex: 1;
+    div {
+      display: flex;
+      input {
+        flex: 1;
+      }
+      small {
+        padding: 0.5rem 0.8rem;
+        background: ${theme.colors.secondaryBackground};
+        border-radius: 0.2rem;
+        font-size: 1.4rem;
+        margin-right: 0.5rem;
+      }
+    }
     ${hasArrow &&
     css`
       :after {

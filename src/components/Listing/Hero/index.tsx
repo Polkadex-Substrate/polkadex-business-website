@@ -22,8 +22,14 @@ export const listingFormValidations = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(10, 'Too long!')
     .required('Required'),
-  website: Yup.string().url('Must be a valid url').required('Required'),
-  twitter: Yup.string().url('Must be a valid url').required('Required'),
+  website: Yup.string()
+    .min(2, 'Must be a valid url')
+    .max(50, 'Must be a valid url')
+    .required('Required'),
+  twitter: Yup.string()
+    .min(2, 'Must be a valid url')
+    .max(50, 'Must be a valid url')
+    .required('Required'),
   network: Yup.string().oneOf(['Ethereum', 'Polkadot']).required('Required'),
   termsAccepted: Yup.boolean().oneOf([true]).required('Required'),
   policyAccepted: Yup.boolean().oneOf([true]).required('Required'),
@@ -35,6 +41,10 @@ const instance = axios.create({
     password: '',
   },
 });
+const initialWebsiteValues = {
+  twitter: 'www.twitter.com/',
+  website: 'www.',
+};
 
 export const Hero = () => {
   const [state, setState] = useState(false);
@@ -105,9 +115,9 @@ export const Hero = () => {
       email: values.emailListing.toLowerCase(),
       network: values.network,
       userName: values.userName,
-      website: values.website.toLowerCase(),
+      website: initialWebsiteValues.website + values.website.toLowerCase(),
       token: values.token.toUpperCase(),
-      twitter: values.twitter,
+      twitter: initialWebsiteValues.twitter + values.twitter,
       projectName: values.projectName,
     }),
   );
@@ -189,14 +199,16 @@ export const Hero = () => {
               <Input
                 {...getFieldProps('website')}
                 label="Website"
-                placeholder="Enter your project website"
+                placeholder="example.com"
                 error={errors.website && touched.website && errors.website}
+                websiteValue={initialWebsiteValues.website}
               />
               <Input
                 {...getFieldProps('twitter')}
                 label="Project twitter handle"
-                placeholder="https://twitter.com/..."
+                placeholder="User"
                 error={errors.twitter && touched.twitter && errors.twitter}
+                websiteValue={initialWebsiteValues.twitter}
               />
               <S.TermsWrapper>
                 <S.Terms htmlFor="terms">
@@ -251,12 +263,15 @@ export const Hero = () => {
   );
 };
 
-const Input = ({ label, error, ...props }) => (
+const Input = ({ label, error, websiteValue, ...props }) => (
   <S.InputWrapper>
     <S.Input>
       <label htmlFor={props.name}>
         <span>{label}</span>
-        <input name={props.name} type="text" {...props} />
+        <div>
+          {!!websiteValue && <small>{websiteValue}</small>}
+          <input name={props.name} type="text" {...props} />
+        </div>
       </label>
     </S.Input>
     {!!error && <p>{error}</p>}
