@@ -121,8 +121,11 @@ export const Information = () => {
             <div>
               <h3>PolkaIDO</h3>
               <p>
-                PolkaIDO becomes the first Polkadex component to finish private
-                beta testing and launch onto the Polkadex testnet.
+                Polkadex IDO is a one-stop-shop efficient solution for all the
+                activities from conducting the fundraise to listing tokens on
+                Polkadex exchange fully on-chain. IDO platform will be the
+                easiest way to deploy tokens and distribute them among IDO
+                participants.
               </p>
             </div>
           </S.InfoVertical>
