@@ -241,7 +241,7 @@ export const Hero = () => {
                   <p>
                     I have read and understood{' '}
                     <a
-                      href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf"
+                      href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Listing_Guidelines.pdf"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -263,7 +263,7 @@ export const Hero = () => {
   );
 };
 
-const Input = ({ label, error, websiteValue, ...props }) => (
+const Input = ({ label, error, websiteValue = null, ...props }) => (
   <S.InputWrapper>
     <S.Input>
       <label htmlFor={props.name}>
