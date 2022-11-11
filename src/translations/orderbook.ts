@@ -1222,7 +1222,7 @@ const ENLanguage = {
   question: {
     question: 'Interested in listing your token on ',
     boldtext: 'Polkadex Orderbook?',
-    button: 'Coming soon!',
+    button: 'Find out more details here',
   },
 
   statistic: {

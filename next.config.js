@@ -33,5 +33,9 @@ module.exports = {
     SUBSCAN_API: process.env.SUBSCAN_API || '1542770994e249439ecf422602aba56d',
     STAKING_SCRAP:
       process.env.STAKING_SCRAP || 'https://stakingscrapping.herokuapp.com',
+    FRESHDESK_API: process.env.FRESHDESK_API || 'wM7w7b8XzSd3L5esNQL',
+    FRESHDESK_BASE_URL:
+      process.env.FRESHDESK_BASE_URL ||
+      'https://construapp.freshdesk.com/api/v2',
   },
 };

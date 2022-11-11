@@ -161,7 +161,7 @@ export const ExtraData = styled.div`
   }
 `;
 
-export const LearnMore = styled.a`
+export const LearnMore = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
