@@ -25,6 +25,10 @@ export const defaultTheme = {
       xlarge: '2.0rem',
       xxlarge: '2.8rem',
     },
+    lineHeight: {
+      small: 1,
+      normal: 1.5,
+    },
   },
   icon: {
     sizes: {
@@ -51,6 +55,7 @@ export const defaultTheme = {
     white: '#ffffff',
     black: '#000000',
     orange: '#FFA500',
+    blue: '#148FE8',
     disable: '#77777D',
   },
   spacings: {
@@ -95,6 +100,7 @@ const light = {
     gradientBackground:
       'linear-gradient(62.3deg, #FFFFFF 13.21%, #F9FBFC99 98.01%)',
     tertiaryBackground: '#F9FBFC99',
+    tertiaryBackgroundSolid: '#F9FBFC99',
     quaternaryBackground: 'rgba(255, 255, 255, 0.05)',
     secondaryBackgroundSolid: '#E8ECF2',
     text: '#000000',
@@ -135,6 +141,7 @@ const dark = {
     gradientBackground:
       'linear-gradient(62.3deg, #1C1C26 13.21%, #2F313B 98.01%)',
     tertiaryBackground: '#2E303C',
+    tertiaryBackgroundSolid: '#22232E',
     quaternaryBackground: 'rgba(139, 161, 190, 0.05)',
     secondaryBackgroundSolid: '#2F3340',
     text: '#ffffff',

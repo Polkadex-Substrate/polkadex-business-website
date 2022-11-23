@@ -61,20 +61,25 @@ export const Container = styled.div`
 `;
 
 export const AsideLeft = styled.div`
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  ul {
+  ${({ theme }) => css`
     display: flex;
+    gap: 3rem;
     align-items: center;
-    gap: 2rem;
-    @media screen and (max-width: 835px) {
-      display: none;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      @media screen and (max-width: 835px) {
+        display: none;
+      }
+      li {
+        list-style: none;
+      }
     }
-    li {
-      list-style: none;
+    svg {
+      fill: ${theme.colors.text};
     }
-  }
+  `}
 `;
 
 export const IconWrapper = styled(motion.span)`

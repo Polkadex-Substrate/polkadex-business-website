@@ -29,22 +29,14 @@ export const Hero = () => {
             <a href="/">Start trading</a>
             <a href="/">Mainnet explorer</a>
           </S.Actions>
-          <S.DownloadLinksContent>
-            <span>Coming soon</span>
-            <S.DownloadLinks>
-              <a href="#">
-                <Icons.Apple />
-                App Store
-              </a>
-              <a href="#">
-                <Icons.Android />
-                Google Play
-              </a>
-            </S.DownloadLinks>
-          </S.DownloadLinksContent>
         </S.Container>
         <S.HeroImage>
-          <img src="/img/hero.png" alt="Orderbook mockup" />
+          <Icons.HomeHero />
+          <S.HeroImageAside>
+            <span>Coming soon!</span>
+            <Icons.BadgeAppStore />
+            <Icons.BadgePlayStore />
+          </S.HeroImageAside>
         </S.HeroImage>
       </S.Main>
     </S.Wrapper>
