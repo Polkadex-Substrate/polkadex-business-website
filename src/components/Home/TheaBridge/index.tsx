@@ -40,7 +40,7 @@ export const TheaBridge = () => {
         </S.FeaturesHero>
         <S.FeaturesCards>
           <S.FeaturesCard>
-            <Icons.CreateRound />
+            <Icons.Interoperability />
             <h3>Interoperability</h3>
             <p>
               THEA connects Polkadex to Ethereum and will continue to add
@@ -48,7 +48,7 @@ export const TheaBridge = () => {
             </p>
           </S.FeaturesCard>
           <S.FeaturesCard>
-            <Icons.DistributeTokens />
+            <Icons.DecentralizedBridge />
             <h3>Decentralized bridge</h3>
             <p>
               Thanks to multi-party ECDSA and network validators, THEA is as
@@ -56,7 +56,7 @@ export const TheaBridge = () => {
             </p>
           </S.FeaturesCard>
           <S.FeaturesCard>
-            <Icons.ListOrderbook />
+            <Icons.TokenManager />
             <h3>Token manager</h3>
             <p>
               One simple interface to view your assets, use THEA bridge, and see
@@ -64,7 +64,7 @@ export const TheaBridge = () => {
             </p>
           </S.FeaturesCard>
           <S.FeaturesCard>
-            <Icons.ProductImprovements />
+            <Icons.LowFees />
             <h3>Low fees</h3>
             <p>
               While Ethereum gas fees vary wildly, THEA’s light design means

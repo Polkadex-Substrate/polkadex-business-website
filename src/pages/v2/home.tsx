@@ -5,6 +5,7 @@ import {
   Hero,
   Orderbook,
   Partners,
+  Polkaido,
   Staking,
   TheaBridge,
   Wallets,
@@ -73,6 +74,7 @@ export default function Home() {
         <BetaProgram />
         <TheaBridge />
         <Ecosystem />
+        <Polkaido />
         {/* <Partners />
         <Polkaido />
         <Media />
