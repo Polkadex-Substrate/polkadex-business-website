@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.section`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
-    margin: 2rem auto;
+    margin: 8rem auto 5rem auto;
+
     @media screen and (max-width: 1200px) {
       margin: 4rem 1rem;
     }
@@ -14,8 +15,13 @@ export const Container = styled.div`
   ${({ theme }) => css`
     position: relative;
     padding: 2rem;
-    background: ${theme.colors.secondaryGradient};
-    border-radius: 2rem;
+    background: ${theme.colors.primaryBackground};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    background-image: url('/img/newsletterBg.svg');
+    background-repeat: no-repeat;
+    background-size: 134% 100%;
+    background-position: -10rem 0;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,7 +36,8 @@ export const Container = styled.div`
       flex-direction: column;
       flex: 1;
       border-radius: 1rem;
-      background: white;
+      background: ${theme.colors.secondaryBackgroundOpacity};
+      border: 1px solid ${theme.colors.secondaryBackground};
       @media screen and (min-width: 430px) {
         flex-direction: row;
         padding-left: 1.5rem;
@@ -38,6 +45,7 @@ export const Container = styled.div`
       }
       input {
         width: 100%;
+        color: ${theme.colors.text};
         @media screen and (max-width: 430px) {
           padding: 2rem;
         }

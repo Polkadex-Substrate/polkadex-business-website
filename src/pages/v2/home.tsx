@@ -6,11 +6,12 @@ import {
   Orderbook,
   Partners,
   Polkaido,
+  SeenOn,
   Staking,
   TheaBridge,
   Wallets,
 } from 'components/Home';
-import { Footer, Header } from 'components/v2';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import * as S from 'styles/home';
 
@@ -75,14 +76,8 @@ export default function Home() {
         <TheaBridge />
         <Ecosystem />
         <Polkaido />
-        {/* <Partners />
-        <Polkaido />
-        <Media />
-        <Thea />
-        <SecurityPartners />
-        <Staking />
+        <SeenOn />
         <Newsletter />
-        <StrategicInvestors /> */}
       </main>
       <Footer isDark />
     </S.Wrapper>
