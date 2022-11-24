@@ -1,10 +1,12 @@
 import {
   BetaProgram,
+  Ecosystem,
   Exchanges,
   Hero,
   Orderbook,
   Partners,
   Staking,
+  TheaBridge,
   Wallets,
 } from 'components/Home';
 import { Footer, Header } from 'components/v2';
@@ -69,6 +71,8 @@ export default function Home() {
         <Staking />
         <Partners />
         <BetaProgram />
+        <TheaBridge />
+        <Ecosystem />
         {/* <Partners />
         <Polkaido />
         <Media />

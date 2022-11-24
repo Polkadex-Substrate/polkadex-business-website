@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.section`
-  margin: 4rem 0 8rem 0;
-  @media screen and (max-width: 1200px) {
-    margin: 4rem 1rem;
-  }
-`;
+export const Wrapper = styled.section``;
 export const Container = styled.div`
   ${({ theme }) => css`
     max-width: ${theme.grid.container};
