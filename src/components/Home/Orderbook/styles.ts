@@ -169,3 +169,47 @@ export const Card = styled.div`
     }
   `}
 `;
+export const Listing = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+    background: ${theme.colors.primaryBackground};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    border-radius: 0.5rem;
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    background-image: url('/img/orderbookListingBg.svg');
+    background-repeat: no-repeat;
+    background-size: 130% 100%;
+    /* background-position: -15rem 0; */
+  `}
+`;
+export const ListingWrapper = styled.div`
+  ${({ theme }) => css`
+    padding: 10rem 6rem;
+    h2 {
+      font-weight: 500;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      strong {
+        display: block;
+      }
+    }
+    a {
+      background: ${theme.colors.primary};
+      width: fit-content;
+      vertical-align: middle;
+      line-height: normal;
+      padding: 1rem 2rem;
+      border-radius: 0.4rem;
+    }
+  `}
+`;
+export const ListingHero = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  bottom: 0;
+  width: 100rem;
+`;

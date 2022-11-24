@@ -113,6 +113,17 @@ export const Orderbook = () => {
           </S.Card>
         </S.FeaturesBox>
       </S.Features>
+      <S.Listing>
+        <S.ListingWrapper>
+          <h2>
+            List your token on <strong>Polkadex Orderbook</strong>
+          </h2>
+          <a href="/">Coming soon! </a>
+        </S.ListingWrapper>
+        <S.ListingHero>
+          <Icons.ListingHero />
+        </S.ListingHero>
+      </S.Listing>
     </S.Wrapper>
   );
 };
