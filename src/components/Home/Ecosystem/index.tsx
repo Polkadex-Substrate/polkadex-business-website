@@ -12,21 +12,24 @@ export const Ecosystem = () => {
           <Card icon="Substrate" />
           <Card icon="Hacken" />
           <Card icon="Halborn" />
+          <Card src="/img/partners/omniscia.png" alt="Omniscia logo" />
           <Card icon="Trailbits" />
-          <Card icon="Equilibrium" />
           <Card icon="SecurityResearchLabs" />
         </S.ContentFlex>
         <S.ContentFlex>
-          <Card icon="Onfinality" />
-          <Card src="/img/partners/subscan.png" alt="subscan logo" />
-          <Card icon="Cere" />
-          <Card icon="Subsquare" />
-          <Card icon="Polkastarter" />
-          <Card icon="PolkadotLogo" />
+          <Card icon="Certik" />
+          <Card icon="Cryptecon" />
+          <Card
+            src="/img/partners/polychain.png"
+            alt="Polychain Monsters logo"
+          />
+          <Card icon="Acheron" />
+          <Card icon="StakingRewardsLogo" />
+          <Card icon="CreativeDestruction" />
         </S.ContentFlex>
         <S.ContentFlex>
-          <Card icon="Hummingbot" />
-          <Card icon="Immunefi" />
+          <Card src="/img/partners/zondax.png" alt="Zondax logo" />
+          <Card icon="Rmrk" />
         </S.ContentFlex>
       </S.Content>
     </S.Wrapper>
