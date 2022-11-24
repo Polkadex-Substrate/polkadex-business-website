@@ -21,10 +21,11 @@ export const AsideLeft = styled.div``;
 export const AsideRight = styled.div`
   ${({ theme }) => css`
     h2 {
-      font-size: 3rem;
       margin-bottom: 3rem;
-      line-height: 1.8;
+      font-size: 3rem;
       font-weight: 500;
+      line-height: 1.8;
+
       svg {
         display: block;
         max-width: 20rem;
@@ -56,15 +57,12 @@ export const Actions = styled.div`
         color: ${theme.colors.white};
         background: ${theme.colors.primary};
         transition: background 0.2s ease-in-out;
-        :hover {
-          background: ${theme.colors.black};
-        }
       }
       :last-child {
         color: ${theme.colors.blue};
         transition: background 0.2s ease-in-out;
         :hover {
-          background: ${theme.colors.primary}19;
+          background: ${theme.colors.blue}19;
         }
       }
     }
@@ -177,30 +175,31 @@ export const Listing = styled.div`
     border-radius: 0.5rem;
     margin-top: 8rem;
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     background-image: url('/img/orderbookListingBg.svg');
     background-repeat: no-repeat;
     background-size: 130% 100%;
-    /* background-position: -15rem 0; */
+    background-position: -10rem 0;
   `}
 `;
 export const ListingWrapper = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     padding: 10rem 6rem;
     h2 {
+      font-size: 3rem;
       font-weight: 500;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
       strong {
         display: block;
+        font-weight: 600;
       }
     }
     a {
       background: ${theme.colors.primary};
       width: fit-content;
-      vertical-align: middle;
-      line-height: normal;
-      padding: 1rem 2rem;
+      padding: 1rem 3rem;
       border-radius: 0.4rem;
     }
   `}
@@ -209,7 +208,7 @@ export const ListingHero = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  right: 0;
+  right: -2rem;
   bottom: 0;
   width: 100rem;
 `;

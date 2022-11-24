@@ -85,15 +85,12 @@ export const Actions = styled.div`
         color: ${theme.colors.white};
         background: ${theme.colors.primary};
         transition: background 0.2s ease-in-out;
-        :hover {
-          background: ${theme.colors.black};
-        }
       }
       :last-child {
         color: ${theme.colors.blue};
         transition: background 0.2s ease-in-out;
         :hover {
-          background: ${theme.colors.primary}19;
+          background: ${theme.colors.blue}19;
         }
       }
     }

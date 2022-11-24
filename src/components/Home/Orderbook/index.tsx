@@ -118,7 +118,7 @@ export const Orderbook = () => {
           <h2>
             List your token on <strong>Polkadex Orderbook</strong>
           </h2>
-          <a href="/">Coming soon! </a>
+          <a href="/">Coming soon!</a>
         </S.ListingWrapper>
         <S.ListingHero>
           <Icons.ListingHero />

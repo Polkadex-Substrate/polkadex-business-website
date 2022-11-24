@@ -1,4 +1,12 @@
-import { Exchanges, Hero, Orderbook, Wallets } from 'components/Home';
+import {
+  BetaProgram,
+  Exchanges,
+  Hero,
+  Orderbook,
+  Partners,
+  Staking,
+  Wallets,
+} from 'components/Home';
 import { Footer, Header } from 'components/v2';
 import Head from 'next/head';
 import * as S from 'styles/home';
@@ -58,6 +66,9 @@ export default function Home() {
           <Exchanges />
         </S.Container>
         <Orderbook />
+        <Staking />
+        <Partners />
+        <BetaProgram />
         {/* <Partners />
         <Polkaido />
         <Media />
