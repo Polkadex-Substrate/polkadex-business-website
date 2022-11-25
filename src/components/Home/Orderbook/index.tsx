@@ -25,7 +25,9 @@ export const Orderbook = () => {
           </p>
           <S.Actions>
             <a href="/">Start trading</a>
-            <a href="/">Mainnet explorer</a>
+            <a href="/">
+              Mainnet explorer <Icons.ArrowSingleRight />
+            </a>
           </S.Actions>
         </S.AsideRight>
       </S.Hero>

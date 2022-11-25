@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
+    max-width: 100rem;
     margin: 0 auto;
     position: relative;
     background: ${theme.colors.primaryBackground};
@@ -10,11 +10,16 @@ export const Wrapper = styled.section`
     border-radius: 0.5rem;
     margin-top: 8rem;
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
     background-image: url('/img/betaProgramBg.svg');
     background-repeat: no-repeat;
-    background-size: 134% 100%;
+    background-size: 125% 100%;
     background-position: -10rem 0;
+    @media screen and (max-width: 910px) {
+      background-size: cover;
+    }
+    @media screen and (min-width: 750px) {
+      grid-template-columns: 0.7fr 1fr;
+    }
   `}
 `;
 export const Container = styled.div`
@@ -33,6 +38,9 @@ export const Container = styled.div`
       padding: 1rem 3rem;
       border-radius: 0.4rem;
     }
+    p {
+      line-height: ${theme.font.lineHeight};
+    }
   `}
 `;
 
@@ -40,7 +48,14 @@ export const Hero = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  right: -2rem;
+  right: 0;
   bottom: 0;
-  width: 70rem;
+  width: 50rem;
+
+  @media screen and (min-width: 910px) {
+    width: 65rem;
+  }
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 `;

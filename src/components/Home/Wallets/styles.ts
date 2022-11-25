@@ -3,34 +3,32 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
-    max-width: ${theme.grid.container};
-    margin: 4rem auto 0 auto;
     z-index: 1;
-    @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
-    }
-    h2 {
-      font-weight: 400;
-      font-size: 1.8rem;
-    }
     :before {
       content: '';
       position: absolute;
       top: 4rem;
-      left: -10%;
       background: ${theme.colors.primary};
-      width: 35rem;
+      width: 30%;
       height: 15rem;
       border-radius: 0 50rem 50rem 0;
       z-index: -2;
     }
   `}
 `;
+export const Content = styled.div`
+  max-width: 100rem;
+  margin: 4rem auto 0 auto;
+  h2 {
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+`;
 
 export const Container = styled.div`
   margin-top: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
   gap: 1rem;
 `;
 
@@ -40,6 +38,7 @@ export const Card = styled.a`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 6rem;
     justify-content: space-between;
     background: ${theme.colors.tertiaryBackgroundSolid};
     padding: 2rem;
@@ -53,14 +52,11 @@ export const Card = styled.a`
     svg {
       width: 100%;
       height: 100%;
-      max-height: 4.5rem;
-      max-width: 4.5rem;
+      max-height: 3.5rem;
+      max-width: 3.5rem;
     }
     img {
       object-fit: contain;
-    }
-    p {
-      margin-top: 8rem;
     }
   `}
 `;

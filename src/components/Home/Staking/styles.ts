@@ -2,17 +2,18 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section``;
 export const Container = styled.div`
-  ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 0 auto;
-    display: grid;
-    gap: 2rem;
-    align-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
 
-    @media screen and (min-width: 800px) {
-      grid-template-columns: 1.5fr 0.5fr;
-    }
-  `}
+  @media screen and (min-width: 970px) {
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 2rem;
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
 `;
 
 export const Hero = styled.div`
@@ -28,11 +29,18 @@ export const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 960px) {
+      align-items: center;
+      text-align: center;
+    }
     gap: 2rem;
     div {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 1rem;
+      @media screen and (min-width: 960px) {
+        gap: 3rem;
+      }
     }
     h2 {
       font-size: 3rem;

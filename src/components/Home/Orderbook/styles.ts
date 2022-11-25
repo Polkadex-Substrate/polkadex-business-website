@@ -1,25 +1,39 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 4rem auto 0 auto;
-    @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
-    }
-  `}
+  max-width: 100rem;
+  margin: 8rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 `;
 
 export const Hero = styled.div`
   display: grid;
   align-items: center;
   gap: 1rem;
-  grid-template-columns: 1fr minmax(auto, 30rem);
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr minmax(auto, 30rem);
+  }
 `;
 
-export const AsideLeft = styled.div``;
+export const AsideLeft = styled.div`
+  svg {
+    /* transform: scale(1.05) translateX(-2rem); */
+    @media screen and (min-width: 1120px) {
+      transform: scale(1.1) translateX(-6rem);
+    }
+  }
+`;
 export const AsideRight = styled.div`
   ${({ theme }) => css`
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
     h2 {
       margin-bottom: 3rem;
       font-size: 3rem;
@@ -28,7 +42,7 @@ export const AsideRight = styled.div`
 
       svg {
         display: block;
-        max-width: 20rem;
+        width: 20rem;
         height: auto;
         overflow: hidden;
       }
@@ -40,7 +54,7 @@ export const AsideRight = styled.div`
 `;
 
 export const AsideRightIcon = styled.div`
-  max-width: 8rem;
+  width: 8rem;
   margin-bottom: 3rem;
 `;
 
@@ -64,6 +78,11 @@ export const Actions = styled.div`
         :hover {
           background: ${theme.colors.blue}19;
         }
+        svg {
+          display: inline-block;
+          width: 1rem;
+          vertical-align: middle;
+        }
       }
     }
   `}
@@ -73,19 +92,26 @@ export const Features = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
 `;
 
 export const FeaturesFlex = styled.div`
   ${() => css`
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     ${Card} {
       div :last-child {
         height: 20rem;
         svg {
-          width: auto;
-          height: 100%;
+          width: 100%;
+          height: auto;
+          @media screen and (max-width: 838px) {
+            width: unset;
+            height: 20rem;
+          }
         }
       }
     }
@@ -95,13 +121,22 @@ export const FeaturesGrid = styled.div`
   ${() => css`
     display: grid;
     gap: 2rem;
-    grid-template-columns: 1.8fr 1.2fr 1.2fr;
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: 1.8fr 1.2fr 1.2fr;
+    }
+    @media screen and (min-width: 880px) and (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
     ${Card} {
       div :last-child {
-        height: 25rem;
+        height: 20rem;
         svg {
           width: 100%;
           height: auto;
+          @media screen and (max-width: 880px) {
+            width: unset;
+            height: 20rem;
+          }
         }
       }
     }
@@ -111,7 +146,9 @@ export const FeaturesBox = styled.div`
   ${() => css`
     display: grid;
     gap: 2rem;
-    grid-template-columns: 1fr 2fr;
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: 1fr 2fr;
+    }
     ${Card} {
       div :last-child {
         height: 25rem;
@@ -120,12 +157,20 @@ export const FeaturesBox = styled.div`
         div svg {
           width: 100%;
           height: auto;
+          @media screen and (max-width: 1000px) {
+            width: unset;
+            height: 20rem;
+          }
         }
       }
       :last-child {
         div svg {
           width: auto;
           height: 100%;
+          @media screen and (max-width: 1000px) {
+            width: unset;
+            height: 20rem;
+          }
         }
       }
     }
@@ -173,13 +218,19 @@ export const Listing = styled.div`
     background: ${theme.colors.primaryBackground};
     border: 1px solid ${theme.colors.secondaryBackground};
     border-radius: 0.5rem;
-    margin-top: 8rem;
+    margin-top: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     background-image: url('/img/orderbookListingBg.svg');
     background-repeat: no-repeat;
-    background-size: 130% 100%;
     background-position: -10rem 0;
+    background-size: 130% 100%;
+
+    @media screen and (min-width: 580px) {
+      grid-template-columns: 2fr 1fr;
+    }
+    @media screen and (max-width: 935px) {
+      background-size: cover;
+    }
   `}
 `;
 export const ListingWrapper = styled.div`
@@ -208,7 +259,11 @@ export const ListingHero = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  right: -2rem;
   bottom: 0;
-  width: 100rem;
+  max-width: 90rem;
+  width: 100%;
+  right: 0;
+  @media screen and (min-width: 1160px) {
+    right: -2rem;
+  }
 `;

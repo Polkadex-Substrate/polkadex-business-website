@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 4rem auto 0 auto;
+    max-width: 100rem;
+    margin: 15rem auto 0 auto;
     @media screen and (max-width: 1200px) {
       margin: 4rem 1rem;
     }
@@ -15,11 +15,13 @@ export const Hero = styled.div`
   align-items: center;
   gap: 1rem;
   grid-template-columns: 1fr minmax(auto, 30rem);
+  margin-bottom: 10rem;
 `;
 
 export const AsideLeft = styled.div`
   img {
     width: 100%;
+    transform: scale(1.7) translate(-10rem, 2rem);
   }
 `;
 export const AsideRight = styled.div`

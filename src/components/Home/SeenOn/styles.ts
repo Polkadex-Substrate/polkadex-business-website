@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 0 auto;
-
+    max-width: 100rem;
+    margin: 7rem auto 0 auto;
+    border-top: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+    padding-top: 3rem;
     h2 {
       font-weight: 400;
       font-size: 1.8rem;

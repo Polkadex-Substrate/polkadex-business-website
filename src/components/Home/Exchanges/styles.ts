@@ -3,38 +3,36 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
-    max-width: ${theme.grid.container};
-    margin: 4rem auto 0 auto;
     z-index: 1;
-    overflow: hidden;
-    @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
-    }
-    h2 {
-      font-weight: 400;
-      font-size: 1.8rem;
-    }
+
     :before {
       content: '';
       position: absolute;
       top: 6rem;
-      right: -10%;
+      right: 0;
       background: ${theme.colors.primary};
-      width: 35rem;
+      width: 30%;
       height: 7rem;
       border-radius: 50rem 0 0 50rem;
       z-index: -2;
     }
   `}
 `;
+export const Content = styled.div`
+  max-width: 100rem;
+  margin: 4rem auto 0 auto;
+  overflow: hidden;
+  h2 {
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+`;
 
 export const Container = styled.div`
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
-  @media screen and (max-width: 800px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
   gap: 1rem;
 `;
 

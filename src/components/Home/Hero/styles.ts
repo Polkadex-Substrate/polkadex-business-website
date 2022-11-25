@@ -1,11 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  ${({ theme }) => css`
-    padding: 1rem;
-    max-width: ${theme.grid.container};
-    margin: 0 auto;
-  `}
+  max-width: 110rem;
+  margin: 0 auto;
 `;
 export const Main = styled.div`
   padding: 2rem;
@@ -19,7 +16,7 @@ export const Main = styled.div`
   border-radius: 2rem;
   @media screen and (min-width: 890px) {
     grid-template-columns: 1fr 2fr;
-    padding: 4rem;
+    padding: 6rem 4rem 3rem 4rem;
   }
 `;
 
@@ -46,7 +43,7 @@ export const HeroImageAside = styled.div`
     display: block;
     font-family: 'Caveat';
     font-size: 2.5rem;
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -91,6 +88,11 @@ export const Actions = styled.div`
         transition: background 0.2s ease-in-out;
         :hover {
           background: ${theme.colors.blue}19;
+        }
+        svg {
+          display: inline-block;
+          width: 1rem;
+          vertical-align: middle;
         }
       }
     }

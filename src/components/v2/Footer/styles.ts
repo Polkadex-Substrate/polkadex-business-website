@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div<{ isDark?: boolean }>`
   ${({ theme, isDark }) => css`
-    max-width: ${theme.grid.container};
+    max-width: 100rem;
     margin: 4rem auto 0 auto;
     color: ${isDark ? theme.colors.white : theme.colors.black};
     padding-bottom: 2rem;
