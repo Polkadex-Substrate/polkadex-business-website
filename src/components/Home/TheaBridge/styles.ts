@@ -2,10 +2,15 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
+    display: grid;
+    gap: 3rem;
     max-width: 100rem;
     margin: 8rem auto 0 auto;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
+      margin: 4rem auto;
+    }
+    @media screen and (max-width: 1000px) {
+      padding: 1rem;
     }
   `}
 `;
@@ -14,7 +19,7 @@ export const Hero = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
   `}
 `;
 export const HeroWrapper = styled.div`
@@ -25,8 +30,10 @@ export const HeroWrapper = styled.div`
     max-width: 40rem;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     h2 {
-      margin-bottom: 3rem;
       font-size: 3rem;
       font-weight: 500;
       line-height: 1.8;
@@ -51,11 +58,20 @@ export const HeroIcon = styled.div`
 export const HeroVideo = styled.div`
   position: relative;
   width: 100%;
+  @media screen and (max-width: 670px) {
+    margin-top: 5rem;
+  }
 `;
+export const HeroVideoPreview = styled.div`
+  svg {
+    width: 100%;
+  }
+`;
+
 export const HeroVideoFloat = styled.div`
   position: absolute;
-  top: 0;
-  left: 8rem;
+  top: -5rem;
+  left: 2rem;
   display: flex;
   gap: 1rem;
   span {
@@ -74,14 +90,15 @@ export const Features = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: -5rem;
 `;
 export const FeaturesHero = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 8rem;
+    gap: 2rem;
     align-items: center;
+    @media screen and (min-width: 670px) {
+      grid-template-columns: 3fr 1fr;
+    }
     a {
       padding: 1rem 3rem;
       border-radius: 0.4rem;
@@ -108,9 +125,10 @@ export const FeaturesHero = styled.div`
 export const FeaturesCards = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 5rem;
+  gap: 2rem;
   margin-top: 3rem;
 `;
+
 export const FeaturesCard = styled.div`
   ${({ theme }) => css`
     display: flex;

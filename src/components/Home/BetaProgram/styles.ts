@@ -1,27 +1,37 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
+  max-width: 100rem;
+  margin: 0 auto;
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
+`;
+
+export const Content = styled.div`
   ${({ theme }) => css`
-    max-width: 100rem;
-    margin: 0 auto;
     position: relative;
     background: ${theme.colors.primaryBackground};
     border: 1px solid ${theme.colors.secondaryBackground};
     border-radius: 0.5rem;
-    margin-top: 8rem;
     display: grid;
     background-image: url('/img/betaProgramBg.svg');
     background-repeat: no-repeat;
     background-size: 125% 100%;
     background-position: -10rem 0;
+    margin-top: 2rem;
+
     @media screen and (max-width: 910px) {
       background-size: cover;
+      background-position: left;
     }
     @media screen and (min-width: 750px) {
       grid-template-columns: 0.7fr 1fr;
+      margin-top: 8rem;
     }
   `}
 `;
+
 export const Container = styled.div`
   ${({ theme }) => css`
     display: flex;

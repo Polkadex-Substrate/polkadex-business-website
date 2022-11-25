@@ -19,7 +19,9 @@ export const TheaBridge = () => {
           </p>
         </S.HeroWrapper>
         <S.HeroVideo>
-          <Icons.TheaPreview />
+          <S.HeroVideoPreview>
+            <Icons.TheaPreview />
+          </S.HeroVideoPreview>
           <S.HeroVideoFloat>
             <span>Coming soon!</span>
             <Icons.TheaArrow />

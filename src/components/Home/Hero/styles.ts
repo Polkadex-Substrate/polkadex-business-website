@@ -32,23 +32,40 @@ export const HeroImage = styled.div`
 export const HeroImageAside = styled.div`
   position: absolute;
   bottom: 2rem;
-  right: 1rem;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 1rem;
+  @media screen and (max-width: 1024px) {
+    transform: scale(0.8);
+    right: -3rem;
+  }
+  @media screen and (max-width: 740px) {
+    transform: scale(0.7);
+    right: -5rem;
+    bottom: 0;
+  }
+  @media screen and (max-width: 540px) {
+    bottom: -5rem;
+  }
+
   svg {
-    max-width: 15rem;
+    max-width: 13rem;
   }
   span {
     display: block;
     font-family: 'Caveat';
     font-size: 2.5rem;
     margin-right: 1rem;
+    white-space: nowrap;
   }
 `;
 
 export const Container = styled.div`
   ${({ theme }) => css`
+    @media screen and (max-width: 895px) {
+      margin-top: 6rem;
+    }
     p {
       line-height: ${theme.font.lineHeight.normal};
     }
@@ -78,6 +95,7 @@ export const Actions = styled.div`
     a {
       padding: 1rem 3rem;
       border-radius: 0.4rem;
+      white-space: nowrap;
       :first-child {
         color: ${theme.colors.white};
         background: ${theme.colors.primary};

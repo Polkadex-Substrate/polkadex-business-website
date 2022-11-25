@@ -30,6 +30,9 @@ export const Container = styled.div`
     @media screen and (min-width: 657px) {
       padding: 6rem 4rem;
     }
+    @media screen and (max-width: 770px) {
+      background-size: cover;
+    }
     form {
       display: flex;
       justify-content: space-between;

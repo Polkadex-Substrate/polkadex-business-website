@@ -127,6 +127,8 @@ export { default as Send } from './Send';
 export * from './Shield';
 export * from './SingleArrowBottom';
 export { default as Speed } from './Speed';
+export * from './StakeLineBottom';
+export * from './StakeLineTop';
 export * from './stakingHero';
 export * from './StakingRewards';
 export * from './StakingRewardsLogo';

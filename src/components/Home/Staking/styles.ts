@@ -1,6 +1,38 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.section``;
+export const Wrapper = styled.section`
+  ${({ theme }) => css`
+    position: relative;
+    overflow: hidden;
+    ${HeroTopImage}, ${HeroBottomImage} {
+      @media screen and (min-width: 1600px) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      padding: 1rem;
+    }
+  `}
+`;
+
+export const HeroTopImage = styled.div`
+  position: absolute;
+  top: 20rem;
+  left: 0;
+  width: 50rem;
+  z-index: -1;
+`;
+export const HeroBottomImage = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80rem;
+  z-index: -1;
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`;
+
 export const Container = styled.div`
   max-width: 100rem;
   margin: 0 auto;

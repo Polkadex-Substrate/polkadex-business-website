@@ -25,7 +25,9 @@ export const Polkaido = () => {
             fair, inclusive, and affordable.
           </p>
           <S.Actions>
-            <a href="/">Lean more</a>
+            <a href="/">
+              Lean more <Icons.ArrowSingleRight />
+            </a>
           </S.Actions>
         </S.AsideRight>
       </S.Hero>

@@ -25,6 +25,12 @@ export const Staking = () => {
           <Link href="/">Stake your PDEX now</Link>
         </S.Content>
       </S.Container>
+      <S.HeroTopImage>
+        <Icons.StakeLineTop />
+      </S.HeroTopImage>
+      <S.HeroBottomImage>
+        <Icons.StakeLineBottom />
+      </S.HeroBottomImage>
     </S.Wrapper>
   );
 };

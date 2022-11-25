@@ -4,7 +4,12 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     max-width: 100rem;
     margin: 6rem auto;
-
+    border-top: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+    padding-top: 4rem;
+    @media screen and (max-width: 1000px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     h2 {
       font-weight: 400;
       font-size: 1.8rem;
@@ -18,9 +23,14 @@ export const Content = styled.div`
   margin-top: 3rem;
 `;
 export const ContentFlex = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, minmax(100px, 1fr));
-  gap: 6rem;
+  ${({ theme }) => css`
+    display: flex;
+    flex-wrap: wrap;
+    :not(:last-child) {
+      border-bottom: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+      padding-bottom: 2rem;
+    }
+  `}
 `;
 
 export const Card = styled.div`
@@ -33,6 +43,11 @@ export const Card = styled.div`
     height: 60px;
     cursor: pointer;
     padding: 1rem;
+    :not(:last-child) {
+      border-right: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+      padding-right: 1.5rem;
+      margin-right: 1.5rem;
+    }
     img {
       object-fit: contain;
       max-height: 4rem;

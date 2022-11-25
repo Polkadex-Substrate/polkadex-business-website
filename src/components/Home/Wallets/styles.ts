@@ -19,6 +19,9 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   max-width: 100rem;
   margin: 4rem auto 0 auto;
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
   h2 {
     font-weight: 400;
     font-size: 1.8rem;

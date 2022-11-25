@@ -184,7 +184,7 @@ export const Card = styled.div`
     background: ${theme.colors.tertiaryBackgroundOpacity};
     border: 1px solid ${theme.colors.secondaryBackground};
     border-radius: 0.5rem;
-
+    overflow: hidden;
     div {
       :first-child {
         display: flex;
