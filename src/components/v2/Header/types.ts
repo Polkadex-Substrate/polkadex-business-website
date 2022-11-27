@@ -6,7 +6,7 @@ export type Props = {
     | 'Thea'
     | 'Staking'
     | 'Careers';
-  links?: Link[];
+  links?: string[];
   cta: Link;
 };
 

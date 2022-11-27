@@ -3,9 +3,6 @@ import styled, { css } from 'styled-components';
 
 export const AsideRight = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    gap: 2rem;
-    align-items: center;
     a {
       background: white;
       color: black;
@@ -15,13 +12,6 @@ export const AsideRight = styled.div`
       :hover {
         background: ${theme.colors.primary};
         color: ${theme.colors.white};
-      }
-    }
-    button {
-      cursor: pointer;
-      color: ${theme.colors.text};
-      svg {
-        width: 0.8rem;
       }
     }
   `}
@@ -73,7 +63,14 @@ export const AsideLeft = styled.div`
         display: none;
       }
       li {
+        cursor: pointer;
         list-style: none;
+        svg {
+          display: inline-block;
+          vertical-align: middle;
+          width: 0.8rem;
+          margin-left: 0.2rem;
+        }
       }
     }
     svg {

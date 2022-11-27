@@ -20,24 +20,15 @@ export const Header = ({ logo = undefined, links = [], cta }: T.Props) => {
             <Logo.Polkadex />
             {logo?.length && <LogoComponent size="Medium" />}
             <ul>
-              {links.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>{item.title}</Link>
+              {links.map((item, i) => (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-to-interactive-role
+                <li role="button" key={i} onClick={handleClick}>
+                  {item} <Icons.ArrowSingleBottom />
                 </li>
               ))}
             </ul>
           </S.AsideLeft>
           <S.AsideRight>
-            <button type="button" onClick={handleClick}>
-              All Polkadex
-              <S.IconWrapper
-                animate={{
-                  rotate: state ? '180deg' : '0deg',
-                }}
-              >
-                <Icons.SingleArrowBottom />
-              </S.IconWrapper>
-            </button>
             <a href={cta.href}>{cta.title}</a>
           </S.AsideRight>
         </S.Container>
@@ -50,78 +41,75 @@ export const Header = ({ logo = undefined, links = [], cta }: T.Props) => {
             >
               <S.MenuWrapper>
                 <S.MenuContainer>
+                  <small>Products</small>
+                  <ul>
+                    <li>
+                      <Link href="/orderbook">Orderbook</Link>
+                    </li>
+                    <li>
+                      <Link href="/staking">Staking</Link>
+                    </li>
+                    <li>
+                      <Link href="/">PolkaIDO</Link>
+                      <span>Soon</span>
+                    </li>
+                    <li>
+                      <Link href="/">PolkaPool</Link>
+                      <span>Soon</span>
+                    </li>
+                    <li>
+                      <Link href="/">Open Beta</Link>
+                    </li>
+                    <li>
+                      <Link href="/">Parachain</Link>
+                      <span>Soon</span>
+                    </li>
+                  </ul>
+                </S.MenuContainer>
+                <S.MenuContainer>
                   <small>Resources</small>
                   <S.MenuFlex>
                     <ul>
                       <li>
-                        <a href="/">Roadmap</a>
+                        <a href="/">Mainnet Explorer</a>
                       </li>
                       <li>
-                        <a href="/">Ecosystem</a>
+                        <a href="/">Subscan</a>
                       </li>
                       <li>
-                        <a href="/">Wiki</a>
+                        <a href="/">Docs</a>
                       </li>
                       <li>
-                        <a href="/">Blog</a>
+                        <a href="/">Github Repository</a>
+                      </li>
+                      <li>
+                        <a href="/">Brand Assets</a>
+                      </li>
+                      <li>
+                        <a href="/">Substrate</a>
+                      </li>
+                      <li>
+                        <a href="/">Ambassadors Hub</a>
                       </li>
                     </ul>
                     <ul>
                       <li>
-                        <a href="/">Crowdloans</a>
-                      </li>
-                      <li>
                         <a href="/">Explorer</a>
-                      </li>
-                      <li>
-                        <a href="/">Governance</a>
-                      </li>
-                      <li>
-                        <a href="/">Migrate</a>
                       </li>
                     </ul>
                   </S.MenuFlex>
                 </S.MenuContainer>
                 <S.MenuContainer>
-                  <small>Products</small>
-                  <ul>
-                    <li>
-                      <Link href="/v2/orderbook">Orderbook</Link>
-                    </li>
-                    <li>
-                      <Link href="/v2/polkaido">PolkaIDO</Link>
-                      <span>New</span>
-                    </li>
-                    <li>
-                      <Link href="/v2/thea">THEA Bridge</Link>
-                      <span>New</span>
-                    </li>
-                    <li>
-                      <Link href="/v2/staking">Staking</Link>
-                    </li>
-                    <li>
-                      <Link href="/v2/staking">Liquidity Mining</Link>
-                    </li>
-                  </ul>
-                </S.MenuContainer>
-
-                <S.MenuContainer>
                   <small>About</small>
                   <ul>
                     <li>
-                      <Link href="/v2/#vision">Vision</Link>
+                      <Link href="/v2/#vision">Token Economics</Link>
                     </li>
                     <li>
-                      <a href="/v2/#team">Team</a>
+                      <a href="/v2/#team">Roadmap</a>
                     </li>
                     <li>
-                      <a href="/v2/#tokenomicss">Tokenomics</a>
-                    </li>
-                    <li>
-                      <a href="/v2/brandassets">Brand Assets</a>
-                    </li>
-                    <li>
-                      <Link href="/v2/careers">Careers</Link>
+                      <a href="/v2/#tokenomicss">Team</a>
                     </li>
                   </ul>
                 </S.MenuContainer>
@@ -129,19 +117,22 @@ export const Header = ({ logo = undefined, links = [], cta }: T.Props) => {
                   <small>Community</small>
                   <ul>
                     <li>
-                      <a href="/">Twitter</a>
+                      <a href="/">Medium</a>
                     </li>
                     <li>
-                      <a href="/">Discord</a>
+                      <a href="/">Twitter</a>
                     </li>
                     <li>
                       <a href="/">Telegram</a>
                     </li>
                     <li>
+                      <a href="/">Discord</a>
+                    </li>
+                    <li>
                       <a href="/">Reddit</a>
                     </li>
                     <li>
-                      <a href="/">Github</a>
+                      <a href="/">LinkedIn</a>
                     </li>
                   </ul>
                 </S.MenuContainer>

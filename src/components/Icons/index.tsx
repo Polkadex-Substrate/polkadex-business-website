@@ -9,6 +9,7 @@ export * from './ArrowDetailOne';
 export * from './ArrowDetailTwo';
 export { default as ArrowLeft } from './ArrowLeft';
 export { default as ArrowRight } from './ArrowRight';
+export * from './ArrowSingleBottom';
 export * from './ArrowSingleRight';
 export * from './ascendEX';
 export { default as Avatar } from './Avatar';

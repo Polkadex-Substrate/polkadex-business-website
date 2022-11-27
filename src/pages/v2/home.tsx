@@ -32,32 +32,7 @@ export default function Home() {
         />
       </Head>
       <Header
-        links={[
-          {
-            title: 'Overview',
-            href: '/v2/#overview',
-          },
-          {
-            title: 'Orderbook',
-            href: '/v2/#orderbook',
-          },
-          {
-            title: 'PolkaIDO',
-            href: '/v2/#polkaido',
-          },
-          {
-            title: 'THEA',
-            href: '/v2/#thea',
-          },
-          {
-            title: 'Polkapool',
-            href: '/v2/#polkapool',
-          },
-          {
-            title: 'Staking',
-            href: '/v2/#staking',
-          },
-        ]}
+        links={['Products', 'Resources', 'About', 'Community']}
         cta={{
           title: 'Start Trading',
           href: 'https://orderbook-beta.polkadex.trade/',
