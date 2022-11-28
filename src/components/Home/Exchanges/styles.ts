@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -21,7 +22,6 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   max-width: 100rem;
   margin: 4rem auto 0 auto;
-  overflow: hidden;
   @media screen and (max-width: 1000px) {
     padding: 1rem;
   }
@@ -39,7 +39,7 @@ export const Container = styled.div`
   gap: 1rem;
 `;
 
-export const Card = styled.a`
+export const Card = styled(motion.a)`
   ${({ theme }) => css`
     position: relative;
     display: flex;

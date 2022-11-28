@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -17,7 +18,7 @@ export const Hero = styled.div`
   }
 `;
 
-export const AsideLeft = styled.div`
+export const AsideLeft = styled(motion.div)`
   svg {
     /* transform: scale(1.05) translateX(-2rem); */
     @media screen and (min-width: 1120px) {
@@ -25,7 +26,7 @@ export const AsideLeft = styled.div`
     }
   }
 `;
-export const AsideRight = styled.div`
+export const AsideRight = styled(motion.div)`
   ${({ theme }) => css`
     @media screen and (max-width: 800px) {
       display: flex;
@@ -176,7 +177,7 @@ export const FeaturesBox = styled.div`
     }
   `}
 `;
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

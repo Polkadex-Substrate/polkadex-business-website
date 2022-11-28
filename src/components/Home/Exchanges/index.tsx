@@ -1,4 +1,6 @@
 import * as Icons from 'components/Icons';
+import { Variants } from 'framer-motion';
+import useAnimation from 'hooks/useAnimation';
 
 import * as S from './styles';
 
@@ -8,24 +10,32 @@ export const Exchanges = () => {
       <S.Content>
         <h2>Exchanges</h2>
         <S.Container>
-          <S.Card href="/" target="_blank">
-            <Icons.KucoinExchange />
-            <p>KuCoin</p>
-          </S.Card>
-          <S.Card href="/" target="_blank">
-            <img src="/img/gateio.png" alt="Gateio Logo" />
-            <p>Gateio</p>
-          </S.Card>
-          <S.Card href="/" target="_blank">
-            <Icons.AscendEX />
-            <p>AscendEX</p>
-          </S.Card>
-          <S.Card href="/" target="_blank">
-            <Icons.MexcExchange />
-            <p>MEXC</p>
-          </S.Card>
+          <Card title="KuCoin" icon="KucoinExchange" href="/" i={0.3} />
+          <Card title="Gateio" img="gateio" href="/" i={0.7} />
+          <Card title="AscendEX" icon="AscendEX" href="/" i={1.1} />
+          <Card title="MEXC" icon="MexcExchange" href="/" i={1.5} />
         </S.Container>
       </S.Content>
     </S.Wrapper>
+  );
+};
+
+const variants: Variants = {
+  initial: { opacity: 0, translateY: '8rem' },
+  final: { opacity: 1, translateY: 0 },
+};
+const Card = ({ title, img = null, icon = '', i, ...props }) => {
+  const animationProps = useAnimation({ variants, duration: 0.5 * i });
+
+  const IconComponent = Icons[icon];
+  return (
+    <S.Card {...animationProps} target="_blank" {...props}>
+      {img ? (
+        <img src={`/img/${img}.png`} alt={`${title} Logo`} />
+      ) : (
+        <IconComponent />
+      )}
+      <p>{title}</p>
+    </S.Card>
   );
 };

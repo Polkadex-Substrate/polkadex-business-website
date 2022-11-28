@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -35,7 +36,7 @@ export const Container = styled.div`
   gap: 1rem;
 `;
 
-export const Card = styled.a`
+export const Card = styled(motion.a)`
   ${({ theme }) => css`
     position: relative;
     display: flex;
