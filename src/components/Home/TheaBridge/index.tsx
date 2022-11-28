@@ -1,11 +1,15 @@
 import * as Icons from 'components/Icons';
+import useAnimation from 'hooks/useAnimation';
 
+import { data } from './data';
 import * as S from './styles';
 
 export const TheaBridge = () => {
+  const animationProps = useAnimation({ duration: 0.5 });
+
   return (
     <S.Wrapper>
-      <S.Hero>
+      <S.Hero {...animationProps}>
         <S.HeroWrapper>
           <S.HeroIcon>
             <Icons.SwapCircle />
@@ -41,40 +45,30 @@ export const TheaBridge = () => {
           <a href="/">Read more</a>
         </S.FeaturesHero>
         <S.FeaturesCards>
-          <S.FeaturesCard>
-            <Icons.Interoperability />
-            <h3>Interoperability</h3>
-            <p>
-              THEA connects Polkadex to Ethereum and will continue to add
-              support for more blockchains in the future.
-            </p>
-          </S.FeaturesCard>
-          <S.FeaturesCard>
-            <Icons.DecentralizedBridge />
-            <h3>Decentralized bridge</h3>
-            <p>
-              Thanks to multi-party ECDSA and network validators, THEA is as
-              decentralized as the Polkadex network.
-            </p>
-          </S.FeaturesCard>
-          <S.FeaturesCard>
-            <Icons.TokenManager />
-            <h3>Token manager</h3>
-            <p>
-              One simple interface to view your assets, use THEA bridge, and see
-              your transaction history.
-            </p>
-          </S.FeaturesCard>
-          <S.FeaturesCard>
-            <Icons.LowFees />
-            <h3>Low fees</h3>
-            <p>
-              While Ethereum gas fees vary wildly, THEA’s light design means
-              lower-than-average gas fees.
-            </p>
-          </S.FeaturesCard>
+          {data.map((value, i) => (
+            <Card
+              key={i}
+              title={value.title}
+              description={value.description}
+              icon={value.icon}
+              i={0.3 * (i + 1)}
+            />
+          ))}
         </S.FeaturesCards>
       </S.Features>
     </S.Wrapper>
+  );
+};
+
+const Card = ({ title, description, icon, i }) => {
+  const animationProps = useAnimation({ duration: 0.5 * i });
+
+  const IconComponent = Icons[icon];
+  return (
+    <S.FeaturesCard {...animationProps}>
+      <IconComponent />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </S.FeaturesCard>
   );
 };

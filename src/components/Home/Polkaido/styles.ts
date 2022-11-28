@@ -1,16 +1,15 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  ${({ theme }) => css`
-    max-width: 100rem;
-    margin: 15rem auto 0 auto;
-    @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
-    }
-    @media screen and (max-width: 720px) {
-      padding: 1rem;
-    }
-  `}
+  max-width: 100rem;
+  margin: 15rem auto 0 auto;
+  @media screen and (max-width: 1200px) {
+    margin: 4rem 1rem;
+  }
+  @media screen and (max-width: 720px) {
+    padding: 1rem;
+  }
 `;
 
 export const Hero = styled.div`
@@ -24,7 +23,7 @@ export const Hero = styled.div`
   }
 `;
 
-export const AsideLeft = styled.div`
+export const AsideLeft = styled(motion.div)`
   img {
     width: 100%;
     @media screen and (min-width: 720px) {
@@ -35,7 +34,7 @@ export const AsideLeft = styled.div`
     }
   }
 `;
-export const AsideRight = styled.div`
+export const AsideRight = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -102,7 +101,7 @@ export const FeaturesCards = styled.div`
   margin-top: 3rem;
 `;
 
-export const FeaturesCard = styled.div`
+export const FeaturesCard = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

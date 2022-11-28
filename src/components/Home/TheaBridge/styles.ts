@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -15,7 +16,7 @@ export const Wrapper = styled.section`
   `}
 `;
 
-export const Hero = styled.div`
+export const Hero = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -129,7 +130,7 @@ export const FeaturesCards = styled.div`
   margin-top: 3rem;
 `;
 
-export const FeaturesCard = styled.div`
+export const FeaturesCard = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

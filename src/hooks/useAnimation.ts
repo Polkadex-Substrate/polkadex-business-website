@@ -3,9 +3,15 @@ import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 type Props = {
-  variants: Variants;
+  variants?: Variants;
   duration: number;
 };
+
+const defaultVariants: Variants = {
+  initial: { opacity: 0, translateY: '8rem' },
+  final: { opacity: 1, translateY: 0 },
+};
+
 export default function useAnimation({ variants, duration }: Props) {
   const control = useAnimationFramer();
   const [ref, inView] = useInView();
@@ -13,16 +19,14 @@ export default function useAnimation({ variants, duration }: Props) {
   useEffect(() => {
     if (inView) {
       control.start('final');
-    } else {
-      control.start('initial');
     }
   }, [control, inView]);
 
   return {
     ref,
-    variants,
+    variants: variants ?? defaultVariants,
     animate: control,
-    initial: Object.getOwnPropertyNames(variants)[0],
+    initial: Object.getOwnPropertyNames(variants ?? defaultVariants)[0],
     transition: {
       duration,
     },

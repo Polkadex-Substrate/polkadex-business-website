@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  ${({ theme }) => css`
+  ${() => css`
     position: relative;
     overflow: hidden;
     ${HeroTopImage}, ${HeroBottomImage} {
@@ -48,7 +49,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Hero = styled.div`
+export const Hero = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +58,7 @@ export const Hero = styled.div`
     width: 100%;
   }
 `;
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

@@ -213,7 +213,7 @@ export const Card = styled(motion.div)`
     }
   `}
 `;
-export const Listing = styled.div`
+export const Listing = styled(motion.div)`
   ${({ theme }) => css`
     position: relative;
     background: ${theme.colors.primaryBackground};
