@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -33,7 +34,7 @@ export const ContentFlex = styled.div`
   `}
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     align-items: center;

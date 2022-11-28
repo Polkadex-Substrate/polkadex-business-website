@@ -1,6 +1,8 @@
 import * as Icons from 'components/Icons';
+import useAnimation from 'hooks/useAnimation';
 import { ImgHTMLAttributes } from 'react';
 
+import { data } from './data';
 import * as S from './styles';
 
 export const Ecosystem = () => {
@@ -9,38 +11,32 @@ export const Ecosystem = () => {
       <h2>Ecosystem</h2>
       <S.Content>
         <S.ContentFlex>
-          <Card icon="Substrate" />
-          <Card icon="Hacken" />
-          <Card icon="Halborn" />
-          <Card src="/img/partners/omniscia.png" alt="Omniscia logo" />
-          <Card icon="Trailbits" />
-          <Card icon="SecurityResearchLabs" />
+          {data[0].map((value, i) => (
+            <Card key={i} {...value} i={i + 1} />
+          ))}
         </S.ContentFlex>
         <S.ContentFlex>
-          <Card icon="Certik" />
-          <Card icon="Cryptecon" />
-          <Card
-            src="/img/partners/polychain.png"
-            alt="Polychain Monsters logo"
-          />
-          <Card icon="Acheron" />
-          <Card icon="StakingRewardsLogo" />
-          <Card icon="CreativeDestruction" />
+          {data[1].map((value, i) => (
+            <Card key={i} {...value} i={i + 1} />
+          ))}
         </S.ContentFlex>
         <S.ContentFlex>
-          <Card src="/img/partners/zondax.png" alt="Zondax logo" />
-          <Card icon="Rmrk" />
+          {data[2].map((value, i) => (
+            <Card key={i} {...value} i={i + 1} />
+          ))}
         </S.ContentFlex>
       </S.Content>
     </S.Wrapper>
   );
 };
 
-type Props = { icon?: string } & ImgHTMLAttributes<HTMLImageElement>;
-const Card = ({ icon = null, ...props }: Props) => {
+type Props = { icon?: string; i: number } & ImgHTMLAttributes<HTMLImageElement>;
+const Card = ({ icon = null, i, ...props }: Props) => {
+  const animationProps = useAnimation({ duration: 0.2 * i });
+
   const IconComponent = Icons[icon];
   return (
-    <S.Card>
+    <S.Card {...animationProps}>
       {icon?.length ? <IconComponent /> : <img {...props} alt={props.alt} />}
     </S.Card>
   );
