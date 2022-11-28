@@ -105,17 +105,17 @@ export const FeaturesHero = styled.div`
       border-radius: 0.4rem;
       width: fit-content;
       justify-self: center;
-      :first-child {
-        color: ${theme.colors.white};
-        background: ${theme.colors.primary};
-        transition: background 0.2s ease-in-out;
+
+      color: ${theme.colors.blue};
+      transition: background 0.2s ease-in-out;
+      :hover {
+        background: ${theme.colors.blue}19;
       }
-      :last-child {
-        color: ${theme.colors.blue};
-        transition: background 0.2s ease-in-out;
-        :hover {
-          background: ${theme.colors.blue}19;
-        }
+      svg {
+        display: inline-block;
+        width: 1rem;
+        vertical-align: middle;
+        margin-left: 0.3rem;
       }
     }
     p {

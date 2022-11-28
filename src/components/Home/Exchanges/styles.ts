@@ -48,10 +48,10 @@ export const Card = styled(motion.a)`
     background: ${theme.colors.tertiaryBackgroundSolid};
     padding: 2rem;
     border-radius: 1rem;
-    transition: background 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
     border: 1px solid ${theme.colors.secondaryBackgroundOpacity};
     :hover {
-      background: ${theme.colors.secondaryBackgroundOpacity};
+      border-color: ${theme.colors.primary};
     }
     img,
     svg {

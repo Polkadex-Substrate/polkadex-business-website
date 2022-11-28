@@ -1,6 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
-import { ImgHTMLAttributes } from 'react';
+import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -30,14 +29,18 @@ export const Ecosystem = () => {
   );
 };
 
-type Props = { icon?: string; i: number } & ImgHTMLAttributes<HTMLImageElement>;
-const Card = ({ icon = null, i, ...props }: Props) => {
+type Props = { icon?: string; i: number; alt?: string; img?: string };
+const Card = ({ icon = null, i, img, alt }: Props) => {
   const animationProps = useAnimation({ duration: 0.2 * i });
 
   const IconComponent = Icons[icon];
   return (
     <S.Card {...animationProps}>
-      {icon?.length ? <IconComponent /> : <img {...props} alt={props.alt} />}
+      {icon?.length ? (
+        <IconComponent />
+      ) : (
+        <img src={`/img/partners/${img}.png`} alt={alt} />
+      )}
     </S.Card>
   );
 };

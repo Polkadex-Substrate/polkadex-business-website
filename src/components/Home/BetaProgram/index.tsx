@@ -1,5 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 
 import * as S from './styles';
 
@@ -16,7 +16,13 @@ export const BetaProgram = () => {
             share your feedback to help us build better products, and earn
             generous rewards !
           </p>
-          <a href="/">Learn more</a>
+          <a
+            href="https://github.com/Polkadex-Substrate/Polkadex-Open-Beta"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Learn more
+          </a>
         </S.Container>
         <S.Hero>
           <Icons.BetaProgramHero />

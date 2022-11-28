@@ -249,10 +249,11 @@ export const ListingWrapper = styled.div`
       }
     }
     a {
-      background: ${theme.colors.primary};
+      background: gray;
       width: fit-content;
       padding: 1rem 3rem;
       border-radius: 0.4rem;
+      cursor: not-allowed;
     }
   `}
 `;

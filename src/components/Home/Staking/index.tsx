@@ -1,5 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 import Link from 'next/link';
 
 import * as S from './styles';
@@ -47,7 +47,9 @@ const AsideRight = () => {
         </p>
       </div>
 
-      <Link href="/">Stake your PDEX now</Link>
+      <Link href="https://polkadex.trade/staking#howtostake">
+        Stake your PDEX now
+      </Link>
     </S.Content>
   );
 };

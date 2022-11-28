@@ -6,8 +6,9 @@ export const AsideRight = styled.div`
     a {
       background: white;
       color: black;
-      border-radius: 0.8rem;
-      padding: 1rem;
+      padding: 1rem 3rem;
+      border-radius: 0.4rem;
+      white-space: nowrap;
       transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
       :hover {
         background: ${theme.colors.primary};
@@ -28,7 +29,7 @@ export const Main = styled.header`
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
+    max-width: 100rem;
     margin: 0 auto;
 
     position: relative;
@@ -53,7 +54,7 @@ export const Container = styled.div`
 export const AsideLeft = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
     ul {
       display: flex;
@@ -104,8 +105,8 @@ export const MenuWrapper = styled.div`
     border-radius: 1.5rem;
     background: white;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2rem;
     box-shadow: ${theme.shadow.secondary};
   `}
 `;
@@ -117,22 +118,27 @@ export const MenuContainer = styled.div`
       color: #a0a5ab;
       margin-bottom: 1rem;
     }
+  `}
+`;
+
+export const Li = styled.li<{ isDisabled?: boolean }>`
+  ${({ theme, isDisabled = false }) => css`
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    :not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
     a {
       transition: color 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-      color: black;
-      :hover {
-        color: ${theme.colors.primary};
-      }
-    }
-    li {
-      list-style: none;
-      font-size: 1.5rem;
-      font-weight: bold;
+      color: ${isDisabled ? 'gray' : theme.colors.black};
+      cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
 
-      :not(:last-child) {
-        margin-bottom: 1.5rem;
+      :hover {
+        color: ${isDisabled ? 'gray' : theme.colors.primary};
       }
     }
+
     span {
       background: ${theme.colors.primary}19;
       color: ${theme.colors.primary};
@@ -145,6 +151,7 @@ export const MenuContainer = styled.div`
     }
   `}
 `;
+
 export const MenuOverflow = styled.div`
   opacity: 0;
   flex: 1;
@@ -152,7 +159,7 @@ export const MenuOverflow = styled.div`
 
 export const MenuFlex = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
   @media screen and (max-width: 620px) {
     justify-content: space-between;

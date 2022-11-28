@@ -1,5 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -58,7 +58,11 @@ const AsideRight = () => {
         inclusive, and affordable.
       </p>
       <S.Actions>
-        <a href="/">
+        <a
+          href="https://medium.com/polkadex/polkaido-launchpad-overview-728bd40effd6"
+          target="_blank"
+          rel="noreferrer"
+        >
           Lean more <Icons.ArrowSingleRight />
         </a>
       </S.Actions>

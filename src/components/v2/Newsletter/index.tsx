@@ -1,5 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 
 import * as S from './styles';
 

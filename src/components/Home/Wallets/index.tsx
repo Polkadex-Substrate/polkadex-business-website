@@ -1,5 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -11,7 +11,7 @@ export const Wallets = () => {
         <h2>Wallets</h2>
         <S.Container>
           {data.map(({ isNew = false, ...props }, i) => (
-            <Card key={i} isNew={isNew} i={0.3} {...props} />
+            <Card key={i} isNew={isNew} i={i + 1 * 0.4} {...props} />
           ))}
         </S.Container>
       </S.Content>
@@ -30,7 +30,7 @@ const Card = ({
   const animationProps = useAnimation({ duration: 0.5 * i });
   const IconComponent = Icons[icon];
   return (
-    <S.Card {...animationProps} target="_blank" {...props}>
+    <S.Card {...animationProps} target="_blank" rel="noreferrer" {...props}>
       {img ? (
         <img src={`/img/wallets/${img}.png`} alt={`${title} Logo`} />
       ) : (

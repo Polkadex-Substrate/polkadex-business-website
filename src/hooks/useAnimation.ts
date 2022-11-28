@@ -12,9 +12,12 @@ const defaultVariants: Variants = {
   final: { opacity: 1, translateY: 0 },
 };
 
-export default function useAnimation({ variants, duration }: Props) {
+export function useAnimation({ variants, duration }: Props) {
   const control = useAnimationFramer();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: false,
+  });
 
   useEffect(() => {
     if (inView) {

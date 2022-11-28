@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -19,7 +20,7 @@ export const Orderbook = () => {
               title={value.title}
               description={value.description}
               icon={value.icon}
-              i={0.3 * (i + 1)}
+              i={0.5 * (i + 1)}
             />
           ))}
         </S.FeaturesFlex>
@@ -30,7 +31,7 @@ export const Orderbook = () => {
               title={value.title}
               description={value.description}
               icon={value.icon}
-              i={0.3 * (i + 1)}
+              i={0.5 * (i + 2)}
             />
           ))}
         </S.FeaturesGrid>
@@ -41,7 +42,7 @@ export const Orderbook = () => {
               title={value.title}
               description={value.description}
               icon={value.icon}
-              i={0.3 * (i + 1)}
+              i={0.5 * (i + 3)}
             />
           ))}
         </S.FeaturesBox>
@@ -80,8 +81,18 @@ const AsideRight = () => {
         environment built on the Polkadex Network.
       </p>
       <S.Actions>
-        <a href="/">Start trading</a>
-        <a href="/">
+        <a
+          href="https://orderbook-beta.polkadex.trade/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Start trading
+        </a>
+        <a
+          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer"
+          target="_blank"
+          rel="noreferrer"
+        >
           Mainnet explorer <Icons.ArrowSingleRight />
         </a>
       </S.Actions>
@@ -98,7 +109,7 @@ const Listing = () => {
         <h2>
           List your token on <strong>Polkadex Orderbook</strong>
         </h2>
-        <a href="/">Coming soon!</a>
+        <a href="#">Coming soon!</a>
       </S.ListingWrapper>
       <S.ListingHero>
         <Icons.ListingHero />
@@ -107,7 +118,7 @@ const Listing = () => {
   );
 };
 const Card = ({ title, description = null, i, icon }) => {
-  const animationProps = useAnimation({ duration: 0.2 * i });
+  const animationProps = useAnimation({ duration: 0.3 * i });
   const IconComponent = Icons[icon];
   return (
     <S.Card {...animationProps}>

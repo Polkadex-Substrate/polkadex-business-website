@@ -1,5 +1,5 @@
 import * as Icons from 'components/Icons';
-import useAnimation from 'hooks/useAnimation';
+import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -42,7 +42,14 @@ export const TheaBridge = () => {
             connect Polkadex and Ethereum and will continue to add support for
             more blockchains in the future.
           </p>
-          <a href="/">Read more</a>
+          <a
+            href="https://polkadex.medium.com/thea-a-better-decentralized-token-bridge-ac2e362a2a2b"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Read more
+            <Icons.ArrowSingleRight />
+          </a>
         </S.FeaturesHero>
         <S.FeaturesCards>
           {data.map((value, i) => (

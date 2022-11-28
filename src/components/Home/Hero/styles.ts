@@ -1,22 +1,31 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  max-width: 110rem;
-  margin: 0 auto;
+  margin-top: 2rem;
 `;
 export const Main = styled.div`
-  padding: 2rem;
+  max-width: 110rem;
+  margin: 0 auto;
   background: linear-gradient(
     179.95deg,
     rgba(139, 161, 190, 0.05) 0.04%,
     rgba(139, 161, 190, 0) 63.37%
   );
+
+  border-radius: 2rem;
+`;
+export const Content = styled.div`
+  max-width: 100rem;
+  margin: 0 auto;
   display: grid;
   align-items: center;
-  border-radius: 2rem;
   @media screen and (min-width: 890px) {
     grid-template-columns: 1fr 2fr;
-    padding: 6rem 4rem 3rem 4rem;
+    padding: 6rem 0 3rem 0;
+  }
+  @media screen and (max-width: 1000px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 
@@ -25,13 +34,18 @@ export const HeroImage = styled.div`
   @media screen and (max-width: 890px) {
     grid-row-start: 1;
   }
-  img {
-    width: 100%;
+`;
+export const HeroIllustration = styled.div`
+  svg {
+    @media screen and (min-width: 1210px) {
+      transform: scale(1.2) translateX(3rem);
+    }
   }
 `;
+
 export const HeroImageAside = styled.div`
   position: absolute;
-  bottom: 2rem;
+  bottom: 0;
   right: 0;
   display: flex;
   align-items: center;
