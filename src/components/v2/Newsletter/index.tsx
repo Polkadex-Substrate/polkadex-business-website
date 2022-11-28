@@ -1,4 +1,5 @@
 import * as Icons from 'components/Icons';
+import useAnimation from 'hooks/useAnimation';
 
 import * as S from './styles';
 
@@ -6,8 +7,10 @@ export const Newsletter = ({
   title = 'Stay in the loop',
   description = 'Subscribe to the Polkadex newsletter',
 }) => {
+  const animationProps = useAnimation({ duration: 0.5 });
+
   return (
-    <S.Wrapper>
+    <S.Wrapper {...animationProps}>
       <S.Container>
         <S.ImageWrapper>
           <Icons.Airplane />

@@ -1,6 +1,8 @@
 import * as Icons from 'components/Icons';
+import useAnimation from 'hooks/useAnimation';
 import { ImgHTMLAttributes } from 'react';
 
+import { data } from './data';
 import * as S from './styles';
 
 export const SeenOn = () => {
@@ -9,32 +11,37 @@ export const SeenOn = () => {
       <h2>Seen on</h2>
       <S.Content>
         <S.ContentFlex>
-          <Card src="/img/partners/coingecko.png" alt="CoinGecko logo" />
-          <Card icon="Investing" />
-          <Card icon="Cointelegraph" />
-          <Card src="/img/partners/bitcoinTalk.png" alt="BitcoinTalk logo" />
-          <Card src="/img/partners/decrypt.png" alt="Decrypt logo" />
-          <Card icon="Nasdaq" />
+          {data[0].map((value, i) => (
+            <Card key={i} {...value} i={i + 1} />
+          ))}
         </S.ContentFlex>
         <S.ContentFlex>
-          <Card src="/img/partners/techCrunch.png" alt="TechCrunch logo" />
-          <Card icon="Mashable" />
-          <Card icon="MarketWatch" />
-          <Card src="/img/partners/yahooFinance.png" alt="Yahoo Finance logo" />
-          <Card icon="CoinmarketcapLogo" />
-          <Card src="/img/partners/hackerNoon.png" alt="HackerNoon logo" />
+          {data[1].map((value, i) => (
+            <Card key={i} {...value} i={i + 1} />
+          ))}
         </S.ContentFlex>
       </S.Content>
     </S.Wrapper>
   );
 };
 
-type Props = { icon?: string } & ImgHTMLAttributes<HTMLImageElement>;
-const Card = ({ icon = null, ...props }: Props) => {
+type Props = {
+  icon?: string;
+  img?: string;
+  i: number;
+} & ImgHTMLAttributes<HTMLImageElement>;
+
+const Card = ({ icon = null, img, i, ...props }: Props) => {
+  const animationProps = useAnimation({ duration: 0.2 * i });
+
   const IconComponent = Icons[icon];
   return (
-    <S.Card>
-      {icon?.length ? <IconComponent /> : <img {...props} alt={props.alt} />}
+    <S.Card {...animationProps}>
+      {img ? (
+        <img src={`/img/partners/${img}.png`} alt={props.alt} />
+      ) : (
+        <IconComponent />
+      )}
     </S.Card>
   );
 };

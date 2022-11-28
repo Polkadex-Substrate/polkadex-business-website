@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled(motion.section)`
   ${({ theme }) => css`
     max-width: 100rem;
     margin: 8rem auto 5rem auto;
