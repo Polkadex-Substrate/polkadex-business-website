@@ -27,7 +27,7 @@ const Card = ({
   isNew = false,
   ...props
 }) => {
-  const animationProps = useAnimation({ duration: 0.5 * i });
+  const animationProps = useAnimation({ duration: 0.4 * i });
   const IconComponent = Icons[icon];
   return (
     <S.Card {...animationProps} target="_blank" rel="noreferrer" {...props}>

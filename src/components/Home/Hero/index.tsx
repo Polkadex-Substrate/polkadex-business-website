@@ -1,9 +1,13 @@
 import * as Icons from 'components/Icons';
+import { useScroll, useTransform } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 
 import * as S from './styles';
 
 export const Hero = () => {
+  const { scrollY } = useScroll();
+  const heroParallax = useTransform(scrollY, [0, 380], [0, -300]);
+
   return (
     <S.Wrapper id="hero">
       <S.Main>
@@ -43,7 +47,7 @@ export const Hero = () => {
               </a>
             </S.Actions>
           </S.Container>
-          <S.HeroImage>
+          <S.HeroImage style={{ y: heroParallax }}>
             <S.HeroIllustration>
               <Icons.HomeHero />
             </S.HeroIllustration>

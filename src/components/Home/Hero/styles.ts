@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
@@ -29,7 +30,7 @@ export const Content = styled.div`
   }
 `;
 
-export const HeroImage = styled.div`
+export const HeroImage = styled(motion.div)`
   position: relative;
   @media screen and (max-width: 890px) {
     grid-row-start: 1;
