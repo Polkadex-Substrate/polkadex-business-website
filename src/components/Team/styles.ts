@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
+    max-width: 100rem;
   `}
   margin: 6rem auto;
   @media screen and (max-width: 1200px) {
@@ -18,7 +18,8 @@ export const TitleContainer = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  max-width: 45rem;
+  max-width: 60rem;
+  margin: 0 auto;
 `;
 
 export const Row = styled.div`

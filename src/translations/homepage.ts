@@ -650,14 +650,8 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Mobile App Public Testnet', timeline: 'Early Q4' },
-          { title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4' },
-          { title: 'Release Polkadex Orderbook to Parachain' },
-          {
-            title: 'Polkadex Orderbook Mobile Apps* in app stores',
-            subInfo: 'iOS & Android',
-            isHoverable: true,
-          },
+          { title: 'Mobile App Public Testnet', status: true },
+          { title: 'Polkadex Orderbook Mainnet', status: true },
         ],
       },
     ],

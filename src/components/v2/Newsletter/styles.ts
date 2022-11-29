@@ -7,7 +7,7 @@ export const Wrapper = styled(motion.section)`
     margin: 8rem auto 5rem auto;
 
     @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
+      margin: 4rem auto;
     }
   `}
 `;

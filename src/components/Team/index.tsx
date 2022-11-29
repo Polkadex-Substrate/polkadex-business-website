@@ -10,7 +10,12 @@ const Team = ({ tag, title, highlight, cards }: Props['team']) => (
   <S.Wrapper id="team">
     <S.TitleContainer>
       <S.TitleWrapper>
-        <Title tag={tag} title={title} highlight={highlight} position="right" />
+        <Title
+          tag={tag}
+          title={title}
+          highlight={highlight}
+          position="center"
+        />
       </S.TitleWrapper>
     </S.TitleContainer>
     <S.Row id="team__cards">
