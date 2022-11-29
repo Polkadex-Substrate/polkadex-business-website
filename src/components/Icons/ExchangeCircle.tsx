@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import * as React from 'react';
 
 export function ExchangeCircle(props: React.SVGProps<SVGSVGElement>) {
@@ -10,16 +11,56 @@ export function ExchangeCircle(props: React.SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle cx="43" cy="43" r="43" fill="url(#paint0_radial_1567_14103)" />
-      <circle
+      <motion.circle
+        cx="43"
+        cy="43"
+        r="43"
+        fill="url(#paint0_radial_1567_14103)"
+        animate={{
+          opacity: [0, 1, 1, 0],
+          scale: [0, 0.5, 1, 1],
+        }}
+        transition={{
+          duration: 5,
+          ease: 'easeInOut',
+          times: [0, 0.1, 0.4, 0.7, 0.9],
+          repeat: Infinity,
+        }}
+      />
+      <motion.circle
         cx="43"
         cy="43"
         r="42.6322"
         stroke="#8BA1BE"
         strokeOpacity="0.2"
         strokeWidth="0.735637"
+        animate={{
+          opacity: [0, 1, 1, 0],
+          scale: [0, 0.5, 1, 1],
+        }}
+        transition={{
+          duration: 5,
+          ease: 'easeInOut',
+          times: [0, 0.2, 0.5, 0.8, 1],
+          repeat: Infinity,
+        }}
       />
-      <circle cx="43" cy="43" r="32" fill="url(#paint1_radial_1567_14103)" />
+      <motion.circle
+        cx="43"
+        cy="43"
+        r="32"
+        fill="url(#paint1_radial_1567_14103)"
+        animate={{
+          opacity: [0, 1, 1, 0],
+          scale: [0, 0.5, 1, 1],
+        }}
+        transition={{
+          duration: 5,
+          ease: 'easeInOut',
+          times: [0, 0.2, 0.5, 0.8, 1],
+          repeat: Infinity,
+        }}
+      />
       <circle
         cx="43"
         cy="43"

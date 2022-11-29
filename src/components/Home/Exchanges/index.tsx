@@ -1,5 +1,4 @@
 import * as Icons from 'components/Icons';
-import { Variants } from 'framer-motion';
 import { useAnimation } from 'hooks';
 
 import { data } from './data';
@@ -12,7 +11,7 @@ export const Exchanges = () => {
         <h2>Exchanges</h2>
         <S.Container>
           {data.map((value, i) => (
-            <Card key={i} {...value} i={i + 1 * 0.4} />
+            <Card key={i} {...value} i={(i + 1) * 0.4} />
           ))}
         </S.Container>
       </S.Content>
@@ -20,12 +19,8 @@ export const Exchanges = () => {
   );
 };
 
-const variants: Variants = {
-  initial: { opacity: 0, translateY: '8rem' },
-  final: { opacity: 1, translateY: 0 },
-};
 const Card = ({ title = '', img = null, icon = '', i, ...props }) => {
-  const animationProps = useAnimation({ variants, duration: 0.5 * i });
+  const animationProps = useAnimation({ duration: 0.5 * i });
 
   const IconComponent = Icons[icon];
   return (
