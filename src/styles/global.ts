@@ -11,18 +11,17 @@ const GlobalStyles = createGlobalStyle`
      font-size: ${theme.font.sizes.small};
    }
    svg {
-     fill: ${theme.colors.text};
+     /* fill: ${theme.colors.text}; */
      width: 100%;
      height: 100%;
      /* stroke: ${theme.colors.text}; */
    }
  `}
 
- html {
-     font-size: 62.5%;
-       scroll-behavior: smooth;
-
-   }
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
 
   * {
     padding: 0;
@@ -103,6 +102,13 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 600;
     src: url('/fonts/work-sans-v8-latin-600.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+    /* Caveat - regular */
+  @font-face {
+    font-family: 'Caveat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/Caveat-Regular.ttf') format('ttf'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* ----------------------------------------------------------------------------------------------------
   Reset Link

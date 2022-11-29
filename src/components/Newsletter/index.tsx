@@ -1,16 +1,16 @@
 import axios from 'axios';
-import {FormButton} from 'components/Button';
-import {Container} from 'components/Container';
-import {ThemingContext} from 'context';
-import {useContext, useState} from 'react';
-import {IHomeTranslations} from 'translations';
+import { FormButton } from 'components/Button';
+import { Container } from 'components/Container';
+import { ThemingContext } from 'context';
+import { useContext, useState } from 'react';
+import { IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
 type Status = {
   submitted: boolean;
   submitting: boolean;
-  info: {error: boolean; msg: null | string};
+  info: { error: boolean; msg: null | string };
 };
 type Props = Pick<IHomeTranslations, 'newsletter'>;
 
@@ -23,7 +23,7 @@ const Newsletter = ({
   const [status, setStatus] = useState<Status>({
     submitted: false,
     submitting: false,
-    info: {error: false, msg: null},
+    info: { error: false, msg: null },
   });
 
   const [inputs, setInputs] = useState({
@@ -39,13 +39,13 @@ const Newsletter = ({
     setStatus({
       submitted: false,
       submitting: false,
-      info: {error: false, msg: null},
+      info: { error: false, msg: null },
     });
   };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    setStatus((prevStatus) => ({...prevStatus, submitting: true}));
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
     try {
       await axios({
         method: 'POST',
@@ -61,15 +61,15 @@ const Newsletter = ({
           msg: 'Thank you, now you are on our list.',
         },
       });
-      setInputs({email: ''});
+      setInputs({ email: '' });
     } catch (error) {
       setStatus({
         ...status,
-        info: {error: true, msg: error.message},
+        info: { error: true, msg: error.message },
       });
     }
   };
-  const {theme} = useContext(ThemingContext);
+  const { theme } = useContext(ThemingContext);
 
   return (
     <Container>

@@ -1,11 +1,13 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled(motion.section)`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 2rem auto;
+    max-width: 100rem;
+    margin: 8rem auto 5rem auto;
+
     @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
+      margin: 4rem auto;
     }
   `}
 `;
@@ -14,8 +16,13 @@ export const Container = styled.div`
   ${({ theme }) => css`
     position: relative;
     padding: 2rem;
-    background: ${theme.colors.secondaryGradient};
-    border-radius: 2rem;
+    background: ${theme.colors.primaryBackground};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    background-image: url('/img/newsletterBg.svg');
+    background-repeat: no-repeat;
+    background-size: 134% 100%;
+    background-position: -10rem 0;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,13 +31,17 @@ export const Container = styled.div`
     @media screen and (min-width: 657px) {
       padding: 6rem 4rem;
     }
+    @media screen and (max-width: 770px) {
+      background-size: cover;
+    }
     form {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       flex: 1;
       border-radius: 1rem;
-      background: white;
+      background: ${theme.colors.secondaryBackgroundOpacity};
+      border: 1px solid ${theme.colors.secondaryBackground};
       @media screen and (min-width: 430px) {
         flex-direction: row;
         padding-left: 1.5rem;
@@ -38,6 +49,7 @@ export const Container = styled.div`
       }
       input {
         width: 100%;
+        color: ${theme.colors.text};
         @media screen and (max-width: 430px) {
           padding: 2rem;
         }
@@ -80,4 +92,7 @@ export const Title = styled.div`
     font-weight: 550;
     line-height: 1.5;
   }
+`;
+export const MessageBox = styled.div`
+  margin-top: 0.5rem;
 `;

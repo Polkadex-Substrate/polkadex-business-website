@@ -1,15 +1,13 @@
-import { Footer, Newsletter } from 'components';
 import {
   About,
-  HeaderCustom,
   Hero,
   Timeline,
   TokenEconomics,
   TokenUtility,
 } from 'components/Crowdloans';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import { Calculator } from '../Calculator';
 import { ChainModel } from '../ChainModel';
@@ -19,9 +17,6 @@ import { Rewards } from '../Rewards';
 import * as S from './styles';
 
 export const Template = () => {
-  const { footer, newsletter, header }: IHomeTranslations =
-    HomeTranslations['en-US'];
-
   return (
     <>
       <Script
@@ -45,7 +40,13 @@ export const Template = () => {
             Help Polkadex secure a Parachain slot. Join the Crowdloan now!
           </title>
         </Head>
-        <HeaderCustom {...header} />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
         <main>
           <Hero />
           <About />
@@ -57,9 +58,9 @@ export const Template = () => {
           <Participate />
           <TokenEconomics />
           <Faq />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />;
+        <Footer />;
       </S.Wrapper>
     </>
   );

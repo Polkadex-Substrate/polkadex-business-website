@@ -503,7 +503,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'top',
-            distance: -8,
+            distance: -12,
           },
         },
         items: [
@@ -523,7 +523,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'top',
-            distance: 5,
+            distance: 3,
           },
         },
         items: [
@@ -566,7 +566,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 40,
+            distance: 45,
           },
         },
         items: [
@@ -592,7 +592,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 20,
+            distance: 18,
           },
         },
         items: [
@@ -646,18 +646,12 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: -3,
+            distance: 1,
           },
         },
         items: [
-          { title: 'Mobile App Public Testnet', timeline: 'Early Q4' },
-          { title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4' },
-          { title: 'Release Polkadex Orderbook to Parachain' },
-          {
-            title: 'Polkadex Orderbook Mobile Apps* in app stores',
-            subInfo: 'iOS & Android',
-            isHoverable: true,
-          },
+          { title: 'Mobile App Public Testnet', status: true },
+          { title: 'Polkadex Orderbook Mainnet', status: true },
         ],
       },
     ],

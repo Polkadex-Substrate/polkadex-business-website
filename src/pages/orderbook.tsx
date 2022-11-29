@@ -1,9 +1,6 @@
 import {
   FeetDifference,
-  Footer,
-  Header,
   NewOrderbookProduct,
-  Newsletter,
   PolkadexBlock,
   Promo,
   TradeAnywhere,
@@ -13,24 +10,19 @@ import { CrossChain } from 'components/CrossChain';
 import { Question } from 'components/Question';
 import { SpeedLimit } from 'components/SpeedLimits';
 import { StatisticBlock } from 'components/StatisticBlock';
+import { Footer, Header, Newsletter } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
 import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
-import {
-  HomeTranslations,
-  IHomeTranslations,
-  IOrderbookTranslations,
-  OrderbookTranslations,
-} from 'translations';
+import { IOrderbookTranslations, OrderbookTranslations } from 'translations';
 
 export default function Orderbook() {
   const {
     orderbook,
     statistic,
     question,
-    newsletter,
     promo,
     keys,
     speedlimits,
@@ -40,7 +32,6 @@ export default function Orderbook() {
     polkadex,
     crossChain,
   }: IOrderbookTranslations = OrderbookTranslations['en-US'];
-  const { footer, header }: IHomeTranslations = HomeTranslations['en-US'];
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -90,8 +81,13 @@ export default function Orderbook() {
 "
           />
         </Head>
-        <Header {...header} />
-
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <Promo {...promo} />
           <StatisticBlock {...statistic} />
@@ -104,9 +100,9 @@ export default function Orderbook() {
           <TradeAnywhere {...tradeAnywhere} />
           <NewOrderbookProduct {...orderbook} />
           <PolkadexBlock {...polkadex} />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer />
       </S.Wrapper>
     </>
   );

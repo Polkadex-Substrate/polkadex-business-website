@@ -1,13 +1,10 @@
-import { Footer, Newsletter, Return } from 'components';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Terms() {
-  const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
-
   return (
     <>
       <Script
@@ -29,7 +26,13 @@ export default function Terms() {
         <Head>
           <title>Polkadex - Terms and conditions</title>
         </Head>
-        <Return />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
         <main>
           <S.Content>
             <h1>TERMS AND CONDITIONS (“TERMS”)</h1>
@@ -924,9 +927,9 @@ export default function Terms() {
               America
             </p>
           </S.Content>
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />;
+        <Footer />;
       </S.Wrapper>
     </>
   );

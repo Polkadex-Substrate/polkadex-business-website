@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Icons from 'components/Icons';
+import { ThemeSwitcher } from 'components/ThemeSwitcher';
 import Link from 'next/link';
 
 import * as S from './styles';
@@ -12,19 +13,31 @@ export const Footer = ({ isDark = false }) => {
           <span>Polkadex</span>
           <ul>
             <li>
-              <Link href="/v2/#overview">Overview</Link>
+              <a
+                href="https://docs.polkadex.trade/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Overview
+              </a>
             </li>
             <li>
-              <Link href="/v2/#features">Features</Link>
+              <a
+                href="https://docs.polkadex.trade/whatispolkadex"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Features
+              </a>
             </li>
             <li>
-              <Link href="/v2/#roadmap">Roadmap</Link>
+              <Link href="/roadmap">Roadmap</Link>
             </li>
             <li>
-              <Link href="/v2/#team">Team</Link>
+              <Link href="/team">Team</Link>
             </li>
             <li>
-              <Link href="/v2/#tokenomics">Tokenomics</Link>
+              <Link href="/tokeneconomics">Token Economics</Link>
             </li>
           </ul>
         </div>
@@ -34,12 +47,20 @@ export const Footer = ({ isDark = false }) => {
               <span>Community</span>
               <ul>
                 <li>
-                  <a href="/" target="_blank">
+                  <a
+                    href="https://web3.foundation/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Web3 Foundation
                   </a>
                 </li>
                 <li>
-                  <a href="/" target="_blank">
+                  <a
+                    href="https://www.polkadot.network/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Polkadot
                   </a>
                 </li>
@@ -49,16 +70,28 @@ export const Footer = ({ isDark = false }) => {
               <span>Products</span>
               <ul>
                 <li>
-                  <Link href="/v2/orderbook">Orderbook</Link>
+                  <Link href="/orderbook">Orderbook</Link>
                 </li>
                 <li>
-                  <Link href="/v2/polkapool">Polkapool AMM</Link>
+                  <Link href="#">Polkapool AMM</Link>
                 </li>
                 <li>
-                  <Link href="/v2/polkaido">PolkaIDO</Link>
+                  <a
+                    href="https://docs.polkadex.trade/IDOPlatform"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    PolkaIDO
+                  </a>
                 </li>
                 <li>
-                  <Link href="/v2/thea">THEA Bridge</Link>
+                  <a
+                    href="https://polkadex.medium.com/thea-a-better-decentralized-token-bridge-ac2e362a2a2b"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    THEA Bridge
+                  </a>
                 </li>
               </ul>
             </div>
@@ -68,28 +101,39 @@ export const Footer = ({ isDark = false }) => {
           <span>Recources</span>
           <ul>
             <li>
-              <a href="/" target="_blank">
-                Documentations
+              <a
+                href="https://docs.polkadex.trade/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Docs
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://github.com/Polkadex-Substrate"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Github Repository
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://www.substrate.io/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Substrate
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Tutorials
-              </a>
-            </li>
-            <li>
-              <a href="/" target="_blank">
-                System Status
               </a>
             </li>
           </ul>
@@ -98,23 +142,19 @@ export const Footer = ({ isDark = false }) => {
           <span>Company</span>
           <ul>
             <li>
-              <Link href="/v2/about">About Us</Link>
+              <Link href="#">About Us</Link>
             </li>
             <li>
-              <Link href="/v2/partners">Partners</Link>
+              <Link href="#">Partners</Link>
             </li>
             <li>
-              <Link href="/v2/contract">Contract</Link>
+              <Link href="#">Contract</Link>
             </li>
             <li>
-              <Link href="/v2/brandassets">Brand Assets</Link>
+              <Link href="brandAssets">Brand Assets</Link>
             </li>
             <li>
-              <Link href="/v2/careers">
-                <a>
-                  Careers <small>We&apos;re higing</small>
-                </a>
-              </Link>
+              <Link href="/v2/careers">Careers</Link>
             </li>
           </ul>
         </div>
@@ -122,20 +162,26 @@ export const Footer = ({ isDark = false }) => {
       <S.Footer>
         <S.Copyright>
           <ul>
+            <li>
+              <ThemeSwitcher />
+            </li>
             <li>Copyright © 2022 Polkadex, Inc.</li>
             <li>
-              <a href="/" target="_blank">
+              <Link
+                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Terms
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Privacy
-              </a>
-            </li>
-            <li>
-              <a href="/" target="_blank">
-                Contributions
               </a>
             </li>
           </ul>
@@ -144,33 +190,62 @@ export const Footer = ({ isDark = false }) => {
           <span>Join us on</span>
           <ul>
             <li>
-              <a href="/" target="_blank">
-                <Icons.Github />
-              </a>
-            </li>
-            <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://discord.com/invite/Uvua83QAzk"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Icons.Discord />
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://twitter.com/polkadex"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Icons.Twitter />
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://www.linkedin.com/company/69690544"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Icons.LinkedIn />
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a
+                href="https://polkadex.medium.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Icons.Medium />
               </a>
             </li>
             <li>
-              <a href="/" target="_blank">
+              <a href="https://t.me/Polkadex" target="_blank" rel="noreferrer">
                 <Icons.Telegram />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.reddit.com/r/polkadex"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icons.Reddit />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icons.Youtube />
               </a>
             </li>
           </ul>

@@ -1,23 +1,20 @@
 /* eslint-disable react/no-danger */
-import { Footer } from 'components';
 import {
   About,
   Cta,
-  Header,
   Hero,
   Participate,
   Rewards,
 } from 'components/CrowdloansContribute';
 import { Stats, StatsCard } from 'components/Stats';
+import { Footer, Header } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
 export const Template = () => {
-  const { footer }: IHomeTranslations = HomeTranslations['en-US'];
   return (
     <>
       <GoogleAnalytics />
@@ -56,7 +53,13 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
             />
           </noscript>
         </Head>
-        <Header />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
 
         <main>
           <Hero />
@@ -73,7 +76,7 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
           <About />
           <Cta />
         </main>
-        <Footer {...footer} full={false} />
+        <Footer />
       </S.Wrapper>
     </>
   );

@@ -4,24 +4,31 @@ import styled, { css } from 'styled-components';
 export const AsideRight = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: 2rem;
     align-items: center;
+    gap: 2rem;
     a {
-      background: white;
-      color: black;
-      border-radius: 0.8rem;
-      padding: 1rem;
+      background: ${theme.colors.text};
+      color: ${theme.colors.inverse} !important;
+      padding: 1rem 3rem;
+      border-radius: 0.4rem;
+      white-space: nowrap;
       transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
       :hover {
         background: ${theme.colors.primary};
-        color: ${theme.colors.white};
+        color: ${theme.colors.white} !important;
       }
     }
+
     button {
-      cursor: pointer;
       color: ${theme.colors.text};
+      @media screen and (min-width: 835px) {
+        display: none;
+      }
       svg {
+        display: inline-block;
+        vertical-align: middle;
         width: 0.8rem;
+        margin-left: 0.2rem;
       }
     }
   `}
@@ -33,14 +40,12 @@ export const Main = styled.header`
     top: 0;
     z-index: 5;
     background: ${theme.colors.primaryBackground};
+    padding: 1rem 0;
   `}
 `;
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
-    margin: 0 auto;
-
     position: relative;
   `}
 `;
@@ -49,6 +54,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
 
   ul li a,
   ${AsideRight} a {
@@ -61,20 +68,32 @@ export const Container = styled.div`
 `;
 
 export const AsideLeft = styled.div`
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  ul {
+  ${({ theme }) => css`
     display: flex;
-    align-items: center;
     gap: 2rem;
-    @media screen and (max-width: 835px) {
-      display: none;
+    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      @media screen and (max-width: 835px) {
+        display: none;
+      }
+      li {
+        cursor: pointer;
+        list-style: none;
+        svg {
+          display: inline-block;
+          vertical-align: middle;
+          width: 0.8rem;
+          margin-left: 0.2rem;
+        }
+      }
     }
-    li {
-      list-style: none;
+    svg {
+      fill: ${theme.colors.text};
     }
-  }
+  `}
 `;
 
 export const IconWrapper = styled(motion.span)`
@@ -102,9 +121,13 @@ export const MenuWrapper = styled.div`
     border-radius: 1.5rem;
     background: white;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2rem;
     box-shadow: ${theme.shadow.secondary};
+    max-width: 100rem;
+    margin: 0 auto;
+    z-index: 2;
+    width: 100%;
   `}
 `;
 
@@ -115,22 +138,27 @@ export const MenuContainer = styled.div`
       color: #a0a5ab;
       margin-bottom: 1rem;
     }
+  `}
+`;
+
+export const Li = styled.li<{ isDisabled?: boolean }>`
+  ${({ theme, isDisabled = false }) => css`
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    :not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
     a {
       transition: color 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-      color: black;
-      :hover {
-        color: ${theme.colors.primary};
-      }
-    }
-    li {
-      list-style: none;
-      font-size: 1.5rem;
-      font-weight: bold;
+      color: ${isDisabled ? 'gray' : theme.colors.black};
+      cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
 
-      :not(:last-child) {
-        margin-bottom: 1.5rem;
+      :hover {
+        color: ${isDisabled ? 'gray' : theme.colors.primary};
       }
     }
+
     span {
       background: ${theme.colors.primary}19;
       color: ${theme.colors.primary};
@@ -143,14 +171,20 @@ export const MenuContainer = styled.div`
     }
   `}
 `;
+
 export const MenuOverflow = styled.div`
-  opacity: 0;
+  /* opacity: 0; */
+  position: absolute;
+  top: -5rem;
+  width: 100%;
+  height: 108%;
   flex: 1;
+  z-index: 1;
 `;
 
 export const MenuFlex = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
   @media screen and (max-width: 620px) {
     justify-content: space-between;

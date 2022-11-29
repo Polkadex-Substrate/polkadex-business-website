@@ -1,4 +1,4 @@
-import { Icon } from 'components';
+import * as Icons from 'components/Icons';
 import { ThemingContext } from 'context';
 import React, { useContext } from 'react';
 
@@ -7,31 +7,17 @@ import * as S from './styles';
 export const ThemeSwitcher = () => {
   const { theme, themeToogle } = useContext(ThemingContext);
 
+  const isDark = theme.value.title === 'dark';
+  const IconComponent = Icons[isDark ? 'Sun' : 'Moon'];
   return (
     <S.Wrapper>
       <button
-        aria-label="Change to dark mode"
-        title="Change to dark mode"
+        aria-label={`Change to ${isDark ? 'light' : 'dark'} mode`}
+        title={`Change to ${isDark ? 'light' : 'dark'} mode`}
         type="button"
-        onClick={() => themeToogle('dark')}
+        onClick={() => themeToogle(isDark ? 'light' : 'dark')}
       >
-        <Icon
-          name="Moon"
-          background="none"
-          isActive={theme.value.title === 'dark'}
-        />
-      </button>
-      <button
-        aria-label="Change to light mode"
-        title="Change to light mode"
-        type="button"
-        onClick={() => themeToogle('light')}
-      >
-        <Icon
-          name="Sun"
-          background="none"
-          isActive={theme.value.title === 'light'}
-        />
+        <IconComponent />
       </button>
     </S.Wrapper>
   );

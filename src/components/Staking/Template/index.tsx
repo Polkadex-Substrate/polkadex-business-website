@@ -1,16 +1,13 @@
-import { Footer, Header, Newsletter } from 'components';
 import { StakingFaq } from 'components/Crowdloans';
 import { Hero, HowToStake, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
 export const Template = ({ data, error }) => {
-  const { header, newsletter, footer }: IHomeTranslations =
-    HomeTranslations['en-US'];
   const stakedValue = (
     Math.round(data?.tokenInfo?.bonded_locked_balance || 0 * 1000) / 1000
   ).toLocaleString();
@@ -52,7 +49,13 @@ export const Template = ({ data, error }) => {
             content="Staking, stake, investing, passive income, crypto, cryptocurrencies, earn, high APY"
           />
         </Head>
-        <Header {...header} disableBottomMenu={false} />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
         <main>
           <Hero apy={data?.apy || '28.91%'} />
           <Stats>
@@ -78,9 +81,9 @@ export const Template = ({ data, error }) => {
           <HowToStake />
           <Overview />
           <StakingFaq />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer />
       </S.Wrapper>
     </>
   );

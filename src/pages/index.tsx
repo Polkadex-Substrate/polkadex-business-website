@@ -1,54 +1,22 @@
 import {
-  ContractAnnouncement,
-  Features,
-  Footer,
-  Header,
+  BetaProgram,
+  Ecosystem,
+  Exchanges,
   Hero,
-  Investors,
-  Media,
-  Newsletter,
-  OrderbookProduct,
-  OthersProducts,
+  Orderbook,
   Partners,
-  Roadmap,
-  Team,
-  TokenEconomics,
-} from 'components';
-import { Announcement } from 'components/v1/Announcement';
+  Polkaido,
+  SeenOn,
+  Staking,
+  TheaBridge,
+  Wallets,
+} from 'components/Home';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect } from 'react';
 import * as S from 'styles/home';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Home() {
-  const {
-    header,
-    announcement,
-    hero,
-    orderbook,
-    partners,
-    features,
-    investors,
-    team,
-    roadmap,
-    tokenEconomics,
-    media,
-    newsletter,
-    footer,
-  }: IHomeTranslations = HomeTranslations['en-US'];
-  useEffect(() => {
-    const path = window.location.hash;
-    if (path && path.includes('#')) {
-      const id = path.replace('#', '');
-      const el = window.document.getElementById(id);
-      const r = el.getBoundingClientRect();
-      window.scrollTo({
-        top: r.top,
-        behavior: 'smooth',
-      });
-    }
-  });
   return (
     <>
       <Script
@@ -69,21 +37,41 @@ export default function Home() {
       <S.Wrapper>
         <Head>
           <title>Polkadex - The trading engine for Web3 and DeFi</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <Header {...header} />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
         <main>
-          <Hero {...hero} />
-          <OrderbookProduct {...orderbook} />
-          <Partners {...partners} />
-          <Features {...features} />
-          <Investors {...investors} />
-          <Team {...team} />
-          <Roadmap {...roadmap} />
-          <TokenEconomics {...tokenEconomics} />
-          <Media {...media} />
-          <Newsletter {...newsletter} />
+          <S.Container>
+            <Hero />
+            <Wallets />
+            <Exchanges />
+          </S.Container>
+          <Orderbook />
+          <Staking />
+          <Partners />
+          <BetaProgram />
+          <TheaBridge />
+          <Ecosystem />
+          <Polkaido />
+          <SeenOn />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer />
       </S.Wrapper>
     </>
   );

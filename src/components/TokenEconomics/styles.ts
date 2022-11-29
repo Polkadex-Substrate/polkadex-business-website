@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
 
 export const TitleContainer = styled.div`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
+    max-width: 100rem;
   `}
   @media screen and (min-width: 1000px) {
     margin-bottom: 4rem;

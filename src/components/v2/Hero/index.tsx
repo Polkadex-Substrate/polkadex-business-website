@@ -1,12 +1,9 @@
-import { AvailableMessage } from 'components/AvailableMessage';
 import * as Icons from 'components/Icons';
-import { isAndroid, isIOS } from 'react-device-detect';
 import Typewriter from 'typewriter-effect';
 
 import * as S from './styles';
 
 export const Hero = () => {
-  const isDevice = isAndroid || isIOS;
   return (
     <S.Wrapper id="hero">
       <S.Main>
@@ -25,7 +22,7 @@ export const Hero = () => {
             Decentralized Trading
           </h1>
           <p>
-            Polkadex is a fully decentralized peer-to-peer orderbook-based
+            Polkadex is a fully non-custodial peer-to-peer orderbook-based
             cryptocurrency exchange for the DeFi ecosystem built on Substrate.
           </p>
           <S.Actions>
