@@ -4,7 +4,7 @@ export const Wrapper = styled.div<{ isDark?: boolean }>`
   ${({ theme, isDark }) => css`
     max-width: 100rem;
     margin: 4rem auto 0 auto;
-    color: ${isDark ? theme.colors.white : theme.colors.black};
+    color: ${isDark ? theme.colors.white : theme.colors.text};
     padding-bottom: 2rem;
     @media screen and (max-width: 1200px) {
       margin: 4rem 1rem;
@@ -76,7 +76,7 @@ export const Social = styled.div<{ isDark: boolean }>`
     a svg {
       width: 1.5rem;
       height: 1.5rem;
-      fill: ${isDark ? theme.colors.white : theme.colors.black};
+      fill: ${isDark ? theme.colors.white : theme.colors.text};
     }
   `}
 `;

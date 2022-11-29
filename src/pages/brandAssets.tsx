@@ -1,19 +1,11 @@
-import {
-  BrandAssetsCards,
-  BrandAssetsHero,
-  Footer,
-  Newsletter,
-  Return,
-} from 'components';
+import { BrandAssetsCards, BrandAssetsHero } from 'components';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function BrandAssets() {
-  const { footer, newsletter }: IHomeTranslations = HomeTranslations['en-US'];
-
   return (
     <>
       <Script
@@ -35,13 +27,19 @@ export default function BrandAssets() {
         <Head>
           <title>Polkadex - Brand Assets</title>
         </Head>
-        <Return />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook-beta.polkadex.trade/',
+          }}
+        />
         <main>
           <BrandAssetsHero />
           <BrandAssetsCards />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />;
+        <Footer />;
       </S.Wrapper>
     </>
   );

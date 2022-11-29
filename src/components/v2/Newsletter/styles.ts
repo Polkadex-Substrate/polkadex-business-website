@@ -93,3 +93,6 @@ export const Title = styled.div`
     line-height: 1.5;
   }
 `;
+export const MessageBox = styled.div`
+  margin-top: 0.5rem;
+`;

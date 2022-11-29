@@ -4,15 +4,15 @@ import styled, { css } from 'styled-components';
 export const AsideRight = styled.div`
   ${({ theme }) => css`
     a {
-      background: white;
-      color: black;
+      background: ${theme.colors.text};
+      color: ${theme.colors.inverse} !important;
       padding: 1rem 3rem;
       border-radius: 0.4rem;
       white-space: nowrap;
       transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
       :hover {
         background: ${theme.colors.primary};
-        color: ${theme.colors.white};
+        color: ${theme.colors.white} !important;
       }
     }
   `}
@@ -24,6 +24,7 @@ export const Main = styled.header`
     top: 0;
     z-index: 5;
     background: ${theme.colors.primaryBackground};
+    padding: 1rem 0;
   `}
 `;
 

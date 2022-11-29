@@ -18,3 +18,15 @@ export const Container = styled.div`
     }
   `}
 `;
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    padding: 2rem;
+    h1 {
+      margin-bottom: 2rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+  `}
+`;
