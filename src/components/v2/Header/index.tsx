@@ -28,6 +28,10 @@ export const Header = ({ links = [], cta }: T.Props) => {
             </ul>
           </S.AsideLeft>
           <S.AsideRight>
+            <button type="button" onClick={handleClick}>
+              Menu
+              <Icons.ArrowSingleBottom />
+            </button>
             <a href={cta.href} target="_blank" rel="noreferrer">
               {cta.title}
             </a>

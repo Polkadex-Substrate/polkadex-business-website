@@ -3,6 +3,9 @@ import styled, { css } from 'styled-components';
 
 export const AsideRight = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 2rem;
     a {
       background: ${theme.colors.text};
       color: ${theme.colors.inverse} !important;
@@ -13,6 +16,19 @@ export const AsideRight = styled.div`
       :hover {
         background: ${theme.colors.primary};
         color: ${theme.colors.white} !important;
+      }
+    }
+
+    button {
+      color: ${theme.colors.text};
+      @media screen and (min-width: 835px) {
+        display: none;
+      }
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.8rem;
+        margin-left: 0.2rem;
       }
     }
   `}
@@ -30,9 +46,6 @@ export const Main = styled.header`
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: 100rem;
-    margin: 0 auto;
-
     position: relative;
   `}
 `;
@@ -41,6 +54,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
 
   ul li a,
   ${AsideRight} a {
@@ -109,6 +124,10 @@ export const MenuWrapper = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 2rem;
     box-shadow: ${theme.shadow.secondary};
+    max-width: 100rem;
+    margin: 0 auto;
+    z-index: 2;
+    width: 100%;
   `}
 `;
 
@@ -154,8 +173,13 @@ export const Li = styled.li<{ isDisabled?: boolean }>`
 `;
 
 export const MenuOverflow = styled.div`
-  opacity: 0;
+  /* opacity: 0; */
+  position: absolute;
+  top: -5rem;
+  width: 100%;
+  height: 108%;
   flex: 1;
+  z-index: 1;
 `;
 
 export const MenuFlex = styled.div`
