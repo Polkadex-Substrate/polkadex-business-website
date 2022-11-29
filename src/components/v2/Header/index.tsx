@@ -146,26 +146,13 @@ export const Header = ({ links = [], cta }: T.Props) => {
                   <small>About</small>
                   <ul>
                     <S.Li>
-                      <a
-                        href="https://docs.polkadex.trade/tokenEconomics"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Token Economics
-                      </a>
-                    </S.Li>
-                    <S.Li isDisabled>
-                      <a href="#">Roadmap</a>
-                      <span>Soon</span>
+                      <Link href="/tokeneconomics">Token Economics</Link>
                     </S.Li>
                     <S.Li>
-                      <a
-                        href="https://docs.polkadex.trade/polkadexTeam"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Team
-                      </a>
+                      <Link href="/roadmap">Roadmap</Link>
+                    </S.Li>
+                    <S.Li>
+                      <Link href="/team">Team</Link>
                     </S.Li>
                   </ul>
                 </S.MenuContainer>

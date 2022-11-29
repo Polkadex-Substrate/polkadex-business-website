@@ -503,7 +503,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'top',
-            distance: -8,
+            distance: -12,
           },
         },
         items: [
@@ -523,7 +523,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'top',
-            distance: 5,
+            distance: 3,
           },
         },
         items: [
@@ -566,7 +566,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 40,
+            distance: 45,
           },
         },
         items: [
@@ -592,7 +592,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: 20,
+            distance: 18,
           },
         },
         items: [
@@ -646,7 +646,7 @@ const ENLanguage = {
           },
           vertical: {
             side: 'bottom',
-            distance: -3,
+            distance: 1,
           },
         },
         items: [

@@ -31,27 +31,13 @@ export const Footer = ({ isDark = false }) => {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noreferrer">
-                Roadmap
-              </a>
+              <Link href="/roadmap">Roadmap</Link>
             </li>
             <li>
-              <a
-                href="https://docs.polkadex.trade/polkadexTeam"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Team
-              </a>
+              <Link href="/team">Team</Link>
             </li>
             <li>
-              <a
-                href="https://docs.polkadex.trade/tokenEconomics"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Tokenomics
-              </a>
+              <Link href="/tokeneconomics">Token Economics</Link>
             </li>
           </ul>
         </div>
