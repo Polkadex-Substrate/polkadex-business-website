@@ -14,9 +14,4 @@ export const data = [
     icon: 'AscendEX',
     href: 'https://ascendex.com/',
   },
-  {
-    title: 'MEXC',
-    icon: 'MexcExchange',
-    href: 'https://m.mexc.com/',
-  },
 ];
