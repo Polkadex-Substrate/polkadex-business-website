@@ -30,9 +30,4 @@ export const data = [
     icon: 'PolkadotJsWallet',
     href: 'https://polkadot.js.org/extension/',
   },
-  {
-    title: 'Subvisio',
-    icon: 'SubVisJsWallet',
-    href: 'https://subvis.io/',
-  },
 ];

@@ -42,7 +42,7 @@ export const Card = styled(motion.a)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6rem;
+    gap: 10rem;
     justify-content: space-between;
     background: ${theme.colors.tertiaryBackgroundSolid};
     padding: 2rem;
@@ -56,8 +56,8 @@ export const Card = styled(motion.a)`
     svg {
       width: 100%;
       height: 100%;
-      max-height: 3.5rem;
-      max-width: 3.5rem;
+      max-height: 4.5rem;
+      max-width: 4.5rem;
     }
     img {
       object-fit: contain;
