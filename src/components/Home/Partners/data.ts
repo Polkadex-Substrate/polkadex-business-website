@@ -8,8 +8,8 @@ export const data = [
       icon: 'Parallel',
     },
     {
-      img: 'parity',
-      alt: 'parity logo',
+      img: 'ajuna',
+      alt: 'Ajuna Network logo',
     },
     {
       img: 'simplex',
@@ -29,16 +29,12 @@ export const data = [
       alt: 'subscan logo',
     },
     { icon: 'Cere' },
-    { icon: 'Subsquare' },
-    { icon: 'Polkastarter' },
-    { icon: 'PolkadotLogo' },
-  ],
-  [
     {
       icon: 'Hummingbot',
     },
+    { icon: 'Polkastarter' },
     {
-      icon: 'Immunefi',
+      icon: 'Gsr',
     },
   ],
 ];

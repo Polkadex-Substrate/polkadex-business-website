@@ -58,6 +58,7 @@ export { default as Fractal } from './Fractal';
 export { default as Gateio } from './Gateio';
 export { default as Github } from './Github';
 export { default as GooglePlus } from './GooglePlus';
+export * from './Gsr';
 export * from './Hacken';
 export * from './Halborn';
 export * from './HomeHero';
