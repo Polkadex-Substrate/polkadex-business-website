@@ -32,7 +32,7 @@ export const data = [
       alt: 'Polychain Monsters logo',
     },
     {
-      icon: 'Acheron',
+      icon: 'Rmrk',
     },
     {
       icon: 'StakingRewardsLogo',
@@ -45,9 +45,6 @@ export const data = [
     {
       img: 'zondax',
       alt: 'Zondax Monsters logo',
-    },
-    {
-      icon: 'Rmrk',
     },
   ],
 ];
