@@ -32,7 +32,7 @@ export const Hero = () => {
             </p>
             <S.Actions>
               <a
-                href="https://orderbook-beta.polkadex.trade/"
+                href="https://orderbook.polkadex.trade/"
                 target="_blank"
                 rel="noreferrer"
               >

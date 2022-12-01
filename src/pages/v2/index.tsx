@@ -79,7 +79,7 @@ export default function Home() {
           ]}
           cta={{
             title: 'Start Trading',
-            href: 'https://orderbook-beta.polkadex.trade/',
+            href: 'https://orderbook.polkadex.trade/',
           }}
         />
         <main>

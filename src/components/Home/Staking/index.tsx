@@ -38,7 +38,7 @@ const AsideRight = () => {
     <S.Content {...animationProps}>
       <div>
         <h2>
-          <strong>Stake PDEX</strong> and eran up to{' '}
+          <strong>Stake PDEX</strong> and earn up to{' '}
           <strong> 43.34% APY</strong>
         </h2>
         <p>

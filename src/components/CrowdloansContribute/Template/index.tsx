@@ -57,7 +57,7 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
             title: 'Start Trading',
-            href: 'https://orderbook-beta.polkadex.trade/',
+            href: 'https://orderbook.polkadex.trade/',
           }}
         />
 
