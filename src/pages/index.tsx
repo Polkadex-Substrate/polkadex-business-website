@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   BetaProgram,
   Ecosystem,
@@ -16,7 +17,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import * as S from 'styles/home';
 
-export default function Home() {
+export default function Home({ data, error = '' }) {
   return (
     <>
       <Script
@@ -62,7 +63,7 @@ export default function Home() {
             <Exchanges />
           </S.Container>
           <Orderbook />
-          <Staking />
+          <Staking apy={data?.apy || '26.40%'} />
           <Partners />
           <BetaProgram />
           <TheaBridge />
@@ -76,3 +77,18 @@ export default function Home() {
     </>
   );
 }
+
+Home.getInitialProps = async (ctx) => {
+  try {
+    const apy: any = await axios.get(
+      `${process.env.STAKING_SCRAP}/api/infos/1`,
+    );
+    return {
+      data: {
+        apy: apy?.data?.data?.attributes?.value,
+      },
+    };
+  } catch (error) {
+    return { error: error.message };
+  }
+};

@@ -57,7 +57,7 @@ export const Template = ({ data, error }) => {
           }}
         />
         <main>
-          <Hero apy={data?.apy || '28.91%'} />
+          <Hero apy={data?.apy || '26.39%'} />
           <Stats>
             <>
               <StatsCard

@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 import * as S from './styles';
 
-export const Staking = () => {
+export const Staking = ({ apy = '' }) => {
   return (
     <S.Wrapper>
       <S.Container>
         <AsideLeft />
-        <AsideRight />
+        <AsideRight apy={apy} />
       </S.Container>
       <S.HeroTopImage>
         <Icons.StakeLineTop />
@@ -31,15 +31,14 @@ const AsideLeft = () => {
   );
 };
 
-const AsideRight = () => {
+const AsideRight = ({ apy }) => {
   const animationProps = useAnimation({ duration: 1.5 });
 
   return (
     <S.Content {...animationProps}>
       <div>
         <h2>
-          <strong>Stake PDEX</strong> and earn up to{' '}
-          <strong> 43.34% APY</strong>
+          <strong>Stake PDEX</strong> and earn up to <strong> {apy} APY</strong>
         </h2>
         <p>
           It’s simple. Create your account and start earning passive income
