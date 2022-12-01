@@ -142,19 +142,13 @@ export const Footer = ({ isDark = false }) => {
           <span>Company</span>
           <ul>
             <li>
-              <Link href="#">About Us</Link>
+              <Link href="/">About Us</Link>
             </li>
             <li>
-              <Link href="#">Partners</Link>
+              <Link href="/#partners">Partners</Link>
             </li>
             <li>
-              <Link href="#">Contract</Link>
-            </li>
-            <li>
-              <Link href="brandAssets">Brand Assets</Link>
-            </li>
-            <li>
-              <Link href="/v2/careers">Careers</Link>
+              <Link href="/brandAssets">Brand Assets</Link>
             </li>
           </ul>
         </div>

@@ -6,7 +6,7 @@ import * as S from './styles';
 
 export const Partners = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="partners">
       <h2>Partners</h2>
       <S.Content>
         <S.ContentFlex>

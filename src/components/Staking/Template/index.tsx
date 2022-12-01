@@ -53,7 +53,7 @@ export const Template = ({ data, error }) => {
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
             title: 'Start Trading',
-            href: 'https://orderbook-beta.polkadex.trade/',
+            href: 'https://orderbook.polkadex.trade/',
           }}
         />
         <main>

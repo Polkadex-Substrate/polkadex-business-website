@@ -136,7 +136,7 @@ export const Header = ({ links = [], cta }: T.Props) => {
                       </S.Li>
                       <S.Li>
                         <a
-                          href="https://github.com/Polkadex-Substrate/Docs/blob/master/POLKADEX_AMBASSADOR_PROGRAM_T%26C.pdf"
+                          href="https://polkadex.notion.site/bcac75d5f73c44cf8bf8fc7f75297afb?v=4047f8300ceb431da698b9248612d203"
                           target="_blank"
                           rel="noreferrer"
                         >
