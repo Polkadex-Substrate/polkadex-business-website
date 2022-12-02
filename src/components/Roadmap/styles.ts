@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     max-width: 100rem;
   `}
-  margin: 6rem auto;
+  margin: 6rem auto 12rem auto;
   @media screen and (min-width: 1175px) {
     min-height: 145rem;
   }

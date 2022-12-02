@@ -130,7 +130,7 @@ export const Wrapper = styled.div<Partial<Props>>`
     max-width: 25rem;
     width: 100%;
     :not(:last-child) {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
       & ${Line} {
         ::after {
           height: 160%;
