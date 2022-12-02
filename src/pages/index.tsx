@@ -37,7 +37,17 @@ export default function Home({ data, error = '' }) {
       />
       <S.Wrapper>
         <Head>
-          <title>Polkadex - The trading engine for Web3 and DeFi</title>
+          <title>
+            Polkadex Orderbook - Decentralized Crypto Currency Exchange
+          </title>
+          <meta
+            name="title"
+            content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
+          />
+          <meta
+            name="description"
+            content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
