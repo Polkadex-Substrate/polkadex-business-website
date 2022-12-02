@@ -81,8 +81,10 @@ export const Container = styled.div`
     @media screen and (max-width: 895px) {
       margin-top: 6rem;
     }
-    p {
+    h2 {
       line-height: ${theme.font.lineHeight.normal};
+      font-size: 1.4rem;
+      font-weight: normal;
     }
     h1 {
       font-size: 5rem;

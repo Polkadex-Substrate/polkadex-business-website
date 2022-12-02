@@ -26,10 +26,10 @@ export const Hero = () => {
               </strong>
               Decentralized Trading
             </h1>
-            <p>
+            <h2>
               Polkadex is a fully non-custodial peer-to-peer orderbook-based
               cryptocurrency exchange for the DeFi ecosystem built on Substrate.
-            </p>
+            </h2>
             <S.Actions>
               <a
                 href="https://orderbook.polkadex.trade/"
