@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { isAndroid, isIOS } from 'react-device-detect';
 
 const deviceUrl = {
@@ -9,9 +9,13 @@ const deviceUrl = {
 };
 const Device = () => {
   const router = useRouter();
-  if (isAndroid) router.push(deviceUrl.android);
-  else if (isIOS) router.push(deviceUrl.ios);
-  else router.push('/v2');
+
+  useEffect(() => {
+    if (isAndroid) router.push(deviceUrl.android);
+    else if (isIOS) router.push(deviceUrl.ios);
+    else router.push('/v2');
+  }, [router]);
+
   return <div />;
 };
 

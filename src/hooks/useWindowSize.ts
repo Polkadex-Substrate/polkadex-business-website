@@ -2,19 +2,20 @@ import { useEffect, useState } from 'react';
 
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
-    width: window && window.innerWidth,
-    height: window && window.innerHeight,
+    width: process.browser && window.innerWidth,
+    height: process.browser && window.innerHeight,
   });
 
   const handleSize = () => {
     setWindowSize({
-      width: window && window.innerWidth,
-      height: window && window.innerHeight,
+      width: process.browser && window.innerWidth,
+      height: process.browser && window.innerHeight,
     });
   };
   useEffect(() => {
-    window && window.addEventListener('resize', handleSize);
-    return () => window && window.addEventListener('resize', handleSize);
+    process.browser && window.addEventListener('resize', handleSize);
+    return () =>
+      process.browser && window.addEventListener('resize', handleSize);
   }, []);
   return {
     width: windowSize.width,

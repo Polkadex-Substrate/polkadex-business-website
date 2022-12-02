@@ -7,12 +7,11 @@ import '/public/index.css';
 import 'slick-carousel/slick/slick.css';
 
 import PrivacyPopUp from 'components/PrivacyPopUp';
-import { ThemingContext } from 'context';
-import { useTheming } from 'hooks';
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from 'styles';
+import { defaultThemes, GlobalStyles } from 'styles';
 
 import Maintenance from './maintenance';
 
@@ -34,24 +33,17 @@ function App({ Component, pageProps }: AppProps) {
     if (!state) checkCookies();
   }, [state]);
 
-  const { theme, themeToogle } = useTheming();
   return (
-    <ThemingContext.Provider value={{ theme, themeToogle }}>
-      {theme.loading ? (
-        <div />
-      ) : (
-        <ThemeProvider theme={theme.value}>
-          <GlobalStyles />
-          {maintenance ? <Maintenance /> : <Component {...pageProps} />}
-          <PrivacyPopUp
-            action={handleAccept}
-            visible={state}
-            link="/"
-            description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
-          />
-        </ThemeProvider>
-      )}
-    </ThemingContext.Provider>
+    <ThemeProvider theme={defaultThemes.dark}>
+      <GlobalStyles />
+      {maintenance ? <Maintenance /> : <Component {...pageProps} />}
+      <PrivacyPopUp
+        action={handleAccept}
+        visible={state}
+        link="/"
+        description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
+      />
+    </ThemeProvider>
   );
 }
 

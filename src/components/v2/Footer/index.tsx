@@ -156,9 +156,6 @@ export const Footer = ({ isDark = false }) => {
       <S.Footer>
         <S.Copyright>
           <ul>
-            <li>
-              <ThemeSwitcher />
-            </li>
             <li>Copyright © 2022 Polkadex, Inc.</li>
             <li>
               <Link
