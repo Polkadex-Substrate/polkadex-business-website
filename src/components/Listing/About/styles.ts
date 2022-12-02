@@ -70,6 +70,14 @@ export const Title = styled.div`
   }
 `;
 
+export const Description = styled.p`
+  line-height: 1.6;
+
+  @media screen and (min-width: 950px) {
+    max-width: 60rem;
+  }
+`;
+
 export const Benefits = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,7 +100,7 @@ export const Benefits = styled.div`
   }
 `;
 export const Content = styled.div`
-  margin-top: 3rem;
+  margin-top: 5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   row-gap: 4rem;

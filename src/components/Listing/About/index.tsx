@@ -27,25 +27,26 @@ export const About = () => {
           </S.AboutImage>
         </S.About>
         <S.Benefits>
-          <h3>Why list on Polkadex Orderbook?</h3>
+          <h3>Join Polkadex</h3>
+          <S.Description>
+            Joining Polkadex means you get to join a unified ecosystem bringing
+            together legacy and future blockchain trading communities. It means
+            taking an organic, community-driven approach to liquidity provision
+            and price discovery. It also means you get to empower your community
+            with non-custodial, high-performance trading at 0% trading fees.
+          </S.Description>
           <S.Content>
-            <Card icon="ListingSwap">
-              It’s a DEX that looks, feels, and performs like a CEX
+            <Card icon="ListingEasy">Easy and transparent listing process</Card>
+            <Card icon="People">
+              Engage your community with Polkadex ecosystem dApps
             </Card>
-            <Card icon="ListingLiquidity">Own your liquidity</Card>
-            <Card icon="ListingIntegration">
-              Drive volume with your own market-maker bot integrations
+            <Card icon="Help">
+              Receive continuous support from the Polkadex team
             </Card>
-            <Card icon="ListingTrading">
-              Level up with advanced trading functionality and limit orders
+            <Card icon="Growth">
+              Broaden your outreach & increase adoption with partners from
+              across the Polkadex ecosystem
             </Card>
-            <Card icon="ListingWallet">
-              Keep your traders in control with non-custodial trading and
-              gas-less trades
-            </Card>
-            <Card icon="ListingFrequency">Enable high frequency trading</Card>
-            <Card icon="ListingEasy">Easy & transparent listing process</Card>
-            <Card icon="ListingFees">No hidden fees</Card>
           </S.Content>
           <S.Actions>
             <Link href="/orderbook">
