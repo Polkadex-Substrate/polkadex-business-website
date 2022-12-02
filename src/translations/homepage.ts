@@ -654,6 +654,25 @@ const ENLanguage = {
           { title: 'Polkadex Orderbook Mainnet', status: true },
         ],
       },
+      {
+        title: 'Q1-2023',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 5,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: -7,
+          },
+        },
+        items: [
+          { title: 'Parachain Rewards' },
+          { title: 'Mobile App Mainnet' },
+        ],
+      },
     ],
   },
   tokenEconomics: {
