@@ -669,7 +669,7 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Parachain Rewards' },
+          { title: 'Crowdloan Rewards Distribution' },
           { title: 'Mobile App Mainnet' },
         ],
       },
