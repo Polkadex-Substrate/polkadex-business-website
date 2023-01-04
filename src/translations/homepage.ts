@@ -282,21 +282,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Head of Marketing',
-        name: 'Dagmara Handzlik',
-        image: 'dagmaraPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
-          },
-          {
-            name: 'Twitter',
-            link: 'https://twitter.com/DagaCMO',
-          },
-        ],
-      },
-      {
         title: 'Lead Community Manager',
         name: 'Francis Dufour',
         image: 'francisPhotography',

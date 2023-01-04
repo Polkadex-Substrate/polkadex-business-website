@@ -63,7 +63,7 @@ const AsideRight = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Lean more <Icons.ArrowSingleRight />
+          Learn more <Icons.ArrowSingleRight />
         </a>
       </S.Actions>
     </S.AsideRight>
