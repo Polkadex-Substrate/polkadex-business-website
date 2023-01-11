@@ -1,7 +1,7 @@
 import {
   FeetDifference,
+  InitialBanner,
   NewOrderbookProduct,
-  PolkadexBlock,
   Promo,
   TradeAnywhere,
   TradingStrategy,
@@ -12,11 +12,19 @@ import { SpeedLimit } from 'components/SpeedLimits';
 import { StatisticBlock } from 'components/StatisticBlock';
 import { Footer, Header, Newsletter } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
 import { IOrderbookTranslations, OrderbookTranslations } from 'translations';
+
+const PolkadexBlock = dynamic(
+  () => import('components/PolkadexBlock').then((mod) => mod.PolkadexBlock),
+  {
+    ssr: false,
+  },
+);
 
 export default function Orderbook() {
   const {
@@ -89,6 +97,7 @@ export default function Orderbook() {
           }}
         />
         <main ref={ref} style={{ overflow: 'hidden' }}>
+          <InitialBanner />
           <Promo {...promo} />
           <StatisticBlock {...statistic} />
           <YourKeys {...keys} />
