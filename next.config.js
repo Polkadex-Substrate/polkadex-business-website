@@ -57,6 +57,10 @@ module.exports = {
       process.env.SUBSCAN_URL || 'https://polkadex.api.subscan.io/api',
     SUBSCAN_API: process.env.SUBSCAN_API || '1542770994e249439ecf422602aba56d',
     STAKING_SCRAP:
-      process.env.STAKING_SCRAP || 'https://stakingscrapping.herokuapp.com',
+      process.env.STAKING_SCRAP ||
+      'https://strapi-production-5f75.up.railway.app',
+    STAKING_SCRAP_TOKEN:
+      process.env.STAKING_SCRAP_TOKEN ||
+      '64884814288cec3482534e508918677352f7199bc03cb4a80b0ee18a10fc479e237dabd77cd514722eccd37523dc1cc5286f67995726df6cd038cffcd5e202581f90d56bebf08515005366a1eacaafeefa4471e04128279b796c84a9b84b0603cd401169d754300ee12e9fc1cb5ed43d02331bba02c35ecc1520debd8e49e662',
   },
 };

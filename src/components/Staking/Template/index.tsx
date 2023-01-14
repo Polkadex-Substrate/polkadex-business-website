@@ -1,12 +1,19 @@
 import { StakingFaq } from 'components/Crowdloans';
-import { Hero, HowToStake, Overview, Rewards } from 'components/Staking';
+import { Hero, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
 import { Footer, Header, Newsletter } from 'components/v2';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
 
 import * as S from './styles';
 
+const HowToStake = dynamic(
+  () => import('components/Staking').then((mod) => mod.HowToStake),
+  {
+    ssr: false,
+  },
+);
 export const Template = ({ data, error }) => {
   const stakedValue = (
     Math.round(data?.tokenInfo?.bonded_locked_balance || 0 * 1000) / 1000

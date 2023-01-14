@@ -92,6 +92,9 @@ Home.getInitialProps = async (ctx) => {
   try {
     const apy: any = await axios.get(
       `${process.env.STAKING_SCRAP}/api/infos/1`,
+      {
+        headers: { Authorization: `Bearer ${process.env.STAKING_SCRAP_TOKEN}` },
+      },
     );
     return {
       data: {
