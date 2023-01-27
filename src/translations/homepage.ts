@@ -341,21 +341,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Senior Frontend Engineer',
-        name: 'Charles Chiakwa',
-        image: 'charlesPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/charleslukes',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
-          },
-        ],
-      },
-      {
         title: 'Senior Rust Engineer',
         name: 'Ivan Temchenko',
         image: 'ivanPhotography',
