@@ -10,6 +10,7 @@ export * from './Partners';
 export * from './Polkaido';
 export * from './PolkaidoHero';
 export * from './PolkaidoOverview';
+export * from './Popover';
 export * from './SecurityPartners';
 export * from './Staking';
 export * from './StrategicInvestors';
