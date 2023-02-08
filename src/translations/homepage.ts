@@ -943,7 +943,7 @@ const ENLanguage = {
         ],
       },
     },
-    copyright: 'Copyright © 2022 Polkadex, Inc',
+    copyright: 'Copyright © 2023 Polkadex, Inc',
     bottomLinks: [
       {
         title: 'Terms and Privacy Policy',
