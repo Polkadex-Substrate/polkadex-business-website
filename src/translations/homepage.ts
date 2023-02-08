@@ -1,3 +1,5 @@
+import { GlobalStyles } from 'styles';
+
 const ENLanguage = {
   header: {
     topLinks: [
@@ -446,7 +448,7 @@ const ENLanguage = {
       'We started our journey with the idea of bringing the best DeFi experience to users and keep moving closer to our goal with each step',
     cards: [
       {
-        title: 'Q3 2020',
+        title: 'Q3 2023',
         alignRight: false,
         position: {
           horizontal: {
@@ -455,114 +457,111 @@ const ENLanguage = {
           },
           vertical: {
             side: 'top',
-            distance: -10.5,
+            distance: -8.3,
           },
         },
         items: [
-          { title: 'Web3 Milestone #1', status: true },
-          { title: 'Refactoring Polkadex Engine', status: true },
-          { title: 'Code Documentation', status: true },
-        ],
-      },
-      {
-        title: 'Q4 2020',
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 40,
-          },
-          vertical: {
-            side: 'top',
-            distance: -12,
-          },
-        },
-        items: [
-          { title: 'Website Launch', status: true },
-          { title: 'Whitepaper Release', status: true },
-          { title: 'Testnet V1.0 Launch', status: true },
-          { title: 'SAFT based Token PreSale', status: true },
-        ],
-      },
-      {
-        title: 'Q1-Q2 2021',
-        alignRight: false,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: 20,
-          },
-          vertical: {
-            side: 'top',
-            distance: 3,
-          },
-        },
-        items: [
-          { title: 'Public Sale', status: true },
           {
-            title: 'Testnet V2.0 Launch',
-            status: true,
+            title: 'Integration with Trading Bots and Market Makers',
+            status: false,
           },
-          { title: 'Testnet V3.0 Launch', status: true },
-          { title: 'Security Audit', status: true },
+          { title: 'Bridge with ETH and Polygon', status: false },
         ],
       },
       {
-        title: 'Q3-Q4 2021',
+        title: 'Q2 2023',
+        invert: true,
         alignRight: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 15,
+            distance: 10,
           },
           vertical: {
             side: 'top',
-            distance: 23,
+            distance: 7.6,
           },
         },
         items: [
-          { title: 'Mainnet Launch', status: true },
-          { title: 'ERC20 to native PDEX migration', status: true },
-          { title: 'Launch of Private Beta Tester Program', status: true },
-          { title: 'Parachain Strategy Development', status: true },
+          { title: 'Derivatives', status: false },
+          { title: 'Structured Products', status: false },
         ],
       },
       {
-        title: 'Q1 2022',
+        title: 'Q1 2023',
         alignRight: false,
         position: {
           horizontal: {
             side: 'right',
-            distance: 0,
+            distance: 24,
           },
           vertical: {
-            side: 'bottom',
-            distance: 45,
+            side: 'top',
+            distance: -9,
           },
         },
         items: [
-          { title: 'PolkaIDO Beta', status: true },
-          { title: 'PolkaIDO Public Testnet', status: true },
-          { title: 'Polkadex Crowdloan Campaign', status: true },
+          { title: 'Crowdloan Rewards Distribution' },
+          { title: 'Mobile App Mainnet' },
           {
-            title: 'Polkadex Orderbook Beta*',
-            status: true,
-            subInfo: 'Without blockchain integration',
-            isHoverable: true,
+            title: 'Bug Bounty Program',
+            status: false,
           },
+          { title: 'Bridge with Polkadot and Kusama', status: false },
         ],
       },
       {
-        title: 'Q2 2022',
+        title: 'Q4 2022',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 0,
+            distance: 10,
+          },
+          vertical: {
+            side: 'top',
+            distance: 20,
+          },
+        },
+        items: [
+          { title: 'Mobile App Public Testnet', status: true },
+          { title: 'Polkadex Orderbook Mainnet', status: true },
+        ],
+      },
+      {
+        title: 'Q3 2022',
+        alignRight: false,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 10,
+          },
+          vertical: {
+            side: 'top',
+            distance: 6.7,
+          },
+        },
+        items: [
+          { title: 'Orderbook Testnet with Withdrawals', status: true },
+          {
+            title: 'Cross Chain Transfer of test tokens to trade',
+            status: true,
+          },
+        ],
+      },
+      {
+        title: 'Q2 2022',
+        alignRight: false,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: -10,
           },
           vertical: {
             side: 'bottom',
-            distance: 18,
+            distance: 50,
           },
         },
         items: [
@@ -584,63 +583,114 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Q3 2022',
+        title: 'Q1 2022',
+        alignRight: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 5,
+          },
+          vertical: {
+            side: 'top',
+            distance: 35,
+          },
+        },
+        items: [
+          { title: 'PolkaIDO Beta', status: true },
+          { title: 'PolkaIDO Public Testnet', status: true },
+          { title: 'Polkadex Crowdloan Campaign', status: true },
+          {
+            title: 'Polkadex Orderbook Beta*',
+            status: true,
+            subInfo: 'Without blockchain integration',
+            isHoverable: true,
+          },
+        ],
+      },
+      {
+        title: 'Q3-Q4 2021',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 20,
+            distance: 4,
           },
           vertical: {
             side: 'bottom',
-            distance: 10,
+            distance: 25,
           },
         },
         items: [
-          { title: 'Orderbook Testnet with Withdrawals', status: true },
+          { title: 'Mainnet Launch', status: true },
+          { title: 'ERC20 to native PDEX migration', status: true },
+          { title: 'Launch of Private Beta Tester Program', status: true },
+          { title: 'Parachain Strategy Development', status: true },
+        ],
+      },
+      {
+        title: 'Q1-Q2 2021',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 34,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 12,
+          },
+        },
+        items: [
+          { title: 'Public Sale', status: true },
           {
-            title: 'Cross Chain Transfer of test tokens to trade',
+            title: 'Testnet V2.0 Launch',
             status: true,
           },
+          { title: 'Testnet V3.0 Launch', status: true },
+          { title: 'Security Audit', status: true },
         ],
       },
       {
-        title: 'Q4 2022',
+        title: 'Q4 2020',
+        invert: true,
+        alignRight: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 50,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 0,
+          },
+        },
+        items: [
+          { title: 'Website Launch', status: true },
+          { title: 'Whitepaper Release', status: true },
+          { title: 'Testnet V1.0 Launch', status: true },
+          { title: 'SAFT based Token PreSale', status: true },
+        ],
+      },
+      {
+        title: 'Q3 2020',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'right',
-            distance: 30,
+            distance: 2,
           },
           vertical: {
             side: 'bottom',
-            distance: 1,
+            distance: -6,
           },
         },
         items: [
-          { title: 'Mobile App Public Testnet', status: true },
-          { title: 'Polkadex Orderbook Mainnet', status: true },
-        ],
-      },
-      {
-        title: 'Q1-2023',
-        alignRight: true,
-        invert: true,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: 5,
-          },
-          vertical: {
-            side: 'bottom',
-            distance: -7,
-          },
-        },
-        items: [
-          { title: 'Crowdloan Rewards Distribution' },
-          { title: 'Mobile App Mainnet' },
+          { title: 'Web3 Milestone #1', status: true },
+          { title: 'Refactoring Polkadex Engine', status: true },
+          { title: 'Code Documentation', status: true },
         ],
       },
     ],
