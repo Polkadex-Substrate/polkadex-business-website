@@ -1,5 +1,3 @@
-import { GlobalStyles } from 'styles';
-
 const ENLanguage = {
   header: {
     topLinks: [
