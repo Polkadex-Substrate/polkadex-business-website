@@ -459,11 +459,8 @@ const ENLanguage = {
           },
         },
         items: [
-          {
-            title: 'Integration with Trading Bots and Market Makers',
-            status: false,
-          },
-          { title: 'Bridge with ETH and Polygon', status: false },
+          { title: 'Derivatives', status: false },
+          { title: 'Structured Products', status: false },
         ],
       },
       {
@@ -473,16 +470,19 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 10,
+            distance: -3,
           },
           vertical: {
             side: 'top',
-            distance: 7.6,
+            distance: 7,
           },
         },
         items: [
-          { title: 'Derivatives', status: false },
-          { title: 'Structured Products', status: false },
+          {
+            title: 'Integration with Trading Bots and Market Makers',
+            status: false,
+          },
+          { title: 'Bridge with ETH and Polygon', status: false },
         ],
       },
       {
@@ -515,7 +515,7 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 10,
+            distance: 13,
           },
           vertical: {
             side: 'top',
@@ -555,11 +555,11 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'right',
-            distance: -10,
+            distance: -5,
           },
           vertical: {
             side: 'bottom',
-            distance: 50,
+            distance: 48,
           },
         },
         items: [
