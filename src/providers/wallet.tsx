@@ -1,9 +1,3 @@
-import {
-  web3AccountsSubscribe,
-  web3Enable,
-  web3EnablePromise,
-  web3FromAddress,
-} from '@polkadot/extension-dapp';
 import { Signer } from '@polkadot/types/types';
 import React, { useCallback, useEffect, useState } from 'react';
 
@@ -35,6 +29,9 @@ export const WalletProvider = ({
   const [state, setState] = useState<StoreState>(initialState);
 
   const connectWallet = useCallback(async (): Promise<void> => {
+    const { web3Enable, web3EnablePromise } = await import(
+      '@polkadot/extension-dapp'
+    );
     setState((prevState) => ({ ...prevState, loading: true }));
     const allInjected = await web3Enable('polkadex');
     await web3EnablePromise;
@@ -49,6 +46,7 @@ export const WalletProvider = ({
   }, []);
 
   const getSinger = useCallback(async (address: string): Promise<Signer> => {
+    const { web3FromAddress } = await import('@polkadot/extension-dapp');
     const injector = await web3FromAddress(address);
     return injector.signer;
   }, []);
@@ -62,17 +60,19 @@ export const WalletProvider = ({
   useEffect(() => {
     let sub;
     if (isInjected) {
-      sub = web3AccountsSubscribe((accounts) => {
-        const allAccounts: Web3Account[] = accounts.map(
-          ({ address, meta }) => ({
-            address,
-            name: meta.name,
-          }),
-        );
-        setState((prevState) => ({
-          ...prevState,
-          allAccounts,
-        }));
+      import('@polkadot/extension-dapp').then(({ web3AccountsSubscribe }) => {
+        sub = web3AccountsSubscribe((accounts) => {
+          const allAccounts: Web3Account[] = accounts.map(
+            ({ address, meta }) => ({
+              address,
+              name: meta.name,
+            }),
+          );
+          setState((prevState) => ({
+            ...prevState,
+            allAccounts,
+          }));
+        });
       });
     }
     return () => sub && sub();
