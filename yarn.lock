@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@adraffy/ens-normalize@npm:1.8.9":
+  version: 1.8.9
+  resolution: "@adraffy/ens-normalize@npm:1.8.9"
+  checksum: 17791dce03a4320a88c377136c48d0c16ac3e5b07aad321d028c8342fcf821b95c0082cd269cddd488472d1273e8157ae101f2e4e7f9e6be42667ed7ab9614d9
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:7.12.11":
   version: 7.12.11
   resolution: "@babel/code-frame@npm:7.12.11"
@@ -956,6 +963,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ethersproject/bytes@npm:^5.7.0":
+  version: 5.7.0
+  resolution: "@ethersproject/bytes@npm:5.7.0"
+  dependencies:
+    "@ethersproject/logger": ^5.7.0
+  checksum: 66ad365ceaab5da1b23b72225c71dce472cf37737af5118181fa8ab7447d696bea15ca22e3a0e8836fdd8cfac161afe321a7c67d0dde96f9f645ddd759676621
+  languageName: node
+  linkType: hard
+
 "@ethersproject/constants@npm:5.5.0, @ethersproject/constants@npm:^5.5.0":
   version: 5.5.0
   resolution: "@ethersproject/constants@npm:5.5.0"
@@ -1096,6 +1112,13 @@ __metadata:
   version: 5.4.1
   resolution: "@ethersproject/logger@npm:5.4.1"
   checksum: 40ade2d1d9408cf786239d850aa6c1bd41403d68f8ab8974643836406efdae1a9419f25a184037ed7c2ee9dcb09896a09d078eed6dd424351f025b1e2eaf19e3
+  languageName: node
+  linkType: hard
+
+"@ethersproject/logger@npm:^5.7.0":
+  version: 5.7.0
+  resolution: "@ethersproject/logger@npm:5.7.0"
+  checksum: 075ab2f605f1fd0813f2e39c3308f77b44a67732b36e712d9bc085f22a84aac4da4f71b39bee50fe78da3e1c812673fadc41180c9970fe5e486e91ea17befe0d
   languageName: node
   linkType: hard
 
@@ -1651,6 +1674,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@noble/hashes@npm:1.1.2":
+  version: 1.1.2
+  resolution: "@noble/hashes@npm:1.1.2"
+  checksum: 3c2a8cb7c2e053811032f242155d870c5eb98844d924d69702244d48804cb03b42d4a666c49c2b71164420d8229cb9a6f242b972d50d5bb2f1d673b98b041de2
+  languageName: node
+  linkType: hard
+
 "@noble/hashes@npm:1.2.0":
   version: 1.2.0
   resolution: "@noble/hashes@npm:1.2.0"
@@ -1719,15 +1749,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadex/blockchain-api@npm:^1.1.36":
-  version: 1.1.36
-  resolution: "@polkadex/blockchain-api@npm:1.1.36"
+"@polkadex/blockchain-api@npm:^1.1.38":
+  version: 1.1.38
+  resolution: "@polkadex/blockchain-api@npm:1.1.38"
   dependencies:
     "@polkadex/api-wrapper": 1.1.35
     "@polkadex/types": 1.1.31
     "@polkadot/api": ^9.13.4
     rxjs: ^7.8.0
-  checksum: 5f5d3a9f1539cb258b4212890b6662e27f44009321f07bd5f86fa0a7fa1fb8bcd67fe50c5f080c0061ee110f37c0c9c51d0fafeeb2c9c67d81f09d67d0d86e3b
+  checksum: 8824bdc95896000f808fff2edbd42b06bffac143cad7906011eba98d3bca2034adf2d39ac0b5990495c94752736052f6b7a3b042d492927e66d60d227a465de8
   languageName: node
   linkType: hard
 
@@ -1741,6 +1771,19 @@ __metadata:
     "@polkadot/util": ^10.3.1
     "@polkadot/util-crypto": ^10.3.1
   checksum: 57bec22c95888f179a16b672933cede1b3a3608c6794d93b0e7e3d4c6e1c39defdd11cd569a84086b306176d3c252c255e683d577fb1511ae262fdda2517efef
+  languageName: node
+  linkType: hard
+
+"@polkadex/utils@npm:^1.1.37":
+  version: 1.1.37
+  resolution: "@polkadex/utils@npm:1.1.37"
+  dependencies:
+    "@ethersproject/bytes": ^5.7.0
+    "@polkadot/util": ^10.2.1
+    "@polkadot/util-crypto": ^10.2.1
+    axios: ^1.2.5
+    ethers: ^6.0.5
+  checksum: 774e6edce109596e47f179129b05f93c7b58f341356060237b4fb9a4d4ecb56fe43d7225fb1b513c2f9676b936d8669ea655e2e04216216e656e95286f9a7cb7
   languageName: node
   linkType: hard
 
@@ -1997,7 +2040,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/util-crypto@npm:10.4.2, @polkadot/util-crypto@npm:^10.3.1, @polkadot/util-crypto@npm:^10.4.2":
+"@polkadot/util-crypto@npm:10.4.2, @polkadot/util-crypto@npm:^10.2.1, @polkadot/util-crypto@npm:^10.3.1, @polkadot/util-crypto@npm:^10.4.2":
   version: 10.4.2
   resolution: "@polkadot/util-crypto@npm:10.4.2"
   dependencies:
@@ -2018,7 +2061,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/util@npm:10.4.2, @polkadot/util@npm:^10.3.1, @polkadot/util@npm:^10.4.2":
+"@polkadot/util@npm:10.4.2, @polkadot/util@npm:^10.2.1, @polkadot/util@npm:^10.3.1, @polkadot/util@npm:^10.4.2":
   version: 10.4.2
   resolution: "@polkadot/util@npm:10.4.2"
   dependencies:
@@ -4310,6 +4353,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aes-js@npm:4.0.0-beta.3":
+  version: 4.0.0-beta.3
+  resolution: "aes-js@npm:4.0.0-beta.3"
+  checksum: 2336feee1e4a7722f5b6ede192b0a22881fd6f9310b36ec10e62b6f015f9fddf812c1d8a61b9743ab710811fd0b0d7aad844178f11e7cb1439bbc14246c6c93e
+  languageName: node
+  linkType: hard
+
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
@@ -4678,6 +4728,17 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.4
   checksum: 83dc4d02e180f69aa9f0d1d0d50b84ec3603517230d58b4c3720ebd440c7e64ea86c5e892dc6e19061608e8e1103504a709d8baa4051c4b7652101b523d04b63
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.2.5":
+  version: 1.3.3
+  resolution: "axios@npm:1.3.3"
+  dependencies:
+    follow-redirects: ^1.15.0
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: b734a4bc348e2fa27150a7d4289d783fa405feb3f79f8daf28fd05813a12c8525ae9d3854aafe7ba041b005a4a751a0ba3b923331ceed41296ae14c7e54e2f26
   languageName: node
   linkType: hard
 
@@ -6891,6 +6952,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ethers@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "ethers@npm:6.0.5"
+  dependencies:
+    "@adraffy/ens-normalize": 1.8.9
+    "@noble/hashes": 1.1.2
+    "@noble/secp256k1": 1.7.1
+    aes-js: 4.0.0-beta.3
+    tslib: 2.4.0
+    ws: 8.5.0
+  checksum: 84530dc40fe42048c1f63184c144065f6c63de25bd7f11d4373e052432f2d84cbe3183361485ebc69296fa53c0fab34ee0b4cf59f04ab6e2816859feb3263262
+  languageName: node
+  linkType: hard
+
 "ethjs-unit@npm:0.1.6":
   version: 0.1.6
   resolution: "ethjs-unit@npm:0.1.6"
@@ -7289,6 +7364,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.15.0":
+  version: 1.15.2
+  resolution: "follow-redirects@npm:1.15.2"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: faa66059b66358ba65c234c2f2a37fcec029dc22775f35d9ad6abac56003268baf41e55f9ee645957b32c7d9f62baf1f0b906e68267276f54ec4b4c597c2b190
+  languageName: node
+  linkType: hard
+
 "for-in@npm:^1.0.1, for-in@npm:^1.0.2":
   version: 1.0.2
   resolution: "for-in@npm:1.0.2"
@@ -7327,6 +7412,17 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "form-data@npm:4.0.0"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    mime-types: ^2.1.12
+  checksum: 01135bf8675f9d5c61ff18e2e2932f719ca4de964e3be90ef4c36aacfc7b9cb2fceb5eca0b7e0190e3383fe51c5b37f4cb80b62ca06a99aaabfcfd6ac7c9328c
   languageName: node
   linkType: hard
 
@@ -10511,7 +10607,8 @@ __metadata:
   dependencies:
     "@babel/core": ^7.15.8
     "@babel/preset-typescript": ^7.15.0
-    "@polkadex/blockchain-api": ^1.1.36
+    "@polkadex/blockchain-api": ^1.1.38
+    "@polkadex/utils": ^1.1.37
     "@polkadot/api": ^9.14.2
     "@polkadot/extension-dapp": ^0.44.9
     "@polkadot/types": ^9.14.2
@@ -10715,6 +10812,13 @@ __metadata:
     forwarded: 0.2.0
     ipaddr.js: 1.9.1
   checksum: 29c6990ce9364648255454842f06f8c46fcd124d3e6d7c5066df44662de63cdc0bad032e9bf5a3d653ff72141cc7b6019873d685708ac8210c30458ad99f2b74
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: ed7fcc2ba0a33404958e34d95d18638249a68c430e30fcb6c478497d72739ba64ce9810a24f53a7d921d0c065e5b78e3822759800698167256b04659366ca4d4
   languageName: node
   linkType: hard
 
@@ -13292,6 +13396,21 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 3a990b32ed08c72070d5e8913e14dfcd831919205be52a3ff0b4cdd998c8d554f167c9df3841605cde8b11d607768cacab3e823c58c96a5c08c987e093eb767a
+  languageName: node
+  linkType: hard
+
+"ws@npm:8.5.0":
+  version: 8.5.0
+  resolution: "ws@npm:8.5.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 76f2f90e40344bf18fd544194e7067812fb1372b2a37865678d8f12afe4b478ff2ebc0c7c0aff82cd5e6b66fc43d889eec0f1865c2365d8f7a66d92da7744a77
   languageName: node
   linkType: hard
 

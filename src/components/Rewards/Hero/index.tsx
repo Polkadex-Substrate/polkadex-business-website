@@ -90,8 +90,9 @@ export const Hero = () => {
             </Dropdown.Menu>
           </Dropdown>
           <PrimaryButton
+            disabled={isClaimDisabled}
             onClick={claimRewards}
-            content={isClaimDisabled ? 'Loading' : 'Claim'}
+            content="Claim"
           />
         </S.Wallet>
       </S.Content>

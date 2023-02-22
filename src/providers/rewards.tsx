@@ -1,5 +1,5 @@
 import { signAndSubmitPromiseWrapper } from '@polkadex/blockchain-api';
-import { formatBalance } from '@polkadot/util';
+import Utils from '@polkadex/utils';
 import React, { createContext, useCallback, useEffect } from 'react';
 
 import { useApi } from '../hooks';
@@ -40,7 +40,8 @@ export const RewardsProvider = ({
   const [loading, setLoading] = React.useState<boolean>(false);
   const [claimLoading, setClaimLoading] = React.useState<boolean>(false);
   const { account } = useWallet();
-
+  const isClaimDisabled =
+    claimLoading || !rewards || Number(rewards?.claimable || 0) <= 1;
   /**
    * Retrieves rewards for a given address using the provided api object and current block number.
    * @param {string} address - The address to retrieve rewards for.
@@ -62,9 +63,9 @@ export const RewardsProvider = ({
           ? amountTillNow - BigInt(data.initialRewardsClaimable)
           : amountTillNow;
         return {
-          total: formatBalance(total, { decimals: 12 }),
-          claimable: formatBalance(claimable, { decimals: 12 }),
-          claimed: formatBalance(data.claimAmount, { decimals: 12 }),
+          total: Number(Utils.formatUnits(total, 12)).toFixed(3),
+          claimable: Number(Utils.formatUnits(claimable, 12)).toFixed(3),
+          claimed: Number(Utils.formatUnits(data.claimAmount, 12)).toFixed(3),
         };
       }
       return null;
@@ -72,7 +73,7 @@ export const RewardsProvider = ({
     [api, currentBlock],
   );
   const claimRewards = useCallback(async () => {
-    if (apiConnected && account) {
+    if (apiConnected && account && !isClaimDisabled) {
       setClaimLoading(true);
       const tx = api.tx.rewards.claim(1);
       const signer = await getSinger(account.address);
@@ -84,7 +85,7 @@ export const RewardsProvider = ({
       });
     }
     setClaimLoading(false);
-  }, [apiConnected, account, getSinger, api]);
+  }, [apiConnected, account, getSinger, api, isClaimDisabled]);
 
   useEffect(() => {
     if (apiConnected && account) {
@@ -105,7 +106,7 @@ export const RewardsProvider = ({
     loading,
     isInitialized: rewards !== null,
     claimRewards,
-    isClaimDisabled: claimLoading || !rewards,
+    isClaimDisabled,
   };
   return (
     <RewardsContext.Provider value={value}>{children}</RewardsContext.Provider>
