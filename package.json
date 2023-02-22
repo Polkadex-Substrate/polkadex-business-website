@@ -11,10 +11,10 @@
     "checkTypes": "tsc --noEmit"
   },
   "dependencies": {
-    "@polkadot/api": "^5.7.1",
-    "@polkadot/extension-dapp": "^0.39.3",
-    "@polkadot/types": "^5.7.1",
-    "@polkadot/util-crypto": "^7.3.1",
+    "@polkadot/api": "^9.14.2",
+    "@polkadot/extension-dapp": "^0.44.9",
+    "@polkadot/types": "^9.14.2",
+    "@polkadot/util-crypto": "^10.4.2",
     "@react-aria/menu": "^3.7.1",
     "@react-aria/utils": "^3.14.2",
     "@react-stately/collections": "^3.5.1",

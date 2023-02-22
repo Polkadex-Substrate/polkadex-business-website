@@ -8,12 +8,12 @@ import 'slick-carousel/slick/slick.css';
 
 import PrivacyPopUp from 'components/PrivacyPopUp';
 import { AppProps } from 'next/app';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { OverlayProvider } from 'react-aria';
 import { ThemeProvider } from 'styled-components';
 import { defaultThemes, GlobalStyles } from 'styles';
 
+import { ApiProvider, WalletProvider } from '../providers';
 import Maintenance from './maintenance';
 
 const maintenance = false;
@@ -37,14 +37,17 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <OverlayProvider>
       <ThemeProvider theme={defaultThemes.dark}>
-        <GlobalStyles />
+        <WalletProvider>
+        <ApiProvider>
+          <GlobalStyles />
         {maintenance ? <Maintenance /> : <Component {...pageProps} />}
         <PrivacyPopUp
           action={handleAccept}
           visible={state}
           link="/"
           description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
-        />
+        /></ApiProvider>
+      </WalletProvider>
       </ThemeProvider>
     </OverlayProvider>
   );
