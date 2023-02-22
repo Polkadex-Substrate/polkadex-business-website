@@ -1,49 +1,29 @@
 import { PrimaryButton } from 'components/Button';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
-import { SubstrateAccount, useWallets } from 'hooks';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
+import { useRewards } from '../../../hooks/useRewards';
+import { useWallet } from '../../../hooks/useWallet';
 import * as S from './styles';
 
-type Data = {
-  totalRewards?: number;
-  claimableRewards?: number;
-  claimedRewards?: number;
-};
 export const Hero = () => {
-  const [state, setState] = useState<Data>({});
-  const [selectedWallet, setSelectedWallet] = useState<SubstrateAccount>();
-  const { wallets } = useWallets();
-
-  const hasData = useMemo(() => !!Object.keys(state)?.length, [state]);
-  const hasSelectedWallet = useMemo(
-    () => !!Object.keys(selectedWallet || {})?.length,
-    [selectedWallet],
-  );
-
+  const { account, allAccounts, setAccount } = useWallet();
+  const {
+    total,
+    claimed,
+    claimable,
+    isInitialized,
+    claimRewards,
+    isClaimDisabled,
+  } = useRewards();
   const shortWallet = useMemo(
     () =>
-      `${selectedWallet?.substrateAddress.slice(
-        0,
-        12,
-      )}...${selectedWallet?.substrateAddress.slice(
-        selectedWallet?.substrateAddress.length - 12,
+      `${account?.address.slice(0, 12)}...${account?.address.slice(
+        account?.address.length - 12,
       )}`,
-    [selectedWallet],
+    [account],
   );
-
-  useEffect(() => {
-    if (hasSelectedWallet) {
-      // ... Fetch data...
-      const randomN = Math.random() * 1000;
-      setState({
-        totalRewards: randomN,
-        claimableRewards: randomN,
-        claimedRewards: 0,
-      });
-    }
-  }, [hasSelectedWallet]);
 
   return (
     <S.Wrapper>
@@ -61,21 +41,21 @@ export const Hero = () => {
         </S.Container>
       </S.Box>
       <S.Content>
-        {!!hasData && (
+        {isInitialized && (
           <S.Information>
             <h3>Your PDEX distribution details</h3>
             <div>
               <S.InformationContainer>
                 <div>
-                  <span>{state?.totalRewards?.toFixed(2)} PDEX</span>
+                  <span>{total} PDEX</span>
                   <p>Total rewards</p>
                 </div>
                 <div>
-                  <span>{state?.claimableRewards?.toFixed(2)} PDEX</span>
+                  <span>{claimable} PDEX</span>
                   <p>Claimable rewards</p>
                 </div>
                 <div>
-                  <span>{state?.claimedRewards?.toFixed(2)} PDEX</span>
+                  <span>{claimed} PDEX</span>
                   <p>Claimed rewards</p>
                 </div>
               </S.InformationContainer>
@@ -87,39 +67,32 @@ export const Hero = () => {
             <Dropdown.Trigger>
               <S.DropdownHeader>
                 <div>
-                  <span>
-                    {hasSelectedWallet
-                      ? selectedWallet.name
-                      : 'Select your wallet'}
-                  </span>
-                  {!!hasSelectedWallet && <p>{shortWallet}</p>}
+                  <span>{account ? account.name : 'Select your wallet'}</span>
+                  {!!account && <p>{shortWallet}</p>}
                 </div>
 
                 <SingleArrowBottom />
               </S.DropdownHeader>
             </Dropdown.Trigger>
             <Dropdown.Menu fill="secondaryBackgroundSolid">
-              {wallets.map((v, i) => {
-                const shortAddress = v?.substrateAddress
-                  ? `${v?.substrateAddress.slice(
-                      0,
-                      4,
-                    )}..${v?.substrateAddress.slice(
-                      v?.substrateAddress.length - 4,
+              {allAccounts.map((v, i) => {
+                const shortAddress = v?.address
+                  ? `${v?.address.slice(0, 4)}..${v?.address.slice(
+                      v?.address.length - 4,
                     )}`
                   : '0x000000';
                 return (
-                  <Dropdown.Item
-                    key={i}
-                    onAction={() => setSelectedWallet(wallets[i])}
-                  >
+                  <Dropdown.Item key={i} onAction={() => setAccount(v.address)}>
                     {v.name} <S.Span> • {shortAddress}</S.Span>
                   </Dropdown.Item>
                 );
               })}
             </Dropdown.Menu>
           </Dropdown>
-          <PrimaryButton content="Claim" />
+          <PrimaryButton
+            onClick={claimRewards}
+            content={isClaimDisabled ? 'Loading' : 'Claim'}
+          />
         </S.Wallet>
       </S.Content>
       <div />

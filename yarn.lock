@@ -1712,6 +1712,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadex/api-wrapper@npm:1.1.35":
+  version: 1.1.35
+  resolution: "@polkadex/api-wrapper@npm:1.1.35"
+  checksum: c16591f6215128d6304ccabaec6cb015f2db11fa19a0940966511050491ae6ca8ac89dd79f059dbfd654118d20e1c3d8649b1f57579c14666ed0616933448ad5
+  languageName: node
+  linkType: hard
+
+"@polkadex/blockchain-api@npm:^1.1.36":
+  version: 1.1.36
+  resolution: "@polkadex/blockchain-api@npm:1.1.36"
+  dependencies:
+    "@polkadex/api-wrapper": 1.1.35
+    "@polkadex/types": 1.1.31
+    "@polkadot/api": ^9.13.4
+    rxjs: ^7.8.0
+  checksum: 5f5d3a9f1539cb258b4212890b6662e27f44009321f07bd5f86fa0a7fa1fb8bcd67fe50c5f080c0061ee110f37c0c9c51d0fafeeb2c9c67d81f09d67d0d86e3b
+  languageName: node
+  linkType: hard
+
+"@polkadex/types@npm:1.1.31":
+  version: 1.1.31
+  resolution: "@polkadex/types@npm:1.1.31"
+  dependencies:
+    "@polkadot/api": ^9.13.4
+    "@polkadot/keyring": ^10.3.1
+    "@polkadot/types": ^9.13.4
+    "@polkadot/util": ^10.3.1
+    "@polkadot/util-crypto": ^10.3.1
+  checksum: 57bec22c95888f179a16b672933cede1b3a3608c6794d93b0e7e3d4c6e1c39defdd11cd569a84086b306176d3c252c255e683d577fb1511ae262fdda2517efef
+  languageName: node
+  linkType: hard
+
 "@polkadot/api-augment@npm:9.14.2":
   version: 9.14.2
   resolution: "@polkadot/api-augment@npm:9.14.2"
@@ -1758,7 +1790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/api@npm:9.14.2, @polkadot/api@npm:^9.14.2":
+"@polkadot/api@npm:9.14.2, @polkadot/api@npm:^9.13.4, @polkadot/api@npm:^9.14.2":
   version: 9.14.2
   resolution: "@polkadot/api@npm:9.14.2"
   dependencies:
@@ -1815,7 +1847,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/keyring@npm:^10.4.2":
+"@polkadot/keyring@npm:^10.3.1, @polkadot/keyring@npm:^10.4.2":
   version: 10.4.2
   resolution: "@polkadot/keyring@npm:10.4.2"
   dependencies:
@@ -1949,7 +1981,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:9.14.2, @polkadot/types@npm:^9.14.2":
+"@polkadot/types@npm:9.14.2, @polkadot/types@npm:^9.13.4, @polkadot/types@npm:^9.14.2":
   version: 9.14.2
   resolution: "@polkadot/types@npm:9.14.2"
   dependencies:
@@ -1965,7 +1997,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/util-crypto@npm:10.4.2, @polkadot/util-crypto@npm:^10.4.2":
+"@polkadot/util-crypto@npm:10.4.2, @polkadot/util-crypto@npm:^10.3.1, @polkadot/util-crypto@npm:^10.4.2":
   version: 10.4.2
   resolution: "@polkadot/util-crypto@npm:10.4.2"
   dependencies:
@@ -1986,7 +2018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/util@npm:10.4.2, @polkadot/util@npm:^10.4.2":
+"@polkadot/util@npm:10.4.2, @polkadot/util@npm:^10.3.1, @polkadot/util@npm:^10.4.2":
   version: 10.4.2
   resolution: "@polkadot/util@npm:10.4.2"
   dependencies:
@@ -10479,6 +10511,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.15.8
     "@babel/preset-typescript": ^7.15.0
+    "@polkadex/blockchain-api": ^1.1.36
     "@polkadot/api": ^9.14.2
     "@polkadot/extension-dapp": ^0.44.9
     "@polkadot/types": ^9.14.2
@@ -10529,7 +10562,7 @@ __metadata:
     styled-components: ^5.3.1
     styled-system: ^5.1.5
     swiper: ^8.3.2
-    typescript: ^4.4.3
+    typescript: ^4.5.4
     typewriter-effect: ^2.18.2
     web3: ^1.7.0
   languageName: unknown
@@ -12540,23 +12573,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.4.3":
-  version: 4.4.3
-  resolution: "typescript@npm:4.4.3"
+"typescript@npm:^4.5.4":
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 05823f21796d450531a7e4ab299715d38fd9ded0e4ce7400876053f4b5166ca3dde7a68cecfe72d9086039f03c0b6edba36516fb10ed83c5837d9600532ea4c2
+  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
-  version: 4.4.3
-  resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=bbeadb"
+"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 33a916819907e819430802c50405f18c187448d678696a81545f494a7ec16207f8c15340c945df62109bd1d951091a9f15f3d2eb931a3c889f962c8509017697
+  checksum: 8f6260acc86b56bfdda6004bc53f32ea548f543e8baef7071c8e34d29d292f3e375c8416556c8de10b24deef6933cd1c16a8233dc84a3dd43a13a13265d0faab
   languageName: node
   linkType: hard
 

@@ -1,22 +1,32 @@
+import { signAndSubmitPromiseWrapper } from '@polkadex/blockchain-api';
+import { formatBalance } from '@polkadot/util';
 import React, { createContext, useCallback, useEffect } from 'react';
 
 import { useApi } from '../hooks';
+import { useWallet } from '../hooks/useWallet';
 
-interface Rewards {
-  claimable: string;
-  claimed: string;
-  total: string;
+interface RewardsQueryResult {
+  claimAmount: string | number;
+  totalRewardAmount: string | number;
+  factor: string | number;
+  initialRewardsClaimable: string | number;
+  isInitialRewardsClaimed: boolean;
+  isInitialized: boolean;
+  lastBlockRewardsClaim: string | number;
 }
 
-const initialRewardsState: Rewards = {
-  claimable: '0',
-  claimed: '0',
-  total: '0',
-};
+interface Rewards {
+  total: string;
+  claimable: string;
+  claimed: string;
+}
 
 export interface RewardsCtx extends Rewards {
   loading: boolean;
-  fetchRewards: () => void;
+  isClaimDisabled: boolean;
+  isInitialized: boolean;
+  fetchRewards: (address: string) => Promise<Rewards>;
+  claimRewards: () => Promise<void>;
 }
 
 export const RewardsContext = createContext<RewardsCtx>({} as RewardsCtx);
@@ -24,25 +34,79 @@ export const RewardsContext = createContext<RewardsCtx>({} as RewardsCtx);
 export const RewardsProvider = ({
   children,
 }: React.PropsWithChildren<unknown>) => {
-  const { api, success } = useApi();
-  const [rewards, setRewards] = React.useState<Rewards>(initialRewardsState);
+  const { api, success: apiConnected, currentBlock } = useApi();
+  const { getSinger } = useWallet();
+  const [rewards, setRewards] = React.useState<Rewards | null>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
+  const [claimLoading, setClaimLoading] = React.useState<boolean>(false);
+  const { account } = useWallet();
 
-  const fetchRewards = useCallback(async (): Promise<Rewards> => {
-    setLoading(true);
-    const res = await api.query.rewards.distributor(1, 'account.address');
-    return res.toJSON() as unknown as Rewards;
-  }, [api]);
+  /**
+   * Retrieves rewards for a given address using the provided api object and current block number.
+   * @param {string} address - The address to retrieve rewards for.
+   * @returns {Promise<Rewards | null>} - A Promise that resolves to an object containing information on the rewards for the provided address, or null if no data was retrieved.
+   * */
+  const fetchRewards = useCallback(
+    async (address: string): Promise<Rewards | null> => {
+      setLoading(true);
+      const res = await api.query.rewards.distributor(1, address);
+      const data = res.toJSON() as unknown as RewardsQueryResult | null;
+      if (data) {
+        const total =
+          BigInt(data.totalRewardAmount) + BigInt(data.initialRewardsClaimable);
+        const blocksTillNow = currentBlock - Number(data.lastBlockRewardsClaim);
+        const amountTillNow =
+          BigInt(data.factor) * BigInt(blocksTillNow) +
+          BigInt(data.initialRewardsClaimable);
+        const claimable = data.isInitialRewardsClaimed
+          ? amountTillNow - BigInt(data.initialRewardsClaimable)
+          : amountTillNow;
+        return {
+          total: formatBalance(total, { decimals: 12 }),
+          claimable: formatBalance(claimable, { decimals: 12 }),
+          claimed: formatBalance(data.claimAmount, { decimals: 12 }),
+        };
+      }
+      return null;
+    },
+    [api, currentBlock],
+  );
+  const claimRewards = useCallback(async () => {
+    if (apiConnected && account) {
+      setClaimLoading(true);
+      const tx = api.tx.rewards.claim(1);
+      const signer = await getSinger(account.address);
+      await signAndSubmitPromiseWrapper({
+        tx,
+        address: account.address,
+        signer,
+        criteria: 'IS_FINALIZED',
+      });
+    }
+    setClaimLoading(false);
+  }, [apiConnected, account, getSinger, api]);
 
   useEffect(() => {
-    if (success)
-      fetchRewards().then((data) => {
+    if (apiConnected && account) {
+      fetchRewards(account.address).then((data) => {
+        if (!data) {
+          setRewards(null);
+          return;
+        }
         setRewards(data);
         setLoading(false);
       });
-  }, [success, api, fetchRewards]);
+    }
+  }, [apiConnected, fetchRewards, account]);
 
-  const value = { ...rewards, fetchRewards, loading };
+  const value = {
+    ...rewards,
+    fetchRewards,
+    loading,
+    isInitialized: rewards !== null,
+    claimRewards,
+    isClaimDisabled: claimLoading || !rewards,
+  };
   return (
     <RewardsContext.Provider value={value}>{children}</RewardsContext.Provider>
   );

@@ -7,12 +7,11 @@ interface Web3Account {
 }
 
 interface StoreState {
-  account: Web3Account | null;
+  account?: Web3Account;
   allAccounts: Web3Account[];
   loading: boolean;
 }
 const initialState: StoreState = {
-  account: null,
   allAccounts: [],
   loading: false,
 };
@@ -55,7 +54,7 @@ export const WalletProvider = ({
     connectWallet().then(() =>
       setState((prevState) => ({ ...prevState, loading: false })),
     );
-  }, []);
+  }, [connectWallet]);
 
   useEffect(() => {
     let sub;

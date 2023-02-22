@@ -11,6 +11,7 @@
     "checkTypes": "tsc --noEmit"
   },
   "dependencies": {
+    "@polkadex/blockchain-api": "^1.1.36",
     "@polkadot/api": "^9.14.2",
     "@polkadot/extension-dapp": "^0.44.9",
     "@polkadot/types": "^9.14.2",
@@ -67,7 +68,7 @@
     "plop": "^2.7.4",
     "prettier": "^2.4.1",
     "react-stately": "^3.20.0",
-    "typescript": "^4.4.3"
+    "typescript": "^4.5.4"
   },
   "resolutions": {
     "json-schema": "^0.4.0",

@@ -1,5 +1,11 @@
 import { Template } from 'components/Rewards';
 
-export const Rewards = () => <Template />;
+import { RewardsProvider } from '../providers';
+
+export const Rewards = () => (
+  <RewardsProvider>
+    <Template />
+  </RewardsProvider>
+);
 
 export default Rewards;
