@@ -36,6 +36,7 @@ const initialState: StoreState = {
 export interface ApiCtx extends StoreState {
   connectToApi: () => void;
 }
+
 export const ApiContext = createContext<ApiCtx>({} as ApiCtx);
 
 function apiReducer(state: StoreState, action: ActionType): StoreState {
@@ -57,11 +58,10 @@ function apiReducer(state: StoreState, action: ActionType): StoreState {
 
 export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const [state, dispatch] = React.useReducer(apiReducer, initialState);
-
   const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider('ws://localhost:9944');
+      const provider = new WsProvider('wss://mainnet.polkadex.trade');
       const api = new ApiPromise({ provider });
       await api.isReady;
       dispatch({ type: API_DATA, payload: api });
@@ -71,7 +71,7 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   }, []);
 
   if (!!state && !state.api && !state.loading) {
-    connectToApi().then(console.log);
+    connectToApi();
   }
 
   const value = { ...state, connectToApi };
