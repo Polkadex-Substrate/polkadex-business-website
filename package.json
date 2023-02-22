@@ -16,6 +16,7 @@
     "@polkadot/api": "^9.14.2",
     "@polkadot/extension-dapp": "^0.44.9",
     "@polkadot/types": "^9.14.2",
+    "@polkadot/util": "^10.4.2",
     "@polkadot/util-crypto": "^10.4.2",
     "@react-aria/menu": "^3.7.1",
     "@react-aria/utils": "^3.14.2",

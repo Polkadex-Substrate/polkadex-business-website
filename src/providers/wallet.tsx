@@ -1,4 +1,5 @@
 import { Signer } from '@polkadot/types/types';
+import { encodeAddress } from '@polkadot/util-crypto';
 import React, { useCallback, useEffect, useState } from 'react';
 
 interface Web3Account {
@@ -63,7 +64,7 @@ export const WalletProvider = ({
         sub = web3AccountsSubscribe((accounts) => {
           const allAccounts: Web3Account[] = accounts.map(
             ({ address, meta }) => ({
-              address,
+              address: encodeAddress(address, 88),
               name: meta.name,
             }),
           );

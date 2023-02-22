@@ -122,7 +122,7 @@ export const RewardsProvider = ({
     ...rewards,
     fetchRewards,
     loading,
-    doesAccountHaveRewards: rewards !== null,
+    doesAccountHaveRewards: rewards !== null, // account should be present in csv
     isInitialized,
     claimRewards,
     initiateClaim,
