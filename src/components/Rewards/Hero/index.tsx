@@ -15,6 +15,8 @@ export const Hero = () => {
     claimable,
     isInitialized,
     claimRewards,
+    initiateClaim,
+    doesAccountHaveRewards,
     isClaimDisabled,
   } = useRewards();
   const shortWallet = useMemo(
@@ -41,7 +43,7 @@ export const Hero = () => {
         </S.Container>
       </S.Box>
       <S.Content>
-        {isInitialized && (
+        {doesAccountHaveRewards && (
           <S.Information>
             <h3>Your PDEX distribution details</h3>
             <div>
@@ -91,8 +93,8 @@ export const Hero = () => {
           </Dropdown>
           <PrimaryButton
             disabled={isClaimDisabled}
-            onClick={claimRewards}
-            content="Claim"
+            onClick={isInitialized ? claimRewards : initiateClaim}
+            content={isInitialized ? 'Claim' : 'Initiate Claim'}
           />
         </S.Wallet>
       </S.Content>

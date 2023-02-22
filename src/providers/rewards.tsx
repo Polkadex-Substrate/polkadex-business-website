@@ -27,6 +27,8 @@ export interface RewardsCtx extends Rewards {
   isInitialized: boolean;
   fetchRewards: (address: string) => Promise<Rewards>;
   claimRewards: () => Promise<void>;
+  initiateClaim: () => Promise<void>;
+  doesAccountHaveRewards: boolean;
 }
 
 export const RewardsContext = createContext<RewardsCtx>({} as RewardsCtx);
@@ -39,6 +41,7 @@ export const RewardsProvider = ({
   const [rewards, setRewards] = React.useState<Rewards | null>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [claimLoading, setClaimLoading] = React.useState<boolean>(false);
+  const [isInitialized, setIsInitialized] = React.useState<boolean>(false);
   const { account } = useWallet();
   const isClaimDisabled =
     claimLoading || !rewards || Number(rewards?.claimable || 0) <= 1;
@@ -53,6 +56,7 @@ export const RewardsProvider = ({
       const res = await api.query.rewards.distributor(1, address);
       const data = res.toJSON() as unknown as RewardsQueryResult | null;
       if (data) {
+        setIsInitialized(data.isInitialized);
         const total =
           BigInt(data.totalRewardAmount) + BigInt(data.initialRewardsClaimable);
         const blocksTillNow = currentBlock - Number(data.lastBlockRewardsClaim);
@@ -68,6 +72,7 @@ export const RewardsProvider = ({
           claimed: Number(Utils.formatUnits(data.claimAmount, 12)).toFixed(3),
         };
       }
+      setIsInitialized(false);
       return null;
     },
     [api, currentBlock],
@@ -87,6 +92,19 @@ export const RewardsProvider = ({
     setClaimLoading(false);
   }, [apiConnected, account, getSinger, api, isClaimDisabled]);
 
+  const initiateClaim = useCallback(async () => {
+    if (apiConnected && account) {
+      const tx = api.tx.rewards.initializeClaimRewards(1);
+      const signer = await getSinger(account.address);
+      await signAndSubmitPromiseWrapper({
+        tx,
+        address: account.address,
+        signer,
+        criteria: 'IS_FINALIZED',
+      });
+    }
+  }, [apiConnected, account, getSinger, api]);
+
   useEffect(() => {
     if (apiConnected && account) {
       fetchRewards(account.address).then((data) => {
@@ -104,8 +122,10 @@ export const RewardsProvider = ({
     ...rewards,
     fetchRewards,
     loading,
-    isInitialized: rewards !== null,
+    doesAccountHaveRewards: rewards !== null,
+    isInitialized,
     claimRewards,
+    initiateClaim,
     isClaimDisabled,
   };
   return (
