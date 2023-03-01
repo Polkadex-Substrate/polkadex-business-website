@@ -2,10 +2,17 @@ import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter, Table } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
+import dynamic from 'next/dynamic';
 
 import * as S from './styles';
 
 export const Template = () => {
+  const Table = dynamic(
+    () => import('components/v2/Table').then((mod) => mod.Table),
+    {
+      ssr: false,
+    },
+  );
   return (
     <>
       <Script
