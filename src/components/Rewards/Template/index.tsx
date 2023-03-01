@@ -1,5 +1,5 @@
 import { Hero } from 'components/Rewards';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { Footer, Header, Newsletter, Table } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 
@@ -48,6 +48,7 @@ export const Template = () => {
         />
         <main>
           <Hero />
+          <Table />
           <Newsletter />
         </main>
         <Footer />
