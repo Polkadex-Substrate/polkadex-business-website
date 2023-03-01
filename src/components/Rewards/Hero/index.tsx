@@ -1,14 +1,15 @@
 import { PrimaryButton } from 'components/Button';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 import { useRewards } from '../../../hooks/useRewards';
 import { useWallet } from '../../../hooks/useWallet';
 import * as S from './styles';
 
 export const Hero = () => {
-  const { account, allAccounts, setAccount } = useWallet();
+  const { account, allAccounts, setAccount, isInjected } = useWallet();
+  const [extensionInstalled, setExtensionInstalled] = useState(true);
   const {
     total,
     claimed,
@@ -65,46 +66,54 @@ export const Hero = () => {
           </S.Information>
         )}
         <S.Wallet>
-          <Dropdown>
-            <Dropdown.Trigger>
-              <S.DropdownHeader>
-                <div>
-                  <span>{account ? account.name : 'Select your wallet'}</span>
-                  {!!account && <p>{shortWallet}</p>}
-                </div>
+          {isInjected ? (
+            <>
+              <Dropdown>
+                <Dropdown.Trigger>
+                  <S.DropdownHeader>
+                    <div>
+                      <span>
+                        {account ? account.name : 'Select your wallet'}
+                      </span>
+                      {!!account && <p>{shortWallet}</p>}
+                    </div>
 
-                <SingleArrowBottom />
-              </S.DropdownHeader>
-            </Dropdown.Trigger>
-            <Dropdown.Menu fill="secondaryBackgroundSolid">
-              {allAccounts.length >= 1 ? (
-                allAccounts.map((v, i) => {
-                  const shortAddress = v?.address
-                    ? `${v?.address.slice(0, 4)}..${v?.address.slice(
-                        v?.address.length - 4,
-                      )}`
-                    : '0x000000';
-                  return (
-                    <Dropdown.Item
-                      key={i}
-                      onAction={() => setAccount(v.address)}
-                    >
-                      {v.name} <S.Span> • {shortAddress}</S.Span>
+                    <SingleArrowBottom />
+                  </S.DropdownHeader>
+                </Dropdown.Trigger>
+                <Dropdown.Menu fill="secondaryBackgroundSolid">
+                  {allAccounts.length >= 1 ? (
+                    allAccounts.map((v, i) => {
+                      const shortAddress = v?.address
+                        ? `${v?.address.slice(0, 4)}..${v?.address.slice(
+                            v?.address.length - 4,
+                          )}`
+                        : '0x000000';
+                      return (
+                        <Dropdown.Item
+                          key={i}
+                          onAction={() => setAccount(v.address)}
+                        >
+                          {v.name} <S.Span> • {shortAddress}</S.Span>
+                        </Dropdown.Item>
+                      );
+                    })
+                  ) : (
+                    <Dropdown.Item>
+                      <S.Span> No accounts available</S.Span>
                     </Dropdown.Item>
-                  );
-                })
-              ) : (
-                <Dropdown.Item>
-                  <S.Span> No accounts available</S.Span>
-                </Dropdown.Item>
-              )}
-            </Dropdown.Menu>
-          </Dropdown>
-          <PrimaryButton
-            disabled={isClaimDisabled}
-            onClick={isInitialized ? claimRewards : initiateClaim}
-            content={isInitialized ? 'Claim' : 'Initiate Claim'}
-          />
+                  )}
+                </Dropdown.Menu>
+              </Dropdown>
+              <PrimaryButton
+                disabled={isClaimDisabled}
+                onClick={isInitialized ? claimRewards : initiateClaim}
+                content={isInitialized ? 'Claim' : 'Initiate Claim'}
+              />
+            </>
+          ) : (
+            <div> Polkdot.js extension is not installed</div>
+          )}
         </S.Wallet>
       </S.Content>
       <div />

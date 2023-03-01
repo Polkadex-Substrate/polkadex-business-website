@@ -25,6 +25,6 @@ export const Heading = styled.tr`
   }
 `;
 export const Row = styled.td`
-  border: 1px solid rgba(139, 161, 190, 0.1);
+  border: 1px solid rgba(139, 161, 190, 0.2);
   padding: 1rem 2rem;
 `;
