@@ -77,18 +77,27 @@ export const Hero = () => {
               </S.DropdownHeader>
             </Dropdown.Trigger>
             <Dropdown.Menu fill="secondaryBackgroundSolid">
-              {allAccounts.map((v, i) => {
-                const shortAddress = v?.address
-                  ? `${v?.address.slice(0, 4)}..${v?.address.slice(
-                      v?.address.length - 4,
-                    )}`
-                  : '0x000000';
-                return (
-                  <Dropdown.Item key={i} onAction={() => setAccount(v.address)}>
-                    {v.name} <S.Span> • {shortAddress}</S.Span>
-                  </Dropdown.Item>
-                );
-              })}
+              {allAccounts.length >= 1 ? (
+                allAccounts.map((v, i) => {
+                  const shortAddress = v?.address
+                    ? `${v?.address.slice(0, 4)}..${v?.address.slice(
+                        v?.address.length - 4,
+                      )}`
+                    : '0x000000';
+                  return (
+                    <Dropdown.Item
+                      key={i}
+                      onAction={() => setAccount(v.address)}
+                    >
+                      {v.name} <S.Span> • {shortAddress}</S.Span>
+                    </Dropdown.Item>
+                  );
+                })
+              ) : (
+                <Dropdown.Item>
+                  <S.Span> No accounts available</S.Span>
+                </Dropdown.Item>
+              )}
             </Dropdown.Menu>
           </Dropdown>
           <PrimaryButton
