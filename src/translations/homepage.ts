@@ -352,7 +352,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Junior Rust Engineer',
+        title: 'Rust Engineer',
         name: 'Nakul Amate',
         image: 'nakulPhotography',
         socialMedia: [
@@ -367,7 +367,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Junior Rust Engineer',
+        title: 'Rust Engineer',
         name: 'Faisal Ahmed',
         image: 'faisalPhotography',
         socialMedia: [
