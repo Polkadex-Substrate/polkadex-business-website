@@ -472,7 +472,7 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: -1,
+            distance: -6,
           },
           vertical: {
             side: 'top',
@@ -480,6 +480,8 @@ const ENLanguage = {
           },
         },
         items: [
+          { title: 'Integration with Trading Bots and Market Makers' },
+          { title: 'Bridge with ETH and Polygon' },
           { title: 'Code Audit of Solochain, Orderbook' },
           { title: 'Crowdloan Rewards (Early Q2)' },
           { title: 'Mobile App Mainnet (Early Q2)' },
@@ -503,7 +505,6 @@ const ENLanguage = {
         items: [
           {
             title: 'Thea Bridge with Polkadot - Internal Testnet',
-            status: false,
           },
           { title: 'XCM Channels with Parachain - Testnet' },
           {
@@ -519,11 +520,11 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 13,
+            distance: 22,
           },
           vertical: {
             side: 'top',
-            distance: 20,
+            distance: 25,
           },
         },
         items: [
