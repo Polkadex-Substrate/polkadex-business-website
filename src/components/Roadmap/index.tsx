@@ -32,6 +32,8 @@ const Roadmap = ({
           invert={item.invert}
           position={item.position}
           content={item.items}
+          soon={item.soon}
+          active={item.active}
         />
       ))}
     </S.RoadContainer>

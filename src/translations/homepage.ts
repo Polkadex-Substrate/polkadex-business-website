@@ -448,6 +448,7 @@ const ENLanguage = {
       {
         title: 'Q3 2023',
         alignRight: false,
+        soon: true,
         position: {
           horizontal: {
             side: 'left',
@@ -467,10 +468,11 @@ const ENLanguage = {
         title: 'Q2 2023',
         invert: true,
         alignRight: true,
+        soon: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: -3,
+            distance: -1,
           },
           vertical: {
             side: 'top',
@@ -478,20 +480,20 @@ const ENLanguage = {
           },
         },
         items: [
-          {
-            title: 'Integration with Trading Bots and Market Makers',
-            status: false,
-          },
-          { title: 'Bridge with ETH and Polygon', status: false },
+          { title: 'Code Audit of Solochain, Orderbook' },
+          { title: 'Crowdloan Rewards (Early Q2)' },
+          { title: 'Mobile App Mainnet (Early Q2)' },
+          { title: 'Bridge with Polkadot - Mainnet' },
         ],
       },
       {
         title: 'Q1 2023',
         alignRight: false,
+        active: true,
         position: {
           horizontal: {
             side: 'right',
-            distance: 24,
+            distance: 20,
           },
           vertical: {
             side: 'top',
@@ -499,13 +501,15 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Crowdloan Rewards Distribution' },
-          { title: 'Mobile App Mainnet' },
           {
-            title: 'Bug Bounty Program',
+            title: 'Thea Bridge with Polkadot - Internal Testnet',
             status: false,
           },
-          { title: 'Bridge with Polkadot and Kusama', status: false },
+          { title: 'XCM Channels with Parachain - Testnet' },
+          {
+            title: 'Code Audit of Parachain & Thea',
+          },
+          { title: 'Crowdloan Rewards Pallet - Awaiting Audit' },
         ],
       },
       {

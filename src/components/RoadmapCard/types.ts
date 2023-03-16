@@ -12,6 +12,8 @@ type Props = {
   content: Item[];
   alignRight?: boolean;
   invert?: boolean;
+  active?: boolean;
+  soon?: boolean;
   position: {
     horizontal: { side: 'left' | 'right' | string; distance: number };
     vertical: { side: 'top' | 'bottom' | string; distance: number };
