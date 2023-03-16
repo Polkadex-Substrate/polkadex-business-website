@@ -480,12 +480,12 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Integration with Trading Bots and Market Makers' },
-          { title: 'Bridge with ETH and Polygon' },
           { title: 'Code Audit of Solochain, Orderbook' },
           { title: 'Crowdloan Rewards (Early Q2)' },
           { title: 'Mobile App Mainnet (Early Q2)' },
           { title: 'Bridge with Polkadot - Mainnet' },
+          { title: 'Integration with Trading Bots and Market Makers' },
+          { title: 'Bridge with ETH and Polygon' },
         ],
       },
       {
