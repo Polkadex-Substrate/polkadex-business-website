@@ -1,18 +1,12 @@
+import { Icon } from 'components/Icon';
 import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter, Table } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
-import dynamic from 'next/dynamic';
 
 import * as S from './styles';
 
 export const Template = () => {
-  const Table = dynamic(
-    () => import('components/v2/Table').then((mod) => mod.Table),
-    {
-      ssr: false,
-    },
-  );
   return (
     <>
       <Script
@@ -54,6 +48,14 @@ export const Template = () => {
           }}
         />
         <main>
+          <S.Message
+            rel="noreferrer"
+            target="_blank"
+            href="https://polkadex.medium.com/"
+          >
+            <div>📚 See tutorial on how to stake the received rewards</div>
+            <Icon name="ArrowRight" background="none" />
+          </S.Message>
           <Hero />
           <Table />
           <Newsletter />

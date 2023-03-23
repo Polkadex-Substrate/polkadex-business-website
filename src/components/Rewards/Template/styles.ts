@@ -88,3 +88,47 @@ export const TermsContainer = styled.div`
     }
   `}
 `;
+
+export const Message = styled.a`
+  ${({ theme }) => css`
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    background: ${theme.colors.gradient};
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    margin-bottom: -1.5rem;
+    transition: transform 0.1s ease-in;
+    font-weight: 500;
+    :hover {
+      transform: translateY(0.4rem);
+    }
+    svg {
+      width: 1rem;
+      height: 1rem;
+      animation: bounce 2.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(0);
+      }
+      40% {
+        transform: translateX(-10px);
+      }
+      60% {
+        transform: translateX(-5px);
+      }
+    }
+  `}
+`;
