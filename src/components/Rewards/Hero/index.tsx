@@ -106,6 +106,7 @@ export const Hero = () => {
                 </Dropdown.Menu>
               </Dropdown>
               <PrimaryButton
+                className="selectWallet"
                 disabled={isClaimDisabled}
                 onClick={isInitialized ? claimRewards : initiateClaim}
                 content={isInitialized ? 'Claim' : 'Initiate Claim'}
