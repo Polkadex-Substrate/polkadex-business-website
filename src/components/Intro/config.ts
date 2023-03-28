@@ -7,7 +7,6 @@ export const defaultStyles = {
   }),
   badge: (e: any) => ({
     ...e,
-    background: 'var(--semi-color-primary)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

@@ -9,12 +9,22 @@ export const Container = styled(Flex)`
   flex-direction: column;
   gap: 1rem;
   h6 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
     font-weight: 550;
   }
   p {
-    line-height: 1.5;
+    line-height: 1.6;
     opacity: 0.9;
+  }
+  img {
+    width: 100%;
+  }
+  div {
+    padding: 2.5rem 2.5rem 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 `;
 export const Wrapper = styled.div`
@@ -23,8 +33,7 @@ export const Wrapper = styled.div`
     gap: 2rem;
     flex-direction: column;
     background: ${theme.colors.secondaryBackgroundSolid};
-    border-radius: 1rem;
-    padding: 2rem;
+    border-radius: 2rem;
   `}
 `;
 
@@ -50,6 +59,7 @@ export const FlexActions = styled(Flex)`
   ${({ theme }) => css`
     justify-content: space-between;
     align-items: center;
+    padding: 0 2.5rem 2.5rem 2.5rem;
   `}
 `;
 export const Button = styled.button`

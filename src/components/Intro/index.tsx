@@ -1,12 +1,6 @@
-import {
-  PopoverContentProps,
-  StepType,
-  TourProvider,
-  useTour,
-} from '@reactour/tour';
+import { PopoverContentProps, StepType, TourProvider } from '@reactour/tour';
 import { useRewards } from 'hooks/useRewards';
 import { useWallet } from 'hooks/useWallet';
-import Link from 'next/link';
 import React, {
   ReactNode,
   useCallback,
@@ -22,19 +16,21 @@ import * as S from './styles';
 const initialState = process.browser && localStorage.getItem(DEFAULTINTRONAME);
 
 export function Intro({ children }: { children: ReactNode }) {
-  const { isInjected } = useWallet();
   const steps: StepType[] = useMemo(
     () => [
       {
         selector: '.start',
         content: (
           <S.Container>
-            <h6>Verify and Withdraw Your Reward</h6>
-            <p>
-              Discover how to verify and withdraw your rewards with our
-              easy-to-follow guide. Learn the steps to ensure you receive your
-              well-deserved rewards.
-            </p>
+            <img src="/img/tutorialHero.svg" alt="Teacher illutration" />
+            <div>
+              <h6>Step-by-step: Verify and withdraw your reward</h6>
+              <p>
+                Discover how to verify and withdraw your rewards with our
+                easy-to-follow guide. Learn the steps to ensure you receive your
+                well-deserved rewards.
+              </p>
+            </div>
           </S.Container>
         ),
         position: 'center',
@@ -44,24 +40,13 @@ export function Intro({ children }: { children: ReactNode }) {
         selector: '.selectWallet',
         content: (
           <S.Container>
-            <h6>
-              {isInjected ? '1. Select a wallet' : 'Oops, no accounts detected'}
-            </h6>
-            <p>
-              {isInjected ? (
-                ' These are the available wallets. For now, you can only connect your wallet using Polkadot.js extension.'
-              ) : (
-                <>
-                  It seems like you either don&rsquo;t have an account on
-                  Polkadot.js or don&rsquo;t have Polkadot.js installed. Create
-                  one using the{' '}
-                  <Link href="https://polkadot.js.org/extension/">
-                    Polkadot.js extension
-                  </Link>
-                  .
-                </>
-              )}
-            </p>
+            <div>
+              <h6>1. Select a wallet</h6>
+              <p>
+                These are the available wallets. For now, you can only connect
+                your wallet using Polkadot.js extension.
+              </p>
+            </div>
           </S.Container>
         ),
         position: 'bottom',
@@ -72,12 +57,14 @@ export function Intro({ children }: { children: ReactNode }) {
         selector: '.initiateButton',
         content: (
           <S.Container>
-            <h6>2. Initiate Your Claim to Check for Available Rewards</h6>
-            <p>
-              Click on the ‘Initiate Claim’ button to see if your wallet has any
-              available rewards. Don’t miss out on the opportunity to claim your
-              well-deserved rewards. .
-            </p>
+            <div>
+              <h6>2. Initiate Your Claim to Check for Available Rewards</h6>
+              <p>
+                Click on the ‘Initiate Claim’ button to see if your wallet has
+                any available rewards. Don’t miss out on the opportunity to
+                claim your well-deserved rewards. .
+              </p>
+            </div>
           </S.Container>
         ),
         position: 'bottom',
@@ -88,12 +75,31 @@ export function Intro({ children }: { children: ReactNode }) {
         selector: '.availableRewards',
         content: (
           <S.Container>
-            <h6>3. Your Available Rewards from This Wallet</h6>
-            <p>
-              Check out the rewards that are currently available to you from
-              this wallet. Don’t miss out on the opportunity to claim your
-              well-deserved rewards.
-            </p>
+            <div>
+              <h6>3. Your Available Rewards from This Wallet</h6>
+              <p>
+                Check out the rewards that are currently available to you from
+                this wallet. Don’t miss out on the opportunity to claim your
+                well-deserved rewards.
+              </p>
+            </div>
+          </S.Container>
+        ),
+        position: 'bottom',
+        styles: defaultStyles,
+        disableActions: true,
+      },
+      {
+        selector: '.initiateButton',
+        content: (
+          <S.Container>
+            <div>
+              <h6>4. Claim your rewards now!</h6>
+              <p>
+                Don’t miss out on the opportunity to claim your rewards. Click
+                on the ‘Initiate Claim’.
+              </p>
+            </div>
           </S.Container>
         ),
         position: 'bottom',
@@ -104,12 +110,14 @@ export function Intro({ children }: { children: ReactNode }) {
         selector: '.latestRewards',
         content: (
           <S.Container>
-            <h6>Latest Rewards Distributed</h6>
-            <p>
-              Check out the latest rewards that have been distributed. See if
-              you’re eligible to claim any of these rewards and don’t miss out
-              on the opportunity to receive your well-deserved rewards.
-            </p>
+            <div>
+              <h6>Latest Rewards Distributed</h6>
+              <p>
+                Check out the latest rewards that have been distributed. See if
+                you’re eligible to claim any of these rewards and don’t miss out
+                on the opportunity to receive your well-deserved rewards.
+              </p>
+            </div>
           </S.Container>
         ),
         position: 'bottom',
@@ -117,7 +125,7 @@ export function Intro({ children }: { children: ReactNode }) {
         disableActions: true,
       },
     ],
-    [isInjected],
+    [],
   );
 
   return (
@@ -146,12 +154,13 @@ const ContentComponent = (props: PopoverContentProps) => {
   }, [state]);
 
   useEffect(() => {
-    if (account) setInterval(() => setCurrentStep(2), 300);
-  }, [account, setCurrentStep]);
+    if (account && currentStep === 1) setInterval(() => setCurrentStep(2), 300);
+  }, [account, setCurrentStep, currentStep]);
 
   useEffect(() => {
-    if (doesAccountHaveRewards) setInterval(() => setCurrentStep(3), 300);
-  }, [doesAccountHaveRewards, setCurrentStep]);
+    if (doesAccountHaveRewards && currentStep === 2)
+      setInterval(() => setCurrentStep(3), 300);
+  }, [doesAccountHaveRewards, setCurrentStep, currentStep]);
 
   return (
     <S.Wrapper>

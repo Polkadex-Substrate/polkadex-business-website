@@ -44,7 +44,7 @@ export const Hero = () => {
       </S.Box>
       <S.Content>
         {doesAccountHaveRewards && (
-          <S.Information>
+          <S.Information className="availableRewards">
             <h3>Your PDEX distribution details</h3>
             <div>
               <S.InformationContainer>
