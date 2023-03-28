@@ -1,7 +1,7 @@
 import { PrimaryButton } from 'components/Button';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { useRewards } from '../../../hooks/useRewards';
 import { useWallet } from '../../../hooks/useWallet';
@@ -9,7 +9,6 @@ import * as S from './styles';
 
 export const Hero = () => {
   const { account, allAccounts, setAccount, isInjected } = useWallet();
-  const [extensionInstalled, setExtensionInstalled] = useState(true);
   const {
     total,
     claimed,
@@ -70,7 +69,10 @@ export const Hero = () => {
             <>
               <Dropdown>
                 <Dropdown.Trigger>
-                  <S.DropdownHeader>
+                  <S.DropdownHeader
+                    isSelected={!!account}
+                    className="selectWallet"
+                  >
                     <div>
                       <span>
                         {account ? account.name : 'Select your wallet'}
@@ -106,7 +108,7 @@ export const Hero = () => {
                 </Dropdown.Menu>
               </Dropdown>
               <PrimaryButton
-                className="selectWallet"
+                className="initiateButton"
                 disabled={isClaimDisabled}
                 onClick={isInitialized ? claimRewards : initiateClaim}
                 content={isInitialized ? 'Claim' : 'Initiate Claim'}
