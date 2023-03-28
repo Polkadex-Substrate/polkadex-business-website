@@ -4,17 +4,25 @@ import {
   TourProvider,
   useTour,
 } from '@reactour/tour';
+import { useRewards } from 'hooks/useRewards';
+import { useWallet } from 'hooks/useWallet';
 import Link from 'next/link';
-import React, { ReactNode, useCallback, useMemo, useState } from 'react';
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 import { defaultStyles } from './config';
 import { DEFAULTINTRONAME } from './contants';
 import * as S from './styles';
 
-const initialState = localStorage.getItem(DEFAULTINTRONAME);
+const initialState = process.browser && localStorage.getItem(DEFAULTINTRONAME);
 
 export function Intro({ children }: { children: ReactNode }) {
-  const hasExtension = false;
+  const { isInjected } = useWallet();
   const steps: StepType[] = useMemo(
     () => [
       {
@@ -36,10 +44,23 @@ export function Intro({ children }: { children: ReactNode }) {
         selector: '.selectWallet',
         content: (
           <S.Container>
-            <h6>1. Select a wallet</h6>
+            <h6>
+              {isInjected ? '1. Select a wallet' : 'Oops, no accounts detected'}
+            </h6>
             <p>
-              These are the available wallets. For now, you can only connect
-              your wallet using Polkadot.js extension.
+              {isInjected ? (
+                ' These are the available wallets. For now, you can only connect your wallet using Polkadot.js extension.'
+              ) : (
+                <>
+                  It seems like you either don&rsquo;t have an account on
+                  Polkadot.js or don&rsquo;t have Polkadot.js installed. Create
+                  one using the{' '}
+                  <Link href="https://polkadot.js.org/extension/">
+                    Polkadot.js extension
+                  </Link>
+                  .
+                </>
+              )}
             </p>
           </S.Container>
         ),
@@ -96,20 +117,16 @@ export function Intro({ children }: { children: ReactNode }) {
         disableActions: true,
       },
     ],
-    [],
+    [isInjected],
   );
 
   return (
     <TourProvider
       steps={steps}
-      defaultOpen
-      // defaultOpen={!initialState}
-      showNavigation={false}
-      showDots={false}
-      showBadge
+      defaultOpen={!initialState}
       ContentComponent={ContentComponent}
     >
-      <Actions>{children}</Actions>
+      {children}
     </TourProvider>
   );
 }
@@ -120,10 +137,21 @@ const ContentComponent = (props: PopoverContentProps) => {
   const { content } = steps[currentStep];
   const isLastStep = currentStep === steps.length - 1;
 
+  const { account, isInjected } = useWallet();
+  const { doesAccountHaveRewards } = useRewards();
+
   const handleChangeIntroView = useCallback(() => {
     localStorage.setItem(DEFAULTINTRONAME, state ? 'false' : 'true');
     setState(!state);
   }, [state]);
+
+  useEffect(() => {
+    if (account) setInterval(() => setCurrentStep(2), 300);
+  }, [account, setCurrentStep]);
+
+  useEffect(() => {
+    if (doesAccountHaveRewards) setInterval(() => setCurrentStep(3), 300);
+  }, [doesAccountHaveRewards, setCurrentStep]);
 
   return (
     <S.Wrapper>
@@ -135,7 +163,7 @@ const ContentComponent = (props: PopoverContentProps) => {
       <S.FlexActions>
         <S.Actions>
           <button type="button" onClick={() => setIsOpen(false)}>
-            {isLastStep ? 'Done' : 'Skip'}
+            {isLastStep || (currentStep === 1 && !isInjected) ? 'Done' : 'Skip'}
           </button>
           <S.Label htmlFor="changeIntro">
             <input
@@ -147,7 +175,7 @@ const ContentComponent = (props: PopoverContentProps) => {
             Don&apos;t show again
           </S.Label>
         </S.Actions>
-        {!isLastStep && (
+        {!isLastStep && !(currentStep === 1 && !isInjected) && (
           <S.Button
             type="button"
             onClick={() => setCurrentStep(currentStep + 1)}
@@ -158,10 +186,4 @@ const ContentComponent = (props: PopoverContentProps) => {
       </S.FlexActions>
     </S.Wrapper>
   );
-};
-
-const Actions = ({ children }: { children: ReactNode }) => {
-  const { setCurrentStep, currentStep, setIsOpen } = useTour();
-
-  return <>{children}</>;
 };

@@ -115,7 +115,9 @@ export const Hero = () => {
               />
             </>
           ) : (
-            <div> Polkdot.js extension is not installed</div>
+            <S.Extension className="selectWallet">
+              Polkdot.js extension is not installed
+            </S.Extension>
           )}
         </S.Wallet>
       </S.Content>

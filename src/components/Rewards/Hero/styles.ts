@@ -101,7 +101,9 @@ export const InformationContainer = styled.div`
     opacity: 0.7;
   }
 `;
-
+export const Extension = styled.div`
+  padding: 2rem 0;
+`;
 export const Wallet = styled.div`
   ${({ theme }) => css`
     display: flex;
