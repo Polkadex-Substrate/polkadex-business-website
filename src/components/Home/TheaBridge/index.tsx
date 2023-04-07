@@ -1,15 +1,12 @@
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
 
 export const TheaBridge = () => {
-  const animationProps = useAnimation({ duration: 0.5 });
-
   return (
     <S.Wrapper>
-      <S.Hero {...animationProps}>
+      <S.Hero>
         <S.HeroWrapper>
           <S.HeroIcon>
             <Icons.SwapCircle />
@@ -68,11 +65,9 @@ export const TheaBridge = () => {
 };
 
 const Card = ({ title, description, icon, i }) => {
-  const animationProps = useAnimation({ duration: 0.5 * i });
-
   const IconComponent = Icons[icon];
   return (
-    <S.FeaturesCard {...animationProps}>
+    <S.FeaturesCard>
       <IconComponent />
       <h3>{title}</h3>
       <p>{description}</p>

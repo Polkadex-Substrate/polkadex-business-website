@@ -1,6 +1,5 @@
 import axios from 'axios';
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 import { useState } from 'react';
 
 import * as S from './styles';
@@ -15,7 +14,6 @@ export const Newsletter = ({
   title = 'Stay in the loop',
   description = 'Subscribe to the Polkadex newsletter',
 }) => {
-  const animationProps = useAnimation({ duration: 0.5 });
   const [status, setStatus] = useState<Status>({
     submitted: false,
     submitting: false,
@@ -66,7 +64,7 @@ export const Newsletter = ({
     }
   };
   return (
-    <S.Wrapper {...animationProps}>
+    <S.Wrapper>
       <S.Container>
         <S.ImageWrapper>
           <Icons.Airplane />

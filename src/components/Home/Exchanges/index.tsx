@@ -1,5 +1,4 @@
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -20,11 +19,9 @@ export const Exchanges = () => {
 };
 
 const Card = ({ title = '', img = null, icon = '', i, ...props }) => {
-  const animationProps = useAnimation({ duration: 0.5 * i });
-
   const IconComponent = Icons[icon];
   return (
-    <S.Card {...animationProps} target="_blank" rel="noreferrer" {...props}>
+    <S.Card target="_blank" rel="noreferrer" {...props}>
       {img ? (
         <img src={`/img/${img}.png`} alt={`${title} Logo`} />
       ) : (
