@@ -5,7 +5,7 @@ export const ContentMain = styled.div`
     &.enter ${ContentWrapper} {
       opacity: 0;
       transform: scale(0.95);
-      transition: opacity 120ms, transform 120ms;
+      transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
     }
     &.enter-active ${ContentWrapper} {
       opacity: 0.75;
@@ -14,7 +14,7 @@ export const ContentMain = styled.div`
     &.enter-done ${ContentWrapper} {
       opacity: 1;
       transform: scale(1);
-      transition: opacity 120ms, transform 120ms ease-out;
+      transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
     }
 
     &.exit ${ContentWrapper} {
@@ -24,7 +24,7 @@ export const ContentMain = styled.div`
     &.exit-active ${ContentWrapper} {
       opacity: 0;
       transform: scale(0.5);
-      transition: opacity 60ms, transform 60ms;
+      transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
     }
   `}
 `;

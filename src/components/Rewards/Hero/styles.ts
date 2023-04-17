@@ -1,61 +1,67 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 110rem;
-  margin: 0 auto 10rem auto;
-`;
-
-export const Box = styled.div`
   ${({ theme }) => css`
-    flex: 1;
     display: flex;
-    align-items: center;
-    border-radius: 3rem;
-    @media screen and (max-width: 1000px) {
-      padding: 1rem;
-    }
-    img {
-      max-width: 15rem;
-      margin-bottom: 2rem;
-      border-radius: 100rem;
-    }
-    @media screen and (min-width: 940px) {
-      img {
-        display: none;
-      }
-      background-image: url('/img/rewardsHero.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: right center;
-      background-color: ${theme.colors.tertiaryBackgroundOpacity};
-    }
+    flex-direction: column;
+    margin: 0 auto 10rem auto;
+    background: radial-gradient(
+        52.43% 52.43% at 95.17% 115.81%,
+        rgba(103, 69, 210, 0.2) 0%,
+        rgba(103, 69, 210, 0) 100%
+      ),
+      radial-gradient(
+        61.35% 61.35% at 16.35% 119.95%,
+        rgba(230, 0, 122, 0.2) 0%,
+        rgba(230, 0, 122, 0) 100%
+      );
+    border-color: ${theme.colors.secondaryBackgroundOpacity};
+    border-style: solid;
+    border-width: 1px 0;
+    min-height: 70vh;
   `}
 `;
 
+export const Box = styled.div`
+  max-width: 110rem;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 1000px) {
+    padding: 1rem;
+  }
+  img {
+    max-height: 23rem;
+    margin-bottom: 2rem;
+    border-radius: 100rem;
+  }
+`;
+
 export const Container = styled.div`
+  max-width: 62rem;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 1rem;
-  @media screen and (min-width: 940px) {
-    max-width: 50rem;
-    padding: 14rem 6rem 16rem 6rem;
-  }
+  text-align: center;
   h1 {
-    font-size: 4rem;
+    font-size: 3.6rem;
     font-weight: normal;
     line-height: 1.3;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
   }
   h2 {
     line-height: 1.5;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: normal;
     margin-bottom: 1rem;
+    opacity: 0.7;
   }
-`;
-export const Logo = styled.div`
-  max-width: 20rem;
 `;
 
 export const Content = styled.div`
@@ -63,14 +69,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: ${theme.colors.text};
-    border-radius: 0.7rem;
-    margin: 1rem;
-    @media screen and (min-width: 940px) {
-      max-width: 45rem;
-      margin-left: 5rem;
-      margin-top: -12rem;
-    }
   `}
 `;
 export const Information = styled.div`
@@ -79,8 +77,9 @@ export const Information = styled.div`
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
+    text-align: left;
     gap: 2rem;
-    color: ${theme.colors.inverse};
+    color: ${theme.colors.text};
     h3 {
       font-size: 1.6;
       font-weight: 500;
@@ -101,24 +100,68 @@ export const InformationContainer = styled.div`
     opacity: 0.7;
   }
 `;
+
 export const Extension = styled.div`
   padding: 2rem 0;
 `;
+
 export const Wallet = styled.div`
   ${({ theme }) => css`
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 1rem;
-    background: ${theme.colors.secondaryBackgroundSolid};
     border-radius: 0.5rem;
-    padding: 0 1rem;
+    padding: 0.3rem 1rem 0.3rem 2rem;
     transition: ease-in 0.2s border-color;
-    border: 1px solid ${theme.colors.secondaryBackgroundSolid};
+    background: linear-gradient(#0d0d10, #0d0d10) padding-box,
+      linear-gradient(269.03deg, #e6007a 50%, #4a00e6 103.79%) border-box;
+    border-radius: 1rem;
+    border: 1.8px solid transparent;
+    filter: drop-shadow(0px 4px 51px #e6007a22);
     :hover {
-      border-color: ${theme.colors.primary};
+      animation: gradient 6s ease infinite;
+      background-size: 400% 400%;
+    }
+
+    a,
+    button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: ${theme.colors.text};
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      transition: background-color ease 0.5s;
+      margin: 0.8rem 0;
+    }
+    button {
+      background: ${theme.colors.primary};
+    }
+    a,
+    button:disabled {
+      background: ${theme.colors.secondaryBackgroundOpacity};
+      :hover {
+        background: ${theme.colors.secondaryBackground};
+      }
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
   `}
+`;
+export const WalletContent = styled.div`
+  flex: 4;
 `;
 
 export const DropdownHeader = styled.div<{ isSelected?: boolean }>`
@@ -137,9 +180,14 @@ export const DropdownHeader = styled.div<{ isSelected?: boolean }>`
     div {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.2rem;
+      text-align: left;
       p {
         opacity: 0.6;
+      }
+      strong {
+        font-size: 1.5rem;
+        font-weight: 500;
       }
     }
   `}

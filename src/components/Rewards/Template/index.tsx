@@ -49,16 +49,8 @@ export const Template = () => {
           }}
         />
         <main>
-          <S.Message
-            rel="noreferrer"
-            target="_blank"
-            href="https://polkadex.medium.com/"
-          >
-            <div>📚 See tutorial on how to stake the received rewards</div>
-            <Icon name="ArrowRight" background="none" />
-          </S.Message>
           <Hero />
-          <Table />
+          {/* <Table /> */}
           <Newsletter />
         </main>
         <Footer />

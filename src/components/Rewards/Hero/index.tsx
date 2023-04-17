@@ -1,4 +1,3 @@
-import { PrimaryButton } from 'components/Button';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
 import { useMemo } from 'react';
@@ -32,95 +31,113 @@ export const Hero = () => {
       <S.Box>
         <S.Container>
           <img src="/img/rewardsHero.svg" alt="Reward box illustration" />
-          <S.Logo>
-            <PolkadexRewardsLogo />
-          </S.Logo>
-          <h1>Time to Claim your PDEX rewards</h1>
-          <h2>
-            If you participated in the Polkadot Crowdloan and helped us secure a
-            parachain slot, you may have pending rewards.
-          </h2>
+          <S.Content>
+            {doesAccountHaveRewards && (
+              <S.Information className="availableRewards">
+                <h3>Your PDEX distribution details</h3>
+                <div>
+                  <S.InformationContainer>
+                    <div>
+                      <span>{total} PDEX</span>
+                      <p>Total rewards</p>
+                    </div>
+                    <div>
+                      <span>{claimable} PDEX</span>
+                      <p>Claimable rewards</p>
+                    </div>
+                    <div>
+                      <span>{claimed} PDEX</span>
+                      <p>Claimed rewards</p>
+                    </div>
+                  </S.InformationContainer>
+                </div>
+              </S.Information>
+            )}
+          </S.Content>
+          <S.Wallet>
+            {isInjected ? (
+              <>
+                <S.WalletContent>
+                  <Dropdown>
+                    <Dropdown.Trigger>
+                      <S.DropdownHeader
+                        isSelected={!!account}
+                        className="selectWallet"
+                      >
+                        <div>
+                          {account ? (
+                            <strong>{account.name}</strong>
+                          ) : (
+                            <span>Select your wallet</span>
+                          )}
+                          {!!account && <p>{shortWallet}</p>}
+                        </div>
+
+                        <SingleArrowBottom />
+                      </S.DropdownHeader>
+                    </Dropdown.Trigger>
+                    <Dropdown.Menu fill="secondaryBackgroundSolid">
+                      {allAccounts.length >= 1 ? (
+                        allAccounts.map((v, i) => {
+                          const shortAddress = v?.address
+                            ? `${v?.address.slice(0, 4)}..${v?.address.slice(
+                                v?.address.length - 4,
+                              )}`
+                            : '0x000000';
+                          return (
+                            <Dropdown.Item
+                              key={i}
+                              onAction={() => setAccount(v.address)}
+                            >
+                              {v.name} <S.Span> • {shortAddress}</S.Span>
+                            </Dropdown.Item>
+                          );
+                        })
+                      ) : (
+                        <Dropdown.Item>
+                          <S.Span> No accounts available</S.Span>
+                        </Dropdown.Item>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </S.WalletContent>
+
+                <button
+                  type="button"
+                  aria-label="select account"
+                  className="initiateButton"
+                  disabled={isClaimDisabled}
+                  onClick={isInitialized ? claimRewards : initiateClaim}
+                >
+                  {isInitialized ? 'Find Rewards' : 'Initiate Claim'}
+                </button>
+              </>
+            ) : (
+              <>
+                <S.Extension className="selectWallet">
+                  Polkadot.js extension is not installed
+                </S.Extension>
+                <a
+                  target="_blank"
+                  href="https://polkadot.js.org/extension/"
+                  rel="noreferrer"
+                >
+                  Get Polkadot.js extension
+                </a>
+              </>
+            )}
+          </S.Wallet>
+          {!doesAccountHaveRewards && (
+            <>
+              <h1>Time to Claim your PDEX rewards💰</h1>
+              <h2>
+                If you participated in the Polkadot Crowdloan and helped us
+                secure a parachain slot, you may have pending rewards.
+              </h2>
+            </>
+          )}
         </S.Container>
       </S.Box>
-      <S.Content>
-        {doesAccountHaveRewards && (
-          <S.Information className="availableRewards">
-            <h3>Your PDEX distribution details</h3>
-            <div>
-              <S.InformationContainer>
-                <div>
-                  <span>{total} PDEX</span>
-                  <p>Total rewards</p>
-                </div>
-                <div>
-                  <span>{claimable} PDEX</span>
-                  <p>Claimable rewards</p>
-                </div>
-                <div>
-                  <span>{claimed} PDEX</span>
-                  <p>Claimed rewards</p>
-                </div>
-              </S.InformationContainer>
-            </div>
-          </S.Information>
-        )}
-        <S.Wallet>
-          {isInjected ? (
-            <>
-              <Dropdown>
-                <Dropdown.Trigger>
-                  <S.DropdownHeader
-                    isSelected={!!account}
-                    className="selectWallet"
-                  >
-                    <div>
-                      <span>
-                        {account ? account.name : 'Select your wallet'}
-                      </span>
-                      {!!account && <p>{shortWallet}</p>}
-                    </div>
-
-                    <SingleArrowBottom />
-                  </S.DropdownHeader>
-                </Dropdown.Trigger>
-                <Dropdown.Menu fill="secondaryBackgroundSolid">
-                  {allAccounts.length >= 1 ? (
-                    allAccounts.map((v, i) => {
-                      const shortAddress = v?.address
-                        ? `${v?.address.slice(0, 4)}..${v?.address.slice(
-                            v?.address.length - 4,
-                          )}`
-                        : '0x000000';
-                      return (
-                        <Dropdown.Item
-                          key={i}
-                          onAction={() => setAccount(v.address)}
-                        >
-                          {v.name} <S.Span> • {shortAddress}</S.Span>
-                        </Dropdown.Item>
-                      );
-                    })
-                  ) : (
-                    <Dropdown.Item>
-                      <S.Span> No accounts available</S.Span>
-                    </Dropdown.Item>
-                  )}
-                </Dropdown.Menu>
-              </Dropdown>
-              <PrimaryButton
-                className="initiateButton"
-                disabled={isClaimDisabled}
-                onClick={isInitialized ? claimRewards : initiateClaim}
-                content={isInitialized ? 'Claim' : 'Initiate Claim'}
-              />
-            </>
-          ) : (
-            <S.Extension className="selectWallet">
-              Polkdot.js extension is not installed
-            </S.Extension>
-          )}
-        </S.Wallet>
-      </S.Content>
       <div />
     </S.Wrapper>
   );
