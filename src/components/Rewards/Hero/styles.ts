@@ -41,6 +41,7 @@ export const Box = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
   max-width: 62rem;
   width: 100%;
   margin: 0 auto;
@@ -69,6 +70,7 @@ export const Content = styled.div`
   flex-direction: column;
   gap: 1rem;
 `;
+
 export const Information = styled.div`
   ${({ theme }) => css`
     position: relative;
@@ -160,6 +162,23 @@ export const Wallet = styled.div`
 `;
 export const WalletContent = styled.div`
   flex: 4;
+`;
+
+export const Arrow = styled.div`
+  position: absolute;
+  bottom: -5rem;
+  left: -18rem;
+  width: 18rem;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+  @media screen and (max-height: 740px) {
+    display: none;
+  }
 `;
 
 export const DropdownHeader = styled.div<{ isSelected?: boolean }>`

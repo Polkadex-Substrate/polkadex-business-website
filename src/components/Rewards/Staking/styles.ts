@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     border-bottom: 1px solid ${theme.colors.secondaryBackgroundOpacity};
-    padding: 5rem 0;
+    padding: 3.5rem 0;
     @media screen and (max-width: 1125px) {
       padding-left: 1rem;
       padding-right: 1rem;
