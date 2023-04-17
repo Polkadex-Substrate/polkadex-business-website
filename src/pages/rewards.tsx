@@ -1,3 +1,4 @@
+import axios from 'axios';
 import dynamic from 'next/dynamic';
 
 import { RewardsProvider } from '../providers';
@@ -8,10 +9,29 @@ const Template = dynamic(
     ssr: false,
   },
 );
-export const Rewards = () => (
+export const Rewards = ({ data }) => (
   <RewardsProvider>
-    <Template />
+    <Template apy={data?.apy ?? 24.5} />
   </RewardsProvider>
 );
 
 export default Rewards;
+
+Rewards.getInitialProps = async () => {
+  try {
+    const apy: any = await axios.get(
+      `${process.env.STAKING_SCRAP}/api/infos/1`,
+      {
+        headers: { Authorization: `Bearer ${process.env.STAKING_SCRAP_TOKEN}` },
+      },
+    );
+    const result = apy?.data?.data?.attributes?.value?.replace(/%/g, '');
+    return {
+      data: {
+        apy: Number(result),
+      },
+    };
+  } catch (error) {
+    return { error: error.message };
+  }
+};

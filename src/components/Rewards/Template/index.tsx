@@ -6,7 +6,7 @@ import Script from 'next/script';
 
 import * as S from './styles';
 
-export const Template = () => {
+export const Template = ({ apy }) => {
   return (
     <Intro>
       <Script
@@ -49,7 +49,7 @@ export const Template = () => {
         />
         <main>
           <Hero />
-          <Staking />
+          <Staking apy={apy} />
           <Table />
           <Newsletter />
         </main>
