@@ -19,6 +19,7 @@ const initialState: StoreState = {
 export interface WalletCtx extends StoreState {
   getSinger: (address: string) => Promise<Signer>;
   setAccount: (address: string) => void;
+  isInjected: boolean;
 }
 
 export const WalletContext = React.createContext<WalletCtx>(null);
@@ -78,7 +79,7 @@ export const WalletProvider = ({
     return () => sub && sub();
   }, [isInjected]);
 
-  const value: WalletCtx = { ...state, setAccount, getSinger };
+  const value: WalletCtx = { ...state, setAccount, getSinger, isInjected };
   return (
     <WalletContext.Provider value={value}>{children}</WalletContext.Provider>
   );

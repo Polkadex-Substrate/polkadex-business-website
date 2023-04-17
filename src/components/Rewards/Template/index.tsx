@@ -1,5 +1,7 @@
+import { Icon } from 'components/Icon';
+import { Intro } from 'components/Intro';
 import { Hero } from 'components/Rewards';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { Footer, Header, Newsletter, Table } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 
@@ -7,7 +9,7 @@ import * as S from './styles';
 
 export const Template = () => {
   return (
-    <>
+    <Intro>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
@@ -47,11 +49,20 @@ export const Template = () => {
           }}
         />
         <main>
+          <S.Message
+            rel="noreferrer"
+            target="_blank"
+            href="https://polkadex.medium.com/"
+          >
+            <div>📚 See tutorial on how to stake the received rewards</div>
+            <Icon name="ArrowRight" background="none" />
+          </S.Message>
           <Hero />
+          <Table />
           <Newsletter />
         </main>
         <Footer />
       </S.Wrapper>
-    </>
+    </Intro>
   );
 };

@@ -1,5 +1,5 @@
-import {AllHTMLAttributes} from 'react';
-import {IColors, IIcons} from 'utils/types';
+import { AllHTMLAttributes } from 'react';
+import { IColors, IIcons } from 'utils/types';
 
 export type Props = {
   content: string;
@@ -13,7 +13,10 @@ export type ButtonProps = {
   hasIcon?: boolean;
   onClick?: (e?: any) => void | undefined;
 } & Props &
-  Pick<AllHTMLAttributes<HTMLDivElement>, 'target' | 'disabled' | 'href'>;
+  Pick<
+    AllHTMLAttributes<HTMLDivElement>,
+    'target' | 'disabled' | 'href' | 'className'
+  >;
 
 export type ButtonFormProps = {
   action?: () => void;

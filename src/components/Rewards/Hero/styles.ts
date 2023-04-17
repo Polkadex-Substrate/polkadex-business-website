@@ -55,7 +55,7 @@ export const Container = styled.div`
   }
 `;
 export const Logo = styled.div`
-  max-width: 20rem; ;
+  max-width: 20rem;
 `;
 
 export const Content = styled.div`
@@ -101,7 +101,9 @@ export const InformationContainer = styled.div`
     opacity: 0.7;
   }
 `;
-
+export const Extension = styled.div`
+  padding: 2rem 0;
+`;
 export const Wallet = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -110,7 +112,7 @@ export const Wallet = styled.div`
     gap: 1rem;
     background: ${theme.colors.secondaryBackgroundSolid};
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 0 1rem;
     transition: ease-in 0.2s border-color;
     border: 1px solid ${theme.colors.secondaryBackgroundSolid};
     :hover {
@@ -119,14 +121,15 @@ export const Wallet = styled.div`
   `}
 `;
 
-export const DropdownHeader = styled.div`
-  ${({ theme }) => css`
+export const DropdownHeader = styled.div<{ isSelected?: boolean }>`
+  ${({ theme, isSelected }) => css`
     flex: 1;
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;
     align-items: center;
     cursor: pointer;
+    padding: ${isSelected ? '1rem' : '2rem'} 0;
     svg {
       width: 1rem;
       fill: ${theme.colors.text};
