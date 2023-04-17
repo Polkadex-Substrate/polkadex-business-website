@@ -4,8 +4,5 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.primaryBackground};
     min-height: 100vh;
-    main {
-      padding-top: 2rem;
-    }
   `}
 `;

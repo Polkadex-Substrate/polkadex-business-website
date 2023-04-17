@@ -17,4 +17,3 @@ export * from './StrategicInvestors';
 export * from './Thea';
 export * from './UpcomingProjects';
 export * from './Wallets';
-export * from './Table';

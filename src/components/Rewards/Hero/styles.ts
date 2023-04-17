@@ -18,12 +18,12 @@ export const Wrapper = styled.div`
     border-color: ${theme.colors.secondaryBackgroundOpacity};
     border-style: solid;
     border-width: 1px 0;
-    min-height: 70vh;
+    min-height: 65vh;
   `}
 `;
 
 export const Box = styled.div`
-  max-width: 110rem;
+  max-width: 100rem;
   width: 100%;
   margin: 0 auto;
   flex: 1;
