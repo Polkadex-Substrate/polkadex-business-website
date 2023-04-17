@@ -1,7 +1,7 @@
 import { PrimaryButton } from 'components/Button';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import { useRewards } from '../../../hooks/useRewards';
 import { useWallet } from '../../../hooks/useWallet';
@@ -9,7 +9,6 @@ import * as S from './styles';
 
 export const Hero = () => {
   const { account, allAccounts, setAccount, isInjected } = useWallet();
-  const [extensionInstalled, setExtensionInstalled] = useState(true);
   const {
     total,
     claimed,
@@ -45,7 +44,7 @@ export const Hero = () => {
       </S.Box>
       <S.Content>
         {doesAccountHaveRewards && (
-          <S.Information>
+          <S.Information className="availableRewards">
             <h3>Your PDEX distribution details</h3>
             <div>
               <S.InformationContainer>
@@ -70,7 +69,10 @@ export const Hero = () => {
             <>
               <Dropdown>
                 <Dropdown.Trigger>
-                  <S.DropdownHeader>
+                  <S.DropdownHeader
+                    isSelected={!!account}
+                    className="selectWallet"
+                  >
                     <div>
                       <span>
                         {account ? account.name : 'Select your wallet'}
@@ -106,13 +108,16 @@ export const Hero = () => {
                 </Dropdown.Menu>
               </Dropdown>
               <PrimaryButton
+                className="initiateButton"
                 disabled={isClaimDisabled}
                 onClick={isInitialized ? claimRewards : initiateClaim}
                 content={isInitialized ? 'Claim' : 'Initiate Claim'}
               />
             </>
           ) : (
-            <div> Polkdot.js extension is not installed</div>
+            <S.Extension className="selectWallet">
+              Polkdot.js extension is not installed
+            </S.Extension>
           )}
         </S.Wallet>
       </S.Content>

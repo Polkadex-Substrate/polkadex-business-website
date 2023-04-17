@@ -1,12 +1,13 @@
 import { useAnimation } from 'hooks';
-import * as S from './styles';
+
 import { fakeData } from './fakeData';
+import * as S from './styles';
+
 export const Table = () => {
   const animationProps = useAnimation({ duration: 0.5 });
 
   return (
-    <S.Wrapper {...animationProps}>
-      {' '}
+    <S.Wrapper className="latestRewards" {...animationProps}>
       <S.Table id="customers">
         <S.Heading>
           <S.Row>AccountID</S.Row>

@@ -13,6 +13,7 @@ export const PrimaryButton = ({
   color = 'text',
   onClick = undefined,
   target = '_self',
+  ...props
 }: ButtonProps) => {
   const IconComponent = Icons[icon];
   return (
@@ -25,6 +26,7 @@ export const PrimaryButton = ({
       onClick={onClick}
       target={target}
       color={color}
+      {...props}
     >
       {!!icon && (
         <div>

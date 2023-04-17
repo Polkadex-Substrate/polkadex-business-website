@@ -35,6 +35,7 @@ export * from './Footer';
 export * from './Header';
 export * from './Icon';
 export * from './IniialBanner';
+export * from './Intro';
 export * from './LanguageSelector';
 export * from './Logo';
 export * from './Migration';

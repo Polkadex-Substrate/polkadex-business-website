@@ -1,4 +1,5 @@
 import { Icon } from 'components/Icon';
+import { Intro } from 'components/Intro';
 import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter, Table } from 'components/v2';
 import Head from 'next/head';
@@ -8,7 +9,7 @@ import * as S from './styles';
 
 export const Template = () => {
   return (
-    <>
+    <Intro>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
@@ -62,6 +63,6 @@ export const Template = () => {
         </main>
         <Footer />
       </S.Wrapper>
-    </>
+    </Intro>
   );
 };
