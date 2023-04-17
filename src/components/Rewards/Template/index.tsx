@@ -1,10 +1,10 @@
-import { Icon } from 'components/Icon';
 import { Intro } from 'components/Intro';
 import { Hero } from 'components/Rewards';
-import { Footer, Header, Newsletter, Table } from 'components/v2';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 
+import { Staking } from '../Staking';
 import * as S from './styles';
 
 export const Template = () => {
@@ -50,6 +50,7 @@ export const Template = () => {
         />
         <main>
           <Hero />
+          <Staking />
           {/* <Table /> */}
           <Newsletter />
         </main>

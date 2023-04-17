@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    margin: 0 auto 10rem auto;
+    margin: 0 auto 0 auto;
     background: radial-gradient(
         52.43% 52.43% at 95.17% 115.81%,
         rgba(103, 69, 210, 0.2) 0%,
@@ -65,11 +65,9 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  `}
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 export const Information = styled.div`
   ${({ theme }) => css`
