@@ -38,15 +38,15 @@ export const Hero = () => {
                 <div>
                   <S.InformationContainer>
                     <div>
-                      <span>{total ?? 100000} PDEX</span>
+                      <span>{total ?? 0.0} PDEX</span>
                       <p>Total rewards</p>
                     </div>
                     <div>
-                      <span>{claimable ?? 100000} PDEX</span>
+                      <span>{claimable ?? 0.0} PDEX</span>
                       <p>Claimable rewards</p>
                     </div>
                     <div>
-                      <span>{claimed ?? 100000} PDEX</span>
+                      <span>{claimed ?? 0.0} PDEX</span>
                       <p>Claimed rewards</p>
                     </div>
                   </S.InformationContainer>
