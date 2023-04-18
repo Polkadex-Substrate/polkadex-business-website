@@ -60,20 +60,24 @@ function apiReducer(state: StoreState, action: ActionType): StoreState {
 export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const [state, dispatch] = React.useReducer(apiReducer, initialState);
   const [currentBlock, setCurrentBlock] = React.useState(0);
-  const connectToApi = useCallback(async () => {
+  const connectToApi = useCallback(async (): Promise<ApiPromise | null> => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider('ws://localhost:9944');
+      const provider = new WsProvider('wss://solochain.polkadex.trade');
       const api = new ApiPromise({ provider });
       await api.isReady;
-      dispatch({ type: API_DATA, payload: api });
+      return api;
     } catch (e) {
       dispatch({ type: API_ERROR, payload: e.message });
+      return null;
     }
   }, []);
   useEffect(() => {
     if (!!state && !state.api && !state.loading) {
-      connectToApi();
+      connectToApi().then((api) => {
+        if (!api) return;
+        dispatch({ type: API_DATA, payload: api });
+      });
     }
   }, [state, connectToApi]);
 
