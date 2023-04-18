@@ -1,7 +1,17 @@
+import { useRewards } from 'hooks/useRewards';
+import { useMemo } from 'react';
+
 import * as S from './styles';
 
-export const Staking = ({ apy, stakingAmount = 1000 }) => {
-  const result = (stakingAmount * apy) / 100 + stakingAmount;
+export const Staking = ({ apy }) => {
+  const { total } = useRewards();
+  const amountStaking = useMemo(() => Number(total ?? 1000), [total]);
+
+  const result = useMemo(
+    () => (amountStaking * apy) / 100 + amountStaking,
+    [amountStaking, apy],
+  );
+
   return (
     <S.Wrapper>
       <S.Container>
@@ -13,7 +23,7 @@ export const Staking = ({ apy, stakingAmount = 1000 }) => {
           </div>
         </S.Top>
         <S.Bottom>
-          <h4>Staking {stakingAmount} PDEX</h4>
+          <h4>Staking {amountStaking} PDEX</h4>
           <S.Bar>
             <div />
             <div>

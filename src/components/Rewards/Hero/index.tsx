@@ -109,7 +109,7 @@ export const Hero = () => {
                   disabled={isClaimDisabled}
                   onClick={isInitialized ? claimRewards : initiateClaim}
                 >
-                  {isInitialized ? 'Find Rewards' : 'Initiate Claim'}
+                  {isInitialized ? 'Claim Rewards' : 'Find Rewards'}
                 </button>
               </>
             ) : (
