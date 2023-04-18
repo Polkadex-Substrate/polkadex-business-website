@@ -15,6 +15,12 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const TableWrapper = styled.div`
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Table = styled.div`
   display: table;
   border-spacing: 0 1rem;

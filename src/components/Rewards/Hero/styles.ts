@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
     border-style: solid;
     border-width: 1px 0;
     min-height: 65vh;
+    padding: 2rem;
   `}
 `;
 
@@ -81,7 +82,7 @@ export const Information = styled.div`
     gap: 2rem;
     color: ${theme.colors.text};
     h3 {
-      font-size: 1.6;
+      font-size: 1.8rem;
       font-weight: 500;
     }
   `}
@@ -94,10 +95,16 @@ export const InformationContainer = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   span {
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.6rem;
   }
   p {
     opacity: 0.7;
+  }
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
   }
 `;
 
@@ -157,6 +164,10 @@ export const Wallet = styled.div`
       100% {
         background-position: 0% 50%;
       }
+    }
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+      gap: 0.5rem;
     }
   `}
 `;

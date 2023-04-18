@@ -25,7 +25,10 @@ export const Top = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  flex-wrap: nowrap;
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    text-align: center;
+  }
   h2 {
     font-size: 3rem;
     font-weight: 400;

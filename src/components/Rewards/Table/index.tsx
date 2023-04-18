@@ -10,30 +10,33 @@ export const Table = () => {
   return (
     <S.Wrapper className="latestRewards" {...animationProps}>
       <h2>Recent transactions</h2>
-      <S.Table id="customers">
-        <S.Heading>
-          <div>
-            <HeaderCell>Account ID</HeaderCell>
-            <HeaderCell>Para ID</HeaderCell>
-            <HeaderCell>Amount</HeaderCell>
-            <HeaderCell>Block Number</HeaderCell>
-          </div>
-        </S.Heading>
-        <S.Body>
-          {fakeData.map((item, index) => (
-            <div key={index}>
-              <span>{item.AccountID}</span>
-              <span>
-                <a target="_blank" href="/">
-                  {item.ParaID}
-                </a>
-              </span>
-              <span>{item.Amount}</span>
-              <span>{item.Blocknum}</span>
+      <S.TableWrapper>
+        <S.Table id="customers">
+          <S.Heading>
+            <div>
+              <HeaderCell>Account ID</HeaderCell>
+              <HeaderCell>Para ID</HeaderCell>
+              <HeaderCell>Amount</HeaderCell>
+              <HeaderCell>Block Number</HeaderCell>
             </div>
-          ))}
-        </S.Body>
-      </S.Table>
+          </S.Heading>
+          <S.Body>
+            {fakeData.map((item, index) => (
+              <div key={index}>
+                <span>{item.AccountID}</span>
+                <span>
+                  <a target="_blank" href="/">
+                    {item.ParaID}
+                  </a>
+                </span>
+                <span>{item.Amount}</span>
+                <span>{item.Blocknum}</span>
+              </div>
+            ))}
+          </S.Body>
+        </S.Table>
+      </S.TableWrapper>
+
       <S.Actions>
         <span>Show last</span>
         <div>
