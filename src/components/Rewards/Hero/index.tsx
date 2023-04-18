@@ -111,7 +111,7 @@ export const Hero = () => {
                 className="initiateButton"
                 disabled={isClaimDisabled}
                 onClick={isInitialized ? claimRewards : initiateClaim}
-                content={isInitialized ? 'Claim' : 'Initiate Claim'}
+                content={isInitialized ? 'Claim' : 'Unlock Rewards'}
               />
             </>
           ) : (
