@@ -32,25 +32,35 @@ export const Hero = () => {
         <S.Container>
           <img src="/img/rewardsHero.svg" alt="Reward box illustration" />
           <S.Content>
-            {doesAccountHaveRewards && (
+            {isInjected && account && (
               <S.Information className="availableRewards">
-                <h3>Your PDEX distribution details</h3>
-                <div>
-                  <S.InformationContainer>
-                    <div>
-                      <span>{total ?? 0.0} PDEX</span>
-                      <p>Total rewards</p>
-                    </div>
-                    <div>
-                      <span>{claimable ?? 0.0} PDEX</span>
-                      <p>Claimable rewards</p>
-                    </div>
-                    <div>
-                      <span>{claimed ?? 0.0} PDEX</span>
-                      <p>Claimed rewards</p>
-                    </div>
-                  </S.InformationContainer>
-                </div>
+                {doesAccountHaveRewards ? (
+                  <h3>This wallet has pending rewards 🎁</h3>
+                ) : (
+                  <span style={{ textAlign: 'center' }}>
+                    Oops, This wallet doesn&apos;t have any rewards to receive
+                    🤷‍♂️ <br /> Please try with another wallet.
+                  </span>
+                )}
+
+                {doesAccountHaveRewards && (
+                  <div>
+                    <S.InformationContainer>
+                      <div>
+                        <span>{total ?? 0.0} PDEX</span>
+                        <p>Total rewards</p>
+                      </div>
+                      <div>
+                        <span>{claimable ?? 0.0} PDEX</span>
+                        <p>Claimable rewards</p>
+                      </div>
+                      <div>
+                        <span>{claimed ?? 0.0} PDEX</span>
+                        <p>Claimed rewards</p>
+                      </div>
+                    </S.InformationContainer>
+                  </div>
+                )}
               </S.Information>
             )}
           </S.Content>
@@ -101,16 +111,17 @@ export const Hero = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </S.WalletContent>
-
-                <button
-                  type="button"
-                  aria-label="select account"
-                  className="initiateButton"
-                  disabled={isClaimDisabled}
-                  onClick={isInitialized ? claimRewards : initiateClaim}
-                >
-                  {isInitialized ? 'Claim Rewards' : 'Find Rewards'}
-                </button>
+                {Number(total) > 0 && (
+                  <button
+                    type="button"
+                    aria-label="select account"
+                    className="initiateButton"
+                    disabled={isClaimDisabled}
+                    onClick={isInitialized ? claimRewards : initiateClaim}
+                  >
+                    {isInitialized ? 'Claim Rewards' : 'Find Rewards'}
+                  </button>
+                )}
               </>
             ) : (
               <>
@@ -127,7 +138,7 @@ export const Hero = () => {
               </>
             )}
           </S.Wallet>
-          {!doesAccountHaveRewards && (
+          {!account && (
             <>
               <h1>Time to Claim your PDEX rewards💰</h1>
               <h2>

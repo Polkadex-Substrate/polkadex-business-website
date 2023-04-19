@@ -64,7 +64,6 @@ export const RewardsProvider = ({
         const data = res.toJSON() as unknown as RewardsQueryResult | null;
 
         if (!data) {
-          toast(messages.NO_REWARDS, 'error');
           setRewards(null);
           return;
         }
