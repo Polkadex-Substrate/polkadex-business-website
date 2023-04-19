@@ -61,8 +61,7 @@ function apiReducer(state: StoreState, action: ActionType): StoreState {
 export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const [state, dispatch] = React.useReducer(apiReducer, initialState);
   const [currentBlock, setCurrentBlock] = React.useState(0);
-
-  const connectToApi = useCallback(async (): Promise<ApiPromise | null> => {
+  const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
       const provider = new WsProvider('wss://solochain.polkadex.trade');
