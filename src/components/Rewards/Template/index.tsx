@@ -1,5 +1,5 @@
 import { Intro } from 'components/Intro';
-import { Hero, Staking, Table } from 'components/Rewards';
+import { Hero, Staking } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -50,7 +50,6 @@ export const Template = ({ apy }) => {
         <main>
           <Hero />
           <Staking apy={apy} />
-          <Table />
           <Newsletter />
         </main>
         <Footer />
