@@ -11,7 +11,6 @@ import PrivacyPopUp from 'components/PrivacyPopUp';
 import { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import { OverlayProvider } from 'react-aria';
-import { ToastContainer } from 'react-toastify';
 import { ThemeProvider } from 'styled-components';
 import { defaultThemes, GlobalStyles } from 'styles';
 
@@ -41,7 +40,6 @@ function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={defaultThemes.dark}>
         <WalletProvider>
           <ApiProvider>
-            <ToastContainer />
             <GlobalStyles />
             {maintenance ? <Maintenance /> : <Component {...pageProps} />}
             <PrivacyPopUp
