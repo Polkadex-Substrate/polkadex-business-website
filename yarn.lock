@@ -1029,13 +1029,13 @@
   resolved "https://registry.yarnpkg.com/@polkadex/api-wrapper/-/api-wrapper-1.1.49.tgz#f93bfb9ab87d642d2380ef3f4fd81066f082cc6e"
   integrity sha512-obtiRe2vaAr4m8P+VpEUW/XoS6oOuN1r6WPHiLdai3eFyHhZlmMZbW32X6QejfcREwJbukf71p/EbdiF4Mkukg==
 
-"@polkadex/blockchain-api@^1.1.58":
-  version "1.1.58"
-  resolved "https://registry.yarnpkg.com/@polkadex/blockchain-api/-/blockchain-api-1.1.58.tgz#b68a024c9edea6c4238c2feedb8fa3ebf4005135"
-  integrity sha512-2mWsUuaABgS56pRLdvA1ZANRDq0rbSLb9zd545RlYa7tYGa4xuFQXvx9kjyNopP+oAi6XrPfyOyiPHggyHTtCg==
+"@polkadex/blockchain-api@^1.1.60":
+  version "1.1.60"
+  resolved "https://registry.yarnpkg.com/@polkadex/blockchain-api/-/blockchain-api-1.1.60.tgz#73182343f730f9d8b4bc8f5e51a09197f33c40c7"
+  integrity sha512-6qY2yqLowcQQwedKN4XfkSs1q48yC8wtkW0xaUFohMu1tcw7cJbHrAwNvfODXaluSAtADXSUwOpd4E/5o+heow==
   dependencies:
     "@polkadex/api-wrapper" "1.1.49"
-    "@polkadex/thea" "1.1.58"
+    "@polkadex/thea" "1.1.60"
     "@polkadex/types" "1.1.49"
     "@polkadex/utils" "1.1.46"
     "@polkadot/api" "^10.2.2"
@@ -1051,10 +1051,10 @@
     graphql "^16.6.0"
     graphql-request "^5.1.0"
 
-"@polkadex/thea@1.1.58":
-  version "1.1.58"
-  resolved "https://registry.yarnpkg.com/@polkadex/thea/-/thea-1.1.58.tgz#4b4cc7262530f705c4ab45748a43dd666b1b6959"
-  integrity sha512-Q2+njC9knANYkJAHpO/zeipreFw4U9C9e/wwb0f3OKHQ23gu8kCIh7tJF3hGCfyQjHdey2tTQW/nnzJPfOSn8Q==
+"@polkadex/thea@1.1.60":
+  version "1.1.60"
+  resolved "https://registry.yarnpkg.com/@polkadex/thea/-/thea-1.1.60.tgz#ea950e6d7792f608b967f70a810a937a6baff319"
+  integrity sha512-i66fvTUOldURswF0S8TvOyZweusABL7izbWHybtKxXAs/NSMMPe2a9NpTVXn0YqG3PTr6lNHSUpnWN8TETx2Ig==
   dependencies:
     "@polkadex/subscan" "1.1.49"
     "@polkadex/types" "1.1.49"
@@ -2949,6 +2949,13 @@
   version "12.20.55"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.55.tgz#c329cbd434c42164f846b909bd6f85b5537f6240"
   integrity sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==
+
+"@types/papaparse@^5.3.7":
+  version "5.3.7"
+  resolved "https://registry.yarnpkg.com/@types/papaparse/-/papaparse-5.3.7.tgz#8d3bf9e62ac2897df596f49d9ca59a15451aa247"
+  integrity sha512-f2HKmlnPdCvS0WI33WtCs5GD7X1cxzzS/aduaxSu3I7TbhWlENjSPs6z5TaB9K0J+BH1jbmqTaM+ja5puis4wg==
+  dependencies:
+    "@types/node" "*"
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -7195,6 +7202,11 @@ pako@^2.0.4:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/pako/-/pako-2.1.0.tgz#266cc37f98c7d883545d11335c00fbd4062c9a86"
   integrity sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==
+
+papaparse@^5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-5.4.1.tgz#f45c0f871853578bd3a30f92d96fdcfb6ebea127"
+  integrity sha512-HipMsgJkZu8br23pW15uvo6sib6wne/4woLZPlFf3rpDyMe9ywEXUsuD7+6K9PRkJlVT51j/sCOYDKGGS3ZJrw==
 
 param-case@^2.1.0:
   version "2.1.1"

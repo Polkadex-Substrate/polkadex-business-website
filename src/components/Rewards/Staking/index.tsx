@@ -1,16 +1,20 @@
 import { useRewards } from 'hooks/useRewards';
-import { useMemo } from 'react';
 
 import * as S from './styles';
 
 export const Staking = ({ apy }) => {
-  const { total } = useRewards();
-  const amountStaking = useMemo(() => Number(total ?? 1000), [total]);
+  const { walletReward } = useRewards();
 
-  const result = useMemo(
-    () => (amountStaking * apy) / 100 + amountStaking,
-    [amountStaking, apy],
-  );
+  const formatNumber = (num: number) =>
+    Number.isInteger(num) ? num : num.toFixed(3);
+
+  const amountStaking = Number(walletReward?.totalPdex ?? 1000);
+
+  const formaterStaking = formatNumber(amountStaking);
+  const amountRewards =
+    (Number(formaterStaking) * apy) / 100 + Number(formaterStaking);
+
+  const formaterRewards = formatNumber(amountRewards);
 
   return (
     <S.Wrapper>
@@ -23,11 +27,11 @@ export const Staking = ({ apy }) => {
           </div>
         </S.Top>
         <S.Bottom>
-          <h4>Staking {amountStaking} PDEX</h4>
+          <h4>Staking {formaterStaking} PDEX</h4>
           <S.Bar>
             <div />
             <div>
-              <span>{result} PDEX</span>
+              <span>{formaterRewards} PDEX</span>
               <span>365 days</span>
             </div>
           </S.Bar>

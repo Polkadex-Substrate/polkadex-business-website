@@ -9,14 +9,15 @@ import * as S from './styles';
 export const Hero = () => {
   const { account, allAccounts, setAccount, isInjected } = useWallet();
   const {
-    total,
     claimed,
     claimable,
     isInitialized,
     claimRewards,
     initiateClaim,
-    doesAccountHaveRewards,
     isClaimDisabled,
+    hasRewards,
+    walletReward,
+    doesAccountHaveRewards,
   } = useRewards();
   const shortWallet = useMemo(
     () =>
@@ -34,30 +35,47 @@ export const Hero = () => {
           <S.Content>
             {isInjected && account && (
               <S.Information className="availableRewards">
-                {doesAccountHaveRewards ? (
-                  <h3>This wallet has pending rewards 🎁</h3>
+                {hasRewards ? (
+                  <h3>
+                    🎁 This wallet has pending rewards, Unlock your rewards!
+                  </h3>
                 ) : (
-                  <span style={{ textAlign: 'center' }}>
+                  <span style={{ textAlign: 'center', fontSize: '1.8rem' }}>
                     Oops, This wallet doesn&apos;t have any rewards to receive
-                    🤷‍♂️ <br /> Please try with another wallet.
+                    🤷‍♂️
+                    <small style={{ display: 'block', opacity: 0.7 }}>
+                      Please try with another wallet
+                    </small>
                   </span>
                 )}
 
-                {doesAccountHaveRewards && (
+                {hasRewards && (
                   <div>
                     <S.InformationContainer>
                       <div>
-                        <span>{total ?? 0.0} PDEX</span>
+                        <span>{walletReward?.totalPdex ?? 0.0} PDEX</span>
                         <p>Total rewards</p>
                       </div>
                       <div>
-                        <span>{claimable ?? 0.0} PDEX</span>
-                        <p>Claimable rewards</p>
+                        <span>{walletReward?.initialClaim ?? 0.0} PDEX</span>
+                        <p>Initial claimable rewards</p>
                       </div>
                       <div>
-                        <span>{claimed ?? 0.0} PDEX</span>
-                        <p>Claimed rewards</p>
+                        <span>{walletReward?.dotContributed} DOT</span>
+                        <p>DOT contributed</p>
                       </div>
+                      {doesAccountHaveRewards && (
+                        <>
+                          <div>
+                            <span>{claimable ?? 0.0} PDEX</span>
+                            <p>Claimable rewards</p>
+                          </div>
+                          <div>
+                            <span>{claimed ?? 0.0} PDEX</span>
+                            <p>Claimed rewards</p>
+                          </div>
+                        </>
+                      )}
                     </S.InformationContainer>
                   </div>
                 )}
@@ -87,7 +105,7 @@ export const Hero = () => {
                       </S.DropdownHeader>
                     </Dropdown.Trigger>
                     <Dropdown.Menu fill="secondaryBackgroundSolid">
-                      {allAccounts.length >= 1 ? (
+                      {allAccounts?.length >= 1 ? (
                         allAccounts.map((v, i) => {
                           const shortAddress = v?.address
                             ? `${v?.address.slice(0, 4)}..${v?.address.slice(
@@ -111,15 +129,15 @@ export const Hero = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </S.WalletContent>
-                {Number(total) > 0 && (
+                {hasRewards && (
                   <button
                     type="button"
                     aria-label="select account"
                     className="initiateButton"
-                    disabled={isClaimDisabled}
+                    disabled={isInitialized ? isClaimDisabled : !hasRewards}
                     onClick={isInitialized ? claimRewards : initiateClaim}
                   >
-                    {isInitialized ? 'Claim Rewards' : 'Find Rewards'}
+                    {isInitialized ? 'Claim' : 'Unlock Reward'}
                   </button>
                 )}
               </>
@@ -147,7 +165,9 @@ export const Hero = () => {
               </h2>
             </>
           )}
-          <S.Arrow>
+          <S.Arrow
+            style={{ display: !account || hasRewards ? 'block' : 'none' }}
+          >
             <svg
               width="193"
               height="166"

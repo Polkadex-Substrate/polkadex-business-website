@@ -1,7 +1,14 @@
-// TODO: Check apiConnected loop...
 import { signAndSubmitPromiseWrapper } from '@polkadex/blockchain-api';
 import Utils from '@polkadex/utils';
-import React, { createContext, useCallback, useEffect, useMemo } from 'react';
+import { parse } from 'papaparse';
+import React, {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { toast } from 'utils/toast';
 
 import { useApi } from '../hooks';
@@ -22,7 +29,21 @@ interface Rewards {
   claimable: string;
   claimed: string;
 }
+interface CrowndloandData {
+  account: string;
+  totalPdex: string;
+  initialClaim: string;
+  factor: string;
+  dotContributed: string;
+}
 
+type CrowndloandRealData = {
+  Account: string;
+  'Total Pdex rewards': string;
+  'Initial Claimable rewards': string;
+  Factor: string;
+  'DOT Contributed': string;
+};
 export interface RewardsCtx extends Rewards {
   loading: boolean;
   isClaimDisabled: boolean;
@@ -31,19 +52,22 @@ export interface RewardsCtx extends Rewards {
   claimRewards: () => Promise<void>;
   initiateClaim: () => Promise<void>;
   doesAccountHaveRewards: boolean;
+  hasRewards?: boolean;
+  walletReward?: CrowndloandData;
 }
 
 export const RewardsContext = createContext<RewardsCtx>({} as RewardsCtx);
 
-export const RewardsProvider = ({
-  children,
-}: React.PropsWithChildren<unknown>) => {
+export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
   const { api, success: apiConnected, currentBlock } = useApi();
   const { getSinger } = useWallet();
-  const [rewards, setRewards] = React.useState<Rewards | null>(null);
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const [claimLoading, setClaimLoading] = React.useState<boolean>(false);
-  const [isInitialized, setIsInitialized] = React.useState<boolean>(false);
+  const [rewards, setRewards] = useState<Rewards | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [walletReward, setWalletReward] = useState<CrowndloandData | null>(
+    null,
+  );
+  const [claimLoading, setClaimLoading] = useState<boolean>(false);
+  const [isInitialized, setIsInitialized] = useState<boolean>(false);
   const { account } = useWallet();
 
   const isClaimDisabled = useMemo(
@@ -62,7 +86,6 @@ export const RewardsProvider = ({
         setLoading(true);
         const res = await api.query.rewards.distributor(1, address);
         const data = res.toJSON() as unknown as RewardsQueryResult | null;
-
         if (!data) {
           setRewards(null);
           return;
@@ -77,7 +100,6 @@ export const RewardsProvider = ({
         const claimable = data.isInitialRewardsClaimed
           ? amountTillNow - BigInt(data.initialRewardsClaimable)
           : amountTillNow;
-
         setRewards({
           total: Number(Utils.formatUnits(total, 12)).toFixed(3),
           claimable: Number(Utils.formatUnits(claimable, 12)).toFixed(3),
@@ -152,18 +174,51 @@ export const RewardsProvider = ({
     }
   }, [apiConnected, account, getSinger, api]);
 
+  const fetchHasWalletReward = useCallback(async (address: string) => {
+    const file = await fetch('/docs/crowdloan_distribution_rewards.csv');
+    const fileData = await file.text();
+    parse(fileData, {
+      delimiter: ',',
+      header: true,
+      complete: (d) => {
+        const parserData = (d?.data as CrowndloandRealData[])?.find(
+          (item) => item.Account === address,
+        );
+        if (!parserData) {
+          setWalletReward(null);
+          return;
+        }
+
+        const parserResult: CrowndloandData = {
+          account: parserData.Account,
+          totalPdex: parserData['Total Pdex rewards'],
+          initialClaim: parserData['Initial Claimable rewards'],
+          dotContributed: parserData['DOT Contributed'],
+          factor: parserData.Factor,
+        };
+        setWalletReward(parserResult);
+      },
+    });
+  }, []);
+
   useEffect(() => {
-    if (apiConnected && account) fetchRewards(account.address);
-  }, [apiConnected, fetchRewards, account]);
+    if (apiConnected && account && walletReward) fetchRewards(account.address);
+  }, [apiConnected, fetchRewards, account, walletReward]);
+
+  useEffect(() => {
+    if (apiConnected && account) fetchHasWalletReward(account.address);
+  }, [apiConnected, account, fetchHasWalletReward]);
 
   const value = {
     ...rewards,
     fetchRewards,
     loading,
-    doesAccountHaveRewards: rewards !== null, // account should be present in csv
+    doesAccountHaveRewards: rewards !== null && isInitialized, // account should be present in csv
+    walletReward,
     isInitialized,
     claimRewards,
     initiateClaim,
+    hasRewards: !!walletReward,
     isClaimDisabled,
   };
   return (

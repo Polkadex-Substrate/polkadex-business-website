@@ -43,7 +43,7 @@ export const Box = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  max-width: 62rem;
+  max-width: 65rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -83,7 +83,7 @@ export const Information = styled.div`
     color: ${theme.colors.text};
     h3 {
       font-size: 1.8rem;
-      font-weight: 500;
+      font-weight: 400;
     }
   `}
 `;

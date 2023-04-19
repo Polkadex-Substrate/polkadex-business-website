@@ -11,7 +11,7 @@
     "checkTypes": "tsc --noEmit"
   },
   "dependencies": {
-    "@polkadex/blockchain-api": "^1.1.58",
+    "@polkadex/blockchain-api": "^1.1.60",
     "@polkadex/utils": "^1.1.46",
     "@polkadot/api": "^10.3.4",
     "@polkadot/extension-dapp": "^0.45.5",
@@ -29,6 +29,7 @@
     "framer-motion": "^7.5.3",
     "next": "^12.1.6",
     "nextjs-google-analytics": "^1.0.9",
+    "papaparse": "^5.4.1",
     "query-string": "^7.0.1",
     "react": "^18.1.0",
     "react-apexcharts": "^1.3.9",
@@ -51,6 +52,7 @@
     "@babel/core": "^7.15.8",
     "@babel/preset-typescript": "^7.15.0",
     "@svgr/cli": "^5.5.0",
+    "@types/papaparse": "^5.3.7",
     "@types/react": "^18.0.9",
     "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.15",
