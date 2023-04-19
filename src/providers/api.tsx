@@ -1,5 +1,6 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import React, { createContext, useCallback, useEffect } from 'react';
+import { toast } from 'utils/toast';
 
 const API_FETCH = 'API_FETCH';
 const API_DATA = 'API_DATA';
@@ -64,14 +65,17 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
     try {
       dispatch({ type: API_FETCH });
       const provider = new WsProvider('wss://solochain.polkadex.trade');
-      const api = new ApiPromise({ provider });
+      const api = await ApiPromise.create({ provider });
       await api.isReady;
+      toast(messages.SUCCESS_CONNECT, 'success');
       return api;
     } catch (e) {
+      toast(messages.ERROR_CONNECT, 'error');
       dispatch({ type: API_ERROR, payload: e.message });
       return null;
     }
   }, []);
+
   useEffect(() => {
     if (!!state && !state.api && !state.loading) {
       connectToApi().then((api) => {
@@ -81,6 +85,7 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
     }
   }, [state, connectToApi]);
 
+  // TODO: Loop here
   useEffect(() => {
     let sub;
     if (state?.api?.isConnected) {
@@ -98,4 +103,9 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
 
   const value = { ...state, connectToApi, currentBlock };
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
+};
+
+const messages = {
+  SUCCESS_CONNECT: 'Connected to wss://solochain.polkadex.trade',
+  ERROR_CONNECT: 'Error connecting to wss://solochain.polkadex.trade',
 };

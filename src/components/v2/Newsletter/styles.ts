@@ -34,6 +34,9 @@ export const Container = styled.div`
     @media screen and (max-width: 770px) {
       background-size: cover;
     }
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+    }
     form {
       display: flex;
       justify-content: space-between;
@@ -42,7 +45,7 @@ export const Container = styled.div`
       border-radius: 1rem;
       background: ${theme.colors.secondaryBackgroundOpacity};
       border: 1px solid ${theme.colors.secondaryBackground};
-      @media screen and (min-width: 430px) {
+      @media screen and (min-width: 550px) {
         flex-direction: row;
         padding-left: 1.5rem;
         min-width: 35rem;
@@ -50,9 +53,7 @@ export const Container = styled.div`
       input {
         width: 100%;
         color: ${theme.colors.text};
-        @media screen and (max-width: 430px) {
-          padding: 2rem;
-        }
+        padding: 2rem;
       }
       button {
         padding: 1.8rem;

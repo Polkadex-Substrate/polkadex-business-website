@@ -1,13 +1,12 @@
-import { Icon } from 'components/Icon';
 import { Intro } from 'components/Intro';
-import { Hero } from 'components/Rewards';
-import { Footer, Header, Newsletter, Table } from 'components/v2';
+import { Hero, Staking } from 'components/Rewards';
+import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
 
 import * as S from './styles';
 
-export const Template = () => {
+export const Template = ({ apy }) => {
   return (
     <Intro>
       <Script
@@ -49,16 +48,8 @@ export const Template = () => {
           }}
         />
         <main>
-          <S.Message
-            rel="noreferrer"
-            target="_blank"
-            href="https://polkadex.medium.com/"
-          >
-            <div>📚 See tutorial on how to stake the received rewards</div>
-            <Icon name="ArrowRight" background="none" />
-          </S.Message>
           <Hero />
-          <Table />
+          <Staking apy={apy} />
           <Newsletter />
         </main>
         <Footer />
