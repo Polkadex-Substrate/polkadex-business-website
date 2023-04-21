@@ -2,6 +2,8 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 import React, { createContext, useCallback, useEffect } from 'react';
 import { toast } from 'utils/toast';
 
+import { typesApi } from './types';
+
 const API_FETCH = 'API_FETCH';
 const API_DATA = 'API_DATA';
 const API_ERROR = 'API_ERROR';
@@ -64,8 +66,11 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider('wss://solochain.polkadex.trade');
-      const api = await ApiPromise.create({ provider });
+      const provider = new WsProvider('ws://localhost:9944');
+      const api = await ApiPromise.create({
+        provider,
+        ...typesApi,
+      });
       await api.isReady;
       toast(messages.SUCCESS_CONNECT, 'success');
       return api;

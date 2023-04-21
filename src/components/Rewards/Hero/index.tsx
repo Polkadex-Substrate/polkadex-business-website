@@ -11,7 +11,7 @@ export const Hero = () => {
   const {
     claimed,
     claimable,
-    isInitialized,
+    isUnlocked,
     claimRewards,
     initiateClaim,
     isClaimDisabled,
@@ -134,10 +134,10 @@ export const Hero = () => {
                     type="button"
                     aria-label="select account"
                     className="initiateButton"
-                    disabled={isInitialized ? isClaimDisabled : !hasRewards}
-                    onClick={isInitialized ? claimRewards : initiateClaim}
+                    disabled={isUnlocked ? isClaimDisabled : !hasRewards}
+                    onClick={isUnlocked ? claimRewards : initiateClaim}
                   >
-                    {isInitialized ? 'Claim' : 'Unlock Reward'}
+                    {isUnlocked ? 'Claim' : 'Unlock Reward'}
                   </button>
                 )}
               </>

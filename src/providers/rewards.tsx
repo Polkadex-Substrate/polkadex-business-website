@@ -1,5 +1,6 @@
 import { signAndSubmitPromiseWrapper } from '@polkadex/blockchain-api';
 import Utils from '@polkadex/utils';
+import { encodeAddress } from '@polkadot/util-crypto';
 import { parse } from 'papaparse';
 import React, {
   createContext,
@@ -13,22 +14,14 @@ import { toast } from 'utils/toast';
 
 import { useApi } from '../hooks';
 import { useWallet } from '../hooks/useWallet';
-
-interface RewardsQueryResult {
-  claimAmount: string | number;
-  totalRewardAmount: string | number;
-  factor: string | number;
-  initialRewardsClaimable: string | number;
-  isInitialRewardsClaimed: boolean;
-  isInitialized: boolean;
-  lastBlockRewardsClaim: string | number;
-}
+import { parseRewardsRpcResult } from './utils';
 
 interface Rewards {
   total: string;
   claimable: string;
   claimed: string;
 }
+
 interface CrowndloandData {
   account: string;
   totalPdex: string;
@@ -44,10 +37,11 @@ type CrowndloandRealData = {
   Factor: string;
   'DOT Contributed': string;
 };
+
 export interface RewardsCtx extends Rewards {
   loading: boolean;
   isClaimDisabled: boolean;
-  isInitialized: boolean;
+  isUnlocked: boolean;
   fetchRewards: (address: string) => void;
   claimRewards: () => Promise<void>;
   initiateClaim: () => Promise<void>;
@@ -67,7 +61,7 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
     null,
   );
   const [claimLoading, setClaimLoading] = useState<boolean>(false);
-  const [isInitialized, setIsInitialized] = useState<boolean>(false);
+  const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
   const { account } = useWallet();
 
   const isClaimDisabled = useMemo(
@@ -84,36 +78,29 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
     async (address: string) => {
       try {
         setLoading(true);
-        const res = await api.query.rewards.distributor(1, address);
-        const data = res.toJSON() as unknown as RewardsQueryResult | null;
-        if (!data) {
+        // @ts-ignore
+        const rpcResult = await api.rpc?.rewards?.accountInfo(address, 1);
+        const data = parseRewardsRpcResult(rpcResult.toString());
+        if (!data || !walletReward?.totalPdex) {
           setRewards(null);
+          setIsUnlocked(false);
           return;
         }
-        setIsInitialized(data.isInitialized);
-        const total =
-          BigInt(data.totalRewardAmount) + BigInt(data.initialRewardsClaimable);
-        const blocksTillNow = currentBlock - Number(data.lastBlockRewardsClaim);
-        const amountTillNow =
-          BigInt(data.factor) * BigInt(blocksTillNow) +
-          BigInt(data.initialRewardsClaimable);
-        const claimable = data.isInitialRewardsClaimed
-          ? amountTillNow - BigInt(data.initialRewardsClaimable)
-          : amountTillNow;
         setRewards({
-          total: Number(Utils.formatUnits(total, 12)).toFixed(3),
-          claimable: Number(Utils.formatUnits(claimable, 12)).toFixed(3),
-          claimed: Number(Utils.formatUnits(data.claimAmount, 12)).toFixed(3),
+          total: walletReward.totalPdex,
+          claimable: Number(Utils.formatUnits(data.claimable, 12)).toFixed(3),
+          claimed: Number(Utils.formatUnits(data.claimed, 12)).toFixed(3),
         });
+        setIsUnlocked(true);
       } catch (error) {
         console.log(error);
         toast(messages.FAILURE_FETCH, 'error');
+        setIsUnlocked(false);
       } finally {
         setLoading(false);
-        setIsInitialized(false);
       }
     },
-    [api, currentBlock],
+    [api, currentBlock, walletReward?.totalPdex],
   );
 
   const claimRewards = useCallback(async () => {
@@ -182,7 +169,8 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
       header: true,
       complete: (d) => {
         const parserData = (d?.data as CrowndloandRealData[])?.find(
-          (item) => item.Account === address,
+          (item) =>
+            encodeAddress(item.Account, 88) === encodeAddress(address, 88),
         );
         if (!parserData) {
           setWalletReward(null);
@@ -213,9 +201,9 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
     ...rewards,
     fetchRewards,
     loading,
-    doesAccountHaveRewards: rewards !== null && isInitialized, // account should be present in csv
+    doesAccountHaveRewards: rewards !== null && isUnlocked, // account should be present in csv
     walletReward,
-    isInitialized,
+    isUnlocked,
     claimRewards,
     initiateClaim,
     hasRewards: !!walletReward,
