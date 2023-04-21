@@ -41,11 +41,11 @@ type CrowndloandRealData = {
 export interface RewardsCtx extends Rewards {
   loading: boolean;
   isClaimDisabled: boolean;
+  isTransactionLoading: boolean;
   isUnlocked: boolean;
   fetchRewards: (address: string) => void;
   claimRewards: () => Promise<void>;
   initiateClaim: () => Promise<void>;
-  doesAccountHaveRewards: boolean;
   hasRewards?: boolean;
   walletReward?: CrowndloandData;
 }
@@ -60,13 +60,15 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
   const [walletReward, setWalletReward] = useState<CrowndloandData | null>(
     null,
   );
-  const [claimLoading, setClaimLoading] = useState<boolean>(false);
+  const [isTransactionLoading, setIsTransactionLoading] =
+    useState<boolean>(false);
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
   const { account } = useWallet();
 
   const isClaimDisabled = useMemo(
-    () => claimLoading || !rewards || Number(rewards?.claimable || 0) <= 1,
-    [claimLoading, rewards],
+    () =>
+      isTransactionLoading || !rewards || Number(rewards?.claimable || 0) <= 1,
+    [isTransactionLoading, rewards],
   );
 
   /**
@@ -112,25 +114,30 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
       toast(messages.NO_ACCOUNT, 'error');
       return;
     }
-    if (!isClaimDisabled) {
+    if (!rewards) {
       toast(messages.NO_REWARDS, 'error');
       return;
     }
+    if (!isUnlocked) {
+      toast(messages.NOT_UNLOCKED, 'error');
+      return;
+    }
     try {
-      setClaimLoading(true);
+      toast(messages.INFO_SUBMIT, 'info');
+      setIsTransactionLoading(true);
       const tx = api.tx.rewards.claim(1);
       const signer = await getSinger(account.address);
       await signAndSubmitPromiseWrapper({
         tx,
         address: account.address,
         signer,
-        criteria: 'IS_FINALIZED',
+        criteria: 'IS_IN_BLOCK',
       });
       toast(messages.SUCCESS_CLAIM, 'success');
     } catch (error) {
       toast(`${messages.FAILURE_CLAIM}: ${error?.message ?? error}`, 'error');
     } finally {
-      setClaimLoading(false);
+      setIsTransactionLoading(false);
     }
   }, [apiConnected, account, getSinger, api, isClaimDisabled]);
 
@@ -144,13 +151,15 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
       return;
     }
     try {
+      toast(messages.INFO_SUBMIT, 'info');
+      setIsTransactionLoading(true);
       const tx = api.tx.rewards.initializeClaimRewards(1);
       const signer = await getSinger(account.address);
       await signAndSubmitPromiseWrapper({
         tx,
         address: account.address,
         signer,
-        criteria: 'IS_FINALIZED',
+        criteria: 'IS_IN_BLOCK',
       });
       toast(messages.SUCCESS_INITIATE, 'success');
     } catch (error) {
@@ -158,6 +167,8 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
         `${messages.FAILURE_INITIATE}: ${error?.message ?? error}`,
         'error',
       );
+    } finally {
+      setIsTransactionLoading(false);
     }
   }, [apiConnected, account, getSinger, api]);
 
@@ -201,13 +212,13 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
     ...rewards,
     fetchRewards,
     loading,
-    doesAccountHaveRewards: rewards !== null && isUnlocked, // account should be present in csv
     walletReward,
     isUnlocked,
     claimRewards,
     initiateClaim,
     hasRewards: !!walletReward,
     isClaimDisabled,
+    isTransactionLoading,
   };
   return (
     <RewardsContext.Provider value={value}>{children}</RewardsContext.Provider>
@@ -218,9 +229,11 @@ const messages = {
   NOT_CONNECTED: 'Please connect to the API to claim rewards.',
   NO_ACCOUNT: 'Please select an account to claim rewards.',
   NO_REWARDS: 'You do not have any rewards to claim.',
+  NOT_UNLOCKED: 'You have not unlocked your rewards',
   SUCCESS_CLAIM: 'Rewards claimed successfully!',
-  SUCCESS_INITIATE: 'Initiated claim rewards successfully!',
+  SUCCESS_INITIATE: 'Unlocked rewards successfully!',
   FAILURE_CLAIM: 'Failed to claim rewards. Please try again later',
   FAILURE_FETCH: 'Failed to fetch rewards. Please try again later',
   FAILURE_INITIATE: 'Failed to initiate claim rewards. Please try again later',
+  INFO_SUBMIT: 'Submitting transaction to blockchain...',
 };

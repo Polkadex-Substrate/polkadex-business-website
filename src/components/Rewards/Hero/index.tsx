@@ -17,7 +17,7 @@ export const Hero = () => {
     isClaimDisabled,
     hasRewards,
     walletReward,
-    doesAccountHaveRewards,
+    isTransactionLoading,
   } = useRewards();
   const shortWallet = useMemo(
     () =>
@@ -48,8 +48,7 @@ export const Hero = () => {
                     </small>
                   </span>
                 )}
-
-                {hasRewards && (
+                {hasRewards && !isUnlocked && (
                   <div>
                     <S.InformationContainer>
                       <div>
@@ -64,20 +63,24 @@ export const Hero = () => {
                         <span>{walletReward?.dotContributed} DOT</span>
                         <p>DOT contributed</p>
                       </div>
-                      {doesAccountHaveRewards && (
-                        <>
-                          <div>
-                            <span>{claimable ?? 0.0} PDEX</span>
-                            <p>Claimable rewards</p>
-                          </div>
-                          <div>
-                            <span>{claimed ?? 0.0} PDEX</span>
-                            <p>Claimed rewards</p>
-                          </div>
-                        </>
-                      )}
                     </S.InformationContainer>
                   </div>
+                )}
+                {isUnlocked && (
+                  <S.InformationContainer>
+                    <div>
+                      <span>{walletReward?.totalPdex ?? 0.0} PDEX</span>
+                      <p>Total rewards</p>
+                    </div>
+                    <div>
+                      <span>{claimable ?? 0.0} PDEX</span>
+                      <p>Claimable rewards</p>
+                    </div>
+                    <div>
+                      <span>{claimed ?? 0.0} PDEX</span>
+                      <p>Claimed rewards</p>
+                    </div>
+                  </S.InformationContainer>
                 )}
               </S.Information>
             )}
@@ -137,7 +140,12 @@ export const Hero = () => {
                     disabled={isUnlocked ? isClaimDisabled : !hasRewards}
                     onClick={isUnlocked ? claimRewards : initiateClaim}
                   >
-                    {isUnlocked ? 'Claim' : 'Unlock Reward'}
+                    {/* eslint-disable-next-line no-nested-ternary */}
+                    {isTransactionLoading
+                      ? 'Submitting...'
+                      : isUnlocked
+                      ? 'Claim'
+                      : 'Unlock Reward'}
                   </button>
                 )}
               </>
