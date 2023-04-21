@@ -66,7 +66,7 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider('ws://localhost:9944');
+      const provider = new WsProvider('wss://blockchain.polkadex.trade');
       const api = await ApiPromise.create({
         provider,
         ...typesApi,
