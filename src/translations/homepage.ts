@@ -352,36 +352,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Rust Engineer',
-        name: 'Nakul Amate',
-        image: 'nakulPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/nakul1010',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/nakul-amate/',
-          },
-        ],
-      },
-      {
-        title: 'Rust Engineer',
-        name: 'Faisal Ahmed',
-        image: 'faisalPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/felixfaisal',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/faisal-ahmed-farooq-6395a0174/',
-          },
-        ],
-      },
-      {
         title: 'Threshold Cryptography Advisor',
         name: 'Omer Shlomovits',
         image: 'omerPhotography',
