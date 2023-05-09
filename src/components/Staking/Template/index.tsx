@@ -72,11 +72,11 @@ export const Template = ({ data, error }) => {
           <Stats>
             <>
               <StatsCard
-                title={`${totalNominator || '5.469'}k`}
+                title={`${String(totalNominator || 5.469).slice(0, 3)}k`}
                 description="Total Nominators"
               />
               <StatsCard
-                title={`${String(stakedValue || '4.38').slice(0, 4)} million`}
+                title={`${String(stakedValue || 4.38).slice(0, 4)} million`}
                 description="PDEX Staked"
               />
               <StatsCard
