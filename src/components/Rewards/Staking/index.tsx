@@ -18,7 +18,7 @@ export const Staking = ({ apy }) => {
 
   return (
     <S.Wrapper>
-      <S.Container>
+      <S.Container className="latestRewards">
         <S.Top>
           <h2>Stake your claimed rewards and watch them grow! 🚀</h2>
           <div>
