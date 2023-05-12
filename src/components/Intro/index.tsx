@@ -122,7 +122,18 @@ const ContentComponent = (props: PopoverContentProps) => {
   const isLastStep = currentStep === steps.length - 1;
 
   const { account, isInjected } = useWallet();
-  const { hasRewards } = useRewards();
+  const { hasRewards, claimed, isTransactionLoading } = useRewards();
+
+  const showNextButton = !isLastStep && currentStep === 0 && isInjected;
+  const showSkipButton =
+    isLastStep ||
+    (currentStep === 1 && !isInjected) ||
+    (!hasRewards && currentStep === 2);
+
+  const userHasClaimedRewards = useMemo(
+    () => hasRewards && Number(claimed) > 0 && !isTransactionLoading,
+    [isTransactionLoading, hasRewards, claimed],
+  );
 
   const handleChangeIntroView = useCallback(() => {
     localStorage.setItem(DEFAULTINTRONAME, state ? 'false' : 'true');
@@ -134,15 +145,9 @@ const ContentComponent = (props: PopoverContentProps) => {
   }, [account, setCurrentStep, currentStep]);
 
   useEffect(() => {
-    if (hasRewards && currentStep === 2)
+    if (userHasClaimedRewards && currentStep === 2)
       setInterval(() => setCurrentStep(3), 300);
-  }, [hasRewards, setCurrentStep, currentStep]);
-
-  const showNextButton = !isLastStep && currentStep === 0 && isInjected;
-  const showSkipButton =
-    isLastStep ||
-    (currentStep === 1 && !isInjected) ||
-    (!hasRewards && currentStep === 2);
+  }, [setCurrentStep, currentStep, userHasClaimedRewards]);
 
   return (
     <S.Wrapper>
