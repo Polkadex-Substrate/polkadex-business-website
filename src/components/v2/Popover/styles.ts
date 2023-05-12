@@ -8,7 +8,7 @@ export const ContentMain = styled.div`
       transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
     }
     &.enter-active ${ContentWrapper} {
-      opacity: 0.75;
+      opacity: 1;
       transform: scale(1.05);
     }
     &.enter-done ${ContentWrapper} {
