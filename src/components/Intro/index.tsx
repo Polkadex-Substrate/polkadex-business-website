@@ -116,6 +116,7 @@ export function Intro({ children }: { children: ReactNode }) {
 }
 
 const ContentComponent = (props: PopoverContentProps) => {
+  const [terms, setTerms] = useState(true);
   const [state, setState] = useState(!!initialState);
   const { steps, currentStep, setIsOpen, setCurrentStep } = props;
   const { content } = steps[currentStep];
@@ -141,45 +142,70 @@ const ContentComponent = (props: PopoverContentProps) => {
   }, [state]);
 
   useEffect(() => {
-    if (account && currentStep === 1) setInterval(() => setCurrentStep(2), 300);
+    if (account && currentStep === 1) setTimeout(() => setCurrentStep(2), 200);
   }, [account, setCurrentStep, currentStep]);
 
   useEffect(() => {
     if (userHasClaimedRewards && currentStep === 2)
-      setInterval(() => setCurrentStep(3), 300);
+      setTimeout(() => setCurrentStep(3), 200);
   }, [setCurrentStep, currentStep, userHasClaimedRewards]);
 
   return (
     <S.Wrapper>
-      <>
-        {typeof content === 'function'
-          ? content({ ...props })
-          : (content as ReactNode)}
-      </>
-      <S.FlexActions>
-        <S.Actions>
-          <button type="button" onClick={() => setIsOpen(false)}>
-            {showSkipButton ? 'Done' : 'Skip'}
-          </button>
-          <S.Label htmlFor="changeIntro">
-            <input
-              id="changeIntro"
-              type="checkbox"
-              checked={state}
-              onChange={handleChangeIntroView}
-            />
-            Don&apos;t show again
-          </S.Label>
-        </S.Actions>
-        {showNextButton && (
-          <S.Button
-            type="button"
-            onClick={() => setCurrentStep(currentStep + 1)}
-          >
-            Next
-          </S.Button>
-        )}
-      </S.FlexActions>
+      {terms ? (
+        <S.Terms>
+          <img src="/img/termsHero.svg" alt="Teacher illutration" />
+          <div>
+            <h5>Terms & Conditions</h5>
+            <p>
+              Claiming your PDEX rewards is a key part of the Polkadex Crowdloan
+              campaign. For your reference,{' '}
+              <a
+                target="_blank"
+                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
+                rel="noreferrer"
+              >
+                here are the Terms & Conditions
+              </a>{' '}
+              you previously agreed upon when you contributed your DOT to the
+              Polkadex Crowdloan.
+            </p>
+            <S.Button type="button" onClick={() => setTerms(!terms)}>
+              Close
+            </S.Button>
+          </div>
+        </S.Terms>
+      ) : (
+        <>
+          {typeof content === 'function'
+            ? content({ ...props })
+            : (content as ReactNode)}
+          <S.FlexActions>
+            <S.Actions>
+              <button type="button" onClick={() => setIsOpen(false)}>
+                {showSkipButton ? 'Done' : 'Skip'}
+              </button>
+              <S.Label htmlFor="changeIntro">
+                <input
+                  id="changeIntro"
+                  type="checkbox"
+                  checked={state}
+                  onChange={handleChangeIntroView}
+                />
+                Don&apos;t show again
+              </S.Label>
+            </S.Actions>
+            {showNextButton && (
+              <S.Button
+                type="button"
+                onClick={() => setCurrentStep(currentStep + 1)}
+              >
+                Next
+              </S.Button>
+            )}
+          </S.FlexActions>
+        </>
+      )}
     </S.Wrapper>
   );
 };
