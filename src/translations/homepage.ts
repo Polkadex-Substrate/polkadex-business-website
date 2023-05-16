@@ -304,6 +304,25 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Lead Frontend Engineer',
+        name: 'Emmanuel Thomas',
+        image: 'emmanuelPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/nuel77',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://linkedin.com/in/nuel77',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/_nuel_1999',
+          },
+        ],
+      },
+      {
         title: 'Flutter Engineer',
         name: 'Adriel Bomfim',
         image: 'adrielPhotography',
