@@ -5,6 +5,23 @@ import data from '../../data/crowdloan_distribution_rewards.json';
 import * as S from './styles';
 
 const CrowdloansRewardsPage = () => {
+  const [didContribute, setDidContribute] = useState(false);
+  const [valueContributed, setValueContributed] = useState('0');
+  const [walletAddress, setWalletAddress] = useState('');
+  const handleInput = (value) => {
+    setWalletAddress(value);
+  };
+  useEffect(() => {
+    setDidContribute(false);
+    if (walletAddress) {
+      const contribution = data.find((item) => item.Account === walletAddress);
+      if (contribution) {
+        setDidContribute(true);
+        setValueContributed(contribution['DOT Contributed']);
+      }
+    }
+  }, [walletAddress]);
+
   return (
     <S.Wrapper>
       <S.InputWrapper>
@@ -17,17 +34,34 @@ const CrowdloansRewardsPage = () => {
             placeholder="Search by wallet address"
             name=""
             id=""
+            onChange={(e) => handleInput(e.target.value)}
           />
         </S.Input>
         <S.Paste>Paste</S.Paste>
       </S.InputWrapper>
-      <S.InfoWrapper>
-        <h2>Find out if your wallet has rewards waiting for you</h2>
-        <p>
-          A heartfelt thanks to the 3632 contributors who enabled Polkadex's
-          remarkable victory in auction 16th with nearly 1 million DOT.{' '}
-        </p>
-      </S.InfoWrapper>
+      {walletAddress && didContribute && (
+        <S.InfoWrapper>
+          <h2> This wallet did contribute to Polkadex Crownalons 🎁</h2>
+          <p>DOT Contributed</p>
+          <p>{valueContributed}</p>
+        </S.InfoWrapper>
+      )}
+      {walletAddress && !didContribute && (
+        <S.InfoWrapper>
+          <h2> Oops, this wallet didn’t contribute to Polkadex Crowndloans</h2>
+          <p>Please try with another wallet</p>
+        </S.InfoWrapper>
+      )}
+      {!walletAddress && (
+        <S.InfoWrapper>
+          <h2>Find out if your wallet has rewards waiting for you</h2>
+
+          <p>
+            A heartfelt thanks to the 3632 contributors who enabled Polkadex's
+            remarkable victory in auction 16th with nearly 1 million DOT.{' '}
+          </p>
+        </S.InfoWrapper>
+      )}
       <S.ListWrapper>
         <S.ListHeader>
           <p>Crowndloans contribute list</p>
