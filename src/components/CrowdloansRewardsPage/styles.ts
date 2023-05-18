@@ -59,3 +59,42 @@ export const InfoWrapper = styled(Center)`
     }
   `}
 `;
+export const ListWrapper = styled.div`
+  background-color: rgba(256, 256, 256, 0.01);
+  border-radius: 1.7rem;
+  padding: 9rem;
+  backdrop-filter: blur(2rem);
+`;
+
+export const Badge = styled.div`
+  background-color: white;
+  border-radius: 6rem;
+  padding: 0.4rem 0.6rem;
+  color: black;
+  font-size: small;
+  margin-left: 2rem;
+`;
+export const ListHeader = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: large;
+  margin-bottom: 6rem;
+`;
+
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+`;
+
+export const TableRow = styled.tr`
+  background-color: ${(props) =>
+    props.isOdd ? 'transparent' : 'rgba(139,161,190,0.05)'};
+`;
+
+export const TableCell = styled.td`
+  padding: 1.5rem;
+`;
+export const TableCellUnder = styled(TableCell)`
+  text-decoration: underline;
+`;

@@ -1,36 +1,10 @@
 import { Icon } from 'components/Icon';
-import Papa from 'papaparse';
 import React, { useEffect, useState } from 'react';
 
+import data from '../../data/crowdloan_distribution_rewards.json';
 import * as S from './styles';
 
 const CrowdloansRewardsPage = () => {
-  const [csvData, setCsvData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await fetch(
-        '../../data/crowdloan_distribution_rewards.csv',
-      );
-
-      const reader = response.body.getReader();
-
-      const result = await reader.read();
-
-      const decoder = new TextDecoder('utf-8');
-      const csv = decoder.decode(result.value);
-
-      const { data } = Papa.parse(csv, { header: true });
-      // setCsvData(data);
-      setLoading(false);
-      console.log(data, 'data');
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <S.Wrapper>
       <S.InputWrapper>
@@ -54,6 +28,28 @@ const CrowdloansRewardsPage = () => {
           remarkable victory in auction 16th with nearly 1 million DOT.{' '}
         </p>
       </S.InfoWrapper>
+      <S.ListWrapper>
+        <S.ListHeader>
+          <p>Crowndloans contribute list</p>
+          <S.Badge>3632 contributors</S.Badge>
+        </S.ListHeader>
+        <S.Table>
+          <thead>
+            <S.TableRow isOdd="false">
+              <S.TableCell>Wallet</S.TableCell>
+              <S.TableCell>DOT Contributed</S.TableCell>
+            </S.TableRow>
+          </thead>
+          <tbody>
+            {data.slice(1, 10).map((item, index) => (
+              <S.TableRow key={item.Account} isOdd={index % 2 !== 0}>
+                <S.TableCellUnder>{item.Account}</S.TableCellUnder>
+                <S.TableCell>{item['DOT Contributed']}</S.TableCell>
+              </S.TableRow>
+            ))}
+          </tbody>
+        </S.Table>
+      </S.ListWrapper>
     </S.Wrapper>
   );
 };
