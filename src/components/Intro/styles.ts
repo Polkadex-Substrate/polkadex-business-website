@@ -36,6 +36,34 @@ export const Wrapper = styled.div`
     border-radius: 2rem;
   `}
 `;
+export const Terms = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+    img {
+      max-width: 15rem;
+      width: 100%;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      h5 {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      p {
+        line-height: 1.6;
+      }
+      a {
+        color: ${theme.colors.primary};
+        text-decoration: underline;
+      }
+    }
+  `}
+`;
 
 export const Actions = styled(Flex)`
   ${({ theme }) => css`
