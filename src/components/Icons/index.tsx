@@ -122,6 +122,7 @@ export { default as RelayChain } from './RelayChain';
 export * from './Rmrk';
 export { default as Screenshots } from './Screenshots';
 export { default as Scs } from './Scs';
+export * from './Search';
 export { default as SecureAssets } from './SecureAssets';
 export * from './SecurityResearchLabs';
 export { default as Selected } from './Selected';

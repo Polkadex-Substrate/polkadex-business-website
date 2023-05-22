@@ -80,6 +80,11 @@ export const Header = ({ links = [], cta }: T.Props) => {
                         Parachain
                       </a>
                     </S.Li>
+                    <S.Li>
+                      <Link href="/crowdloansRewardsFind">
+                        Crowdloan Contributions
+                      </Link>
+                    </S.Li>
                   </ul>
                 </S.MenuContainer>
                 <S.MenuContainer>
