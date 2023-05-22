@@ -1,4 +1,5 @@
 import axios from 'axios';
+import CrowdloansRewardsPage from 'components/CrowdloansRewardsPage';
 import {
   BetaProgram,
   Ecosystem,
@@ -80,6 +81,7 @@ export default function Home({ data, error = '' }) {
           <Ecosystem />
           <Polkaido />
           <SeenOn />
+          <CrowdloansRewardsPage />
           <Newsletter />
         </main>
         <Footer />
