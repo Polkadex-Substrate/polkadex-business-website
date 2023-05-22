@@ -304,6 +304,25 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Lead Frontend Engineer',
+        name: 'Emmanuel Thomas',
+        image: 'emmanuelPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/nuel77',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://linkedin.com/in/nuel77',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/_nuel_1999',
+          },
+        ],
+      },
+      {
         title: 'Flutter Engineer',
         name: 'Adriel Bomfim',
         image: 'adrielPhotography',
@@ -348,36 +367,6 @@ const ENLanguage = {
           {
             name: 'Github',
             link: 'https://github.com/35359595',
-          },
-        ],
-      },
-      {
-        title: 'Junior Rust Engineer',
-        name: 'Nakul Amate',
-        image: 'nakulPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/nakul1010',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/nakul-amate/',
-          },
-        ],
-      },
-      {
-        title: 'Junior Rust Engineer',
-        name: 'Faisal Ahmed',
-        image: 'faisalPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/felixfaisal',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/faisal-ahmed-farooq-6395a0174/',
           },
         ],
       },
@@ -448,6 +437,7 @@ const ENLanguage = {
       {
         title: 'Q3 2023',
         alignRight: false,
+        soon: true,
         position: {
           horizontal: {
             side: 'left',
@@ -467,10 +457,11 @@ const ENLanguage = {
         title: 'Q2 2023',
         invert: true,
         alignRight: true,
+        soon: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: -3,
+            distance: -6,
           },
           vertical: {
             side: 'top',
@@ -478,20 +469,22 @@ const ENLanguage = {
           },
         },
         items: [
-          {
-            title: 'Integration with Trading Bots and Market Makers',
-            status: false,
-          },
-          { title: 'Bridge with ETH and Polygon', status: false },
+          { title: 'Code Audit of Solochain, Orderbook' },
+          { title: 'Crowdloan Rewards (Early Q2)' },
+          { title: 'Mobile App Mainnet (Early Q2)' },
+          { title: 'Bridge with Polkadot - Mainnet' },
+          { title: 'Integration with Trading Bots and Market Makers' },
+          { title: 'Bridge with ETH and Polygon' },
         ],
       },
       {
         title: 'Q1 2023',
         alignRight: false,
+        active: true,
         position: {
           horizontal: {
             side: 'right',
-            distance: 24,
+            distance: 20,
           },
           vertical: {
             side: 'top',
@@ -499,13 +492,14 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Crowdloan Rewards Distribution' },
-          { title: 'Mobile App Mainnet' },
           {
-            title: 'Bug Bounty Program',
-            status: false,
+            title: 'Thea Bridge with Polkadot - Internal Testnet',
           },
-          { title: 'Bridge with Polkadot and Kusama', status: false },
+          { title: 'XCM Channels with Parachain - Testnet' },
+          {
+            title: 'Code Audit of Parachain & Thea',
+          },
+          { title: 'Crowdloan Rewards Pallet - Awaiting Audit' },
         ],
       },
       {
@@ -515,11 +509,11 @@ const ENLanguage = {
         position: {
           horizontal: {
             side: 'left',
-            distance: 13,
+            distance: 22,
           },
           vertical: {
             side: 'top',
-            distance: 20,
+            distance: 25,
           },
         },
         items: [

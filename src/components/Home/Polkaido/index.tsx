@@ -1,5 +1,4 @@
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -29,20 +28,16 @@ export const Polkaido = () => {
 };
 
 const AsideLeft = () => {
-  const animationProps = useAnimation({ duration: 0.5 });
-
   return (
-    <S.AsideLeft {...animationProps}>
+    <S.AsideLeft>
       <img src="/img/polkaidoPreview1.png" alt="Polkaido platform mockup" />
     </S.AsideLeft>
   );
 };
 
 const AsideRight = () => {
-  const animationProps = useAnimation({ duration: 1.5 });
-
   return (
-    <S.AsideRight {...animationProps}>
+    <S.AsideRight>
       <S.AsideRightIcon>
         <Icons.InitialOfferCircle />
       </S.AsideRightIcon>
@@ -71,11 +66,9 @@ const AsideRight = () => {
 };
 
 const Card = ({ title, description, icon, i }) => {
-  const animationProps = useAnimation({ duration: 0.5 * i });
-
   const IconComponent = Icons[icon];
   return (
-    <S.FeaturesCard {...animationProps}>
+    <S.FeaturesCard>
       <IconComponent />
       <h3>{title}</h3>
       <p>{description}</p>

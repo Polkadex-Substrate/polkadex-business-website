@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 
 import { data } from './data';
 import * as S from './styles';
@@ -53,20 +52,16 @@ export const Orderbook = () => {
 };
 
 const AsideLeft = () => {
-  const animationProps = useAnimation({ duration: 0.5 });
-
   return (
-    <S.AsideLeft {...animationProps}>
+    <S.AsideLeft>
       <Icons.OrderbookPreview />
     </S.AsideLeft>
   );
 };
 
 const AsideRight = () => {
-  const animationProps = useAnimation({ duration: 1.5 });
-
   return (
-    <S.AsideRight {...animationProps}>
+    <S.AsideRight>
       <S.AsideRightIcon>
         <Icons.ExchangeCircle />
       </S.AsideRightIcon>
@@ -101,10 +96,8 @@ const AsideRight = () => {
 };
 
 const Listing = () => {
-  const animationProps = useAnimation({ duration: 0.5 });
-
   return (
-    <S.Listing {...animationProps}>
+    <S.Listing>
       <S.ListingWrapper>
         <h2>
           List your token on <strong>Polkadex Orderbook</strong>
@@ -118,10 +111,9 @@ const Listing = () => {
   );
 };
 const Card = ({ title, description = null, i, icon }) => {
-  const animationProps = useAnimation({ duration: 0.3 * i });
   const IconComponent = Icons[icon];
   return (
-    <S.Card {...animationProps}>
+    <S.Card>
       <div>
         <h3>{title}</h3>
         {description && <p>{description}</p>}

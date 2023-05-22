@@ -105,7 +105,6 @@ export const FeaturesFlex = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     ${Card} {
       div :last-child {
-        height: 20rem;
         svg {
           width: 100%;
           height: auto;
@@ -130,7 +129,6 @@ export const FeaturesGrid = styled.div`
     }
     ${Card} {
       div :last-child {
-        height: 20rem;
         svg {
           width: 100%;
           height: auto;
@@ -151,9 +149,6 @@ export const FeaturesBox = styled.div`
       grid-template-columns: 1fr 2fr;
     }
     ${Card} {
-      div :last-child {
-        height: 25rem;
-      }
       :first-child {
         div svg {
           width: 100%;
@@ -166,7 +161,8 @@ export const FeaturesBox = styled.div`
       }
       :last-child {
         div svg {
-          width: auto;
+          width: 100%;
+          max-width: 55rem;
           height: 100%;
           @media screen and (max-width: 1000px) {
             width: unset;

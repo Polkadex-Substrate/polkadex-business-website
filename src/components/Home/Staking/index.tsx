@@ -1,5 +1,4 @@
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 import Link from 'next/link';
 
 import * as S from './styles';
@@ -22,20 +21,16 @@ export const Staking = ({ apy = '' }) => {
 };
 
 const AsideLeft = () => {
-  const animationProps = useAnimation({ duration: 0.5 });
-
   return (
-    <S.Hero {...animationProps}>
+    <S.Hero>
       <Icons.StakingHero />
     </S.Hero>
   );
 };
 
 const AsideRight = ({ apy }) => {
-  const animationProps = useAnimation({ duration: 1.5 });
-
   return (
-    <S.Content {...animationProps}>
+    <S.Content>
       <div>
         <h2>
           <strong>Stake PDEX</strong> and earn up to <strong> {apy} APY</strong>

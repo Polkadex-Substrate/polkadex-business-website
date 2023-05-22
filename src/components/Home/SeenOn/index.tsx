@@ -1,5 +1,4 @@
 import * as Icons from 'components/Icons';
-import { useAnimation } from 'hooks';
 import { ImgHTMLAttributes } from 'react';
 
 import { data } from './data';
@@ -32,11 +31,9 @@ type Props = {
 } & ImgHTMLAttributes<HTMLImageElement>;
 
 const Card = ({ icon = null, img, i, ...props }: Props) => {
-  const animationProps = useAnimation({ duration: 0.2 * i });
-
   const IconComponent = Icons[icon];
   return (
-    <S.Card {...animationProps}>
+    <S.Card>
       {img ? (
         <img src={`/img/partners/${img}.png`} alt={props.alt} />
       ) : (
