@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0 auto 0 auto;
@@ -20,6 +21,24 @@ export const Wrapper = styled.div`
     border-width: 1px 0;
     min-height: 65vh;
     padding: 2rem;
+  `}
+`;
+export const IntroButton = styled.button`
+  ${({ theme }) => css`
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+    font-size: 1.4rem;
+    background: ${theme.colors.verticalGradient};
+    color: ${theme.colors.white};
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    box-shadow: 0px 4px 34px rgba(0, 0, 12, 0.5);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    :hover {
+      transform: translateY(-2px);
+    }
   `}
 `;
 

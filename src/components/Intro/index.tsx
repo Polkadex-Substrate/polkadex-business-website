@@ -1,6 +1,7 @@
 import { PopoverContentProps, StepType, TourProvider } from '@reactour/tour';
 import { useRewards } from 'hooks/useRewards';
 import { useWallet } from 'hooks/useWallet';
+import Link from 'next/link';
 import React, {
   ReactNode,
   useCallback,
@@ -16,6 +17,8 @@ import * as S from './styles';
 const initialState = process.browser && localStorage.getItem(DEFAULTINTRONAME);
 
 export function Intro({ children }: { children: ReactNode }) {
+  const { hasRewards } = useRewards();
+
   const steps: StepType[] = useMemo(
     () => [
       {
@@ -24,11 +27,10 @@ export function Intro({ children }: { children: ReactNode }) {
           <S.Container>
             <img src="/img/tutorialHero.svg" alt="Teacher illutration" />
             <div>
-              <h6>Step-by-step: Verify and withdraw your reward</h6>
+              <h6>Step-by-step: Check and claim your PDEX rewards</h6>
               <p>
-                Discover how to verify and withdraw your rewards with our
-                easy-to-follow guide. Learn the steps to ensure you receive your
-                well-deserved rewards.
+                Follow this simple guide to learn how to check and claim your
+                PDEX rewards.
               </p>
             </div>
           </S.Container>
@@ -43,8 +45,13 @@ export function Intro({ children }: { children: ReactNode }) {
             <div>
               <h6>1. Select a wallet</h6>
               <p>
-                These are the available wallets. For now, you can only connect
-                your wallet using Polkadot.js extension.
+                Select the wallet address you used to contribute to the Polkadex
+                Crowdloan. For now, you can only connect to this rewards claim
+                DApp using a{' '}
+                <Link href="https://polkadot.js.org/extension">
+                  Polkadot.js extension
+                </Link>
+                -enabled wallet.
               </p>
             </div>
           </S.Container>
@@ -54,50 +61,20 @@ export function Intro({ children }: { children: ReactNode }) {
         disableActions: true,
       },
       {
-        selector: '.initiateButton',
+        selector: hasRewards ? '.initiateButton' : '.noRewards',
         content: (
           <S.Container>
             <div>
-              <h6>2. Initiate Your Claim to Check for Available Rewards</h6>
+              <h6>
+                2.{' '}
+                {hasRewards
+                  ? 'Claim your rewards!'
+                  : 'There are no rewards available'}
+              </h6>
               <p>
-                Click on the ‘Initiate Claim’ button to see if your wallet has
-                any available rewards. Don’t miss out on the opportunity to
-                claim your well-deserved rewards. .
-              </p>
-            </div>
-          </S.Container>
-        ),
-        position: 'bottom',
-        styles: defaultStyles,
-        disableActions: true,
-      },
-      {
-        selector: '.availableRewards',
-        content: (
-          <S.Container>
-            <div>
-              <h6>3. Your Available Rewards from This Wallet</h6>
-              <p>
-                Check out the rewards that are currently available to you from
-                this wallet. Don’t miss out on the opportunity to claim your
-                well-deserved rewards.
-              </p>
-            </div>
-          </S.Container>
-        ),
-        position: 'bottom',
-        styles: defaultStyles,
-        disableActions: true,
-      },
-      {
-        selector: '.initiateButton',
-        content: (
-          <S.Container>
-            <div>
-              <h6>4. Claim your rewards now!</h6>
-              <p>
-                Don’t miss out on the opportunity to claim your rewards. Click
-                on the ‘Initiate Claim’.
+                {hasRewards
+                  ? 'Click on ‘Unlock’ to instantly unlock 25% of your available rewards and start vesting the remaining 75%'
+                  : 'Have you selected the correct wallet?'}
               </p>
             </div>
           </S.Container>
@@ -111,11 +88,10 @@ export function Intro({ children }: { children: ReactNode }) {
         content: (
           <S.Container>
             <div>
-              <h6>Latest Rewards Distributed</h6>
+              <h6>Start staking!</h6>
               <p>
-                Check out the latest rewards that have been distributed. See if
-                you’re eligible to claim any of these rewards and don’t miss out
-                on the opportunity to receive your well-deserved rewards.
+                Put your PDEX rewards to work! Start staking your unlocked
+                rewards to earn daily PDEX returns on top of your rewards.
               </p>
             </div>
           </S.Container>
@@ -125,7 +101,7 @@ export function Intro({ children }: { children: ReactNode }) {
         disableActions: true,
       },
     ],
-    [],
+    [hasRewards],
   );
 
   return (
@@ -140,13 +116,25 @@ export function Intro({ children }: { children: ReactNode }) {
 }
 
 const ContentComponent = (props: PopoverContentProps) => {
+  const [terms, setTerms] = useState(true);
   const [state, setState] = useState(!!initialState);
   const { steps, currentStep, setIsOpen, setCurrentStep } = props;
   const { content } = steps[currentStep];
   const isLastStep = currentStep === steps.length - 1;
 
   const { account, isInjected } = useWallet();
-  const { doesAccountHaveRewards } = useRewards();
+  const { hasRewards, claimed, isTransactionLoading } = useRewards();
+
+  const showNextButton = !isLastStep && currentStep === 0 && isInjected;
+  const showSkipButton =
+    isLastStep ||
+    (currentStep === 1 && !isInjected) ||
+    (!hasRewards && currentStep === 2);
+
+  const userHasClaimedRewards = useMemo(
+    () => hasRewards && Number(claimed) > 0 && !isTransactionLoading,
+    [isTransactionLoading, hasRewards, claimed],
+  );
 
   const handleChangeIntroView = useCallback(() => {
     localStorage.setItem(DEFAULTINTRONAME, state ? 'false' : 'true');
@@ -154,45 +142,70 @@ const ContentComponent = (props: PopoverContentProps) => {
   }, [state]);
 
   useEffect(() => {
-    if (account && currentStep === 1) setInterval(() => setCurrentStep(2), 300);
+    if (account && currentStep === 1) setTimeout(() => setCurrentStep(2), 200);
   }, [account, setCurrentStep, currentStep]);
 
   useEffect(() => {
-    if (doesAccountHaveRewards && currentStep === 2)
-      setInterval(() => setCurrentStep(3), 300);
-  }, [doesAccountHaveRewards, setCurrentStep, currentStep]);
+    if (userHasClaimedRewards && currentStep === 2)
+      setTimeout(() => setCurrentStep(3), 200);
+  }, [setCurrentStep, currentStep, userHasClaimedRewards]);
 
   return (
     <S.Wrapper>
-      <>
-        {typeof content === 'function'
-          ? content({ ...props })
-          : (content as ReactNode)}
-      </>
-      <S.FlexActions>
-        <S.Actions>
-          <button type="button" onClick={() => setIsOpen(false)}>
-            {isLastStep || (currentStep === 1 && !isInjected) ? 'Done' : 'Skip'}
-          </button>
-          <S.Label htmlFor="changeIntro">
-            <input
-              id="changeIntro"
-              type="checkbox"
-              checked={state}
-              onChange={handleChangeIntroView}
-            />
-            Don&apos;t show again
-          </S.Label>
-        </S.Actions>
-        {!isLastStep && !(currentStep === 1 && !isInjected) && (
-          <S.Button
-            type="button"
-            onClick={() => setCurrentStep(currentStep + 1)}
-          >
-            Next
-          </S.Button>
-        )}
-      </S.FlexActions>
+      {terms ? (
+        <S.Terms>
+          <img src="/img/termsHero.svg" alt="Teacher illutration" />
+          <div>
+            <h5>Terms & Conditions</h5>
+            <p>
+              Claiming your PDEX rewards is a key part of the Polkadex Crowdloan
+              campaign. For your reference,{' '}
+              <a
+                target="_blank"
+                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
+                rel="noreferrer"
+              >
+                here are the Terms & Conditions
+              </a>{' '}
+              you previously agreed upon when you contributed your DOT to the
+              Polkadex Crowdloan.
+            </p>
+            <S.Button type="button" onClick={() => setTerms(!terms)}>
+              Close
+            </S.Button>
+          </div>
+        </S.Terms>
+      ) : (
+        <>
+          {typeof content === 'function'
+            ? content({ ...props })
+            : (content as ReactNode)}
+          <S.FlexActions>
+            <S.Actions>
+              <button type="button" onClick={() => setIsOpen(false)}>
+                {showSkipButton ? 'Done' : 'Skip'}
+              </button>
+              <S.Label htmlFor="changeIntro">
+                <input
+                  id="changeIntro"
+                  type="checkbox"
+                  checked={state}
+                  onChange={handleChangeIntroView}
+                />
+                Don&apos;t show again
+              </S.Label>
+            </S.Actions>
+            {showNextButton && (
+              <S.Button
+                type="button"
+                onClick={() => setCurrentStep(currentStep + 1)}
+              >
+                Next
+              </S.Button>
+            )}
+          </S.FlexActions>
+        </>
+      )}
     </S.Wrapper>
   );
 };

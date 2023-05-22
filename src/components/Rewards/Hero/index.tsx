@@ -1,3 +1,4 @@
+import { useTour } from '@reactour/tour';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
 import React, { useMemo } from 'react';
@@ -26,15 +27,16 @@ export const Hero = () => {
       )}`,
     [account],
   );
+  const { setIsOpen, setCurrentStep } = useTour();
 
   return (
     <S.Wrapper>
       <S.Box>
-        <S.Container>
+        <S.Container className="initiateButton">
           <img src="/img/rewardsHero.svg" alt="Reward box illustration" />
           <S.Content>
             {isInjected && account && (
-              <S.Information className="availableRewards">
+              <S.Information className="noRewards">
                 {hasRewards ? (
                   <h3>
                     🎁 This wallet has pending rewards, Unlock your rewards!
@@ -88,13 +90,10 @@ export const Hero = () => {
           <S.Wallet>
             {isInjected ? (
               <>
-                <S.WalletContent>
+                <S.WalletContent className="selectWallet">
                   <Dropdown>
                     <Dropdown.Trigger>
-                      <S.DropdownHeader
-                        isSelected={!!account}
-                        className="selectWallet"
-                      >
+                      <S.DropdownHeader isSelected={!!account}>
                         <div>
                           {account ? (
                             <strong>{account.name}</strong>
@@ -136,7 +135,6 @@ export const Hero = () => {
                   <button
                     type="button"
                     aria-label="select account"
-                    className="initiateButton"
                     disabled={isUnlocked ? isClaimDisabled : !hasRewards}
                     onClick={isUnlocked ? claimRewards : initiateClaim}
                   >
@@ -204,7 +202,15 @@ export const Hero = () => {
           </S.Arrow>
         </S.Container>
       </S.Box>
-      <div />
+      <S.IntroButton
+        type="button"
+        onClick={() => {
+          setIsOpen(true);
+          setCurrentStep(0);
+        }}
+      >
+        Tutorial
+      </S.IntroButton>
     </S.Wrapper>
   );
 };
