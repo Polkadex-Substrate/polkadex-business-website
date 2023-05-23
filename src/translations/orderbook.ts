@@ -1,4 +1,11 @@
 const ENLanguage = {
+  navHeader: {
+    links: ['Products', 'Resources', 'About', 'Community'],
+    cta: {
+      title: 'Start Trading',
+      href: 'https://orderbook.polkadex.trade/',
+    },
+  },
   header: {
     topLinks: [
       {

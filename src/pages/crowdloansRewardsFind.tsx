@@ -4,10 +4,11 @@ import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
+import { IOrderbookTranslations, OrderbookTranslations } from 'translations';
 
 export default function CrowdloansRewardsFind() {
   const ref = useRef<HTMLDivElement>(null);
-
+  const { navHeader }: IOrderbookTranslations = OrderbookTranslations['en-US'];
   useEffect(() => {
     const path = window.location.hash;
     if (path && path.includes('#')) {
@@ -54,13 +55,7 @@ export default function CrowdloansRewardsFind() {
             content="Polkadex Crowdloan Contributions"
           />
         </Head>
-        <Header
-          links={['Products', 'Resources', 'About', 'Community']}
-          cta={{
-            title: 'Start Trading',
-            href: 'https://orderbook.polkadex.trade/',
-          }}
-        />
+        <Header links={navHeader.links} cta={navHeader.cta} />
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <CrowdloansRewardsPage />
           <Newsletter />
