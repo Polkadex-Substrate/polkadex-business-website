@@ -1325,6 +1325,31 @@
     rxjs "^7.8.1"
     tslib "^2.5.0"
 
+"@polkadot/ui-keyring@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@polkadot/ui-keyring/-/ui-keyring-3.4.1.tgz#4272cfd1575e402def0811e58a217cfce11cbda8"
+  integrity sha512-b5xkL2j6d2VcaVIg4p0HsUZmbSO0Ebb6XtM8g3hPJc9XEJ2FCKq0pvaErOs8hAJFM71j62KBv/QasmH3/7lUyQ==
+  dependencies:
+    "@polkadot/keyring" "^12.2.1"
+    "@polkadot/ui-settings" "3.4.1"
+    "@polkadot/util" "^12.2.1"
+    "@polkadot/util-crypto" "^12.2.1"
+    mkdirp "^3.0.1"
+    rxjs "^7.8.1"
+    store "^2.0.12"
+    tslib "^2.5.0"
+
+"@polkadot/ui-settings@3.4.1", "@polkadot/ui-settings@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@polkadot/ui-settings/-/ui-settings-3.4.1.tgz#0a74f154b8173c449826bad9bfdafefcb30225cc"
+  integrity sha512-2ym8ipRl14dedExABx/+NBLxh/8W8yMukY72db+weguJBC8/AAgNAzSX4tub9IGivArSTgi2T2/zLNXEKYtA+Q==
+  dependencies:
+    "@polkadot/networks" "^12.2.1"
+    "@polkadot/util" "^12.2.1"
+    eventemitter3 "^5.0.1"
+    store "^2.0.12"
+    tslib "^2.5.0"
+
 "@polkadot/util-crypto@10.4.2", "@polkadot/util-crypto@^10.2.1", "@polkadot/util-crypto@^10.4.2":
   version "10.4.2"
   resolved "https://registry.npmjs.org/@polkadot/util-crypto/-/util-crypto-10.4.2.tgz"
@@ -6832,7 +6857,7 @@ mkdirp-promise@^5.0.1:
   dependencies:
     mkdirp "*"
 
-mkdirp@*:
+mkdirp@*, mkdirp@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-3.0.1.tgz"
   integrity sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==
@@ -8356,6 +8381,11 @@ stop-iteration-iterator@^1.0.0:
   integrity sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==
   dependencies:
     internal-slot "^1.0.4"
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
+  integrity sha512-eO9xlzDpXLiMr9W1nQ3Nfp9EzZieIQc10zPPMP5jsVV7bLOziSFFBP0XoDXACEIFtdI+rIz0NwWVA/QVJ8zJtw==
 
 strict-uri-encode@^1.0.0:
   version "1.1.0"

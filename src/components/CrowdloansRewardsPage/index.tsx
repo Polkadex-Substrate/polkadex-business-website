@@ -1,5 +1,8 @@
+import keyring from '@polkadot/ui-keyring';
+import { cryptoWaitReady } from '@polkadot/util-crypto';
 import { Icon } from 'components/Icon';
 import React, { useEffect, useState } from 'react';
+import { formatAddressToDefault, formatAddressToPolkadex } from 'utils/helpers';
 
 import data from '../../data/crowdloan_distribution_rewards.json';
 import * as S from './styles';
@@ -8,19 +11,50 @@ const CrowdloansRewardsPage = () => {
   const [didContribute, setDidContribute] = useState(false);
   const [valueContributed, setValueContributed] = useState('0');
   const [walletAddress, setWalletAddress] = useState('');
+  const [formatedData, setFormatedData] = useState([]);
   const handleInput = (value) => {
     setWalletAddress(value);
   };
   useEffect(() => {
     setDidContribute(false);
     if (walletAddress) {
-      const contribution = data.find((item) => item.Account === walletAddress);
+      const contribution = formatedData?.find(
+        (item) => item.Account === formatAddressToPolkadex(walletAddress),
+      );
       if (contribution) {
         setDidContribute(true);
         setValueContributed(contribution['DOT Contributed']);
       }
     }
   }, [walletAddress]);
+
+  const cryptoWait = async () => {
+    try {
+      await cryptoWaitReady();
+      keyring.loadAll({
+        ss58Format: 88,
+        type: 'sr25519',
+      });
+    } catch (e) {
+      console.warn(e);
+    }
+  };
+
+  useEffect(() => {
+    const dataFormatting = async () => {
+      try {
+        await cryptoWait();
+        const newData = data.map((item) => {
+          const newAccount = formatAddressToPolkadex(item.Account);
+          return { ...item, Account: newAccount };
+        });
+        setFormatedData(newData);
+      } catch (error) {
+        console.log('error');
+      }
+    };
+    dataFormatting();
+  }, []);
 
   return (
     <S.Wrapper>
@@ -75,7 +109,7 @@ const CrowdloansRewardsPage = () => {
             </S.TableRow>
           </thead>
           <tbody>
-            {data.slice(1, 10).map((item, index) => (
+            {formatedData?.slice(1, 10).map((item, index) => (
               <S.TableRow key={item.Account} isOdd={index % 2 !== 0}>
                 <S.TableCellUnder>{item.Account}</S.TableCellUnder>
                 <S.TableCell>{item['DOT Contributed']}</S.TableCell>
