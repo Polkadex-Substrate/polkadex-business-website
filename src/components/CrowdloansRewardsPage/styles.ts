@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
     }
   `}
 `;
+
 export const InputWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -18,11 +19,13 @@ export const InputWrapper = styled.div`
     border-bottom: 2px solid ${theme.colors.secondaryBackground};
   `}
 `;
+
 export const Center = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
 export const Input = styled.div`
   width: 100%;
   input {
@@ -32,6 +35,7 @@ export const Input = styled.div`
     color: white;
   }
 `;
+
 export const Paste = styled(Center)`
   ${({ theme }) => css`
     border-radius: ${theme.border.radius.small};
@@ -42,6 +46,7 @@ export const Paste = styled(Center)`
     flex-shrink: 0;
   `}
 `;
+
 export const InfoWrapper = styled(Center)`
   ${({ theme }) => css`
     margin: 7rem;
@@ -59,6 +64,7 @@ export const InfoWrapper = styled(Center)`
     }
   `}
 `;
+
 export const ListWrapper = styled.div`
   background-color: rgba(256, 256, 256, 0.01);
   border-radius: 1.7rem;
@@ -74,6 +80,7 @@ export const Badge = styled.div`
   font-size: small;
   margin-left: 2rem;
 `;
+
 export const ListHeader = styled.div`
   display: flex;
   align-items: center;
@@ -95,6 +102,7 @@ export const TableRow = styled.tr`
 export const TableCell = styled.td`
   padding: 1.5rem;
 `;
+
 export const TableCellUnder = styled(TableCell)`
   text-decoration: underline;
 `;

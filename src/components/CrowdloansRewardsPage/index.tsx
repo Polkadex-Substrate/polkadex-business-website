@@ -75,7 +75,7 @@ const CrowdloansRewardsPage = () => {
       </S.InputWrapper>
       {walletAddress && didContribute && (
         <S.InfoWrapper>
-          <h2> This wallet did contribute to Polkadex Crownalons 🎁</h2>
+          <h2> This wallet did contribute to Polkadex Crowdloans 🎁</h2>
           <p>DOT Contributed</p>
           <p>{valueContributed}</p>
         </S.InfoWrapper>
@@ -98,7 +98,7 @@ const CrowdloansRewardsPage = () => {
       )}
       <S.ListWrapper>
         <S.ListHeader>
-          <p>Crowndloans contribute list</p>
+          <p>Crowdloans contribute list</p>
           <S.Badge>3632 contributors</S.Badge>
         </S.ListHeader>
         <S.Table>
