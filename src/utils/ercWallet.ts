@@ -1,3 +1,5 @@
+import { toast } from 'utils/toast';
+
 import getWeb3 from './getWeb3';
 
 let web3: any;
@@ -19,8 +21,10 @@ export const initiateContract = async (
     return { web3, accounts, instance };
   } catch (error) {
     // Catch any errors for any of the above operations.
-    alert(
+
+    toast(
       `Failed to load web3, accounts, or contract. Check console for details.`,
+      'error',
     );
     console.error(error);
   }
