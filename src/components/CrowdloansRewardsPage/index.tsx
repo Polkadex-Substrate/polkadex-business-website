@@ -15,9 +15,10 @@ const CrowdloansRewardsPage = () => {
   const handleInput = (value) => {
     setWalletAddress(value);
   };
+
   useEffect(() => {
     setDidContribute(false);
-    if (walletAddress) {
+    if (walletAddress && walletAddress.length === 49) {
       const contribution = formatedData?.find(
         (item) => item.Account === formatAddressToPolkadex(walletAddress),
       );
@@ -26,7 +27,7 @@ const CrowdloansRewardsPage = () => {
         setValueContributed(contribution['DOT Contributed']);
       }
     }
-  }, [walletAddress]);
+  }, [formatedData, walletAddress]);
 
   const cryptoWait = async () => {
     try {
