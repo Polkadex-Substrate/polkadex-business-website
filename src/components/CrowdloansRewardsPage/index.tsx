@@ -79,11 +79,13 @@ const CrowdloansRewardsPage = () => {
         <S.Paste>Paste</S.Paste>
       </S.InputWrapper>
       {walletAddress && didContribute && (
-        <S.InfoWrapper>
-          <h2> This wallet did contribute to Polkadex Crowdloans 🎁</h2>
-          <p>DOT Contributed</p>
-          <p>{valueContributed}</p>
-        </S.InfoWrapper>
+        <S.InfoWrapperContributed>
+          <S.ListWrapper>
+            <h2> This wallet did contribute to Polkadex Crowdloans 🎁</h2>
+            <p>DOT Contributed</p>
+            <p>{valueContributed}</p>
+          </S.ListWrapper>
+        </S.InfoWrapperContributed>
       )}
       {walletAddress && !didContribute && (
         <S.InfoWrapper>
@@ -96,8 +98,12 @@ const CrowdloansRewardsPage = () => {
           <h2>Find out if your wallet has rewards waiting for you</h2>
 
           <p>
-            A heartfelt thanks to the 3632 contributors who enabled Polkadex's
-            remarkable victory in auction 16th with nearly 1 million DOT.{' '}
+            A heartfelt thanks to the{' '}
+            <S.WhiteText>3631 contributors</S.WhiteText> who enabled Polkadex's
+            remarkable{' '}
+            <S.WhiteText>
+              victory in auction 16th with nearly 1 million DOT.
+            </S.WhiteText>
           </p>
         </S.InfoWrapper>
       )}

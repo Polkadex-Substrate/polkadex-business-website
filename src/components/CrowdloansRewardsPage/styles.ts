@@ -52,7 +52,43 @@ export const InfoWrapper = styled(Center)`
     margin: 7rem;
     flex-direction: column;
     h2 {
-      font-weight: normal;
+      font-weight: 500;
+      font-size: xx-large;
+      text-align: center;
+    }
+    p {
+      padding: 2rem;
+      width: 80%;
+      text-align: center;
+      font-size: large;
+      color: #bdbdbd;
+    }
+  `}
+`;
+
+export const WhiteText = styled.span`
+  color: white;
+`;
+
+export const UnderlinedText = styled(WhiteText)`
+  text-decoration: underline;
+`;
+
+export const InfoWrapperContributed = styled(InfoWrapper)`
+  ${({ theme }) => css`
+    margin: 5rem 0 15rem 0;
+    h2 {
+      font-weight: 400;
+    }
+  `}
+`;
+
+export const InfoWrapperDidnt = styled(Center)`
+  ${({ theme }) => css`
+    margin: 7rem;
+    flex-direction: column;
+    h2 {
+      font-weight: 500;
       font-size: xx-large;
     }
     p {
@@ -70,6 +106,8 @@ export const ListWrapper = styled.div`
   border-radius: 1.7rem;
   padding: 9rem;
   backdrop-filter: blur(2rem);
+  max-width: 100rem;
+  width: 100%;
 `;
 
 export const Badge = styled.div`
