@@ -1,7 +1,6 @@
 import { signAndSubmitPromiseWrapper } from '@polkadex/blockchain-api';
 import Utils from '@polkadex/utils';
 import { encodeAddress } from '@polkadot/util-crypto';
-import { parse } from 'papaparse';
 import React, {
   createContext,
   PropsWithChildren,
@@ -12,6 +11,7 @@ import React, {
 } from 'react';
 import { toast } from 'utils/toast';
 
+import rewardAccounts from '../data/crowdloan_distribution_rewards.json';
 import { useApi } from '../hooks';
 import { useWallet } from '../hooks/useWallet';
 import { parseRewardsRpcResult } from './utils';
@@ -29,14 +29,6 @@ interface CrowndloandData {
   factor: string;
   dotContributed: string;
 }
-
-type CrowndloandRealData = {
-  Account: string;
-  'Total Pdex rewards': string;
-  'Initial Claimable rewards': string;
-  Factor: string;
-  'DOT Contributed': string;
-};
 
 export interface RewardsCtx extends Rewards {
   loading: boolean;
@@ -173,31 +165,17 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
   }, [apiConnected, account, getSinger, api]);
 
   const fetchHasWalletReward = useCallback(async (address: string) => {
-    const file = await fetch('/docs/crowdloan_distribution_rewards.csv');
-    const fileData = await file.text();
-    parse(fileData, {
-      delimiter: ',',
-      header: true,
-      complete: (d) => {
-        const parserData = (d?.data as CrowndloandRealData[])?.find(
-          (item) =>
-            encodeAddress(item.Account, 88) === encodeAddress(address, 88),
-        );
-        if (!parserData) {
-          setWalletReward(null);
-          return;
-        }
-
-        const parserResult: CrowndloandData = {
-          account: parserData.Account,
-          totalPdex: parserData['Total Pdex rewards'],
-          initialClaim: parserData['Initial Claimable rewards'],
-          dotContributed: parserData['DOT Contributed'],
-          factor: parserData.Factor,
-        };
-        setWalletReward(parserResult);
-      },
+    const parserResult = rewardAccounts.map((item): CrowndloandData => {
+      return {
+        account: encodeAddress(item.Account, 88),
+        totalPdex: item['Total Pdex rewards'],
+        initialClaim: item['Initial Claimable rewards'],
+        dotContributed: item['DOT Contributed'],
+        factor: item.Factor.toString(),
+      };
     });
+    const w = parserResult.find((i) => i.account === address);
+    setWalletReward(w);
   }, []);
 
   useEffect(() => {
