@@ -1,6 +1,7 @@
 import keyring from '@polkadot/ui-keyring';
 import { cryptoWaitReady } from '@polkadot/util-crypto';
 import { Icon } from 'components/Icon';
+import { event } from 'nextjs-google-analytics';
 import React, { useEffect, useState } from 'react';
 import {
   formatAddressToDefault,
@@ -19,7 +20,12 @@ const CrowdloansRewardsPage = () => {
   const handleInput = (value) => {
     setWalletAddress(value);
   };
-
+  const handlePaste = () => {
+    navigator.clipboard.readText().then((text) => {
+      console.log(text);
+      setWalletAddress(text);
+    });
+  };
   useEffect(() => {
     setDidContribute(false);
     if (walletAddress && isValidAddressPolkadotAddress(walletAddress)) {
@@ -74,9 +80,10 @@ const CrowdloansRewardsPage = () => {
             name=""
             id=""
             onChange={(e) => handleInput(e.target.value)}
+            value={walletAddress}
           />
         </S.Input>
-        <S.Paste>Paste</S.Paste>
+        <S.Paste onClick={handlePaste}>Paste</S.Paste>
       </S.InputWrapper>
       {walletAddress && didContribute && (
         <S.InfoWrapperContributed>

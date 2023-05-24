@@ -36,10 +36,11 @@ export const Input = styled.div`
   }
 `;
 
-export const Paste = styled(Center)`
+export const Paste = styled.button`
   ${({ theme }) => css`
     border-radius: ${theme.border.radius.small};
     background-color: ${theme.colors.secondaryBackgroundOpacity};
+    color: white;
     width: 11rem;
     height: 4rem;
     cursor: pointer;
@@ -77,8 +78,11 @@ export const UnderlinedText = styled(WhiteText)`
 export const InfoWrapperContributed = styled(InfoWrapper)`
   ${({ theme }) => css`
     margin: 5rem 0 15rem 0;
-    h2 {
+    h2,
+    p {
       font-weight: 400;
+      text-align: left;
+      padding: 2rem 0 0 0;
     }
   `}
 `;
@@ -108,6 +112,7 @@ export const ListWrapper = styled.div`
   backdrop-filter: blur(2rem);
   max-width: 100rem;
   width: 100%;
+  box-shadow: 0px 38.8687px 166.907px rgba(0, 0, 0, 0.24);
 `;
 
 export const Badge = styled.div`
