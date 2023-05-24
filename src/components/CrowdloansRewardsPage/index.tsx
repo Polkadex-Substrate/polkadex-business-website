@@ -2,7 +2,11 @@ import keyring from '@polkadot/ui-keyring';
 import { cryptoWaitReady } from '@polkadot/util-crypto';
 import { Icon } from 'components/Icon';
 import React, { useEffect, useState } from 'react';
-import { formatAddressToDefault, formatAddressToPolkadex } from 'utils/helpers';
+import {
+  formatAddressToDefault,
+  formatAddressToPolkadex,
+  isValidAddressPolkadotAddress,
+} from 'utils/helpers';
 
 import data from '../../data/crowdloan_distribution_rewards.json';
 import * as S from './styles';
@@ -18,7 +22,7 @@ const CrowdloansRewardsPage = () => {
 
   useEffect(() => {
     setDidContribute(false);
-    if (walletAddress && walletAddress.length === 49) {
+    if (walletAddress && isValidAddressPolkadotAddress(walletAddress)) {
       const contribution = formatedData?.find(
         (item) => item.Account === formatAddressToPolkadex(walletAddress),
       );
@@ -100,7 +104,7 @@ const CrowdloansRewardsPage = () => {
       <S.ListWrapper>
         <S.ListHeader>
           <p>Crowdloans contribute list</p>
-          <S.Badge>3632 contributors</S.Badge>
+          <S.Badge>3631 contributors</S.Badge>
         </S.ListHeader>
         <S.Table>
           <thead>
