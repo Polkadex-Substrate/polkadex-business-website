@@ -88,10 +88,11 @@ export function Intro({ children }: { children: ReactNode }) {
         content: (
           <S.Container>
             <div>
-              <h6>Start staking!</h6>
+              <h6>3. Earn even more PDEX: start staking!</h6>
               <p>
-                Put your PDEX rewards to work! Start staking your unlocked
-                rewards to earn daily PDEX returns on top of your rewards.
+                Put all your PDEX rewards to work and maximize your daily PDEX
+                earnings by staking both the unlocked and locked portions of
+                your crowdloan rewards!
               </p>
             </div>
           </S.Container>
