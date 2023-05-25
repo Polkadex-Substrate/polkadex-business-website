@@ -73,7 +73,7 @@ export function Intro({ children }: { children: ReactNode }) {
               </h6>
               <p>
                 {hasRewards
-                  ? 'Click on ‘Unlock’ to instantly unlock 25% of your available rewards and start vesting the remaining 75%'
+                  ? 'Click "Unlock Rewards" to claim your total rewards. The "Total vested to date" includes the initial unlocked 25% plus the amount vested so far. These will be unlocked and transferable. The remaining rewards will continue vesting into your wallet until the end of the lease period.'
                   : 'Have you selected the correct wallet?'}
               </p>
             </div>
