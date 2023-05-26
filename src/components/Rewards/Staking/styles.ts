@@ -1,9 +1,12 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div``;
+
+export const Box = styled.div`
   ${({ theme }) => css`
     border-bottom: 1px solid ${theme.colors.secondaryBackgroundOpacity};
     padding: 3.5rem 0;
+    margin-bottom: 4rem;
     @media screen and (max-width: 1125px) {
       padding-left: 1rem;
       padding-right: 1rem;
@@ -53,7 +56,7 @@ export const Bottom = styled.div`
       font-size: 1.8rem;
       font-weight: 500;
     }
-    a {
+    button {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -112,4 +115,101 @@ export const Bar = styled.div`
       }
     }
   `}
+`;
+
+export const HowToStake = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100rem;
+  width: 100%;
+  margin: 0 auto;
+  h2 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  @media screen and (max-width: 870px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+`;
+
+export const HowToStakeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+`;
+
+export const HowToStakeBox = styled.div`
+  display: grid;
+  gap: 6rem;
+
+  @media screen and (min-width: 870px) {
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8rem;
+  }
+`;
+export const HowToStakeCard = styled.div`
+  ${({ theme }) => css`
+    background: linear-gradient(
+      180deg,
+      rgba(139, 161, 190, 0.05) 0%,
+      rgba(139, 161, 190, 0) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 2rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 3rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    p {
+      line-height: 1.5;
+      opacity: 0.7;
+    }
+    img {
+      max-width: 35rem;
+    }
+    a {
+      margin-top: 2rem;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: ${theme.colors.text};
+      background: ${theme.colors.primary};
+      padding: 1.4rem 2rem;
+      border-radius: 1rem;
+      transition: border ease 0.5s, background-color ease 0.5s;
+      border: 1px solid transparent;
+
+      :hover {
+        border-color: ${theme.colors.primary};
+        background: transparent;
+      }
+    }
+    span {
+      display: block;
+      padding-top: 2rem;
+      img {
+        max-width: 14rem;
+      }
+    }
+  `}
+`;
+export const Arrow = styled.div`
+  max-width: 2rem;
+  @media screen and (max-width: 870px) {
+    display: none;
+  }
 `;

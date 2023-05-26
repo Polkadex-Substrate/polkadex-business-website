@@ -88,11 +88,11 @@ export function Intro({ children }: { children: ReactNode }) {
         content: (
           <S.Container>
             <div>
-              <h6>3. Earn even more PDEX: start staking!</h6>
+              <h6>3. Want to earn even more PDEX? Start staking!</h6>
               <p>
-                Put all your PDEX rewards to work and maximize your daily PDEX
-                earnings by staking both the unlocked and locked portions of
-                your crowdloan rewards!
+                You can put all your PDEX rewards to work and maximize your
+                daily PDEX earnings by staking both the unlocked and locked
+                portions of your crowdloan rewards!
               </p>
             </div>
           </S.Container>
@@ -110,6 +110,7 @@ export function Intro({ children }: { children: ReactNode }) {
       steps={steps}
       defaultOpen={!initialState}
       ContentComponent={ContentComponent}
+      currentStep={3}
     >
       {children}
     </TourProvider>
@@ -163,7 +164,7 @@ const ContentComponent = (props: PopoverContentProps) => {
               campaign. For your reference,{' '}
               <a
                 target="_blank"
-                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
+                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Parachain_CrowdLoans.pdf"
                 rel="noreferrer"
               >
                 here are the Terms & Conditions
