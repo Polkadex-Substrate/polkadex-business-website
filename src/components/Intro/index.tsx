@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { PopoverContentProps, StepType, TourProvider } from '@reactour/tour';
 import { useRewards } from 'hooks/useRewards';
 import { useWallet } from 'hooks/useWallet';
@@ -110,7 +111,6 @@ export function Intro({ children }: { children: ReactNode }) {
       steps={steps}
       defaultOpen={!initialState}
       ContentComponent={ContentComponent}
-      currentStep={3}
     >
       {children}
     </TourProvider>
@@ -123,7 +123,6 @@ const ContentComponent = (props: PopoverContentProps) => {
   const { steps, currentStep, setIsOpen, setCurrentStep } = props;
   const { content } = steps[currentStep];
   const isLastStep = currentStep === steps.length - 1;
-
   const { account, isInjected } = useWallet();
   const { hasRewards, claimed, isTransactionLoading } = useRewards();
 
@@ -208,6 +207,13 @@ const ContentComponent = (props: PopoverContentProps) => {
           </S.FlexActions>
         </>
       )}
+      <style jsx global>
+        {`
+          body {
+            overflow: ${state ? 'hidden' : 'auto'};
+          }
+        `}
+      </style>
     </S.Wrapper>
   );
 };
