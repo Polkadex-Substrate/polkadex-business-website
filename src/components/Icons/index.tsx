@@ -1,4 +1,5 @@
 export * from './Acala';
+export * from './AccessDenied';
 export * from './Acheron';
 export * from './Airplane';
 export * from './Android';
