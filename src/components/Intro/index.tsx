@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { PopoverContentProps, StepType, TourProvider } from '@reactour/tour';
+import { StepType, TourProps, TourProvider } from '@reactour/tour';
 import { useRewards } from 'hooks/useRewards';
 import { useWallet } from 'hooks/useWallet';
 import Link from 'next/link';
@@ -118,10 +118,10 @@ export function Intro({ children }: { children: ReactNode }) {
   );
 }
 
-const ContentComponent = (props: PopoverContentProps) => {
+const ContentComponent = (props: TourProps) => {
   const [terms, setTerms] = useState(true);
   const [state, setState] = useState(!!initialState);
-  const { steps, currentStep, setIsOpen, setCurrentStep } = props;
+  const { steps, currentStep, setIsOpen, setCurrentStep, isOpen } = props;
   const { content } = steps[currentStep];
   const isLastStep = currentStep === steps.length - 1;
   const { account, isInjected } = useWallet();
@@ -222,7 +222,7 @@ const ContentComponent = (props: PopoverContentProps) => {
       <style jsx global>
         {`
           body {
-            overflow: ${state ? 'hidden' : 'auto'};
+            overflow: ${isOpen ? 'hidden' : 'auto'};
           }
         `}
       </style>
