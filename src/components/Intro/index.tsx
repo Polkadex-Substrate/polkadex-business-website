@@ -10,6 +10,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 import { defaultStyles } from './config';
 import { DEFAULTINTRONAME } from './contants';
@@ -153,60 +154,71 @@ const ContentComponent = (props: PopoverContentProps) => {
 
   return (
     <S.Wrapper>
-      {terms ? (
-        <S.Terms>
-          <img src="/img/termsHero.svg" alt="Teacher illutration" />
-          <div>
-            <h5>Terms & Conditions</h5>
-            <p>
-              Claiming your PDEX rewards is a key part of the Polkadex Crowdloan
-              campaign. For your reference,{' '}
-              <a
-                target="_blank"
-                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Parachain_CrowdLoans.pdf"
-                rel="noreferrer"
-              >
-                here are the Terms & Conditions
-              </a>{' '}
-              you previously agreed upon when you contributed your DOT to the
-              Polkadex Crowdloan.
-            </p>
-            <S.Button type="button" onClick={() => setTerms(!terms)}>
-              Close
-            </S.Button>
-          </div>
-        </S.Terms>
-      ) : (
-        <>
-          {typeof content === 'function'
-            ? content({ ...props })
-            : (content as ReactNode)}
-          <S.FlexActions>
-            <S.Actions>
-              <button type="button" onClick={() => setIsOpen(false)}>
-                {showSkipButton ? 'Done' : 'Skip'}
-              </button>
-              <S.Label htmlFor="changeIntro">
-                <input
-                  id="changeIntro"
-                  type="checkbox"
-                  checked={state}
-                  onChange={handleChangeIntroView}
-                />
-                Don&apos;t show again
-              </S.Label>
-            </S.Actions>
-            {showNextButton && (
-              <S.Button
-                type="button"
-                onClick={() => setCurrentStep(currentStep + 1)}
-              >
-                Next
-              </S.Button>
-            )}
-          </S.FlexActions>
-        </>
-      )}
+      <SwitchTransition mode="out-in">
+        <CSSTransition
+          key={terms}
+          timeout={250}
+          unmountOnExit
+          mountOnEnter
+          classNames="fade"
+        >
+          {terms ? (
+            <S.Terms>
+              <img src="/img/termsHero.svg" alt="Teacher illutration" />
+              <div>
+                <h5>Terms & Conditions</h5>
+                <p>
+                  Claiming your PDEX rewards is a key part of the Polkadex
+                  Crowdloan campaign. For your reference,{' '}
+                  <a
+                    target="_blank"
+                    href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Parachain_CrowdLoans.pdf"
+                    rel="noreferrer"
+                  >
+                    here are the Terms & Conditions
+                  </a>{' '}
+                  you previously agreed upon when you contributed your DOT to
+                  the Polkadex Crowdloan.
+                </p>
+                <S.Button type="button" onClick={() => setTerms(!terms)}>
+                  Close
+                </S.Button>
+              </div>
+            </S.Terms>
+          ) : (
+            <>
+              {typeof content === 'function'
+                ? content({ ...props })
+                : (content as ReactNode)}
+              <S.FlexActions>
+                <S.Actions>
+                  <button type="button" onClick={() => setIsOpen(false)}>
+                    {showSkipButton ? 'Done' : 'Skip'}
+                  </button>
+                  <S.Label htmlFor="changeIntro">
+                    <input
+                      id="changeIntro"
+                      type="checkbox"
+                      checked={state}
+                      onChange={handleChangeIntroView}
+                    />
+                    Don&apos;t show again
+                  </S.Label>
+                </S.Actions>
+                {showNextButton && (
+                  <S.Button
+                    type="button"
+                    onClick={() => setCurrentStep(currentStep + 1)}
+                  >
+                    Next
+                  </S.Button>
+                )}
+              </S.FlexActions>
+            </>
+          )}
+        </CSSTransition>
+      </SwitchTransition>
+
       <style jsx global>
         {`
           body {
