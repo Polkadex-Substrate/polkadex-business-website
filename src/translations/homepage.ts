@@ -338,6 +338,55 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Senior Blockchain Engineer',
+        name: 'Krishna Singh',
+        image: 'zkPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/zktony',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/krishna-singh-b37671170',
+          },
+        ],
+      },
+      {
+        title: 'Software Engineer',
+        name: 'Ruchi Ray',
+        image: 'ruchiPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/RuchiRay',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/ruchi-ray-a3ab0b1ba',
+          },
+        ],
+      },
+      {
+        title: 'Software Engineer',
+        name: 'Arjun Porwal',
+        image: 'arjunPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/ap211unitech',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/arjun-porwal-9198b71a3/',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/arjun_porwal_33',
+          },
+        ],
+      },
+      {
         title: 'Product Manager',
         name: 'Pavan Kanteti',
         image: 'pavanPhotography',
