@@ -353,6 +353,17 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Senior Rust Engineer',
+        name: 'Ivan Temchenko',
+        image: 'ivanPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/35359595',
+          },
+        ],
+      },
+      {
         title: 'Software Engineer',
         name: 'Ruchi Ray',
         image: 'ruchiPhotography',
@@ -405,17 +416,6 @@ const ENLanguage = {
           {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/rodolfo-ferreira-91824819a/',
-          },
-        ],
-      },
-      {
-        title: 'Senior Rust Engineer',
-        name: 'Ivan Temchenko',
-        image: 'ivanPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/35359595',
           },
         ],
       },
