@@ -27,6 +27,8 @@ export const Hero = () => {
       )}`,
     [account],
   );
+  const isIntroActive = process.env.REWARDS_INTRO_ACTIVE === 'true';
+
   const { setIsOpen, setCurrentStep } = useTour();
 
   return (
@@ -202,15 +204,17 @@ export const Hero = () => {
           </S.Arrow>
         </S.Container>
       </S.Box>
-      <S.IntroButton
-        type="button"
-        onClick={() => {
-          setIsOpen(true);
-          setCurrentStep(0);
-        }}
-      >
-        Tutorial
-      </S.IntroButton>
+      {isIntroActive && (
+        <S.IntroButton
+          type="button"
+          onClick={() => {
+            setIsOpen(true);
+            setCurrentStep(0);
+          }}
+        >
+          Tutorial
+        </S.IntroButton>
+      )}
     </S.Wrapper>
   );
 };
