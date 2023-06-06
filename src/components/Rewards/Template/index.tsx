@@ -1,10 +1,18 @@
 import { Intro } from 'components/Intro';
-import { Hero, Staking } from 'components/Rewards';
+import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
 
 import * as S from './styles';
+
+const Staking = dynamic(
+  () => import('components/Rewards').then((mod) => mod.Staking),
+  {
+    ssr: false,
+  },
+);
 
 export const Template = ({ apy }) => {
   return (

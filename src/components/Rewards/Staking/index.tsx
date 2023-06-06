@@ -1,5 +1,5 @@
 import { useRewards } from 'hooks/useRewards';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import * as S from './styles';
 
@@ -17,6 +17,19 @@ export const Staking = ({ apy }) => {
     (Number(formaterStaking) * apy) / 100 + Number(formaterStaking);
 
   const formaterRewards = formatNumber(amountRewards);
+  const stakingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (state) {
+      const offsetTop = stakingRef?.current?.offsetTop;
+      if (offsetTop)
+        window.scrollTo({
+          top: offsetTop - 100,
+          left: 0,
+          behavior: 'smooth',
+        });
+    }
+  }, [state]);
 
   return (
     <S.Wrapper>
@@ -45,7 +58,7 @@ export const Staking = ({ apy }) => {
         </S.Container>
       </S.Box>
       {state && (
-        <S.HowToStake>
+        <S.HowToStake ref={stakingRef}>
           <h2>How to Stake PDEX</h2>
           <S.HowToStakeWrapper>
             <S.HowToStakeBox>
