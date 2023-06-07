@@ -167,7 +167,7 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
   }, [apiConnected, account, getSinger, api]);
 
   const fetchHasWalletReward = useCallback(async (address: string) => {
-    const parserResult = rewardAccounts.map((item): CrowndloandData => {
+    const parserResult = rewardAccounts?.map((item): CrowndloandData => {
       return {
         account: encodeAddress(item.accountId, 88),
         totalPdex: item['Total Pdex rewards'].toString(),
