@@ -20,7 +20,7 @@ const initialState = process.browser && localStorage.getItem(DEFAULTINTRONAME);
 
 export function Intro({ children }: { children: ReactNode }) {
   const { hasRewards } = useRewards();
-
+  const isIntroActive = process.env.REWARDS_INTRO_ACTIVE === 'true';
   const steps: StepType[] = useMemo(
     () => [
       {
@@ -110,7 +110,7 @@ export function Intro({ children }: { children: ReactNode }) {
   return (
     <TourProvider
       steps={steps}
-      defaultOpen={!initialState}
+      defaultOpen={isIntroActive ? !initialState : false}
       ContentComponent={ContentComponent}
     >
       {children}
