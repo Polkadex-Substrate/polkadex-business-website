@@ -95,7 +95,7 @@ export const Staking = ({ apy }) => {
                     your PDEX stake.
                   </p>
                 </div>
-                <img src="/img/stake1.png" alt="" />
+                <img src="/img/stake3.png" alt="" />
               </S.HowToStakeCard>
               <Arrow />
               <S.HowToStakeCard>
