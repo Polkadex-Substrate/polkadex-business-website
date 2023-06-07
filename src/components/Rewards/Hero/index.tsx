@@ -19,6 +19,7 @@ export const Hero = () => {
     walletReward,
     isTransactionLoading,
   } = useRewards();
+
   const shortWallet = useMemo(
     () =>
       `${account?.address.slice(0, 12)}...${account?.address.slice(
@@ -26,6 +27,8 @@ export const Hero = () => {
       )}`,
     [account],
   );
+
+  const shouldShowMessage = hasRewards && Number(claimable) >= 1;
 
   return (
     <S.Wrapper>
@@ -85,81 +88,89 @@ export const Hero = () => {
               </S.Information>
             )}
           </S.Content>
-          <S.Wallet>
-            {isInjected ? (
-              <>
-                <S.WalletContent className="selectWallet">
-                  <Dropdown>
-                    <Dropdown.Trigger>
-                      <S.DropdownHeader isSelected={!!account}>
-                        <div>
-                          {account ? (
-                            <strong>{account.name}</strong>
-                          ) : (
-                            <span>Select your wallet</span>
-                          )}
-                          {!!account && <p>{shortWallet}</p>}
-                        </div>
-
-                        <SingleArrowBottom />
-                      </S.DropdownHeader>
-                    </Dropdown.Trigger>
-                    <Dropdown.Menu fill="secondaryBackgroundSolid">
-                      {allAccounts?.length >= 1 ? (
-                        allAccounts.map((v, i) => {
-                          const shortAddress = v?.address
-                            ? `${v?.address.slice(0, 4)}..${v?.address.slice(
-                                v?.address.length - 4,
-                              )}`
-                            : '0x000000';
-                          return (
-                            <Dropdown.Item
-                              key={i}
-                              onAction={() => setAccount(v.address)}
-                            >
-                              {v.name} <S.Span> • {shortAddress}</S.Span>
-                            </Dropdown.Item>
-                          );
-                        })
-                      ) : (
-                        <Dropdown.Item>
-                          <S.Span> No accounts available</S.Span>
-                        </Dropdown.Item>
-                      )}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </S.WalletContent>
-                {hasRewards && (
-                  <button
-                    type="button"
-                    aria-label="select account"
-                    disabled={isUnlocked ? isClaimDisabled : !hasRewards}
-                    onClick={isUnlocked ? claimRewards : initiateClaim}
+          <S.WrapperWallet>
+            <S.Wallet>
+              {isInjected ? (
+                <>
+                  <S.WalletContent className="selectWallet">
+                    <Dropdown>
+                      <Dropdown.Trigger>
+                        <S.DropdownHeader isSelected={!!account}>
+                          <div>
+                            {account ? (
+                              <strong>{account.name}</strong>
+                            ) : (
+                              <span>Select your wallet</span>
+                            )}
+                            {!!account && <p>{shortWallet}</p>}
+                          </div>
+                          <SingleArrowBottom />
+                        </S.DropdownHeader>
+                      </Dropdown.Trigger>
+                      <Dropdown.Menu fill="secondaryBackgroundSolid">
+                        {allAccounts?.length >= 1 ? (
+                          allAccounts.map((v, i) => {
+                            const shortAddress = v?.address
+                              ? `${v?.address.slice(0, 4)}..${v?.address.slice(
+                                  v?.address.length - 4,
+                                )}`
+                              : '0x000000';
+                            return (
+                              <Dropdown.Item
+                                key={i}
+                                onAction={() => setAccount(v.address)}
+                              >
+                                {v.name} <S.Span> • {shortAddress}</S.Span>
+                              </Dropdown.Item>
+                            );
+                          })
+                        ) : (
+                          <Dropdown.Item>
+                            <S.Span> No accounts available</S.Span>
+                          </Dropdown.Item>
+                        )}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </S.WalletContent>
+                  {hasRewards && (
+                    <button
+                      type="button"
+                      aria-label="select account"
+                      disabled={isUnlocked ? isClaimDisabled : !hasRewards}
+                      onClick={isUnlocked ? claimRewards : initiateClaim}
+                    >
+                      {/* eslint-disable-next-line no-nested-ternary */}
+                      {isTransactionLoading
+                        ? 'Submitting...'
+                        : isUnlocked
+                        ? 'Claim'
+                        : 'Unlock Reward'}
+                    </button>
+                  )}
+                </>
+              ) : (
+                <>
+                  <S.Extension className="selectWallet">
+                    Polkadot.js extension is not installed
+                  </S.Extension>
+                  <a
+                    target="_blank"
+                    href="https://polkadot.js.org/extension/"
+                    rel="noreferrer"
                   >
-                    {/* eslint-disable-next-line no-nested-ternary */}
-                    {isTransactionLoading
-                      ? 'Submitting...'
-                      : isUnlocked
-                      ? 'Claim'
-                      : 'Unlock Reward'}
-                  </button>
-                )}
-              </>
-            ) : (
-              <>
-                <S.Extension className="selectWallet">
-                  Polkadot.js extension is not installed
-                </S.Extension>
-                <a
-                  target="_blank"
-                  href="https://polkadot.js.org/extension/"
-                  rel="noreferrer"
-                >
-                  Get Polkadot.js extension
-                </a>
-              </>
+                    Get Polkadot.js extension
+                  </a>
+                </>
+              )}
+            </S.Wallet>
+            {shouldShowMessage && (
+              <S.WalletError>
+                <strong>Need more than 1 PDEX to claim</strong>. Check back
+                later.
+              </S.WalletError>
             )}
-          </S.Wallet>
+          </S.WrapperWallet>
+
           {!account && (
             <>
               <h1>Time to Claim your TEST PDEX rewards💰</h1>

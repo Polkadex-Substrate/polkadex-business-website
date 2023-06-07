@@ -41,7 +41,18 @@ export const IntroButton = styled.button`
     }
   `}
 `;
+export const WrapperWallet = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
 
+export const WalletError = styled.p`
+  strong {
+    font-weight: 500;
+    text-decoration: underline;
+  }
+`;
 export const Box = styled.div`
   max-width: 100rem;
   width: 100%;
