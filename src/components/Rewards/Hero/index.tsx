@@ -28,7 +28,7 @@ export const Hero = () => {
     [account],
   );
 
-  const shouldShowMessage = isUnlocked && Number(claimable) <= 1;
+  const shouldShowMessage = hasRewards && Number(claimable) <= 1;
 
   return (
     <S.Wrapper>
