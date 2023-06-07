@@ -1,14 +1,50 @@
-import { Intro } from 'components/Intro';
-import { Hero, Staking } from 'components/Rewards';
+import { Popup } from 'components/Popup';
+import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
+import { useState } from 'react';
 
 import * as S from './styles';
 
+const Staking = dynamic(
+  () => import('components/Rewards').then((mod) => mod.Staking),
+  {
+    ssr: false,
+  },
+);
+
 export const Template = ({ apy }) => {
+  const [terms, setTerms] = useState(true);
   return (
-    <Intro>
+    <>
+      <Popup isVisible={terms} onClose={undefined}>
+        <S.TermsWrapper>
+          <S.Terms>
+            <img src="/img/termsHero.svg" alt="Teacher illutration" />
+            <div>
+              <h5>Terms & Conditions</h5>
+              <p>
+                Claiming your PDEX rewards is a key part of the Polkadex
+                Crowdloan campaign. For your reference, here are the{' '}
+                <a
+                  target="_blank"
+                  href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Parachain_CrowdLoans.pdf"
+                  rel="noreferrer"
+                >
+                  Terms & Conditions
+                </a>{' '}
+                you previously agreed upon when you contributed your DOT to the
+                Polkadex Crowdloan.
+              </p>
+              <S.Button type="button" onClick={() => setTerms(!terms)}>
+                Close
+              </S.Button>
+            </div>
+          </S.Terms>
+        </S.TermsWrapper>
+      </Popup>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
@@ -54,6 +90,6 @@ export const Template = ({ apy }) => {
         </main>
         <Footer />
       </S.Wrapper>
-    </Intro>
+    </>
   );
 };

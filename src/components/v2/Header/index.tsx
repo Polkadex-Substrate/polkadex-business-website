@@ -81,9 +81,7 @@ export const Header = ({ links = [], cta }: T.Props) => {
                       </a>
                     </S.Li>
                     <S.Li>
-                      <Link href="/crowdloansRewardsFind">
-                        Crowdloan Contributions
-                      </Link>
+                      <Link href="/rewards">Test Rewards</Link>
                     </S.Li>
                   </ul>
                 </S.MenuContainer>

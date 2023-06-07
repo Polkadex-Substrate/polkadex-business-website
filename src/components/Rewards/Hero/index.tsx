@@ -1,4 +1,3 @@
-import { useTour } from '@reactour/tour';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
 import React, { useMemo } from 'react';
@@ -27,7 +26,6 @@ export const Hero = () => {
       )}`,
     [account],
   );
-  const { setIsOpen, setCurrentStep } = useTour();
 
   return (
     <S.Wrapper>
@@ -164,7 +162,7 @@ export const Hero = () => {
           </S.Wallet>
           {!account && (
             <>
-              <h1>Time to Claim your PDEX rewards💰</h1>
+              <h1>Time to Claim your TEST PDEX rewards💰</h1>
               <h2>
                 If you participated in the Polkadot Crowdloan and helped us
                 secure a parachain slot, you may have pending rewards.
@@ -202,15 +200,6 @@ export const Hero = () => {
           </S.Arrow>
         </S.Container>
       </S.Box>
-      <S.IntroButton
-        type="button"
-        onClick={() => {
-          setIsOpen(true);
-          setCurrentStep(0);
-        }}
-      >
-        Tutorial
-      </S.IntroButton>
     </S.Wrapper>
   );
 };
