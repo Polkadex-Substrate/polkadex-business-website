@@ -11,7 +11,9 @@ import React, {
 } from 'react';
 import { toast } from 'utils/toast';
 
-import rewardAccounts from '../data/finalCrowdloan.json';
+import rewardAccounts from '../data/finalCrowdloanData.json';
+
+import 
 import { useApi } from '../hooks';
 import { useWallet } from '../hooks/useWallet';
 import { parseRewardsRpcResult } from './utils';
@@ -165,12 +167,12 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
   }, [apiConnected, account, getSinger, api]);
 
   const fetchHasWalletReward = useCallback(async (address: string) => {
-    const parserResult = rewardAccounts.map((item): CrowndloandData => {
+    const parserResult = rewardAccounts?.map((item): CrowndloandData => {
       return {
-        account: encodeAddress(item.Account, 88),
-        totalPdex: item['Total Pdex rewards'],
-        initialClaim: item['Initial Claimable rewards'],
-        dotContributed: item['DOT Contributed'],
+        account: encodeAddress(item.accountId, 88),
+        totalPdex: item['Total Pdex rewards'].toString(),
+        initialClaim: item['Initial Claimable Reward'].toString(),
+        dotContributed: item['DOTs contributed'].toString(),
         factor: item.Factor.toString(),
       };
     });
