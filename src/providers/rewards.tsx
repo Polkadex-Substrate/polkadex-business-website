@@ -11,7 +11,7 @@ import React, {
 } from 'react';
 import { toast } from 'utils/toast';
 
-import rewardAccounts from '../data/crowdloan_distribution_rewards.json';
+import rewardAccounts from '../data/finalCrowdloan.json';
 import { useApi } from '../hooks';
 import { useWallet } from '../hooks/useWallet';
 import { parseRewardsRpcResult } from './utils';
