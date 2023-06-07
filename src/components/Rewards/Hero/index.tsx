@@ -1,4 +1,3 @@
-import { useTour } from '@reactour/tour';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
 import React, { useMemo } from 'react';
@@ -27,9 +26,6 @@ export const Hero = () => {
       )}`,
     [account],
   );
-  const isIntroActive = process.env.REWARDS_INTRO_ACTIVE === 'true';
-
-  const { setIsOpen, setCurrentStep } = useTour();
 
   return (
     <S.Wrapper>
@@ -204,17 +200,6 @@ export const Hero = () => {
           </S.Arrow>
         </S.Container>
       </S.Box>
-      {isIntroActive && (
-        <S.IntroButton
-          type="button"
-          onClick={() => {
-            setIsOpen(true);
-            setCurrentStep(0);
-          }}
-        >
-          Tutorial
-        </S.IntroButton>
-      )}
     </S.Wrapper>
   );
 };

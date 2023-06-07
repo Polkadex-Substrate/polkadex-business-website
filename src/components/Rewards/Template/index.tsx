@@ -1,4 +1,3 @@
-import { Intro } from 'components/Intro';
 import { Popup } from 'components/Popup';
 import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
@@ -19,7 +18,7 @@ const Staking = dynamic(
 export const Template = ({ apy }) => {
   const [terms, setTerms] = useState(true);
   return (
-    <Intro>
+    <>
       <Popup isVisible={terms} onClose={undefined}>
         <S.TermsWrapper>
           <S.Terms>
@@ -91,6 +90,6 @@ export const Template = ({ apy }) => {
         </main>
         <Footer />
       </S.Wrapper>
-    </Intro>
+    </>
   );
 };
