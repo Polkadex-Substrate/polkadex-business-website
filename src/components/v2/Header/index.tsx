@@ -80,6 +80,9 @@ export const Header = ({ links = [], cta }: T.Props) => {
                         Parachain
                       </a>
                     </S.Li>
+                    <S.Li>
+                      <Link href="/rewards">Rewards</Link>
+                    </S.Li>
                   </ul>
                 </S.MenuContainer>
                 <S.MenuContainer>
