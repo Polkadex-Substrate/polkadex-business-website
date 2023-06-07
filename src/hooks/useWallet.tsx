@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 
-import { WalletContext, WalletCtx } from '../providers';
+import { WalletContext } from '../providers';
 
-export const useWallet = () =>
-  useContext(WalletContext) as Exclude<WalletCtx, null>;
+export const useWallet = () => useContext(WalletContext);

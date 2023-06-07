@@ -1,5 +1,8 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import React, { createContext, useCallback } from 'react';
+import React, { createContext, useCallback, useEffect } from 'react';
+import { toast } from 'utils/toast';
+
+import { typesApi } from './types';
 
 const API_FETCH = 'API_FETCH';
 const API_DATA = 'API_DATA';
@@ -35,6 +38,7 @@ const initialState: StoreState = {
 
 export interface ApiCtx extends StoreState {
   connectToApi: () => void;
+  currentBlock: number;
 }
 
 export const ApiContext = createContext<ApiCtx>({} as ApiCtx);
@@ -58,22 +62,55 @@ function apiReducer(state: StoreState, action: ActionType): StoreState {
 
 export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const [state, dispatch] = React.useReducer(apiReducer, initialState);
+  const [currentBlock, setCurrentBlock] = React.useState(0);
   const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider('wss://mainnet.polkadex.trade');
-      const api = new ApiPromise({ provider });
+      const provider = new WsProvider(process.env.CHAIN_URL || 'wss://solochain.polkadex.trade');
+      const api = await ApiPromise.create({
+        provider,
+        ...typesApi,
+      });
       await api.isReady;
-      dispatch({ type: API_DATA, payload: api });
+      toast(messages.SUCCESS_CONNECT, 'success');
+      return api;
     } catch (e) {
+      toast(messages.ERROR_CONNECT, 'error');
       dispatch({ type: API_ERROR, payload: e.message });
+      return null;
     }
   }, []);
 
-  if (!!state && !state.api && !state.loading) {
-    connectToApi();
-  }
+  useEffect(() => {
+    if (!!state && !state.api && !state.loading) {
+      connectToApi().then((api) => {
+        if (!api) return;
+        dispatch({ type: API_DATA, payload: api });
+      });
+    }
+  }, [state, connectToApi]);
 
-  const value = { ...state, connectToApi };
+  // TODO: Loop here
+  useEffect(() => {
+    let sub;
+    if (state?.api?.isConnected) {
+      state.api.rpc.chain
+        .subscribeNewHeads((header) => {
+          const block = header.number.toNumber();
+          setCurrentBlock(block);
+        })
+        .then((unsub) => {
+          sub = unsub;
+        });
+    }
+    return () => sub && sub();
+  }, [state.api]);
+
+  const value = { ...state, connectToApi, currentBlock };
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
+};
+
+const messages = {
+  SUCCESS_CONNECT: 'Connected to wss://solochain.polkadex.trade',
+  ERROR_CONNECT: 'Error connecting to wss://solochain.polkadex.trade',
 };

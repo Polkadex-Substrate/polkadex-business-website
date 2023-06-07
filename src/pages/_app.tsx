@@ -5,10 +5,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '/public/index.css';
 import 'slick-carousel/slick/slick.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import PrivacyPopUp from 'components/PrivacyPopUp';
 import { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
+import { OverlayProvider } from 'react-aria';
 import { ThemeProvider } from 'styled-components';
 import { defaultThemes, GlobalStyles } from 'styles';
 
@@ -34,20 +36,22 @@ function App({ Component, pageProps }: AppProps) {
   }, [state]);
 
   return (
-    <ThemeProvider theme={defaultThemes.dark}>
-      <WalletProvider>
-        <ApiProvider>
-          <GlobalStyles />
-          {maintenance ? <Maintenance /> : <Component {...pageProps} />}
-          <PrivacyPopUp
-            action={handleAccept}
-            visible={state}
-            link="/"
-            description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
-          />
-        </ApiProvider>
-      </WalletProvider>
-    </ThemeProvider>
+    <OverlayProvider>
+      <ThemeProvider theme={defaultThemes.dark}>
+        <WalletProvider>
+          <ApiProvider>
+            <GlobalStyles />
+            {maintenance ? <Maintenance /> : <Component {...pageProps} />}
+            <PrivacyPopUp
+              action={handleAccept}
+              visible={state}
+              link="/"
+              description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
+            />
+          </ApiProvider>
+        </WalletProvider>
+      </ThemeProvider>
+    </OverlayProvider>
   );
 }
 

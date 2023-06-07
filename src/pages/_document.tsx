@@ -22,12 +22,7 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
+        styles: [initialProps.styles, sheet.getStyleElement()],
       };
     } finally {
       sheet.seal();
@@ -141,6 +136,76 @@ export default class MyDocument extends Document {
           <meta
             property="twitter:image"
             content="https://polkadex.trade/twitterCardImage.jpg"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Black.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Bold.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-SemiBold.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Regular.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Light.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Thin.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/work-sans-v8-latin-300.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="/fonts/work-sans-v8-latin-regular.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="/fonts/work-sans-v8-latin-600.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Caveat-Regular.ttf"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/ttf"
           />
         </Head>
         <body>

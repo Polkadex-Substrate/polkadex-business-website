@@ -1,4 +1,5 @@
 import { Signer } from '@polkadot/types/types';
+import { encodeAddress } from '@polkadot/util-crypto';
 import React, { useCallback, useEffect, useState } from 'react';
 
 interface Web3Account {
@@ -7,18 +8,18 @@ interface Web3Account {
 }
 
 interface StoreState {
-  account: Web3Account | null;
+  account?: Web3Account;
   allAccounts: Web3Account[];
   loading: boolean;
 }
 const initialState: StoreState = {
-  account: null,
   allAccounts: [],
   loading: false,
 };
 export interface WalletCtx extends StoreState {
   getSinger: (address: string) => Promise<Signer>;
   setAccount: (address: string) => void;
+  isInjected: boolean;
 }
 
 export const WalletContext = React.createContext<WalletCtx>(null);
@@ -55,7 +56,7 @@ export const WalletProvider = ({
     connectWallet().then(() =>
       setState((prevState) => ({ ...prevState, loading: false })),
     );
-  }, []);
+  }, [connectWallet]);
 
   useEffect(() => {
     let sub;
@@ -64,7 +65,7 @@ export const WalletProvider = ({
         sub = web3AccountsSubscribe((accounts) => {
           const allAccounts: Web3Account[] = accounts.map(
             ({ address, meta }) => ({
-              address,
+              address: encodeAddress(address, 88),
               name: meta.name,
             }),
           );
@@ -78,7 +79,7 @@ export const WalletProvider = ({
     return () => sub && sub();
   }, [isInjected]);
 
-  const value: WalletCtx = { ...state, setAccount, getSinger };
+  const value: WalletCtx = { ...state, setAccount, getSinger, isInjected };
   return (
     <WalletContext.Provider value={value}>{children}</WalletContext.Provider>
   );

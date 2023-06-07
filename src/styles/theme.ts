@@ -136,7 +136,7 @@ const light = {
 const dark = {
   title: 'dark',
   colors: {
-    primaryBackground: '#1C1C26',
+    primaryBackground: '#0D0D10',
     primaryBackgroundOpacity: '#1C1C2699',
     gradientBackground:
       'linear-gradient(62.3deg, #1C1C26 13.21%, #2F313B 98.01%)',
