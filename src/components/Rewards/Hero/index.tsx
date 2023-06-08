@@ -1,3 +1,4 @@
+import { useTour } from '@reactour/tour';
 import { SingleArrowBottom } from 'components/Icons';
 import { Dropdown } from 'components/v2/Dropdown';
 import React, { useMemo } from 'react';
@@ -19,7 +20,6 @@ export const Hero = () => {
     walletReward,
     isTransactionLoading,
   } = useRewards();
-
   const shortWallet = useMemo(
     () =>
       `${account?.address.slice(0, 12)}...${account?.address.slice(
@@ -27,8 +27,15 @@ export const Hero = () => {
       )}`,
     [account],
   );
+  const { setIsOpen, setCurrentStep } = useTour();
 
-  const shouldShowMessage = hasRewards && Number(claimable) >= 1;
+  const shouldShowMessage = hasRewards && Number(claimable) <= 1;
+  const isIntroActive = process.env.REWARDS_INTRO_ACTIVE === 'true';
+
+  const submitUnlockButtonMessage = isUnlocked ? 'Claim' : 'Unlock Reward';
+  const submitButtonMessage = isTransactionLoading
+    ? 'Submitting..'
+    : submitUnlockButtonMessage;
 
   return (
     <S.Wrapper>
@@ -139,12 +146,7 @@ export const Hero = () => {
                       disabled={isUnlocked ? isClaimDisabled : !hasRewards}
                       onClick={isUnlocked ? claimRewards : initiateClaim}
                     >
-                      {/* eslint-disable-next-line no-nested-ternary */}
-                      {isTransactionLoading
-                        ? 'Submitting...'
-                        : isUnlocked
-                        ? 'Claim'
-                        : 'Unlock Reward'}
+                      {submitButtonMessage}
                     </button>
                   )}
                 </>
@@ -211,6 +213,17 @@ export const Hero = () => {
           </S.Arrow>
         </S.Container>
       </S.Box>
+      {isIntroActive && (
+        <S.IntroButton
+          type="button"
+          onClick={() => {
+            setIsOpen(true);
+            setCurrentStep(0);
+          }}
+        >
+          Tutorial
+        </S.IntroButton>
+      )}
     </S.Wrapper>
   );
 };

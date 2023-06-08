@@ -59,7 +59,7 @@ module.exports = {
     STAKING_SCRAP:
       process.env.STAKING_SCRAP ||
       'https://strapi-production-5f75.up.railway.app',
-    REWARDS_INTRO_ACTIVE: process.env.REWARDS_INTRO_ACTIVE,
+    REWARDS_INTRO_ACTIVE: process.env.REWARDS_INTRO_ACTIVE || 'true',
     STAKING_SCRAP_TOKEN:
       process.env.STAKING_SCRAP_TOKEN ||
       '64884814288cec3482534e508918677352f7199bc03cb4a80b0ee18a10fc479e237dabd77cd514722eccd37523dc1cc5286f67995726df6cd038cffcd5e202581f90d56bebf08515005366a1eacaafeefa4471e04128279b796c84a9b84b0603cd401169d754300ee12e9fc1cb5ed43d02331bba02c35ecc1520debd8e49e662',

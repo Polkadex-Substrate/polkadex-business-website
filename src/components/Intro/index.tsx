@@ -15,11 +15,7 @@ import { defaultStyles } from './config';
 import { DEFAULTINTRONAME } from './contants';
 import * as S from './styles';
 
-const initialState = process.browser && localStorage.getItem(DEFAULTINTRONAME);
-
 export function Intro({ children }: { children: ReactNode }) {
-  const { hasRewards } = useRewards();
-  const isIntroActive = process.env.REWARDS_INTRO_ACTIVE === 'true';
   const steps: StepType[] = useMemo(
     () => [
       {
@@ -62,21 +58,33 @@ export function Intro({ children }: { children: ReactNode }) {
         disableActions: true,
       },
       {
-        selector: hasRewards ? '.initiateButton' : '.noRewards',
+        selector: '.initiateButton',
         content: (
           <S.Container>
             <div>
-              <h6>
-                2.{' '}
-                {hasRewards
-                  ? 'Claim your rewards!'
-                  : 'There are no rewards available'}
-              </h6>
+              <h6>2. Claim your rewards!</h6>
               <p>
-                {hasRewards
-                  ? 'Click "Unlock Rewards" to claim your total rewards. The "Total vested to date" includes the initial unlocked 25% plus the amount vested so far. These will be unlocked and transferable. The remaining rewards will continue vesting into your wallet until the end of the lease period.'
-                  : 'Have you selected the correct wallet?'}
+                Click &quot;<strong>Unlock Rewards</strong>&quot; to claim your
+                total rewards. The &quot;Total vested to date&quot; includes the
+                initial unlocked 25% plus the amount vested so far. These will
+                be unlocked and transferable. The remaining rewards will
+                continue vesting into your wallet until the end of the lease
+                period.
               </p>
+            </div>
+          </S.Container>
+        ),
+        position: 'bottom',
+        styles: defaultStyles,
+        disableActions: true,
+      },
+      {
+        selector: '.noRewards',
+        content: (
+          <S.Container>
+            <div>
+              <h6>2. There are no rewards available</h6>
+              <p>Have you selected the correct wallet?</p>
             </div>
           </S.Container>
         ),
@@ -102,28 +110,53 @@ export function Intro({ children }: { children: ReactNode }) {
         styles: defaultStyles,
         disableActions: true,
       },
+      {
+        selector: '.howToStaking',
+        content: (
+          <S.Container>
+            <div>
+              <h6>Just follow the following steps</h6>
+              <p>
+                After completion, your coins will be secure and earning daily.
+              </p>
+            </div>
+          </S.Container>
+        ),
+        position: 'bottom',
+        styles: defaultStyles,
+        disableActions: true,
+      },
     ],
-    [hasRewards],
+    [],
   );
 
   return (
-    <TourProvider
-      steps={steps}
-      defaultOpen={isIntroActive ? !initialState : false}
-      ContentComponent={ContentComponent}
-    >
+    <TourProvider steps={steps} ContentComponent={ContentComponent}>
       {children}
     </TourProvider>
   );
 }
 
 const ContentComponent = (props: TourProps) => {
-  const [state, setState] = useState(!!initialState);
+  const initialState =
+    typeof window !== 'undefined' &&
+    localStorage.getItem(DEFAULTINTRONAME) === 'true';
+
+  const [state, setState] = useState(initialState);
+
+  const { account, isInjected } = useWallet();
+  const {
+    hasRewards,
+    claimed,
+    isTransactionLoading,
+    isTransactionSuccess,
+    onOpenStaking,
+  } = useRewards();
+
   const { steps, currentStep, setIsOpen, setCurrentStep, isOpen } = props;
   const { content } = steps[currentStep];
+
   const isLastStep = currentStep === steps.length - 1;
-  const { account, isInjected } = useWallet();
-  const { hasRewards, claimed, isTransactionLoading } = useRewards();
 
   const showNextButton = !isLastStep && currentStep === 0 && isInjected;
   const showSkipButton =
@@ -131,6 +164,7 @@ const ContentComponent = (props: TourProps) => {
     (currentStep === 1 && !isInjected) ||
     (!hasRewards && currentStep === 2);
 
+  const showNextStakingButton = currentStep === 4;
   const userHasClaimedRewards = useMemo(
     () => hasRewards && Number(claimed) > 0 && !isTransactionLoading,
     [isTransactionLoading, hasRewards, claimed],
@@ -142,13 +176,28 @@ const ContentComponent = (props: TourProps) => {
   }, [state]);
 
   useEffect(() => {
-    if (account && currentStep === 1) setTimeout(() => setCurrentStep(2), 200);
-  }, [account, setCurrentStep, currentStep]);
+    if (account && currentStep === 1) {
+      const timeout = setTimeout(() => setCurrentStep(hasRewards ? 2 : 3), 300);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
+  }, [account, setCurrentStep, currentStep, hasRewards]);
 
   useEffect(() => {
-    if (userHasClaimedRewards && currentStep === 2)
-      setTimeout(() => setCurrentStep(3), 200);
+    if (userHasClaimedRewards && currentStep === 2) {
+      const timeout = setTimeout(() => setCurrentStep(3), 300);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
   }, [setCurrentStep, currentStep, userHasClaimedRewards]);
+
+  useEffect(() => {
+    if (isTransactionSuccess && currentStep === 2) {
+      const timeout = setTimeout(() => setCurrentStep(4), 300);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
+  }, [setCurrentStep, currentStep, isTransactionSuccess]);
 
   return (
     <S.Wrapper>
@@ -175,6 +224,17 @@ const ContentComponent = (props: TourProps) => {
             <S.Button
               type="button"
               onClick={() => setCurrentStep(currentStep + 1)}
+            >
+              Next
+            </S.Button>
+          )}
+          {showNextStakingButton && (
+            <S.Button
+              type="button"
+              onClick={() => {
+                onOpenStaking();
+                setCurrentStep(5);
+              }}
             >
               Next
             </S.Button>

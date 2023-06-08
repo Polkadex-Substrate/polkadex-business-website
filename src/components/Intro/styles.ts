@@ -26,6 +26,9 @@ export const Container = styled(Flex)`
     flex-direction: column;
     gap: 1.5rem;
   }
+  strong {
+    font-weight: 500;
+  }
 `;
 export const Wrapper = styled.div`
   ${({ theme }) => css`

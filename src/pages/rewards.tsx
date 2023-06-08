@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Intro } from 'components';
 import dynamic from 'next/dynamic';
 import { ToastContainer } from 'react-toastify';
 
@@ -14,7 +15,9 @@ export const Rewards = ({ data }) => (
   <>
     <ToastContainer />
     <RewardsProvider>
-      <Template apy={data?.apy ?? 24.5} />
+      <Intro>
+        <Template apy={data?.apy ?? 24.5} />
+      </Intro>
     </RewardsProvider>
   </>
 );

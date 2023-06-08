@@ -1,10 +1,12 @@
+import { useTour } from '@reactour/tour';
+import { DEFAULTINTRONAME } from 'components/Intro/contants';
 import { Popup } from 'components/Popup';
 import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import * as S from './styles';
 
@@ -17,6 +19,30 @@ const Staking = dynamic(
 
 export const Template = ({ apy }) => {
   const [terms, setTerms] = useState(true);
+
+  const { setIsOpen, setCurrentStep } = useTour();
+
+  const initialState = localStorage.getItem(DEFAULTINTRONAME) === 'false';
+
+  const isIntroActiveViaEnv =
+    process.env.REWARDS_INTRO_ACTIVE === 'true' ? !initialState : false;
+
+  const shouldShowIntro = useMemo(
+    () => !terms && isIntroActiveViaEnv,
+    [terms, isIntroActiveViaEnv],
+  );
+
+  useEffect(() => {
+    if (shouldShowIntro) {
+      const timeout = setTimeout(() => {
+        setIsOpen(true);
+        setCurrentStep(0);
+      }, 1000);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
+  }, [shouldShowIntro, setIsOpen, setCurrentStep]);
+
   return (
     <>
       <Popup isVisible={terms} onClose={undefined}>
