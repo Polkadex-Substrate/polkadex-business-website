@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { signAndSubmitPromiseWrapper } from '@polkadex/blockchain-api';
 import Utils from '@polkadex/utils';
 import { encodeAddress } from '@polkadot/util-crypto';
+import confetti from 'canvas-confetti';
 import React, {
   createContext,
   PropsWithChildren,
@@ -34,12 +36,15 @@ export interface RewardsCtx extends Rewards {
   loading: boolean;
   isClaimDisabled: boolean;
   isTransactionLoading: boolean;
+  isTransactionSuccess: boolean;
   isUnlocked: boolean;
   fetchRewards: (address: string) => void;
   claimRewards: () => Promise<void>;
   initiateClaim: () => Promise<void>;
   hasRewards?: boolean;
   walletReward?: CrowndloandData;
+  isStakingOpened?: boolean;
+  onOpenStaking?: () => void;
 }
 
 export const RewardsContext = createContext<RewardsCtx>({} as RewardsCtx);
@@ -54,7 +59,9 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
   );
   const [isTransactionLoading, setIsTransactionLoading] =
     useState<boolean>(false);
+  const [isTransactionSuccess, setIsTransactionSuccess] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
+  const [stakingOpened, setStakingOpened] = useState(false);
   const { account } = useWallet();
 
   const isClaimDisabled = useMemo(
@@ -125,7 +132,15 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
         signer,
         criteria: 'IS_IN_BLOCK',
       });
+      confetti({
+        zIndex: 9999,
+        origin: {
+          x: 0.5,
+          y: 0.4,
+        },
+      });
       toast(messages.SUCCESS_CLAIM, 'success');
+      setIsTransactionSuccess(true);
     } catch (error) {
       toast(`${messages.FAILURE_CLAIM}: ${error?.message ?? error}`, 'error');
     } finally {
@@ -186,6 +201,14 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
     if (apiConnected && account) fetchHasWalletReward(account.address);
   }, [apiConnected, account, fetchHasWalletReward]);
 
+  useEffect(() => {
+    if (!isTransactionLoading && isTransactionSuccess) {
+      const timeout = setTimeout(() => setIsTransactionSuccess(false), 2000);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
+  }, [isTransactionLoading, isTransactionSuccess]);
+
   const value = {
     ...rewards,
     fetchRewards,
@@ -197,6 +220,9 @@ export const RewardsProvider = ({ children }: PropsWithChildren<unknown>) => {
     hasRewards: !!walletReward,
     isClaimDisabled,
     isTransactionLoading,
+    isTransactionSuccess,
+    isStakingOpened: stakingOpened,
+    onOpenStaking: () => setStakingOpened(!stakingOpened),
   };
   return (
     <RewardsContext.Provider value={value}>{children}</RewardsContext.Provider>

@@ -1,11 +1,13 @@
+import { useTour } from '@reactour/tour';
 import { useRewards } from 'hooks/useRewards';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import * as S from './styles';
 
 export const Staking = ({ apy }) => {
-  const [state, setState] = useState(false);
-  const { walletReward } = useRewards();
+  const { walletReward, isTransactionSuccess, isStakingOpened, onOpenStaking } =
+    useRewards();
+  const { isOpen } = useTour();
 
   const formatNumber = (num: number) =>
     Number.isInteger(num) ? num : num.toFixed(3);
@@ -15,12 +17,13 @@ export const Staking = ({ apy }) => {
   const formaterStaking = formatNumber(amountStaking);
   const amountRewards =
     (Number(formaterStaking) * apy) / 100 + Number(formaterStaking);
-
   const formaterRewards = formatNumber(amountRewards);
+
   const stakingRef = useRef<HTMLDivElement>(null);
+  const stakingHeroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (state) {
+    if (isStakingOpened) {
       const offsetTop = stakingRef?.current?.offsetTop;
       if (offsetTop)
         window.scrollTo({
@@ -29,10 +32,25 @@ export const Staking = ({ apy }) => {
           behavior: 'smooth',
         });
     }
-  }, [state]);
+  }, [isStakingOpened]);
+
+  useEffect(() => {
+    if (isTransactionSuccess && !isOpen) {
+      const clear = setTimeout(() => {
+        const offsetTop = stakingHeroRef?.current?.offsetTop;
+        window.scrollTo({
+          top: offsetTop - 100,
+          left: 0,
+          behavior: 'smooth',
+        });
+      }, 1500);
+      return () => clearTimeout(clear);
+    }
+    return undefined;
+  }, [isTransactionSuccess, isOpen]);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper ref={stakingHeroRef}>
       <S.Box>
         <S.Container className="latestRewards">
           <S.Top>
@@ -51,14 +69,14 @@ export const Staking = ({ apy }) => {
                 <span>365 days</span>
               </div>
             </S.Bar>
-            <button type="button" onClick={() => setState(!state)}>
+            <button type="button" onClick={onOpenStaking}>
               How to stake
             </button>
           </S.Bottom>
         </S.Container>
       </S.Box>
-      {state && (
-        <S.HowToStake ref={stakingRef}>
+      {isStakingOpened && (
+        <S.HowToStake ref={stakingRef} className="howToStaking">
           <h2>How to Stake PDEX</h2>
           <S.HowToStakeWrapper>
             <S.HowToStakeBox>
