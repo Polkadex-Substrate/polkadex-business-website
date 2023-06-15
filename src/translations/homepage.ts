@@ -282,7 +282,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Lead Community Manager',
+        title: 'Chief Community Manager',
         name: 'Francis Dufour',
         image: 'francisPhotography',
         socialMedia: [
