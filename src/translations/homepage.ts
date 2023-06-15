@@ -420,6 +420,28 @@ const ENLanguage = {
         ],
       },
       {
+        title: 'Customer Support Lead',
+        name: 'Amartya Mukherjee',
+        image: 'amartyaPhotography',
+        socialMedia: [
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/amartyamukherjee-1b468165/',
+          },
+        ],
+      },
+      {
+        title: 'Graphic Designer',
+        name: 'Nitika Khandelwal',
+        image: 'nitikaPhotography',
+        socialMedia: [
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/nitika-khandelwal-0a167615a/',
+          },
+        ],
+      },
+      {
         title: 'Threshold Cryptography Advisor',
         name: 'Omer Shlomovits',
         image: 'omerPhotography',
