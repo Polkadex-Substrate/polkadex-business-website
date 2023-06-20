@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "generateIcons": "svgr -d src/components/Icons/ public/img/icons/ --typescript --icon",
@@ -29,6 +30,7 @@
     "ethers": "^5.4.6",
     "framer-motion": "^7.5.3",
     "next": "^12.1.6",
+    "next-sitemap": "^4.1.3",
     "nextjs-google-analytics": "^1.0.9",
     "papaparse": "^5.4.1",
     "query-string": "^7.0.1",
