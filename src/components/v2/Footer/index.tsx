@@ -6,6 +6,7 @@ import Link from 'next/link';
 import * as S from './styles';
 
 export const Footer = ({ isDark = false }) => {
+  const currentYear = new Date().getFullYear();
   return (
     <S.Wrapper isDark={isDark}>
       <S.Header>
@@ -156,7 +157,7 @@ export const Footer = ({ isDark = false }) => {
       <S.Footer>
         <S.Copyright>
           <ul>
-            <li>Copyright © 2022 Polkadex, Inc.</li>
+            <li>Copyright © {currentYear} Polkadex, Inc.</li>
             <li>
               <Link
                 href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
