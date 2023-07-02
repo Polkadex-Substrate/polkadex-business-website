@@ -1,4 +1,5 @@
 import { useTour } from '@reactour/tour';
+import { AlertDiscord } from 'components/AlertDiscord';
 import { DEFAULTINTRONAME } from 'components/Intro/contants';
 import { Popup } from 'components/Popup';
 import { Hero } from 'components/Rewards';
@@ -102,6 +103,7 @@ export const Template = ({ apy }) => {
             content="Staking, stake, investing, passive income, crypto, cryptocurrencies, earn, high APY"
           />
         </Head>
+        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

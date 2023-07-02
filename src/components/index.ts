@@ -14,6 +14,7 @@ import Team from 'components/Team';
 import TokenEconomics from 'components/TokenEconomics';
 
 export * from './AccessDenied';
+export * from './AlertDiscord';
 export * from './AnimatedDarkGradient';
 export * from './Announcement';
 export * from './AvailableMessage';

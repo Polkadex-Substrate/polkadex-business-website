@@ -1,3 +1,4 @@
+import { AlertDiscord } from 'components/AlertDiscord';
 import { StakingFaq } from 'components/Crowdloans';
 import { Hero, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
@@ -60,6 +61,7 @@ export const Template = ({ data, error }) => {
             content="Staking, stake, investing, passive income, crypto, cryptocurrencies, earn, high APY"
           />
         </Head>
+        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

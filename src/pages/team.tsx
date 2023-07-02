@@ -1,4 +1,4 @@
-import { Team as TeamComponent } from 'components';
+import { AlertDiscord, Team as TeamComponent } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -53,6 +53,7 @@ export default function Team() {
           />
           <meta property="og:title" content="Polkadex Team" />
         </Head>
+        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

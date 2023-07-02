@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { AlertDiscord, Icon } from 'components';
 import {
   BetaProgram,
   Ecosystem,
@@ -59,6 +60,7 @@ export default function Home({ data, error = '' }) {
             rel="stylesheet"
           />
         </Head>
+        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
