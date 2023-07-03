@@ -1,4 +1,3 @@
-import { AlertDiscord } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -27,7 +26,6 @@ export default function Terms() {
         <Head>
           <title>Polkadex - Terms and conditions</title>
         </Head>
-        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

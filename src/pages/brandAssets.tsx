@@ -1,4 +1,4 @@
-import { AlertDiscord, BrandAssetsCards, BrandAssetsHero } from 'components';
+import { BrandAssetsCards, BrandAssetsHero } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -27,7 +27,6 @@ export default function BrandAssets() {
         <Head>
           <title>Polkadex - Brand Assets</title>
         </Head>
-        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

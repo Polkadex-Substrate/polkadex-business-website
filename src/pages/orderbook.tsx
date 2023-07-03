@@ -1,5 +1,4 @@
 import {
-  AlertDiscord,
   FeetDifference,
   InitialBanner,
   NewOrderbookProduct,
@@ -90,7 +89,6 @@ export default function Orderbook() {
 "
           />
         </Head>
-        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

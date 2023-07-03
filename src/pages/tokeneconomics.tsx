@@ -1,7 +1,4 @@
-import {
-  AlertDiscord,
-  TokenEconomics as TokenEconomicsComponent,
-} from 'components';
+import { TokenEconomics as TokenEconomicsComponent } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -56,7 +53,6 @@ export default function Tokeneconomics() {
           />
           <meta property="og:title" content="Polkadex Token Economics" />
         </Head>
-        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

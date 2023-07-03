@@ -1,4 +1,3 @@
-import { AlertDiscord } from 'components/AlertDiscord';
 import {
   About,
   Hero,
@@ -41,7 +40,6 @@ export const Template = () => {
             Help Polkadex secure a Parachain slot. Join the Crowdloan now!
           </title>
         </Head>
-        <AlertDiscord />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
