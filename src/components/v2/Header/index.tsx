@@ -81,7 +81,7 @@ export const Header = ({ links = [], cta }: T.Props) => {
                       </a>
                     </S.Li>
                     <S.Li>
-                      <Link href="/rewards">Test Rewards</Link>
+                      <Link href="/rewards">Rewards</Link>
                     </S.Li>
                   </ul>
                 </S.MenuContainer>
