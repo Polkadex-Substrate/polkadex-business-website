@@ -175,7 +175,7 @@ export const Hero = () => {
 
           {!account && (
             <>
-              <h1>Time to Claim your TEST PDEX rewards💰</h1>
+              <h1>Time to Claim your PDEX rewards💰</h1>
               <h2>
                 If you participated in the Polkadot Crowdloan and helped us
                 secure a parachain slot, you may have pending rewards.

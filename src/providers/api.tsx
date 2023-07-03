@@ -66,7 +66,7 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider(process.env.CHAIN_URL || 'wss://solochain.polkadex.trade');
+      const provider = new WsProvider(process.env.RANGER_HOST_URL || 'wss://mainnet.polkadex.trade');
       const api = await ApiPromise.create({
         provider,
         ...typesApi,
