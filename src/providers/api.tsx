@@ -111,6 +111,6 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
 };
 
 const messages = {
-  SUCCESS_CONNECT: 'Connected to wss://solochain.polkadex.trade',
-  ERROR_CONNECT: 'Error connecting to wss://solochain.polkadex.trade',
+  SUCCESS_CONNECT: 'Connected to Polkadex Chain',
+  ERROR_CONNECT: 'Error connecting to Polkadex Chain',
 };
