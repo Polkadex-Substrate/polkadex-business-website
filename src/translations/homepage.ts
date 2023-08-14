@@ -485,17 +485,6 @@ const ENLanguage = {
           },
         ],
       },
-      {
-        title: 'Marketing Advisor',
-        name: 'Garlam (가람) Won',
-        image: 'garlamPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/garlam/',
-          },
-        ],
-      },
     ],
   },
   roadmap: {
