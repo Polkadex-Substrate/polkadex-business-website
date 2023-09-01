@@ -505,19 +505,20 @@ const ENLanguage = {
           },
           vertical: {
             side: 'top',
-            distance: -8.3,
+            distance: -10,
           },
         },
         items: [
           { title: 'Derivatives', status: false },
           { title: 'Structured Products', status: false },
+          { title: 'Parachain listings on Polkadex Orderbook', status: false },
         ],
       },
       {
         title: 'Q2 2023',
         invert: true,
         alignRight: true,
-        soon: true,
+        active: true,
         position: {
           horizontal: {
             side: 'left',
@@ -531,35 +532,35 @@ const ENLanguage = {
         items: [
           { title: 'Code Audit of Solochain, Orderbook' },
           { title: 'Crowdloan Rewards (Early Q2)' },
-          { title: 'Mobile App Mainnet (Early Q2)' },
           { title: 'Bridge with Polkadot - Mainnet' },
           { title: 'Integration with Trading Bots and Market Makers' },
-          { title: 'Bridge with ETH and Polygon' },
         ],
       },
       {
         title: 'Q1 2023',
         alignRight: false,
-        active: true,
         position: {
           horizontal: {
             side: 'right',
-            distance: 20,
+            distance: 16,
           },
           vertical: {
             side: 'top',
-            distance: -9,
+            distance: -11,
           },
         },
         items: [
           {
             title: 'Thea Bridge with Polkadot - Internal Testnet',
+            status: true,
           },
-          { title: 'XCM Channels with Parachain - Testnet' },
+          { title: 'XCM Channels with Parachain - Testnet', status: true },
           {
             title: 'Code Audit of Parachain & Thea',
+            status: true,
           },
-          { title: 'Crowdloan Rewards Pallet - Awaiting Audit' },
+          { title: 'Crowdloan Rewards Pallet - Awaiting Audit', status: true },
+          { title: 'Parachain listings on Polkadex', status: true },
         ],
       },
       {

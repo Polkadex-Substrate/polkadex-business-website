@@ -120,7 +120,11 @@ export const Wrapper = styled.div<Partial<Props>>`
         border-radius: 1rem;
         padding: 1rem;
         top: -1.5rem;
-        left: 5rem;
+        ${invert &&
+        css`
+          transform: rotate(180deg);
+        `}
+        left: ${invert ? '-1rem' : '5rem'};
         border: 4px solid;
         border-color: transparent;
         border-right-color: ${alignRight
