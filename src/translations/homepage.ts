@@ -323,21 +323,6 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Flutter Engineer',
-        name: 'Adriel Bomfim',
-        image: 'adrielPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/AdrielVBomfim',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/adrielvb/',
-          },
-        ],
-      },
-      {
         title: 'Senior Blockchain Engineer',
         name: 'Krishna Singh',
         image: 'zkPhotography',
@@ -349,32 +334,6 @@ const ENLanguage = {
           {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/krishna-singh-b37671170',
-          },
-        ],
-      },
-      {
-        title: 'Senior Rust Engineer',
-        name: 'Ivan Temchenko',
-        image: 'ivanPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/35359595',
-          },
-        ],
-      },
-      {
-        title: 'Software Engineer',
-        name: 'Ruchi Ray',
-        image: 'ruchiPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/RuchiRay',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/ruchi-ray-a3ab0b1ba',
           },
         ],
       },
@@ -416,17 +375,6 @@ const ENLanguage = {
           {
             name: 'LinkedIn',
             link: 'https://www.linkedin.com/in/rodolfo-ferreira-91824819a/',
-          },
-        ],
-      },
-      {
-        title: 'Customer Support Lead',
-        name: 'Amartya Mukherjee',
-        image: 'amartyaPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/amartyamukherjee-1b468165/',
           },
         ],
       },
