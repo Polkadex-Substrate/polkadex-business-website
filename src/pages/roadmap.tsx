@@ -1,17 +1,10 @@
+import { Roadmap as RoadmapComponent } from 'components/';
 import { Footer, Header, Newsletter } from 'components/v2';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
-
-const RoadmapComponent = dynamic(
-  () => import('components/Roadmap').then((mod) => mod.default),
-  {
-    ssr: false,
-  },
-);
 
 export default function Roadmap() {
   const { roadmap, releases }: IHomeTranslations = HomeTranslations['en-US'];
