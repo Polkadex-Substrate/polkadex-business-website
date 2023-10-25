@@ -121,7 +121,7 @@ export const PhaseCardAsideRight = styled.div<{ active: boolean }>`
       width: 4rem;
       height: 4rem;
       background: ${active
-      ? theme.colors.primary
+      ? `${theme.colors.primary}66`
       : theme.colors.secondaryBackgroundOpacity};
       border-radius: 100rem;
       margin-top: -0.3rem;
