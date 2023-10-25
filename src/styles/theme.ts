@@ -57,6 +57,7 @@ export const defaultTheme = {
     orange: '#FFA500',
     blue: '#148FE8',
     disable: '#77777D',
+    secondaryText: '#A8ADB7',
   },
   spacings: {
     xxxsmall: '0.5rem',
