@@ -957,7 +957,7 @@ const ENLanguage = {
       items: [
         'Launch new user sign-up via wallet integration instead of email registration.',
         'Enable automatic fee conversion to PDEX from native assets for account registration, transaction fees, deposits, and withdrawals.',
-        'Remove claim processes for deposits and withdrawals on Thea and Polkadex Orderbook.',
+        'Remove claim processes for deposits and withdrawals on THEA and Polkadex Orderbook.',
         'Integrate with Hummingbot Connector.',
         'Onboard launch-phase Market Maker.',
         'Initiate the listing of the first few spot market pairs.',
@@ -969,7 +969,7 @@ const ENLanguage = {
       phase: 'Phase 2',
       emoji: '🍾',
       items: [
-        'Extend The Thea connector to Ethereum.',
+        'Extend The THEA connector to Ethereum.',
         'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
         'Launch the Liquidity Mining Program.',
         'Integrate with DEX aggregators built on Ethereum.',
@@ -982,7 +982,7 @@ const ENLanguage = {
       phase: 'Phase 3',
       emoji: '⚡',
       items: [
-        'Extend Thea connector to L2s and EMV-compatible chains.',
+        'Extend THEA connector to L2s and EVM-compatible chains.',
         'Enable native dApp integration with 3rd party service providers.',
       ],
     },
