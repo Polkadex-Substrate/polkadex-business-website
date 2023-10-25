@@ -41,7 +41,8 @@ const Roadmap = ({ roadmap, releases }: Props) => {
                 </p>
               </div>
             </S.PhaseCardAsideRight>
-            {value.active && <small>In progress</small>}
+            {!!value?.completed && <strong>Completed</strong>}
+            {!!value?.active && <small>In progress</small>}
           </S.PhaseCard>
         ))}
       </S.Phase>

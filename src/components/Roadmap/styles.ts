@@ -66,12 +66,19 @@ export const PhaseCard = styled.div`
       flex-direction: row;
       gap: 5rem;
     }
+    strong,
     small {
       position: absolute;
       font-weight: 500;
       font-size: 1.5rem;
+      padding: 2rem;
       right: 0;
       top: 0;
+    }
+    strong {
+      background: ${theme.colors.green};
+    }
+    small {
       background: ${theme.colors.secondaryBackground};
       padding: 2rem;
     }

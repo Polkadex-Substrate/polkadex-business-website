@@ -940,8 +940,8 @@ const ENLanguage = {
     {
       title: 'Prometheus release',
       emoji: '💫',
+      completed: true,
       phase: 'Phase 0',
-      active: true,
       items: [
         'Release Orderbook Beta to the public.',
         'Implement bug fixes for Orderbook Beta.',
@@ -952,13 +952,14 @@ const ENLanguage = {
     {
       title: 'Hestia release',
       emoji: '🔥',
+      active: true,
       phase: 'Phase 1',
       items: [
         'Launch new user sign-up via wallet integration instead of email registration.',
         'Enable automatic fee conversion to PDEX from native assets for account registration, transaction fees, deposits, and withdrawals.',
-        'Simplify claim processes for deposits and withdrawals on Thea and Polkadex Orderbook.',
+        'Remove claim processes for deposits and withdrawals on Thea and Polkadex Orderbook.',
         'Integrate with Hummingbot Connector.',
-        'Onboard one Market Maker.',
+        'Onboard launch-phase Market Maker.',
         'Initiate the listing of the first few spot market pairs.',
         'Continue bug fixes for Orderbook Beta.',
       ],
@@ -968,7 +969,7 @@ const ENLanguage = {
       phase: 'Phase 2',
       emoji: '🍾',
       items: [
-        'Extend The Thea connector to Etherum.',
+        'Extend The Thea connector to Ethereum.',
         'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
         'Launch the Liquidity Mining Program.',
         'Integrate with DEX aggregators built on Ethereum.',
