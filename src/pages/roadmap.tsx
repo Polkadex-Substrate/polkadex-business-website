@@ -1,4 +1,4 @@
-import { Roadmap as RoadmapComponent } from 'components';
+import { Roadmap as RoadmapComponent } from 'components/';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -7,7 +7,7 @@ import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
 
 export default function Roadmap() {
-  const { roadmap }: IHomeTranslations = HomeTranslations['en-US'];
+  const { roadmap, releases }: IHomeTranslations = HomeTranslations['en-US'];
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Roadmap() {
           }}
         />
         <main ref={ref} style={{ overflow: 'hidden' }}>
-          <RoadmapComponent {...roadmap} />
+          <RoadmapComponent roadmap={roadmap} releases={releases} />
           <Newsletter />
         </main>
         <Footer />

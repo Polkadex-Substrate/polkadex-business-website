@@ -443,30 +443,9 @@ const ENLanguage = {
       'We started our journey with the idea of bringing the best DeFi experience to users and keep moving closer to our goal with each step',
     cards: [
       {
-        title: 'Q3 2023',
-        alignRight: false,
-        soon: true,
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 0,
-          },
-          vertical: {
-            side: 'top',
-            distance: -10,
-          },
-        },
-        items: [
-          { title: 'Derivatives', status: false },
-          { title: 'Structured Products', status: false },
-          { title: 'Parachain listings on Polkadex Orderbook', status: false },
-        ],
-      },
-      {
         title: 'Q2 2023',
-        invert: true,
         alignRight: true,
-        active: true,
+        invert: true,
         position: {
           horizontal: {
             side: 'left',
@@ -478,10 +457,13 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Code Audit of Solochain, Orderbook' },
-          { title: 'Crowdloan Rewards (Early Q2)' },
-          { title: 'Bridge with Polkadot - Mainnet' },
-          { title: 'Integration with Trading Bots and Market Makers' },
+          { title: 'Code Audit of Solochain, Orderbook', status: true },
+          { title: 'Crowdloan Rewards (Early Q2)', status: true },
+          { title: 'Bridge with Polkadot - Mainnet', status: true },
+          {
+            title: 'Integration with Trading Bots and Market Makers',
+            status: true,
+          },
         ],
       },
       {
@@ -954,6 +936,63 @@ const ENLanguage = {
       },
     ],
   },
+  releases: [
+    {
+      title: 'Prometheus release',
+      emoji: '💫',
+      completed: true,
+      phase: 'Phase 0',
+      items: [
+        'Release Orderbook Beta to the public.',
+        'Implement bug fixes for Orderbook Beta.',
+        'Improve the User Interface and User Flow',
+        'Establish XCMP channels with ecosystem projects.',
+      ],
+    },
+    {
+      title: 'Hestia release',
+      emoji: '🔥',
+      active: true,
+      phase: 'Phase 1',
+      items: [
+        'Launch new user sign-up via wallet integration instead of email registration.',
+        'Enable automatic fee conversion to PDEX from native assets for account registration, transaction fees, deposits, and withdrawals.',
+        'Remove claim processes for deposits and withdrawals on THEA and Polkadex Orderbook.',
+        'Integrate with Hummingbot Connector.',
+        'Onboard launch-phase Market Maker.',
+        'Initiate the listing of the first few spot market pairs.',
+        'Continue bug fixes for Orderbook Beta.',
+      ],
+    },
+    {
+      title: 'Apollo release',
+      phase: 'Phase 2',
+      emoji: '🍾',
+      items: [
+        'Extend the THEA connector to Ethereum.',
+        'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
+        'Launch the Liquidity Mining Program.',
+        'Integrate with DEX aggregators built on Ethereum.',
+        'Onboard Market Makers/Liquidity Providers to Polkadex Orderbook.',
+        'Introduce a democratic listing process for projects on Polkadex Orderbook through community voting.',
+      ],
+    },
+    {
+      title: 'Athena release',
+      phase: 'Phase 3',
+      emoji: '⚡',
+      items: [
+        'Extend THEA connector to L2s and EVM-compatible chains.',
+        'Enable native dApp integration with 3rd party service providers.',
+      ],
+    },
+    {
+      title: 'Zeus release',
+      phase: 'Phase 4',
+      emoji: '💯',
+      items: ['Initiate Polkadex DAO.', 'Remove the Sudo-key.'],
+    },
+  ],
 };
 
 export const HomeTranslations = {
