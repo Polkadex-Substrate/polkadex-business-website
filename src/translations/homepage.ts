@@ -969,7 +969,7 @@ const ENLanguage = {
       phase: 'Phase 2',
       emoji: '🍾',
       items: [
-        'Extend The THEA connector to Ethereum.',
+        'Extend the THEA connector to Ethereum.',
         'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
         'Launch the Liquidity Mining Program.',
         'Integrate with DEX aggregators built on Ethereum.',
