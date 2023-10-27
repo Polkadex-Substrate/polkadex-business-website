@@ -293,7 +293,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Social Media Manager',
+        title: 'Marketing Manager',
         name: 'Pablo Solanas Martin',
         image: 'pabloPhotography',
         socialMedia: [
