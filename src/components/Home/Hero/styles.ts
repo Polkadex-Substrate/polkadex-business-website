@@ -133,3 +133,11 @@ export const Actions = styled.div`
     }
   `}
 `;
+export const Secured = styled.div`
+  max-width: 18rem;
+  margin-top: 8rem;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+`;

@@ -46,6 +46,9 @@ export const Hero = () => {
                 Mainnet explorer <Icons.ArrowSingleRight />
               </a>
             </S.Actions>
+            <S.Secured>
+              <Icons.SecuredBy />
+            </S.Secured>
           </S.Container>
           <S.HeroImage style={{ y: heroParallax }}>
             <S.HeroIllustration>
