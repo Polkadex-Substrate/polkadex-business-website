@@ -37,4 +37,10 @@ export const data = [
       icon: 'Gsr',
     },
   ],
+  [
+    {
+      img: 'tradingView',
+      alt: 'tradingView logo',
+    },
+  ],
 ];
