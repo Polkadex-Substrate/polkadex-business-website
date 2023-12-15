@@ -125,6 +125,7 @@ export { default as Screenshots } from './Screenshots';
 export { default as Scs } from './Scs';
 export * from './Search';
 export { default as SecureAssets } from './SecureAssets';
+export * from './SecuredBy';
 export * from './SecurityResearchLabs';
 export { default as Selected } from './Selected';
 export { default as Send } from './Send';
