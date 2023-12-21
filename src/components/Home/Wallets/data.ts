@@ -1,11 +1,5 @@
 export const data = [
   {
-    title: 'Ledger',
-    icon: 'LedgerWallet',
-    isNew: true,
-    href: 'https://polkadex.medium.com/the-polkadex-app-is-now-available-on-ledger-devices-3c9048fa6ad8',
-  },
-  {
     title: 'Nova Wallet',
     img: 'nova',
     href: 'https://novawallet.io/',

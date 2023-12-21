@@ -18,11 +18,6 @@ export const Ecosystem = () => {
             <Card key={i} {...value} i={i + 1} />
           ))}
         </S.ContentFlex>
-        <S.ContentFlex>
-          {data[2].map((value, i) => (
-            <Card key={i} {...value} i={i + 1} />
-          ))}
-        </S.ContentFlex>
       </S.Content>
     </S.Wrapper>
   );

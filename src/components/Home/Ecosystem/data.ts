@@ -41,10 +41,4 @@ export const data = [
       icon: 'CreativeDestruction',
     },
   ],
-  [
-    {
-      img: 'zondax',
-      alt: 'Zondax Monsters logo',
-    },
-  ],
 ];
