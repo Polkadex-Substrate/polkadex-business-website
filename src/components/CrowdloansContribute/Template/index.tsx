@@ -34,15 +34,6 @@ export const Template = () => {
       <S.Wrapper>
         <Head>
           <title>Polkadex Crowdloan for the Polkadot parachain is live.</title>
-          <noscript>
-            <img
-              src="https://ib.adnxs.com/pixie?pi=7a7062db-796b-4937-9aad-8d980417f3ff&e=PageView&script=0"
-              alt="Pixel by Adnxs"
-              width="1"
-              height="1"
-              style={{ display: 'none' }}
-            />
-          </noscript>
         </Head>
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
@@ -52,7 +43,6 @@ export const Template = () => {
           }}
           target="_self"
         />
-
         <main>
           <Hero />
           <Stats>
