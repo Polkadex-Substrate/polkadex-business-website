@@ -38,11 +38,7 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
       />
       <S.Wrapper>
         <Head>
-          <title>
-            Polkadex Crowdloan for the Polkadot parachain is live with 2M $PEDEX
-            rewards pool for contributors.
-          </title>
-
+          <title>Polkadex Crowdloan for the Polkadot parachain is live.</title>
           <noscript>
             <img
               src="https://ib.adnxs.com/pixie?pi=7a7062db-796b-4937-9aad-8d980417f3ff&e=PageView&script=0"
@@ -65,10 +61,10 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
           <Hero />
           <Stats>
             <>
-              <StatsCard title="LP15-LP8" description="Auction Starts" />
-              <StatsCard title="1M DOT" description="Auction Cap" />
+              <StatsCard title="62 - 66" description="Target auctions" />
+              <StatsCard title="50k DOT" description="Rewarded Auction Cap" />
               <StatsCard title="96 weeks" description="Lease Duration" />
-              <StatsCard title="2M PDEX" description="Rewards" />
+              <StatsCard title="3 PDEX" description="per DOT rewards" />
             </>
           </Stats>
           <Rewards />

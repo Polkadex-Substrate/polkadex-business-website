@@ -1,4 +1,4 @@
-import { Template } from 'components/Crowdloans';
+import { Template } from 'components/CrowdloansContribute';
 import { useEffect } from 'react';
 
 export const Crowdloans = () => {
