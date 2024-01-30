@@ -28,11 +28,7 @@ export const About = () => {
             </p>
           </div>
 
-          <PrimaryButton
-            content="Contribute Now"
-            target="_blank"
-            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
-          />
+          <PrimaryButton content="Contribute Now" href="#contribute" />
         </S.Aside>
       </S.Container>
       <S.Chain>

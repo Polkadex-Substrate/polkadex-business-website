@@ -8,7 +8,7 @@ import { useState } from 'react';
 import * as S from './styles';
 import * as T from './types';
 
-export const Header = ({ links = [], cta }: T.Props) => {
+export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
   const [state, setState] = useState(false);
 
   const handleClick = () => setState(!state);
@@ -32,9 +32,9 @@ export const Header = ({ links = [], cta }: T.Props) => {
               Menu
               <Icons.ArrowSingleBottom />
             </button>
-            <a href={cta.href} target="_blank" rel="noreferrer">
+            <Link href={cta.href} target={target} rel="noreferrer">
               {cta.title}
-            </a>
+            </Link>
           </S.AsideRight>
         </S.Container>
         <AnimatePresence>

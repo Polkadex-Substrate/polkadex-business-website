@@ -12,11 +12,7 @@ export const Rewards = () => {
             Loan your DOTs for the duration of our parachain and
             <strong> earn generous rewards!</strong>
           </p>
-          <PrimaryButton
-            content="Contribute Now"
-            target="_blank"
-            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
-          />
+          <PrimaryButton content="Contribute Now" href="#contribute" />
         </S.Title>
         <S.Card>
           <div>

@@ -52,9 +52,10 @@ pixie('init', '7a7062db-796b-4937-9aad-8d980417f3ff');
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
-            title: 'Start Trading',
-            href: 'https://orderbook.polkadex.trade/',
+            title: 'Contribute Now',
+            href: '#contribute',
           }}
+          target="_self"
         />
 
         <main>

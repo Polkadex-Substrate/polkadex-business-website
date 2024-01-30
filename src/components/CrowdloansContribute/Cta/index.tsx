@@ -9,11 +9,7 @@ export const Cta = () => {
         <S.Aside>
           <h2>Support Polkadex!</h2>
           <p>Help Polkadex renew its lease and earn PDEX rewards!</p>
-          <PrimaryButton
-            content="Contribute now"
-            target="_blank"
-            href="https://polkadex.medium.com/the-polkadex-crowdloan-returns-for-batch-3-of-the-polkadot-parachain-auctions-edc4f38665f8"
-          />
+          <PrimaryButton content="Contribute now" href="#contribute" />
         </S.Aside>
         <div />
       </S.Container>
