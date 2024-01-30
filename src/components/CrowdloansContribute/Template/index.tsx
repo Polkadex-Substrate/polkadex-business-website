@@ -33,7 +33,10 @@ export const Template = () => {
       />
       <S.Wrapper>
         <Head>
-          <title>Polkadex Crowdloan for the Polkadot parachain is live.</title>
+          <title>
+            Polkadex Crowdloan 2.0 - Help renew our Polkadot parachain slot and
+            earn 3 PDEX per DOT loaned
+          </title>
         </Head>
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
