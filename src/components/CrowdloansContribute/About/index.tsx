@@ -58,8 +58,7 @@ export const About = () => {
           </S.ChainCard>
           <S.ChainCard>
             <p>
-              The two networks will be joined by Thea Connector bridge (Parity
-              technology) in the backend.
+              The two networks will be joined by Thea Connector in the backend.
             </p>
           </S.ChainCard>
           <S.ChainCard>
