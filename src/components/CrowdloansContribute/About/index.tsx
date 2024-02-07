@@ -22,8 +22,8 @@ export const About = () => {
               interoperability layer,
               <strong>
                 {' '}
-                the THEA, Polkadex is becoming the first Cross-Chain orderbook
-                based DEX.{' '}
+                THEA, Polkadex is becoming the first Cross-Chain orderbook based
+                DEX.{' '}
               </strong>
             </p>
           </div>
@@ -52,13 +52,20 @@ export const About = () => {
           </S.ChainCard>
           <S.ChainCard>
             <p>
-              The Polkadex parachain will connect Polkadex to the Polkadot
-              network and all its parachains and their respective assets.
+              The Polkadex parachain currently connects Polkadex to Polkadot and
+              12 of its parachains.
             </p>
           </S.ChainCard>
           <S.ChainCard>
             <p>
               The two networks will be joined by Thea Connector in the backend.
+            </p>
+          </S.ChainCard>
+          <S.ChainCard>
+            <p>
+              Over 1,050 deposits and withdrawals between Polkadex and 6
+              different parachains have been processed by the Polkadex parachain
+              via XCM.
             </p>
           </S.ChainCard>
           <S.ChainCard>

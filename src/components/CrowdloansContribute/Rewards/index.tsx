@@ -9,7 +9,7 @@ export const Rewards = () => {
         <S.Title>
           <h3>Earn Rewards</h3>
           <p>
-            Loan your DOTs for the duration of our parachain and
+            Loan your DOTs for the duration of our parachain lease and
             <strong> earn generous rewards!</strong>
           </p>
           <PrimaryButton content="Contribute Now" href="#contribute" />

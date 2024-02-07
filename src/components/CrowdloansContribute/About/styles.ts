@@ -120,11 +120,15 @@ export const ChainCard = styled.div`
         left: 0rem;
       }
       :nth-child(4) {
-        bottom: 60rem;
+        top: 18rem;
         right: 0;
       }
       :nth-child(5) {
-        bottom: 35rem;
+        top: 32rem;
+        right: 0;
+      }
+      :nth-child(6) {
+        bottom: 30rem;
         right: 3rem;
       }
     }
