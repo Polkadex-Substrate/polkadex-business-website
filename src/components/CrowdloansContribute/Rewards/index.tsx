@@ -16,7 +16,7 @@ export const Rewards = () => {
         </S.Title>
         <S.Card>
           <div>
-            <h4>3 PDEX per 1 DOT</h4>
+            <h4>2+ PDEX per 1 DOT</h4>
             <p>
               <strong>For each DOT contributed</strong> to the Polkadex
               Crowdloan, <strong>you get 2+ PDEX.</strong>
