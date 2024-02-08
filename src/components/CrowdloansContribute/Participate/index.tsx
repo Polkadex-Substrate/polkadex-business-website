@@ -67,7 +67,7 @@ export const Participate = () => {
   );
 };
 
-const Card = ({ title, img, link, disabled }) => (
+const Card = ({ title, img, link, disabled = false }) => (
   <S.ColumnCard disabled={disabled} href={link} target="_blank">
     <S.FlipFront>
       <img src={`img/partnerLaunch/${img}.svg`} alt="parallel finance" />
