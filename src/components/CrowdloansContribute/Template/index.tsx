@@ -35,7 +35,7 @@ export const Template = () => {
         <Head>
           <title>
             Polkadex Crowdloan 2.0 - Help renew our Polkadot parachain slot and
-            earn 2+ PDEX per DOT loaned
+            earn 3 PDEX per DOT loaned
           </title>
         </Head>
         <Header

@@ -10,7 +10,7 @@ export const Hero = () => {
           <h1>
             Contribute to the Polkadex Crowdloan
             <span>
-              and <strong> earn 2+ PDEX </strong>for every DOT you loan!
+              and <strong> earn 3 PDEX </strong>for every DOT you loan!
             </span>
           </h1>
           <p>
