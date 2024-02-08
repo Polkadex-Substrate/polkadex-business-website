@@ -19,7 +19,7 @@ export const Rewards = () => {
             <h4>3 PDEX per 1 DOT</h4>
             <p>
               <strong>For each DOT contributed</strong> to the Polkadex
-              Crowdloan, <strong>you get 2+ PDEX.</strong>
+              Crowdloan, <strong>you get 3 PDEX.</strong>
             </p>
           </div>
           <img src="/img/pdexHand.png" alt="Reward" />
