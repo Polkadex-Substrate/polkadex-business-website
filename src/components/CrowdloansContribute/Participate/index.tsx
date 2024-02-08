@@ -1,3 +1,10 @@
+import { PrimaryButton, SecondaryButton } from 'components/Button';
+import { Popover } from 'components/v2';
+import { Button } from 'components/v2/Button';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+
 import * as S from './styles';
 
 export const Participate = () => {
@@ -67,14 +74,65 @@ export const Participate = () => {
   );
 };
 
-const Card = ({ title, img, link, disabled = false }) => (
-  <S.ColumnCard disabled={disabled} href={link} target="_blank">
-    <S.FlipFront>
-      <img src={`img/partnerLaunch/${img}.svg`} alt="parallel finance" />
-      <span>{title}</span>
-    </S.FlipFront>
-  </S.ColumnCard>
-);
+const Card = ({ title, img, link, disabled = false }) => {
+  const [state, setState] = useState(false);
+  return (
+    <Popover isOpen={state && !disabled} onOpenChange={setState}>
+      <Popover.Trigger>
+        <S.ColumnCard>
+          <S.FlipFront disabled={disabled}>
+            <img src={`img/partnerLaunch/${img}.svg`} alt="parallel finance" />
+            <span>{title}</span>
+          </S.FlipFront>
+        </S.ColumnCard>
+      </Popover.Trigger>
+      <Popover.Content>
+        <S.Terms>
+          <S.TermsTitle>
+            <div>
+              <h3>Read and confirm</h3>
+              <p>
+                By proceeding you acknowledge that you have read and understood
+                the legal requirements of each policy.
+              </p>
+            </div>
+
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Parachain_Auction_Terms_and_Conditions_2.06.2024.pdf"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Terms and conditions
+                </a>
+              </li>
+            </ul>
+          </S.TermsTitle>
+          <S.TermsActions>
+            <button
+              type="button"
+              onClick={() => {
+                setState(false);
+              }}
+            >
+              Decline
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setState(false);
+                window.open(link);
+              }}
+            >
+              Accept
+            </button>
+          </S.TermsActions>
+        </S.Terms>
+      </Popover.Content>
+    </Popover>
+  );
+};
 
 const HorizontalCard = ({ title, img, isActive = true, link = '#' }) => (
   <S.HorizontalCard isActive={isActive} href={link} target="_blank">

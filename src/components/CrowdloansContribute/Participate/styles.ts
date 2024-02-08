@@ -112,8 +112,11 @@ export const Rewards = styled.div`
   }
 `;
 
-export const FlipFront = styled.div`
-  ${({ theme }) => css`
+export const FlipFront = styled.div<{ disabled?: boolean }>`
+  ${({ theme, disabled }) => css`
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+    pointer-events: ${disabled ? 'none' : 'inherit'};
+    opacity: ${disabled ? 0.5 : 1};
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -125,36 +128,33 @@ export const FlipFront = styled.div`
   `}
 `;
 
-export const ColumnCard = styled.a<{ disabled?: boolean }>`
-  ${({ disabled }) => css`
-    cursor: ${disabled ? 'not-allowed' : 'pointer'};
-    pointer-events: ${disabled ? 'none' : 'inherit'};
-    opacity: ${disabled ? 0.5 : 1};
-    text-align: center;
-    img {
-      margin: 2rem 0;
-      max-height: 6rem;
-    }
+export const ColumnCard = styled.div`
+  text-align: center;
+  width: 100%;
 
-    @media screen and (min-width: 960px) {
-      min-width: 22.5rem;
-      :not(:last-child) {
-        margin-right: 1.5rem;
-      }
-    }
+  img {
+    margin: 2rem 0;
+    max-height: 6rem;
+  }
 
-    @media screen and (max-width: 960px) {
-      :not(:last-child) {
-        margin-right: 2rem;
-      }
+  @media screen and (min-width: 960px) {
+    min-width: 22.5rem;
+    :not(:last-child) {
+      margin-right: 1.5rem;
     }
+  }
 
-    @media screen and (max-width: 740px) {
-      :not(:last-child) {
-        margin-bottom: 2rem;
-      }
+  @media screen and (max-width: 960px) {
+    :not(:last-child) {
+      margin-right: 2rem;
     }
-  `} width: 100%;
+  }
+
+  @media screen and (max-width: 740px) {
+    :not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
 `;
 export const ColumnHeader = styled.div`
   display: flex;
@@ -241,4 +241,73 @@ export const HorizontalCardVideo = styled.div`
   span {
     margin-left: 0.5rem;
   }
+`;
+
+export const Terms = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: ${theme.colors.secondaryBackgroundSolid};
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 40rem;
+  `}
+`;
+
+export const TermsTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+  ul {
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    li::marker {
+      color: cornflowerblue;
+    }
+    a {
+      display: block;
+      padding: 1rem;
+      width: 100%;
+      color: cornflowerblue;
+    }
+  }
+`;
+export const TermsActions = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    button {
+      padding: 1rem;
+      border-radius: 0.3rem;
+      color: ${theme.colors.text};
+      transition: opacity 0.5 ease;
+      font-weight: 550;
+      cursor: pointer;
+
+      :hover {
+        opacity: 0.8;
+      }
+      :first-child {
+        background-color: ${theme.colors.secondaryBackground};
+      }
+      :last-child {
+        background-color: ${theme.colors.primary};
+      }
+    }
+  `}
 `;
