@@ -125,33 +125,36 @@ export const FlipFront = styled.div`
   `}
 `;
 
-export const ColumnCard = styled.a`
-  width: 100%;
-  cursor: pointer;
-  text-align: center;
-  img {
-    margin: 2rem 0;
-    max-height: 6rem;
-  }
-
-  @media screen and (min-width: 960px) {
-    min-width: 22.5rem;
-    :not(:last-child) {
-      margin-right: 1.5rem;
+export const ColumnCard = styled.a<{ disabled?: boolean }>`
+  ${({ disabled }) => css`
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+    pointer-events: ${disabled ? 'none' : 'inherit'};
+    opacity: ${disabled ? 0.5 : 1};
+    text-align: center;
+    img {
+      margin: 2rem 0;
+      max-height: 6rem;
     }
-  }
 
-  @media screen and (max-width: 960px) {
-    :not(:last-child) {
-      margin-right: 2rem;
+    @media screen and (min-width: 960px) {
+      min-width: 22.5rem;
+      :not(:last-child) {
+        margin-right: 1.5rem;
+      }
     }
-  }
 
-  @media screen and (max-width: 740px) {
-    :not(:last-child) {
-      margin-bottom: 2rem;
+    @media screen and (max-width: 960px) {
+      :not(:last-child) {
+        margin-right: 2rem;
+      }
     }
-  }
+
+    @media screen and (max-width: 740px) {
+      :not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  `} width: 100%;
 `;
 export const ColumnHeader = styled.div`
   display: flex;

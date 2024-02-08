@@ -22,11 +22,13 @@ export const Participate = () => {
               link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.polkadot.io#/parachains/crowdloan"
             />
             <Card
+              disabled
               title="Nova Wallet"
               img="novaWallet"
               link="https://novawallet.io"
             />
             <Card
+              disabled
               title="Talisman"
               img="talisman"
               link="https://app.talisman.xyz/portfolio"
@@ -65,8 +67,8 @@ export const Participate = () => {
   );
 };
 
-const Card = ({ title, img, link }) => (
-  <S.ColumnCard href={link}>
+const Card = ({ title, img, link, disabled }) => (
+  <S.ColumnCard disabled={disabled} href={link} target="_blank">
     <S.FlipFront>
       <img src={`img/partnerLaunch/${img}.svg`} alt="parallel finance" />
       <span>{title}</span>
