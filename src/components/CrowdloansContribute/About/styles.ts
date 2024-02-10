@@ -5,32 +5,45 @@ export const Wrapper = styled.div`
     margin-top: 6rem;
   }
   h2 {
-    font-size: 3.5rem;
-    strong {
-      display: block;
+    font-weight: 550;
+    font-size: 3rem;
+    @media screen and (min-width: 660px) {
+      font-size: 4rem;
     }
   }
 `;
 
 export const Container = styled.div`
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-  img {
-    width: 100%;
-  }
+  ${({ theme }) => css`
+    display: grid;
+    gap: 5rem;
+    align-items: center;
+    img {
+      width: 100%;
+      border-right: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+      border-top: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+      max-width: 100rem;
+    }
 
-  @media screen and (min-width: 700px) {
-    grid-template-columns: 1.5fr 1fr;
-  }
+    @media screen and (min-width: 700px) {
+      grid-template-columns: 1.5fr 1fr;
+    }
+  `}
 `;
 
 export const Aside = styled.div`
-  max-width: 35rem;
-
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @media screen and (min-width: 700px) {
+    max-width: 35rem;
+  }
   p {
     line-height: 1.8;
     margin-top: 1.6rem;
+  }
+  a {
+    width: fit-content;
   }
   @media screen and (max-width: 950px) {
     padding: 1rem;
@@ -44,21 +57,20 @@ export const Flex = styled.div`
   margin-top: 2rem;
 `;
 
-export const Button = styled.a`
-  svg {
-    max-width: 1rem;
-    margin-left: 0.5rem;
-  }
-`;
 export const Chain = styled.div`
   max-width: 90rem;
-  margin: 4rem auto 0 auto;
+  margin: 6rem auto 0 auto;
   @media screen and (max-width: 945px) {
     padding: 1rem;
   }
 `;
 export const ChainTitle = styled.div`
   h2 {
+    font-weight: 550;
+    font-size: 3rem;
+    @media screen and (min-width: 660px) {
+      font-size: 4rem;
+    }
     margin-bottom: 1rem;
   }
 `;
@@ -84,7 +96,10 @@ export const ChainContainer = styled.div`
 export const ChainCard = styled.div`
   ${({ theme }) => css`
     @media screen and (min-width: 545px) {
-      max-width: 25rem;
+      max-width: 30rem;
+      :nth-child(1) {
+        max-width: 36rem;
+      }
     }
     @media screen and (max-width: 860px) {
       margin-bottom: 2rem;
@@ -94,27 +109,27 @@ export const ChainCard = styled.div`
       position: absolute;
       :nth-child(1) {
         top: 10rem;
-        left: 20rem;
+        left: 0rem;
       }
       :nth-child(2) {
         top: 28rem;
-        left: 8rem;
+        left: 0rem;
       }
       :nth-child(3) {
         top: 46rem;
-        left: 0;
+        left: 0rem;
       }
       :nth-child(4) {
-        bottom: 60rem;
+        top: 18rem;
         right: 0;
       }
       :nth-child(5) {
-        bottom: 45rem;
-        right: 3rem;
+        top: 32rem;
+        right: 0;
       }
       :nth-child(6) {
         bottom: 30rem;
-        right: 8rem;
+        right: 3rem;
       }
     }
     p {

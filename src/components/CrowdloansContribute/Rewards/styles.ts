@@ -1,45 +1,39 @@
-import { PrimaryWrapper } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    margin: 6rem 0;
-    background: ${theme.colors.secondaryBackgroundOpacity};
+    margin: 7rem 0;
+    background: ${theme.colors.tertiaryBackgroundOpacity};
   `}
 `;
 
 export const Container = styled.div`
-  max-width: 90rem;
+  max-width: 100rem;
   margin: 0 auto;
-  display: grid;
-  align-items: center;
-  gap: 2rem;
-  padding: 5rem 0;
-  grid-template-areas: 'title' 'reward' 'nft';
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 
-  @media screen and (min-width: 790px) {
-    grid-template-areas:
-      'title title title'
-      'reward nft nft';
+  p {
+    line-height: 1.6;
   }
-
-  @media screen and (max-width: 950px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  @media screen and (min-width: 990px) {
+    flex-direction: row;
+    padding: 8rem 0;
+    align-items: center;
   }
 `;
 
 export const Title = styled.div`
-  grid-area: title;
-  h2 {
-    font-size: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  h3 {
+    font-weight: 550;
+    font-size: 3rem;
   }
-  p {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-  ${PrimaryWrapper} {
+  a {
     width: fit-content;
   }
 `;
@@ -47,60 +41,30 @@ export const Title = styled.div`
 export const Card = styled.div`
   ${({ theme }) => css`
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    background: ${theme.colors.tertiaryBackgroundOpacity};
     border-radius: 1rem;
-    @media screen and (max-width: 550px) {
-      img {
-        max-width: 30rem;
-      }
-    }
-    :nth-child(2) {
-      grid-area: reward;
-      height: 100%;
-      background: ${theme.colors.secondaryBackgroundOpacity};
-      padding: 2rem 2rem 0 2rem;
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
 
-      @media screen and (min-width: 930px) {
-        div {
-          padding: 4rem 4rem 0 4rem;
-        }
-      }
-    }
-    :last-child {
-      grid-area: nft;
-      color: ${theme.colors.black};
-      background: ${theme.colors.white};
-      img {
-        padding: 1rem;
-        max-width: 25rem;
-      }
       div {
-        padding: 0 2rem 2rem 2rem;
-      }
-      small {
-        display: block;
-        margin-top: 1rem;
-        line-height: 1.5;
-      }
-      @media screen and (min-width: 930px) {
-        div {
-          padding: 0 4rem 4rem 4rem;
-        }
+        padding: 3rem;
       }
     }
     div {
-      span {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-left: 5rem;
+      h4 {
+        font-weight: 550;
         font-size: 3rem;
-        font-weight: bold;
       }
-      p {
-        margin-top: 0.5rem;
-        line-height: 1.5;
+
+      img {
+        width: 100%;
+        max-width: 35rem;
       }
-    }
-    img {
-      width: 100%;
     }
   `}
 `;

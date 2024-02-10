@@ -1,3 +1,5 @@
+import { HTMLAttributeAnchorTarget } from 'react';
+
 export type Props = {
   logo?:
     | 'Polkaido'
@@ -8,6 +10,7 @@ export type Props = {
     | 'Careers';
   links?: string[];
   cta: Link;
+  target?: HTMLAttributeAnchorTarget;
 };
 
 type Link = {

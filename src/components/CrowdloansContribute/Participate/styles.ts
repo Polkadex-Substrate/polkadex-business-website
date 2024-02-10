@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   padding: 5rem 0;
-  max-width: 95rem;
+  max-width: 100rem;
   margin: 0 auto;
 
   @media screen and (max-width: 950px) {
@@ -21,11 +21,15 @@ export const Title = styled.div`
   text-align: center;
 
   h2 {
-    font-size: 3.5rem;
+    font-weight: 550;
+    font-size: 3rem;
+    @media screen and (min-width: 660px) {
+      font-size: 4rem;
+    }
   }
   div {
     :first-child {
-      max-width: 50rem;
+      max-width: 60rem;
       margin: 0 auto;
       p {
         margin-top: 1rem;
@@ -108,85 +112,49 @@ export const Rewards = styled.div`
   }
 `;
 
-export const FlipFront = styled.div`
-  ${({ theme }) => css`
+export const FlipFront = styled.div<{ disabled?: boolean }>`
+  ${({ theme, disabled }) => css`
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+    pointer-events: ${disabled ? 'none' : 'inherit'};
+    opacity: ${disabled ? 0.5 : 1};
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
     padding: 4rem 2rem;
     border-radius: 1rem;
     transition: all 0.3s ease-in-out;
+    padding: 6rem 1rem;
   `}
 `;
 
-export const FlipBack = styled.div`
-  ${({ theme }) => css`
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    transform: rotateY(180deg);
-    background: ${theme.colors.text};
-    color: ${theme.colors.inverse};
-    border-radius: 1rem;
-    padding: 4rem 2rem;
-    transition: all 0.3s ease-in-out;
-    ul {
-      margin: 2rem 0;
-    }
-  `}
-`;
-
-export const FlipCardInner = styled.div`
-  position: relative;
+export const ColumnCard = styled.div`
+  text-align: center;
   width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-`;
 
-export const ColumnCard = styled.div<{ isFlip?: boolean }>`
-  ${({ isFlip }) => css`
-    width: 100%;
-    perspective: 1000px;
-    cursor: pointer;
-    text-align: center;
+  img {
+    margin: 2rem 0;
+    max-height: 6rem;
+  }
 
-    img {
-      margin: 7rem 0;
-      max-height: 6rem;
+  @media screen and (min-width: 960px) {
+    min-width: 22.5rem;
+    :not(:last-child) {
+      margin-right: 1.5rem;
     }
+  }
 
-    ${isFlip &&
-    css`
-      :hover ${FlipCardInner} {
-        transform: rotateY(180deg);
-      }
-    `}
-
-    ${FlipBack}, ${FlipFront} {
-      -webkit-backface-visibility: hidden; /* Safari */
-      backface-visibility: hidden;
+  @media screen and (max-width: 960px) {
+    :not(:last-child) {
+      margin-right: 2rem;
     }
+  }
 
-    @media screen and (min-width: 960px) {
-      min-width: 22.5rem;
-      :not(:last-child) {
-        margin-right: 1.5rem;
-      }
+  @media screen and (max-width: 740px) {
+    :not(:last-child) {
+      margin-bottom: 2rem;
     }
-
-    @media screen and (max-width: 960px) {
-      :not(:last-child) {
-        margin-right: 2rem;
-      }
-    }
-
-    @media screen and (max-width: 740px) {
-      :not(:last-child) {
-        margin-bottom: 2rem;
-      }
-    }
-  `}
+  }
 `;
 export const ColumnHeader = styled.div`
   display: flex;
@@ -200,22 +168,25 @@ export const ColumnHeader = styled.div`
     }
   }
 `;
-export const ColumnBody = styled.div``;
-
-export const ColumnFooter = styled.div`
-  span {
-    font-weight: 500;
-  }
-  p {
-    opacity: 0.5;
-  }
-`;
 
 export const RowFlat = styled.div`
   margin-top: 1.5rem;
+  h4 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
 `;
 
 export const RowFlatWrapper = styled.div`
+  display: grid;
+  grid-gap: 1.5rem;
+  margin-top: 1rem;
+  @media screen and (min-width: 720px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+`;
+
+export const RowExplorerWrapper = styled.div`
   display: grid;
   grid-gap: 1.5rem;
   margin-top: 1rem;
@@ -230,7 +201,6 @@ export const HorizontalCard = styled.a<{
 }>`
   ${({ theme, isActive }) => css`
     display: flex;
-    justify-content: space-between;
     background: ${theme.colors.secondaryBackgroundOpacity};
     padding: 1.5rem;
     border-radius: 1rem;
@@ -248,6 +218,7 @@ export const HorizontalCardContent = styled.div`
   display: flex;
   align-items: center;
 
+  gap: 2rem;
   img {
     max-width: 4rem;
     max-height: 4rem;
@@ -255,7 +226,7 @@ export const HorizontalCardContent = styled.div`
   }
 
   span {
-    font-weight: bold;
+    font-weight: 500;
   }
 
   p {
@@ -270,4 +241,73 @@ export const HorizontalCardVideo = styled.div`
   span {
     margin-left: 0.5rem;
   }
+`;
+
+export const Terms = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: ${theme.colors.secondaryBackgroundSolid};
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 40rem;
+  `}
+`;
+
+export const TermsTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+  ul {
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    li::marker {
+      color: cornflowerblue;
+    }
+    a {
+      display: block;
+      padding: 1rem;
+      width: 100%;
+      color: cornflowerblue;
+    }
+  }
+`;
+export const TermsActions = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    button {
+      padding: 1rem;
+      border-radius: 0.3rem;
+      color: ${theme.colors.text};
+      transition: opacity 0.5 ease;
+      font-weight: 550;
+      cursor: pointer;
+
+      :hover {
+        opacity: 0.8;
+      }
+      :first-child {
+        background-color: ${theme.colors.secondaryBackground};
+      }
+      :last-child {
+        background-color: ${theme.colors.primary};
+      }
+    }
+  `}
 `;

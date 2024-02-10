@@ -1,40 +1,42 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => css`
-    max-width: 100rem;
-    margin: 3rem auto 7rem auto;
-  `}
+  max-width: 120rem;
+  margin: 8rem auto;
 `;
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    background: ${theme.colors.white};
-    padding: 2.5rem;
-    border-radius: 2rem;
-    max-width: 60rem;
-    @media screen and (max-width: 950px) {
-      padding: 1.5rem;
-    }
-  `}
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5rem;
+  @media screen and (max-width: 950px) {
+    padding: 1.5rem;
+  }
 `;
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    span,
-    p {
-      color: ${theme.colors.black};
+    position: relative;
+    text-align: right;
+    ::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 60%;
+      background: ${theme.colors.secondaryBackgroundOpacity};
+      border-radius: 1rem;
+      right: -20%;
+      top: -30%;
+      padding: 2rem;
+      z-index: 0;
     }
     span {
       font-size: 3.3rem;
       font-weight: 500;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       margin-top: 0.5rem;
     }
   `}
