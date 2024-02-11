@@ -50,6 +50,7 @@ export const Template = () => {
           <Hero />
           <Stats>
             <>
+              <StatsCard title="3363" description="ParaID" />
               <StatsCard title="62 - 66" description="Target auctions" />
               <StatsCard title="50k DOT" description="Rewarded Auction Cap" />
               <StatsCard title="96 weeks" description="Lease Duration" />

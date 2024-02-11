@@ -1,8 +1,4 @@
-import { PrimaryButton, SecondaryButton } from 'components/Button';
 import { Popover } from 'components/v2';
-import { Button } from 'components/v2/Button';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import * as S from './styles';
@@ -92,8 +88,8 @@ const Card = ({ title, img, link, disabled = false }) => {
             <div>
               <h3>Read and confirm</h3>
               <p>
-                By proceeding you acknowledge that you have read and understood
-                the legal requirements of each policy.
+                By proceeding, you confirm that you have read and accept the
+                terms & conditions for participating in the Polkadex Crowdloan.
               </p>
             </div>
 
