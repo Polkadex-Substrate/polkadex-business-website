@@ -30,7 +30,6 @@ export const Participate = () => {
               link="https://app.talisman.xyz/crowdloans/polkadex-polkadot"
             />
             <Card
-              disabled
               title="Nova Wallet"
               img="novaWallet"
               link="https://novawallet.io"

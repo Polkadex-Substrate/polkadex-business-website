@@ -8,7 +8,7 @@ export const Hero = () => {
       <S.Container>
         <S.Aside>
           <h1>
-            Contribute to the Polkadex Crowdloan
+            Contribute to the Polkadex Crowdloan{' '}
             <span>
               and <strong> earn 3 PDEX </strong>for every DOT you loan!
             </span>
