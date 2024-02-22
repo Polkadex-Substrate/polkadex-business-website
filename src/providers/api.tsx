@@ -71,7 +71,7 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
         provider,
         ...typesApi,
       });
-      await api.isReady;
+      await api.isReadyOrError;
       toast(messages.SUCCESS_CONNECT, 'success');
       return api;
     } catch (e) {
