@@ -41,13 +41,22 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  generateBuildId: async () => {
+    try {
+      const gitCommitHash = execSync('git rev-parse HEAD').toString().trim();
+      return gitCommitHash;
+    } catch (error) {
+      return 'orderbookBusinessDefault';
+    }
+  },
   env: {
     GOOGLE_ANALYTICS:
       process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-DYTPWG3R5M',
     NEXT_PUBLIC_GA_MEASUREMENT_ID:
       process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5FD4544T94',
     RANGER_HOST_URL:
-      process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'wss://mainnet.polkadex.trade',
+      process.env.NEXT_PUBLIC_RANGER_HOST_URL ||
+      'wss://polkadex.public.curie.radiumblock.co/ws',
     WORKABLE_URL:
       process.env.WORKABLE_URL || 'https://test-432836.workable.com',
     WORKABLE_TOKEN:
