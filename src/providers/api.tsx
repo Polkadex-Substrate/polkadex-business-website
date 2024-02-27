@@ -66,7 +66,11 @@ export const ApiProvider = ({ children }: React.PropsWithChildren<unknown>) => {
   const connectToApi = useCallback(async () => {
     try {
       dispatch({ type: API_FETCH });
-      const provider = new WsProvider(process.env.RANGER_HOST_URL || 'wss://polkadex.api.onfinality.io/public-ws');
+      const provider = new WsProvider([
+        process.env.RANGER_HOST_URL ||
+          'wss://polkadex.api.onfinality.io/public-ws',
+        'wss://polkadex.public.curie.radiumblock.co/ws',
+      ]);
       const api = await ApiPromise.create({
         provider,
         ...typesApi,
