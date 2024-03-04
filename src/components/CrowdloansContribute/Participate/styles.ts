@@ -182,7 +182,7 @@ export const RowFlatWrapper = styled.div`
   grid-gap: 1.5rem;
   margin-top: 1rem;
   @media screen and (min-width: 720px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `;
 

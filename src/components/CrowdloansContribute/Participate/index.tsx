@@ -34,6 +34,11 @@ export const Participate = () => {
               img="novaWallet"
               link="https://novawallet.io"
             />
+            <Card
+              title="Bifrost"
+              img="bifrost"
+              link="https://bifrost.app/vcrowdloan?network=polkadot"
+            />
           </S.RowFlatWrapper>
         </S.RowFlat>
 
