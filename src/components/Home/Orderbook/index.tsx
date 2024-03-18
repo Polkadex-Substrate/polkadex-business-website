@@ -79,14 +79,14 @@ const AsideRight = () => {
         <a
           href="https://orderbook.polkadex.trade/"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
         >
           Start trading
         </a>
         <a
-          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer"
+          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
         >
           Mainnet explorer <Icons.ArrowSingleRight />
         </a>

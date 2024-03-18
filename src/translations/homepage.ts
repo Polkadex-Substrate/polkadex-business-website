@@ -23,7 +23,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
         soon: false,
       },
       {
@@ -73,7 +73,7 @@ const ENLanguage = {
     ctaLink: 'http://orderbook.polkadex.trade',
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
-      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
     chainsTitle: 'Supported Chains',
   },
   orderbook: {

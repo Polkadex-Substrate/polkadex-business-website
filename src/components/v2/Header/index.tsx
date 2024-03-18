@@ -91,9 +91,9 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     <ul>
                       <S.Li>
                         <a
-                          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer"
+                          href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer"
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noreferrer noopener"
                         >
                           Mainnet Explorer
                         </a>
@@ -102,7 +102,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                         <a
                           href="https://polkadex.subscan.io/"
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noreferrer noopener"
                         >
                           Subscan
                         </a>
