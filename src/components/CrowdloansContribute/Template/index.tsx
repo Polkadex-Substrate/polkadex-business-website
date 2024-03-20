@@ -52,7 +52,7 @@ export const Template = () => {
             <>
               <StatsCard title="3363" description="ParaID" />
               <StatsCard title="62 - 66" description="Target auctions" />
-              <StatsCard title="50k DOT" description="Rewarded Auction Cap" />
+              <StatsCard title="150k DOT" description="Rewarded Auction Cap" />
               <StatsCard title="96 weeks" description="Lease Duration" />
               <StatsCard title="3 PDEX" description="per DOT rewards" />
             </>
