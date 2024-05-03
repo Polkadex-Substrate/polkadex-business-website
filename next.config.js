@@ -70,7 +70,7 @@ module.exports = {
       'https://strapi-production-5f75.up.railway.app',
     REWARDS_INTRO_ACTIVE: process.env.REWARDS_INTRO_ACTIVE || 'true',
     ORDERBOOK_LINK:
-      process.env.REWARDS_INTRO_ACTIVE ||
+      process.env.ORDERBOOK_LINK ||
       'https://orderbook.polkadex.trade/trading/DOTUSDT',
     STAKING_SCRAP_TOKEN:
       process.env.STAKING_SCRAP_TOKEN ||
