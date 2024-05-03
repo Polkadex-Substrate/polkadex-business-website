@@ -57,7 +57,7 @@ export default function Roadmap() {
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
             title: 'Start Trading',
-            href: 'https://orderbook.polkadex.trade/',
+            href: process.env.ORDERBOOK_LINK,
           }}
         />
         <main ref={ref} style={{ overflow: 'hidden' }}>

@@ -77,7 +77,7 @@ const AsideRight = () => {
       </p>
       <S.Actions>
         <a
-          href="https://orderbook.polkadex.trade/"
+          href={process.env.ORDERBOOK_LINK}
           target="_blank"
           rel="noreferrer noopener"
         >
