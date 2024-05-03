@@ -63,7 +63,7 @@ export default function Home({ data, error = '' }) {
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
             title: 'Start Trading',
-            href: 'https://orderbook.polkadex.trade/',
+            href: process.env.ORDERBOOK_LINK,
           }}
         />
         <main>

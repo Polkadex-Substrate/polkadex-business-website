@@ -1,3 +1,4 @@
+
 const ENLanguage = {
   header: {
     topLinks: [
@@ -70,7 +71,7 @@ const ENLanguage = {
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
     ctaButton: 'Orderbook',
-    ctaLink: 'http://orderbook.polkadex.trade',
+    ctaLink: process.env.ORDERBOOK_LINK,
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
       'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
