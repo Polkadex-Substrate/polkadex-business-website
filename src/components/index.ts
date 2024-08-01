@@ -10,7 +10,6 @@ import OthersProducts from 'components/OthersProducts';
 import PartnerCard from 'components/PartnerCard';
 import Partners from 'components/Partners';
 import Roadmap from 'components/Roadmap';
-import Team from 'components/Team';
 import TokenEconomics from 'components/TokenEconomics';
 
 export * from './AccessDenied';
@@ -73,6 +72,5 @@ export {
   PartnerCard,
   Partners,
   Roadmap,
-  Team,
   TokenEconomics,
 };
