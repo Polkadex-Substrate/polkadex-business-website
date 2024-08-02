@@ -17,7 +17,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import * as S from 'styles/home';
 
-export default function Home({ data, error = '' }) {
+export default function Home() {
   return (
     <>
       <Script
@@ -73,7 +73,7 @@ export default function Home({ data, error = '' }) {
             <Exchanges />
           </S.Container>
           <Orderbook />
-          <Staking apy={data?.apy || '26.40%'} />
+          <Staking apy="26.40%" />
           <Partners />
           <BetaProgram />
           <TheaBridge />
@@ -87,21 +87,3 @@ export default function Home({ data, error = '' }) {
     </>
   );
 }
-
-Home.getInitialProps = async (ctx) => {
-  try {
-    const apy: any = await axios.get(
-      `${process.env.STAKING_SCRAP}/api/infos/1`,
-      {
-        headers: { Authorization: `Bearer ${process.env.STAKING_SCRAP_TOKEN}` },
-      },
-    );
-    return {
-      data: {
-        apy: apy?.data?.data?.attributes?.value,
-      },
-    };
-  } catch (error) {
-    return { error: error.message };
-  }
-};

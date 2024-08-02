@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     display: grid;
     gap: 3rem;
-    max-width: 100rem;
+    max-width: 120rem;
     margin: 8rem auto 0 auto;
     @media screen and (max-width: 1200px) {
       margin: 4rem auto;
@@ -64,33 +64,37 @@ export const HeroVideo = styled.div`
   }
 `;
 export const HeroVideoPreview = styled.div`
-  svg {
-    width: 100%;
-  }
-`;
-
-export const HeroVideoFloat = styled.div`
-  position: absolute;
-  top: -5rem;
-  left: 2rem;
-  display: flex;
-  gap: 1rem;
-  span {
-    display: block;
-    font-family: 'Caveat';
-    font-size: 2.5rem;
-    margin-right: 2rem;
-    white-space: nowrap;
-  }
-  svg {
-    width: 6rem;
-  }
+  ${({ theme }) => css`
+    position: relative;
+    svg {
+      width: 100%;
+      border: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+      border-radius: 1rem;
+    }
+    div {
+      background: rgba(13, 13, 14, 0)
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 10%,
+          rgba(13, 13, 14, 0.1) 50%,
+          rgba(13, 13, 14, 0.5) 75%,
+          rgba(13, 13, 14, 1) 100%
+        )
+        repeat scroll 0 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+    }
+  `}
 `;
 
 export const Features = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 100rem;
+  margin: 0 auto;
 `;
 export const FeaturesHero = styled.div`
   ${({ theme }) => css`

@@ -79,7 +79,6 @@ export { default as Kyc } from './Kyc';
 export * from './LedgerWallet';
 export { default as LinkedIn } from './LinkedIn';
 export { default as Liquidity } from './Liquidity';
-export * from './ListingHero';
 export * from './ListOrderbook';
 export { default as LogoAndGuidelines } from './LogoAndGuidelines';
 export * from './LowFees';
