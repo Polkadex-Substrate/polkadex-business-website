@@ -24,6 +24,7 @@ module.exports = {
       },
     ];
   },
+  output: 'export',
   trailingSlash: false,
   compiler: {
     // Enables the styled-components SWC transform
