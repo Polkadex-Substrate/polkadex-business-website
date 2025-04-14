@@ -19,9 +19,7 @@ export const PreviewHero = ({ data, error }) => {
     <S.Wrapper>
       <S.GoBack>
         <Link href="/v2/careers">
-          <a>
-            <Icons.ArrowLeft /> Go Back
-          </a>
+          <Icons.ArrowLeft /> Go Back
         </Link>
       </S.GoBack>
       {error.length ? (
