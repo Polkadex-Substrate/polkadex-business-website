@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
   BetaProgram,
   Ecosystem,
@@ -47,16 +46,6 @@ export default function Home() {
           <meta
             name="description"
             content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-            rel="stylesheet"
           />
         </Head>
         <Header
