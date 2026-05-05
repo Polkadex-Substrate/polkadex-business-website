@@ -13,19 +13,19 @@ export const OpenJobs = ({ jobs, error }) => {
         <p>Browse and apply for open positions at Polkadex.</p>
       </S.Title>
       <S.Container>
-        {error.length ? (
+        {error?.length ? (
           <p>{error}</p>
         ) : (
           <S.Jobs>
             <S.JobsContainer>
-              {jobs.map((job) => (
+              {jobs?.map((job) => (
                 <Card
-                  key={job.shortcode}
-                  id={job.shortcode}
-                  title={job.title}
-                  category={job.departament}
+                  key={job?.shortcode}
+                  id={job?.shortcode}
+                  title={job?.title}
+                  category={job?.departament}
                   // type="Hybrid"
-                  place={`${job.location.country} - ${job.location.region}`}
+                  place={`${job?.location?.country} - ${job?.location?.region}`}
                 />
               ))}
             </S.JobsContainer>
@@ -38,6 +38,22 @@ export const OpenJobs = ({ jobs, error }) => {
 
 const Card = ({ id, title = '', category = '', type = '', place }) => (
   <Link href={`/v2/careers/${id}`}>
+    <a>
+      <S.Card>
+        <S.CardAside>
+          <p>{title}</p>
+          <S.CardInfo>
+            {!!category?.length && <S.Category>{category}</S.Category>}
+            <span>{place}</span>
+            {!!type?.length && <span>{type}</span>}
+          </S.CardInfo>
+        </S.CardAside>
+        <S.Button>
+          More details
+          <Icons.ArrowRight />
+        </S.Button>
+      </S.Card>
+    </a>
     <S.Card>
       <S.CardAside>
         <p>{title}</p>
