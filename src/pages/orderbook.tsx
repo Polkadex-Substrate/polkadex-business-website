@@ -85,8 +85,7 @@ export default function Orderbook() {
           />
           <meta
             property="og:title"
-            content=" Polkadex Orderbook Crypto Currency Exchange
-"
+            content="Polkadex Orderbook Crypto Currency Exchange"
           />
         </Head>
         <Header
