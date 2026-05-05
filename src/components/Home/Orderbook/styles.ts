@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  max-width: 100rem;
+  max-width: 140rem;
   margin: 8rem auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -10,36 +10,51 @@ export const Wrapper = styled.section`
 `;
 
 export const Hero = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
-  @media screen and (min-width: 800px) {
-    grid-template-columns: 1fr minmax(auto, 30rem);
-  }
 `;
 
 export const AsideLeft = styled(motion.div)`
+  position: relative;
+  display: flex;
+  align-items: center;
   svg {
-    /* transform: scale(1.05) translateX(-2rem); */
-    @media screen and (min-width: 1120px) {
-      transform: scale(1.1) translateX(-6rem);
-    }
+    width: 100%;
+  }
+  div {
+    background: rgba(13, 13, 14, 0)
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(13, 13, 14, 0.1) 50%,
+        rgba(13, 13, 14, 0.5) 75%,
+        rgba(13, 13, 14, 1) 100%
+      )
+      repeat scroll 0 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 `;
 export const AsideRight = styled(motion.div)`
   ${({ theme }) => css`
-    @media screen and (max-width: 800px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    h4 {
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2;
     }
     h2 {
       margin-bottom: 3rem;
       font-size: 3rem;
       font-weight: 500;
-      line-height: 1.8;
+      line-height: 1.5;
 
       svg {
         display: block;
@@ -64,7 +79,7 @@ export const Actions = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 2rem 0;
+    margin: 4rem 0;
     a {
       padding: 1rem 2rem;
       border-radius: 0.4rem;
@@ -93,6 +108,9 @@ export const Features = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 100rem;
+  margin: 0 auto;
+
   @media screen and (max-width: 1000px) {
     padding: 1rem;
   }
@@ -221,7 +239,9 @@ export const Listing = styled(motion.div)`
     background-repeat: no-repeat;
     background-position: -10rem 0;
     background-size: 130% 100%;
-
+    max-width: 100rem;
+    margin: 0 auto;
+    width: 100%;
     @media screen and (min-width: 580px) {
       grid-template-columns: 2fr 1fr;
     }
@@ -245,23 +265,11 @@ export const ListingWrapper = styled.div`
       }
     }
     a {
-      background: gray;
+      background: ${theme.colors.primary};
       width: fit-content;
       padding: 1rem 3rem;
       border-radius: 0.4rem;
-      cursor: not-allowed;
+      font-weight: 500;
     }
   `}
-`;
-export const ListingHero = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  max-width: 90rem;
-  width: 100%;
-  right: 0;
-  @media screen and (min-width: 1160px) {
-    right: -2rem;
-  }
 `;

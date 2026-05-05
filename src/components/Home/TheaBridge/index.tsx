@@ -22,11 +22,9 @@ export const TheaBridge = () => {
         <S.HeroVideo>
           <S.HeroVideoPreview>
             <Icons.TheaPreview />
+            <div />
           </S.HeroVideoPreview>
-          <S.HeroVideoFloat>
-            <span>Coming soon!</span>
-            <Icons.TheaArrow />
-          </S.HeroVideoFloat>
+          <div />
         </S.HeroVideo>
       </S.Hero>
       <S.Features>

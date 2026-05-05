@@ -35,9 +35,6 @@ export const Footer = ({ isDark = false }) => {
               <Link href="/roadmap">Roadmap</Link>
             </li>
             <li>
-              <Link href="/team">Team</Link>
-            </li>
-            <li>
               <Link href="/tokeneconomics">Token Economics</Link>
             </li>
           </ul>

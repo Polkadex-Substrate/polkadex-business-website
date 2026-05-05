@@ -14,19 +14,7 @@ const HowToStake = dynamic(
     ssr: false,
   },
 );
-export const Template = ({ data, error }) => {
-  const stakedValue = (
-    Math.round(data?.tokenInfo?.bonded_locked_balance || 0 * 1000) / 1000
-  )
-    .toLocaleString()
-    .replace(',', '.');
-
-  const totalNominator = (
-    Math.round(data?.metadata?.count_account || 0 * 1000) / 1000
-  )
-    .toLocaleString('de-DE')
-    .replace(',', '.');
-
+export const Template = () => {
   return (
     <>
       <Script
@@ -68,27 +56,15 @@ export const Template = ({ data, error }) => {
           }}
         />
         <main>
-          <Hero apy={data?.apy || '24.54%'} />
+          <Hero apy="24.54%" />
           <Stats>
             <>
-              <StatsCard
-                title={`${String(totalNominator || 5.469).slice(0, 3)}k`}
-                description="Total Nominators"
-              />
-              <StatsCard
-                title={`${String(stakedValue || 4.38).slice(0, 4)} million`}
-                description="PDEX Staked"
-              />
-              <StatsCard
-                title={data?.metadata?.validator_count || 200}
-                description="Active Validators"
-              />
+              <StatsCard title="5.46" description="Total Nominators" />
+              <StatsCard title="7.002 million" description="PDEX Staked" />
+              <StatsCard title="200" description="Active Validators" />
             </>
           </Stats>
-          <Rewards
-            apy={data?.apy || '24.54%'}
-            apyValidator={data?.apyValidator || '26.62%'}
-          />
+          <Rewards apy="24.54%" apyValidator="26.62%" />
           <HowToStake />
           <Overview />
           <StakingFaq />
