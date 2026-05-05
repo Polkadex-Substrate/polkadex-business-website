@@ -1,10 +1,5 @@
 export const data = [
   {
-    title: 'Kucoin',
-    icon: 'KucoinExchange',
-    href: 'https://www.kucoin.com/',
-  },
-  {
     title: 'Gateio',
     img: 'gateio',
     href: 'https://www.gate.io/',
