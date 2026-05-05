@@ -2,36 +2,38 @@ import { PrimaryWrapper as Button } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 90rem;
+  max-width: 100rem;
   margin: 0 auto;
 `;
 
 export const Container = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.secondaryBackgroundOpacity};
-    padding: 5rem;
+    padding: 2rem;
     display: grid;
     border-radius: 2rem;
+
     @media screen and (min-width: 710px) {
       background-image: url('/img/ctaHero.svg');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: right;
       grid-template-columns: 1fr 1fr;
+      padding: 7rem;
     }
   `}
 `;
 export const Aside = styled.div`
   ${() => css`
     @media screen and (min-width: 710px) {
-      max-width: 30rem;
+      max-width: 22rem;
     }
     h2 {
       font-size: 3.5rem;
+      font-weight: 550;
     }
     p {
       margin-top: 1rem;
-
       margin-bottom: 2rem;
       line-height: 1.5;
     }

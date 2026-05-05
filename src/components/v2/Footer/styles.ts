@@ -2,12 +2,12 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div<{ isDark?: boolean }>`
   ${({ theme, isDark }) => css`
-    max-width: ${theme.grid.container};
+    max-width: 100rem;
     margin: 4rem auto 0 auto;
-    color: ${isDark ? theme.colors.white : theme.colors.black};
+    color: ${isDark ? theme.colors.white : theme.colors.text};
     padding-bottom: 2rem;
     @media screen and (max-width: 1200px) {
-      margin: 4rem 1rem;
+      margin: 4rem auto;
     }
     li {
       list-style: none;
@@ -32,6 +32,10 @@ export const Header = styled.div`
     flex-direction: column;
     gap: 1.2rem;
   }
+  @media screen and (max-width: 1200px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 `;
 
 export const Container = styled.div`
@@ -50,6 +54,10 @@ export const Footer = styled.div`
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid ${theme.colors.secondaryBackgroundOpacity};
+    @media screen and (max-width: 1200px) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
   `}
 `;
 export const Copyright = styled.div`
@@ -76,7 +84,7 @@ export const Social = styled.div<{ isDark: boolean }>`
     a svg {
       width: 1.5rem;
       height: 1.5rem;
-      fill: ${isDark ? theme.colors.white : theme.colors.black};
+      fill: ${isDark ? theme.colors.white : theme.colors.text};
     }
   `}
 `;

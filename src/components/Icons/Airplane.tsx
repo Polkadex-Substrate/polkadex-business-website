@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function Airplane(props: React.SVGProps<SVGSVGElement>) {
+export function Airplane(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -20,5 +20,3 @@ function Airplane(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-export default Airplane;

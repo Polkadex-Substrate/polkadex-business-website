@@ -13,7 +13,7 @@ export const defaultTheme = {
   },
   font: {
     family:
-      "SuisseIntl, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      "Open Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     light: 300,
     normal: 400,
     bold: 600,
@@ -24,6 +24,10 @@ export const defaultTheme = {
       large: '1.8rem',
       xlarge: '2.0rem',
       xxlarge: '2.8rem',
+    },
+    lineHeight: {
+      small: 1,
+      normal: 1.5,
     },
   },
   icon: {
@@ -51,7 +55,9 @@ export const defaultTheme = {
     white: '#ffffff',
     black: '#000000',
     orange: '#FFA500',
+    blue: '#148FE8',
     disable: '#77777D',
+    secondaryText: '#A8ADB7',
   },
   spacings: {
     xxxsmall: '0.5rem',
@@ -95,6 +101,7 @@ const light = {
     gradientBackground:
       'linear-gradient(62.3deg, #FFFFFF 13.21%, #F9FBFC99 98.01%)',
     tertiaryBackground: '#F9FBFC99',
+    tertiaryBackgroundSolid: '#F9FBFC99',
     quaternaryBackground: 'rgba(255, 255, 255, 0.05)',
     secondaryBackgroundSolid: '#E8ECF2',
     text: '#000000',
@@ -130,11 +137,12 @@ const light = {
 const dark = {
   title: 'dark',
   colors: {
-    primaryBackground: '#1C1C26',
+    primaryBackground: '#0D0D10',
     primaryBackgroundOpacity: '#1C1C2699',
     gradientBackground:
       'linear-gradient(62.3deg, #1C1C26 13.21%, #2F313B 98.01%)',
     tertiaryBackground: '#2E303C',
+    tertiaryBackgroundSolid: '#22232E',
     quaternaryBackground: 'rgba(139, 161, 190, 0.05)',
     secondaryBackgroundSolid: '#2F3340',
     text: '#ffffff',

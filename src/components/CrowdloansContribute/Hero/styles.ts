@@ -2,7 +2,7 @@ import { PrimaryWrapper } from 'components/Button/styles';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 100rem;
+  max-width: 120rem;
   margin: 0 auto;
   @media screen and (max-width: 1000px) {
     padding: 1rem;
@@ -30,21 +30,29 @@ export const Aside = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 60rem;
+    max-width: 65rem;
     margin: 0 auto;
     text-align: center;
     h1 {
-      line-height: 1.1;
+      font-weight: 550;
+      line-height: 1;
+      font-size: 3rem;
       @media screen and (min-width: 660px) {
         font-size: 5rem;
+        span {
+          display: block;
+          font-size: 2.6rem;
+          line-height: 1.8;
+        }
       }
-
       strong {
         color: ${theme.colors.primary};
       }
     }
 
     p {
+      color: ${theme.colors.secondaryText};
+      font-size: 1.7rem;
       margin: 2rem 0;
       line-height: 1.5;
     }

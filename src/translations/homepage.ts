@@ -1,3 +1,4 @@
+
 const ENLanguage = {
   header: {
     topLinks: [
@@ -23,7 +24,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
         soon: false,
       },
       {
@@ -70,10 +71,10 @@ const ENLanguage = {
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
     ctaButton: 'Orderbook',
-    ctaLink: 'http://orderbook.polkadex.trade',
+    ctaLink: process.env.ORDERBOOK_LINK,
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
-      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade#/explorer',
+      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
     chainsTitle: 'Supported Chains',
   },
   orderbook: {
@@ -282,22 +283,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Head of Marketing',
-        name: 'Dagmara Handzlik',
-        image: 'dagmaraPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/dagmara-handzlik-15604534/',
-          },
-          {
-            name: 'Twitter',
-            link: 'https://twitter.com/DagaCMO',
-          },
-        ],
-      },
-      {
-        title: 'Lead Community Manager',
+        title: 'Chief Community Manager',
         name: 'Francis Dufour',
         image: 'francisPhotography',
         socialMedia: [
@@ -308,7 +294,7 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Social Media Manager',
+        title: 'Marketing Manager',
         name: 'Pablo Solanas Martin',
         image: 'pabloPhotography',
         socialMedia: [
@@ -319,17 +305,55 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Flutter Engineer',
-        name: 'Adriel Bomfim',
-        image: 'adrielPhotography',
+        title: 'Lead Frontend Engineer',
+        name: 'Emmanuel Thomas',
+        image: 'emmanuelPhotography',
         socialMedia: [
           {
             name: 'Github',
-            link: 'https://github.com/AdrielVBomfim',
+            link: 'https://github.com/nuel77',
           },
           {
             name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/adrielvb/',
+            link: 'https://linkedin.com/in/nuel77',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/_nuel_1999',
+          },
+        ],
+      },
+      {
+        title: 'Senior Blockchain Engineer',
+        name: 'Krishna Singh',
+        image: 'zkPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/zktony',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/krishna-singh-b37671170',
+          },
+        ],
+      },
+      {
+        title: 'Software Engineer',
+        name: 'Arjun Porwal',
+        image: 'arjunPhotography',
+        socialMedia: [
+          {
+            name: 'Github',
+            link: 'https://github.com/ap211unitech',
+          },
+          {
+            name: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/arjun-porwal-9198b71a3/',
+          },
+          {
+            name: 'Twitter',
+            link: 'https://twitter.com/arjun_porwal_33',
           },
         ],
       },
@@ -356,58 +380,13 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Senior Frontend Engineer',
-        name: 'Charles Chiakwa',
-        image: 'charlesPhotography',
+        title: 'Graphic Designer',
+        name: 'Nitika Khandelwal',
+        image: 'nitikaPhotography',
         socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/charleslukes',
-          },
           {
             name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/charles-chiakwa-b1796816a/',
-          },
-        ],
-      },
-      {
-        title: 'Senior Rust Engineer',
-        name: 'Ivan Temchenko',
-        image: 'ivanPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/35359595',
-          },
-        ],
-      },
-      {
-        title: 'Junior Rust Engineer',
-        name: 'Nakul Amate',
-        image: 'nakulPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/nakul1010',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/nakul-amate/',
-          },
-        ],
-      },
-      {
-        title: 'Junior Rust Engineer',
-        name: 'Faisal Ahmed',
-        image: 'faisalPhotography',
-        socialMedia: [
-          {
-            name: 'Github',
-            link: 'https://github.com/felixfaisal',
-          },
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/faisal-ahmed-farooq-6395a0174/',
+            link: 'https://www.linkedin.com/in/nitika-khandelwal-0a167615a/',
           },
         ],
       },
@@ -455,17 +434,6 @@ const ENLanguage = {
           },
         ],
       },
-      {
-        title: 'Marketing Advisor',
-        name: 'Garlam (가람) Won',
-        image: 'garlamPhotography',
-        socialMedia: [
-          {
-            name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/garlam/',
-          },
-        ],
-      },
     ],
   },
   roadmap: {
@@ -476,123 +444,108 @@ const ENLanguage = {
       'We started our journey with the idea of bringing the best DeFi experience to users and keep moving closer to our goal with each step',
     cards: [
       {
-        title: 'Q3 2020',
-        alignRight: false,
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 0,
-          },
-          vertical: {
-            side: 'top',
-            distance: -10.5,
-          },
-        },
-        items: [
-          { title: 'Web3 Milestone #1', status: true },
-          { title: 'Refactoring Polkadex Engine', status: true },
-          { title: 'Code Documentation', status: true },
-        ],
-      },
-      {
-        title: 'Q4 2020',
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 40,
-          },
-          vertical: {
-            side: 'top',
-            distance: -8,
-          },
-        },
-        items: [
-          { title: 'Website Launch', status: true },
-          { title: 'Whitepaper Release', status: true },
-          { title: 'Testnet V1.0 Launch', status: true },
-          { title: 'SAFT based Token PreSale', status: true },
-        ],
-      },
-      {
-        title: 'Q1-Q2 2021',
-        alignRight: false,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: 20,
-          },
-          vertical: {
-            side: 'top',
-            distance: 5,
-          },
-        },
-        items: [
-          { title: 'Public Sale', status: true },
-          {
-            title: 'Testnet V2.0 Launch',
-            status: true,
-          },
-          { title: 'Testnet V3.0 Launch', status: true },
-          { title: 'Security Audit', status: true },
-        ],
-      },
-      {
-        title: 'Q3-Q4 2021',
-        alignRight: true,
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 15,
-          },
-          vertical: {
-            side: 'top',
-            distance: 23,
-          },
-        },
-        items: [
-          { title: 'Mainnet Launch', status: true },
-          { title: 'ERC20 to native PDEX migration', status: true },
-          { title: 'Launch of Private Beta Tester Program', status: true },
-          { title: 'Parachain Strategy Development', status: true },
-        ],
-      },
-      {
-        title: 'Q1 2022',
-        alignRight: false,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: 0,
-          },
-          vertical: {
-            side: 'bottom',
-            distance: 40,
-          },
-        },
-        items: [
-          { title: 'PolkaIDO Beta', status: true },
-          { title: 'PolkaIDO Public Testnet', status: true },
-          { title: 'Polkadex Crowdloan Campaign', status: true },
-          {
-            title: 'Polkadex Orderbook Beta*',
-            status: true,
-            subInfo: 'Without blockchain integration',
-            isHoverable: true,
-          },
-        ],
-      },
-      {
-        title: 'Q2 2022',
+        title: 'Q2 2023',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 0,
+            distance: -6,
+          },
+          vertical: {
+            side: 'top',
+            distance: 7,
+          },
+        },
+        items: [
+          { title: 'Code Audit of Solochain, Orderbook', status: true },
+          { title: 'Crowdloan Rewards (Early Q2)', status: true },
+          { title: 'Bridge with Polkadot - Mainnet', status: true },
+          {
+            title: 'Integration with Trading Bots and Market Makers',
+            status: true,
+          },
+        ],
+      },
+      {
+        title: 'Q1 2023',
+        alignRight: false,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 16,
+          },
+          vertical: {
+            side: 'top',
+            distance: -11,
+          },
+        },
+        items: [
+          {
+            title: 'Thea Bridge with Polkadot - Internal Testnet',
+            status: true,
+          },
+          { title: 'XCM Channels with Parachain - Testnet', status: true },
+          {
+            title: 'Code Audit of Parachain & Thea',
+            status: true,
+          },
+          { title: 'Crowdloan Rewards Pallet - Awaiting Audit', status: true },
+          { title: 'Parachain listings on Polkadex', status: true },
+        ],
+      },
+      {
+        title: 'Q4 2022',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 22,
+          },
+          vertical: {
+            side: 'top',
+            distance: 25,
+          },
+        },
+        items: [
+          { title: 'Mobile App Public Testnet', status: true },
+          { title: 'Polkadex Orderbook Mainnet', status: true },
+        ],
+      },
+      {
+        title: 'Q3 2022',
+        alignRight: false,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 10,
+          },
+          vertical: {
+            side: 'top',
+            distance: 6.7,
+          },
+        },
+        items: [
+          { title: 'Orderbook Testnet with Withdrawals', status: true },
+          {
+            title: 'Cross Chain Transfer of test tokens to trade',
+            status: true,
+          },
+        ],
+      },
+      {
+        title: 'Q2 2022',
+        alignRight: false,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: -5,
           },
           vertical: {
             side: 'bottom',
-            distance: 20,
+            distance: 48,
           },
         },
         items: [
@@ -614,50 +567,114 @@ const ENLanguage = {
         ],
       },
       {
-        title: 'Q3 2022',
+        title: 'Q1 2022',
+        alignRight: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 5,
+          },
+          vertical: {
+            side: 'top',
+            distance: 35,
+          },
+        },
+        items: [
+          { title: 'PolkaIDO Beta', status: true },
+          { title: 'PolkaIDO Public Testnet', status: true },
+          { title: 'Polkadex Crowdloan Campaign', status: true },
+          {
+            title: 'Polkadex Orderbook Beta*',
+            status: true,
+            subInfo: 'Without blockchain integration',
+            isHoverable: true,
+          },
+        ],
+      },
+      {
+        title: 'Q3-Q4 2021',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 20,
+            distance: 4,
           },
           vertical: {
             side: 'bottom',
-            distance: 10,
+            distance: 25,
           },
         },
         items: [
-          { title: 'Orderbook Testnet with Withdrawals', status: true },
-          {
-            title: 'Cross Chain Transfer of test tokens to trade',
-            status: true,
-          },
+          { title: 'Mainnet Launch', status: true },
+          { title: 'ERC20 to native PDEX migration', status: true },
+          { title: 'Launch of Private Beta Tester Program', status: true },
+          { title: 'Parachain Strategy Development', status: true },
         ],
       },
       {
-        title: 'Q4 2022',
+        title: 'Q1-Q2 2021',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 34,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 12,
+          },
+        },
+        items: [
+          { title: 'Public Sale', status: true },
+          {
+            title: 'Testnet V2.0 Launch',
+            status: true,
+          },
+          { title: 'Testnet V3.0 Launch', status: true },
+          { title: 'Security Audit', status: true },
+        ],
+      },
+      {
+        title: 'Q4 2020',
+        invert: true,
+        alignRight: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 50,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 0,
+          },
+        },
+        items: [
+          { title: 'Website Launch', status: true },
+          { title: 'Whitepaper Release', status: true },
+          { title: 'Testnet V1.0 Launch', status: true },
+          { title: 'SAFT based Token PreSale', status: true },
+        ],
+      },
+      {
+        title: 'Q3 2020',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'right',
-            distance: 30,
+            distance: 2,
           },
           vertical: {
             side: 'bottom',
-            distance: -3,
+            distance: -6,
           },
         },
         items: [
-          { title: 'Mobile App Public Testnet', timeline: 'Early Q4' },
-          { title: 'Polkadex Orderbook Mainnet', timeline: 'Early Q4' },
-          { title: 'Release Polkadex Orderbook to Parachain' },
-          {
-            title: 'Polkadex Orderbook Mobile Apps* in app stores',
-            subInfo: 'iOS & Android',
-            isHoverable: true,
-          },
+          { title: 'Web3 Milestone #1', status: true },
+          { title: 'Refactoring Polkadex Engine', status: true },
+          { title: 'Code Documentation', status: true },
         ],
       },
     ],
@@ -916,7 +933,7 @@ const ENLanguage = {
         ],
       },
     },
-    copyright: 'Copyright © 2022 Polkadex, Inc',
+    copyright: 'Copyright © 2023 Polkadex, Inc',
     bottomLinks: [
       {
         title: 'Terms and Privacy Policy',
@@ -924,6 +941,63 @@ const ENLanguage = {
       },
     ],
   },
+  releases: [
+    {
+      title: 'Prometheus release',
+      emoji: '💫',
+      completed: true,
+      phase: 'Phase 0',
+      items: [
+        'Release Orderbook Beta to the public.',
+        'Implement bug fixes for Orderbook Beta.',
+        'Improve the User Interface and User Flow',
+        'Establish XCMP channels with ecosystem projects.',
+      ],
+    },
+    {
+      title: 'Hestia release',
+      emoji: '🔥',
+      active: true,
+      phase: 'Phase 1',
+      items: [
+        'Launch new user sign-up via wallet integration instead of email registration.',
+        'Enable automatic fee conversion to PDEX from native assets for account registration, transaction fees, deposits, and withdrawals.',
+        'Remove claim processes for deposits and withdrawals on THEA and Polkadex Orderbook.',
+        'Integrate with Hummingbot Connector.',
+        'Onboard launch-phase Market Maker.',
+        'Initiate the listing of the first few spot market pairs.',
+        'Continue bug fixes for Orderbook Beta.',
+      ],
+    },
+    {
+      title: 'Apollo release',
+      phase: 'Phase 2',
+      emoji: '🍾',
+      items: [
+        'Extend the THEA connector to Ethereum.',
+        'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
+        'Launch the Liquidity Mining Program.',
+        'Integrate with DEX aggregators built on Ethereum.',
+        'Onboard Market Makers/Liquidity Providers to Polkadex Orderbook.',
+        'Introduce a democratic listing process for projects on Polkadex Orderbook through community voting.',
+      ],
+    },
+    {
+      title: 'Athena release',
+      phase: 'Phase 3',
+      emoji: '⚡',
+      items: [
+        'Extend THEA connector to L2s and EVM-compatible chains.',
+        'Enable native dApp integration with 3rd party service providers.',
+      ],
+    },
+    {
+      title: 'Zeus release',
+      phase: 'Phase 4',
+      emoji: '💯',
+      items: ['Initiate Polkadex DAO.', 'Remove the Sudo-key.'],
+    },
+  ],
 };
 
 export const HomeTranslations = {

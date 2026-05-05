@@ -8,21 +8,20 @@ const GlobalStyles = createGlobalStyle`
      background: ${theme.colors.primaryBackground};
      color: ${theme.colors.text};
      font-family: ${theme.font.family};
-     font-size: ${theme.font.sizes.small};
+     font-size: ${theme.font.sizes.medium};
    }
    svg {
-     fill: ${theme.colors.text};
+     /* fill: ${theme.colors.text}; */
      width: 100%;
      height: 100%;
      /* stroke: ${theme.colors.text}; */
    }
  `}
 
- html {
-     font-size: 62.5%;
-       scroll-behavior: smooth;
-
-   }
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
 
   * {
     padding: 0;
@@ -46,63 +45,70 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/SuisseIntl-black.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/SuisseIntl-Black.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* SuisseIntl - bold */
   @font-face {
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/SuisseIntl-Bold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/SuisseIntl-Bold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* SuisseIntl - semibold */
   @font-face {
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 500;
-    src: url('/fonts/SuisseIntl-SemiBold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/SuisseIntl-SemiBold.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* SuisseIntl - regular */
   @font-face {
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/SuisseIntl-Regular.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/SuisseIntl-Regular.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* SuisseIntl - light */
   @font-face {
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 300;
-    src: url('/fonts/SuisseIntl-Light.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/SuisseIntl-Light.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
    /* SuisseIntl - thin */
   @font-face {
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 200;
-    src: url('/fonts/SuisseIntl-Thin.woff') format('woff');/* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/SuisseIntl-Thin.woff') format('woff');/* Chrome 26+, Opera 23+, Firefox 39+ */
   }
 	/* work-sans-300 - latin */
   @font-face {
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 300;
-    src: url('/fonts/work-sans-v8-latin-300.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/work-sans-v8-latin-300.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* work-sans-regular - latin */
   @font-face {
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/work-sans-v8-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/work-sans-v8-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* work-sans-600 - latin */
   @font-face {
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/work-sans-v8-latin-600.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    src: local('/fonts/work-sans-v8-latin-600.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+    /* Caveat - regular */
+  @font-face {
+    font-family: 'Caveat';
+    font-style: normal;
+    font-weight: 500;
+    src: local('/fonts/Caveat-Regular.ttf') format('ttf'); /* Chrome 26+, Opera 23+, Firefox 39+ */
   }
   /* ----------------------------------------------------------------------------------------------------
   Reset Link

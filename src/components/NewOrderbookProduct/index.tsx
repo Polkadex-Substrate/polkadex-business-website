@@ -40,7 +40,7 @@ const NewOrderbookProduct = ({
         </S.TechnologiesContainer>
         <S.Button isViewed={inView}>
           <PrimaryButton
-            href="http://orderbook.polkadex.trade"
+            href={process.env.ORDERBOOK_LINK}
             content={button}
             target="_blank"
           />

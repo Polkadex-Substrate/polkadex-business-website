@@ -1,0 +1,12 @@
+export const data = [
+  {
+    title: 'Gateio',
+    img: 'gateio',
+    href: 'https://www.gate.io/',
+  },
+  {
+    title: 'AscendEX',
+    icon: 'AscendEX',
+    href: 'https://ascendex.com/',
+  },
+];

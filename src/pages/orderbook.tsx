@@ -1,10 +1,7 @@
 import {
   FeetDifference,
-  Footer,
-  Header,
+  InitialBanner,
   NewOrderbookProduct,
-  Newsletter,
-  PolkadexBlock,
   Promo,
   TradeAnywhere,
   TradingStrategy,
@@ -13,24 +10,27 @@ import { CrossChain } from 'components/CrossChain';
 import { Question } from 'components/Question';
 import { SpeedLimit } from 'components/SpeedLimits';
 import { StatisticBlock } from 'components/StatisticBlock';
+import { Footer, Header, Newsletter } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
-import {
-  HomeTranslations,
-  IHomeTranslations,
-  IOrderbookTranslations,
-  OrderbookTranslations,
-} from 'translations';
+import { IOrderbookTranslations, OrderbookTranslations } from 'translations';
+
+const PolkadexBlock = dynamic(
+  () => import('components/PolkadexBlock').then((mod) => mod.PolkadexBlock),
+  {
+    ssr: false,
+  },
+);
 
 export default function Orderbook() {
   const {
     orderbook,
     statistic,
     question,
-    newsletter,
     promo,
     keys,
     speedlimits,
@@ -40,7 +40,6 @@ export default function Orderbook() {
     polkadex,
     crossChain,
   }: IOrderbookTranslations = OrderbookTranslations['en-US'];
-  const { footer, header }: IHomeTranslations = HomeTranslations['en-US'];
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -89,9 +88,15 @@ export default function Orderbook() {
             content="Polkadex Orderbook Crypto Currency Exchange"
           />
         </Head>
-        <Header {...header} />
-
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: process.env.ORDERBOOK_LINK,
+          }}
+        />
         <main ref={ref} style={{ overflow: 'hidden' }}>
+          <InitialBanner />
           <Promo {...promo} />
           <StatisticBlock {...statistic} />
           <YourKeys {...keys} />
@@ -103,9 +108,9 @@ export default function Orderbook() {
           <TradeAnywhere {...tradeAnywhere} />
           <NewOrderbookProduct {...orderbook} />
           <PolkadexBlock {...polkadex} />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer />
       </S.Wrapper>
     </>
   );

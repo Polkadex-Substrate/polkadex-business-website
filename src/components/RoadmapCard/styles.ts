@@ -106,7 +106,34 @@ export const Item = styled.div<{ isHighligh?: boolean }>`
 export const Content = styled.div``;
 
 export const Wrapper = styled.div<Partial<Props>>`
-  ${({ position, invert, alignRight }) => css`
+  ${({ theme, position, invert, alignRight, soon, active }) => css`
+    opacity: ${soon ? 0.5 : 1};
+    position: relative;
+    ${active &&
+    css`
+      ::before {
+        content: '';
+        position: absolute;
+        background: ${theme.colors.tertiaryBackgroundOpacity};
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+        padding: 1rem;
+        top: -1.5rem;
+        ${invert &&
+        css`
+          transform: rotate(180deg);
+        `}
+        left: ${invert ? '-1rem' : '5rem'};
+        border: 4px solid;
+        border-color: transparent;
+        border-right-color: ${alignRight
+          ? 'transparent'
+          : theme.colors.primary};
+        border-left-color: ${alignRight ? theme.colors.primary : 'transparent'};
+      }
+    `}
+
     @media screen and (min-width: 1080px) {
       position: absolute;
       ${wrapperModifier[position.horizontal.side](position.horizontal.distance)}
@@ -130,7 +157,7 @@ export const Wrapper = styled.div<Partial<Props>>`
     max-width: 25rem;
     width: 100%;
     :not(:last-child) {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
       & ${Line} {
         ::after {
           height: 160%;

@@ -1,24 +1,20 @@
-import { Footer, Header, Newsletter } from 'components';
 import { StakingFaq } from 'components/Crowdloans';
-import { Hero, HowToStake, Overview, Rewards } from 'components/Staking';
+import { Hero, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
+import { Footer, Header, Newsletter } from 'components/v2';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Script from 'next/script';
-import { HomeTranslations, IHomeTranslations } from 'translations';
 
 import * as S from './styles';
 
-export const Template = ({ data, error }) => {
-  const { header, newsletter, footer }: IHomeTranslations =
-    HomeTranslations['en-US'];
-  const stakedValue = (
-    Math.round(data?.tokenInfo?.bonded_locked_balance || 0 * 1000) / 1000
-  ).toLocaleString();
-
-  const totalNominator = (
-    Math.round(data?.metadata?.count_account || 0 * 1000) / 1000
-  ).toLocaleString('de-DE');
-
+const HowToStake = dynamic(
+  () => import('components/Staking').then((mod) => mod.HowToStake),
+  {
+    ssr: false,
+  },
+);
+export const Template = () => {
   return (
     <>
       <Script
@@ -52,35 +48,29 @@ export const Template = ({ data, error }) => {
             content="Staking, stake, investing, passive income, crypto, cryptocurrencies, earn, high APY"
           />
         </Head>
-        <Header {...header} disableBottomMenu={false} />
+        <Header
+          links={['Products', 'Resources', 'About', 'Community']}
+          cta={{
+            title: 'Start Trading',
+            href: 'https://orderbook.polkadex.trade/',
+          }}
+        />
         <main>
-          <Hero apy={data?.apy || '28.91%'} />
+          <Hero apy="24.54%" />
           <Stats>
             <>
-              <StatsCard
-                title={totalNominator}
-                description="Total Nominators"
-              />
-              <StatsCard
-                title={`${String(stakedValue).slice(0, 4)} million`}
-                description="PDEX Staked"
-              />
-              <StatsCard
-                title={data?.metadata?.validator_count || 0}
-                description="Active Validators"
-              />
+              <StatsCard title="5.46" description="Total Nominators" />
+              <StatsCard title="7.002 million" description="PDEX Staked" />
+              <StatsCard title="200" description="Active Validators" />
             </>
           </Stats>
-          <Rewards
-            apy={data?.apy || '28.91%'}
-            apyValidator={data?.apyValidator || '30.78%'}
-          />
+          <Rewards apy="24.54%" apyValidator="26.62%" />
           <HowToStake />
           <Overview />
           <StakingFaq />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer />
       </S.Wrapper>
     </>
   );

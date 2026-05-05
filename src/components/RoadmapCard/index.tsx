@@ -10,8 +10,16 @@ const RoadmapCard = ({
   position,
   invert = false,
   alignRight = false,
+  active,
+  soon,
 }: Props) => (
-  <S.Wrapper position={position} invert={invert} alignRight={alignRight}>
+  <S.Wrapper
+    position={position}
+    invert={invert}
+    alignRight={alignRight}
+    active={active}
+    soon={soon}
+  >
     <S.Line invert={invert}>
       <div />
     </S.Line>

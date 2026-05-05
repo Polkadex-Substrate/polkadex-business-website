@@ -1,6 +1,32 @@
 module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)?',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000',
+          },
+        ],
+      },
+    ];
+  },
+  output: 'export',
   trailingSlash: false,
-  experimental: {
+  compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
   },
@@ -16,13 +42,22 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  generateBuildId: async () => {
+    try {
+      const gitCommitHash = execSync('git rev-parse HEAD').toString().trim();
+      return gitCommitHash;
+    } catch (error) {
+      return 'orderbookBusinessDefault';
+    }
+  },
   env: {
     GOOGLE_ANALYTICS:
       process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-DYTPWG3R5M',
     NEXT_PUBLIC_GA_MEASUREMENT_ID:
       process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5FD4544T94',
     RANGER_HOST_URL:
-      process.env.NEXT_PUBLIC_RANGER_HOST_URL || 'wss://mainnet.polkadex.trade',
+      process.env.NEXT_PUBLIC_RANGER_HOST_URL ||
+      'wss://polkadex.public.curie.radiumblock.co/ws',
     WORKABLE_URL:
       process.env.WORKABLE_URL || 'https://test-432836.workable.com',
     WORKABLE_TOKEN:
@@ -37,5 +72,9 @@ module.exports = {
     FRESHDESK_BASE_URL:
       process.env.FRESHDESK_BASE_URL ||
       'https://construapp.freshdesk.com/api/v2',
+    REWARDS_INTRO_ACTIVE: process.env.REWARDS_INTRO_ACTIVE || 'true',
+    ORDERBOOK_LINK:
+      process.env.ORDERBOOK_LINK ||
+      'https://orderbook.polkadex.ee/trading/DOTUSDT',
   },
 };

@@ -96,6 +96,9 @@ export const FormWrapper = styled.button`
       margin-right: 0.5rem;
       padding: 0.6rem;
       background: ${theme.colors.primaryBackground};
+      svg {
+        fill: ${theme.colors.text};
+      }
     }
   `}
 

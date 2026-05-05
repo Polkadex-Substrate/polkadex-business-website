@@ -5,7 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-import {ServerStyleSheet} from 'styled-components';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -22,12 +22,7 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
+        styles: [initialProps.styles, sheet.getStyleElement()],
       };
     } finally {
       sheet.seal();
@@ -112,27 +107,116 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
+          {/* <!-- Open Graph / Facebook --> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://polkadex.trade/" />
           <meta
-            name="description"
-            content="Polkadex is the fully decentralized peer-to-peer orderbook-based trading engine for Web3 and DeFi. We need your help to win the Parachain auctions. Contribute to the Polkadex Crowdloan and get PDEX tokens & NFT rewards in return!"
+            property="og:title"
+            content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
           />
-          <meta property="og:title" content="Welcome to Polkadex" />
           <meta
             property="og:description"
-            content="A fully decentralized, peer-peer, orderbook based cryptocurrency exchange for the Defi ecosystem in Substrate."
+            content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
           />
-          <meta property="og:url" content="https://www.polkadex.trade" />
           <meta
             property="og:image"
             content="https://polkadex.trade/twitterCardImage.jpg"
           />
-          <meta name="twitter:card" content="summary_large_image" />
+          {/* <!-- Twitter --> */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://polkadex.trade/" />
           <meta
-            name="twitter:image"
+            property="twitter:title"
+            content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
+          />
+          <meta
+            property="twitter:description"
+            content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
+          />
+          <meta
+            property="twitter:image"
             content="https://polkadex.trade/twitterCardImage.jpg"
           />
-          <meta name="twitter:site" content="@polkadex" />
-          <meta name="twitter:creator" content="@polkadex" />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Black.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Bold.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-SemiBold.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Regular.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Light.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/SuisseIntl-Thin.woff"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff"
+          />
+          <link
+            rel="preload"
+            href="/fonts/work-sans-v8-latin-300.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="/fonts/work-sans-v8-latin-regular.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="/fonts/work-sans-v8-latin-600.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Caveat-Regular.ttf"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/ttf"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
