@@ -73,7 +73,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
+        href: 'https://explorer.polkadex.ee',
         soon: false,
       },
       {
@@ -133,7 +133,7 @@ const ENLanguage = {
     ctaLink: 'http://orderbook-beta.polkadex.trade',
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
-      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
+      'https://explorer.polkadex.ee',
     chainsTitle: 'Supported Chains',
   },
   orderbook: {
@@ -141,7 +141,7 @@ const ENLanguage = {
     title: 'How is it all possible',
     highlight: 'Orderbook',
     description:
-      'A unique combination of multiple state-of-the-art technologies like blockchain, Polkadot parachains, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
+      'A unique combination of multiple state-of-the-art technologies like blockchain, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
     fullDescription:
       'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.\n\nInteresting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
     ctaButton: 'Polkadex Orderbook',
@@ -200,20 +200,15 @@ const ENLanguage = {
     title: 'The Future of ',
     highlight: 'Decentralized Trading',
     description:
-      'Polkadex is the first project featuring an orderbook based exchange in the Polkadot ecosystem',
+      'Polkadex is the first project featuring an orderbook based cross-chain decentralized spot exchange in the world.',
     cards: {
       bridge: {
         title: 'Trustless Cross-Chain Transfers',
         description:
-          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Parachain with Polkadot network and Snowfork with Ethereum network. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
+          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Hyperbridge with the Polkadot and EVM networks. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
         ctaButton: 'Learn More',
         plannedBridgesTitle: 'Planned Bridges',
         plannedBridgesCards: [
-          {
-            title: 'Polkadot',
-            description:
-              'Once Polkadex becomes a parachain, it will be able to connect to any other parachain and Polkadot network itself to share assets in a trustless way. Polkadex will also get the ability to bring assets from Ethereum to Polkadex',
-          },
         ],
       },
       tradingBots: {
@@ -312,7 +307,7 @@ const ENLanguage = {
     subtitle: 'Available on',
     possibleTitle: 'How is it all possible',
     possibleDescription:
-      'A unique combination of multiple state-of-the-art technologies like blockchain, Polkadot parachains, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
+      'A unique combination of multiple state-of-the-art technologies like blockchain, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
     subDescription: [
       'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.',
       'Interesting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
@@ -682,7 +677,7 @@ const ENLanguage = {
             subInfo: 'Token minting + token bridging',
             isHoverable: true,
           },
-          { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
+
           { title: 'Open Beta Program', status: true },
           {
             title: 'Polkadex Orderbook Public Testnet*',
@@ -946,10 +941,7 @@ const ENLanguage = {
       community: {
         title: 'Community',
         links: [
-          {
-            title: 'Polkadot',
-            href: 'https://www.polkadot.network/',
-          },
+
           {
             title: 'Web3 Foundation',
             href: 'https://web3.foundation/',
@@ -1030,10 +1022,7 @@ const ENLanguage = {
       community: {
         title: 'Community',
         links: [
-          {
-            title: 'Polkadot',
-            href: 'https://www.polkadot.network/',
-          },
+
           {
             title: 'Web3 Foundation',
             href: 'https://web3.foundation/',
@@ -1182,7 +1171,7 @@ const ENLanguage = {
         title: 'Polkadex Network',
         subtitle:
           'The native blockchain is maintained by PDEX staking, which secures the actions of Polkadex Orderbook.',
-        desc: 'The Polkadex network connects to the Polkadex parachain via a Substrate-to-Substrate bridge, bringing in liquidity from other Polkadot parachains.',
+        desc: 'The Polkadex network connects to the Polkadex parachain via a Substrate-to-Substrate bridge, bringing in liquidity from other blockchains.',
         sec_desc:
           'The Polkadex network also connects to other blockchains like Ethereum via Chainbridge.',
         button: 'Make your first trade',

@@ -47,7 +47,6 @@ export const Hero = () => {
               </a>
             </S.Actions>
             <S.Secured>
-              <Icons.SecuredBy />
             </S.Secured>
           </S.Container>
           <S.HeroImage style={{ y: heroParallax }}>

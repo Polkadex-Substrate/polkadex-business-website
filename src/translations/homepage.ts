@@ -24,7 +24,7 @@ const ENLanguage = {
       },
       {
         title: 'Explorer',
-        href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
+        href: 'https://explorer.polkadex.ee',
         soon: false,
       },
       {
@@ -74,7 +74,7 @@ const ENLanguage = {
     ctaLink: process.env.ORDERBOOK_LINK,
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
-      'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer',
+      'https://explorer.polkadex.ee',
     chainsTitle: 'Supported Chains',
   },
   orderbook: {
@@ -138,20 +138,15 @@ const ENLanguage = {
     title: 'The Future of ',
     highlight: 'Decentralized Trading',
     description:
-      'Polkadex is the first project featuring an orderbook based exchange in the Polkadot ecosystem',
+      'Polkadex is the first project featuring an orderbook based cross-chain decentralized spot exchange in the world.',
     cards: {
       bridge: {
         title: 'Trustless Cross-Chain Transfers',
         description:
-          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Parachain with Polkadot network and Snowfork with Ethereum network. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
+          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Hyperbridge with the Polkadot and EVM networks. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
         ctaButton: 'Learn More',
         plannedBridgesTitle: 'Planned Bridges',
         plannedBridgesCards: [
-          {
-            title: 'Polkadot',
-            description:
-              'Once Polkadex becomes a parachain, it will be able to connect to any other parachain and Polkadot network itself to share assets in a trustless way. Polkadex will also get the ability to bring assets from Ethereum to Polkadex',
-          },
         ],
       },
       tradingBots: {
@@ -460,7 +455,7 @@ const ENLanguage = {
         items: [
           { title: 'Code Audit of Solochain, Orderbook', status: true },
           { title: 'Crowdloan Rewards (Early Q2)', status: true },
-          { title: 'Bridge with Polkadot - Mainnet', status: true },
+          { title: 'Bridge with Mainnet', status: true },
           {
             title: 'Integration with Trading Bots and Market Makers',
             status: true,
@@ -482,7 +477,7 @@ const ENLanguage = {
         },
         items: [
           {
-            title: 'Thea Bridge with Polkadot - Internal Testnet',
+            title: 'Thea Bridge - Internal Testnet',
             status: true,
           },
           { title: 'XCM Channels with Parachain - Testnet', status: true },
@@ -556,7 +551,7 @@ const ENLanguage = {
             subInfo: 'Token minting + token bridging',
             isHoverable: true,
           },
-          { title: 'Polkadex secures Polkadot’s parachain slot', status: true },
+
           { title: 'Open Beta Program', status: true },
           {
             title: 'Polkadex Orderbook Public Testnet*',
@@ -884,10 +879,7 @@ const ENLanguage = {
       community: {
         title: 'Community',
         links: [
-          {
-            title: 'Polkadot',
-            href: 'https://www.polkadot.network/',
-          },
+
           {
             title: 'Web3 Foundation',
             href: 'https://web3.foundation/',

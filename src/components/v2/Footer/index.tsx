@@ -53,15 +53,7 @@ export const Footer = ({ isDark = false }) => {
                     Web3 Foundation
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="https://www.polkadot.network/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Polkadot
-                  </a>
-                </li>
+
               </ul>
             </div>
             <div>
