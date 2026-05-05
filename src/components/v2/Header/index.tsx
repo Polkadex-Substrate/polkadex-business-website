@@ -158,9 +158,6 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     <S.Li>
                       <Link href="/roadmap">Roadmap</Link>
                     </S.Li>
-                    <S.Li>
-                      <Link href="/team">Team</Link>
-                    </S.Li>
                   </ul>
                 </S.MenuContainer>
                 <S.MenuContainer>

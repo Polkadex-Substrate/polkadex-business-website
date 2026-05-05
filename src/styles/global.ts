@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
      background: ${theme.colors.primaryBackground};
      color: ${theme.colors.text};
      font-family: ${theme.font.family};
-     font-size: ${theme.font.sizes.small};
+     font-size: ${theme.font.sizes.medium};
    }
    svg {
      /* fill: ${theme.colors.text}; */
