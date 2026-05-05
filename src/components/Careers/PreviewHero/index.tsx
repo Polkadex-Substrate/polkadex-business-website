@@ -19,23 +19,23 @@ export const PreviewHero = ({ data, error }) => {
     <S.Wrapper>
       <S.GoBack>
         <Link href="/v2/careers">
-          <a>
-            <Icons.ArrowLeft /> Go Back
-          </a>
+          <Icons.ArrowLeft /> Go Back
         </Link>
       </S.GoBack>
-      {error.length ? (
+      {error?.length ? (
         <p>{error}</p>
       ) : (
         <>
           <S.Title>
             <S.Container>
-              {!!data.experience && <S.Category>{data.experience}</S.Category>}
-              {!!data.industry && <span>{data.industry}</span>}
-              <span>{`${data.location.country}, ${data.location.region}`}</span>
-              {!!data.employment_type && <span>{data.employment_type}</span>}
+              {!!data?.experience && (
+                <S.Category>{data?.experience}</S.Category>
+              )}
+              {!!data?.industry && <span>{data?.industry}</span>}
+              <span>{`${data?.location?.country}, ${data?.location?.region}`}</span>
+              {!!data?.employment_type && <span>{data?.employment_type}</span>}
             </S.Container>
-            <h1>{data.title}</h1>
+            <h1>{data?.title}</h1>
             <S.Share>
               <span>Share this job</span>
               <S.Social>
@@ -85,26 +85,26 @@ export const PreviewHero = ({ data, error }) => {
                 will look like NYSE with crypto for trading.
               </p>
             </S.OverviewContainer>
-            {!!data.description.length && (
+            {!!data?.description?.length && (
               <S.OverviewContainer>
                 <h2>Description</h2>
-                <div dangerouslySetInnerHTML={{ __html: data.description }} />
+                <div dangerouslySetInnerHTML={{ __html: data?.description }} />
               </S.OverviewContainer>
             )}
-            {!!data.requirements.length && (
+            {!!data?.requirements?.length && (
               <S.OverviewContainer>
                 <h2>Requirements</h2>
-                <div dangerouslySetInnerHTML={{ __html: data.requirements }} />
+                <div dangerouslySetInnerHTML={{ __html: data?.requirements }} />
               </S.OverviewContainer>
             )}
-            {!!data.benefits.length && (
+            {!!data?.benefits.length && (
               <S.OverviewContainer>
                 <h2>Benefits</h2>
-                <div dangerouslySetInnerHTML={{ __html: data.benefits }} />
+                <div dangerouslySetInnerHTML={{ __html: data?.benefits }} />
               </S.OverviewContainer>
             )}
 
-            <a href={data.application_url} target="_blank" rel="noreferrer">
+            <a href={data?.application_url} target="_blank" rel="noreferrer">
               Apply for this job
             </a>
           </S.Overview>

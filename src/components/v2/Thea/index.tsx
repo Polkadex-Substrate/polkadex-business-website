@@ -106,7 +106,7 @@ export const Thea = () => {
           <S.Actions>
             <a href="/">Go to THEA</a>
             <Link href="/">
-              <a>Read Whitepaper</a>
+              Read Whitepaper
             </Link>
           </S.Actions>
         </S.Content>

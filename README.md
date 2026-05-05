@@ -6,7 +6,7 @@ Polkadex is a fully non-custodial peer-to-peer orderbook-based cryptocurrency ex
 
 ## Interface
 
-Web: [polkadex.trade](https://polkadex.trade)
+Web: [polkadex.ee](https://polkadex.ee)
 
 ## Directory Structure
 
@@ -42,8 +42,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Polkadex Links:
 
-- Polkadex Business Website: [polkadex.trade](https://polkadex.trade)
-- Polkadex Docs: [docs.polkadex.trade](https://docs.polkadex.trade)
+- Polkadex Business Website: [polkadex.trade](https://polkadex.ee)
+- Polkadex Docs: [docs.polkadex.trade](https://docs.polkadex.ee)
 - Polkadex UX [https://github.com/Polkadex-Substrate/polkadex-ts/tree/main/packages/ui]
 - Polkadex API [https://github.com/Polkadex-Substrate/polkadex-ts/tree/main/packages/polkadex-api]
 - React Providers [https://github.com/Polkadex-Substrate/polkadex-ts/tree/main/packages/react-providers]
