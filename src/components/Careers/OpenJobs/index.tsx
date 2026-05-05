@@ -38,21 +38,19 @@ export const OpenJobs = ({ jobs, error }) => {
 
 const Card = ({ id, title = '', category = '', type = '', place }) => (
   <Link href={`/v2/careers/${id}`}>
-    <a>
-      <S.Card>
-        <S.CardAside>
-          <p>{title}</p>
-          <S.CardInfo>
-            {!!category.length && <S.Category>{category}</S.Category>}
-            <span>{place}</span>
-            {!!type.length && <span>{type}</span>}
-          </S.CardInfo>
-        </S.CardAside>
-        <S.Button>
-          More details
-          <Icons.ArrowRight />
-        </S.Button>
-      </S.Card>
-    </a>
+    <S.Card>
+      <S.CardAside>
+        <p>{title}</p>
+        <S.CardInfo>
+          {!!category.length && <S.Category>{category}</S.Category>}
+          <span>{place}</span>
+          {!!type.length && <span>{type}</span>}
+        </S.CardInfo>
+      </S.CardAside>
+      <S.Button>
+        More details
+        <Icons.ArrowRight />
+      </S.Button>
+    </S.Card>
   </Link>
 );
