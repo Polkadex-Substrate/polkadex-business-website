@@ -8,7 +8,7 @@ export const AsideRight = styled.div`
     gap: 2rem;
     a {
       background: ${theme.colors.text};
-      color: ${theme.colors.inverse} !important;
+      color: ${theme.colors.inverse};
       padding: 1rem 3rem;
       border-radius: 0.4rem;
       white-space: nowrap;
@@ -151,11 +151,11 @@ export const Li = styled.li<{ isDisabled?: boolean }>`
     }
     a {
       transition: color 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-      color: ${isDisabled ? 'gray' : theme.colors.black};
+      color: ${isDisabled ? 'gray' : theme.colors.black} !important;
       cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
 
       :hover {
-        color: ${isDisabled ? 'gray' : theme.colors.primary};
+        color: ${isDisabled ? 'gray' : theme.colors.primary} !important;
       }
     }
 
