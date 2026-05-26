@@ -916,11 +916,7 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadex Orderbook',
-<<<<<<< HEAD
             href: '/orderbook',
-=======
-            href: 'https://docs.polkadex.ee/orderbookIntroduction',
->>>>>>> 3027987 (Updated several pages for removing Polkadot references)
           },
           {
             title: 'Polkadex IDO',
