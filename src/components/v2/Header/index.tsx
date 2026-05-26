@@ -109,7 +109,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                       </S.Li>
                       <S.Li>
                         <a
-                          href="https://docs.polkadex.trade/"
+                          href="https://docs.polkadex.ee/"
                           target="_blank"
                           rel="noreferrer"
                         >

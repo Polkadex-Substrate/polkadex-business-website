@@ -22,7 +22,7 @@ const data = [
     id: 2,
     title: 'Connect to the Polkadex network on the Polkadot.js Apps interface',
     description:
-      '<p>If you’re already on Polkadot.js Apps but are not connected to <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.trade%2F#/accounts" target="_blank" rel="noreferrer">Polkadex, you can switch to Polkadex by clicking the network symbol in the top left corner of your screen.</p>',
+      '<p>If you’re already on Polkadot.js Apps but are not connected to <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.ee%2F#/accounts" target="_blank" rel="noreferrer">Polkadex, you can switch to Polkadex by clicking the network symbol in the top left corner of your screen.</p>',
     image: 'step3',
   },
   {

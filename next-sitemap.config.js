@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://polkadex.trade',
+  siteUrl: 'https://polkadex.ee',
   generateRobotsTxt: true,
   priority: 0.8,
   changefreq: 'daily',

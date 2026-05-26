@@ -38,7 +38,7 @@ const Features = ({
             </S.FeaturedParagraph>
             <PrimaryButton
               content={cards.bridge.ctaButton}
-              href="https://docs.polkadex.trade/polkadexNetworkEcosystemParachain"
+              href="https://docs.polkadex.ee/polkadexNetworkEcosystemParachain"
               background="none"
             />
             <S.BridgePlanned>
@@ -80,7 +80,7 @@ const Features = ({
             </S.FeaturedParagraph>
             <PrimaryButton
               content={cards.tradingBots.ctaButton}
-              href="https://docs.polkadex.trade/orderbookBenefits"
+              href="https://docs.polkadex.ee/orderbookBenefits"
               background="none"
             />
           </S.BotsWrapper>
@@ -115,7 +115,7 @@ const Features = ({
             </S.FeaturedParagraph>
             <PrimaryButton
               content={cards.benefits.ctaButton}
-              href="https://docs.polkadex.trade/orderbookIntroduction"
+              href="https://docs.polkadex.ee/orderbookIntroduction"
               background="none"
             />
           </S.MoreFeaturesInfo>

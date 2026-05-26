@@ -21,7 +21,7 @@ export const Vision = () => {
             innovative products.
           </p>
           <S.Flex>
-            <S.Button href="https://polkadex.trade" target="_blank">
+            <S.Button href="https://polkadex.ee" target="_blank">
               About Polkadex
             </S.Button>
           </S.Flex>

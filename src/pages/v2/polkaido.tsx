@@ -68,7 +68,7 @@ export default function Polkaido() {
           ]}
           cta={{
             title: 'Open App',
-            href: 'https://beta.tokenmanager.polkadex.trade/ido',
+            href: 'https://beta.tokenmanager.polkadex.ee/ido',
           }}
         />
         <main>

@@ -41,7 +41,7 @@ const AsideRight = ({ apy }) => {
         </p>
       </div>
 
-      <Link href="https://polkadex.trade/staking#howtostake">
+      <Link href="https://polkadex.ee/staking#howtostake">
         Stake your PDEX now
       </Link>
     </S.Content>

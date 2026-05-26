@@ -29,7 +29,7 @@ const ENLanguage = {
       },
       {
         title: 'Docs',
-        href: 'https://docs.polkadex.trade/',
+        href: 'https://docs.polkadex.ee/',
         soon: false,
       },
       {
@@ -891,7 +891,7 @@ const ENLanguage = {
         links: [
           {
             title: 'Documentation',
-            href: 'https://docs.polkadex.trade/',
+            href: 'https://docs.polkadex.ee/',
           },
           {
             title: 'Github Repository',
@@ -916,11 +916,15 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadex Orderbook',
+<<<<<<< HEAD
             href: '/orderbook',
+=======
+            href: 'https://docs.polkadex.ee/orderbookIntroduction',
+>>>>>>> 3027987 (Updated several pages for removing Polkadot references)
           },
           {
             title: 'Polkadex IDO',
-            href: 'https://docs.polkadex.trade/IDOPlatform',
+            href: 'https://docs.polkadex.ee/IDOPlatform',
           },
         ],
       },

@@ -14,7 +14,7 @@ import * as S from './styles';
 
 export const PreviewHero = ({ data, error }) => {
   const { asPath } = useRouter();
-  const url = `https://polkadex.trade${asPath}`;
+  const url = `https://polkadex.ee${asPath}`;
   return (
     <S.Wrapper>
       <S.GoBack>

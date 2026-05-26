@@ -27,7 +27,7 @@ const OrderbookProduct = ({
       <S.Col>
         <PrimaryButton
           content={ctaButton}
-          href="https://docs.polkadex.trade/orderbookIntroduction"
+          href="https://docs.polkadex.ee/orderbookIntroduction"
           withOpacity
         />
       </S.Col>

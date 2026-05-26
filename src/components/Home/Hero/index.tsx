@@ -39,7 +39,7 @@ export const Hero = () => {
                 Start trading
               </a>
               <a
-                href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer"
+                href="https://explorer.polkadex.ee"
                 target="_blank"
                 rel="noreferrer noopener"
               >

@@ -44,7 +44,7 @@ export const Preview = ({ data, error }) => {
           ]}
           cta={{
             title: 'Open Jobs',
-            href: 'https://beta.tokenmanager.polkadex.trade/ido',
+            href: 'https://beta.tokenmanager.polkadex.ee/ido',
           }}
         />
         <main>

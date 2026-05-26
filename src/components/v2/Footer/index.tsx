@@ -15,7 +15,7 @@ export const Footer = ({ isDark = false }) => {
           <ul>
             <li>
               <a
-                href="https://docs.polkadex.trade/"
+                href="https://docs.polkadex.ee/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -24,7 +24,7 @@ export const Footer = ({ isDark = false }) => {
             </li>
             <li>
               <a
-                href="https://docs.polkadex.trade/whatispolkadex"
+                href="https://docs.polkadex.ee/whatispolkadex"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -40,59 +40,54 @@ export const Footer = ({ isDark = false }) => {
           </ul>
         </div>
         <div>
-          <S.Container>
-            <div>
-              <span>Community</span>
-              <ul>
-                <li>
-                  <a
-                    href="https://web3.foundation/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Web3 Foundation
-                  </a>
-                </li>
-
-              </ul>
-            </div>
-            <div>
-              <span>Products</span>
-              <ul>
-                <li>
-                  <Link href="/orderbook">Orderbook</Link>
-                </li>
-                <li>
-                  <Link href="#">Polkapool AMM</Link>
-                </li>
-                <li>
-                  <a
-                    href="https://docs.polkadex.trade/IDOPlatform"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    PolkaIDO
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://polkadex.medium.com/thea-a-better-decentralized-token-bridge-ac2e362a2a2b"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    THEA Bridge
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </S.Container>
+          <span>Products</span>
+          <ul>
+            <li>
+              <Link href="/orderbook">Orderbook</Link>
+            </li>
+            <li>
+              <Link href="#">Polkapool AMM</Link>
+            </li>
+            <li>
+              <a
+                href="https://docs.polkadex.ee/IDOPlatform"
+                target="_blank"
+                rel="noreferrer"
+              >
+                PolkaIDO
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://polkadex.medium.com/thea-a-better-decentralized-token-bridge-ac2e362a2a2b"
+                target="_blank"
+                rel="noreferrer"
+              >
+                THEA Bridge
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
-          <span>Recources</span>
+          <span>Community</span>
           <ul>
             <li>
               <a
-                href="https://docs.polkadex.trade/"
+                href="https://web3.foundation/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Web3 Foundation
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <span>Resources</span>
+          <ul>
+            <li>
+              <a
+                href="https://docs.polkadex.ee/"
                 target="_blank"
                 rel="noreferrer"
               >

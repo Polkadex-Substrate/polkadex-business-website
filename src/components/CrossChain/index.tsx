@@ -43,7 +43,7 @@ export const CrossChain = memo(
                       <S.ButtonWrapper isViewed={inView}>
                         <SecondaryButton
                           content={readMore}
-                          href=" https://polkadex.trade/crowdloancontribute"
+                          href=" https://polkadex.ee/crowdloancontribute"
                           icon="ArrowRight"
                           target="_blank"
                         />

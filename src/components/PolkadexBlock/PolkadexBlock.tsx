@@ -116,14 +116,14 @@ const Tab = ({
           <S.Footer>
             <S.LearnMore>
               <PrimaryButton
-                href="http://orderbook.polkadex.trade/"
+                href="http://orderbook.polkadex.ee/"
                 content={content.button}
                 target="_blank"
               />
             </S.LearnMore>
             <S.LearnMore>
               <SecondaryButton
-                href="https://docs.polkadex.trade/"
+                href="https://docs.polkadex.ee/"
                 content={content.learnMore}
                 icon="ArrowRight"
                 target="_blank"

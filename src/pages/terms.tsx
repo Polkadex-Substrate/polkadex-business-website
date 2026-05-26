@@ -45,7 +45,7 @@ export default function Terms() {
               Website and willing to participate in the Polkadex Crowd Loan
               Campaign, and “Your” shall be construed accordingly. The following
               terms and conditions (“Terms”) govern Your usage of
-              https://www.polkadex.trade/ (“Website”) while clicking the
+              https://www.polkadex.ee/ (“Website”) while clicking the
               &quot;contribute&quot; button or while accessing the Website with
               respect to the Polkadex Crowd Loan Campaign. By accessing the
               Website for participating in this Polkadex Crowd Loan Campaign,
@@ -228,7 +228,7 @@ export default function Terms() {
             </p>
             <p>
               1.27. Website means the website of the Company which is accessible
-              at https://www.polkadex.trade/.
+              at https://www.polkadex.ee/.
             </p>
             <p>2. INTERPRETATION:</p>
             <p>

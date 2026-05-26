@@ -78,7 +78,7 @@ const ENLanguage = {
       },
       {
         title: 'Docs',
-        href: 'https://docs.polkadex.trade/',
+        href: 'https://docs.polkadex.ee/',
         soon: false,
       },
       {
@@ -130,7 +130,7 @@ const ENLanguage = {
     description:
       'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
     ctaButton: 'Orderbook Open Beta',
-    ctaLink: 'http://orderbook-beta.polkadex.trade',
+    ctaLink: 'http://orderbook-beta.polkadex.ee',
     secondaryCtaButton: 'Mainnet Explorer',
     secondaryCtaLink:
       'https://explorer.polkadex.ee',
@@ -953,7 +953,7 @@ const ENLanguage = {
         links: [
           {
             title: 'Documentation',
-            href: 'https://docs.polkadex.trade/',
+            href: 'https://docs.polkadex.ee/',
           },
           {
             title: 'Github Repository',
@@ -974,11 +974,11 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadex Orderbook',
-            href: 'https://docs.polkadex.trade/orderbookIntroduction',
+            href: 'https://docs.polkadex.ee/orderbookIntroduction',
           },
           {
             title: 'Polkadex IDO',
-            href: 'https://docs.polkadex.trade/IDOPlatform',
+            href: 'https://docs.polkadex.ee/IDOPlatform',
           },
         ],
       },
@@ -1034,7 +1034,7 @@ const ENLanguage = {
         links: [
           {
             title: 'Documentation',
-            href: 'https://docs.polkadex.trade/',
+            href: 'https://docs.polkadex.ee/',
           },
           {
             title: 'Github Repository',
@@ -1059,7 +1059,7 @@ const ENLanguage = {
         links: [
           {
             title: 'About Us',
-            href: 'https://docs.polkadex.trade/',
+            href: 'https://docs.polkadex.ee/',
           },
           {
             title: 'Partners',
@@ -1085,11 +1085,11 @@ const ENLanguage = {
         links: [
           {
             title: 'Polkadex Orderbook',
-            href: 'https://docs.polkadex.trade/orderbookIntroduction',
+            href: 'https://docs.polkadex.ee/orderbookIntroduction',
           },
           {
             title: 'Polkadex IDO',
-            href: 'https://docs.polkadex.trade/IDOPlatform',
+            href: 'https://docs.polkadex.ee/IDOPlatform',
           },
         ],
       },

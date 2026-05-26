@@ -106,7 +106,7 @@ export const Template = ({ apy }) => {
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
             title: 'Start Trading',
-            href: 'https://orderbook.polkadex.trade/',
+            href: 'https://orderbook.polkadex.ee/',
           }}
         />
         <main>

@@ -109,7 +109,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
           {/* <!-- Open Graph / Facebook --> */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://polkadex.trade/" />
+          <meta property="og:url" content="https://polkadex.ee/" />
           <meta
             property="og:title"
             content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
@@ -120,11 +120,11 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://polkadex.trade/twitterCardImage.jpg"
+            content="https://polkadex.ee/twitterCardImage.jpg"
           />
           {/* <!-- Twitter --> */}
           <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://polkadex.trade/" />
+          <meta property="twitter:url" content="https://polkadex.ee/" />
           <meta
             property="twitter:title"
             content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
@@ -135,7 +135,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://polkadex.trade/twitterCardImage.jpg"
+            content="https://polkadex.ee/twitterCardImage.jpg"
           />
           <link
             rel="preload"

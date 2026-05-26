@@ -23,7 +23,7 @@ export const LogoText = styled.g`
 `;
 export const LogoIcon = styled.g``;
 
-export const Link = styled.a<Partial<Props>>`
+export const Link = styled.span<Partial<Props>>`
   ${({ size, theme }) => css`
     transition: ${theme.transition.default};
     color: ${theme.colors.text};
