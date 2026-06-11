@@ -51,7 +51,7 @@ export default function Home() {
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
-            title: 'Start Trading',
+            title: 'Try the Testnet',
             href: process.env.ORDERBOOK_LINK,
           }}
         />

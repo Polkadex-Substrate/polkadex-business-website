@@ -83,7 +83,7 @@ export const SpeedLimit = ({
 
       <S.ButtonWrapper isViewed={inView}>
         <PrimaryButton
-          href="http://orderbook.polkadex.ee"
+          href="https://orderbook-app-test.polkadex.ee/"
           content={buttonText}
           target="_blank"
         />

@@ -105,8 +105,8 @@ export const Template = ({ apy }) => {
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
-            title: 'Start Trading',
-            href: 'https://orderbook.polkadex.ee/',
+            title: 'Try the Testnet',
+            href: process.env.ORDERBOOK_LINK,
           }}
         />
         <main>

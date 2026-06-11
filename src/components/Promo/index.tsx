@@ -49,7 +49,7 @@ export const Promo = ({
           <S.Actions>
             <PrimaryButton
               content={button}
-              href="https://orderbook.polkadex.ee"
+              href="https://orderbook-app-test.polkadex.ee/"
               target="_blank"
             />
             <SecondaryButton

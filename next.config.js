@@ -50,6 +50,6 @@ module.exports = {
     REWARDS_INTRO_ACTIVE: process.env.REWARDS_INTRO_ACTIVE || 'true',
     ORDERBOOK_LINK:
       process.env.ORDERBOOK_LINK ||
-      'https://orderbook.polkadex.ee/trading/DOTUSDT',
+      'https://orderbook-app-test.polkadex.ee/',
   },
 };

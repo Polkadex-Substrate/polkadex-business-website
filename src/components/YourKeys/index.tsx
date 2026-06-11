@@ -44,7 +44,7 @@ export const YourKeys = ({
             <S.NoRiscDescription>{secondDescription}</S.NoRiscDescription>
             <S.ButtonWrapper>
               <PrimaryButton
-                href="http://orderbook.polkadex.ee"
+                href="https://orderbook-app-test.polkadex.ee/"
                 content={button}
                 target="_blank"
               />

@@ -54,7 +54,7 @@ export const Orderbook = () => {
           <h2>{state.title}</h2>
           <p>{state.description}</p>
           <S.Actions>
-            <Link href="/">Start Trading</Link>
+            <Link href={process.env.ORDERBOOK_LINK}>Try the Testnet</Link>
             <a href="/">Learn about Orderbook</a>
           </S.Actions>
         </S.Title>

@@ -116,7 +116,7 @@ const Tab = ({
           <S.Footer>
             <S.LearnMore>
               <PrimaryButton
-                href="http://orderbook.polkadex.ee/"
+                href="https://orderbook-app-test.polkadex.ee/"
                 content={content.button}
                 target="_blank"
               />

@@ -5,9 +5,14 @@ import { BrandAssetsHero as BrandAssetsHeroIllustration } from 'components/Icons
 import * as S from './styles';
 
 const brandColors = [
-  { name: 'Polkadex Pink', hex: '#E6007A' },
-  { name: 'Dark', hex: '#06070A' },
-  { name: 'White', hex: '#FFFFFF' },
+  { name: 'Primary', hex: '#E6007A' },
+  { name: 'Secondary', hex: '#00E676' },
+  { name: 'Background', hex: '#08080C' },
+  { name: 'Surface', hex: '#12121A' },
+  { name: 'Text Primary', hex: '#FFFFFF' },
+  { name: 'Text Secondary', hex: '#9CA3AF' },
+  { name: 'Success', hex: '#14F195' },
+  { name: 'Error', hex: '#FF4D4D' },
 ];
 
 export const BrandAssetsHero = () => {
@@ -69,6 +74,13 @@ export const BrandAssetsCards = () => {
           fileName="ZIP"
           filesUrl="/mediaKit/PolkadexScreenshots.zip"
         />
+        <AssetsCard
+          title="Brand Guidelines"
+          iconName="LogoAndGuidelines"
+          size="7kb"
+          fileName="MD"
+          filesUrl="/mediaKit/BrandGuidelines.md"
+        />
       </S.BrandAssetsCardsWrapper>
       <S.Title>
         <h2>Brand Colors</h2>
@@ -87,10 +99,25 @@ export const BrandAssetsCards = () => {
       </S.Title>
       <S.Typography>
         <p>
-          <strong>Work Sans</strong> — headings and interface text.
+          <strong>Inter</strong> — primary typeface for display, headings and
+          body text (weights 300–700).
         </p>
         <p>
-          <strong>Suisse Intl</strong> — secondary and editorial text.
+          <strong>Courier New</strong> — monospace, used for addresses, hashes
+          and storage keys.
+        </p>
+        <p>
+          Full color tokens, type scale, spacing and usage rules are included
+          in the media kit as <strong>BrandGuidelines.md</strong>, or browse
+          the{' '}
+          <a
+            href="https://explorer.polkadex.ee/brand"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            interactive brand kit
+          </a>
+          .
         </p>
       </S.Typography>
     </S.BrandAssetsCards>
