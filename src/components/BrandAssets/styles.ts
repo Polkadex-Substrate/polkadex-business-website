@@ -186,3 +186,49 @@ export const IconWrapper = styled.div`
     }
   `}
 `;
+
+export const Swatches = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-gap: 1.5rem;
+  margin-bottom: 5rem;
+`;
+
+export const Swatch = styled.div<{ color: string }>`
+  ${({ theme, color }) => css`
+    background: ${theme.colors.secondaryBackground};
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    div {
+      background: ${color};
+      border-radius: 1rem;
+      height: 7rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(139, 161, 190, 0.2);
+    }
+    span {
+      display: block;
+      font-size: ${theme.font.sizes.medium};
+      font-weight: 500;
+    }
+    small {
+      font-size: ${theme.font.sizes.small};
+      opacity: 0.7;
+    }
+  `}
+`;
+
+export const Typography = styled.div`
+  ${({ theme }) => css`
+    background: ${theme.colors.secondaryBackground};
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 5rem;
+    p {
+      line-height: 1.8;
+      strong {
+        color: ${theme.colors.primary};
+      }
+    }
+  `}
+`;

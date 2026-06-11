@@ -30,6 +30,15 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Deploying to Cloudflare Pages
+
+Deployment uses [Wrangler](https://developers.cloudflare.com/workers/wrangler/) (configured in `wrangler.toml`, project `polkadex-business-website`). Authenticate once with `npx wrangler login` (or set `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`), then:
+
+```bash
+yarn deploy        # builds the static export and uploads out/
+yarn deploy:only   # uploads the existing out/ without rebuilding
+```
+
 ## Social Media
 
 - [Twitter](https://twitter.com/polkadex)

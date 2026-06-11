@@ -4,18 +4,24 @@ import { BrandAssetsHero as BrandAssetsHeroIllustration } from 'components/Icons
 
 import * as S from './styles';
 
+const brandColors = [
+  { name: 'Polkadex Pink', hex: '#E6007A' },
+  { name: 'Dark', hex: '#06070A' },
+  { name: 'White', hex: '#FFFFFF' },
+];
+
 export const BrandAssetsHero = () => {
   return (
     <S.Wrapper>
       <S.Container>
         <S.Box>
-          <h1>Brand Assets</h1>
+          <h1>Media Kit</h1>
           <p>
-            Writing about Polkadex? Download logos and product shot for use in
-            web and print media.
+            Writing about Polkadex? Download logos, icons, product screenshots
+            and brand guidelines for use in web and print media.
           </p>
           <a href="#mediaKit">
-            Press Kit{' '}
+            Media Kit{' '}
             <Icon name="ArrowBottom" background="none" size="xsmall" />
           </a>
         </S.Box>
@@ -29,35 +35,64 @@ export const BrandAssetsHero = () => {
 
 export const BrandAssetsCards = () => {
   return (
-    <S.BrandAssetsCards>
+    <S.BrandAssetsCards id="mediaKit">
       <S.Title>
-        <h2>Available Brand</h2>
+        <h2>Download Assets</h2>
         <Icon name="ArrowBottom" background="none" />
       </S.Title>
       <S.BrandAssetsCardsWrapper>
+        <AssetsCard
+          title="Complete Media Kit"
+          iconName="LogoAndGuidelines"
+          size="2.4mb"
+          fileName="ZIP"
+          filesUrl="/mediaKit/PolkadexMediaKit.zip"
+        />
         <AssetsCard
           title="Logo and Guidelines"
           iconName="LogoAndGuidelines"
           size="454kb"
           fileName="ZIP"
-          filesUrl="/brandAssets/PolkadexLogo.zip"
+          filesUrl="/mediaKit/PolkadexLogo.zip"
         />
-        {/* <AssetsCard
-          title="Screenshots"
-          iconName="Screenshots"
-          size="160kb"
-          fileName="ZIP"
-          filesUrl="#"
-        />
-
         <AssetsCard
           title="Icons and Illustrations"
           iconName="IconsAndIllustrations"
-          size="230kb"
+          size="68kb"
           fileName="ZIP"
-          filesUrl="#"
-        /> */}
+          filesUrl="/mediaKit/PolkadexIcons.zip"
+        />
+        <AssetsCard
+          title="Product Screenshots"
+          iconName="Screenshots"
+          size="1.9mb"
+          fileName="ZIP"
+          filesUrl="/mediaKit/PolkadexScreenshots.zip"
+        />
       </S.BrandAssetsCardsWrapper>
+      <S.Title>
+        <h2>Brand Colors</h2>
+      </S.Title>
+      <S.Swatches>
+        {brandColors.map((color) => (
+          <S.Swatch key={color.hex} color={color.hex}>
+            <div />
+            <span>{color.name}</span>
+            <small>{color.hex}</small>
+          </S.Swatch>
+        ))}
+      </S.Swatches>
+      <S.Title>
+        <h2>Typography</h2>
+      </S.Title>
+      <S.Typography>
+        <p>
+          <strong>Work Sans</strong> — headings and interface text.
+        </p>
+        <p>
+          <strong>Suisse Intl</strong> — secondary and editorial text.
+        </p>
+      </S.Typography>
     </S.BrandAssetsCards>
   );
 };

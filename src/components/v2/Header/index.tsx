@@ -126,7 +126,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                         </a>
                       </S.Li>
                       <S.Li>
-                        <Link href="/brandAssets">Brand Assets</Link>
+                        <Link href="/mediaKit">Media Kit</Link>
                       </S.Li>
                       <S.Li>
                         <a
@@ -157,6 +157,9 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     </S.Li>
                     <S.Li>
                       <Link href="/roadmap">Roadmap</Link>
+                    </S.Li>
+                    <S.Li>
+                      <Link href="/team">Team</Link>
                     </S.Li>
                   </ul>
                 </S.MenuContainer>

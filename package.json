@@ -9,7 +9,9 @@
     "start": "next start",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "generateIcons": "svgr -d src/components/Icons/ public/img/icons/ --typescript --icon",
-    "checkTypes": "tsc --noEmit"
+    "checkTypes": "tsc --noEmit",
+    "deploy": "yarn build && wrangler pages deploy out",
+    "deploy:only": "wrangler pages deploy out"
   },
   "dependencies": {
     "@polkadex/blockchain-api": "^1.1.61",
@@ -80,7 +82,8 @@
     "plop": "^4.0.1",
     "prettier": "^2.4.1",
     "react-stately": "^3.20.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "wrangler": "^4.0.0"
   },
   "resolutions": {
     "@polkadot/api": "15.9.1",
