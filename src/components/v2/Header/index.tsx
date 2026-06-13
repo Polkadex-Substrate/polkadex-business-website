@@ -72,15 +72,6 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                       </a>
                     </S.Li>
                     <S.Li>
-                      <a
-                        href="https://polkadex.medium.com/polkadex-has-secured-a-parachain-slot-a04513f2c913"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Parachain
-                      </a>
-                    </S.Li>
-                    <S.Li>
                       <Link href="/rewards">Rewards</Link>
                     </S.Li>
                   </ul>

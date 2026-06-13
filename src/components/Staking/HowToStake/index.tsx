@@ -1,3 +1,4 @@
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 import * as Icons from '../../Icons';
@@ -94,6 +95,7 @@ export const HowToStake = () => {
         </S.ContentVideo>
         <S.ContentFlex>
           <Swiper
+            modules={[Pagination]}
             slidesPerView={1}
             spaceBetween={30}
             pagination={{ clickable: true }}

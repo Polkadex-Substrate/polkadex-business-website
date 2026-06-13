@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import { Seo } from 'components';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import React, { useEffect } from 'react';
@@ -31,9 +31,7 @@ const Custom404 = () => {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex - 404 Error</title>
-        </Head>
+        <Seo title="Polkadex - 404 Error" path="/404" noindex />
         <S.Container>
           <S.TitleContainer>
             <h1>404</h1>

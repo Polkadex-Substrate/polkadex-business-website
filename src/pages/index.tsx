@@ -11,8 +11,8 @@ import {
   TheaBridge,
   Wallets,
 } from 'components/Home';
+import { Seo } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
-import Head from 'next/head';
 import Script from 'next/script';
 import * as S from 'styles/home';
 
@@ -35,19 +35,7 @@ export default function Home() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>
-            Polkadex Orderbook - Decentralized Crypto Currency Exchange
-          </title>
-          <meta
-            name="title"
-            content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
-          />
-          <meta
-            name="description"
-            content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
-          />
-        </Head>
+        <Seo path="/" />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

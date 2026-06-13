@@ -9,13 +9,11 @@ import {
 } from 'components/Icons';
 import { useWindowSize } from 'hooks';
 import React from 'react';
-import SwiperCore, { Pagination } from 'swiper';
+import { Pagination } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import * as S from './styles';
-
-SwiperCore.use([Pagination]);
 
 export const About = () => {
   const { width } = useWindowSize();
@@ -41,6 +39,7 @@ export const About = () => {
       </S.Title>
       <S.Content>
         <Swiper
+          modules={[Pagination]}
           slidesPerView={width > 800 ? 2 : 1}
           spaceBetween={30}
           pagination={{

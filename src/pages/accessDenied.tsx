@@ -1,3 +1,4 @@
+import { Seo } from 'components';
 import dynamic from 'next/dynamic';
 
 const AccessDeniedTemplate = dynamic(
@@ -7,6 +8,11 @@ const AccessDeniedTemplate = dynamic(
     ssr: false,
   },
 );
-const AccessDenied = () => <AccessDeniedTemplate />;
+const AccessDenied = () => (
+  <>
+    <Seo title="Polkadex - Access Denied" path="/accessDenied" noindex />
+    <AccessDeniedTemplate />
+  </>
+);
 
 export default AccessDenied;

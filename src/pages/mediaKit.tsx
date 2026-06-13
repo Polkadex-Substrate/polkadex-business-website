@@ -1,6 +1,5 @@
-import { BrandAssetsCards, BrandAssetsHero } from 'components';
+import { BrandAssetsCards, BrandAssetsHero, Seo } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
-import Head from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
@@ -24,9 +23,11 @@ export default function MediaKit() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex - Media Kit</title>
-        </Head>
+        <Seo
+          title="Polkadex - Media Kit"
+          description="Download Polkadex logos, icons, product screenshots and brand guidelines for use in web and print media."
+          path="/mediaKit"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

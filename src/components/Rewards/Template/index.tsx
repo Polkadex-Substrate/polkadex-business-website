@@ -1,10 +1,10 @@
 import { useTour } from '@reactour/tour';
+import { Seo } from 'components';
 import { DEFAULTINTRONAME } from 'components/Intro/contants';
 import { Popup } from 'components/Popup';
 import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import Script from 'next/script';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -87,21 +87,11 @@ export const Template = ({ apy }) => {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex Rewards</title>
-          <meta
-            name="description"
-            content=" Staking is an easy way to earn passive income from cryptocurrencies. It’s like investing in real estate but without the hassle. Stake PDEX token and earn high APY return!"
-          />
-          <meta
-            property="og:title"
-            content="Stake PDEX crypto token & start earning passive income"
-          />
-          <meta
-            name="keywords"
-            content="Staking, stake, investing, passive income, crypto, cryptocurrencies, earn, high APY"
-          />
-        </Head>
+        <Seo
+          title="Polkadex Rewards"
+          description="Earn rewards on Polkadex. Stake your PDEX token to secure the network and earn a high APY return."
+          path="/rewards"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

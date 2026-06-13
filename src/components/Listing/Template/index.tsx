@@ -1,6 +1,5 @@
-import { Footer, Header, Newsletter } from 'components';
+import { Footer, Header, Newsletter, Seo } from 'components';
 import { About, Hero, Information } from 'components/Listing';
-import Head from 'next/head';
 import Script from 'next/script';
 import { useEffect } from 'react';
 import * as S from 'styles/home';
@@ -39,17 +38,11 @@ export function Template() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>List your token on Polkadex Orderbook</title>
-          <meta
-            name="description"
-            content="List your token on Polkadex Orderbook, the CEXier DEX"
-          />
-          <meta
-            property="og:title"
-            content="List your crypto asset on the revolutionary Polkadex Orderbook, the decentralized cryptocurrency exchange (DEX) for high frequency trading"
-          />
-        </Head>
+        <Seo
+          title="List your token on Polkadex Orderbook"
+          description="List your crypto asset on the Polkadex Orderbook, the decentralized cryptocurrency exchange (DEX) built for high-frequency trading."
+          path="/listing"
+        />
         <Header {...header} />
         <main>
           <Hero />

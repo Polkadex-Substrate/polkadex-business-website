@@ -3,6 +3,7 @@ import {
   InitialBanner,
   NewOrderbookProduct,
   Promo,
+  Seo,
   TradeAnywhere,
   TradingStrategy,
 } from 'components';
@@ -13,7 +14,6 @@ import { StatisticBlock } from 'components/StatisticBlock';
 import { Footer, Header, Newsletter } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
@@ -77,17 +77,11 @@ export default function Orderbook() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex Orderbook Crypto Currency Exchange</title>
-          <meta
-            name="description"
-            content="Trade crypto with the Polkadex Orderbook decentralized exchange. The CEXiest DEX in DeFi."
-          />
-          <meta
-            property="og:title"
-            content="Polkadex Orderbook Crypto Currency Exchange"
-          />
-        </Head>
+        <Seo
+          title="Polkadex Orderbook Crypto Currency Exchange"
+          description="Trade crypto with the Polkadex Orderbook decentralized exchange. The CEXiest DEX in DeFi."
+          path="/orderbook"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

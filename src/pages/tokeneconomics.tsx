@@ -1,6 +1,5 @@
-import { TokenEconomics as TokenEconomicsComponent } from 'components';
+import { Seo, TokenEconomics as TokenEconomicsComponent } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
-import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
@@ -45,14 +44,11 @@ export default function Tokeneconomics() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex - Token Economics</title>
-          <meta
-            name="description"
-            content="Trade crypto with the Polkadex Orderbook decentralized exchange. The CEXiest DEX in DeFi."
-          />
-          <meta property="og:title" content="Polkadex Token Economics" />
-        </Head>
+        <Seo
+          title="Polkadex - Token Economics"
+          description="Understand PDEX token economics — supply, distribution, staking rewards and utility across the Polkadex ecosystem."
+          path="/tokeneconomics"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

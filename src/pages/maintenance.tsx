@@ -1,5 +1,5 @@
+import { Seo } from 'components';
 import { Icon } from 'components/Icon';
-import Head from 'next/head';
 import Script from 'next/script';
 
 import * as S from '../styles/maintenance';
@@ -22,9 +22,7 @@ const Maintenance = () => {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex - Maintenance</title>
-        </Head>
+        <Seo title="Polkadex - Maintenance" path="/maintenance" noindex />
         <S.Container>
           <S.TitleContainer>
             <S.TitleWrapper>

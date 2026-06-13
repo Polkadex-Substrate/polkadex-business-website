@@ -76,11 +76,6 @@ const ENLanguage = {
         href: 'https://docs.polkadex.ee/',
         soon: false,
       },
-      {
-        title: 'Crowdloans',
-        href: 'https://polkadex.medium.com/polkadex-has-secured-a-parachain-slot-a04513f2c913',
-        soon: false,
-      },
     ],
     bottomLinks: [
       {

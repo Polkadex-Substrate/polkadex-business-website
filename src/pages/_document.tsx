@@ -107,36 +107,9 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-          {/* <!-- Open Graph / Facebook --> */}
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://polkadex.ee/" />
-          <meta
-            property="og:title"
-            content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
-          />
-          <meta
-            property="og:description"
-            content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
-          />
-          <meta
-            property="og:image"
-            content="https://polkadex.ee/twitterCardImage.jpg"
-          />
-          {/* <!-- Twitter --> */}
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://polkadex.ee/" />
-          <meta
-            property="twitter:title"
-            content="Polkadex Orderbook - Decentralized Crypto Currency Exchange"
-          />
-          <meta
-            property="twitter:description"
-            content="Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi."
-          />
-          <meta
-            property="twitter:image"
-            content="https://polkadex.ee/twitterCardImage.jpg"
-          />
+          {/* Open Graph and Twitter card tags are rendered per-page by the
+              shared <Seo /> component (src/components/Seo) so each page gets
+              its own title, description, canonical URL and social preview. */}
           <link
             rel="preload"
             href="/fonts/SuisseIntl-Black.woff"

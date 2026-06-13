@@ -1,5 +1,5 @@
+import { Seo } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
-import Head from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
@@ -23,9 +23,11 @@ export default function Terms() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex - Terms and conditions</title>
-        </Head>
+        <Seo
+          title="Polkadex - Terms and Conditions"
+          description="Terms and conditions for using the Polkadex website and services."
+          path="/terms"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

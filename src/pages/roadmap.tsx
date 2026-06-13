@@ -1,6 +1,6 @@
+import { Seo } from 'components';
 import { Roadmap as RoadmapComponent } from 'components/';
 import { Footer, Header, Newsletter } from 'components/v2';
-import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
@@ -45,14 +45,11 @@ export default function Roadmap() {
         }}
       />
       <S.Wrapper>
-        <Head>
-          <title>Polkadex - Roadmap</title>
-          <meta
-            name="description"
-            content="Trade crypto with the Polkadex Orderbook decentralized exchange. The CEXiest DEX in DeFi."
-          />
-          <meta property="og:title" content="Polkadex Roadmap" />
-        </Head>
+        <Seo
+          title="Polkadex - Roadmap"
+          description="Follow the Polkadex roadmap — milestones and upcoming releases for the decentralized orderbook exchange."
+          path="/roadmap"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{

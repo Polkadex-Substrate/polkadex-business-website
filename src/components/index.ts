@@ -19,6 +19,7 @@ export * from './Announcement';
 export * from './AvailableMessage';
 export * from './BrandAssets';
 export * from './Button';
+export * from './Seo';
 export * from './ComingSoon';
 export * from './Container';
 export * from './Container';
