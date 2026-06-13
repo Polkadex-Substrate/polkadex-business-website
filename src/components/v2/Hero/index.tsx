@@ -26,7 +26,7 @@ export const Hero = () => {
             cryptocurrency exchange for the DeFi ecosystem built on Substrate.
           </p>
           <S.Actions>
-            <a href="/">Start trading</a>
+            <a href={process.env.ORDERBOOK_LINK}>Try Our Testnet</a>
             <a href="/">Mainnet explorer</a>
           </S.Actions>
           <S.DownloadLinksContent>

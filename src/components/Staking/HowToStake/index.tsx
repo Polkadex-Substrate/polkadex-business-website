@@ -6,58 +6,59 @@ import * as S from './styles';
 const data = [
   {
     id: 0,
-    title: 'Create Polkadex accounts',
-    description: `<p>Create two Polkadex accounts (a Stash and a Controller account) using the <a href="https://polkadot.js.org/extension/" target="_blank" rel="noreferrer"> Polkadot.js Browser Extension </a>  or <a href="https://youtu.be/lTUrKHADKDE" target="_blank" rel="noreferrer"> the Polkadot.js Apps interface </a>Save you mnemonic seed phrase for each account securely. </p>`,
+    title: 'Install a wallet extension',
+    description:
+      '<p>On desktop, install <a href="https://polkadot.js.org/extension/" target="_blank" rel="noreferrer">Polkadot.js</a>, Talisman, SubWallet, or PolkaGate from your browser’s extension store. On mobile, use Nova Wallet or SubWallet and open the explorer from the wallet’s built-in browser.</p>',
     image: 'step1',
     hasVideo: true,
   },
   {
     id: 1,
-    title: 'Get some native PDEX through an exchange',
+    title: 'Create or import an account',
     description:
-      '<p>Get some native PDEX from Gate.io or AscendEX and send it to your Stash Account. If you have ERC-20 PDEX, you will need to <a href="https://polkadex.medium.com/pdex-migration-two-ways-about-it-6bd49724509c" target="_blank" rel="noreferrer"> migrate it </a> to native PDEX in order to stake it.</p>',
+      '<p>Inside your wallet extension, create a new account or import an existing seed phrase. Write the seed phrase down and store it offline. Never paste a seed phrase into the explorer — it signs through your wallet only and will never ask for your private key.</p>',
     image: 'step2',
   },
   {
     id: 2,
-    title: 'Connect to the Polkadex network on the Polkadot.js Apps interface',
+    title: 'Get some native PDEX through an exchange',
     description:
-      '<p>If you’re already on Polkadot.js Apps but are not connected to <a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmainnet.polkadex.ee%2F#/accounts" target="_blank" rel="noreferrer">Polkadex, you can switch to Polkadex by clicking the network symbol in the top left corner of your screen.</p>',
+      '<p>Get some native PDEX from Gate.io or AscendEX and send it to your account. If you have ERC-20 PDEX, you will need to <a href="https://polkadex.medium.com/pdex-migration-two-ways-about-it-6bd49724509c" target="_blank" rel="noreferrer"> migrate it </a> to native PDEX in order to stake it.</p>',
     image: 'step3',
   },
   {
     id: 3,
-    title: 'Choose the Stash & Controller accounts',
+    title: 'Connect your wallet to the Polkadex Explorer',
     description:
-      '<p>Your Stash will have most of your PDEX and all the PDEX you will be staking. It should be an offline account. Your Controller will allow you to manage your Stash, set your nominees, and start/stop staking on your Stash account without being able to make changes to your Stash’s balance.</p>',
+      '<p>Go to <a href="https://explorer.polkadex.ee" target="_blank" rel="noreferrer">explorer.polkadex.ee</a> and click <strong>My Account</strong> in the sidebar. The explorer detects your wallet extension and lists your accounts — pick the one you want to stake from and you’ll land on your Wallet Dashboard.</p>',
     image: 'step4',
   },
   {
     id: 4,
-    title: 'Choose the amount',
+    title: 'Pick your validators',
     description:
-      '<p>Choose the amount of PDEX you want to stake in “value bonded”. Make sure to leave at least 1 transferrable PDEX in each account (Stash and Controller) to cover network fees.</p>',
+      '<p>Browse the <a href="https://explorer.polkadex.ee/validators" target="_blank" rel="noreferrer">Validators page</a> and check each validator’s commission, total stake, slash count, and real 30-day APY. You can nominate up to 16 validators. Avoid anything flagged HIGH RISK (commission above 50%).</p>',
     image: 'step5',
   },
   {
     id: 5,
-    title: 'Choose the destination for your rewards',
+    title: 'Stake your PDEX',
     description:
-      '<p>Under «payment destination». If you want to automatically compound your returns, select “Stash account (increase the amount at stake)”.</p>',
+      '<p>On your Wallet Dashboard, click <strong>Stake more</strong>. Select your validators, enter the amount of PDEX to nominate, and sign with your wallet. Rewards start from the next era — roughly 24 hours later.</p>',
     image: 'step6',
   },
   {
     id: 6,
-    title: 'Nominate your validator',
+    title: 'Claim your rewards',
     description:
-      '<p>Select up to 16 validators to nominate with your stake. While there are many criteria to selecting validators, it’s important to trust your nominees. <a href="https://discord.com/invite/Uvua83QAzk" target="_blank" rel="noreferrer"> Get to know Polkadex validators in the #validator channel on the Polkadex Discord server. </a></p>',
+      '<p>Click <strong>Pay out rewards</strong> on the dashboard to see your unclaimed rewards. <strong>Claim all</strong> bundles up to 30 payouts into a single transaction — sign once, get everything. Don’t wait too long: unclaimed rewards expire after ~84 eras.</p>',
     image: 'step7',
   },
   {
     id: 7,
     title: 'Congrats! You’re all set to earn daily rewards',
     description:
-      '<p>You can track your rewards on <a href="http://polkadex.subscan.io" target="_blank" rel="noreferrer"> Subscan</a>. Make sure your validators are triggering payouts on a regular basis!</p>',
+      '<p>Track your full reward history on the <a href="https://explorer.polkadex.ee/staking-rewards" target="_blank" rel="noreferrer">Staking Rewards page</a> — realized APR, per-validator charts, and CSV/JSON/tax exports. To unstake, click Unstake on your dashboard; unbonding takes 28 days.</p>',
     image: 'step8',
     hasLink: true,
   },
@@ -68,7 +69,7 @@ export const HowToStake = () => {
     <S.Wrapper id="howtostake">
       <S.Title>
         <h2>
-          <strong>How to Stake PDEX </strong>via Polkadot.js{' '}
+          <strong>How to Stake PDEX </strong>via the Polkadex Explorer{' '}
         </h2>
       </S.Title>
       <S.Content>

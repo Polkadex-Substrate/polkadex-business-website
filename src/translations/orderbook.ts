@@ -62,11 +62,6 @@ const ENLanguage = {
         soon: false,
       },
       {
-        title: 'Subscan',
-        href: 'https://polkadex.subscan.io/',
-        soon: false,
-      },
-      {
         title: 'THEA',
         href: '#',
         soon: true,

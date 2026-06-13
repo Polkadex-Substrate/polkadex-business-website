@@ -36,7 +36,7 @@ export const Hero = () => {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                Start trading
+                Try Our Testnet
               </a>
               <a
                 href="https://explorer.polkadex.ee"

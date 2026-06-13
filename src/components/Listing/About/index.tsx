@@ -62,7 +62,7 @@ export const About = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Start trading
+              Try Our Testnet
             </a>
           </S.Actions>
         </S.Benefits>

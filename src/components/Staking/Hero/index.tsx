@@ -23,7 +23,7 @@ export const Hero = ({ apy }) => {
             </p>
             <S.Links>
               <PrimaryButton
-                content="Stake via polkadot.js"
+                content="Stake via the Polkadex Explorer"
                 href="#howtostake"
               />
               <S.SecondaryLink href="#othersWays">

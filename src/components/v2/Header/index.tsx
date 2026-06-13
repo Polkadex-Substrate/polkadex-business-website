@@ -100,15 +100,6 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                       </S.Li>
                       <S.Li>
                         <a
-                          href="https://polkadex.subscan.io/"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          Subscan
-                        </a>
-                      </S.Li>
-                      <S.Li>
-                        <a
                           href="https://docs.polkadex.ee/"
                           target="_blank"
                           rel="noreferrer"
@@ -158,9 +149,12 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     <S.Li>
                       <Link href="/roadmap">Roadmap</Link>
                     </S.Li>
+                    {/* Team page disabled for now — re-enable by restoring
+                        this link and renaming src/pages/team.tsx.disabled
+                        back to team.tsx
                     <S.Li>
                       <Link href="/team">Team</Link>
-                    </S.Li>
+                    </S.Li> */}
                   </ul>
                 </S.MenuContainer>
                 <S.MenuContainer>

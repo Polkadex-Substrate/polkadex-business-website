@@ -28,7 +28,7 @@ export const Orderbook = () => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              Start trading
+              Try Our Testnet
             </a>
             <a
               href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadex.public.curie.radiumblock.co%2Fws#/explorer"
