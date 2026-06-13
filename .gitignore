@@ -43,3 +43,8 @@ yarn-error.log*
 
 # cloudflare / wrangler
 .wrangler
+
+#other
+BRAND.md
+cloudflare-deployment.zip
+wrangler.toml
