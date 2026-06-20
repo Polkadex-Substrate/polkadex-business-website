@@ -1,24 +1,10 @@
-import {
-  BetaProgram,
-  Ecosystem,
-  Exchanges,
-  Hero,
-  Orderbook,
-  Partners,
-  Polkaido,
-  SeenOn,
-  Staking,
-  Hyperbridge,
-  KylixLending,
-  TestnetBanner,
-  Wallets,
-} from 'components/Home';
-import { Seo } from 'components';
+import { Seo, TestnetGuide } from 'components';
 import { Footer, Header, Newsletter } from 'components/v2';
 import Script from 'next/script';
+import React from 'react';
 import * as S from 'styles/home';
 
-export default function Home() {
+export default function TestnetGuidePage() {
   return (
     <>
       <Script
@@ -37,7 +23,11 @@ export default function Home() {
         }}
       />
       <S.Wrapper>
-        <Seo path="/" />
+        <Seo
+          title="Polkadex - Testnet Cross-Chain Transfer Guide"
+          description="How to get testnet tokens and transfer them between Polkadex and Sepolia (Ethereum testnet) ahead of the Orderbook testnet launch."
+          path="/testnet-guide"
+        />
         <Header
           links={['Products', 'Resources', 'About', 'Community']}
           cta={{
@@ -46,21 +36,7 @@ export default function Home() {
           }}
         />
         <main>
-          <TestnetBanner />
-          <S.Container>
-            <Hero />
-            <Wallets />
-            <Exchanges />
-          </S.Container>
-          <Orderbook />
-          <Staking apy="26.40%" />
-          <Partners />
-          <BetaProgram />
-          <Hyperbridge />
-          <KylixLending />
-          <Ecosystem />
-          <Polkaido />
-          <SeenOn />
+          <TestnetGuide />
           <Newsletter />
         </main>
         <Footer />

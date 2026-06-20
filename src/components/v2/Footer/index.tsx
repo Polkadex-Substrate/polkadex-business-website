@@ -90,6 +90,9 @@ export const Footer = ({ isDark = false }) => {
               </a>
             </li>
             <li>
+              <Link href="/testnet-guide">Testnet Guide</Link>
+            </li>
+            <li>
               <a
                 href="https://www.substrate.io/"
                 target="_blank"

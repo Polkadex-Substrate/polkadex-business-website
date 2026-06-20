@@ -7,6 +7,7 @@ export * from './Partners';
 export * from './Polkaido';
 export * from './SeenOn';
 export * from './Staking';
+export * from './TestnetBanner';
 export * from './Hyperbridge';
 export * from './KylixLending';
 export * from './Wallets';

@@ -99,6 +99,9 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                         </a>
                       </S.Li>
                       <S.Li>
+                        <Link href="/testnet-guide">Testnet Guide</Link>
+                      </S.Li>
+                      <S.Li>
                         <a
                           href="https://github.com/Polkadex-Substrate"
                           target="_blank"
