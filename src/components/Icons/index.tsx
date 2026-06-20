@@ -156,7 +156,6 @@ export { default as Sun } from './Sun';
 export * from './SwapCircle';
 export * from './TalismanWallet';
 export { default as Telegram } from './Telegram';
-export * from './Kylix';
 export * from './HyperbridgeArrow';
 export * from './HyperbridgePreview';
 export { default as ThirdParty } from './ThirdParty';

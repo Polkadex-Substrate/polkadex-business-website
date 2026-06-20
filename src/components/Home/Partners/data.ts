@@ -1,7 +1,8 @@
 export const data = [
   [
     {
-      icon: 'Kylix',
+      img: 'kylix',
+      alt: 'Kylix Finance logo',
     },
     {
       img: 'acala',
