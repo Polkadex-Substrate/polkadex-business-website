@@ -1,6 +1,9 @@
 export const data = [
   [
     {
+      icon: 'Kylix',
+    },
+    {
       img: 'acala',
       alt: 'acala logo',
     },

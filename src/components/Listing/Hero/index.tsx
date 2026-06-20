@@ -132,7 +132,7 @@ export const Hero = () => {
               <p>
                 Listing is now available for projects building on the
                 <strong> Ethereum</strong> and{' '}
-                <strong>Polkadot ecosystems</strong>!
+                <strong>EVM ecosystems</strong>!
               </p>
             </div>
             <div>

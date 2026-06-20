@@ -11,7 +11,7 @@ const sliders = [
     image: 'orderbookWeb',
     title: 'Polkadex Orderbook',
     description:
-      'Non-custodial high frequency trading + advanced trading tools Polkadex Orderbook is a cutting-edge Layer 2 trusted execution environment built on the Polkadex Network.',
+      'Non-custodial high frequency trading + advanced trading tools Polkadex Orderbook is a cutting-edge, non-custodial trading application running on the Polkadex Network, a sovereign Layer 1 chain.',
   },
   {
     isMobile: true,
@@ -111,13 +111,13 @@ export const Orderbook = () => {
           <S.FlexTitle>
             <span>Cross-chain for real</span>
             <p>
-              Polkadex parachain + THEA bridge Cutting edge meets cutting edge.
+              Sovereign L1 + Hyperbridge. Cutting edge meets cutting edge.
               <br />
               <br />
-              The Polkadex parachain connects Polkadex to the Polkadot ecosystem
-              and its parachains. THEA, Polkadex’s cutting-edge decentralized
-              token bridge, will connect to Ethereum and more blockchains and
-              ecosystems down the line.
+              Polkadex is a sovereign Substrate-based L1 chain. Cross-chain
+              deposits and withdrawals are powered by Hyperbridge, a
+              trust-minimized interoperability protocol that connects Polkadex to
+              Ethereum and other blockchains using cryptographic proofs.
             </p>
             <S.PairsContainer>
               <S.Pair>

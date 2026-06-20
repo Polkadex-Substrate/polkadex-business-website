@@ -39,11 +39,11 @@ export const CrossChain = memo(
 
                     <S.InfoContainer>
                       <S.SubDescription>{subDesc}</S.SubDescription>
-                      <span>Polkadot and Polkadot parachains</span>
+                      <span>Ethereum and EVM networks</span>
                       <S.ButtonWrapper isViewed={inView}>
                         <SecondaryButton
                           content={readMore}
-                          href=" https://polkadex.ee/crowdloancontribute"
+                          href="https://docs.hyperbridge.network"
                           icon="ArrowRight"
                           target="_blank"
                         />
@@ -64,7 +64,7 @@ export const CrossChain = memo(
                       <S.ButtonWrapper isViewed={inView}>
                         <SecondaryButton
                           content={readMore}
-                          href="https://github.com/Polkadex-Substrate/polkadex-docs/blob/master/docs/doc3-theaBridge.md"
+                          href="https://docs.hyperbridge.network"
                           icon="ArrowRight"
                           target="_blank"
                         />

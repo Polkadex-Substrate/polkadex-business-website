@@ -18,12 +18,11 @@ export const About = () => {
             <p>
               Polkadex is the first project featuring an
               <strong> orderbook based exchange </strong>
-              in the Polkadot ecosystem. Thanks to Polkadex’s innovative
-              interoperability layer,
+              the orderbook space. Thanks to cross-chain transfers powered by
               <strong>
                 {' '}
-                THEA, Polkadex is becoming the first Cross-Chain orderbook based
-                DEX.{' '}
+                Hyperbridge, Polkadex is becoming the first cross-chain orderbook
+                based DEX.{' '}
               </strong>
             </p>
           </div>
@@ -39,9 +38,9 @@ export const About = () => {
           <S.ChainCard>
             <p>
               The Polkadex Main Network contains all Polkadex products,
-              including Polkadex Orderbook. It also runs THEA, which means
-              Polkadex will soon be connected to Ethereum (and other blockchains
-              as determined by governance in the future).
+              including Polkadex Orderbook. Cross-chain transfers are powered by
+              Hyperbridge, which means Polkadex is connected to Ethereum (and
+              other blockchains as determined by governance in the future).
             </p>
           </S.ChainCard>
           <S.ChainCard>
@@ -58,7 +57,8 @@ export const About = () => {
           </S.ChainCard>
           <S.ChainCard>
             <p>
-              The two networks will be joined by Thea Connector in the backend.
+              The two networks are joined by a cross-chain connector in the
+              backend.
             </p>
           </S.ChainCard>
           <S.ChainCard>

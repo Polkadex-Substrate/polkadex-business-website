@@ -15,7 +15,7 @@ export const UpcomingProjects = () => {
             status="Allow List Close"
             title="Polkadex Ordebook"
             ticker="PDO"
-            description="Polkadex Orderbook is a non-custodial Layer 2 based exchange on the Polkadex Network.."
+            description="Polkadex Orderbook is a non-custodial exchange application running on the Polkadex Layer 1 Network."
             voteAmount="721,001"
             voteNumber="#1"
             category="Exchange"
@@ -26,12 +26,12 @@ export const UpcomingProjects = () => {
           />
 
           <Card
-            logo="/img/theaLogo.png"
-            cover="/img/theaBridgeCover.png"
+            logo="/img/hyperbridgeLogo.png"
+            cover="/img/hyperbridgeCover.png"
             status="Allow List Close"
-            title="THEA bridge"
+            title="Hyperbridge"
             ticker="TBE"
-            description="THEA, Polkadex’s revolutionary interoperability layer, is almost here. Get ready for an easier...  "
+            description="Cross-chain transfers to and from Polkadex, powered by Hyperbridge. Trust-minimized bridging is here..."
             voteAmount="718,542"
             voteNumber="#2"
             category="Protocol"

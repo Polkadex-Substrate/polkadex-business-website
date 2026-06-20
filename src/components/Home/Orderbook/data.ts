@@ -39,7 +39,7 @@ export const data = [
     },
     {
       title: 'Cross-chain for real',
-      description: 'Polkadex parachain + Thea bridge.',
+      description: 'Cross-chain transfers powered by Hyperbridge.',
       icon: 'Crosschain',
     },
   ],

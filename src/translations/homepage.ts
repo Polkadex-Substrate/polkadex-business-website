@@ -13,9 +13,9 @@ const ENLanguage = {
         soon: false,
       },
       {
-        title: 'THEA',
-        href: '#',
-        soon: true,
+        title: 'Hyperbridge',
+        href: 'https://hyperbridge.network',
+        soon: false,
       },
       {
         title: 'Explorer',
@@ -59,7 +59,7 @@ const ENLanguage = {
   hero: {
     title: 'The trading engine for Web3 and DeFi',
     description:
-      'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
+      'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for DeFi, built on Substrate as a sovereign Layer 1 network',
     ctaButton: 'Orderbook',
     ctaLink: process.env.ORDERBOOK_LINK,
     secondaryCtaButton: 'Mainnet Explorer',
@@ -72,7 +72,7 @@ const ENLanguage = {
     title: 'Polkadex',
     highlight: 'Orderbook',
     description:
-      'Polkadex Orderbook is a non-custodial Layer 2 based exchange on the Polkadex Network',
+      'Polkadex Orderbook is a non-custodial exchange application running on the Polkadex Layer 1 Network',
     ctaButton: 'Polkadex Orderbook',
     cards: [
       {
@@ -133,7 +133,7 @@ const ENLanguage = {
       bridge: {
         title: 'Trustless Cross-Chain Transfers',
         description:
-          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Hyperbridge with the Polkadot and EVM networks. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
+          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Hyperbridge across Ethereum and other EVM networks. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
         ctaButton: 'Learn More',
         plannedBridgesTitle: 'Planned Bridges',
         plannedBridgesCards: [
@@ -149,7 +149,7 @@ const ENLanguage = {
         title: 'Offchain',
         highlight: 'State Commits',
         tag: 'v2',
-        description: `Polkadex Orderbook implements a Layer 2 Trusted Execution Environment (TEE) on top of Polkadex that allows an operator to maintain the Orderbook. The results produced by the TEE contain cryptographic proof. In the event of tampering the blockchain can invalidate the proof thereby not accepting the tampered state submitted by the Operator. The users' funds always stay in the native blockchain and are controlled by the user. In this way Polkadex ensures that only the trader"s private key can initiate a balance transfer`,
+        description: `Polkadex Orderbook uses a Trusted Execution Environment (TEE) on the Polkadex Layer 1 network that allows an operator to maintain the Orderbook. The results produced by the TEE contain cryptographic proof. In the event of tampering the blockchain can invalidate the proof thereby not accepting the tampered state submitted by the Operator. The users' funds always stay in the native blockchain and are controlled by the user. In this way Polkadex ensures that only the trader"s private key can initiate a balance transfer`,
       },
       benefits: {
         title: 'Unmatched performance',
@@ -467,12 +467,12 @@ const ENLanguage = {
         },
         items: [
           {
-            title: 'Thea Bridge - Internal Testnet',
+            title: 'Hyperbridge Integration - Internal Testnet',
             status: true,
           },
           { title: 'XCM Channels with Parachain - Testnet', status: true },
           {
-            title: 'Code Audit of Parachain & Thea',
+            title: 'Code Audit of Parachain & Hyperbridge',
             status: true,
           },
           { title: 'Crowdloan Rewards Pallet - Awaiting Audit', status: true },
@@ -534,7 +534,7 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'THEA Public Testnet', status: true },
+          { title: 'Hyperbridge Public Testnet', status: true },
           {
             title: 'PolkaIDO* Public Testnet',
             status: true,
@@ -944,7 +944,7 @@ const ENLanguage = {
       items: [
         'Launch new user sign-up via wallet integration instead of email registration.',
         'Enable automatic fee conversion to PDEX from native assets for account registration, transaction fees, deposits, and withdrawals.',
-        'Remove claim processes for deposits and withdrawals on THEA and Polkadex Orderbook.',
+        'Remove claim processes for deposits and withdrawals on Hyperbridge and Polkadex Orderbook.',
         'Integrate with Hummingbot Connector.',
         'Onboard launch-phase Market Maker.',
         'Initiate the listing of the first few spot market pairs.',
@@ -956,7 +956,7 @@ const ENLanguage = {
       phase: 'Phase 2',
       emoji: '🍾',
       items: [
-        'Extend the THEA connector to Ethereum.',
+        'Extend the Hyperbridge connector to Ethereum.',
         'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
         'Launch the Liquidity Mining Program.',
         'Integrate with DEX aggregators built on Ethereum.',
@@ -969,7 +969,7 @@ const ENLanguage = {
       phase: 'Phase 3',
       emoji: '⚡',
       items: [
-        'Extend THEA connector to L2s and EVM-compatible chains.',
+        'Extend the Hyperbridge connector to L2s and EVM-compatible chains.',
         'Enable native dApp integration with 3rd party service providers.',
       ],
     },

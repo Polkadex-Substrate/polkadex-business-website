@@ -5,7 +5,7 @@ export type Props = {
     | 'Polkaido'
     | 'Polkadex'
     | 'Crowdloans'
-    | 'Thea'
+    | 'Hyperbridge'
     | 'Staking'
     | 'Careers';
   links?: string[];

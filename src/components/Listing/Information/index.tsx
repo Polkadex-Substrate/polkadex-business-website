@@ -101,14 +101,14 @@ export const Information = () => {
         <S.Info>
           <S.InfoVertical>
             <div>
-              <h3>THEA bridge protocol</h3>
+              <h3>Hyperbridge cross-chain transfers</h3>
               <p>
-                THEA, Polkadex’s revolutionary interoperability layer, is almost
-                here. Get ready for an easier, safer, and more decentralized
-                token bridge.
+                Cross-chain transfers to and from Polkadex are powered by
+                Hyperbridge, a trust-minimized interoperability protocol — for
+                safer, proof-verified bridging without trusted intermediaries.
               </p>
             </div>
-            <img src="/img/thea.png" alt="Thea mockup" />
+            <img src="/img/hyperbridge.png" alt="Hyperbridge mockup" />
           </S.InfoVertical>
           <S.InfoVertical>
             <div>

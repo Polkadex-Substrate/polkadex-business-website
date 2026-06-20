@@ -30,7 +30,7 @@ const ENLanguage = {
         { text: 'PolkaIDO', new: true },
         { text: 'Staking', new: false },
         { text: 'Liquidity Mining', new: false },
-        { text: 'Thea Bridge', new: true },
+        { text: 'Hyperbridge', new: true },
       ],
     },
     bottomLinks: [
@@ -62,9 +62,9 @@ const ENLanguage = {
         soon: false,
       },
       {
-        title: 'THEA',
-        href: '#',
-        soon: true,
+        title: 'Hyperbridge',
+        href: 'https://hyperbridge.network',
+        soon: false,
       },
       {
         title: 'Explorer',
@@ -118,7 +118,7 @@ const ENLanguage = {
   hero: {
     title: 'The trading engine for Web3 and DeFi',
     description:
-      'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for the DeFi ecosystem built on Substrate',
+      'Polkadex is a fully decentralized peer-to-peer orderbook-based cryptocurrency exchange for DeFi, built on Substrate as a sovereign Layer 1 network',
     ctaButton: 'Orderbook Open Beta',
     ctaLink: 'http://orderbook-beta.polkadex.ee',
     secondaryCtaButton: 'Mainnet Explorer',
@@ -133,7 +133,7 @@ const ENLanguage = {
     description:
       'A unique combination of multiple state-of-the-art technologies like blockchain, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
     fullDescription:
-      'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.\n\nInteresting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
+      'Essentially, Polkadex Orderbook is a non-custodial trading application running directly on the Polkadex Layer 1 network.\n\nInteresting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
     ctaButton: 'Polkadex Orderbook',
     button: 'Open a trading account',
     cards: [
@@ -195,7 +195,7 @@ const ENLanguage = {
       bridge: {
         title: 'Trustless Cross-Chain Transfers',
         description:
-          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Hyperbridge with the Polkadot and EVM networks. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
+          'Trustless cross-chain bridges help to bring any blockchain token to Polkadex in a non-custodial and trustless manner. It functions through Hyperbridge across Ethereum and other EVM networks. Polkadex is built for the future making it possible to integrate with other liquidity providers using forkless upgrades. We do not have access to user funds or smart contract keys',
         ctaButton: 'Learn More',
         plannedBridgesTitle: 'Planned Bridges',
         plannedBridgesCards: [
@@ -211,7 +211,7 @@ const ENLanguage = {
         title: 'Offchain',
         highlight: 'State Commits',
         tag: 'v2',
-        description: `Polkadex Orderbook implements a Layer 2 Trusted Execution Environment (TEE) on top of Polkadex that allows an operator to maintain the Orderbook. The results produced by the TEE contain cryptographic proof. In the event of tampering the blockchain can invalidate the proof thereby not accepting the tampered state submitted by the Operator. The users' funds always stay in the native blockchain and are controlled by the user. In this way Polkadex ensures that only the trader"s private key can initiate a balance transfer`,
+        description: `Polkadex Orderbook uses a Trusted Execution Environment (TEE) on the Polkadex Layer 1 network that allows an operator to maintain the Orderbook. The results produced by the TEE contain cryptographic proof. In the event of tampering the blockchain can invalidate the proof thereby not accepting the tampered state submitted by the Operator. The users' funds always stay in the native blockchain and are controlled by the user. In this way Polkadex ensures that only the trader"s private key can initiate a balance transfer`,
       },
       benefits: {
         title: 'Unmatched performance',
@@ -299,7 +299,7 @@ const ENLanguage = {
     possibleDescription:
       'A unique combination of multiple state-of-the-art technologies like blockchain, TEE, Polkadex Orderbook is at the cutting edge of innovation in DeFi.',
     subDescription: [
-      'Essentially, Polkadex Orderbook is a Layer 2 SubstraTEE (an abstraction layer for the Substrate framework of the SGX Trusted Execution Environment) scaling solution on top of the Polkadex network.',
+      'Essentially, Polkadex Orderbook is a non-custodial trading application running directly on the Polkadex Layer 1 network.',
       'Interesting fact: Polkadex is not only the first project to use the Substrate Abstraction Layer for SGX technology to build a decentralized exchange, but it is also one of the first use cases of this technology in general.',
     ],
   },
@@ -660,7 +660,7 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'THEA Public Testnet', status: true },
+          { title: 'Hyperbridge Public Testnet', status: true },
           {
             title: 'PolkaIDO* Public Testnet',
             status: true,
@@ -1179,7 +1179,7 @@ const ENLanguage = {
         subtitle: 'Runs a high-performance order book',
         desc: 'Matches trades. Provides orders with TEEs for verification and settlement.',
         sec_desc:
-          'The Polkadex network also connects to other blockchains like Ethereum via THEA bridge.',
+          'The Polkadex network also connects to other blockchains like Ethereum via Hyperbridge.',
         button: 'Make your first trade',
         learnMore: 'Learn more',
       },
@@ -1190,7 +1190,7 @@ const ENLanguage = {
     title: 'Truly cross-chain ',
     description: 'Trade tokens from the following supported networks:',
     subDesc: 'Through the Polkadex parachain',
-    dubDescTwo: 'Through THEA',
+    dubDescTwo: 'Through Hyperbridge',
     readMore: 'Read more',
     comeSoon: 'More to come soon!',
     subtitle: 'Better looking',

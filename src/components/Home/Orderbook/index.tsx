@@ -19,8 +19,9 @@ export const Orderbook = () => {
             Non-custodial high frequency trading + advanced trading tools.
           </h4>
           <p>
-            Polkadex Orderbook is a cutting-edge Layer 2 trusted execution
-            environment built on the Polkadex Network.
+            Polkadex Orderbook is a cutting-edge, non-custodial trading
+            application running on the Polkadex Network — our sovereign Layer 1
+            chain.
           </p>
           <S.Actions>
             <a

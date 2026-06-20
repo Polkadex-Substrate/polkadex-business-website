@@ -26,7 +26,7 @@ export const useWallets = () => {
       const { web3Enable, web3Accounts, web3FromAddress } = await import(
         '@polkadot/extension-dapp'
       );
-      await web3Enable('polkadex-thea');
+      await web3Enable('polkadex');
       const allAccounts = await web3Accounts({ ss58Format: 88 });
       const promises = Promise.all(
         allAccounts.map(async (account): Promise<SubstrateAccount> => {

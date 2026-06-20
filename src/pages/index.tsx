@@ -8,7 +8,8 @@ import {
   Polkaido,
   SeenOn,
   Staking,
-  TheaBridge,
+  Hyperbridge,
+  KylixLending,
   Wallets,
 } from 'components/Home';
 import { Seo } from 'components';
@@ -53,7 +54,8 @@ export default function Home() {
           <Staking apy="26.40%" />
           <Partners />
           <BetaProgram />
-          <TheaBridge />
+          <Hyperbridge />
+          <KylixLending />
           <Ecosystem />
           <Polkaido />
           <SeenOn />

@@ -14,6 +14,6 @@ export * from './Popover';
 export * from './SecurityPartners';
 export * from './Staking';
 export * from './StrategicInvestors';
-export * from './Thea';
+export * from './Hyperbridge';
 export * from './UpcomingProjects';
 export * from './Wallets';

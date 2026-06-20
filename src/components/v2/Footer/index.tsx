@@ -59,25 +59,11 @@ export const Footer = ({ isDark = false }) => {
             </li>
             <li>
               <a
-                href="https://polkadex.medium.com/thea-a-better-decentralized-token-bridge-ac2e362a2a2b"
+                href="https://hyperbridge.network"
                 target="_blank"
                 rel="noreferrer"
               >
-                THEA Bridge
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <span>Community</span>
-          <ul>
-            <li>
-              <a
-                href="https://web3.foundation/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Web3 Foundation
+                Hyperbridge
               </a>
             </li>
           </ul>
