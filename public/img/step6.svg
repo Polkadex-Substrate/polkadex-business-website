@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" fill="none" font-family="'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <filter id="s6-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="s6-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6745D2"/>
+      <stop offset="100%" stop-color="#E6007A"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M460,80 C560,140 590,300 540,400 C490,500 360,540 260,500 C160,460 100,340 140,240 C180,140 300,80 380,60 C420,50 440,68 460,80 Z" fill="url(#s6-grad)" opacity="0.85"/>
+  <circle cx="90" cy="580" r="80" fill="#6745D2" opacity="0.4"/>
+
+  <!-- Wallet dashboard card -->
+  <g transform="translate(60 120) rotate(-3)" filter="url(#s6-shadow)">
+    <rect x="0" y="0" width="500" height="440" rx="16" fill="#0D0D10"/>
+    <rect x="0" y="0" width="500" height="52" rx="16" fill="#1C1C26"/>
+    <rect x="0" y="36" width="500" height="16" fill="#1C1C26"/>
+    <text x="24" y="32" font-size="15" font-weight="700" fill="#fff">Wallet Dashboard</text>
+    <text x="440" y="30" font-size="10" fill="#8A94A6">esm...v7Qg</text>
+    <circle cx="470" cy="26" r="10" fill="#1BC29A"/>
+
+    <!-- Overview cards -->
+    <rect x="24" y="70" width="145" height="80" rx="12" fill="#131319"/>
+    <text x="38" y="90" font-size="10" font-weight="600" fill="#8A94A6">BALANCE</text>
+    <text x="38" y="120" font-size="20" font-weight="700" fill="#fff">1,240.5</text>
+    <text x="130" y="120" font-size="11" fill="#8A94A6">PDEX</text>
+    <text x="38" y="138" font-size="10" fill="#1BC29A">+ 12.4 this era</text>
+
+    <rect x="177" y="70" width="145" height="80" rx="12" fill="#131319"/>
+    <text x="191" y="90" font-size="10" font-weight="600" fill="#8A94A6">STAKED</text>
+    <text x="191" y="120" font-size="20" font-weight="700" fill="#E6007A">850.0</text>
+    <text x="283" y="120" font-size="11" fill="#8A94A6">PDEX</text>
+    <text x="191" y="138" font-size="10" fill="#8A94A6">3 validators</text>
+
+    <rect x="330" y="70" width="145" height="80" rx="12" fill="#131319"/>
+    <text x="344" y="90" font-size="10" font-weight="600" fill="#8A94A6">30D APY</text>
+    <text x="344" y="120" font-size="20" font-weight="700" fill="#fff">13.4%</text>
+    <text x="344" y="138" font-size="10" fill="#8A94A6">Realized</text>
+
+    <!-- Stake more panel -->
+    <rect x="24" y="170" width="452" height="240" rx="12" fill="#131319"/>
+    <text x="40" y="196" font-size="14" font-weight="700" fill="#fff">Nominate more</text>
+    <text x="40" y="214" font-size="11" fill="#8A94A6">Increase your stake. Rewards begin next era (~24h).</text>
+
+    <!-- Amount field -->
+    <text x="40" y="242" font-size="10" font-weight="600" fill="#8A94A6">AMOUNT</text>
+    <rect x="40" y="250" width="420" height="50" rx="10" fill="#0D0D10" stroke="#E6007A" stroke-width="1.5"/>
+    <text x="56" y="284" font-size="22" font-weight="700" fill="#fff">150</text>
+    <text x="140" y="284" font-size="12" fill="#8A94A6">PDEX</text>
+    <rect x="400" y="264" width="50" height="22" rx="11" fill="#1C1C26"/>
+    <text x="425" y="279" text-anchor="middle" font-size="10" font-weight="600" fill="#E6007A">MAX</text>
+    <text x="40" y="316" font-size="10" fill="#8A94A6">Available 390.5 PDEX · Keep ~1 PDEX for fees</text>
+
+    <!-- CTA -->
+    <rect x="40" y="332" width="420" height="46" rx="10" fill="#E6007A"/>
+    <text x="250" y="360" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Stake more</text>
+  </g>
+
+  <g>
+    <circle cx="530" cy="490" r="16" fill="#E6007A"/>
+    <text x="530" y="496" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text>
+  </g>
+  <g>
+    <circle cx="165" cy="450" r="16" fill="#E6007A"/>
+    <text x="165" y="456" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text>
+  </g>
+</svg>
