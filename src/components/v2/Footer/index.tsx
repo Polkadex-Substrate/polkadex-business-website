@@ -45,10 +45,10 @@ export const Footer = ({ isDark = false }) => {
             <li>
               <Link href="/orderbook">Orderbook</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="#">Polkapool AMM</Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a
                 href="https://docs.polkadex.ee/IDOPlatform"
                 target="_blank"
@@ -56,7 +56,7 @@ export const Footer = ({ isDark = false }) => {
               >
                 PolkaIDO
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="https://hyperbridge.network"

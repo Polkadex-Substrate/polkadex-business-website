@@ -54,15 +54,15 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     <S.Li>
                       <Link href="/staking">Staking</Link>
                     </S.Li>
-                    <S.Li isDisabled>
+                    {/* <S.Li isDisabled>
                       <Link href="#">PolkaIDO</Link>
                       <span>Soon</span>
-                    </S.Li>
-                    <S.Li isDisabled>
+                    </S.Li> */}
+                    {/* <S.Li isDisabled>
                       <Link href="#">PolkaPool</Link>
                       <span>Soon</span>
-                    </S.Li>
-                    <S.Li>
+                    </S.Li> */}
+                    {/* <S.Li>
                       <a
                         href="https://github.com/Polkadex-Substrate/Polkadex-Open-Beta"
                         target="_blank"
@@ -70,10 +70,10 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                       >
                         Open Beta
                       </a>
-                    </S.Li>
-                    <S.Li>
+                    </S.Li> */}
+                    {/* <S.Li>
                       <Link href="/rewards">Rewards</Link>
-                    </S.Li>
+                    </S.Li> */}
                   </ul>
                 </S.MenuContainer>
                 <S.MenuContainer>
@@ -122,7 +122,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                           Substrate
                         </a>
                       </S.Li>
-                      <S.Li>
+                      {/* <S.Li>
                         <a
                           href="https://polkadex.notion.site/bcac75d5f73c44cf8bf8fc7f75297afb?v=4047f8300ceb431da698b9248612d203"
                           target="_blank"
@@ -130,7 +130,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                         >
                           Ambassadors Hub
                         </a>
-                      </S.Li>
+                      </S.Li> */}
                     </ul>
                   </S.MenuFlex>
                 </S.MenuContainer>

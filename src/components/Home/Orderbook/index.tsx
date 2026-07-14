@@ -80,7 +80,7 @@ export const Orderbook = () => {
           ))}
         </S.FeaturesBox>
       </S.Features>
-      <Listing />
+      {/* <Listing /> — temporarily hidden (List your token on Polkadex Orderbook) */}
     </S.Wrapper>
   );
 };

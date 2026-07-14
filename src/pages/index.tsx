@@ -55,11 +55,11 @@ export default function Home() {
           <Orderbook />
           <Staking apy="26.40%" />
           <Partners />
-          <BetaProgram />
+          {/* <BetaProgram /> — temporarily hidden (Join Polkadex open beta program) */}
           <Hyperbridge />
-          <KylixLending />
+          {/* <KylixLending /> — temporarily hidden */}
           <Ecosystem />
-          <Polkaido />
+          {/* <Polkaido /> — temporarily hidden (PolkaIDO platform) */}
           <SeenOn />
           <Newsletter />
         </main>
