@@ -7,7 +7,7 @@ export const Exchanges = () => {
   return (
     <S.Wrapper>
       <S.Content>
-        <h2>Exchanges</h2>
+        <h2>Where to get PDEX</h2>
         <S.Container>
           {data.map((value, i) => (
             <Card key={i} {...value} i={(i + 1) * 0.4} />
@@ -23,7 +23,10 @@ const Card = ({ title = '', img = null, icon = '', i, ...props }) => {
   return (
     <S.Card target="_blank" rel="noreferrer" {...props}>
       {img ? (
-        <img src={`/img/${img}.png`} alt={`${title} Logo`} />
+        <img
+          src={`/img/${img}${img === 'polkadexMobileIcon' ? '.svg' : '.png'}`}
+          alt={`${title} Logo`}
+        />
       ) : (
         <IconComponent />
       )}

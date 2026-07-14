@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.section`
   display: grid;
   gap: 4rem;
+  width: 100%;
   max-width: 120rem;
   margin: 8rem auto 0 auto;
   @media screen and (max-width: 1200px) {
@@ -34,6 +35,7 @@ export const Hero = styled.div`
       font-size: 3rem;
       font-weight: 500;
       line-height: 1.3;
+      overflow-wrap: break-word;
     }
     p {
       line-height: ${theme.font.lineHeight.normal};
@@ -63,11 +65,12 @@ export const Mark = styled.div`
 
 export const Cards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 2rem;
   max-width: 100rem;
   margin: 0 auto;
   width: 100%;
+  min-width: 0;
 `;
 
 export const Card = styled.div`
@@ -78,6 +81,8 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    min-width: 0;
+    overflow-wrap: break-word;
     h3 {
       font-size: ${theme.font.sizes.large};
       font-weight: 500;

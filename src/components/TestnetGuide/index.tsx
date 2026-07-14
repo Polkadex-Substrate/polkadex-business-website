@@ -1,13 +1,46 @@
 import * as S from './styles';
 
 const sepoliaTokens = [
-  { token: 'USDC', address: '0xb177b85d589B806E9e82C02e5b92180a4B4d90bb' },
-  { token: 'USDT', address: '0x086d2f4CCD29D6CbD921EF0aa09EC20F67f7d69D' },
-  { token: 'WBTC', address: '0xf32CCA1B10C65553690F9F72Afe8df13CC33A406' },
-  { token: 'LINK', address: '0xEfa898bCb94Cc119F4687F47dc77E68f5F097197' },
-  { token: 'UNI', address: '0x491497cf6ec0D498A0586Af9679F0F5dA94e4e24' },
-  { token: 'AAVE', address: '0x8D7392d6e955a87B41383037826157011700B2c8' },
-  { token: 'wstETH', address: '0xcF47f5C69aE7bEee74C12d37fe5842dA64e4f9aa' },
+  {
+    token: 'WETH',
+    address: '0xdeFB8141353e8f190a5dA3813290A6d71cC89be5',
+    decimals: 18,
+  },
+  {
+    token: 'USDC',
+    address: '0x640D825B10CE1527f09474D88322c25Fef74cb66',
+    decimals: 6,
+  },
+  {
+    token: 'USDT',
+    address: '0x2f89c6D23514d50DE6B9759f283b0797380B13cc',
+    decimals: 6,
+  },
+  {
+    token: 'WBTC',
+    address: '0x77037D488Bd4b20cB5BD86D4Bf7741887cd2Cf31',
+    decimals: 8,
+  },
+  {
+    token: 'LINK',
+    address: '0xc5b50D42df0fB4CEC7c539417C310D586Fb9d254',
+    decimals: 18,
+  },
+  {
+    token: 'UNI',
+    address: '0x1628b0746d94f8392c3e78CfBea0a9EF288ABc4C',
+    decimals: 18,
+  },
+  {
+    token: 'AAVE',
+    address: '0xb41c54efBEB52679B81f120321f71b4E226e8BfA',
+    decimals: 18,
+  },
+  {
+    token: 'wstETH',
+    address: '0x84bA5D441C10614B38e8B2032Ffe3B026a7ADB4d',
+    decimals: 18,
+  },
 ];
 
 export const TestnetGuide = () => {
@@ -168,6 +201,7 @@ export const TestnetGuide = () => {
             <tr>
               <th>Token</th>
               <th>Contract address</th>
+              <th>Decimals</th>
             </tr>
           </thead>
           <tbody>
@@ -177,6 +211,7 @@ export const TestnetGuide = () => {
                 <td>
                   <code>{row.address}</code>
                 </td>
+                <td>{row.decimals}</td>
               </tr>
             ))}
           </tbody>

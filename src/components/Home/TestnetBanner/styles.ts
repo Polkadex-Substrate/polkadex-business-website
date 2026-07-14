@@ -2,9 +2,14 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: 120rem;
+    max-width: 100rem;
     margin: 2rem auto 0 auto;
-    padding: 0 2rem;
+    /* Match the homepage content inset: no side padding on desktop,
+       1rem on mobile (same as Hero/Wallets) so it lines up. */
+    padding: 0;
+    @media screen and (max-width: 1000px) {
+      padding: 0 1rem;
+    }
   `}
 `;
 

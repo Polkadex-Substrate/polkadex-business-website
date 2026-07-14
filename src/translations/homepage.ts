@@ -939,7 +939,7 @@ const ENLanguage = {
     {
       title: 'Hestia release',
       emoji: '🔥',
-      active: true,
+      completed: true,
       phase: 'Phase 1',
       items: [
         'Launch new user sign-up via wallet integration instead of email registration.',

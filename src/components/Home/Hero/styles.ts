@@ -53,11 +53,13 @@ export const HeroImageAside = styled.div`
   gap: 1rem;
   @media screen and (max-width: 1024px) {
     transform: scale(0.8);
-    right: -3rem;
+    transform-origin: bottom right;
+    right: 0;
   }
   @media screen and (max-width: 740px) {
     transform: scale(0.7);
-    right: -5rem;
+    transform-origin: bottom right;
+    right: 0;
     bottom: 0;
   }
   @media screen and (max-width: 540px) {

@@ -9,6 +9,9 @@ const GlobalStyles = createGlobalStyle`
      color: ${theme.colors.text};
      font-family: ${theme.font.family};
      font-size: ${theme.font.sizes.medium};
+     width: 100%;
+     max-width: 100%;
+     overflow-x: clip;
    }
    svg {
      /* fill: ${theme.colors.text}; */
@@ -21,6 +24,8 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   * {

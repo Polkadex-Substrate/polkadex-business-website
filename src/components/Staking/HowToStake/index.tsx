@@ -22,9 +22,9 @@ const data = [
   },
   {
     id: 2,
-    title: 'Get some native PDEX through an exchange',
+    title: 'Get some native PDEX',
     description:
-      '<p>Get some native PDEX from Gate.io or AscendEX and send it to your account. If you have ERC-20 PDEX, you will need to <a href="https://polkadex.medium.com/pdex-migration-two-ways-about-it-6bd49724509c" target="_blank" rel="noreferrer"> migrate it </a> to native PDEX in order to stake it.</p>',
+      '<p>PDEX has been delisted from all centralized exchanges. Head to <a href="https://buypdex.com" target="_blank" rel="noreferrer">buypdex.com</a> to swap into native PDEX and send it to your account. If you still hold ERC-20 PDEX, you will need to <a href="https://polkadex.medium.com/pdex-migration-two-ways-about-it-6bd49724509c" target="_blank" rel="noreferrer">migrate it</a> to native PDEX in order to stake it.</p>',
     image: 'step3',
   },
   {
@@ -148,22 +148,16 @@ export const HowToStake = () => {
           </S.OthersWaysCard>
           <S.OthersWaysCard>
             <S.OthersWaysCardWrapper>
-              <div>
-                <Icons.AscendEX />
-              </div>
-              <span>AscendEx</span>
+              <img src="img/polkadexMobileIcon.svg" alt="" />
+              <span>BuyPDEX.com</span>
               <p>
-                Buy PDEX and stake it without ever having to leave your
-                exchange.
+                PDEX is no longer listed on centralized exchanges. Swap into
+                native PDEX directly through buypdex.com.
               </p>
             </S.OthersWaysCardWrapper>
 
-            <a
-              href="https://ascendex.com/en/cashtrade-spottrading/usdt/pdex"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Stake PDEX with AscendEX
+            <a href="https://buypdex.com" target="_blank" rel="noreferrer">
+              Get PDEX to Stake
             </a>
           </S.OthersWaysCard>
         </S.OthersWaysContent>
@@ -195,7 +189,7 @@ const Card = ({ title, description, image, page }) => {
           )}
         </S.SwipperCardActions>
       </S.SwipperCardWrapper>
-      <img src={`/img/${image}.png`} alt="" />
+      <img src={`/img/${image}.svg`} alt="" />
     </S.SwipperCard>
   );
 };

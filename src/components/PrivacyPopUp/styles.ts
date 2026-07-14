@@ -9,12 +9,22 @@ export const Wrapper = styled.div<Partial<Props>>`
     bottom: 2%;
     left: 0;
     right: 0;
+    width: auto;
     max-width: 1200px;
     margin: 0 auto;
     background-color: ${theme.colors.inverse}D8;
     box-shadow: ${theme.shadow.primary};
     -webkit-backdrop-filter: blur(20px);
     display: ${visible ? 'flex' : 'none'};
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+
+    @media screen and (max-width: 600px) {
+      bottom: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 0;
+    }
 
     & a {
       transition: ${theme.transition.default};
@@ -25,8 +35,12 @@ export const Wrapper = styled.div<Partial<Props>>`
   padding: 2rem;
   border-radius: 2rem 2rem 2rem 0;
   align-items: center;
+  & > div {
+    min-width: 0;
+  }
   & p {
     line-height: 1.4;
+    overflow-wrap: anywhere;
   }
   & a {
     margin-left: 1rem;
