@@ -1,64 +1,94 @@
-import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   ${({ theme }) => css`
-    max-width: 100rem;
-    margin: 7rem auto 0 auto;
-    border-top: 1px solid ${theme.colors.secondaryBackgroundOpacity};
-    padding-top: 4rem;
-    @media screen and (max-width: 1000px) {
-      padding-left: 1rem;
-      padding-right: 1rem;
+    position: relative;
+    padding: 8rem 2rem;
+    max-width: 130rem;
+    margin: 4rem auto;
+    overflow: hidden;
+    isolation: isolate;
+
+    ::before,
+    ::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.22;
+      z-index: -1;
     }
-    h2 {
-      font-weight: 400;
-      font-size: 1.8rem;
+    ::before {
+      background: ${theme.colors.secondary};
+      width: 44rem;
+      height: 44rem;
+      top: -14rem;
+      right: -10rem;
+    }
+    ::after {
+      background: ${theme.colors.primary};
+      width: 46rem;
+      height: 46rem;
+      bottom: -16rem;
+      left: -10rem;
+    }
+
+    @media screen and (max-width: 960px) {
+      padding: 6rem 2rem;
+      margin: 2rem auto;
     }
   `}
 `;
 
 export const Content = styled.div`
-  display: grid;
-  gap: 3rem;
-  margin-top: 3rem;
-`;
-export const ContentFlex = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    flex-wrap: wrap;
-    :not(:last-child) {
-      border-bottom: 1px solid ${theme.colors.secondaryBackgroundOpacity};
-      padding-bottom: 2rem;
-    }
-  `}
+  max-width: 110rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 `;
 
-export const Card = styled(motion.div)`
+export const Row = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.6rem;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 520px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+export const Card = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
-    list-style: none;
-    width: 150px;
-    height: 60px;
-    cursor: pointer;
-    padding: 1rem;
-    :not(:last-child) {
-      border-right: 1px solid ${theme.colors.secondaryBackgroundOpacity};
-      padding-right: 1.5rem;
-      margin-right: 1.5rem;
+    height: 7.2rem;
+    padding: 1.4rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
+      background 0.3s ease-in-out;
+    :hover {
+      transform: translateY(-0.3rem);
+      border-color: ${theme.colors.primary}44;
+      background: ${theme.colors.primary}08;
     }
+    svg,
     img {
+      max-width: 75%;
+      max-height: 65%;
       object-fit: contain;
-      max-height: 4rem;
-      max-width: 12rem;
+      opacity: 0.85;
+      transition: opacity 0.3s ease-in-out;
     }
-    svg {
-      width: 100%;
-    }
-    :not(:last-child) {
-      /* border-right: 1px solid ${theme.colors.secondaryBackground}; */
+    :hover svg,
+    :hover img {
+      opacity: 1;
     }
   `}
 `;

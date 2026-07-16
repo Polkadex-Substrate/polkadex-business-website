@@ -49,12 +49,14 @@ export const Content = styled.div`
 `;
 
 export const Row = styled.div`
+  /* Locked to 7 columns on desktop so the 14 partners land in exactly two
+     equal rows. Falls back to 4 / 2 on smaller viewports. */
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.6rem;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.2rem;
 
   @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   @media screen and (max-width: 520px) {
     grid-template-columns: repeat(2, 1fr);
@@ -66,11 +68,11 @@ export const Card = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 10rem;
-    padding: 2rem;
+    height: 7.2rem;
+    padding: 1.2rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border: 1px solid ${theme.colors.secondaryBackground};
-    border-radius: 1.2rem;
+    border-radius: 1rem;
     transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
       background 0.3s ease-in-out;
     :hover {
@@ -80,8 +82,8 @@ export const Card = styled.div`
     }
     svg,
     img {
-      max-width: 70%;
-      max-height: 60%;
+      max-width: 78%;
+      max-height: 65%;
       object-fit: contain;
       opacity: 0.85;
       transition: opacity 0.3s ease-in-out;

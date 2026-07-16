@@ -1,50 +1,21 @@
+// Two rows of 7 = 14 partners. Reordered so the strongest names anchor each row.
 export const data = [
   [
-    {
-      img: 'kylix',
-      alt: 'Kylix Finance logo',
-    },
-    {
-      img: 'acala',
-      alt: 'acala logo',
-    },
-    {
-      icon: 'Parallel',
-    },
-    {
-      img: 'ajuna',
-      alt: 'Ajuna Network logo',
-    },
-    {
-      img: 'simplex',
-      alt: 'simplex logo',
-    },
-    {
-      icon: 'Equilibrium',
-    },
-    {
-      icon: 'Bifrost',
-    },
+    { img: 'acala', alt: 'Acala logo' },
+    { icon: 'Parallel' },
+    { icon: 'Bifrost' },
+    { icon: 'Equilibrium' },
+    { img: 'ajuna', alt: 'Ajuna Network logo' },
+    { img: 'kylix', alt: 'Kylix Finance logo' },
+    { img: 'simplex', alt: 'Simplex logo' },
   ],
   [
     { icon: 'Onfinality' },
-    {
-      img: 'subscan',
-      alt: 'subscan logo',
-    },
+    { img: 'subscan', alt: 'Subscan logo' },
+    { icon: 'Hummingbot' },
     { icon: 'Cere' },
-    {
-      icon: 'Hummingbot',
-    },
     { icon: 'Polkastarter' },
-    {
-      icon: 'Gsr',
-    },
-  ],
-  [
-    {
-      img: 'tradingView',
-      alt: 'tradingView logo',
-    },
+    { icon: 'Gsr' },
+    { img: 'tradingView', alt: 'TradingView logo' },
   ],
 ];
