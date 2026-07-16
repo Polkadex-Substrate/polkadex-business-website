@@ -429,36 +429,12 @@ const ENLanguage = {
       'We started our journey with the idea of bringing the best DeFi experience to users and keep moving closer to our goal with each step',
     cards: [
       {
-        title: 'Q2 2023',
-        alignRight: true,
-        invert: true,
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: -6,
-          },
-          vertical: {
-            side: 'top',
-            distance: 7,
-          },
-        },
-        items: [
-          { title: 'Code Audit of Solochain, Orderbook', status: true },
-          { title: 'Crowdloan Rewards (Early Q2)', status: true },
-          { title: 'Bridge with Mainnet', status: true },
-          {
-            title: 'Integration with Trading Bots and Market Makers',
-            status: true,
-          },
-        ],
-      },
-      {
-        title: 'Q1 2023',
+        title: '2027 →',
         alignRight: false,
         position: {
           horizontal: {
             side: 'right',
-            distance: 16,
+            distance: 26,
           },
           vertical: {
             side: 'top',
@@ -466,118 +442,15 @@ const ENLanguage = {
           },
         },
         items: [
-          {
-            title: 'Hyperbridge Integration - Internal Testnet',
-            status: true,
-          },
-          { title: 'XCM Channels with Parachain - Testnet', status: true },
-          {
-            title: 'Code Audit of Parachain & Hyperbridge',
-            status: true,
-          },
-          { title: 'Crowdloan Rewards Pallet - Awaiting Audit', status: true },
-          { title: 'Parachain listings on Polkadex', status: true },
+          { title: 'Cross-chain deposits and withdrawals', status: false },
+          { title: 'Liquidity Incentive Program', status: false },
+          { title: 'Market Maker onboarding at scale', status: false },
+          { title: 'Strategic Funding Round', status: false },
+          { title: 'Polkadex DAO · Sudo-key removal', status: false },
         ],
       },
       {
-        title: 'Q4 2022',
-        alignRight: true,
-        invert: true,
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 22,
-          },
-          vertical: {
-            side: 'top',
-            distance: 25,
-          },
-        },
-        items: [
-          { title: 'Mobile App Public Testnet', status: true },
-          { title: 'Polkadex Orderbook Mainnet', status: true },
-        ],
-      },
-      {
-        title: 'Q3 2022',
-        alignRight: false,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: 10,
-          },
-          vertical: {
-            side: 'top',
-            distance: 6.7,
-          },
-        },
-        items: [
-          { title: 'Orderbook Testnet with Withdrawals', status: true },
-          {
-            title: 'Cross Chain Transfer of test tokens to trade',
-            status: true,
-          },
-        ],
-      },
-      {
-        title: 'Q2 2022',
-        alignRight: false,
-        invert: true,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: -5,
-          },
-          vertical: {
-            side: 'bottom',
-            distance: 48,
-          },
-        },
-        items: [
-          { title: 'Hyperbridge Public Testnet', status: true },
-          {
-            title: 'PolkaIDO* Public Testnet',
-            status: true,
-            subInfo: 'Token minting + token bridging',
-            isHoverable: true,
-          },
-
-          { title: 'Open Beta Program', status: true },
-          {
-            title: 'Polkadex Orderbook Public Testnet*',
-            subInfo: 'With blockchain integration',
-            isHoverable: true,
-            status: true,
-          },
-        ],
-      },
-      {
-        title: 'Q1 2022',
-        alignRight: true,
-        position: {
-          horizontal: {
-            side: 'left',
-            distance: 5,
-          },
-          vertical: {
-            side: 'top',
-            distance: 35,
-          },
-        },
-        items: [
-          { title: 'PolkaIDO Beta', status: true },
-          { title: 'PolkaIDO Public Testnet', status: true },
-          { title: 'Polkadex Crowdloan Campaign', status: true },
-          {
-            title: 'Polkadex Orderbook Beta*',
-            status: true,
-            subInfo: 'Without blockchain integration',
-            isHoverable: true,
-          },
-        ],
-      },
-      {
-        title: 'Q3-Q4 2021',
+        title: '2026',
         alignRight: true,
         invert: true,
         position: {
@@ -586,45 +459,106 @@ const ENLanguage = {
             distance: 4,
           },
           vertical: {
-            side: 'bottom',
-            distance: 25,
+            side: 'top',
+            distance: 17,
           },
         },
         items: [
-          { title: 'Mainnet Launch', status: true },
-          { title: 'ERC20 to native PDEX migration', status: true },
-          { title: 'Launch of Private Beta Tester Program', status: true },
-          { title: 'Parachain Strategy Development', status: true },
+          { title: 'Polkadex 2.0 Testnet relaunch (Q3)', status: true },
+          { title: 'Hyperbridge integration', status: true },
+          { title: 'Orderbook Mainnet relaunch (Q4)', status: false },
+          { title: 'Market-making infrastructure re-activated', status: false },
         ],
       },
       {
-        title: 'Q1-Q2 2021',
+        title: '2024 – 2025',
+        alignRight: false,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 4,
+          },
+          vertical: {
+            side: 'top',
+            distance: 2,
+          },
+        },
+        items: [
+          { title: 'Hestia release — wallet-based sign-up', status: true },
+          { title: 'Automatic fee conversion to PDEX', status: true },
+          { title: 'Hummingbot connector integration', status: true },
+          { title: 'Launch-phase market maker onboarded', status: true },
+          { title: 'First spot market pair listings', status: true },
+        ],
+      },
+      {
+        title: '2023',
         alignRight: true,
         invert: true,
         position: {
           horizontal: {
             side: 'left',
-            distance: 34,
+            distance: -3,
+          },
+          vertical: {
+            side: 'top',
+            distance: 58,
+          },
+        },
+        items: [
+          { title: 'Hyperbridge internal testnet', status: true },
+          { title: 'XCM channels with parachains', status: true },
+          { title: 'Code audits — Parachain & Hyperbridge', status: true },
+          { title: 'Parachain listings on Polkadex', status: true },
+        ],
+      },
+      {
+        title: '2022',
+        alignRight: false,
+        position: {
+          horizontal: {
+            side: 'right',
+            distance: 0,
           },
           vertical: {
             side: 'bottom',
-            distance: 12,
+            distance: 48,
+          },
+        },
+        items: [
+          { title: 'Polkadex Orderbook Mainnet', status: true },
+          { title: 'Orderbook Public Testnet + Beta', status: true },
+          { title: 'Open Beta Program', status: true },
+          { title: 'PolkaIDO Beta + Public Testnet', status: true },
+          { title: 'Mobile App Public Testnet', status: true },
+        ],
+      },
+      {
+        title: '2021',
+        alignRight: true,
+        invert: true,
+        position: {
+          horizontal: {
+            side: 'left',
+            distance: 25,
+          },
+          vertical: {
+            side: 'bottom',
+            distance: 15,
           },
         },
         items: [
           { title: 'Public Sale', status: true },
-          {
-            title: 'Testnet V2.0 Launch',
-            status: true,
-          },
-          { title: 'Testnet V3.0 Launch', status: true },
-          { title: 'Security Audit', status: true },
+          { title: 'Testnet V2 + V3 launches', status: true },
+          { title: 'Security audit', status: true },
+          { title: 'Mainnet launch', status: true },
+          { title: 'ERC-20 → native PDEX migration', status: true },
         ],
       },
       {
-        title: 'Q4 2020',
-        invert: true,
+        title: '2020',
         alignRight: true,
+        invert: true,
         position: {
           horizontal: {
             side: 'left',
@@ -636,30 +570,11 @@ const ENLanguage = {
           },
         },
         items: [
-          { title: 'Website Launch', status: true },
-          { title: 'Whitepaper Release', status: true },
-          { title: 'Testnet V1.0 Launch', status: true },
-          { title: 'SAFT based Token PreSale', status: true },
-        ],
-      },
-      {
-        title: 'Q3 2020',
-        alignRight: true,
-        invert: true,
-        position: {
-          horizontal: {
-            side: 'right',
-            distance: 2,
-          },
-          vertical: {
-            side: 'bottom',
-            distance: -6,
-          },
-        },
-        items: [
-          { title: 'Web3 Milestone #1', status: true },
-          { title: 'Refactoring Polkadex Engine', status: true },
-          { title: 'Code Documentation', status: true },
+          { title: 'Web3 Foundation Milestone #1', status: true },
+          { title: 'Whitepaper release', status: true },
+          { title: 'Website launch', status: true },
+          { title: 'Testnet V1', status: true },
+          { title: 'SAFT-based token pre-sale', status: true },
         ],
       },
     ],
@@ -952,32 +867,46 @@ const ENLanguage = {
       ],
     },
     {
-      title: 'Apollo release',
-      phase: 'Phase 2',
-      emoji: '🍾',
+      title: 'Polkadex 2.0 · Testnet',
+      phase: 'Q3 2026',
+      emoji: '🚀',
+      active: true,
       items: [
-        'Extend the Hyperbridge connector to Ethereum.',
-        'Facilitate native integration of MetaMask and other Ethereum wallets with Polkadex Orderbook.',
-        'Launch the Liquidity Mining Program.',
-        'Integrate with DEX aggregators built on Ethereum.',
-        'Onboard Market Makers/Liquidity Providers to Polkadex Orderbook.',
-        'Introduce a democratic listing process for projects on Polkadex Orderbook through community voting.',
+        'Orderbook Testnet relaunch on the new Polkadex 2.0 architecture.',
+        'Hyperbridge integration for cross-chain testnet transfers.',
+        'Public testing via the Testnet Guide with live cross-chain PDEX flows.',
       ],
     },
     {
-      title: 'Athena release',
-      phase: 'Phase 3',
+      title: 'Polkadex 2.0 · Mainnet',
+      phase: 'Q4 2026',
       emoji: '⚡',
       items: [
-        'Extend the Hyperbridge connector to L2s and EVM-compatible chains.',
-        'Enable native dApp integration with 3rd party service providers.',
+        'Orderbook Mainnet relaunch on the new architecture.',
+        'Trading live across native and Hyperbridge-bridged assets.',
+        'Market-making infrastructure re-activated with launch partners.',
       ],
     },
     {
-      title: 'Zeus release',
-      phase: 'Phase 4',
+      title: 'Post-launch expansion',
+      phase: 'Next',
+      emoji: '🌐',
+      items: [
+        'Cross-chain deposits and withdrawals via Hyperbridge.',
+        'Liquidity Incentive Program for LPs.',
+        'Market Maker onboarding at scale.',
+        'Strategic Funding Round to accelerate execution.',
+      ],
+    },
+    {
+      title: 'Long-term vision',
+      phase: 'Beyond',
       emoji: '💯',
-      items: ['Initiate Polkadex DAO.', 'Remove the Sudo-key.'],
+      items: [
+        'Democratic listing process for new markets via governance.',
+        'Native dApp integrations with 3rd-party service providers.',
+        'Initiate Polkadex DAO and remove the Sudo-key.',
+      ],
     },
   ],
 };

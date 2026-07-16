@@ -17,6 +17,7 @@ export * from './AlertDiscord';
 export * from './AnimatedDarkGradient';
 export * from './Announcement';
 export * from './AvailableMessage';
+export * from './BackToHome';
 export * from './BrandAssets';
 export * from './Button';
 export * from './Seo';

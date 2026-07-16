@@ -1,4 +1,5 @@
-import { Footer, Header, Newsletter, Seo } from 'components';
+import { BackToHome, Seo } from 'components';
+import { Footer, HeaderFlat, Newsletter } from 'components/v2';
 import { About, Hero, Information } from 'components/Listing';
 import Script from 'next/script';
 import { useEffect } from 'react';
@@ -43,14 +44,15 @@ export function Template() {
           description="List your crypto asset on the Polkadex Orderbook, the decentralized cryptocurrency exchange (DEX) built for high-frequency trading."
           path="/listing"
         />
-        <Header {...header} />
+        <HeaderFlat />
         <main>
+          <BackToHome />
           <Hero />
           <About />
           <Information />
-          <Newsletter {...newsletter} />
+          <Newsletter />
         </main>
-        <Footer {...footer} />
+        <Footer />
       </S.Wrapper>
       <style global jsx>{`
         body {

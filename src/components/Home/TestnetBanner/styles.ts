@@ -32,6 +32,7 @@ export const Text = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    max-width: 62rem;
     span {
       font-size: ${theme.font.sizes.small};
       font-weight: 600;
@@ -42,11 +43,22 @@ export const Text = styled.div`
     p {
       font-size: ${theme.font.sizes.large};
       line-height: 1.4;
+      strong {
+        color: ${theme.colors.primary};
+        font-weight: 600;
+      }
     }
   `}
 `;
 
-export const Action = styled.a`
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+`;
+
+export const PrimaryAction = styled.a`
   ${({ theme }) => css`
     flex-shrink: 0;
     padding: 1rem 2.4rem;
@@ -61,3 +73,23 @@ export const Action = styled.a`
     }
   `}
 `;
+
+export const SecondaryAction = styled.a`
+  ${({ theme }) => css`
+    flex-shrink: 0;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+    color: ${theme.colors.text};
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease-in-out;
+    :hover {
+      opacity: 0.8;
+    }
+  `}
+`;
+
+/** @deprecated Kept for any legacy imports; use PrimaryAction / SecondaryAction. */
+export const Action = PrimaryAction;

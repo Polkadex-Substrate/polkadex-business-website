@@ -9,13 +9,22 @@ export const TestnetBanner = () => {
         <S.Text>
           <span>Orderbook Testnet</span>
           <p>
-            Getting ready for the Orderbook testnet launch? Learn how to claim
-            testnet tokens and move them cross-chain.
+            <strong>It&apos;s live.</strong> Claim free testnet tokens, place
+            orders, and move assets cross-chain via Hyperbridge.
           </p>
         </S.Text>
-        <Link href="/testnet-guide" passHref legacyBehavior>
-          <S.Action>Read the guide</S.Action>
-        </Link>
+        <S.Actions>
+          <S.PrimaryAction
+            href="https://orderbook-app-test.polkadex.ee/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Try the testnet
+          </S.PrimaryAction>
+          <Link href="/testnet-guide" passHref legacyBehavior>
+            <S.SecondaryAction>Read the guide</S.SecondaryAction>
+          </Link>
+        </S.Actions>
       </S.Banner>
     </S.Wrapper>
   );

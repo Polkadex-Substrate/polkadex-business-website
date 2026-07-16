@@ -8,13 +8,15 @@ import {
   Polkaido,
   SeenOn,
   Staking,
+  Tokenomics,
+  HowToBuy,
   Hyperbridge,
   KylixLending,
   TestnetBanner,
   Wallets,
 } from 'components/Home';
 import { Seo } from 'components';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, Newsletter } from 'components/v2';
 import Script from 'next/script';
 import * as S from 'styles/home';
 
@@ -38,22 +40,22 @@ export default function Home() {
       />
       <S.Wrapper>
         <Seo path="/" />
-        <Header
-          links={['Products', 'Resources', 'About', 'Community']}
-          cta={{
-            title: 'Try the Testnet',
-            href: process.env.ORDERBOOK_LINK,
-          }}
-        />
+        <HeaderFlat />
         <main>
           <TestnetBanner />
           <S.Container>
             <Hero />
             <Wallets />
-            <Exchanges />
+            {/* <Exchanges /> — replaced by richer <HowToBuy /> further down,
+                which pairs with <Tokenomics /> as the investor-facing story. */}
           </S.Container>
           <Orderbook />
-          <Staking apy="26.40%" />
+          <Tokenomics />
+          <HowToBuy />
+          {/* apy prop omitted intentionally — Staking pulls it live from
+              useStakingStats() with a fallback to the current on-chain
+              snapshot. Pass e.g. apy="14.2%" to force a specific value. */}
+          <Staking />
           <Partners />
           {/* <BetaProgram /> — temporarily hidden (Join Polkadex open beta program) */}
           <Hyperbridge />

@@ -1,14 +1,19 @@
 import * as Icons from 'components/Icons';
+import { useStakingStats } from 'hooks/useStakingStats';
 import Link from 'next/link';
 
 import * as S from './styles';
 
-export const Staking = ({ apy = '' }) => {
+export const Staking = ({ apy = '' }: { apy?: string }) => {
+  const live = useStakingStats();
+  // Use the live APY when available; the `apy` prop remains as a manual
+  // override for cases where an explicit number is needed.
+  const displayedApy = apy || live.apy;
   return (
     <S.Wrapper>
       <S.Container>
         <AsideLeft />
-        <AsideRight apy={apy} />
+        <AsideRight apy={displayedApy} />
       </S.Container>
       <S.HeroTopImage>
         <Icons.StakeLineTop />

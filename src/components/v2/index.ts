@@ -2,6 +2,7 @@ export * from './Footer';
 export * from './ForInvestors';
 export * from './ForTeams';
 export * from './Header';
+export * from './HeaderFlat';
 export * from './Hero';
 export * from './Media';
 export * from './Newsletter';

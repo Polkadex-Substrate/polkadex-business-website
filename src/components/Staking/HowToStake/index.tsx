@@ -77,7 +77,7 @@ export const HowToStake = () => {
         <S.ContentVideo>
           <S.ContentVideoWrapper>
             <S.ContentVideoBox
-              href="https://www.youtube.com/watch?v=dEoJz7jOMg0&t=6s"
+              href="https://youtu.be/_67DVYNl3-4"
               target="_blank"
             >
               <h4>Play Video</h4>
@@ -86,7 +86,20 @@ export const HowToStake = () => {
                 <strong>how to stake PDEX on Polkadex mainnet</strong>.
               </p>
               <div>
-                <img src="/img/youtubeTumb.png" alt="" />
+                {/* Pulls the thumbnail live from YouTube, so any thumbnail
+                    change on the video updates here automatically. Falls back
+                    to a smaller resolution if maxresdefault isn't set. */}
+                <img
+                  src="https://img.youtube.com/vi/_67DVYNl3-4/maxresdefault.jpg"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (img.src.includes('maxresdefault')) {
+                      img.src =
+                        'https://img.youtube.com/vi/_67DVYNl3-4/hqdefault.jpg';
+                    }
+                  }}
+                  alt="How to Stake PDEX — video thumbnail"
+                />
                 <Icons.YoutubeOriginal />
               </div>
             </S.ContentVideoBox>

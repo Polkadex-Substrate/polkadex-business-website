@@ -31,12 +31,16 @@ export const Hero = () => {
               cryptocurrency exchange for the DeFi ecosystem built on Substrate.
             </h2>
             <S.Actions>
+              {/* Primary CTA aligned with the header (Get PDEX). We use
+                  "Get" rather than "Buy" as a lighter-touch, utility-first
+                  framing that reduces exposure under crypto-marketing regs
+                  (SEC/MiCA/UK FCA financial-promotions rules). */}
               <a
-                href={process.env.ORDERBOOK_LINK}
+                href="https://buypdex.com"
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                Try Our Testnet
+                Get PDEX
               </a>
               <a
                 href="https://explorer.polkadex.ee"

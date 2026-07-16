@@ -1,5 +1,5 @@
-import { BrandAssetsCards, BrandAssetsHero, Seo } from 'components';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { BackToHome, BrandAssetsCards, BrandAssetsHero, Seo } from 'components';
+import { Footer, HeaderFlat, Newsletter } from 'components/v2';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
@@ -28,14 +28,9 @@ export default function MediaKit() {
           description="Download Polkadex logos, icons, product screenshots and brand guidelines for use in web and print media."
           path="/mediaKit"
         />
-        <Header
-          links={['Products', 'Resources', 'About', 'Community']}
-          cta={{
-            title: 'Try the Testnet',
-            href: process.env.ORDERBOOK_LINK,
-          }}
-        />
+        <HeaderFlat />
         <main>
+          <BackToHome />
           <BrandAssetsHero />
           <BrandAssetsCards />
           <Newsletter />

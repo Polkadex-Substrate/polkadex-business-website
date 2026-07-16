@@ -100,6 +100,84 @@ export const Note = styled.blockquote`
   `}
 `;
 
+export const Pitch = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    margin: 3rem 0 2rem;
+    @media screen and (max-width: 760px) {
+      grid-template-columns: 1fr;
+    }
+  `}
+`;
+
+export const PitchCard = styled.div`
+  ${({ theme }) => css`
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid ${theme.colors.secondaryBackground};
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: ${theme.colors.primary};
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.55;
+      margin: 0;
+      opacity: 0.85;
+    }
+  `}
+`;
+
+export const FeedbackBlock = styled.div`
+  ${({ theme }) => css`
+    margin: 4rem 0 2rem;
+    padding: 2.4rem 2.4rem;
+    border-radius: 1rem;
+    background: ${theme.colors.primary}12;
+    border: 1px solid ${theme.colors.primary}55;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.6rem;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      color: ${theme.colors.text};
+    }
+    p {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      opacity: 0.9;
+      max-width: 52rem;
+    }
+    a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 0.6rem;
+      background: ${theme.colors.primary};
+      color: ${theme.colors.white} !important;
+      font-weight: 500;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: opacity 0.2s ease-in-out;
+      :hover {
+        opacity: 0.9;
+      }
+    }
+  `}
+`;
+
 export const TableWrapper = styled.div`
   ${({ theme }) => css`
     overflow-x: auto;

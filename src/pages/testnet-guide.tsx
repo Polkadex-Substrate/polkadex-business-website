@@ -1,5 +1,5 @@
-import { Seo, TestnetGuide } from 'components';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { BackToHome, Seo, TestnetGuide } from 'components';
+import { Footer, HeaderFlat, Newsletter } from 'components/v2';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
@@ -24,18 +24,14 @@ export default function TestnetGuidePage() {
       />
       <S.Wrapper>
         <Seo
-          title="Polkadex - Testnet Cross-Chain Transfer Guide"
-          description="How to get testnet tokens and transfer them between Polkadex and Sepolia (Ethereum testnet) ahead of the Orderbook testnet launch."
+          title="Polkadex Orderbook Testnet is Live"
+          description="A live, non-custodial, cross-chain orderbook on Polkadex you can trade on today. Claim free testnet tokens, place orders, and move assets cross-chain via Hyperbridge."
           path="/testnet-guide"
+          image="https://polkadex.ee/testnetCardImage.jpg"
         />
-        <Header
-          links={['Products', 'Resources', 'About', 'Community']}
-          cta={{
-            title: 'Try the Testnet',
-            href: process.env.ORDERBOOK_LINK,
-          }}
-        />
+        <HeaderFlat />
         <main>
+          <BackToHome />
           <TestnetGuide />
           <Newsletter />
         </main>

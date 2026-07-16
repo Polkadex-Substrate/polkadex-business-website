@@ -47,15 +47,59 @@ export const TestnetGuide = () => {
   const exchangeUrl = process.env.ORDERBOOK_LINK;
   return (
     <S.Wrapper>
-      <h1>Cross-Chain Transfer Guide — Polkadex Testnet</h1>
+      <h1>Polkadex Orderbook Testnet is Live</h1>
       <S.Lead>
-        This guide explains how to get testnet tokens and transfer them between{' '}
-        <strong>Polkadex</strong> and{' '}
-        <strong>Sepolia (Ethereum testnet)</strong>.
+        A live, non-custodial, cross-chain orderbook you can trade on today.
+        This is a public testnet — no rewards, real product. Help us harden it
+        before mainnet.
       </S.Lead>
       <S.Cta href={exchangeUrl} target="_blank" rel="noreferrer">
         Open the Testnet Exchange
       </S.Cta>
+
+      <S.Pitch>
+        <S.PitchCard>
+          <h4>What this is</h4>
+          <p>
+            A public testnet of the Polkadex Orderbook — non-custodial, with
+            live cross-chain transfers via Hyperbridge between Polkadex and
+            Sepolia.
+          </p>
+        </S.PitchCard>
+        <S.PitchCard>
+          <h4>Why test</h4>
+          <p>
+            Help harden the product before mainnet relaunch. No points, no
+            farming, no rewards — just early access to the real thing.
+          </p>
+        </S.PitchCard>
+        <S.PitchCard>
+          <h4>What to expect</h4>
+          <p>
+            It&apos;s a testnet, so things break. Bridged assets ride on
+            Sepolia, and cross-chain transfers take about 20 minutes to
+            settle.
+          </p>
+        </S.PitchCard>
+      </S.Pitch>
+
+      <S.FeedbackBlock>
+        <div>
+          <h3>Found a bug? Tell us.</h3>
+          <p>
+            The testnet lives or dies on your feedback. Drop bug reports and
+            observations in the <strong>#testnet-feedback</strong> channel on
+            our Discord — we read every one.
+          </p>
+        </div>
+        <a
+          href="https://discord.com/invite/Uvua83QAzk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Report on Discord
+        </a>
+      </S.FeedbackBlock>
 
       <h2>What you can do</h2>
       <ul>
@@ -243,6 +287,24 @@ export const TestnetGuide = () => {
         the transaction is confirmed. Timing depends on the Ethereum Sepolia
         chain and the cross-chain testnet.
       </p>
+
+      <S.FeedbackBlock>
+        <div>
+          <h3>Hit something odd? Let us know.</h3>
+          <p>
+            Every report helps. If a transfer stalls, a UI feels off, or you
+            just want to share what worked — ping{' '}
+            <strong>#testnet-feedback</strong> on our Discord.
+          </p>
+        </div>
+        <a
+          href="https://discord.com/invite/Uvua83QAzk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open Discord
+        </a>
+      </S.FeedbackBlock>
     </S.Wrapper>
   );
 };

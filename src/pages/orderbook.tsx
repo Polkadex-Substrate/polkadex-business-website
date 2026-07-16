@@ -1,4 +1,5 @@
 import {
+  BackToHome,
   FeetDifference,
   InitialBanner,
   NewOrderbookProduct,
@@ -11,7 +12,7 @@ import { CrossChain } from 'components/CrossChain';
 import { Question } from 'components/Question';
 import { SpeedLimit } from 'components/SpeedLimits';
 import { StatisticBlock } from 'components/StatisticBlock';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, Newsletter } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -47,16 +48,18 @@ export default function Orderbook() {
     if (path && path.includes('#')) {
       const id = path.replace('#', '');
       const el = window.document.getElementById(id);
-      const r = el.getBoundingClientRect();
-      window.scrollTo({
-        top: r.top,
-        behavior: 'smooth',
-      });
+      if (el) {
+        const r = el.getBoundingClientRect();
+        window.scrollTo({
+          top: r.top,
+          behavior: 'smooth',
+        });
+      }
     }
   });
 
   useEffect(() => {
-    ref.current.scrollTo(0, 0);
+    ref.current?.scrollTo(0, 0);
   }, []);
 
   return (
@@ -82,14 +85,9 @@ export default function Orderbook() {
           description="Trade crypto with the Polkadex Orderbook decentralized exchange. The CEXiest DEX in DeFi."
           path="/orderbook"
         />
-        <Header
-          links={['Products', 'Resources', 'About', 'Community']}
-          cta={{
-            title: 'Try the Testnet',
-            href: process.env.ORDERBOOK_LINK,
-          }}
-        />
+        <HeaderFlat />
         <main ref={ref} style={{ overflow: 'hidden' }}>
+          <BackToHome />
           <InitialBanner />
           <Promo {...promo} />
           <StatisticBlock {...statistic} />

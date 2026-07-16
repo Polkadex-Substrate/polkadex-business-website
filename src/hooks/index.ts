@@ -1,6 +1,6 @@
 export * from './useAnimation';
-export * from './useAnimation';
 export * from './useApi';
+export * from './useStakingStats';
 export * from './useEthereumSign';
 export * from './usePolkadotSign';
 export * from './useTheming';

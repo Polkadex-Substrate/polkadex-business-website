@@ -8,9 +8,10 @@ Last updated: 2026-07-14
 
 | Section | Component | Location | Reason |
 |---|---|---|---|
-| Kylix Lending block | `<KylixLending />` | `src/pages/index.tsx:60` | Temporarily hidden |
-| Join Polkadex open beta program | `<BetaProgram />` | `src/pages/index.tsx:58` | Temporarily hidden |
-| PolkaIDO platform | `<Polkaido />` | `src/pages/index.tsx:62` | Temporarily hidden |
+| "Where to get PDEX" tile (BuyPDEX) | `<Exchanges />` | `src/pages/index.tsx:55` | Superseded by richer `<HowToBuy />` further down |
+| Kylix Lending block | `<KylixLending />` | `src/pages/index.tsx` | Temporarily hidden |
+| Join Polkadex open beta program | `<BetaProgram />` | `src/pages/index.tsx` | Temporarily hidden |
+| PolkaIDO platform | `<Polkaido />` | `src/pages/index.tsx` | Temporarily hidden |
 
 ## Sub-sections inside home components
 

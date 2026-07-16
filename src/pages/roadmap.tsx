@@ -1,6 +1,6 @@
-import { Seo } from 'components';
+import { BackToHome, Seo } from 'components';
 import { Roadmap as RoadmapComponent } from 'components/';
-import { Footer, Header, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, Newsletter } from 'components/v2';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
@@ -15,16 +15,18 @@ export default function Roadmap() {
     if (path && path.includes('#')) {
       const id = path.replace('#', '');
       const el = window.document.getElementById(id);
-      const r = el.getBoundingClientRect();
-      window.scrollTo({
-        top: r.top,
-        behavior: 'smooth',
-      });
+      if (el) {
+        const r = el.getBoundingClientRect();
+        window.scrollTo({
+          top: r.top,
+          behavior: 'smooth',
+        });
+      }
     }
   });
 
   useEffect(() => {
-    ref.current.scrollTo(0, 0);
+    ref.current?.scrollTo(0, 0);
   }, []);
 
   return (
@@ -50,14 +52,9 @@ export default function Roadmap() {
           description="Follow the Polkadex roadmap — milestones and upcoming releases for the decentralized orderbook exchange."
           path="/roadmap"
         />
-        <Header
-          links={['Products', 'Resources', 'About', 'Community']}
-          cta={{
-            title: 'Try the Testnet',
-            href: process.env.ORDERBOOK_LINK,
-          }}
-        />
+        <HeaderFlat />
         <main ref={ref} style={{ overflow: 'hidden' }}>
+          <BackToHome />
           <RoadmapComponent roadmap={roadmap} releases={releases} />
           <Newsletter />
         </main>
