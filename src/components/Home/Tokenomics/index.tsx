@@ -23,7 +23,7 @@ const metrics = [
 ];
 
 export const Tokenomics = () => (
-  <S.Wrapper id="tokenomicsHighlight">
+  <S.Wrapper id="tokenomics">
     <S.Header>
       <span>Tokenomics</span>
       <h2>

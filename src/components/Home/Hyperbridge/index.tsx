@@ -1,3 +1,4 @@
+import { SectionHead } from 'components';
 import * as Icons from 'components/Icons';
 
 import { data } from './data';
@@ -5,7 +6,11 @@ import * as S from './styles';
 
 export const Hyperbridge = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="hyperbridge">
+      <SectionHead
+        eyebrow="Cross-chain"
+        description="Trust-minimized transfers between Polkadex and other chains — no relayers, no multisigs."
+      />
       <S.Hero>
         <S.HeroWrapper>
           <S.HeroIcon>

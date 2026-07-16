@@ -28,6 +28,13 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: clip;
   }
 
+  /* Offset any anchor target so the sticky header doesn't clip the section
+     when the user clicks a #anchor link in the nav. */
+  section[id],
+  div[id] {
+    scroll-margin-top: 8rem;
+  }
+
   * {
     padding: 0;
     margin: 0;

@@ -1,3 +1,4 @@
+import { SectionHead } from 'components';
 import * as Icons from 'components/Icons';
 import { useStakingStats } from 'hooks/useStakingStats';
 import Link from 'next/link';
@@ -10,7 +11,11 @@ export const Staking = ({ apy = '' }: { apy?: string }) => {
   // override for cases where an explicit number is needed.
   const displayedApy = apy || live.apy;
   return (
-    <S.Wrapper>
+    <S.Wrapper id="staking">
+      <SectionHead
+        eyebrow="Staking"
+        description="Nominate a validator and earn passive rewards paid every era — around 24 hours."
+      />
       <S.Container>
         <AsideLeft />
         <AsideRight apy={displayedApy} />

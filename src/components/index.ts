@@ -19,6 +19,7 @@ export * from './Announcement';
 export * from './AvailableMessage';
 export * from './BackToHome';
 export * from './BrandAssets';
+export * from './SectionHead';
 export * from './Button';
 export * from './Seo';
 export * from './TestnetGuide';

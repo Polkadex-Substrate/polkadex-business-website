@@ -6,6 +6,7 @@ import {
   Orderbook,
   Partners,
   Polkaido,
+  RoadmapTeaser,
   SeenOn,
   Staking,
   Tokenomics,
@@ -49,13 +50,16 @@ export default function Home() {
             {/* <Exchanges /> — replaced by richer <HowToBuy /> further down,
                 which pairs with <Tokenomics /> as the investor-facing story. */}
           </S.Container>
+          {/* Section order matches the HeaderFlat anchor nav so anchor
+              clicks flow: About → Orderbook → Tokenomics → Roadmap → Staking → Get PDEX. */}
           <Orderbook />
           <Tokenomics />
-          <HowToBuy />
+          <RoadmapTeaser />
           {/* apy prop omitted intentionally — Staking pulls it live from
               useStakingStats() with a fallback to the current on-chain
               snapshot. Pass e.g. apy="14.2%" to force a specific value. */}
           <Staking />
+          <HowToBuy />
           <Partners />
           {/* <BetaProgram /> — temporarily hidden (Join Polkadex open beta program) */}
           <Hyperbridge />

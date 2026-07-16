@@ -83,13 +83,16 @@ export const HeaderFlat = ({
   );
 };
 
-// Defaults match the community-suggested nav, refined with Staking preserved.
+// Homepage anchor links — from any page, click routes to `/` and scrolls
+// to the section. Landing-page-optimized: users stay on the pitch flow
+// instead of jumping to detail pages. Full detail pages remain reachable
+// via the footer for SEO and deep-linking.
 const defaultLinks: FlatLink[] = [
   { title: 'About', href: '/#hero' },
-  { title: 'Orderbook', href: '/orderbook' },
-  { title: 'Tokenomics', href: '/tokeneconomics' },
-  { title: 'Roadmap', href: '/roadmap' },
-  { title: 'Staking', href: '/staking' },
+  { title: 'Orderbook', href: '/#orderbook' },
+  { title: 'Tokenomics', href: '/#tokenomics' },
+  { title: 'Roadmap', href: '/#roadmap' },
+  { title: 'Staking', href: '/#staking' },
 ];
 
 const defaultCta: HeaderFlatProps['cta'] = {

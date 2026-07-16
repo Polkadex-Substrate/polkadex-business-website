@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { SectionHead } from 'components';
 import * as Icons from 'components/Icons';
 
 import { data } from './data';
@@ -6,7 +7,11 @@ import * as S from './styles';
 
 export const Orderbook = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper id="orderbook">
+      <SectionHead
+        eyebrow="Orderbook"
+        description="A cutting-edge, non-custodial trading application running on Polkadex Network — our sovereign Layer 1 chain."
+      />
       <S.Hero>
         <S.AsideRight>
           <S.AsideRightIcon>

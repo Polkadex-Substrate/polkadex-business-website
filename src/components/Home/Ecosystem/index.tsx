@@ -1,3 +1,4 @@
+import { SectionHead } from 'components';
 import * as Icons from 'components/Icons';
 
 import { data } from './data';
@@ -5,8 +6,11 @@ import * as S from './styles';
 
 export const Ecosystem = () => {
   return (
-    <S.Wrapper>
-      <h2>Ecosystem</h2>
+    <S.Wrapper id="ecosystem">
+      <SectionHead
+        eyebrow="Ecosystem"
+        description="Backed by, integrated with, and building alongside the projects powering Web3."
+      />
       <S.Content>
         <S.ContentFlex>
           {data[0].map((value, i) => (
