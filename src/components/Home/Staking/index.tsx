@@ -1,59 +1,65 @@
 import { SectionHead } from 'components';
-import * as Icons from 'components/Icons';
 import { useStakingStats } from 'hooks/useStakingStats';
 import Link from 'next/link';
 
 import * as S from './styles';
 
+const benefits = [
+  {
+    title: 'Passive income',
+    description:
+      'Rewards accrue every era (~24 hours) and compound automatically when you claim them.',
+  },
+  {
+    title: 'Non-custodial',
+    description:
+      'Your PDEX never leaves your wallet. Nominate a validator without giving up control of your keys.',
+  },
+  {
+    title: 'Secures the network',
+    description:
+      'Staking helps validate blocks and keeps Polkadex mainnet decentralized and trust-minimized.',
+  },
+];
+
 export const Staking = ({ apy = '' }: { apy?: string }) => {
   const live = useStakingStats();
-  // Use the live APY when available; the `apy` prop remains as a manual
-  // override for cases where an explicit number is needed.
+  // The `apy` prop remains as a manual override; otherwise pull live from
+  // the useStakingStats hook (falls back to on-chain snapshot).
   const displayedApy = apy || live.apy;
+
   return (
     <S.Wrapper id="staking">
       <SectionHead
         eyebrow="Staking"
-        description="Nominate a validator and earn passive rewards paid every era — around 24 hours."
+        title={
+          <>
+            Earn <strong>passive rewards</strong> on your PDEX
+          </>
+        }
+        description="Nominate a validator and start earning within 24 hours. Rewards are paid every era, and your PDEX never leaves your wallet."
       />
-      <S.Container>
-        <AsideLeft />
-        <AsideRight apy={displayedApy} />
-      </S.Container>
-      <S.HeroTopImage>
-        <Icons.StakeLineTop />
-      </S.HeroTopImage>
-      <S.HeroBottomImage>
-        <Icons.StakeLineBottom />
-      </S.HeroBottomImage>
+
+      <S.ApyBanner>
+        <small>Current realized APY</small>
+        <S.ApyNumber>{displayedApy}</S.ApyNumber>
+        <S.ApyCaption>
+          Trailing 30-day nominator return. Live from the Polkadex Explorer.
+        </S.ApyCaption>
+      </S.ApyBanner>
+
+      <S.Benefits>
+        {benefits.map((b) => (
+          <S.Benefit key={b.title}>
+            <h3>{b.title}</h3>
+            <p>{b.description}</p>
+          </S.Benefit>
+        ))}
+      </S.Benefits>
+
+      <S.Footer>
+        <Link href="/staking#howtostake">Start staking →</Link>
+      </S.Footer>
     </S.Wrapper>
-  );
-};
-
-const AsideLeft = () => {
-  return (
-    <S.Hero>
-      <Icons.StakingHero />
-    </S.Hero>
-  );
-};
-
-const AsideRight = ({ apy }) => {
-  return (
-    <S.Content>
-      <div>
-        <h2>
-          <strong>Stake PDEX</strong> and earn up to <strong> {apy} APY</strong>
-        </h2>
-        <p>
-          It’s simple. Create your account and start earning passive income
-          today.
-        </p>
-      </div>
-
-      <Link href="https://polkadex.ee/staking#howtostake">
-        Stake your PDEX now
-      </Link>
-    </S.Content>
   );
 };

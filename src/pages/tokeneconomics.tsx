@@ -3,7 +3,7 @@ import {
   Seo,
   TokenEconomics as TokenEconomicsComponent,
 } from 'components';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
@@ -59,7 +59,7 @@ export default function Tokeneconomics() {
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <BackToHome />
           <TokenEconomicsComponent {...tokenEconomics} />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>

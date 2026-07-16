@@ -12,7 +12,7 @@ import { CrossChain } from 'components/CrossChain';
 import { Question } from 'components/Question';
 import { SpeedLimit } from 'components/SpeedLimits';
 import { StatisticBlock } from 'components/StatisticBlock';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -100,7 +100,7 @@ export default function Orderbook() {
           <TradeAnywhere {...tradeAnywhere} />
           <NewOrderbookProduct {...orderbook} />
           <PolkadexBlock {...polkadex} />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>

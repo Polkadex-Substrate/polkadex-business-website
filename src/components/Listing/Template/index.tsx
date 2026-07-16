@@ -1,5 +1,5 @@
 import { BackToHome, Seo } from 'components';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import { About, Hero, Information } from 'components/Listing';
 import Script from 'next/script';
 import { useEffect } from 'react';
@@ -50,7 +50,7 @@ export function Template() {
           <Hero />
           <About />
           <Information />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>

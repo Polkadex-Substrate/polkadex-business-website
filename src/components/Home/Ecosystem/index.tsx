@@ -4,35 +4,13 @@ import * as Icons from 'components/Icons';
 import { data } from './data';
 import * as S from './styles';
 
-export const Ecosystem = () => {
-  return (
-    <S.Wrapper id="ecosystem">
-      <SectionHead
-        eyebrow="Ecosystem"
-        description="Backed by, integrated with, and building alongside the projects powering Web3."
-      />
-      <S.Content>
-        <S.ContentFlex>
-          {data[0].map((value, i) => (
-            <Card key={i} {...value} i={i + 1} />
-          ))}
-        </S.ContentFlex>
-        <S.ContentFlex>
-          {data[1].map((value, i) => (
-            <Card key={i} {...value} i={i + 1} />
-          ))}
-        </S.ContentFlex>
-      </S.Content>
-    </S.Wrapper>
-  );
-};
+type LogoEntry = { icon?: string; img?: string; alt?: string };
 
-type Props = { icon?: string; i: number; alt?: string; img?: string };
-const Card = ({ icon = null, i, img, alt }: Props) => {
-  const IconComponent = Icons[icon];
+const Card = ({ icon, img, alt }: LogoEntry) => {
+  const IconComponent = icon ? (Icons as Record<string, React.FC>)[icon] : null;
   return (
     <S.Card>
-      {icon?.length ? (
+      {IconComponent ? (
         <IconComponent />
       ) : (
         <img src={`/img/partners/${img}.png`} alt={alt} />
@@ -40,3 +18,27 @@ const Card = ({ icon = null, i, img, alt }: Props) => {
     </S.Card>
   );
 };
+
+export const Ecosystem = () => (
+  <S.Wrapper id="ecosystem">
+    <SectionHead
+      eyebrow="Ecosystem"
+      title={
+        <>
+          <strong>Backed by</strong> and building alongside Web3
+        </>
+      }
+      description="Partners, integrations, security audits, and investors powering the Polkadex ecosystem."
+    />
+
+    <S.Content>
+      {data.map((row, ri) => (
+        <S.Row key={ri}>
+          {row.map((entry, i) => (
+            <Card key={i} {...entry} />
+          ))}
+        </S.Row>
+      ))}
+    </S.Content>
+  </S.Wrapper>
+);

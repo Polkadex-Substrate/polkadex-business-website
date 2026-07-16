@@ -1,5 +1,5 @@
 import { BackToHome, BrandAssetsCards, BrandAssetsHero, Seo } from 'components';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import Script from 'next/script';
 import React from 'react';
 import * as S from 'styles/home';
@@ -33,7 +33,7 @@ export default function MediaKit() {
           <BackToHome />
           <BrandAssetsHero />
           <BrandAssetsCards />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>

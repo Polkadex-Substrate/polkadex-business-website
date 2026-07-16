@@ -1,101 +1,156 @@
-import { motion } from 'framer-motion';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const shimmer = keyframes`
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+`;
 
 export const Wrapper = styled.section`
-  ${() => css`
+  ${({ theme }) => css`
     position: relative;
+    padding: 8rem 2rem;
+    max-width: 130rem;
+    margin: 4rem auto;
     overflow: hidden;
-    ${HeroTopImage}, ${HeroBottomImage} {
-      @media screen and (min-width: 1600px) {
-        display: none;
-      }
+    isolation: isolate;
+
+    ::before,
+    ::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.24;
+      z-index: -1;
     }
-    @media screen and (max-width: 1000px) {
-      padding: 1rem;
+    ::before {
+      background: ${theme.colors.primary};
+      width: 46rem;
+      height: 46rem;
+      top: -14rem;
+      left: -12rem;
+    }
+    ::after {
+      background: ${theme.colors.secondary};
+      width: 48rem;
+      height: 48rem;
+      bottom: -16rem;
+      right: -10rem;
+    }
+
+    @media screen and (max-width: 960px) {
+      padding: 6rem 2rem;
+      margin: 2rem auto;
     }
   `}
 `;
 
-export const HeroTopImage = styled.div`
-  position: absolute;
-  top: 20rem;
-  left: 0;
-  width: 50rem;
-  z-index: -1;
-`;
-export const HeroBottomImage = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80rem;
-  z-index: -1;
-  @media screen and (max-width: 960px) {
-    display: none;
-  }
-`;
-
-export const Container = styled.div`
-  max-width: 100rem;
-  margin: 0 auto;
-  display: grid;
-  align-items: center;
-
-  @media screen and (min-width: 970px) {
-    grid-template-columns: 1.5fr 0.5fr;
-    gap: 2rem;
-  }
-  @media screen and (max-width: 1000px) {
-    padding: 1rem;
-  }
-`;
-
-export const Hero = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  svg {
-    max-width: 80rem;
-    width: 100%;
-  }
-`;
-export const Content = styled(motion.div)`
+export const ApyBanner = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    @media screen and (max-width: 960px) {
-      align-items: center;
-      text-align: center;
+    max-width: 110rem;
+    margin: 0 auto 4rem;
+    padding: 4rem;
+    text-align: center;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border: 1px solid ${theme.colors.primary}55;
+    border-radius: 2rem;
+    backdrop-filter: blur(20px);
+
+    small {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: ${theme.colors.primary};
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
     }
-    gap: 2rem;
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      @media screen and (min-width: 960px) {
-        gap: 3rem;
-      }
+  `}
+`;
+
+export const ApyNumber = styled.div`
+  ${({ theme }) => css`
+    font-size: 9rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background: ${theme.colors.gradient};
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: ${shimmer} 8s ease-in-out infinite;
+
+    @media screen and (max-width: 700px) {
+      font-size: 6.5rem;
     }
-    h2 {
-      font-size: 3rem;
-      font-weight: 500;
-      line-height: 1.2;
-      strong {
-        color: ${theme.colors.primary};
-        font-weight: 600;
-      }
-      @media screen and (max-width: 700px) {
-        font-size: 3.5rem;
-      }
+  `}
+`;
+
+export const ApyCaption = styled.p`
+  ${({ theme }) => css`
+    font-size: 1.5rem;
+    line-height: 1.55;
+    opacity: 0.75;
+    margin: 1.6rem 0 0;
+  `}
+`;
+
+export const Benefits = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 110rem;
+  margin: 0 auto;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const Benefit = styled.div`
+  ${({ theme }) => css`
+    padding: 3rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    border-radius: 1.6rem;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    :hover {
+      transform: translateY(-0.4rem);
+      border-color: ${theme.colors.primary}55;
+    }
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: ${theme.colors.text};
+      margin-bottom: 1rem;
     }
     p {
-      line-height: 1.5;
+      font-size: 1.45rem;
+      line-height: 1.55;
+      opacity: 0.75;
+      margin: 0;
     }
+  `}
+`;
+
+export const Footer = styled.div`
+  ${({ theme }) => css`
+    text-align: center;
+    margin-top: 5rem;
     a {
-      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.2rem 2.4rem;
       background: ${theme.colors.primary};
-      width: fit-content;
-      padding: 1rem 3rem;
-      border-radius: 0.4rem;
+      color: ${theme.colors.white};
+      border-radius: 0.6rem;
+      font-weight: 500;
+      transition: opacity 0.2s ease-in-out;
+      :hover {
+        opacity: 0.9;
+      }
     }
   `}
 `;

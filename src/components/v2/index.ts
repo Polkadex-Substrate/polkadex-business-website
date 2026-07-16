@@ -7,6 +7,7 @@ export * from './Hero';
 export * from './Media';
 export * from './Newsletter';
 export * from './Orderbook';
+export * from './SocialFollow';
 export * from './Partners';
 export * from './Polkaido';
 export * from './PolkaidoHero';

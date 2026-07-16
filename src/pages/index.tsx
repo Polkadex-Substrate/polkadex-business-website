@@ -17,7 +17,7 @@ import {
   Wallets,
 } from 'components/Home';
 import { Seo } from 'components';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import Script from 'next/script';
 import * as S from 'styles/home';
 
@@ -67,7 +67,7 @@ export default function Home() {
           <Ecosystem />
           {/* <Polkaido /> — temporarily hidden (PolkaIDO platform) */}
           <SeenOn />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>

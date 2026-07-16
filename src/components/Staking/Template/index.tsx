@@ -2,7 +2,7 @@ import { BackToHome, Seo } from 'components';
 import { StakingFaq } from 'components/Crowdloans';
 import { Hero, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import { useStakingStats } from 'hooks/useStakingStats';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -64,7 +64,7 @@ export const Template = () => {
           <HowToStake />
           <Overview />
           <StakingFaq />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>

@@ -1,275 +1,149 @@
-import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
-  max-width: 140rem;
-  margin: 8rem auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-`;
-
-export const Hero = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-`;
-
-export const AsideLeft = styled(motion.div)`
-  position: relative;
-  display: flex;
-  align-items: center;
-  svg {
-    width: 100%;
-  }
-  div {
-    background: rgba(13, 13, 14, 0)
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 10%,
-        rgba(13, 13, 14, 0.1) 50%,
-        rgba(13, 13, 14, 0.5) 75%,
-        rgba(13, 13, 14, 1) 100%
-      )
-      repeat scroll 0 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-`;
-export const AsideRight = styled(motion.div)`
   ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-    h4 {
-      font-weight: 500;
-      font-size: 1.8rem;
-      line-height: 2;
-    }
-    h2 {
-      margin-bottom: 3rem;
-      font-size: 3rem;
-      font-weight: 500;
-      line-height: 1.5;
+    position: relative;
+    padding: 8rem 2rem;
+    max-width: 130rem;
+    margin: 4rem auto;
+    overflow: hidden;
+    isolation: isolate;
 
-      svg {
-        display: block;
-        width: 20rem;
-        height: auto;
-        overflow: hidden;
-      }
+    ::before,
+    ::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.24;
+      z-index: -1;
     }
-    p {
-      line-height: ${theme.font.lineHeight.normal};
+    ::before {
+      background: ${theme.colors.secondary};
+      width: 48rem;
+      height: 48rem;
+      top: -16rem;
+      right: -12rem;
     }
-  `}
-`;
+    ::after {
+      background: ${theme.colors.primary};
+      width: 44rem;
+      height: 44rem;
+      bottom: -14rem;
+      left: -10rem;
+    }
 
-export const AsideRightIcon = styled.div`
-  width: 8rem;
-  margin-bottom: 3rem;
-`;
-
-export const Actions = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 4rem 0;
-    a {
-      padding: 1rem 2rem;
-      border-radius: 0.4rem;
-      :first-child {
-        color: ${theme.colors.white};
-        background: ${theme.colors.primary};
-        transition: background 0.2s ease-in-out;
-      }
-      :last-child {
-        color: ${theme.colors.blue};
-        transition: background 0.2s ease-in-out;
-        :hover {
-          background: ${theme.colors.blue}19;
-        }
-        svg {
-          display: inline-block;
-          width: 1rem;
-          vertical-align: middle;
-        }
-      }
+    @media screen and (max-width: 960px) {
+      padding: 6rem 2rem;
+      margin: 2rem auto;
     }
   `}
 `;
 
 export const Features = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 100rem;
-  margin: 0 auto;
-
-  @media screen and (max-width: 1000px) {
-    padding: 1rem;
-  }
-`;
-
-export const FeaturesFlex = styled.div`
-  ${() => css`
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    ${Card} {
-      div :last-child {
-        svg {
-          width: 100%;
-          height: auto;
-          @media screen and (max-width: 838px) {
-            width: unset;
-            height: 20rem;
-          }
-        }
-      }
-    }
-  `}
-`;
-export const FeaturesGrid = styled.div`
-  ${() => css`
-    display: grid;
-    gap: 2rem;
-    @media screen and (min-width: 1000px) {
-      grid-template-columns: 1.8fr 1.2fr 1.2fr;
-    }
-    @media screen and (min-width: 880px) and (max-width: 1000px) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-    ${Card} {
-      div :last-child {
-        svg {
-          width: 100%;
-          height: auto;
-          @media screen and (max-width: 880px) {
-            width: unset;
-            height: 20rem;
-          }
-        }
-      }
-    }
-  `}
-`;
-export const FeaturesBox = styled.div`
-  ${() => css`
-    display: grid;
-    gap: 2rem;
-    @media screen and (min-width: 1000px) {
-      grid-template-columns: 1fr 2fr;
-    }
-    ${Card} {
-      :first-child {
-        div svg {
-          width: 100%;
-          height: auto;
-          @media screen and (max-width: 1000px) {
-            width: unset;
-            height: 20rem;
-          }
-        }
-      }
-      :last-child {
-        div svg {
-          width: 100%;
-          max-width: 55rem;
-          height: 100%;
-          @media screen and (max-width: 1000px) {
-            width: unset;
-            height: 20rem;
-          }
-        }
-      }
-    }
-  `}
-`;
-export const Card = styled(motion.div)`
   ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: ${theme.colors.tertiaryBackgroundOpacity};
-    border: 1px solid ${theme.colors.secondaryBackground};
-    border-radius: 0.5rem;
-    overflow: hidden;
-    div {
-      :first-child {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 3rem;
-        h3 {
-          font-size: 2rem;
-          font-weight: 500;
-        }
-        p {
-          opacity: 0.7;
-          line-height: ${theme.font.lineHeight.normal};
-        }
-      }
-      :last-child {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        svg {
-          display: block;
-        }
-      }
-    }
-  `}
-`;
-export const Listing = styled(motion.div)`
-  ${({ theme }) => css`
-    position: relative;
-    background: ${theme.colors.primaryBackground};
-    border: 1px solid ${theme.colors.secondaryBackground};
-    border-radius: 0.5rem;
-    margin-top: 2rem;
     display: grid;
-    background-image: url('/img/orderbookListingBg.svg');
-    background-repeat: no-repeat;
-    background-position: -10rem 0;
-    background-size: 130% 100%;
-    max-width: 100rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 110rem;
     margin: 0 auto;
-    width: 100%;
-    @media screen and (min-width: 580px) {
-      grid-template-columns: 2fr 1fr;
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media screen and (max-width: 935px) {
-      background-size: cover;
+    @media screen and (max-width: 620px) {
+      grid-template-columns: 1fr;
     }
   `}
 `;
-export const ListingWrapper = styled.div`
+
+export const Feature = styled.div`
   ${({ theme }) => css`
+    padding: 3rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    border-radius: 1.6rem;
+    backdrop-filter: blur(20px);
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 10rem 6rem;
-    h2 {
-      font-size: 3rem;
+    gap: 1.4rem;
+    :hover {
+      transform: translateY(-0.4rem);
+      border-color: ${theme.colors.primary}55;
+    }
+  `}
+`;
+
+export const FeatureIcon = styled.div`
+  ${({ theme }) => css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 1rem;
+    background: ${theme.colors.primary}22;
+    color: ${theme.colors.primary};
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: currentColor;
+    }
+  `}
+`;
+
+export const FeatureTitle = styled.h3`
+  ${({ theme }) => css`
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: ${theme.colors.text};
+  `}
+`;
+
+export const FeatureDescription = styled.p`
+  ${({ theme }) => css`
+    font-size: 1.45rem;
+    line-height: 1.55;
+    opacity: 0.75;
+    margin: 0;
+  `}
+`;
+
+export const Footer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.2rem 2.4rem;
+      border-radius: 0.6rem;
       font-weight: 500;
-      strong {
-        display: block;
-        font-weight: 600;
+      transition: opacity 0.2s ease-in-out;
+    }
+    a.primary {
+      background: ${theme.colors.primary};
+      color: ${theme.colors.white};
+      :hover {
+        opacity: 0.9;
       }
     }
-    a {
-      background: ${theme.colors.primary};
-      width: fit-content;
-      padding: 1rem 3rem;
-      border-radius: 0.4rem;
-      font-weight: 500;
+    a.secondary {
+      color: ${theme.colors.text};
+      opacity: 0.85;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      :hover {
+        opacity: 1;
+      }
     }
   `}
 `;

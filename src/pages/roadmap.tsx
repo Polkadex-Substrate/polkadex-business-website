@@ -1,6 +1,6 @@
 import { BackToHome, Seo } from 'components';
 import { Roadmap as RoadmapComponent } from 'components/';
-import { Footer, HeaderFlat, Newsletter } from 'components/v2';
+import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
@@ -56,7 +56,7 @@ export default function Roadmap() {
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <BackToHome />
           <RoadmapComponent roadmap={roadmap} releases={releases} />
-          <Newsletter />
+          <SocialFollow />
         </main>
         <Footer />
       </S.Wrapper>
