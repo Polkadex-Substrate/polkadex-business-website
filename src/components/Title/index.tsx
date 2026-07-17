@@ -7,12 +7,13 @@ const Title = ({
   highlight = 'Highlight Example',
   description,
   position = 'left',
+  headingAs: Heading = 'h2',
 }: Props) => (
   <S.Wrapper position={position}>
     <span>{tag}</span>
-    <h2>
+    <Heading>
       {title} <strong> {highlight} </strong>
-    </h2>
+    </Heading>
     {!!description && <p>{description}.</p>}
   </S.Wrapper>
 );

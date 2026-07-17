@@ -14,12 +14,14 @@ const Roadmap = ({ roadmap, releases }: Props) => {
   return (
     <S.Wrapper id="roadmap">
       <S.TitleContainer>
+        {/* headingAs="h1": this is the /roadmap page's lead heading. */}
         <Title
           tag={tag}
           description={description}
           title={title}
           highlight={highlight}
           position="center"
+          headingAs="h1"
         />
       </S.TitleContainer>
       <S.Phase>

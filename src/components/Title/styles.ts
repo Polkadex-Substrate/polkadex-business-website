@@ -26,12 +26,14 @@ export const Wrapper = styled.div<Partial<Props>>`
     }
   `}
 
+  & h1,
   & h2 {
     font-size: 4rem;
     margin-bottom: 1rem;
   }
   @media screen and (max-width: 650px) {
-    & h2 {
+    & h1,
+  & h2 {
       font-size: 3.2rem;
     }
   }

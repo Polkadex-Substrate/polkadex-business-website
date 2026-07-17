@@ -1,0 +1,48 @@
+# Polkadex
+
+> Polkadex is an independent Layer 1 blockchain built with Substrate,
+> engineered for high-performance decentralized trading. It combines a
+> fully on-chain orderbook (limit & market orders, sub-millisecond
+> matching) with non-custodial self-custody and trust-minimized
+> cross-chain transfers via Hyperbridge. Originally launched within the
+> Polkadot ecosystem, Polkadex now operates as a sovereign network with
+> its own validator set (200+ nodes), roadmap, and governance.
+
+Key facts:
+- Token: PDEX (native, 20,000,000 total supply, 100% unlocked — no
+  future emissions, no vesting overhang). PDEX is not listed on
+  centralized exchanges; native PDEX is acquired on-chain via
+  https://buypdex.com
+- Status: Polkadex 2.0 Orderbook is live on public testnet (cross-chain
+  with Ethereum Sepolia via Hyperbridge). Mainnet relaunch targeted
+  Q4 2026.
+- Staking: nominators earn rewards every era (~24h) by nominating
+  validators; unbonding period is 28 days. Compatible wallets: Nova
+  Wallet, Talisman, SubWallet, Fearless, Polkadot.js.
+- The testnet is non-incentivized: no points, no airdrops, no rewards
+  program — participation is to help harden the product before mainnet.
+
+## Pages
+
+- [Home](https://polkadex.ee/): positioning, tokenomics highlights,
+  roadmap summary, staking overview, how to get PDEX
+- [Testnet Guide](https://polkadex.ee/testnet-guide): step-by-step
+  onboarding — wallets, faucet, cross-chain transfers, feedback channel
+- [Tokenomics](https://polkadex.ee/tokeneconomics): supply, original
+  distribution, unlock status
+- [Roadmap](https://polkadex.ee/roadmap): full release history and
+  upcoming milestones
+- [Staking](https://polkadex.ee/staking): APY, validator stats, how to
+  stake
+- [Docs](https://docs.polkadex.ee/): technical documentation
+- [Mainnet Explorer](https://explorer.polkadex.ee): live chain data,
+  validators, staking rewards
+
+## Community
+
+- X/Twitter: https://twitter.com/polkadex
+- Discord: https://discord.gg/Jh5nSd6gj (testnet feedback in
+  #testnet-feedback)
+- Telegram: https://t.me/Polkadex
+- GitHub: https://github.com/Polkadex-Substrate
+- Blog: https://polkadex.medium.com

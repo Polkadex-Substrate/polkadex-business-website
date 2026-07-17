@@ -104,9 +104,10 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
+          <meta name="msapplication-TileColor" content="#0d0d10" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-          <meta name="theme-color" content="#ffffff" />
+          {/* Dark theme-color so mobile browser chrome matches the site bg */}
+          <meta name="theme-color" content="#0d0d10" />
           {/* Open Graph and Twitter card tags are rendered per-page by the
               shared <Seo /> component (src/components/Seo) so each page gets
               its own title, description, canonical URL and social preview. */}
