@@ -52,8 +52,7 @@ export const RoadmapTeaser = () => {
                 as={motion.div}
                 {...staggerChildProps}
                 key={i}
-                active={!!r.active}
-                completed={!!r.completed}
+                $active={!!r.active}
               >
                 <S.PhaseLabel>
                   <span>{r.emoji}</span>

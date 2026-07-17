@@ -36,7 +36,7 @@ const structuredData = {
       url: SITE_URL,
       logo: `${SITE_URL}/android-icon-192x192.png`,
       description:
-        'Polkadex is an independent Layer 1 blockchain built with Substrate, engineered for high-performance decentralized trading with an on-chain orderbook.',
+        'Polkadex is an independent Layer 1 blockchain built with Substrate, engineered for high-performance decentralized trading with an on-chain orderbook. The sudo key has been removed — all protocol upgrades are governed on-chain.',
       sameAs: [
         'https://twitter.com/polkadex',
         'https://github.com/Polkadex-Substrate',

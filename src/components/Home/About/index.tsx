@@ -28,10 +28,10 @@ const pillars = [
       'Battle-tested framework from the team behind Polkadot. Modular, upgradable, secure by design.',
   },
   {
-    emoji: '📈',
-    title: 'Purpose-built for trading',
+    emoji: '🗳️',
+    title: 'Sudo-keys removed',
     description:
-      'Engineered as a decentralized exchange from block zero — not retrofitted onto a general-purpose chain.',
+      'No entity can control the network or user funds. All upgrades are governed on-chain.',
   },
   {
     emoji: '⚡️',
@@ -41,7 +41,7 @@ const pillars = [
   },
   {
     emoji: '🔑',
-    title: 'Non-custodial by design',
+    title: 'Non-custodial',
     description:
       'Users always retain full control of their assets. No centralized honeypot, no operator to trust.',
   },
@@ -76,16 +76,9 @@ export const About = () => (
           Substrate, connected everywhere via Hyperbridge.
         </S.Sub>
       </motion.div>
-      <motion.div {...staggerChildProps}>
-        <S.CtaRow>
-          <Link href="/testnet-guide" className="primary">
-            Try the Testnet
-          </Link>
-          <a href="#orderbook" className="ghost">
-            Explore the Orderbook ↓
-          </a>
-        </S.CtaRow>
-      </motion.div>
+      {/* CTA row removed (community feedback): the sticky header carries the
+          always-visible "Try the Testnet" button, so the product screenshot
+          can rise above the fold instead. Bottom-of-section CTA remains. */}
     </S.HeroHead>
 
     {/* Product screenshot — the "it's a real product" proof. Subtle

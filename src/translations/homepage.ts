@@ -852,18 +852,27 @@ const ENLanguage = {
       ],
     },
     {
-      title: 'Hestia release',
-      emoji: '🔥',
+      title: 'Sudo-keys removed',
+      emoji: '🗳️',
       completed: true,
       phase: 'Phase 1',
       items: [
-        'Hyperbridge integration for trust-minimized cross-chain transfers.',
+        'No sudo keys. All protocol upgrades are governed on-chain.',
+        'No single entity can control the network or user funds.',
+      ],
+    },
+    {
+      title: 'Hyperbridge integration',
+      emoji: '🔥',
+      completed: true,
+      phase: 'Phase 2',
+      items: [
+        'Secure cross-chain transfers using Hyperbridge.',
         'Expand supported assets — first spot market pairs listed on the Orderbook.',
         'Automatic fee conversion to PDEX from native assets for account registration, transaction fees, deposits, and withdrawals.',
         'Remove claim processes for deposits and withdrawals on Hyperbridge and Polkadex Orderbook.',
         'Integrate with Hummingbot connector for algorithmic trading.',
         'Onboard launch-phase market makers.',
-        'Continue bug fixes for Orderbook Beta.',
       ],
     },
     {
@@ -905,7 +914,7 @@ const ENLanguage = {
       items: [
         'Democratic listing process for new markets via governance.',
         'Native dApp integrations with 3rd-party service providers.',
-        'Initiate Polkadex DAO and remove the Sudo-key.',
+        'Initiate the Polkadex DAO.',
       ],
     },
   ],

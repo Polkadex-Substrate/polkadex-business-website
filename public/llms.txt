@@ -9,6 +9,9 @@
 > its own validator set (200+ nodes), roadmap, and governance.
 
 Key facts:
+- Governance: the sudo key was removed long ago — no single entity can
+  control the network or user funds. All protocol upgrades are governed
+  on-chain.
 - Token: PDEX (native, 20,000,000 total supply, 100% unlocked — no
   future emissions, no vesting overhang). PDEX is not listed on
   centralized exchanges; native PDEX is acquired on-chain via

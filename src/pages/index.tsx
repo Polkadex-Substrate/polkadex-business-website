@@ -5,6 +5,7 @@ import {
   Exchanges,
   Hero,
   Orderbook,
+  OrderbookVsAmm,
   Partners,
   Polkaido,
   RoadmapTeaser,
@@ -74,6 +75,11 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal>
             <Orderbook />
+          </ScrollReveal>
+          {/* Educational comparison right below the Orderbook — converts
+              AMM-native users by showing what they've been missing. */}
+          <ScrollReveal>
+            <OrderbookVsAmm />
           </ScrollReveal>
           <ScrollReveal>
             <RoadmapTeaser />

@@ -127,18 +127,21 @@ export const Timeline = styled.div`
   `}
 `;
 
-export const Phase = styled.div<{ active?: boolean; completed?: boolean }>`
-  ${({ theme, active, completed }) => css`
+/* Transient ($-prefixed) props: styled-components strips these before they
+   reach the DOM — required because this renders via as={motion.div}, which
+   forwards ordinary props straight through to the element. */
+export const Phase = styled.div<{ $active?: boolean }>`
+  ${({ theme, $active }) => css`
     display: grid;
     grid-template-columns: 12rem 1fr auto;
     align-items: center;
     gap: 2.4rem;
     padding: 2.4rem 3rem;
-    background: ${active
+    background: ${$active
       ? `${theme.colors.primary}12`
       : theme.colors.secondaryBackgroundOpacity};
     border: 1px solid
-      ${active
+      ${$active
         ? `${theme.colors.primary}55`
         : theme.colors.secondaryBackground};
     border-radius: 1.2rem;

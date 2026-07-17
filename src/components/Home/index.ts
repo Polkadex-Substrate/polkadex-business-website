@@ -12,6 +12,7 @@ export * from './HowToBuy';
 export * from './RoadmapTeaser';
 export * from './About';
 export * from './TestnetTicker';
+export * from './OrderbookVsAmm';
 export * from './TestnetBanner';
 export * from './Hyperbridge';
 export * from './KylixLending';
