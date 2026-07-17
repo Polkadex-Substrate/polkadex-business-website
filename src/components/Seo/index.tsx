@@ -5,7 +5,9 @@ const DEFAULT_TITLE =
   'Polkadex Orderbook - Decentralized Crypto Currency Exchange';
 const DEFAULT_DESCRIPTION =
   'Trade crypto with fully decentralized peer-to-peer orderbook based trading engine for Web3. Polkadex Orderbook - the CEXiest DEX in DeFi.';
-const DEFAULT_IMAGE = `${SITE_URL}/twitterCardImage.jpg`;
+// New filename (not twitterCardImage.jpg) so social platforms' link-preview
+// caches fetch the updated artwork instead of serving the stale image.
+const DEFAULT_IMAGE = `${SITE_URL}/ogImage.jpg`;
 
 export interface SeoProps {
   /** Page <title>. Falls back to the site default. */

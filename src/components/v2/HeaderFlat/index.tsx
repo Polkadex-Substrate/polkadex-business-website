@@ -39,6 +39,14 @@ export const HeaderFlat = ({
   const [activeId, setActiveId] = useState<string | null>(null);
   const lastY = useRef(0);
 
+  // Lock body scroll while the mobile drawer is open.
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   // Smart hide/reveal + scrolled state
   useEffect(() => {
     const onScroll = () => {
@@ -106,9 +114,28 @@ export const HeaderFlat = ({
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
           >
-            {open ? 'Close' : 'Menu'}
+            {/* Hamburger / close icon — inline SVG, no dependency */}
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              {open ? (
+                <path
+                  d="M6 6 L18 18 M18 6 L6 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              ) : (
+                <path
+                  d="M4 7 h16 M4 12 h16 M4 17 h16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              )}
+            </svg>
           </button>
           <Link
             href={cta.href}
@@ -119,21 +146,30 @@ export const HeaderFlat = ({
           </Link>
         </S.AsideRight>
       </S.Container>
-      {open && (
-        <S.MobileMenu>
-          {links.map((l) => (
-            <Link
-              key={l.title}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              target={l.external ? '_blank' : undefined}
-              rel={l.external ? 'noreferrer noopener' : undefined}
-            >
-              {l.title}
-            </Link>
-          ))}
-        </S.MobileMenu>
-      )}
+      {/* Mobile drawer — fixed overlay below the header bar, so it can't be
+          clipped by the sticky header or hidden by transforms. */}
+      <S.MobileMenu id="mobile-nav" data-open={open}>
+        {links.map((l) => (
+          <Link
+            key={l.title}
+            href={l.href}
+            onClick={() => setOpen(false)}
+            target={l.external ? '_blank' : undefined}
+            rel={l.external ? 'noreferrer noopener' : undefined}
+          >
+            {l.title}
+          </Link>
+        ))}
+        <Link
+          href={cta.href}
+          onClick={() => setOpen(false)}
+          className="cta"
+          target={cta.external ? '_blank' : undefined}
+          rel={cta.external ? 'noreferrer noopener' : undefined}
+        >
+          {cta.title}
+        </Link>
+      </S.MobileMenu>
     </S.Main>
   );
 };

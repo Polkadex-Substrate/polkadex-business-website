@@ -111,39 +111,78 @@ export const AsideRight = styled.div`
         transform: translateY(-0.1rem);
       }
     }
-    /* Mobile menu toggle */
+    /* Mobile menu toggle — generous 44px tap target */
     button {
       display: none;
       background: transparent;
       border: none;
       color: ${theme.colors.text};
-      font-size: 1.6rem;
       cursor: pointer;
+      padding: 1rem;
+      margin: -1rem 0;
       @media screen and (max-width: 900px) {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        justify-content: center;
+      }
+      svg {
+        display: block;
       }
     }
   `}
 `;
 
-export const MobileMenu = styled.div`
+export const MobileMenu = styled.nav`
   ${({ theme }) => css`
+    /* Fixed overlay drawer — independent of the sticky header's transforms,
+       so it can never be clipped or fail to appear. Toggled via data-open
+       (always in the DOM; no mount/unmount race on hydration). */
     display: none;
+
     @media screen and (max-width: 900px) {
       display: flex;
+      position: fixed;
+      top: 7rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
       flex-direction: column;
-      gap: 1.6rem;
-      padding: 2rem 2rem 3rem;
-      border-top: 1px solid ${theme.colors.secondaryBackground};
-      background: ${theme.colors.primaryBackground};
+      gap: 0.4rem;
+      padding: 2.4rem 2rem 4rem;
+      background: ${theme.colors.primaryBackground}f5;
+      backdrop-filter: blur(16px);
+      overflow-y: auto;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-0.8rem);
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+      &[data-open='true'] {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
       a {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 500;
         color: ${theme.colors.text};
+        padding: 1.4rem 0.6rem;
+        border-bottom: 1px solid ${theme.colors.secondaryBackgroundOpacity};
         :hover {
           color: ${theme.colors.primary};
+        }
+        &.cta {
+          margin-top: 2rem;
+          border-bottom: none;
+          background: ${theme.colors.primary};
+          color: ${theme.colors.white};
+          text-align: center;
+          border-radius: 0.8rem;
+          padding: 1.4rem;
+          font-weight: 600;
         }
       }
     }
