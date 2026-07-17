@@ -23,28 +23,36 @@ const Roadmap = ({ roadmap, releases }: Props) => {
         />
       </S.TitleContainer>
       <S.Phase>
-        {releases.map((value, i) => (
-          <S.PhaseCard key={i}>
-            <S.PhaseCardAsideLeft>
-              <span>{value.phase}</span>
-            </S.PhaseCardAsideLeft>
-            <S.PhaseCardAsideRight active={!!value?.active}>
-              <div>{value.emoji}</div>
-              <div>
+        {releases.map((value, i) => {
+          const variant: 'completed' | 'active' | 'upcoming' = value.completed
+            ? 'completed'
+            : value.active
+            ? 'active'
+            : 'upcoming';
+          return (
+            <S.PhaseCard key={i} active={!!value?.active}>
+              <S.PhaseLabel>
+                <span className="emoji">{value.emoji}</span>
+                <span>{value.phase}</span>
+              </S.PhaseLabel>
+              <S.PhaseBody data-upcoming={variant === 'upcoming'}>
                 <h3>{value.title}</h3>
-                <p>
-                  <ol>
-                    {value.items.map((v, ind) => (
-                      <li key={ind}>{v}</li>
-                    ))}
-                  </ol>
-                </p>
-              </div>
-            </S.PhaseCardAsideRight>
-            {!!value?.completed && <strong>Completed</strong>}
-            {!!value?.active && <small>In progress</small>}
-          </S.PhaseCard>
-        ))}
+                <ul>
+                  {value.items.map((v, ind) => (
+                    <li key={ind}>{v}</li>
+                  ))}
+                </ul>
+              </S.PhaseBody>
+              <S.PhaseStatus variant={variant}>
+                {variant === 'completed'
+                  ? 'Completed'
+                  : variant === 'active'
+                  ? 'In progress'
+                  : 'Upcoming'}
+              </S.PhaseStatus>
+            </S.PhaseCard>
+          );
+        })}
       </S.Phase>
       <S.RoadContainer>
         {cards.map((item, index) => (

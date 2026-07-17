@@ -1,3 +1,6 @@
+import { staggerChildProps, staggerGroupProps } from 'components';
+import { motion } from 'framer-motion';
+
 import * as S from './styles';
 
 const steps = [
@@ -16,7 +19,7 @@ const steps = [
     number: '2',
     title: 'Swap into native PDEX',
     description:
-      'Head to BuyPDEX.com and swap USDC, ETH, or USDT directly into native PDEX. No sign-up, no KYC, no CEX account required.',
+      'Head to BuyPDEX.com and swap USDC, ETH, or USDT directly into native PDEX. Fully on-chain — no sign-up, no KYC, no CEX account required.',
     links: [{ label: 'BuyPDEX.com', href: 'https://buypdex.com' }],
   },
   {
@@ -26,7 +29,7 @@ const steps = [
       'Stake PDEX and earn passive rewards paid every era (~24 hours), or trade on the Polkadex Orderbook once mainnet trading launches.',
     links: [
       { label: 'Stake PDEX', href: '/staking' },
-      { label: 'Try the Orderbook', href: 'https://explorer.polkadex.ee' },
+      { label: 'View Explorer', href: 'https://explorer.polkadex.ee' },
     ],
   },
 ];
@@ -39,14 +42,14 @@ export const HowToBuy = () => (
         Three steps to <strong>own PDEX</strong>
       </h2>
       <p>
-        Native PDEX is no longer listed on centralized exchanges. Swap into it
-        directly on-chain — no exchange account, no waiting periods.
+        Get native PDEX directly on-chain — no exchange account, no waiting
+        periods, no intermediaries.
       </p>
     </S.Header>
 
-    <S.Steps>
+    <S.Steps as={motion.div} {...staggerGroupProps}>
       {steps.map((s) => (
-        <S.Step key={s.number}>
+        <S.Step as={motion.div} {...staggerChildProps} key={s.number}>
           <S.StepNumber>{s.number}</S.StepNumber>
           <S.StepTitle>{s.title}</S.StepTitle>
           <S.StepDescription>{s.description}</S.StepDescription>
@@ -67,10 +70,10 @@ export const HowToBuy = () => (
     </S.Steps>
 
     <S.Note>
-      <strong>Why direct swap?</strong> PDEX has been delisted from centralized
-      exchanges. Native PDEX on Polkadex mainnet is the only version that
-      qualifies for staking rewards and governance. BuyPDEX.com is the fastest
-      path in.
+      <strong>On-chain from day one.</strong> With the Polkadex mainnet live,
+      users acquire native PDEX directly on-chain — the fastest path into the
+      network, and the only version that qualifies for staking rewards and
+      governance participation.
     </S.Note>
   </S.Wrapper>
 );

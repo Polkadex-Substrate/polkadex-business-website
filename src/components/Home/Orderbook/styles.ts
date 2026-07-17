@@ -40,12 +40,45 @@ export const Wrapper = styled.section`
   `}
 `;
 
+export const Preview = styled.div`
+  ${({ theme }) => css`
+    max-width: 100rem;
+    margin: 0 auto 5rem;
+    padding: 1rem;
+    background: ${theme.colors.secondaryBackgroundOpacity};
+    border: 1px solid ${theme.colors.secondaryBackground};
+    border-radius: 1.6rem;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+
+    /* Fade the bottom of the screenshot so it blends into the page bg */
+    position: relative;
+    ::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 8rem;
+      background: linear-gradient(
+        to bottom,
+        rgba(13, 13, 16, 0),
+        ${theme.colors.primaryBackground}
+      );
+      pointer-events: none;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  `}
+`;
+
 export const Features = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 110rem;
+    max-width: 100rem;
     margin: 0 auto;
 
     @media screen and (max-width: 900px) {

@@ -4,19 +4,22 @@ import * as Icons from 'components/Icons';
 import { data } from './data';
 import * as S from './styles';
 
-type LogoEntry = { icon?: string; img?: string; alt?: string };
+type LogoEntry = {
+  icon?: string;
+  img?: string;
+  alt?: string;
+  /** Renders the logo on a light chip — for marks invisible on dark bg. */
+  lightBg?: boolean;
+};
 
-const Card = ({ icon, img, alt }: LogoEntry) => {
+const Card = ({ icon, img, alt, lightBg }: LogoEntry) => {
   const IconComponent = icon ? (Icons as Record<string, React.FC>)[icon] : null;
-  return (
-    <S.Card>
-      {IconComponent ? (
-        <IconComponent />
-      ) : (
-        <img src={`/img/partners/${img}.png`} alt={alt} />
-      )}
-    </S.Card>
+  const logo = IconComponent ? (
+    <IconComponent />
+  ) : (
+    <img src={`/img/partners/${img}.png`} alt={alt} />
   );
+  return <S.Card>{lightBg ? <S.LightChip>{logo}</S.LightChip> : logo}</S.Card>;
 };
 
 export const Partners = () => (

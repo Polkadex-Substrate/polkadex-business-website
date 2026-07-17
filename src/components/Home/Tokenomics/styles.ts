@@ -1,3 +1,4 @@
+import { blobDriftAltCss, blobDriftCss } from 'styles/animations';
 import styled, { css, keyframes } from 'styled-components';
 
 const shimmer = keyframes`
@@ -30,6 +31,7 @@ export const Wrapper = styled.section`
       height: 45rem;
       top: -15rem;
       left: -10rem;
+      ${blobDriftCss}
     }
     ::after {
       background: ${theme.colors.secondary};
@@ -37,6 +39,7 @@ export const Wrapper = styled.section`
       height: 50rem;
       bottom: -20rem;
       right: -12rem;
+      ${blobDriftAltCss}
     }
 
     @media screen and (max-width: 960px) {
@@ -99,7 +102,7 @@ export const Metrics = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 110rem;
+    max-width: 100rem;
     margin: 0 auto;
 
     @media screen and (max-width: 900px) {
@@ -136,7 +139,9 @@ export const MetricValue = styled.div`
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: ${shimmer} 8s ease-in-out infinite;
+    @media (prefers-reduced-motion: no-preference) {
+      animation: ${shimmer} 8s ease-in-out infinite;
+    }
     margin-bottom: 1.2rem;
     letter-spacing: -0.03em;
 

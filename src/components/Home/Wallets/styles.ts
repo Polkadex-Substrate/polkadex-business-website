@@ -5,15 +5,32 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
     z-index: 1;
-    :before {
+    /* Content has margin-top: 4rem above the h2. Mirror that below the
+       card grid so the wrapper is symmetric around the cards — otherwise
+       the bottom band ends up "closer" to the cards than the top band. */
+    padding-bottom: 4rem;
+
+    :before,
+    :after {
       content: '';
       position: absolute;
-      top: 4rem;
       background: ${theme.colors.primary};
       width: 30%;
       height: 15rem;
-      border-radius: 0 50rem 50rem 0;
       z-index: -2;
+    }
+    /* Each band peeks 1px past its respective horizontal edge — the most
+       subtle version. html font-size: 62.5% means 1rem = 10px, so
+       -0.1rem = -1px. */
+    :before {
+      top: -0.1rem;
+      left: 0;
+      border-radius: 0 50rem 50rem 0;
+    }
+    :after {
+      bottom: -0.1rem;
+      right: 0;
+      border-radius: 50rem 0 0 50rem;
     }
   `}
 `;

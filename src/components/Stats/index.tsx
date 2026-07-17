@@ -8,7 +8,13 @@ export const Stats = ({ children }) => {
   );
 };
 
-export const StatsCard = ({ title = '', description = '' }) => (
+export const StatsCard = ({
+  title = '' as React.ReactNode,
+  description = '',
+}: {
+  title?: React.ReactNode;
+  description?: string;
+}) => (
   <S.Card>
     <span>{title}</span>
     <p>{description}</p>

@@ -1,21 +1,20 @@
-// Two rows of 7 = 14 partners. Reordered so the strongest names anchor each row.
+// Eight real, active partners — 2 rows of 4. Pruned per community feedback:
+// fewer-but-genuine beats noise, and dropping inactive Polkadot-ecosystem
+// projects (Acala, Parallel, Bifrost, Equilibrium, Ajuna, Kylix,
+// Polkastarter, Cere) supports the independent-L1 positioning.
+// `lightBg` renders the logo on a light chip — for marks that vanish
+// against the dark background (e.g. Hyperbridge).
 export const data = [
   [
-    { img: 'acala', alt: 'Acala logo' },
-    { icon: 'Parallel' },
-    { icon: 'Bifrost' },
-    { icon: 'Equilibrium' },
-    { img: 'ajuna', alt: 'Ajuna Network logo' },
-    { img: 'kylix', alt: 'Kylix Finance logo' },
-    { img: 'simplex', alt: 'Simplex logo' },
+    { img: 'hyperbridge', alt: 'Hyperbridge logo', lightBg: true },
+    { img: 'tradingView', alt: 'TradingView logo' },
+    { icon: 'Hummingbot' },
+    { icon: 'Substrate' },
   ],
   [
-    { icon: 'Onfinality' },
+    { icon: 'Certik' },
     { img: 'subscan', alt: 'Subscan logo' },
-    { icon: 'Hummingbot' },
-    { icon: 'Cere' },
-    { icon: 'Polkastarter' },
+    { icon: 'Onfinality' },
     { icon: 'Gsr' },
-    { img: 'tradingView', alt: 'TradingView logo' },
   ],
 ];

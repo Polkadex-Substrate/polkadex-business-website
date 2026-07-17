@@ -10,6 +10,8 @@ export * from './Staking';
 export * from './Tokenomics';
 export * from './HowToBuy';
 export * from './RoadmapTeaser';
+export * from './About';
+export * from './TestnetTicker';
 export * from './TestnetBanner';
 export * from './Hyperbridge';
 export * from './KylixLending';

@@ -8,7 +8,20 @@ export const Main = styled.header`
     background: ${theme.colors.primaryBackground};
     padding: 1rem 0;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
+      background 0.3s ease-in-out;
+
+    /* Smart header: slides away when scrolling down, returns on scroll-up */
+    &[data-hidden='true'] {
+      transform: translateY(-100%);
+    }
+
+    /* Once scrolled: translucent blur + subtle divider */
+    &[data-scrolled='true'] {
+      background: ${theme.colors.primaryBackground}dd;
+      backdrop-filter: saturate(160%) blur(14px);
+      border-bottom-color: ${theme.colors.secondaryBackground};
+    }
   `}
 `;
 
@@ -43,7 +56,10 @@ export const AsideLeft = styled.div`
         display: none;
       }
       a {
-        font-size: 1.4rem;
+        position: relative;
+        /* Sized against the page's body copy (1.5–1.6rem) so the nav no
+           longer reads a step smaller than the content beneath it. */
+        font-size: 1.6rem;
         font-weight: 500;
         color: ${theme.colors.text};
         opacity: 0.85;
@@ -51,6 +67,21 @@ export const AsideLeft = styled.div`
         :hover {
           opacity: 1;
           color: ${theme.colors.primary};
+        }
+        /* Active section indicator — small brand underline */
+        &.active {
+          opacity: 1;
+          color: ${theme.colors.primary};
+          ::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -0.6rem;
+            height: 2px;
+            border-radius: 2px;
+            background: ${theme.colors.primary};
+          }
         }
       }
     }
@@ -69,9 +100,9 @@ export const AsideRight = styled.div`
       gap: 0.6rem;
       background: ${theme.colors.primary};
       color: ${theme.colors.white} !important;
-      padding: 1.1rem 2.4rem;
+      padding: 1.2rem 2.6rem;
       border-radius: 0.6rem;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 600;
       white-space: nowrap;
       transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -86,7 +117,7 @@ export const AsideRight = styled.div`
       background: transparent;
       border: none;
       color: ${theme.colors.text};
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       cursor: pointer;
       @media screen and (max-width: 900px) {
         display: inline-flex;
@@ -108,7 +139,7 @@ export const MobileMenu = styled.div`
       border-top: 1px solid ${theme.colors.secondaryBackground};
       background: ${theme.colors.primaryBackground};
       a {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 500;
         color: ${theme.colors.text};
         :hover {

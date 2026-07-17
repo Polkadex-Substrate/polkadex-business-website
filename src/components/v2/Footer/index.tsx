@@ -1,75 +1,52 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Icons from 'components/Icons';
-import { ThemeSwitcher } from 'components/ThemeSwitcher';
 import Link from 'next/link';
 
 import * as S from './styles';
 
+/**
+ * Slim footer — no duplication with the sticky header nav (community
+ * feedback). Only genuinely useful links that don't belong in the main
+ * navigation: explorer, docs, code, guides, media kit.
+ *
+ * Legal links intentionally absent for now: the old Terms/Privacy PDFs on
+ * GitHub are outdated. Better to show nothing than inaccurate documents.
+ * When updated docs are ready, host them at /terms and /privacy and add
+ * the links back here.
+ */
 export const Footer = ({ isDark = false }) => {
   const currentYear = new Date().getFullYear();
   return (
     <S.Wrapper isDark={isDark}>
       <S.Header>
         <div>
-          <span>Polkadex</span>
+          <span>Network</span>
           <ul>
             <li>
               <a
-                href="https://docs.polkadex.ee/"
+                href="https://explorer.polkadex.ee"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
               >
-                Overview
+                Mainnet Explorer
               </a>
             </li>
             <li>
-              <a
-                href="https://docs.polkadex.ee/whatispolkadex"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Features
-              </a>
+              <Link href="/testnet-guide">Testnet Guide</Link>
             </li>
-            <li>
-              <Link href="/roadmap">Roadmap</Link>
-            </li>
-            <li>
-              <Link href="/tokeneconomics">Token Economics</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <span>Products</span>
-          <ul>
-            <li>
-              <Link href="/orderbook">Orderbook</Link>
-            </li>
-            {/* <li>
-              <Link href="#">Polkapool AMM</Link>
-            </li> */}
-            {/* <li>
-              <a
-                href="https://docs.polkadex.ee/IDOPlatform"
-                target="_blank"
-                rel="noreferrer"
-              >
-                PolkaIDO
-              </a>
-            </li> */}
             <li>
               <a
-                href="https://hyperbridge.network"
+                href="https://buypdex.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
               >
-                Hyperbridge
+                Get PDEX
               </a>
             </li>
           </ul>
         </div>
         <div>
-          <span>Resources</span>
+          <span>Developers</span>
           <ul>
             <li>
               <a
@@ -86,20 +63,25 @@ export const Footer = ({ isDark = false }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Github Repository
+                GitHub
               </a>
-            </li>
-            <li>
-              <Link href="/testnet-guide">Testnet Guide</Link>
             </li>
             <li>
               <a
-                href="https://www.substrate.io/"
+                href="https://hyperbridge.network"
                 target="_blank"
                 rel="noreferrer"
               >
-                Substrate
+                Hyperbridge
               </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <span>Company</span>
+          <ul>
+            <li>
+              <Link href="/mediaKit">Media Kit</Link>
             </li>
             <li>
               <a
@@ -112,47 +94,11 @@ export const Footer = ({ isDark = false }) => {
             </li>
           </ul>
         </div>
-        <div>
-          <span>Company</span>
-          <ul>
-            <li>
-              <Link href="/">About Us</Link>
-            </li>
-            <li>
-              <Link href="/#partners">Partners</Link>
-            </li>
-            {/* Team page disabled for now
-            <li>
-              <Link href="/team">Team</Link>
-            </li> */}
-            <li>
-              <Link href="/mediaKit">Media Kit</Link>
-            </li>
-          </ul>
-        </div>
       </S.Header>
       <S.Footer>
         <S.Copyright>
           <ul>
-            <li>Copyright © {currentYear} Polkadex, Inc.</li>
-            <li>
-              <Link
-                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Terms
-              </Link>
-            </li>
-            <li>
-              <a
-                href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Privacy
-              </a>
-            </li>
+            <li>© {currentYear} Polkadex, Inc.</li>
           </ul>
         </S.Copyright>
         <S.Social isDark={isDark}>
@@ -160,7 +106,7 @@ export const Footer = ({ isDark = false }) => {
           <ul>
             <li>
               <a
-                href="https://discord.com/invite/Uvua83QAzk"
+                href="https://discord.gg/Jh5nSd6gj"
                 target="_blank"
                 rel="noreferrer"
               >

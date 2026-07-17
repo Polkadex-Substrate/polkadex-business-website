@@ -1,4 +1,4 @@
-import { BackToHome, Seo } from 'components';
+import { BackToHome, ScrollReveal, Seo } from 'components';
 import { Roadmap as RoadmapComponent } from 'components/';
 import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import Script from 'next/script';
@@ -55,8 +55,12 @@ export default function Roadmap() {
         <HeaderFlat />
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <BackToHome />
-          <RoadmapComponent roadmap={roadmap} releases={releases} />
-          <SocialFollow />
+          <ScrollReveal>
+            <RoadmapComponent roadmap={roadmap} releases={releases} />
+          </ScrollReveal>
+          <ScrollReveal>
+            <SocialFollow />
+          </ScrollReveal>
         </main>
         <Footer />
       </S.Wrapper>

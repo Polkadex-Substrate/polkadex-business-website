@@ -8,10 +8,13 @@ Last updated: 2026-07-14
 
 | Section | Component | Location | Reason |
 |---|---|---|---|
-| "Where to get PDEX" tile (BuyPDEX) | `<Exchanges />` | `src/pages/index.tsx:55` | Superseded by richer `<HowToBuy />` further down |
+| "Where to get PDEX" tile (BuyPDEX) | `<Exchanges />` | `src/pages/index.tsx` | Superseded by richer `<HowToBuy />` further down |
 | Kylix Lending block | `<KylixLending />` | `src/pages/index.tsx` | Temporarily hidden |
 | Join Polkadex open beta program | `<BetaProgram />` | `src/pages/index.tsx` | Temporarily hidden |
 | PolkaIDO platform | `<Polkaido />` | `src/pages/index.tsx` | Temporarily hidden |
+| Orderbook Testnet banner | `<TestnetBanner />` | `src/pages/index.tsx` | Redundant — header carries the single "Try the Testnet" CTA |
+| Hero (typewriter + illustration) | `<Hero />` | `src/pages/index.tsx` | Removed per community feedback — About is now the lead section with the h1 and product screenshot |
+| Wallets logo strip | `<Wallets />` | `src/pages/index.tsx` | Duplicated "Compatible wallets" grid in Staking section. Pink-band styles preserved in `Wallets/styles.ts` for reuse |
 
 ## Sub-sections inside home components
 

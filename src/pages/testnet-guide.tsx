@@ -1,4 +1,4 @@
-import { BackToHome, Seo, TestnetGuide } from 'components';
+import { BackToHome, ScrollReveal, Seo, TestnetGuide } from 'components';
 import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import Script from 'next/script';
 import React from 'react';
@@ -32,8 +32,12 @@ export default function TestnetGuidePage() {
         <HeaderFlat />
         <main>
           <BackToHome />
-          <TestnetGuide />
-          <SocialFollow />
+          <ScrollReveal>
+            <TestnetGuide />
+          </ScrollReveal>
+          <ScrollReveal>
+            <SocialFollow />
+          </ScrollReveal>
         </main>
         <Footer />
       </S.Wrapper>

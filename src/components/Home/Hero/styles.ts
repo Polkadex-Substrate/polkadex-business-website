@@ -5,7 +5,7 @@ export const Wrapper = styled.section`
   margin-top: 2rem;
 `;
 export const Main = styled.div`
-  max-width: 110rem;
+  max-width: 100rem;
   margin: 0 auto;
   background: linear-gradient(
     179.95deg,

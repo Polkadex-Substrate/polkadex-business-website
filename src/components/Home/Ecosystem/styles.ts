@@ -41,7 +41,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  max-width: 110rem;
+  max-width: 100rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ export const Content = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.6rem;
 
   @media screen and (max-width: 900px) {
@@ -78,24 +78,19 @@ export const Card = styled.div`
       border-color: ${theme.colors.primary}44;
       background: ${theme.colors.primary}08;
     }
-    svg {
-      max-width: 60%;
-      max-height: 60%;
-      opacity: 0.85;
-      transition: opacity 0.3s ease-in-out;
-    }
-    :hover svg {
-      opacity: 1;
-    }
+    svg,
     img {
       max-width: 60%;
       max-height: 60%;
       object-fit: contain;
-      opacity: 0.85;
-      transition: opacity 0.3s ease-in-out;
+      opacity: 0.8;
+      filter: grayscale(65%);
+      transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
     }
+    :hover svg,
     :hover img {
       opacity: 1;
+      filter: grayscale(0%);
     }
   `}
 `;

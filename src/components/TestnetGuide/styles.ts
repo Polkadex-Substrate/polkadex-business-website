@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    max-width: 82rem;
+    /* 100rem to match the site-wide content width (SocialFollow grid). */
+    max-width: 100rem;
     margin: 0 auto;
     padding: 4rem 2rem 2rem 2rem;
     color: ${theme.colors.text};

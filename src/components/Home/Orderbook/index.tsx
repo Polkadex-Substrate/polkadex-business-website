@@ -1,11 +1,14 @@
-import { SectionHead } from 'components';
+import { SectionHead, staggerChildProps, staggerGroupProps } from 'components';
 import * as Icons from 'components/Icons';
+import { motion } from 'framer-motion';
 
+import { AnimatedOrderbookMock } from './AnimatedMock';
 import * as S from './styles';
 
-// Six punchy differentiators. Kept intentionally tight — one sentence each —
-// so the grid reads scannably. Ordered from "why it's different" to "what
-// you can build with it."
+// Six differentiators, tightened per feedback. Blends concrete on-chain
+// claims (200+ validators, sub-ms latency) with trader-specific features
+// (limit/market orders, HFT API) so the grid reads for both investors and
+// active traders.
 const features = [
   {
     title: 'Fully on-chain matching',
@@ -14,21 +17,21 @@ const features = [
     icon: 'Faster',
   },
   {
-    title: 'HFT-grade speed',
+    title: 'Sub-millisecond latency',
     description:
-      'Sub-second block times keep the experience close to a centralized exchange without the custody trade-off.',
+      'Order-matching engine tuned for professional traders. CEX-grade speed without the custody trade-off.',
     icon: 'Cheaper',
   },
   {
-    title: 'Your keys, your crypto',
+    title: 'Blockchain security',
     description:
-      'Non-custodial by design — funds stay in your wallet, no honeypot for hackers.',
+      'Secured by a validator set of 200+ network nodes — decentralized consensus, not a trusted operator.',
     icon: 'YourCrypto',
   },
   {
-    title: 'Sleek trading UI',
+    title: 'Limit & market orders',
     description:
-      'CEX-grade interface, charts, and order flow — with the transparency of a DEX underneath.',
+      'Full price control with limit orders and instant execution with market orders. Real orderbook, not an AMM.',
     icon: 'BetterLooking',
   },
   {
@@ -59,11 +62,15 @@ export const Orderbook = () => {
         description="Polkadex Orderbook is a non-custodial trading application running on our sovereign Layer 1 chain. High-frequency trading, low fees, self-custody — all in one place."
       />
 
-      <S.Features>
+      {/* Animated bid/ask mock instead of a second static screenshot —
+          the About section already shows the full product UI. */}
+      <AnimatedOrderbookMock />
+
+      <S.Features as={motion.div} {...staggerGroupProps}>
         {features.map((f) => {
           const IconComponent = Icons[f.icon];
           return (
-            <S.Feature key={f.title}>
+            <S.Feature as={motion.div} {...staggerChildProps} key={f.title}>
               <S.FeatureIcon>
                 {IconComponent ? <IconComponent /> : null}
               </S.FeatureIcon>

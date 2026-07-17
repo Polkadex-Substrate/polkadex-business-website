@@ -1,3 +1,5 @@
+import { staggerChildProps, staggerGroupProps } from 'components';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import * as S from './styles';
@@ -36,9 +38,9 @@ export const Tokenomics = () => (
       </p>
     </S.Header>
 
-    <S.Metrics>
+    <S.Metrics as={motion.div} {...staggerGroupProps}>
       {metrics.map((m) => (
-        <S.Metric key={m.label}>
+        <S.Metric as={motion.div} {...staggerChildProps} key={m.label}>
           <S.MetricValue>{m.value}</S.MetricValue>
           <S.MetricLabel>{m.label}</S.MetricLabel>
           <S.MetricDetail>{m.detail}</S.MetricDetail>

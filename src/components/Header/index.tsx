@@ -83,7 +83,7 @@ export const Header = ({
               link="https://www.linkedin.com/company/69690544"
             />
             <Icon name="Reddit" link="https://www.reddit.com/r/polkadex" />
-            <Icon name="Discord" link="https://discord.com/invite/Uvua83QAzk" />
+            <Icon name="Discord" link="https://discord.gg/Jh5nSd6gj" />
             <PrimaryButton
               content={ctaButton}
               icon="Telegram"

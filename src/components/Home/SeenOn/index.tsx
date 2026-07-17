@@ -4,12 +4,22 @@ import * as Icons from 'components/Icons';
 import { data } from './data';
 import * as S from './styles';
 
-type LogoEntry = { icon?: string; img?: string; alt?: string };
+type LogoEntry = {
+  icon?: string;
+  img?: string;
+  alt?: string;
+  href: string;
+};
 
-const Card = ({ icon, img, alt }: LogoEntry) => {
+const Card = ({ icon, img, alt, href }: LogoEntry) => {
   const IconComponent = icon ? (Icons as Record<string, React.FC>)[icon] : null;
   return (
-    <S.Card>
+    <S.Card
+      href={href}
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label={alt || icon || 'External article'}
+    >
       {IconComponent ? (
         <IconComponent />
       ) : (
@@ -28,7 +38,7 @@ export const SeenOn = () => (
           Coverage across <strong>global crypto media</strong>
         </>
       }
-      description="Polkadex has been featured by leading publications and data providers in the crypto ecosystem."
+      description="Click any outlet to read the full article. Only publications with direct, verifiable coverage are listed here."
     />
 
     <S.Content>

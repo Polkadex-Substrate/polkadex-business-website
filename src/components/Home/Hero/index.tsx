@@ -1,6 +1,6 @@
 import * as Icons from 'components/Icons';
 import { useScroll, useTransform } from 'framer-motion';
-import Typewriter from 'typewriter-effect';
+import Link from 'next/link';
 
 import * as S from './styles';
 
@@ -13,42 +13,21 @@ export const Hero = () => {
       <S.Main>
         <S.Content>
           <S.Container>
+            {/* Static headline — typewriter animation removed per community
+                feedback (read as distracting / non-professional). */}
             <h1>
-              <strong>
-                <Typewriter
-                  options={{
-                    strings: ['Better', 'Easier', 'Cheaper', 'More Advanced'],
-                    autoStart: true,
-                    loop: true,
-                    cursor: '|',
-                  }}
-                />
-              </strong>
-              Decentralized Trading
+              <strong>Decentralized Trading,</strong> Without Compromise
             </h1>
             <h2>
-              Polkadex is a fully non-custodial peer-to-peer orderbook-based
-              cryptocurrency exchange for the DeFi ecosystem built on Substrate.
+              Polkadex is a fully non-custodial, orderbook-based exchange on a
+              sovereign Layer 1 built with Substrate. CEX-grade speed,
+              self-custody always.
             </h2>
             <S.Actions>
-              {/* Primary CTA aligned with the header (Get PDEX). We use
-                  "Get" rather than "Buy" as a lighter-touch, utility-first
-                  framing that reduces exposure under crypto-marketing regs
-                  (SEC/MiCA/UK FCA financial-promotions rules). */}
-              <a
-                href="https://buypdex.com"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Get PDEX
-              </a>
-              <a
-                href="https://explorer.polkadex.ee"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Mainnet explorer <Icons.ArrowSingleRight />
-              </a>
+              {/* Single CTA during testnet phase — routes to the guide first
+                  so users complete onboarding (wallet, faucet, cross-chain)
+                  before reaching the app. */}
+              <Link href="/testnet-guide">Try the Testnet</Link>
             </S.Actions>
             <S.Secured>
             </S.Secured>

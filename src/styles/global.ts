@@ -35,6 +35,19 @@ const GlobalStyles = createGlobalStyle`
     scroll-margin-top: 8rem;
   }
 
+  /* Tactile press feedback on every interactive element — subtle scale-down
+     confirms the click registered. Respects reduced-motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    a:active,
+    button:active {
+      transform: scale(0.98);
+    }
+    a,
+    button {
+      transition: transform 0.15s ease;
+    }
+  }
+
   * {
     padding: 0;
     margin: 0;
@@ -44,11 +57,25 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .animate {
-    animation: moveSlideshow 20s linear infinite;
+    @media (prefers-reduced-motion: no-preference) {
+      animation: moveSlideshow 20s linear infinite;
+    }
     @keyframes moveSlideshow {
       100% {
         transform: translate3d(calc(-100% + 100vw), 0, 0);
       }
+    }
+  }
+
+  /* Anchor-arrival pulse: when a nav link scrolls you to a section, the
+     target flashes a faint brand tint once so you know where you landed. */
+  @media (prefers-reduced-motion: no-preference) {
+    :target {
+      animation: anchorPulse 1.2s ease-out 1;
+    }
+    @keyframes anchorPulse {
+      0% { background-color: rgba(230, 0, 122, 0.07); }
+      100% { background-color: transparent; }
     }
   }
   

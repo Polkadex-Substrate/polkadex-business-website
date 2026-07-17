@@ -1,8 +1,8 @@
+// Security auditors, researchers, and ecosystem collaborators.
+// Substrate and CertiK moved to the Partners section — kept out of here
+// to avoid duplicate logos on the same page.
 export const data = [
   [
-    {
-      icon: 'Substrate',
-    },
     {
       icon: 'Hacken',
     },
@@ -21,9 +21,6 @@ export const data = [
     },
   ],
   [
-    {
-      icon: 'Certik',
-    },
     {
       icon: 'Cryptecon',
     },

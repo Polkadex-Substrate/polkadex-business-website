@@ -15,7 +15,7 @@ export const Faq = () => {
             <strong>
               <a
                 target="_blank"
-                href="https://discord.com/invite/Uvua83QAzk"
+                href="https://discord.gg/Jh5nSd6gj"
                 rel="noreferrer"
               >
                 Join the Polkadex Discord server

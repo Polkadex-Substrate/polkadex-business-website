@@ -16,7 +16,7 @@ export const StakingFaq = () => {
             <strong>
               <a
                 target="_blank"
-                href="https://discord.com/invite/Uvua83QAzk"
+                href="https://discord.gg/Jh5nSd6gj"
                 rel="noreferrer"
               >
                 Discord server
@@ -26,7 +26,7 @@ export const StakingFaq = () => {
             <strong>
               <a
                 target="_blank"
-                href="https://discord.com/invite/Uvua83QAzk"
+                href="https://discord.gg/Jh5nSd6gj"
                 rel="noreferrer"
               >
                 Telegram channel

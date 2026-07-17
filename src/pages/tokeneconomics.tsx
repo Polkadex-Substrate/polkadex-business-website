@@ -1,5 +1,6 @@
 import {
   BackToHome,
+  ScrollReveal,
   Seo,
   TokenEconomics as TokenEconomicsComponent,
 } from 'components';
@@ -58,8 +59,12 @@ export default function Tokeneconomics() {
         <HeaderFlat />
         <main ref={ref} style={{ overflow: 'hidden' }}>
           <BackToHome />
-          <TokenEconomicsComponent {...tokenEconomics} />
-          <SocialFollow />
+          <ScrollReveal>
+            <TokenEconomicsComponent {...tokenEconomics} />
+          </ScrollReveal>
+          <ScrollReveal>
+            <SocialFollow />
+          </ScrollReveal>
         </main>
         <Footer />
       </S.Wrapper>

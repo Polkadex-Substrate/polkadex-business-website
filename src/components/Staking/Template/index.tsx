@@ -1,4 +1,4 @@
-import { BackToHome, Seo } from 'components';
+import { BackToHome, CountUp, ScrollReveal, Seo } from 'components';
 import { StakingFaq } from 'components/Crowdloans';
 import { Hero, Overview, Rewards } from 'components/Staking';
 import { Stats, StatsCard } from 'components/Stats';
@@ -43,28 +43,42 @@ export const Template = () => {
         <HeaderFlat />
         <main>
           <BackToHome />
-          <Hero apy={stats.apy} />
-          <Stats>
-            <>
-              <StatsCard
-                title={stats.nominators}
-                description="Total Nominators"
-              />
-              <StatsCard
-                title={stats.pdexStaked}
-                description="PDEX Staked"
-              />
-              <StatsCard
-                title={stats.activeValidators}
-                description="Active Validators"
-              />
-            </>
-          </Stats>
-          <Rewards apy={stats.apy} apyValidator={stats.apyValidator} />
-          <HowToStake />
-          <Overview />
-          <StakingFaq />
-          <SocialFollow />
+          <ScrollReveal>
+            <Hero apy={stats.apy} />
+          </ScrollReveal>
+          <ScrollReveal>
+            <Stats>
+              <>
+                <StatsCard
+                  title={<CountUp value={stats.nominators} />}
+                  description="Total Nominators"
+                />
+                <StatsCard
+                  title={<CountUp value={stats.pdexStaked} />}
+                  description="PDEX Staked"
+                />
+                <StatsCard
+                  title={<CountUp value={stats.activeValidators} />}
+                  description="Active Validators"
+                />
+              </>
+            </Stats>
+          </ScrollReveal>
+          <ScrollReveal>
+            <Rewards apy={stats.apy} apyValidator={stats.apyValidator} />
+          </ScrollReveal>
+          <ScrollReveal>
+            <HowToStake />
+          </ScrollReveal>
+          <ScrollReveal>
+            <Overview />
+          </ScrollReveal>
+          <ScrollReveal>
+            <StakingFaq />
+          </ScrollReveal>
+          <ScrollReveal>
+            <SocialFollow />
+          </ScrollReveal>
         </main>
         <Footer />
       </S.Wrapper>

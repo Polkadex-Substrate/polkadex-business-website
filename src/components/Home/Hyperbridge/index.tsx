@@ -1,5 +1,6 @@
-import { SectionHead } from 'components';
+import { SectionHead, staggerChildProps, staggerGroupProps } from 'components';
 import * as Icons from 'components/Icons';
+import { motion } from 'framer-motion';
 
 import * as S from './styles';
 
@@ -36,11 +37,11 @@ export const Hyperbridge = () => (
       description="Deposits and withdrawals between Polkadex and other chains are powered by Hyperbridge — a cryptographic interoperability protocol. No relayers, no multisigs, no honeypots."
     />
 
-    <S.Grid>
+    <S.Grid as={motion.div} {...staggerGroupProps}>
       {cards.map((c) => {
         const IconComponent = Icons[c.icon];
         return (
-          <S.Card key={c.title}>
+          <S.Card as={motion.div} {...staggerChildProps} key={c.title}>
             <S.IconWrap>{IconComponent ? <IconComponent /> : null}</S.IconWrap>
             <h3>{c.title}</h3>
             <p>{c.description}</p>

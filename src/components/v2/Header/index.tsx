@@ -177,7 +177,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     </S.Li>
                     <S.Li>
                       <a
-                        href="https://discord.com/invite/Uvua83QAzk"
+                        href="https://discord.gg/Jh5nSd6gj"
                         target="_blank"
                         rel="noreferrer"
                       >

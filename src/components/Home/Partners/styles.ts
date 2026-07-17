@@ -41,7 +41,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  max-width: 110rem;
+  max-width: 100rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -49,17 +49,26 @@ export const Content = styled.div`
 `;
 
 export const Row = styled.div`
-  /* Locked to 7 columns on desktop so the 14 partners land in exactly two
-     equal rows. Falls back to 4 / 2 on smaller viewports. */
+  /* 4 columns × 2 rows = 8 partners. Fewer, larger, more deliberate. */
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
 
-  @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 720px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+/** Light chip behind logos that disappear on the dark background. */
+export const LightChip = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f5f7;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.4rem;
+  img {
+    max-height: 3.2rem;
   }
 `;
 
@@ -68,7 +77,7 @@ export const Card = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 7.2rem;
+    height: 9rem;
     padding: 1.2rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border: 1px solid ${theme.colors.secondaryBackground};
@@ -85,12 +94,14 @@ export const Card = styled.div`
       max-width: 78%;
       max-height: 65%;
       object-fit: contain;
-      opacity: 0.85;
-      transition: opacity 0.3s ease-in-out;
+      opacity: 0.8;
+      filter: grayscale(65%);
+      transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
     }
     :hover svg,
     :hover img {
       opacity: 1;
+      filter: grayscale(0%);
     }
   `}
 `;

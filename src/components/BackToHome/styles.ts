@@ -2,9 +2,14 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    max-width: 120rem;
-    margin: 3rem auto 0;
-    padding: 0 3rem;
+    /* Aligned to the site-wide 100rem content column, with breathing room
+       below the sticky header and above the page content. */
+    max-width: 100rem;
+    margin: 4rem auto 2rem;
+    padding: 0 2rem;
+    @media screen and (min-width: 1040px) {
+      padding: 0;
+    }
 
     a {
       display: inline-flex;
@@ -19,10 +24,6 @@ export const Wrapper = styled.div`
         opacity: 0.85;
         transform: translateX(-0.3rem);
       }
-    }
-
-    @media screen and (max-width: 700px) {
-      padding: 0 2rem;
     }
   `}
 `;

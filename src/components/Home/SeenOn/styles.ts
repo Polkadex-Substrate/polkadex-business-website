@@ -41,7 +41,9 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  max-width: 110rem;
+  /* Narrower container + taller cards so the tiles read closer to square,
+     consistent with the other card grids on the page. */
+  max-width: 84rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -50,24 +52,24 @@ export const Content = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
 
   @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   @media screen and (max-width: 520px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled.a`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 7.2rem;
-    padding: 1.4rem;
+    height: 10rem;
+    padding: 1.6rem;
     background: ${theme.colors.secondaryBackgroundOpacity};
     border: 1px solid ${theme.colors.secondaryBackground};
     border-radius: 1rem;
@@ -83,12 +85,14 @@ export const Card = styled.div`
       max-width: 75%;
       max-height: 65%;
       object-fit: contain;
-      opacity: 0.85;
-      transition: opacity 0.3s ease-in-out;
+      opacity: 0.8;
+      filter: grayscale(65%);
+      transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
     }
     :hover svg,
     :hover img {
       opacity: 1;
+      filter: grayscale(0%);
     }
   `}
 `;
