@@ -74,10 +74,13 @@ function App({ Component, pageProps }: AppProps) {
           link="/"
           description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
         />
-        {/* Quick cross-route fade so page changes feel like one application
-            rather than separate documents. initial={false} avoids a fade on
-            first paint; mode="wait" prevents double-render overlap. */}
-        <AnimatePresence mode="wait" initial={false}>
+        {/* Quick cross-route fade so page changes feel like one application.
+            NOTE: do NOT add initial={false} here — AnimatePresence propagates
+            it via PresenceContext to every descendant motion component,
+            which silently disables all ScrollReveal / stagger entrance
+            animations on first page load. The cost of omitting it is a
+            single 150ms fade-in on first paint, which reads as polish. */}
+        <AnimatePresence mode="wait">
           <motion.div
             key={router.route}
             initial={{ opacity: 0 }}
