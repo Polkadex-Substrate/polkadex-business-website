@@ -6,7 +6,9 @@
 // against the dark background (e.g. Hyperbridge).
 export const data = [
   [
-    { img: 'hyperbridge', alt: 'Hyperbridge logo', lightBg: true },
+    // White wordmark (mark + "Hyperbridge" text) — reads instantly on the
+    // dark card, no light chip needed.
+    { img: 'hyperbridge', alt: 'Hyperbridge logo' },
     { img: 'tradingView', alt: 'TradingView logo' },
     { icon: 'Hummingbot' },
     { icon: 'Substrate' },
