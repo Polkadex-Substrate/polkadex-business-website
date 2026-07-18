@@ -26,10 +26,8 @@ module.exports = {
     }
   },
   env: {
-    GOOGLE_ANALYTICS:
-      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || 'G-DYTPWG3R5M',
-    NEXT_PUBLIC_GA_MEASUREMENT_ID:
-      process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-5FD4544T94',
+    // Google Analytics removed 2026-07 — replaced by Plausible (cookieless,
+    // proxied through /assets/pa.js + /pa/event Pages Functions).
     RANGER_HOST_URL:
       process.env.NEXT_PUBLIC_RANGER_HOST_URL ||
       'wss://polkadex.public.curie.radiumblock.co/ws',

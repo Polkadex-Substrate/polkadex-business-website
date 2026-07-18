@@ -108,6 +108,17 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           {/* Dark theme-color so mobile browser chrome matches the site bg */}
           <meta name="theme-color" content="#0d0d10" />
+          {/* Plausible analytics — cookieless, privacy-first, proxied
+              through our own domain via Pages Functions (see functions/).
+              Replaced Google Analytics: heavily blocked by crypto users,
+              needed cookie consent, and clashed with the self-custody
+              brand story. */}
+          <script
+            defer
+            data-domain="polkadex.ee"
+            data-api="/pa/event"
+            src="/assets/pa.js"
+          />
           {/* Open Graph and Twitter card tags are rendered per-page by the
               shared <Seo /> component (src/components/Seo) so each page gets
               its own title, description, canonical URL and social preview. */}

@@ -1,26 +1,11 @@
 import { Seo } from 'components';
 import { Icon } from 'components/Icon';
-import Script from 'next/script';
 
 import * as S from '../styles/maintenance';
 
 const Maintenance = () => {
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${process.env.GOOGLE_ANALYTICS}');
-          `,
-        }}
-      />
       <S.Wrapper>
         <Seo title="Polkadex - Maintenance" path="/maintenance" noindex />
         <S.Container>

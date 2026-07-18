@@ -5,7 +5,6 @@ import { Stats, StatsCard } from 'components/Stats';
 import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import { useStakingStats } from 'hooks/useStakingStats';
 import dynamic from 'next/dynamic';
-import Script from 'next/script';
 
 import * as S from './styles';
 
@@ -19,21 +18,6 @@ export const Template = () => {
   const stats = useStakingStats();
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${process.env.GOOGLE_ANALYTICS}');
-          `,
-        }}
-      />
       <S.Wrapper>
         <Seo
           title="Stake PDEX & Earn Passive Income"

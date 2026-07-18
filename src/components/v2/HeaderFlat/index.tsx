@@ -2,6 +2,7 @@
 import * as Logo from 'components/Logo';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { track } from 'utils/analytics';
 
 import * as S from './styles';
 
@@ -139,6 +140,7 @@ export const HeaderFlat = ({
           </button>
           <Link
             href={cta.href}
+            onClick={() => track('CTA: Try Testnet', { placement: 'header' })}
             target={cta.external ? '_blank' : undefined}
             rel={cta.external ? 'noreferrer noopener' : undefined}
           >

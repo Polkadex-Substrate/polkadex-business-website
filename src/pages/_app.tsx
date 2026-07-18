@@ -8,11 +8,10 @@ import 'slick-carousel/slick/slick.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { BackToTop } from 'components/BackToTop';
-import PrivacyPopUp from 'components/PrivacyPopUp';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { OverlayProvider } from 'react-aria';
 import { ThemeProvider } from 'styled-components';
 import { defaultThemes, GlobalStyles } from 'styles';
@@ -23,21 +22,7 @@ import Maintenance from './maintenance';
 const maintenance = false;
 
 function App({ Component, pageProps }: AppProps) {
-  const [state, setState] = useState(false);
   const router = useRouter();
-
-  const handleAccept = () => {
-    localStorage.setItem('CookiesAccepted', 'true');
-    setState(false);
-  };
-  function checkCookies() {
-    const result = localStorage.getItem('CookiesAccepted');
-    if (result !== 'true') setState(true);
-  }
-
-  useEffect(() => {
-    if (!state) checkCookies();
-  }, [state]);
 
   // Cross-page anchor fix: with AnimatePresence mode="wait", the destination
   // page's DOM doesn't exist yet when the browser attempts its native hash
@@ -68,12 +53,12 @@ function App({ Component, pageProps }: AppProps) {
     <OverlayProvider>
       <ThemeProvider theme={defaultThemes.dark}>
         <GlobalStyles />
-        <PrivacyPopUp
-          action={handleAccept}
-          visible={state}
-          link="/"
-          description="When you visit our website we collect information about you using cookies and other unique identifiers to enhance your experience, analyze performance and traffic on the website, and tailor ads and content to your interests while you navigate on the web or interact with us across devices."
-        />
+        {/* Cookie consent banner retired: Google Analytics was removed in
+            favor of Plausible (cookieless, privacy-first, proxied through
+            our domain). Nothing on the site sets tracking cookies anymore,
+            so there is nothing to consent to. If a cookie-setting service
+            is ever reintroduced, restore <PrivacyPopUp /> from
+            components/PrivacyPopUp. */}
         {/* Quick cross-route fade so page changes feel like one application.
             NOTE: do NOT add initial={false} here — AnimatePresence propagates
             it via PresenceContext to every descendant motion component,

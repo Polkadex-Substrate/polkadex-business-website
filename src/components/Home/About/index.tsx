@@ -6,6 +6,7 @@ import {
 import * as Icons from 'components/Icons';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { track } from 'utils/analytics';
 
 import * as S from './styles';
 
@@ -112,7 +113,12 @@ export const About = () => (
     </S.Pillars>
 
     <S.Footer>
-      <Link href="/testnet-guide">Try the Testnet</Link>
+      <Link
+        href="/testnet-guide"
+        onClick={() => track('CTA: Try Testnet', { placement: 'about' })}
+      >
+        Try the Testnet
+      </Link>
     </S.Footer>
   </S.Wrapper>
 );

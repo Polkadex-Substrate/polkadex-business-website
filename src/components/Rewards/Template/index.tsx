@@ -5,7 +5,6 @@ import { Popup } from 'components/Popup';
 import { Hero } from 'components/Rewards';
 import { Footer, Header, Newsletter } from 'components/v2';
 import dynamic from 'next/dynamic';
-import Script from 'next/script';
 import { useEffect, useMemo, useState } from 'react';
 
 import * as S from './styles';
@@ -71,21 +70,6 @@ export const Template = ({ apy }) => {
           </S.Terms>
         </S.TermsWrapper>
       </Popup>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${process.env.GOOGLE_ANALYTICS}');
-          `,
-        }}
-      />
       <S.Wrapper>
         <Seo
           title="Polkadex Rewards"

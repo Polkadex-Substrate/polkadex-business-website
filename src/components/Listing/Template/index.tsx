@@ -1,7 +1,6 @@
 import { BackToHome, Seo } from 'components';
 import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import { About, Hero, Information } from 'components/Listing';
-import Script from 'next/script';
 import { useEffect } from 'react';
 import * as S from 'styles/home';
 import { HomeTranslations, IHomeTranslations } from 'translations';
@@ -23,21 +22,6 @@ export function Template() {
   });
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${process.env.GOOGLE_ANALYTICS}');
-          `,
-        }}
-      />
       <S.Wrapper>
         <Seo
           title="List your token on Polkadex Orderbook"

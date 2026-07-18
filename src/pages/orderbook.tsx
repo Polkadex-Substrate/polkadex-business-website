@@ -15,7 +15,6 @@ import { StatisticBlock } from 'components/StatisticBlock';
 import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
 import { YourKeys } from 'components/YourKeys';
 import dynamic from 'next/dynamic';
-import Script from 'next/script';
 import React, { useEffect, useRef } from 'react';
 import * as S from 'styles/home';
 import { IOrderbookTranslations, OrderbookTranslations } from 'translations';
@@ -64,21 +63,6 @@ export default function Orderbook() {
 
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${process.env.GOOGLE_ANALYTICS}');
-          `,
-        }}
-      />
       <S.Wrapper>
         <Seo
           title="Polkadex Orderbook Crypto Currency Exchange"

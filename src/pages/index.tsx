@@ -21,27 +21,11 @@ import {
 } from 'components/Home';
 import { ScrollReveal, Seo } from 'components';
 import { Footer, HeaderFlat, SocialFollow } from 'components/v2';
-import Script from 'next/script';
 import * as S from 'styles/home';
 
 export default function Home() {
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${process.env.GOOGLE_ANALYTICS}');
-          `,
-        }}
-      />
       <S.Wrapper>
         <Seo path="/" />
         <HeaderFlat />

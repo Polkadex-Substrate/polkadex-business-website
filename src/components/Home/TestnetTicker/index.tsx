@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { track } from 'utils/analytics';
 
 import * as S from './styles';
 
@@ -28,7 +29,12 @@ export const TestnetTicker = () => (
           <span className="value">{item.value}</span>
         </S.Item>
       ))}
-      <S.Item as={Link} href="/testnet-guide" className="link">
+      <S.Item
+        as={Link}
+        href="/testnet-guide"
+        className="link"
+        onClick={() => track('CTA: Try Testnet', { placement: 'ticker' })}
+      >
         <span className="value">Join in →</span>
       </S.Item>
     </S.Items>
