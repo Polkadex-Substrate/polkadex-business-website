@@ -1,5 +1,6 @@
-import { SectionHead } from 'components';
+import { SectionHead, staggerChildProps, staggerGroupProps } from 'components';
 import * as Icons from 'components/Icons';
+import { motion } from 'framer-motion';
 
 import { data } from './data';
 import * as S from './styles';
@@ -19,7 +20,11 @@ const Card = ({ icon, img, alt, lightBg }: LogoEntry) => {
   ) : (
     <img src={`/img/partners/${img}.png`} alt={alt} />
   );
-  return <S.Card>{lightBg ? <S.LightChip>{logo}</S.LightChip> : logo}</S.Card>;
+  return (
+    <S.Card as={motion.div} {...staggerChildProps}>
+      {lightBg ? <S.LightChip>{logo}</S.LightChip> : logo}
+    </S.Card>
+  );
 };
 
 export const Partners = () => (
@@ -34,7 +39,9 @@ export const Partners = () => (
       description="Parachains, exchanges, market makers, security firms, and infrastructure providers working alongside Polkadex."
     />
 
-    <S.Content>
+    {/* Logos cascade in one-by-one; variants propagate through the plain
+        S.Row elements to each motion Card (see components/ScrollReveal). */}
+    <S.Content as={motion.div} {...staggerGroupProps}>
       {data.map((row, ri) => (
         <S.Row key={ri}>
           {row.map((entry, i) => (

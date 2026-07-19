@@ -1,11 +1,20 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { ReactNode } from 'react';
 
+/* ── Motion feel ─────────────────────────────────────────────────────────
+ * Tuned to read like ikea.com: reveals travel further and settle slowly.
+ * EASE is an expo-out curve — it covers most of the distance quickly, then
+ * spends the rest of the (long) duration easing into place. That's what
+ * makes a 1s+ animation feel graceful instead of sluggish: the content is
+ * readable early, only the settle is slow.
+ */
+const EASE = [0.16, 1, 0.3, 1] as const;
+
 type Props = {
   children: ReactNode;
-  /** Amount of vertical slide-in in pixels. Defaults to 40. */
+  /** Amount of vertical slide-in in pixels. Defaults to 56. */
   distance?: number;
-  /** Reveal duration in seconds. Defaults to 0.6. */
+  /** Reveal duration in seconds. Defaults to 1.1. */
   duration?: number;
   /** Optional stagger delay in seconds (useful for chaining reveals). */
   delay?: number;
@@ -29,10 +38,13 @@ type Props = {
  */
 export const ScrollReveal = ({
   children,
-  distance = 40,
-  duration = 0.6,
+  distance = 56,
+  duration = 1.1,
   delay = 0,
-  margin = '-80px',
+  // Slightly earlier trigger than before (-60px vs -80px): with the longer
+  // duration, starting sooner means the element has finished settling by
+  // the time the reader's eye reaches it.
+  margin = '-60px',
   className,
 }: Props) => {
   const reduced = useReducedMotion();
@@ -47,7 +59,7 @@ export const ScrollReveal = ({
       initial={{ opacity: 0, y: distance }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin }}
-      transition={{ duration, delay, ease: [0.25, 0.4, 0.25, 1] }}
+      transition={{ duration, delay, ease: EASE }}
     >
       {children}
     </motion.div>
@@ -65,16 +77,18 @@ export const ScrollReveal = ({
 const groupVariants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.09, delayChildren: 0.1 },
+    // Wider stagger gap so each card's entrance is individually legible —
+    // at 0.09s the cards read as one blob; at 0.15s the cascade is visible.
+    transition: { staggerChildren: 0.15, delayChildren: 0.15 },
   },
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 44 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] },
+    transition: { duration: 0.95, ease: EASE },
   },
 };
 
@@ -93,7 +107,7 @@ export const StaggerGroup = ({
       variants={groupVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: true, margin: '-40px' }}
     >
       {children}
     </motion.div>
@@ -127,7 +141,7 @@ export const staggerGroupProps = {
   variants: groupVariants,
   initial: 'hidden',
   whileInView: 'show',
-  viewport: { once: true, margin: '-60px' },
+  viewport: { once: true, margin: '-40px' },
 } as const;
 
 export const staggerChildProps = {

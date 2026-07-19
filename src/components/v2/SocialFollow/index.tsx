@@ -1,4 +1,5 @@
-import { SectionHead } from 'components';
+import { SectionHead, staggerChildProps, staggerGroupProps } from 'components';
+import { motion } from 'framer-motion';
 
 import * as S from './styles';
 
@@ -90,9 +91,13 @@ export const SocialFollow = () => (
       }
       description="We post updates every week — testnet notes, roadmap shifts, and validator news. Pick your channel."
     />
-    <S.Grid>
+    {/* Cards cascade in one-by-one (site-wide stagger timing lives in
+        components/ScrollReveal). as={motion.a} keeps the anchor semantics. */}
+    <S.Grid as={motion.div} {...staggerGroupProps}>
       {platforms.map((p) => (
         <S.Card
+          as={motion.a}
+          {...staggerChildProps}
           key={p.name}
           href={p.href}
           target="_blank"
