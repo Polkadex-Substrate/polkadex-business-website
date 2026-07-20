@@ -105,6 +105,16 @@ export const ApyCaption = styled.p`
     line-height: 1.55;
     opacity: 0.75;
     margin: 1.6rem 0 0;
+
+    a {
+      color: ${theme.colors.primary};
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      transition: opacity 0.2s ease-in-out;
+      :hover {
+        opacity: 0.85;
+      }
+    }
   `}
 `;
 

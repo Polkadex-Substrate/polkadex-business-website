@@ -3,36 +3,48 @@ import { useEffect, useState } from 'react';
 /**
  * Live staking stats for the /staking page and homepage staking callout.
  *
- * Fetches from Polkadex Explorer / Subscan on mount and falls back to the
- * hard-coded defaults if the request fails. Values stay fresh across
- * deploys — no rebuild required when APY moves.
+ * Source of truth: explorer.polkadex.ee (the Foundation's own indexer).
+ * NOTE: Subscan is NOT an option — they removed Polkadex mainnet indexing
+ * (confirmed July 2026), so any polkadex.api.subscan.io data is stale.
  *
- * ─── TO WIRE THE LIVE ENDPOINT ─────────────────────────────────────────
- * The exact endpoint depends on which service the Explorer exposes.
- * Two common options for Substrate/Polkadex chains:
+ * Endpoint:  GET https://explorer.polkadex.ee/api/network-info
+ * Docs:      https://explorer.polkadex.ee/developers
+ *            https://explorer.polkadex.ee/llms.txt  (machine-readable)
  *
- *   • Subscan-style JSON:
- *       POST https://polkadex.api.subscan.io/api/scan/staking/stats
- *   • Polkadex RPC (via websocket, requires @polkadot/api):
- *       wss://mainnet.polkadex.trade
+ * Response shape (per the explorer's published schema, July 2026):
+ *   {
+ *     networkInfo: {
+ *       activeEra, avgValidatorCommission,
+ *       avgApy,                       // headline AVG APY %, commission-adjusted
+ *       validators: { active, total },
+ *       nominators: { active, total },
+ *       totalBonding,                 // total PDEX bonded ("In Stake")
+ *       totalIssuance, minStake, averageStake, ...
+ *     },
+ *     lastSync, status: "Synced" | "Stale" | "Initializing" | "Error",
+ *     chainHead: { ... }
+ *   }
  *
- * Fill in `ENDPOINT` and the response-parsing block below and this hook
- * will start returning live data. If you'd rather I use a different
- * service (Explorer's own REST, Dune, custom API), point me at it and
- * I'll swap the fetch out.
- * ────────────────────────────────────────────────────────────────────────
+ * Access: the API is open to non-browser clients. Browser calls from
+ * polkadex.ee work once the explorer operator adds https://polkadex.ee and
+ * https://www.polkadex.ee to its ALLOWED_ORIGINS allowlist (origin-based
+ * CORS — not IP-based). Until then the fetch fails silently in browsers
+ * and the FALLBACK below is shown, so the site keeps working either way.
+ *
+ * Client etiquette (per the API docs): the endpoint is cached with
+ * max-age=30. We fetch once per page view and never poll, well within it.
  */
 
-const ENDPOINT = ''; // e.g. 'https://polkadex.api.subscan.io/api/scan/staking/stats'
+const ENDPOINT = 'https://explorer.polkadex.ee/api/network-info';
 
 export type StakingStats = {
-  /** Trailing realized APY for nominators, e.g. "14.2%" */
+  /** Network average APY, e.g. "7.95%" */
   apy: string;
-  /** Trailing realized APY for validators, e.g. "15.6%" */
+  /** Validator average APY (network average until API exposes it) */
   apyValidator: string;
-  /** Total number of nominators, formatted, e.g. "5,460" */
+  /** Total number of nominators, formatted, e.g. "2,442" */
   nominators: string;
-  /** Total PDEX staked, formatted, e.g. "7.15 million" */
+  /** Total PDEX staked, formatted, e.g. "7.18 million" */
   pdexStaked: string;
   /** Number of active validators, e.g. "200" */
   activeValidators: string;
@@ -42,15 +54,30 @@ export type StakingStats = {
   usingFallback: boolean;
 };
 
-// Conservative fallback values — used if ENDPOINT is empty or fetch fails.
-// Kept in sync with the on-chain snapshot referenced elsewhere on the site.
-// Update these whenever you do a manual refresh.
+// Fallback values — used while the browser can't reach the explorer API
+// (ALLOWED_ORIGINS not yet updated) or if the fetch fails. Manually synced
+// with explorer.polkadex.ee on 2026-07-19:
+//   AVG APY 7.95% · In Stake 7,177,107 PDEX · Validators 200 active / 237
+//   registered · Nominators 1,728 active / 2,442 total.
+// Refresh these from the explorer whenever they drift. apyValidator is the
+// network average — the API doesn't expose a separate validator figure.
 const FALLBACK: Omit<StakingStats, 'loading' | 'usingFallback'> = {
-  apy: '14.2%',
-  apyValidator: '15.6%',
-  nominators: '5,460',
-  pdexStaked: '7.15 million',
+  apy: '7.95%',
+  apyValidator: '7.95%',
+  nominators: '2,442',
+  pdexStaked: '7.18 million',
   activeValidators: '200',
+};
+
+/** Subset of GET /api/network-info we consume. */
+type NetworkInfoResponse = {
+  networkInfo?: {
+    avgApy?: number;
+    validators?: { active?: number; total?: number };
+    nominators?: { active?: number; total?: number };
+    totalBonding?: number;
+  };
+  status?: string;
 };
 
 export const useStakingStats = (): StakingStats => {
@@ -61,7 +88,7 @@ export const useStakingStats = (): StakingStats => {
   });
 
   useEffect(() => {
-    if (!ENDPOINT) return;
+    if (!ENDPOINT) return undefined;
 
     let cancelled = false;
 
@@ -69,26 +96,34 @@ export const useStakingStats = (): StakingStats => {
       try {
         const res = await fetch(ENDPOINT, { method: 'GET' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
+        const json = (await res.json()) as NetworkInfoResponse;
 
-        // ─── Response parsing ─────────────────────────────────────────
-        // Adjust these paths to match your endpoint's response shape.
-        // Example for a Subscan-style response:
-        //   data.data.staking_apy        → number (0.142 = 14.2%)
-        //   data.data.validator_apy      → number
-        //   data.data.nominator_count    → number
-        //   data.data.staking_total      → planck string
-        //   data.data.validator_count    → number
+        // "Initializing"/"Error" mean the indexer can't vouch for the
+        // numbers — our dated fallback is more trustworthy than a
+        // half-computed payload. "Stale" is accepted: slightly old
+        // on-chain data still beats the static snapshot.
+        if (json.status === 'Initializing' || json.status === 'Error') {
+          throw new Error(`indexer status: ${json.status}`);
+        }
+
+        const info = json.networkInfo;
+        if (!info || !isNum(info.avgApy)) {
+          throw new Error('unexpected payload shape');
+        }
+
+        const apy = `${info.avgApy.toFixed(2)}%`;
         const stats: Omit<StakingStats, 'loading' | 'usingFallback'> = {
-          apy: formatPercent(data?.data?.staking_apy) ?? FALLBACK.apy,
-          apyValidator:
-            formatPercent(data?.data?.validator_apy) ?? FALLBACK.apyValidator,
-          nominators:
-            formatCount(data?.data?.nominator_count) ?? FALLBACK.nominators,
-          pdexStaked:
-            formatPdex(data?.data?.staking_total) ?? FALLBACK.pdexStaked,
-          activeValidators:
-            String(data?.data?.validator_count ?? FALLBACK.activeValidators),
+          apy,
+          apyValidator: apy,
+          nominators: isNum(info.nominators?.total)
+            ? info.nominators!.total!.toLocaleString('en-US')
+            : FALLBACK.nominators,
+          pdexStaked: isNum(info.totalBonding)
+            ? formatPdex(info.totalBonding!)
+            : FALLBACK.pdexStaked,
+          activeValidators: isNum(info.validators?.active)
+            ? String(info.validators!.active)
+            : FALLBACK.activeValidators,
         };
 
         if (!cancelled) {
@@ -111,21 +146,12 @@ export const useStakingStats = (): StakingStats => {
 };
 
 // ── formatters ────────────────────────────────────────────────────────────
-function formatPercent(v: unknown): string | null {
-  if (typeof v !== 'number' || Number.isNaN(v)) return null;
-  return `${(v * 100).toFixed(1)}%`;
+function isNum(v: unknown): v is number {
+  return typeof v === 'number' && !Number.isNaN(v);
 }
 
-function formatCount(v: unknown): string | null {
-  if (typeof v !== 'number' || Number.isNaN(v)) return null;
-  return v.toLocaleString('en-US');
-}
-
-// PDEX has 12 decimals on-chain (planck). Convert to human-readable.
-function formatPdex(planck: unknown): string | null {
-  const n = typeof planck === 'string' ? Number(planck) : (planck as number);
-  if (typeof n !== 'number' || Number.isNaN(n)) return null;
-  const pdex = n / 1e12;
+/** Values from /api/network-info are already in PDEX (not planck). */
+function formatPdex(pdex: number): string {
   if (pdex >= 1_000_000) return `${(pdex / 1_000_000).toFixed(2)} million`;
   if (pdex >= 1_000) return `${(pdex / 1_000).toFixed(1)}K`;
   return pdex.toFixed(0);

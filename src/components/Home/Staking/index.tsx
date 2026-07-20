@@ -88,7 +88,9 @@ export const Staking = ({ apy = '' }: { apy?: string }) => {
       />
 
       <S.ApyBanner>
-        <small>Current realized APY</small>
+        {/* Label matches the explorer's own terminology (AVG APY) so the
+            two surfaces never look contradictory. */}
+        <small>Network average APY</small>
         <S.ApyNumber>
           {live.loading ? (
             <S.Skeleton aria-label="Loading APY" />
@@ -97,7 +99,19 @@ export const Staking = ({ apy = '' }: { apy?: string }) => {
           )}
         </S.ApyNumber>
         <S.ApyCaption>
-          Trailing 30-day nominator return. Live from the Polkadex Explorer.
+          {/* Only claim "live" when the data actually is — on fallback we
+              show the last manual sync instead. Linking the source lets
+              anyone verify the number in one click (and the outbound click
+              is auto-tracked by Plausible). */}
+          {live.usingFallback ? 'Network-wide average. Source: ' : 'Live from '}
+          <a
+            href="https://explorer.polkadex.ee"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            the Polkadex Explorer
+          </a>
+          .
         </S.ApyCaption>
       </S.ApyBanner>
 
