@@ -6,7 +6,7 @@ const TWITTER_HANDLE = '@polkadex';
 const DEFAULT_TITLE =
   'Polkadex — The Sovereign Layer 1 Purpose-Built for Trading';
 const DEFAULT_DESCRIPTION =
-  'Polkadex is an independent Layer 1 blockchain built with Substrate for high-performance decentralized trading. On-chain orderbook, non-custodial, cross-chain via Hyperbridge. Live on testnet.';
+  'Polkadex is an independent Layer 1 blockchain built with Substrate for high-performance decentralized trading. CEX-speed orderbook with on-chain settlement, non-custodial, cross-chain via Hyperbridge. Live on testnet.';
 // New filename (not twitterCardImage.jpg) so social platforms' link-preview
 // caches fetch the updated artwork instead of serving the stale image.
 const DEFAULT_IMAGE = `${SITE_URL}/ogImage.jpg`;
@@ -36,7 +36,7 @@ const structuredData = {
       url: SITE_URL,
       logo: `${SITE_URL}/android-icon-192x192.png`,
       description:
-        'Polkadex is an independent Layer 1 blockchain built with Substrate, engineered for high-performance decentralized trading with an on-chain orderbook. The sudo key has been removed — all protocol upgrades are governed on-chain.',
+        'Polkadex is an independent Layer 1 blockchain built with Substrate, engineered for high-performance decentralized trading. Orders are matched by the high-performance OCEX engine and every trade settles on-chain, non-custodially. The sudo key has been removed — all protocol upgrades are governed on-chain.',
       sameAs: [
         'https://twitter.com/polkadex',
         'https://github.com/Polkadex-Substrate',

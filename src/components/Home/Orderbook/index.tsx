@@ -6,20 +6,27 @@ import { AnimatedOrderbookMock } from './AnimatedMock';
 import * as S from './styles';
 
 // Six differentiators, tightened per feedback. Blends concrete on-chain
-// claims (200+ validators, sub-ms latency) with trader-specific features
-// (limit/market orders, HFT API) so the grid reads for both investors and
-// active traders.
+// claims (200+ validators, on-chain settlement) with trader-specific
+// features (limit/market orders, HFT API) so the grid reads for both
+// investors and active traders.
+//
+// ARCHITECTURE — get this right (corrected July 2026): the Orderbook uses
+// OCEX. Order MATCHING runs in a high-performance off-chain engine (that's
+// where the CEX-grade speed comes from); SETTLEMENT and custody are
+// on-chain, so the engine can never touch user funds. Never claim
+// "fully on-chain matching" — the honest pitch is "off-chain speed,
+// on-chain settlement, self-custody throughout".
 const features = [
   {
-    title: 'Fully on-chain matching',
+    title: 'On-chain settlement',
     description:
-      'Every order settles on our sovereign Layer 1. No off-chain matching engine, no trusted operator.',
+      'Every trade settles on our sovereign Layer 1, with funds in on-chain custody the whole time. The matching engine can execute your orders — never touch your assets.',
     icon: 'Faster',
   },
   {
-    title: 'Sub-millisecond latency',
+    title: 'Sub-millisecond matching',
     description:
-      'Order-matching engine tuned for professional traders. CEX-grade speed without the custody trade-off.',
+      'Orders are matched off-chain by the high-performance OCEX engine — CEX-grade speed, without handing over custody.',
     icon: 'Cheaper',
   },
   {
@@ -56,10 +63,11 @@ export const Orderbook = () => {
         eyebrow="Orderbook"
         title={
           <>
-            A <strong>fully on-chain</strong> exchange, without the compromises
+            CEX speed, <strong>settled on-chain</strong> — without the
+            compromises
           </>
         }
-        description="Polkadex Orderbook is a non-custodial trading application running on our sovereign Layer 1 chain. High-frequency trading, low fees, self-custody — all in one place."
+        description="Polkadex Orderbook is a non-custodial trading application: orders are matched at CEX speed and every trade settles on our sovereign Layer 1. High-frequency trading, low fees, self-custody — all in one place."
       />
 
       {/* Animated bid/ask mock instead of a second static screenshot —

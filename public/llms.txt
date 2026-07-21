@@ -1,9 +1,11 @@
 # Polkadex
 
 > Polkadex is an independent Layer 1 blockchain built with Substrate,
-> engineered for high-performance decentralized trading. It combines a
-> fully on-chain orderbook (limit & market orders, sub-millisecond
-> matching) with non-custodial self-custody and trust-minimized
+> engineered for high-performance decentralized trading. Its Orderbook
+> uses the OCEX architecture: orders (limit & market) are matched
+> off-chain by a high-performance engine at sub-millisecond speed, while
+> settlement and custody are fully on-chain — the engine executes orders
+> but can never touch user funds. Combined with trust-minimized
 > cross-chain transfers via Hyperbridge. Originally launched within the
 > Polkadot ecosystem, Polkadex now operates as a sovereign network with
 > its own validator set (200+ nodes), roadmap, and governance.

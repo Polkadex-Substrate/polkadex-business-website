@@ -38,7 +38,7 @@ const pillars = [
     emoji: '⚡️',
     title: 'CEX-grade performance',
     description:
-      'Sub-millisecond order-matching latency and high throughput, backed by an on-chain orderbook.',
+      'Sub-millisecond order matching via the OCEX engine, with every trade settled on-chain.',
   },
   {
     emoji: '🔑',
