@@ -106,7 +106,7 @@ export const Footer = ({ isDark = false }) => {
           <ul>
             <li>
               <a
-                href="https://discord.gg/Jh5nSd6gj"
+                href="https://discord.gg/KB8qERAsy"
                 target="_blank"
                 rel="noreferrer"
               >

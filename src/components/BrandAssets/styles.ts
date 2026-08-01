@@ -191,7 +191,16 @@ export const Swatches = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-gap: 1.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
+`;
+
+export const SwatchGroupTitle = styled.h3`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.large};
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  `}
 `;
 
 export const Swatch = styled.div<{ color: string }>`

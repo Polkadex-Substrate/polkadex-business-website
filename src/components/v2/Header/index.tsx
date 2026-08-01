@@ -138,7 +138,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                   <small>About</small>
                   <ul>
                     <S.Li>
-                      <Link href="/tokeneconomics">Token Economics</Link>
+                      <Link href="/tokenomics">Tokenomics</Link>
                     </S.Li>
                     <S.Li>
                       <Link href="/roadmap">Roadmap</Link>
@@ -177,7 +177,7 @@ export const Header = ({ links = [], cta, target = '_blank' }: T.Props) => {
                     </S.Li>
                     <S.Li>
                       <a
-                        href="https://discord.gg/Jh5nSd6gj"
+                        href="https://discord.gg/KB8qERAsy"
                         target="_blank"
                         rel="noreferrer"
                       >

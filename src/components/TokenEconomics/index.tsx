@@ -6,6 +6,7 @@ import {
 import { motion } from 'framer-motion';
 import { IHomeTranslations } from 'translations';
 
+import { TokenomicsCharts } from './Charts';
 import * as S from './styles';
 
 type Props = Pick<IHomeTranslations, 'tokenEconomics'>;
@@ -44,7 +45,7 @@ const TokenEconomics = ({
             <strong>Fully circulating.</strong> No unlocks ahead.
           </>
         }
-        description="Every PDEX in existence is already circulating. No scheduled emissions, no cliff releases, no private-round bags waiting to hit the market."
+        description="Every PDEX in existence is already circulating. No unlock schedule, no cliff releases, no private-round bags waiting to hit the market. The only new PDEX comes from staking rewards that secure the network."
       />
 
       <S.Highlights as={motion.div} {...staggerGroupProps}>
@@ -70,6 +71,8 @@ const TokenEconomics = ({
           <span className="value">Native to Polkadex mainnet</span>
         </div>
       </S.SupplyRow>
+
+      <TokenomicsCharts />
 
       <S.AllocationsHead>
         <h2>Original distribution</h2>

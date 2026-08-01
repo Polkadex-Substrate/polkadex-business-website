@@ -31,8 +31,9 @@ export const RoadmapTeaser = () => {
           Where we are, <strong>where we&apos;re going</strong>
         </h2>
         <p>
-          Polkadex 2.0 is live on testnet and heading into a full mainnet
-          relaunch in Q4 2026. Here&apos;s the full timeline.
+          Polkadex 2.0 is live on testnet until Sep 30 and heading into a
+          full mainnet relaunch in November 2026. Here&apos;s the full
+          timeline.
         </p>
       </S.Header>
 

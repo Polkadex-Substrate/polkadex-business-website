@@ -110,6 +110,11 @@ export const AsideRight = styled.div`
         opacity: 0.92;
         transform: translateY(-0.1rem);
       }
+      /* Slimmer CTA on small screens so logo + CTA + hamburger fit cleanly */
+      @media screen and (max-width: 480px) {
+        padding: 1rem 1.6rem;
+        font-size: 1.5rem;
+      }
     }
     /* Mobile menu toggle — generous 44px tap target */
     button {

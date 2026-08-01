@@ -27,7 +27,7 @@ export const Information = () => {
             </S.SocialCard>
             <S.SocialCard
               target="_blank"
-              href="https://discord.gg/Jh5nSd6gj"
+              href="https://discord.gg/KB8qERAsy"
             >
               <Icons.Discord />
             </S.SocialCard>

@@ -51,7 +51,7 @@ const platforms: Platform[] = [
   {
     name: 'Discord',
     handle: 'Join the community',
-    href: 'https://discord.gg/Jh5nSd6gj',
+    href: 'https://discord.gg/KB8qERAsy',
     icon: DiscordIcon,
   },
   {

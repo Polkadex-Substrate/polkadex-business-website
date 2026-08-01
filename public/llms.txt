@@ -49,7 +49,7 @@ Key facts:
 ## Community
 
 - X/Twitter: https://twitter.com/polkadex
-- Discord: https://discord.gg/Jh5nSd6gj (testnet feedback in
+- Discord: https://discord.gg/KB8qERAsy (testnet feedback in
   #testnet-feedback)
 - Telegram: https://t.me/Polkadex
 - GitHub: https://github.com/Polkadex-Substrate

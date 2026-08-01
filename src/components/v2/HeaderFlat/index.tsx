@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as Logo from 'components/Logo';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { track } from 'utils/analytics';
 
@@ -39,6 +40,18 @@ export const HeaderFlat = ({
   const [scrolled, setScrolled] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const lastY = useRef(0);
+  const router = useRouter();
+
+  // On the testnet guide itself the default CTA would link to the page the
+  // visitor is already on — send them onward to the app instead.
+  const resolvedCta =
+    cta === defaultCta && router.pathname === '/testnet-guide'
+      ? {
+          title: 'Open the Testnet App',
+          href: 'https://orderbook-app-test.polkadex.ee/',
+          external: true,
+        }
+      : cta;
 
   // Lock body scroll while the mobile drawer is open.
   useEffect(() => {
@@ -112,6 +125,16 @@ export const HeaderFlat = ({
           </nav>
         </S.AsideLeft>
         <S.AsideRight>
+          <Link
+            href={resolvedCta.href}
+            onClick={() => track('CTA: Try Testnet', { placement: 'header' })}
+            target={resolvedCta.external ? '_blank' : undefined}
+            rel={resolvedCta.external ? 'noreferrer noopener' : undefined}
+          >
+            {resolvedCta.title}
+          </Link>
+          {/* Hamburger renders after the CTA so it hugs the right edge on
+              mobile instead of floating mid-bar. */}
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -138,14 +161,6 @@ export const HeaderFlat = ({
               )}
             </svg>
           </button>
-          <Link
-            href={cta.href}
-            onClick={() => track('CTA: Try Testnet', { placement: 'header' })}
-            target={cta.external ? '_blank' : undefined}
-            rel={cta.external ? 'noreferrer noopener' : undefined}
-          >
-            {cta.title}
-          </Link>
         </S.AsideRight>
       </S.Container>
       {/* Mobile drawer — fixed overlay below the header bar, so it can't be
@@ -163,13 +178,13 @@ export const HeaderFlat = ({
           </Link>
         ))}
         <Link
-          href={cta.href}
+          href={resolvedCta.href}
           onClick={() => setOpen(false)}
           className="cta"
-          target={cta.external ? '_blank' : undefined}
-          rel={cta.external ? 'noreferrer noopener' : undefined}
+          target={resolvedCta.external ? '_blank' : undefined}
+          rel={resolvedCta.external ? 'noreferrer noopener' : undefined}
         >
-          {cta.title}
+          {resolvedCta.title}
         </Link>
       </S.MobileMenu>
     </S.Main>

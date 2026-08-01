@@ -38,7 +38,7 @@
       <circle cx="26" cy="27" r="3" fill="#E6007A"/>
     </g>
     <text x="70" y="30" font-size="26" font-weight="700" fill="#fff">Polkadex</text>
-    <text x="70" y="54" font-size="14" font-weight="500" fill="#8A94A6" letter-spacing="2">DECENTRALIZED ORDERBOOK</text>
+    <text x="70" y="54" font-size="14" font-weight="500" fill="#8A94A6" letter-spacing="2">POLKADEX 2.0</text>
   </g>
 
   <!-- Live pill -->
@@ -56,6 +56,9 @@
   <text x="80" y="260" font-size="72" font-weight="800" fill="#ffffff" letter-spacing="-2">Orderbook Testnet</text>
   <text x="80" y="348" font-size="72" font-weight="800" fill="#E6007A" letter-spacing="-2">is Live.</text>
 
+  <!-- Dates subline -->
+  <text x="80" y="408" font-size="27" font-weight="500" fill="#A8ADB7">70 days to test — closes Sep 30 · Mainnet: November 2026</text>
+
   <!-- Feature strip -->
   <g transform="translate(80 460)">
     <g>
@@ -72,7 +75,7 @@
 
   <!-- URL -->
   <g transform="translate(80 550)">
-    <text font-size="22" font-weight="500" fill="#8A94A6">polkadex.ee/testnet-guide</text>
+    <text font-size="22" font-weight="500" fill="#8A94A6">polkadex.ee</text>
   </g>
 
   <!-- Brand accent gradient bar -->

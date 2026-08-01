@@ -466,7 +466,7 @@ const ENLanguage = {
         items: [
           { title: 'Polkadex 2.0 Testnet relaunch (Q3)', status: true },
           { title: 'Hyperbridge integration', status: true },
-          { title: 'Orderbook Mainnet relaunch (Q4)', status: false },
+          { title: 'Orderbook Mainnet relaunch (November 2026)', status: false },
           { title: 'Market-making infrastructure re-activated', status: false },
         ],
       },
@@ -584,7 +584,7 @@ const ENLanguage = {
     title: 'Distribution of',
     highlight: 'Tokens',
     totalSupply: {
-      title: 'Total Supply',
+      title: 'Genesis Supply',
       subTitle: '20,000,000 PDEX',
     },
     circulationSupply: {
@@ -877,7 +877,7 @@ const ENLanguage = {
     },
     {
       title: 'Polkadex 2.0 · Testnet',
-      phase: 'Q3 2026',
+      phase: 'Live · closes Sep 30, 2026',
       emoji: '🚀',
       active: true,
       items: [
@@ -888,7 +888,7 @@ const ENLanguage = {
     },
     {
       title: 'Polkadex 2.0 · Mainnet',
-      phase: 'Q4 2026',
+      phase: 'November 2026',
       emoji: '⚡',
       items: [
         'Orderbook Mainnet relaunch on the new architecture.',

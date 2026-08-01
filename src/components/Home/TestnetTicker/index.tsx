@@ -13,10 +13,10 @@ import * as S from './styles';
  * hook like useStakingStats. Ping the app team for the endpoint.
  */
 const items = [
-  { label: 'Testnet', value: 'Live', live: true },
+  { label: 'Testnet', value: 'Live until Sep 30', live: true },
   { label: 'Cross-chain via Hyperbridge', value: 'Active' },
   { label: 'Faucet', value: 'Open' },
-  { label: 'Mainnet relaunch', value: 'Q4 2026' },
+  { label: 'Mainnet relaunch', value: 'November 2026' },
 ];
 
 export const TestnetTicker = () => (

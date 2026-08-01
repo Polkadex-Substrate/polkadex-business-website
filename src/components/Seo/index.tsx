@@ -9,7 +9,9 @@ const DEFAULT_DESCRIPTION =
   'Polkadex is an independent Layer 1 blockchain built with Substrate for high-performance decentralized trading. CEX-speed orderbook with on-chain settlement, non-custodial, cross-chain via Hyperbridge. Live on testnet.';
 // New filename (not twitterCardImage.jpg) so social platforms' link-preview
 // caches fetch the updated artwork instead of serving the stale image.
-const DEFAULT_IMAGE = `${SITE_URL}/ogImage.jpg`;
+// Testnet-phase card (fresh filename so link-preview caches refetch).
+// At mainnet, swap back to a general brand card.
+const DEFAULT_IMAGE = `${SITE_URL}/testnetCardLive.jpg`;
 
 export interface SeoProps {
   /** Page <title>. Falls back to the site default. */
@@ -42,7 +44,7 @@ const structuredData = {
         'https://github.com/Polkadex-Substrate',
         'https://polkadex.medium.com',
         'https://t.me/Polkadex',
-        'https://discord.gg/Jh5nSd6gj',
+        'https://discord.gg/KB8qERAsy',
         'https://www.linkedin.com/company/69690544',
         'https://www.reddit.com/r/polkadex',
       ],
@@ -96,7 +98,7 @@ export const Seo = ({
       <meta property="og:image:height" content="630" key="og:image:height" />
       <meta
         property="og:image:alt"
-        content="Polkadex — the sovereign Layer 1 purpose-built for trading"
+        content="Polkadex 2.0 — Orderbook Testnet is Live. 70 days to test, closes Sep 30. Mainnet: November 2026."
         key="og:image:alt"
       />
       {/* Twitter */}

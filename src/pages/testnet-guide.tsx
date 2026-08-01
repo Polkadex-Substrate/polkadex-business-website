@@ -11,7 +11,7 @@ export default function TestnetGuidePage() {
           title="Polkadex Orderbook Testnet is Live"
           description="A live, non-custodial, cross-chain orderbook on Polkadex you can trade on today. Claim free testnet tokens, place orders, and move assets cross-chain via Hyperbridge."
           path="/testnet-guide"
-          image="https://polkadex.ee/testnetCardImage.jpg"
+          image="https://polkadex.ee/testnetCardLive.jpg"
         />
         <HeaderFlat />
         <main>

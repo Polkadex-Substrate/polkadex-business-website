@@ -14,7 +14,7 @@ const metrics = [
     value: '0%',
     label: 'Future Token Unlocks',
     detail:
-      'No scheduled emissions, no cliff releases, no dilution ahead.',
+      'No unlock schedule, no cliff releases, no dilution events ahead.',
   },
   {
     value: 'None',
@@ -32,9 +32,9 @@ export const Tokenomics = () => (
         <strong>Fully circulating.</strong> No unlocks ahead.
       </h2>
       <p>
-        Most projects still have years of token emissions and VC vesting
-        overhang. Polkadex doesn&apos;t. What you see on-chain is what exists —
-        no future dilution planned.
+        Most projects still have years of token unlocks and VC vesting
+        overhang. Polkadex doesn&apos;t. What you see on-chain is what exists,
+        and the only new PDEX comes from staking rewards.
       </p>
     </S.Header>
 
@@ -49,8 +49,8 @@ export const Tokenomics = () => (
     </S.Metrics>
 
     <S.Footer>
-      <Link href="/tokeneconomics">See full tokenomics</Link>
-      <span>PDEX · 20M total supply · Native to Polkadex mainnet</span>
+      <Link href="/tokenomics">See full tokenomics</Link>
+      <span>PDEX · 20M genesis supply · Native to Polkadex mainnet</span>
     </S.Footer>
   </S.Wrapper>
 );

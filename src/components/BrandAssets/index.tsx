@@ -4,15 +4,44 @@ import { BrandAssetsHero as BrandAssetsHeroIllustration } from 'components/Icons
 
 import * as S from './styles';
 
-const brandColors = [
-  { name: 'Primary', hex: '#E6007A' },
-  { name: 'Secondary', hex: '#00E676' },
-  { name: 'Background', hex: '#08080C' },
-  { name: 'Surface', hex: '#12121A' },
-  { name: 'Text Primary', hex: '#FFFFFF' },
-  { name: 'Text Secondary', hex: '#9CA3AF' },
-  { name: 'Success', hex: '#14F195' },
-  { name: 'Error', hex: '#FF4D4D' },
+// Palette source of truth: src/styles/theme.ts + BrandGuidelines.md.
+// (The explorer has its own variant palette — that one lives at
+// explorer.polkadex.ee/brand and must not be shown here as "the brand".)
+type BrandColor = { name: string; value: string; label?: string };
+
+const colorGroups: { title: string; colors: BrandColor[] }[] = [
+  {
+    title: 'Brand',
+    colors: [
+      { name: 'Primary', value: '#E6007A' },
+      { name: 'Violet', value: '#6745D2' },
+      {
+        name: 'Brand Gradient',
+        value: 'linear-gradient(47.94deg, #E6007A 0%, #6745D2 98.88%)',
+        label: '#E6007A → #6745D2',
+      },
+      { name: 'Green', value: '#00E676', label: '#00E676 · positive metrics' },
+    ],
+  },
+  {
+    title: 'Surfaces — dark theme',
+    colors: [
+      { name: 'Primary Background', value: '#0D0D10' },
+      { name: 'Secondary Background', value: '#2F3340' },
+      { name: 'Tertiary Background', value: '#2E303C' },
+      { name: 'Text', value: '#FFFFFF' },
+      { name: 'Secondary Text', value: '#A8ADB7' },
+    ],
+  },
+  {
+    title: 'Semantic',
+    colors: [
+      { name: 'Success', value: '#0CA564' },
+      { name: 'Info', value: '#148FE8' },
+      { name: 'Warning', value: '#FFA500' },
+      { name: 'Disabled', value: '#77777D' },
+    ],
+  },
 ];
 
 export const BrandAssetsHero = () => {
@@ -85,22 +114,42 @@ export const BrandAssetsCards = () => {
       <S.Title>
         <h2>Brand Colors</h2>
       </S.Title>
-      <S.Swatches>
-        {brandColors.map((color) => (
-          <S.Swatch key={color.hex} color={color.hex}>
-            <div />
-            <span>{color.name}</span>
-            <small>{color.hex}</small>
-          </S.Swatch>
-        ))}
-      </S.Swatches>
+      {colorGroups.map((group) => (
+        <div key={group.title}>
+          <S.SwatchGroupTitle>{group.title}</S.SwatchGroupTitle>
+          <S.Swatches>
+            {group.colors.map((color) => (
+              <S.Swatch key={color.name} color={color.value}>
+                <div />
+                <span>{color.name}</span>
+                <small>{color.label ?? color.value}</small>
+              </S.Swatch>
+            ))}
+          </S.Swatches>
+        </div>
+      ))}
+      <S.Typography>
+        <p>
+          <strong>Usage.</strong> Primary is reserved for the most important
+          call to action — one per view. Greens mark positive states, never
+          primary actions. Extend the palette by adjusting alpha on existing
+          tokens rather than adding new colors, and never recolor the logo.
+        </p>
+      </S.Typography>
       <S.Title>
         <h2>Typography</h2>
       </S.Title>
       <S.Typography>
         <p>
-          <strong>Inter</strong> — primary typeface for display, headings and
-          body text (weights 300–700).
+          <strong>Work Sans</strong> — primary typeface for headings and body
+          text (weights 300 / 400 / 600).
+        </p>
+        <p>
+          <strong>Suisse Intl</strong> — editorial and secondary face (weights
+          200–700).
+        </p>
+        <p>
+          <strong>Caveat</strong> — handwritten accent, used sparingly.
         </p>
         <p>
           <strong>Courier New</strong> — monospace, used for addresses, hashes
@@ -108,16 +157,16 @@ export const BrandAssetsCards = () => {
         </p>
         <p>
           Full color tokens, type scale, spacing and usage rules are included
-          in the media kit as <strong>BrandGuidelines.md</strong>, or browse
-          the{' '}
+          in the media kit as <strong>BrandGuidelines.md</strong>. The Mainnet
+          Explorer uses its own variant (Inter,{' '}
           <a
             href="https://explorer.polkadex.ee/brand"
             target="_blank"
             rel="noreferrer noopener"
           >
-            interactive brand kit
+            interactive explorer kit
           </a>
-          .
+          ).
         </p>
       </S.Typography>
     </S.BrandAssetsCards>

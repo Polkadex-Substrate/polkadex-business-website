@@ -93,7 +93,7 @@ export const TestnetGuide = () => {
           </p>
         </div>
         <a
-          href="https://discord.gg/Jh5nSd6gj"
+          href="https://discord.gg/KB8qERAsy"
           target="_blank"
           rel="noreferrer"
         >
@@ -298,7 +298,7 @@ export const TestnetGuide = () => {
           </p>
         </div>
         <a
-          href="https://discord.gg/Jh5nSd6gj"
+          href="https://discord.gg/KB8qERAsy"
           target="_blank"
           rel="noreferrer"
         >

@@ -47,7 +47,7 @@ export const AccessDeniedTemplate = () => {
             <small>Need help? contact us on Discord</small>
             <S.Social>
               <a
-                href="https://discord.gg/Jh5nSd6gj"
+                href="https://discord.gg/KB8qERAsy"
                 target="_blank"
                 rel="noreferrer"
               >

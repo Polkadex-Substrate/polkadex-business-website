@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects
+# /tokeneconomics was renamed to /tokenomics (July 2026)
+/tokeneconomics /tokenomics 301
+/tokeneconomics/ /tokenomics 301
